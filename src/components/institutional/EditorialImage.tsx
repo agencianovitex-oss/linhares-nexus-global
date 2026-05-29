@@ -18,20 +18,18 @@ export function EditorialImage({
   caption,
   className,
   alt = "",
+  src,
   ...img
 }: Props) {
   return (
     <figure className={cn("w-full", className)}>
       <div className={cn("w-full overflow-hidden bg-surface-2", ratioMap[ratio])}>
-        {img.src ? (
-          // eslint-disable-next-line jsx-a11y/alt-text
+        {src ? (
           <img
             {...img}
+            src={src}
             alt={alt}
-            className={cn(
-              "h-full w-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.02]",
-              img.className,
-            )}
+            className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.02]"
           />
         ) : (
           <div
