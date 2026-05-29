@@ -72,24 +72,56 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+const ORGANIZATION_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  name: "Linhares Law",
+  slogan: "U.S. Immigration · Boutique Practice",
+  url: "/",
+  areaServed: "United States",
+  knowsAbout: [
+    "U.S. Immigration Law",
+    "Employment-Based Immigration",
+    "Investor Visas",
+    "Family-Based Immigration",
+  ],
+  location: [
+    { "@type": "Place", name: "Orlando Office", address: { "@type": "PostalAddress", addressLocality: "Orlando", addressRegion: "FL", addressCountry: "US" } },
+    { "@type": "Place", name: "Miami Office", address: { "@type": "PostalAddress", addressLocality: "Miami", addressRegion: "FL", addressCountry: "US" } },
+    { "@type": "Place", name: "New York Office", address: { "@type": "PostalAddress", addressLocality: "New York", addressRegion: "NY", addressCountry: "US" } },
+    { "@type": "Place", name: "Salt Lake City Office", address: { "@type": "PostalAddress", addressLocality: "Salt Lake City", addressRegion: "UT", addressCountry: "US" } },
+  ],
+};
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Linhares Law — U.S. Immigration · Boutique Practice" },
+      {
+        name: "description",
+        content:
+          "Linhares Law is a boutique U.S. immigration firm with offices in Orlando, Miami, New York and Salt Lake City — representing international professionals, executives, investors and families.",
+      },
+      { property: "og:site_name", content: "Linhares Law" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "format-detection", content: "telephone=no" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(ORGANIZATION_JSONLD),
       },
     ],
   }),
