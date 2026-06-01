@@ -239,12 +239,12 @@ function AwardsSection() {
 /* ------------------------------------------------------------------ */
 
 const strategies = [
-  { slug: "eb2-niw", code: "EB-2 NIW", title: "National Interest Waiver", profile: "Profissionais qualificados", desc: "Para profissionais cuja atuação represente interesse nacional dos Estados Unidos — sem necessidade de oferta de emprego.", featured: true },
-  { slug: "eb1", code: "EB-1", title: "Extraordinary Ability", profile: "Pesquisadores · Executivos", desc: "Residência permanente para indivíduos com habilidades extraordinárias, pesquisadores de destaque e executivos multinacionais." },
-  { slug: "e2", code: "E-2", title: "Treaty Investor", profile: "Investidores · Empresários", desc: "Para investidores que estabelecem ou adquirem negócios substanciais nos Estados Unidos." },
-  { slug: "l1", code: "L-1", title: "Intracompany Transferee", profile: "Executivos · Gestores", desc: "Transferência de executivos, gestores e profissionais com conhecimento especializado entre empresas multinacionais." },
-  { slug: "o1", code: "O-1", title: "Extraordinary Ability", profile: "Talentos de destaque", desc: "Para indivíduos com reconhecimento sustentado nacional ou internacional em suas áreas de atuação." },
-  { slug: "eb5", code: "EB-5", title: "Immigrant Investor", profile: "Investidores qualificados", desc: "Residência permanente por meio de investimento substancial em empreendimento gerador de empregos nos Estados Unidos." },
+  { slug: "eb2-niw", code: "EB-2 NIW", title: "Dispensa por Interesse Nacional", profile: "Profissionais qualificados", desc: "Para profissionais cuja atuação represente interesse nacional dos Estados Unidos — sem necessidade de oferta de emprego.", featured: true },
+  { slug: "eb1", code: "EB-1", title: "Habilidade Extraordinária", profile: "Pesquisadores · Executivos", desc: "Residência permanente para profissionais com habilidades extraordinárias, pesquisadores de destaque e executivos multinacionais." },
+  { slug: "e2", code: "E-2", title: "Investidor por Tratado Comercial", profile: "Investidores · Empresários", desc: "Para investidores que estabelecem ou adquirem negócios substanciais nos Estados Unidos." },
+  { slug: "l1", code: "L-1", title: "Transferência entre Empresas", profile: "Executivos · Gestores", desc: "Transferência de executivos, gestores e profissionais com conhecimento especializado entre empresas multinacionais." },
+  { slug: "o1", code: "O-1", title: "Profissionais com Habilidade Extraordinária", profile: "Talentos de destaque", desc: "Para profissionais com reconhecimento sustentado, nacional ou internacional, em suas áreas de atuação." },
+  { slug: "eb5", code: "EB-5", title: "Investidor Imigrante", profile: "Investidores qualificados", desc: "Residência permanente por meio de investimento substancial em empreendimento gerador de empregos nos Estados Unidos." },
 ];
 
 function ServicesSection() {
@@ -256,7 +256,7 @@ function ServicesSection() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
           <SectionTitle
             eyebrow="Áreas de Atuação"
-            title="Pathways estratégicos para diferentes perfis internacionais."
+            title="Estratégias jurídicas para diferentes perfis internacionais."
             description="Cada categoria de visto exige uma leitura jurídica precisa. Definimos a estratégia adequada ao perfil profissional, patrimonial e familiar de cada cliente."
           />
           <InstitutionalButton to="/servicos" variant="outline">
