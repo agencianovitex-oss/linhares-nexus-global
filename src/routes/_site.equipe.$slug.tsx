@@ -90,7 +90,7 @@ const profiles: Record<string, AttorneyProfile> = {
 };
 
 export const Route = createFileRoute("/_site/equipe/$slug")({
-  loader: ({ params }) => {
+  loader: ({ params }): AttorneyProfile => {
     const p = profiles[params.slug];
     if (!p) throw notFound();
     return p;
