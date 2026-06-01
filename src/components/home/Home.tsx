@@ -75,7 +75,7 @@ function HeroSection() {
           {[
             { k: "14+", l: "Anos de prática jurídica" },
             { k: "04", l: "Escritórios nos Estados Unidos" },
-            { k: "USA", l: "Firma de advocacia licenciada" },
+            { k: "USA", l: "Escritório de advocacia licenciado nos EUA" },
             { k: "Global", l: "Clientes em três continentes" },
           ].map((it) => (
             <div key={it.l}>
