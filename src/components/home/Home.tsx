@@ -500,7 +500,7 @@ function CultureSection() {
               <div className="bg-surface p-10">
                 <dt className="text-5xl lg:text-6xl font-light text-primary tracking-tight">100%</dt>
                 <dd className="mt-5 text-sm leading-[1.7] text-ink-soft max-w-[26ch]">
-                  dos colaboradores se sentiram bem-vindos ao ingressar na firma.
+                  dos colaboradores se sentiram bem-vindos ao ingressar no escritório.
                 </dd>
               </div>
               <div className="bg-surface p-10">
