@@ -25,14 +25,14 @@ function HeroSection() {
             <div className="flex items-center gap-4">
               <span className="rule-gold" />
               <span className="eyebrow eyebrow-on-dark">
-                Linhares Law · U.S. Immigration Law Firm
+                Linhares Law · Escritório de Advocacia de Imigração Americana
               </span>
             </div>
             <h1 className="mt-8 text-balance text-primary-foreground max-w-[18ch]">
-              Direito de Imigração Americano para profissionais, executivos, investidores e famílias.
+              Advogados de imigração americana para profissionais, executivos, investidores e famílias.
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-[1.8] text-primary-foreground/75">
-              Representação jurídica estratégica perante as autoridades federais de imigração dos Estados Unidos. Conduzimos cada caso com rigor técnico, discrição e visão de longo prazo.
+              Representação jurídica estratégica perante as autoridades federais de imigração dos Estados Unidos. Conduzimos cada caso com profundidade técnica, discrição e visão de longo prazo.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <InstitutionalButton
