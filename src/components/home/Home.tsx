@@ -43,7 +43,7 @@ function HeroSection() {
                 Agendar Consulta
               </InstitutionalButton>
               <InstitutionalButton to="/servicos" variant="onDark">
-                Estratégias Migratórias
+                Conhecer nossas estratégias
               </InstitutionalButton>
             </div>
           </div>
