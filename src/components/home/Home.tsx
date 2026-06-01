@@ -655,14 +655,14 @@ function FinalCTA() {
         <div className="text-center">
           <div className="flex items-center justify-center gap-4">
             <span className="rule-gold" />
-            <span className="eyebrow eyebrow-on-dark">Strategic Immigration Counsel</span>
+            <span className="eyebrow eyebrow-on-dark">Planejamento Migratório Estratégico</span>
             <span className="rule-gold" />
           </div>
           <h2 className="mt-10 text-primary-foreground text-[clamp(2.5rem,6vw,5rem)] font-light leading-[1.05] tracking-tight max-w-[16ch] mx-auto">
             Planejamento migratório para objetivos de longo prazo.
           </h2>
           <p className="mt-10 text-lg leading-[1.8] text-primary-foreground/75 max-w-2xl mx-auto">
-            Iniciar uma conversa institucional com a Linhares Law é o primeiro passo para construir uma estratégia jurídica sólida — orientada por advogados americanos e fundamentada nos seus objetivos profissionais, patrimoniais e familiares.
+            Iniciar uma conversa institucional com a Linhares Law é o primeiro passo para construir uma estratégia jurídica sólida — orientada por advogados americanos e alinhada aos seus objetivos profissionais, patrimoniais e familiares.
           </p>
           <div className="mt-12 flex justify-center">
             <InstitutionalButton
