@@ -413,19 +413,19 @@ function ThoughtLeadershipSection() {
           <div className="lg:col-span-5">
             <div className="flex items-center gap-4">
               <span className="rule-gold" />
-              <span className="eyebrow eyebrow-on-dark">Thought Leadership</span>
+              <span className="eyebrow eyebrow-on-dark">Reconhecimento Institucional</span>
             </div>
             <h2 className="mt-7 text-balance text-primary-foreground max-w-[18ch]">
-              Reconhecimento que nasce da experiência.
+              Autoridade construída pela prática.
             </h2>
             <p className="mt-8 text-lg leading-[1.8] text-primary-foreground/75 max-w-xl">
-              André Linhares é convidado a palestrar, conceder entrevistas e participar de painéis institucionais como consequência da profundidade técnica de sua prática em imigração americana — não o contrário.
+              Dr. André Linhares é convidado a proferir palestras, conceder entrevistas e integrar painéis institucionais como consequência da profundidade técnica de sua atuação em imigração americana — e não o contrário.
             </p>
             <div className="mt-10 space-y-6 border-t border-primary-foreground/15 pt-8">
               {[
-                { k: "Speaking", v: "Palestras para empresários, profissionais e investidores internacionais." },
-                { k: "Media", v: "Entrevistas e contribuições editoriais em veículos qualificados." },
-                { k: "Industry", v: "Participação em painéis e eventos especializados." },
+                { k: "Palestras", v: "Conferências para empresários, profissionais e investidores internacionais." },
+                { k: "Imprensa", v: "Entrevistas e contribuições editoriais em veículos qualificados." },
+                { k: "Setor", v: "Participação em painéis e eventos especializados em imigração americana." },
               ].map((b) => (
                 <div key={b.k} className="grid grid-cols-12 gap-4">
                   <div className="col-span-4 text-[11px] uppercase tracking-[0.28em] text-gold pt-1">{b.k}</div>
