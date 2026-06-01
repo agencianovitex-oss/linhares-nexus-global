@@ -526,10 +526,10 @@ function CultureSection() {
 
 function OfficesSection() {
   const offices = [
-    { city: "Orlando", state: "Florida", role: "Headquarters", coord: "28.5° N · 81.3° W" },
-    { city: "Miami", state: "Florida", role: "Regional Office", coord: "25.7° N · 80.1° W" },
-    { city: "New York", state: "New York", role: "Regional Office", coord: "40.7° N · 74.0° W" },
-    { city: "Salt Lake City", state: "Utah", role: "Regional Office", coord: "40.7° N · 111.8° W" },
+    { city: "Orlando", state: "Florida", role: "Sede", coord: "28.5° N · 81.3° W" },
+    { city: "Miami", state: "Florida", role: "Escritório Regional", coord: "25.7° N · 80.1° W" },
+    { city: "New York", state: "New York", role: "Escritório Regional", coord: "40.7° N · 74.0° W" },
+    { city: "Salt Lake City", state: "Utah", role: "Escritório Regional", coord: "40.7° N · 111.8° W" },
   ];
   return (
     <section className="section-y-lg bg-surface">
