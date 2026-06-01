@@ -181,7 +181,7 @@ function AwardsSection() {
               <div>
                 <div className="text-[10.5px] uppercase tracking-[0.3em] text-gold">International Business Institute</div>
                 <div className="mt-4 text-xl lg:text-2xl font-light text-primary-foreground tracking-tight max-w-[22ch]">
-                  Distinção internacional em práticas de excelência jurídica.
+                  Distinção internacional por excelência na prática jurídica.
                 </div>
               </div>
               <div className="mt-6 text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/55">
