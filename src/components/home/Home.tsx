@@ -25,14 +25,14 @@ function HeroSection() {
             <div className="flex items-center gap-4">
               <span className="rule-gold" />
               <span className="eyebrow eyebrow-on-dark">
-                Linhares Law · U.S. Immigration Law Firm
+                Linhares Law · Escritório de Advocacia de Imigração Americana
               </span>
             </div>
             <h1 className="mt-8 text-balance text-primary-foreground max-w-[18ch]">
-              Direito de Imigração Americano para profissionais, executivos, investidores e famílias.
+              Advogados de imigração americana para profissionais, executivos, investidores e famílias.
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-[1.8] text-primary-foreground/75">
-              Representação jurídica estratégica perante as autoridades federais de imigração dos Estados Unidos. Conduzimos cada caso com rigor técnico, discrição e visão de longo prazo.
+              Representação jurídica estratégica perante as autoridades federais de imigração dos Estados Unidos. Conduzimos cada caso com profundidade técnica, discrição e visão de longo prazo.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <InstitutionalButton
@@ -43,7 +43,7 @@ function HeroSection() {
                 Agendar Consulta
               </InstitutionalButton>
               <InstitutionalButton to="/servicos" variant="onDark">
-                Estratégias Migratórias
+                Conhecer nossas estratégias
               </InstitutionalButton>
             </div>
           </div>
@@ -62,7 +62,7 @@ function HeroSection() {
                 <div>
                   <div className="text-base font-light text-primary-foreground tracking-tight">Dr. André Linhares</div>
                   <div className="mt-1 text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/55">
-                    Founding Attorney
+                    Advogado Fundador
                   </div>
                 </div>
                 <div className="text-[10.5px] uppercase tracking-[0.28em] text-gold">USA</div>
@@ -75,7 +75,7 @@ function HeroSection() {
           {[
             { k: "14+", l: "Anos de prática jurídica" },
             { k: "04", l: "Escritórios nos Estados Unidos" },
-            { k: "USA", l: "Firma de advocacia licenciada" },
+            { k: "USA", l: "Escritório de advocacia licenciado nos EUA" },
             { k: "Global", l: "Clientes em três continentes" },
           ].map((it) => (
             <div key={it.l}>
@@ -115,10 +115,10 @@ function AuthoritySection() {
               <span className="eyebrow">Nossa Prática</span>
             </div>
             <h2 className="mt-7 text-balance text-primary max-w-[20ch]">
-              Representando profissionais, investidores e famílias em estratégias migratórias para os Estados Unidos.
+              Representando profissionais, investidores e famílias em estratégias de imigração para os Estados Unidos.
             </h2>
             <p className="mt-8 text-lg leading-[1.8] text-ink-soft max-w-xl">
-              A Linhares Law atua exclusivamente em direito de imigração americana. Cada estratégia é construída a partir de uma leitura técnica precisa do perfil profissional, patrimonial e familiar do cliente — sustentada pela autoridade institucional de uma firma reconhecida nos Estados Unidos.
+              A Linhares Law atua exclusivamente em direito de imigração americana. Cada estratégia é construída a partir de uma leitura técnica precisa do perfil profissional, patrimonial e familiar do cliente — sustentada pela autoridade institucional de um escritório de advocacia reconhecido nos Estados Unidos.
             </p>
             <p className="mt-6 text-lg leading-[1.8] text-ink-soft max-w-xl">
               Nossa atuação é pautada por discrição, profundidade técnica e relacionamento de longo prazo com cada cliente representado.
@@ -162,7 +162,7 @@ function AwardsSection() {
           </div>
           <div className="lg:col-span-5">
             <p className="text-lg leading-[1.8] text-primary-foreground/75">
-              Premiações nacionais e internacionais que refletem consistência técnica, ética profissional e padrão de atendimento.
+              Premiações nacionais e internacionais que refletem consistência técnica, postura ética e padrão de atendimento.
             </p>
           </div>
         </div>
@@ -181,7 +181,7 @@ function AwardsSection() {
               <div>
                 <div className="text-[10.5px] uppercase tracking-[0.3em] text-gold">International Business Institute</div>
                 <div className="mt-4 text-xl lg:text-2xl font-light text-primary-foreground tracking-tight max-w-[22ch]">
-                  Distinção internacional em práticas de excelência jurídica.
+                  Distinção internacional por excelência na prática jurídica.
                 </div>
               </div>
               <div className="mt-6 text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/55">
@@ -239,12 +239,12 @@ function AwardsSection() {
 /* ------------------------------------------------------------------ */
 
 const strategies = [
-  { slug: "eb2-niw", code: "EB-2 NIW", title: "National Interest Waiver", profile: "Profissionais qualificados", desc: "Para profissionais cuja atuação represente interesse nacional dos Estados Unidos — sem necessidade de oferta de emprego.", featured: true },
-  { slug: "eb1", code: "EB-1", title: "Extraordinary Ability", profile: "Pesquisadores · Executivos", desc: "Residência permanente para indivíduos com habilidades extraordinárias, pesquisadores de destaque e executivos multinacionais." },
-  { slug: "e2", code: "E-2", title: "Treaty Investor", profile: "Investidores · Empresários", desc: "Para investidores que estabelecem ou adquirem negócios substanciais nos Estados Unidos." },
-  { slug: "l1", code: "L-1", title: "Intracompany Transferee", profile: "Executivos · Gestores", desc: "Transferência de executivos, gestores e profissionais com conhecimento especializado entre empresas multinacionais." },
-  { slug: "o1", code: "O-1", title: "Extraordinary Ability", profile: "Talentos de destaque", desc: "Para indivíduos com reconhecimento sustentado nacional ou internacional em suas áreas de atuação." },
-  { slug: "eb5", code: "EB-5", title: "Immigrant Investor", profile: "Investidores qualificados", desc: "Residência permanente por meio de investimento substancial em empreendimento gerador de empregos nos Estados Unidos." },
+  { slug: "eb2-niw", code: "EB-2 NIW", title: "Dispensa por Interesse Nacional", profile: "Profissionais qualificados", desc: "Para profissionais cuja atuação represente interesse nacional dos Estados Unidos — sem necessidade de oferta de emprego.", featured: true },
+  { slug: "eb1", code: "EB-1", title: "Habilidade Extraordinária", profile: "Pesquisadores · Executivos", desc: "Residência permanente para profissionais com habilidades extraordinárias, pesquisadores de destaque e executivos multinacionais." },
+  { slug: "e2", code: "E-2", title: "Investidor por Tratado Comercial", profile: "Investidores · Empresários", desc: "Para investidores que estabelecem ou adquirem negócios substanciais nos Estados Unidos." },
+  { slug: "l1", code: "L-1", title: "Transferência entre Empresas", profile: "Executivos · Gestores", desc: "Transferência de executivos, gestores e profissionais com conhecimento especializado entre empresas multinacionais." },
+  { slug: "o1", code: "O-1", title: "Profissionais com Habilidade Extraordinária", profile: "Talentos de destaque", desc: "Para profissionais com reconhecimento sustentado, nacional ou internacional, em suas áreas de atuação." },
+  { slug: "eb5", code: "EB-5", title: "Investidor Imigrante", profile: "Investidores qualificados", desc: "Residência permanente por meio de investimento substancial em empreendimento gerador de empregos nos Estados Unidos." },
 ];
 
 function ServicesSection() {
@@ -256,7 +256,7 @@ function ServicesSection() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
           <SectionTitle
             eyebrow="Áreas de Atuação"
-            title="Pathways estratégicos para diferentes perfis internacionais."
+            title="Estratégias jurídicas para diferentes perfis internacionais."
             description="Cada categoria de visto exige uma leitura jurídica precisa. Definimos a estratégia adequada ao perfil profissional, patrimonial e familiar de cada cliente."
           />
           <InstitutionalButton to="/servicos" variant="outline">
@@ -331,16 +331,16 @@ function LeadershipSection() {
     {
       slug: "andre-linhares",
       name: "Dr. André Linhares",
-      role: "Founding Attorney",
-      cred: "U.S. Immigration · Founder",
+      role: "Advogado Fundador",
+      cred: "Imigração Americana · Fundador",
       img: andre5,
       bio: "Fundador da Linhares Law e autoridade reconhecida em direito de imigração americana. Há mais de 14 anos representando profissionais, executivos, investidores e famílias internacionais.",
     },
     {
       slug: "nicholas-perry",
       name: "Nicholas Perry, Esq.",
-      role: "Senior Immigration Attorney",
-      cred: "U.S. Immigration Counsel",
+      role: "Advogado Sênior de Imigração",
+      cred: "Advogado de Imigração",
       img: nicholas3,
       bio: "Advogado de imigração com formação americana e atuação dedicada à elaboração e defesa de petições de visto perante as autoridades federais.",
     },
@@ -351,7 +351,7 @@ function LeadershipSection() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
           <SectionTitle
             eyebrow="Liderança Jurídica"
-            title="Advogados que sustentam a autoridade da firma."
+            title="Advogados que sustentam a autoridade do escritório."
             description="Sob a liderança de Dr. André Linhares, a equipe da Linhares Law reúne advogados dedicados exclusivamente à representação jurídica em imigração americana."
           />
           <InstitutionalButton to="/equipe" variant="outline">
@@ -413,19 +413,19 @@ function ThoughtLeadershipSection() {
           <div className="lg:col-span-5">
             <div className="flex items-center gap-4">
               <span className="rule-gold" />
-              <span className="eyebrow eyebrow-on-dark">Thought Leadership</span>
+              <span className="eyebrow eyebrow-on-dark">Reconhecimento Institucional</span>
             </div>
             <h2 className="mt-7 text-balance text-primary-foreground max-w-[18ch]">
-              Reconhecimento que nasce da experiência.
+              Autoridade construída pela prática.
             </h2>
             <p className="mt-8 text-lg leading-[1.8] text-primary-foreground/75 max-w-xl">
-              André Linhares é convidado a palestrar, conceder entrevistas e participar de painéis institucionais como consequência da profundidade técnica de sua prática em imigração americana — não o contrário.
+              Dr. André Linhares é convidado a proferir palestras, conceder entrevistas e integrar painéis institucionais como consequência da profundidade técnica de sua atuação em imigração americana — e não o contrário.
             </p>
             <div className="mt-10 space-y-6 border-t border-primary-foreground/15 pt-8">
               {[
-                { k: "Speaking", v: "Palestras para empresários, profissionais e investidores internacionais." },
-                { k: "Media", v: "Entrevistas e contribuições editoriais em veículos qualificados." },
-                { k: "Industry", v: "Participação em painéis e eventos especializados." },
+                { k: "Palestras", v: "Conferências para empresários, profissionais e investidores internacionais." },
+                { k: "Imprensa", v: "Entrevistas e contribuições editoriais em veículos qualificados." },
+                { k: "Setor", v: "Participação em painéis e eventos especializados em imigração americana." },
               ].map((b) => (
                 <div key={b.k} className="grid grid-cols-12 gap-4">
                   <div className="col-span-4 text-[11px] uppercase tracking-[0.28em] text-gold pt-1">{b.k}</div>
@@ -500,7 +500,7 @@ function CultureSection() {
               <div className="bg-surface p-10">
                 <dt className="text-5xl lg:text-6xl font-light text-primary tracking-tight">100%</dt>
                 <dd className="mt-5 text-sm leading-[1.7] text-ink-soft max-w-[26ch]">
-                  dos colaboradores se sentiram bem-vindos ao ingressar na firma.
+                  dos colaboradores se sentiram bem-vindos ao ingressar no escritório.
                 </dd>
               </div>
               <div className="bg-surface p-10">
@@ -526,10 +526,10 @@ function CultureSection() {
 
 function OfficesSection() {
   const offices = [
-    { city: "Orlando", state: "Florida", role: "Headquarters", coord: "28.5° N · 81.3° W" },
-    { city: "Miami", state: "Florida", role: "Regional Office", coord: "25.7° N · 80.1° W" },
-    { city: "New York", state: "New York", role: "Regional Office", coord: "40.7° N · 74.0° W" },
-    { city: "Salt Lake City", state: "Utah", role: "Regional Office", coord: "40.7° N · 111.8° W" },
+    { city: "Orlando", state: "Florida", role: "Sede", coord: "28.5° N · 81.3° W" },
+    { city: "Miami", state: "Florida", role: "Escritório Regional", coord: "25.7° N · 80.1° W" },
+    { city: "New York", state: "New York", role: "Escritório Regional", coord: "40.7° N · 74.0° W" },
+    { city: "Salt Lake City", state: "Utah", role: "Escritório Regional", coord: "40.7° N · 111.8° W" },
   ];
   return (
     <section className="section-y-lg bg-surface">
@@ -655,14 +655,14 @@ function FinalCTA() {
         <div className="text-center">
           <div className="flex items-center justify-center gap-4">
             <span className="rule-gold" />
-            <span className="eyebrow eyebrow-on-dark">Strategic Immigration Counsel</span>
+            <span className="eyebrow eyebrow-on-dark">Planejamento Migratório Estratégico</span>
             <span className="rule-gold" />
           </div>
           <h2 className="mt-10 text-primary-foreground text-[clamp(2.5rem,6vw,5rem)] font-light leading-[1.05] tracking-tight max-w-[16ch] mx-auto">
             Planejamento migratório para objetivos de longo prazo.
           </h2>
           <p className="mt-10 text-lg leading-[1.8] text-primary-foreground/75 max-w-2xl mx-auto">
-            Iniciar uma conversa institucional com a Linhares Law é o primeiro passo para construir uma estratégia jurídica sólida — orientada por advogados americanos e fundamentada nos seus objetivos profissionais, patrimoniais e familiares.
+            Iniciar uma conversa institucional com a Linhares Law é o primeiro passo para construir uma estratégia jurídica sólida — orientada por advogados americanos e alinhada aos seus objetivos profissionais, patrimoniais e familiares.
           </p>
           <div className="mt-12 flex justify-center">
             <InstitutionalButton
