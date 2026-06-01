@@ -19,17 +19,17 @@ export const dict = {
   pt: {
     brand: "Linhares Law",
     slogan: "A Hora é Agora.",
-    tagline: "U.S. Immigration · Boutique Practice",
+    tagline: "Imigração Americana · Escritório de Advocacia",
     cta: "Agendar Consulta",
     comingSoon: "Em preparação",
     comingSoonBody:
       "Esta seção do nosso site institucional está em curadoria final. Em breve publicaremos o conteúdo completo.",
     nav: {
       about: "Quem Somos",
-      services: "Serviços",
+      services: "Áreas de Atuação",
       team: "Equipe",
-      awards: "Premiações",
-      media: "Na Mídia",
+      awards: "Reconhecimentos",
+      media: "Na Imprensa",
       success: "Casos de Sucesso",
       blog: "Publicações",
       contact: "Contato",
@@ -37,7 +37,7 @@ export const dict = {
     },
     footer: {
       about:
-        "Linhares Law é um escritório boutique de imigração americana dedicado a profissionais, executivos, investidores e famílias internacionais.",
+        "A Linhares Law é um escritório de advocacia dedicado exclusivamente à imigração americana, representando profissionais, executivos, investidores e famílias internacionais.",
       navigation: "Navegação",
       offices: "Escritórios",
       contact: "Contato",
