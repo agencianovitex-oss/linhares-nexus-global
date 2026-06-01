@@ -51,7 +51,7 @@ function HeroSection() {
           <div className="lg:col-span-5 order-1 lg:order-2">
             <div className="relative">
               <span className="absolute -top-3 left-0 h-px w-16 bg-gold" />
-              <div className="aspect-[4/5] w-full overflow-hidden bg-primary-foreground/5">
+              <div className="editorial-frame aspect-[4/5] w-full">
                 <img
                   src={andre6}
                   alt="Dr. André Linhares — Founding Attorney, Linhares Law"
@@ -101,7 +101,7 @@ function AuthoritySection() {
       <Container>
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-20 items-center">
           <div className="lg:col-span-6">
-            <div className="aspect-[4/5] w-full overflow-hidden bg-surface-2">
+            <div className="editorial-frame aspect-[4/5] w-full">
               <img
                 src={andre5}
                 alt="Dr. André Linhares"
@@ -170,7 +170,7 @@ function AwardsSection() {
         <div className="mt-16 grid gap-px bg-primary-foreground/10 border border-primary-foreground/10 lg:grid-cols-12">
           {/* Main editorial visual */}
           <div className="lg:col-span-7 bg-primary">
-            <div className="aspect-[4/5] lg:aspect-[5/6] w-full overflow-hidden">
+            <div className="editorial-frame aspect-[4/5] lg:aspect-[5/6] w-full">
               <img src={ibi3} alt="International Business Institute — Award Ceremony" className="h-full w-full object-cover" />
             </div>
           </div>
@@ -190,7 +190,7 @@ function AwardsSection() {
             </div>
 
             <div className="bg-primary p-8 lg:p-10 flex items-center gap-6">
-              <div className="w-24 h-32 shrink-0 overflow-hidden bg-primary-foreground/5">
+              <div className="editorial-frame w-24 h-32 shrink-0">
                 <img src={tenBest} alt="10 Best Law Firms — American Institute of Legal Counsel" className="h-full w-full object-cover object-center" />
               </div>
               <div>
@@ -205,7 +205,7 @@ function AwardsSection() {
             </div>
 
             <div className="bg-primary p-8 lg:p-10 flex items-center gap-6">
-              <div className="w-28 h-20 shrink-0 overflow-hidden bg-primary-foreground/5">
+              <div className="editorial-frame w-28 h-20 shrink-0">
                 <img src={lawAwards} alt="The Law Awards 2024" className="h-full w-full object-cover" />
               </div>
               <div>
@@ -268,7 +268,7 @@ function ServicesSection() {
           <Link
             to="/servicos/$slug"
             params={{ slug: featured.slug }}
-            className="group relative bg-primary text-primary-foreground p-10 lg:p-14 lg:col-span-2 lg:row-span-2 flex flex-col justify-between min-h-[460px] overflow-hidden"
+            className="group editorial-card relative bg-primary text-primary-foreground p-10 lg:p-14 lg:col-span-2 lg:row-span-2 flex flex-col justify-between min-h-[460px] overflow-hidden"
           >
             <span className="absolute top-0 left-0 h-px w-24 bg-gold" />
             <div>
@@ -299,7 +299,7 @@ function ServicesSection() {
               key={v.slug}
               to="/servicos/$slug"
               params={{ slug: v.slug }}
-              className="group bg-background p-8 lg:p-10 flex flex-col justify-between min-h-[240px] transition-colors hover:bg-surface-2"
+              className="group editorial-card bg-background p-8 lg:p-10 flex flex-col justify-between min-h-[240px] hover:bg-surface-2"
             >
               <div>
                 <div className="text-[12px] uppercase tracking-[0.3em] text-gold">{v.code}</div>
@@ -365,15 +365,15 @@ function LeadershipSection() {
               key={a.slug}
               to="/equipe/$slug"
               params={{ slug: a.slug }}
-              className="group block bg-background"
+              className="group editorial-card block bg-background"
             >
               <div className="grid grid-cols-12 gap-0">
                 <div className="col-span-12 sm:col-span-7">
-                  <div className="aspect-[4/5] w-full overflow-hidden bg-surface-2">
+                  <div className="editorial-frame aspect-[4/5] w-full">
                     <img
                       src={a.img}
                       alt={a.name}
-                      className="h-full w-full object-cover object-top transition-transform duration-[1400ms] ease-out group-hover:scale-[1.03]"
+                      className="h-full w-full object-cover object-top"
                     />
                   </div>
                 </div>
@@ -438,7 +438,7 @@ function ThoughtLeadershipSection() {
           <div className="lg:col-span-7">
             <div className="grid grid-cols-12 gap-3 lg:gap-4">
               <div className="col-span-12">
-                <div className="aspect-[16/10] w-full overflow-hidden bg-primary-foreground/5">
+                <div className="editorial-frame aspect-[16/10] w-full">
                   <img src={andreSpeaking} alt="André Linhares · The Next Chapter — Vistos Imigratórios" className="h-full w-full object-cover" />
                 </div>
                 <div className="mt-4 flex items-center gap-4">
@@ -449,7 +449,7 @@ function ThoughtLeadershipSection() {
                 </div>
               </div>
               <div className="col-span-12 mt-4">
-                <div className="aspect-[16/10] w-full overflow-hidden bg-primary-foreground/5">
+                <div className="editorial-frame aspect-[16/10] w-full">
                   <img src={eventoImigracao} alt="Painel institucional · Dois Caminhos na Imigração Americana" className="h-full w-full object-cover" />
                 </div>
                 <div className="mt-4 flex items-center gap-4">
@@ -550,7 +550,7 @@ function OfficesSection() {
             <Link
               key={o.city}
               to="/escritorios"
-              className="group bg-background p-8 lg:p-10 min-h-[260px] flex flex-col justify-between transition-colors hover:bg-surface-2"
+              className="group editorial-card bg-background p-8 lg:p-10 min-h-[260px] flex flex-col justify-between hover:bg-surface-2"
             >
               <div>
                 <div className="flex items-center justify-between">
@@ -620,7 +620,7 @@ function PublicationsSection() {
             <Link
               key={i}
               to="/blog"
-              className="group bg-background p-10 flex flex-col justify-between min-h-[320px] transition-colors hover:bg-surface"
+              className="group editorial-card bg-background p-10 flex flex-col justify-between min-h-[320px] hover:bg-surface"
             >
               <div>
                 <div className="text-[10.5px] uppercase tracking-[0.3em] text-gold">{p.cat}</div>
