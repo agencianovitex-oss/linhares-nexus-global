@@ -364,9 +364,13 @@ function FounderSection() {
             </dl>
 
             <div className="mt-12">
-              <InstitutionalButton to="/equipe/$slug" params={{ slug: "andre-linhares" }} variant="outline">
+              <Link
+                to="/equipe/$slug"
+                params={{ slug: "andre-linhares" }}
+                className="inline-flex items-center justify-center px-7 py-3.5 text-[11px] font-semibold tracking-[0.22em] uppercase transition-colors duration-200 border border-primary text-primary hover:border-gold hover:text-gold"
+              >
                 Conhecer trajetória completa
-              </InstitutionalButton>
+              </Link>
             </div>
           </div>
         </div>
