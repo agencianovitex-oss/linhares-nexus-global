@@ -115,7 +115,7 @@ export const Route = createFileRoute("/_site/equipe/$slug")({
 });
 
 function AttorneyPage() {
-  const p = Route.useLoaderData();
+  const p = Route.useLoaderData() as AttorneyProfile;
   return (
     <>
       <InstitutionalHero
