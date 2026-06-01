@@ -13,7 +13,7 @@
 @theme inline {
   --font-sans: "Montserrat", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-display: "Montserrat", Georgia, serif;
+  --font-display: "Cormorant Garamond", "Times New Roman", Georgia, serif;
 
   --radius-sm: 0;
   --radius-md: var(--radius);
