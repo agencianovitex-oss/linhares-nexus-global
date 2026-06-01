@@ -62,7 +62,7 @@ function HeroSection() {
                 <div>
                   <div className="text-base font-light text-primary-foreground tracking-tight">Dr. André Linhares</div>
                   <div className="mt-1 text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/55">
-                    Founding Attorney
+                    Advogado Fundador
                   </div>
                 </div>
                 <div className="text-[10.5px] uppercase tracking-[0.28em] text-gold">USA</div>
