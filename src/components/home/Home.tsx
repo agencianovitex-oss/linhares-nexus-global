@@ -331,16 +331,16 @@ function LeadershipSection() {
     {
       slug: "andre-linhares",
       name: "Dr. André Linhares",
-      role: "Founding Attorney",
-      cred: "U.S. Immigration · Founder",
+      role: "Advogado Fundador",
+      cred: "Imigração Americana · Fundador",
       img: andre5,
       bio: "Fundador da Linhares Law e autoridade reconhecida em direito de imigração americana. Há mais de 14 anos representando profissionais, executivos, investidores e famílias internacionais.",
     },
     {
       slug: "nicholas-perry",
       name: "Nicholas Perry, Esq.",
-      role: "Senior Immigration Attorney",
-      cred: "U.S. Immigration Counsel",
+      role: "Advogado Sênior de Imigração",
+      cred: "Advogado de Imigração",
       img: nicholas3,
       bio: "Advogado de imigração com formação americana e atuação dedicada à elaboração e defesa de petições de visto perante as autoridades federais.",
     },
@@ -351,7 +351,7 @@ function LeadershipSection() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
           <SectionTitle
             eyebrow="Liderança Jurídica"
-            title="Advogados que sustentam a autoridade da firma."
+            title="Advogados que sustentam a autoridade do escritório."
             description="Sob a liderança de Dr. André Linhares, a equipe da Linhares Law reúne advogados dedicados exclusivamente à representação jurídica em imigração americana."
           />
           <InstitutionalButton to="/equipe" variant="outline">
