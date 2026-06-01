@@ -115,10 +115,10 @@ function AuthoritySection() {
               <span className="eyebrow">Nossa Prática</span>
             </div>
             <h2 className="mt-7 text-balance text-primary max-w-[20ch]">
-              Representando profissionais, investidores e famílias em estratégias migratórias para os Estados Unidos.
+              Representando profissionais, investidores e famílias em estratégias de imigração para os Estados Unidos.
             </h2>
             <p className="mt-8 text-lg leading-[1.8] text-ink-soft max-w-xl">
-              A Linhares Law atua exclusivamente em direito de imigração americana. Cada estratégia é construída a partir de uma leitura técnica precisa do perfil profissional, patrimonial e familiar do cliente — sustentada pela autoridade institucional de uma firma reconhecida nos Estados Unidos.
+              A Linhares Law atua exclusivamente em direito de imigração americana. Cada estratégia é construída a partir de uma leitura técnica precisa do perfil profissional, patrimonial e familiar do cliente — sustentada pela autoridade institucional de um escritório de advocacia reconhecido nos Estados Unidos.
             </p>
             <p className="mt-6 text-lg leading-[1.8] text-ink-soft max-w-xl">
               Nossa atuação é pautada por discrição, profundidade técnica e relacionamento de longo prazo com cada cliente representado.
