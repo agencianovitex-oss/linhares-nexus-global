@@ -162,7 +162,7 @@ function AwardsSection() {
           </div>
           <div className="lg:col-span-5">
             <p className="text-lg leading-[1.8] text-primary-foreground/75">
-              Premiações nacionais e internacionais que refletem consistência técnica, ética profissional e padrão de atendimento.
+              Premiações nacionais e internacionais que refletem consistência técnica, postura ética e padrão de atendimento.
             </p>
           </div>
         </div>
