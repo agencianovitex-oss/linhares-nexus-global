@@ -7,7 +7,7 @@ const L = "en" as const;
 
 export const Route = createFileRoute("/_site/en/servicos/$slug")({
   beforeLoad: ({ params }) => notFoundIfInvalid(params.slug),
-  head: ({ params }) => visaHead(L, params.slug as never),
+  head: ({ params }) => visaHead(L, params.slug),
   component: function Page() {
     const { slug } = Route.useParams();
     notFoundIfInvalid(slug);
