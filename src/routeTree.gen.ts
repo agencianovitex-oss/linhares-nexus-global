@@ -22,7 +22,6 @@ import { Route as SiteBlogRouteImport } from './routes/_site.blog'
 import { Route as SiteAreasDeAtuacaoRouteImport } from './routes/_site.areas-de-atuacao'
 import { Route as SiteEsIndexRouteImport } from './routes/_site.es.index'
 import { Route as SiteEnIndexRouteImport } from './routes/_site.en.index'
-import { Route as SiteServicosSlugRouteImport } from './routes/_site.servicos.$slug'
 import { Route as SiteEsServicosRouteImport } from './routes/_site.es.servicos'
 import { Route as SiteEsQuemSomosRouteImport } from './routes/_site.es.quem-somos'
 import { Route as SiteEsPremiacoesRouteImport } from './routes/_site.es.premiacoes'
@@ -113,11 +112,6 @@ const SiteEsIndexRoute = SiteEsIndexRouteImport.update({
 const SiteEnIndexRoute = SiteEnIndexRouteImport.update({
   id: '/en/',
   path: '/en/',
-  getParentRoute: () => SiteRoute,
-} as any)
-const SiteServicosSlugRoute = SiteServicosSlugRouteImport.update({
-  id: '/servicos/$slug',
-  path: '/servicos/$slug',
   getParentRoute: () => SiteRoute,
 } as any)
 const SiteEsServicosRoute = SiteEsServicosRouteImport.update({
@@ -288,7 +282,6 @@ export interface FileRoutesByFullPath {
   '/es/premiacoes': typeof SiteEsPremiacoesRoute
   '/es/quem-somos': typeof SiteEsQuemSomosRoute
   '/es/servicos': typeof SiteEsServicosRouteWithChildren
-  '/servicos/$slug': typeof SiteServicosSlugRoute
   '/en/': typeof SiteEnIndexRoute
   '/es/': typeof SiteEsIndexRoute
   '/en/blog/$slug': typeof SiteEnBlogSlugRoute
@@ -330,7 +323,6 @@ export interface FileRoutesByTo {
   '/es/premiacoes': typeof SiteEsPremiacoesRoute
   '/es/quem-somos': typeof SiteEsQuemSomosRoute
   '/es/servicos': typeof SiteEsServicosRouteWithChildren
-  '/servicos/$slug': typeof SiteServicosSlugRoute
   '/en': typeof SiteEnIndexRoute
   '/es': typeof SiteEsIndexRoute
   '/en/blog/$slug': typeof SiteEnBlogSlugRoute
@@ -374,7 +366,6 @@ export interface FileRoutesById {
   '/_site/es/premiacoes': typeof SiteEsPremiacoesRoute
   '/_site/es/quem-somos': typeof SiteEsQuemSomosRoute
   '/_site/es/servicos': typeof SiteEsServicosRouteWithChildren
-  '/_site/servicos/$slug': typeof SiteServicosSlugRoute
   '/_site/en/': typeof SiteEnIndexRoute
   '/_site/es/': typeof SiteEsIndexRoute
   '/_site/en/blog/$slug': typeof SiteEnBlogSlugRoute
@@ -418,7 +409,6 @@ export interface FileRouteTypes {
     | '/es/premiacoes'
     | '/es/quem-somos'
     | '/es/servicos'
-    | '/servicos/$slug'
     | '/en/'
     | '/es/'
     | '/en/blog/$slug'
@@ -460,7 +450,6 @@ export interface FileRouteTypes {
     | '/es/premiacoes'
     | '/es/quem-somos'
     | '/es/servicos'
-    | '/servicos/$slug'
     | '/en'
     | '/es'
     | '/en/blog/$slug'
@@ -503,7 +492,6 @@ export interface FileRouteTypes {
     | '/_site/es/premiacoes'
     | '/_site/es/quem-somos'
     | '/_site/es/servicos'
-    | '/_site/servicos/$slug'
     | '/_site/en/'
     | '/_site/es/'
     | '/_site/en/blog/$slug'
@@ -609,13 +597,6 @@ declare module '@tanstack/react-router' {
       path: '/en'
       fullPath: '/en/'
       preLoaderRoute: typeof SiteEnIndexRouteImport
-      parentRoute: typeof SiteRoute
-    }
-    '/_site/servicos/$slug': {
-      id: '/_site/servicos/$slug'
-      path: '/servicos/$slug'
-      fullPath: '/servicos/$slug'
-      preLoaderRoute: typeof SiteServicosSlugRouteImport
       parentRoute: typeof SiteRoute
     }
     '/_site/es/servicos': {
@@ -946,7 +927,6 @@ interface SiteRouteChildren {
   SiteEsPremiacoesRoute: typeof SiteEsPremiacoesRoute
   SiteEsQuemSomosRoute: typeof SiteEsQuemSomosRoute
   SiteEsServicosRoute: typeof SiteEsServicosRouteWithChildren
-  SiteServicosSlugRoute: typeof SiteServicosSlugRoute
   SiteEnIndexRoute: typeof SiteEnIndexRoute
   SiteEsIndexRoute: typeof SiteEsIndexRoute
 }
@@ -980,7 +960,6 @@ const SiteRouteChildren: SiteRouteChildren = {
   SiteEsPremiacoesRoute: SiteEsPremiacoesRoute,
   SiteEsQuemSomosRoute: SiteEsQuemSomosRoute,
   SiteEsServicosRoute: SiteEsServicosRouteWithChildren,
-  SiteServicosSlugRoute: SiteServicosSlugRoute,
   SiteEnIndexRoute: SiteEnIndexRoute,
   SiteEsIndexRoute: SiteEsIndexRoute,
 }
@@ -993,3 +972,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
