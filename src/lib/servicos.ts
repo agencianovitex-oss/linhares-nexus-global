@@ -29,19 +29,26 @@ export function hubHead(locale: Locale) {
   };
 }
 
-export function visaHead(locale: Locale, slug: VisaSlug) {
-  const v = VISAS[locale][slug];
-  const title = `${v.title} — Linhares Law`;
-  const description = v.tagline;
+export function visaHead(locale: Locale, rawSlug: string) {
+  if (!isVisaSlug(rawSlug)) {
+    return buildLocaleHead({
+      path: `/servicos/${rawSlug}`,
+      locale,
+      title: "Áreas de Atuação — Linhares Law",
+      description: "Estratégias jurídicas de imigração americana.",
+      noindex: true,
+    });
+  }
+  const v = VISAS[locale][rawSlug];
   const head = buildLocaleHead({
-    path: `/servicos/${slug}`,
+    path: `/servicos/${rawSlug}`,
     locale,
-    title,
-    description,
+    title: `${v.title} — Linhares Law`,
+    description: v.tagline,
     type: "article",
   });
   return {
     ...head,
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(buildVisaFaqSchema(locale, slug)) }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(buildVisaFaqSchema(locale, rawSlug)) }],
   };
 }
