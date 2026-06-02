@@ -5,6 +5,7 @@ import { SectionTitle } from "@/components/layout/SectionTitle";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { VISAS, VISA_ORDER, type VisaSlug } from "@/data/visas";
 import type { Locale } from "@/i18n/locales";
+import andreImg from "@/assets/andre-5.jpg";
 
 interface Props {
   locale: Locale;
@@ -22,13 +23,13 @@ export function VisaPage({ locale, slug, servicesHref, contactHref, visaHref }: 
     <>
       <InstitutionalHero
         eyebrow={`Áreas de Atuação · ${v.acronym}`}
-        title={v.title}
+        title={<>{v.title}<span className="block mt-4 font-display text-[clamp(1.5rem,2.6vw,2.5rem)] text-gold">{v.heroSubhead}</span></>}
         intro={v.tagline}
         meta={v.meta.map((m) => <span key={m}>{m}</span>)}
       >
         <div className="mt-12 flex flex-wrap gap-4">
           <InstitutionalButton to={contactHref}>Agendar Consulta</InstitutionalButton>
-          <InstitutionalButton to={servicesHref} variant="onDark">Ver Todas as Áreas</InstitutionalButton>
+          <InstitutionalButton to={servicesHref} variant="onDark">Ver todas as áreas</InstitutionalButton>
         </div>
       </InstitutionalHero>
 
@@ -71,6 +72,24 @@ export function VisaPage({ locale, slug, servicesHref, contactHref, visaHref }: 
         </div>
       </SectionBlock>
 
+      {/* Intermediate CTA */}
+      <SectionBlock tone="dark" size="default">
+        <div className="grid gap-10 lg:grid-cols-12 items-center">
+          <div className="lg:col-span-8">
+            <span className="rule-gold" />
+            <h3 className="mt-6 text-primary-foreground font-display text-3xl lg:text-4xl max-w-[24ch]">
+              Fale com nossa equipe sobre {v.acronym}.
+            </h3>
+            <p className="mt-5 text-primary-foreground/75 lead max-w-2xl">
+              Avalie com nossos advogados se {v.acronym} é a estratégia mais adequada à sua trajetória profissional e familiar.
+            </p>
+          </div>
+          <div className="lg:col-span-4 lg:text-right">
+            <InstitutionalButton to={contactHref} variant="onDark">Fale com nossa equipe</InstitutionalButton>
+          </div>
+        </div>
+      </SectionBlock>
+
       <SectionBlock>
         <SectionTitle eyebrow="Processo" title={v.process.title} />
         <ol className="mt-16 grid gap-px bg-border md:grid-cols-2 lg:grid-cols-3 border border-border">
@@ -105,10 +124,31 @@ export function VisaPage({ locale, slug, servicesHref, contactHref, visaHref }: 
         </SectionBlock>
       )}
 
+      {/* Institutional block — Dr. André Linhares */}
       <SectionBlock>
+        <div className="grid gap-14 lg:grid-cols-12 lg:gap-20 items-center">
+          <div className="lg:col-span-5">
+            <div className="editorial-frame aspect-[4/5] w-full">
+              <img src={andreImg} alt="Dr. André Linhares — Advogado Fundador" className="h-full w-full object-cover object-top" />
+            </div>
+          </div>
+          <div className="lg:col-span-7">
+            <span className="rule-gold" />
+            <p className="mt-8 font-display text-2xl lg:text-3xl leading-[1.35] text-primary max-w-[34ch]">
+              “A imigração é uma decisão estratégica. Cada trajetória exige uma análise individualizada e uma estrutura jurídica construída de acordo com os objetivos do cliente.”
+            </p>
+            <div className="mt-8 flex items-baseline gap-3">
+              <span className="text-base font-light text-primary tracking-tight">Dr. André Linhares</span>
+              <span className="text-[10.5px] uppercase tracking-[0.28em] text-muted-foreground">Advogado Fundador · Linhares Law</span>
+            </div>
+          </div>
+        </div>
+      </SectionBlock>
+
+      <SectionBlock tone="surface">
         <div className="grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <SectionTitle eyebrow="Perguntas Frequentes" title="Esclarecimentos institucionais." />
+            <SectionTitle eyebrow="Perguntas Frequentes" title={`Esclarecimentos sobre ${v.acronym}.`} />
           </div>
           <div className="lg:col-span-7 lg:col-start-6">
             <Accordion type="single" collapsible className="w-full">
@@ -125,7 +165,7 @@ export function VisaPage({ locale, slug, servicesHref, contactHref, visaHref }: 
         </div>
       </SectionBlock>
 
-      <SectionBlock tone="surface">
+      <SectionBlock>
         <SectionTitle eyebrow="Áreas Relacionadas" title="Outras estratégias migratórias." />
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {related.map((r) => {
@@ -134,7 +174,7 @@ export function VisaPage({ locale, slug, servicesHref, contactHref, visaHref }: 
               <Link key={r} to={visaHref(r)} className="block editorial-card">
                 <InstitutionalCard variant="light" className="h-full">
                   <span className="eyebrow">{rv.acronym}</span>
-                  <h3 className="mt-4 text-primary font-display text-2xl">{rv.title}</h3>
+                  <h3 className="mt-4 text-primary font-display text-2xl">{rv.heroSubhead}</h3>
                   <p className="mt-6 text-ink-soft leading-relaxed">{rv.tagline}</p>
                 </InstitutionalCard>
               </Link>
@@ -146,13 +186,13 @@ export function VisaPage({ locale, slug, servicesHref, contactHref, visaHref }: 
       <SectionBlock tone="dark">
         <div className="max-w-3xl">
           <span className="rule-gold" />
-          <h2 className="mt-8 text-primary-foreground">A Hora é Agora.</h2>
+          <h2 className="mt-8 text-primary-foreground">Agende uma consulta estratégica.</h2>
           <p className="mt-6 lead text-primary-foreground/80">
-            Avalie com nossa equipe se {v.acronym} é a estratégia adequada aos seus objetivos profissionais e familiares.
+            Inicie uma conversa institucional com nossos advogados e avalie se {v.acronym} é a estratégia adequada aos seus objetivos.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <InstitutionalButton to={contactHref}>Agendar Consulta</InstitutionalButton>
-            <InstitutionalButton to={servicesHref} variant="onDark">Comparar Áreas</InstitutionalButton>
+            <InstitutionalButton to={servicesHref} variant="onDark">Comparar áreas</InstitutionalButton>
           </div>
         </div>
       </SectionBlock>

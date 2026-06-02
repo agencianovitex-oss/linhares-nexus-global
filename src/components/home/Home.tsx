@@ -42,7 +42,7 @@ function HeroSection() {
               >
                 Agendar Consulta
               </InstitutionalButton>
-              <InstitutionalButton to="/servicos" variant="onDark">
+              <InstitutionalButton to="/areas-de-atuacao" variant="onDark">
                 Conhecer nossas estratégias
               </InstitutionalButton>
             </div>
@@ -259,14 +259,14 @@ function ServicesSection() {
             title="Estratégias jurídicas para diferentes perfis internacionais."
             description="Cada categoria de visto exige uma leitura jurídica precisa. Definimos a estratégia adequada ao perfil profissional, patrimonial e familiar de cada cliente."
           />
-          <InstitutionalButton to="/servicos" variant="outline">
+          <InstitutionalButton to="/areas-de-atuacao" variant="outline">
             Ver todas as estratégias
           </InstitutionalButton>
         </div>
 
         <div className="mt-16 grid gap-px bg-border lg:grid-cols-3 border border-border">
           <Link
-            to="/servicos/$slug"
+            to="/areas-de-atuacao/$slug"
             params={{ slug: featured.slug }}
             className="group editorial-card relative bg-primary text-primary-foreground p-10 lg:p-14 lg:col-span-2 lg:row-span-2 flex flex-col justify-between min-h-[460px] overflow-hidden"
           >
@@ -297,7 +297,7 @@ function ServicesSection() {
           {rest.map((v) => (
             <Link
               key={v.slug}
-              to="/servicos/$slug"
+              to="/areas-de-atuacao/$slug"
               params={{ slug: v.slug }}
               className="group editorial-card bg-background p-8 lg:p-10 flex flex-col justify-between min-h-[240px] hover:bg-surface-2"
             >

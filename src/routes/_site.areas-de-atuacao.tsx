@@ -5,7 +5,7 @@ import { withLocale } from "@/i18n/useI18n";
 
 const L = "pt" as const;
 
-export const Route = createFileRoute("/_site/servicos")({
+export const Route = createFileRoute("/_site/areas-de-atuacao")({
   head: () => hubHead(L),
   component: () => (
     <ServicesHub locale={L} contactHref={withLocale(L, "/contato")} visaHref={visaHrefFor(L)} />

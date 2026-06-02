@@ -6,12 +6,21 @@ import { withLocale } from "@/i18n/useI18n";
 import { buildHubFaqSchema } from "@/components/visa/ServicesHub";
 import { buildVisaFaqSchema } from "@/components/visa/VisaPage";
 
+/** Base path for the services hub per locale. PT uses /areas-de-atuacao; EN/ES keep /servicos. */
+export function servicesBase(locale: Locale): string {
+  return locale === "pt" ? "/areas-de-atuacao" : "/servicos";
+}
+
+export function servicesHref(locale: Locale): string {
+  return withLocale(locale, servicesBase(locale));
+}
+
 export function isVisaSlug(s: string): s is VisaSlug {
   return (VISA_ORDER as string[]).includes(s);
 }
 
 export function visaHrefFor(locale: Locale) {
-  return (slug: VisaSlug) => withLocale(locale, `/servicos/${slug}`);
+  return (slug: VisaSlug) => withLocale(locale, `${servicesBase(locale)}/${slug}`);
 }
 
 export function notFoundIfInvalid(slug: string): asserts slug is VisaSlug {
@@ -21,8 +30,8 @@ export function notFoundIfInvalid(slug: string): asserts slug is VisaSlug {
 export function hubHead(locale: Locale) {
   const title = "Áreas de Atuação — Linhares Law";
   const description =
-    "Estratégias jurídicas de imigração americana para profissionais, executivos, investidores e famílias. EB-2 NIW, EB-1, E-2, L-1, O-1, H-1B e EB-5.";
-  const head = buildLocaleHead({ path: "/servicos", locale, title, description });
+    "Estratégias migratórias para profissionais, empresários, investidores e famílias. EB-2 NIW, EB-1, E-2, L-1, O-1, H-1B e EB-5.";
+  const head = buildLocaleHead({ path: servicesBase(locale), locale, title, description });
   return {
     ...head,
     scripts: [{ type: "application/ld+json", children: JSON.stringify(buildHubFaqSchema()) }],
@@ -32,7 +41,7 @@ export function hubHead(locale: Locale) {
 export function visaHead(locale: Locale, rawSlug: string) {
   if (!isVisaSlug(rawSlug)) {
     return buildLocaleHead({
-      path: `/servicos/${rawSlug}`,
+      path: `${servicesBase(locale)}/${rawSlug}`,
       locale,
       title: "Áreas de Atuação — Linhares Law",
       description: "Estratégias jurídicas de imigração americana.",
@@ -41,10 +50,10 @@ export function visaHead(locale: Locale, rawSlug: string) {
   }
   const v = VISAS[locale][rawSlug];
   const head = buildLocaleHead({
-    path: `/servicos/${rawSlug}`,
+    path: `${servicesBase(locale)}/${rawSlug}`,
     locale,
-    title: `${v.title} — Linhares Law`,
-    description: v.tagline,
+    title: v.seoTitle,
+    description: v.seoDescription,
     type: "article",
   });
   return {

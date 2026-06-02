@@ -15,7 +15,7 @@ export function Footer() {
 
   const quick = [
     { label: t.nav.about, to: "/quem-somos" },
-    { label: t.nav.services, to: "/servicos" },
+    { label: t.nav.services, to: locale === "pt" ? "/areas-de-atuacao" : "/servicos" },
     { label: t.nav.team, to: "/equipe" },
     { label: t.nav.awards, to: "/premiacoes" },
     { label: t.nav.media, to: "/na-midia" },
