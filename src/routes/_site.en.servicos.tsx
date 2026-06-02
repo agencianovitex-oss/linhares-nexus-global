@@ -1,21 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Placeholder } from "@/components/layout/Placeholder";
-import { buildLocaleHead } from "@/lib/seo";
-import { dict } from "@/i18n/locales";
+import { ServicesHub } from "@/components/visa/ServicesHub";
+import { hubHead, visaHrefFor } from "@/lib/servicos";
+import { withLocale } from "@/i18n/useI18n";
 
 const L = "en" as const;
-const t = dict[L].pages.services;
 
 export const Route = createFileRoute("/_site/en/servicos")({
-  head: ({ params }: { params: Record<string, never> }) =>
-    buildLocaleHead({
-      path: "/servicos",
-      locale: L,
-      title: `${t.title} — Linhares Law`,
-      description: t.intro,
-    }),
-  component: function Page() {
-    
-    return <Placeholder title={t.title} intro={t.intro} eyebrow={dict[L].brand} />;
-  },
+  head: () => hubHead(L),
+  component: () => (
+    <ServicesHub locale={L} contactHref={withLocale(L, "/contato")} visaHref={visaHrefFor(L)} />
+  ),
 });
