@@ -6,7 +6,7 @@ import { teamGroups } from "@/data/team";
 
 const L = "pt" as const;
 
-export const Route = createFileRoute("/_site/equipe")({
+export const Route = createFileRoute("/_site/equipe/")({
   head: () =>
     buildLocaleHead({
       path: "/equipe",
