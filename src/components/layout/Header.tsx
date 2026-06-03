@@ -30,7 +30,6 @@ export function Header({ transparentOverHero = false }: Props) {
     { label: t.nav.media, to: "/na-midia" },
     { label: t.nav.success, to: "/casos-de-sucesso" },
     { label: t.nav.blog, to: "/blog" },
-    { label: t.nav.contact, to: "/contato" },
   ];
 
   return (
@@ -55,7 +54,7 @@ export function Header({ transparentOverHero = false }: Props) {
         <nav
           aria-label="Primary"
           className={cn(
-            "hidden items-center gap-8 text-[12.5px] font-medium tracking-[0.06em] xl:flex",
+            "hidden flex-nowrap items-center gap-x-6 whitespace-nowrap text-[12px] font-medium tracking-[0.06em] xl:flex 2xl:gap-x-8",
             onDark ? "text-primary-foreground/80" : "text-secondary",
           )}
         >
@@ -63,7 +62,7 @@ export function Header({ transparentOverHero = false }: Props) {
             <Link
               key={l.to}
               to={withLocale(locale, l.to)}
-              className={cn("transition-colors", onDark ? "hover:text-gold" : "hover:text-primary")}
+              className={cn("whitespace-nowrap transition-colors", onDark ? "hover:text-gold" : "hover:text-primary")}
               activeProps={{ className: onDark ? "text-gold" : "text-primary" }}
               activeOptions={{ exact: false }}
             >

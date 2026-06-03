@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { LOCALES, LOCALE_LABEL, type Locale } from "@/i18n/locales";
+import { LOCALES, type Locale } from "@/i18n/locales";
 import { localeFromPath, stripLocale, withLocale } from "@/i18n/useI18n";
 import { cn } from "@/lib/utils";
 
@@ -7,6 +7,18 @@ interface Props {
   className?: string;
   onDark?: boolean;
 }
+
+const FLAG: Record<Locale, string> = {
+  pt: "🇧🇷",
+  en: "🇺🇸",
+  es: "🇪🇸",
+};
+
+const LABEL: Record<Locale, string> = {
+  pt: "Português",
+  en: "English",
+  es: "Español",
+};
 
 export function LanguageSwitcher({ className, onDark = false }: Props) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
@@ -16,41 +28,29 @@ export function LanguageSwitcher({ className, onDark = false }: Props) {
   return (
     <div
       aria-label="Language selector"
-      className={cn(
-        "flex items-center text-[11px] font-semibold tracking-[0.28em] uppercase",
-        className,
-      )}
+      className={cn("flex items-center gap-1", className)}
     >
-      {LOCALES.map((l: Locale, idx) => (
-        <span key={l} className="flex items-center">
-          {idx > 0 && (
-            <span
-              aria-hidden
-              className={cn(
-                "mx-3 select-none",
-                onDark ? "text-primary-foreground/30" : "text-border-strong",
-              )}
-            >
-              ·
-            </span>
-          )}
+      {LOCALES.map((l: Locale) => {
+        const active = current === l;
+        return (
           <Link
+            key={l}
             to={withLocale(l, basePath)}
+            aria-label={LABEL[l]}
+            title={LABEL[l]}
             className={cn(
-              "transition-colors",
-              current === l
+              "inline-flex h-8 w-8 items-center justify-center rounded-full text-base leading-none transition-all",
+              active
                 ? onDark
-                  ? "text-gold"
-                  : "text-primary"
-                : onDark
-                  ? "text-primary-foreground/65 hover:text-gold"
-                  : "text-muted-foreground hover:text-primary",
+                  ? "ring-1 ring-gold/80 bg-primary-foreground/5"
+                  : "ring-1 ring-gold/80 bg-surface"
+                : "opacity-60 hover:opacity-100",
             )}
           >
-            {LOCALE_LABEL[l]}
+            <span aria-hidden className="text-[15px]">{FLAG[l]}</span>
           </Link>
-        </span>
-      ))}
+        );
+      })}
     </div>
   );
 }

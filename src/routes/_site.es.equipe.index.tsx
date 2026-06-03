@@ -6,7 +6,7 @@ import { dict } from "@/i18n/locales";
 const L = "es" as const;
 const t = dict[L].pages.team;
 
-export const Route = createFileRoute("/_site/es/equipe")({
+export const Route = createFileRoute("/_site/es/equipe/")({
   head: ({ params }: { params: Record<string, never> }) =>
     buildLocaleHead({
       path: "/equipe",
