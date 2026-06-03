@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { InstitutionalHero, InstitutionalButton } from "@/components/institutional";
 import { SectionBlock } from "@/components/institutional/SectionBlock";
 import { buildLocaleHead } from "@/lib/seo";
-import { teamGroups } from "@/data/team";
+import { teamGroups, type TeamMember } from "@/data/team";
 
 const L = "pt" as const;
 
@@ -17,6 +17,62 @@ export const Route = createFileRoute("/_site/equipe/")({
     }),
   component: EquipePage,
 });
+
+function MemberCard({ m }: { m: TeamMember }) {
+  const card = (
+    <article className="group bg-background border border-border h-full flex flex-col transition-colors hover:border-border-strong">
+      <div className="relative aspect-[3/4] w-full overflow-hidden bg-surface">
+        {m.portrait ? (
+          <img
+            src={m.portrait}
+            alt={m.name}
+            loading="lazy"
+            className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center bg-surface text-[10px] uppercase tracking-[0.32em] text-muted-foreground">
+            Foto institucional
+          </div>
+        )}
+      </div>
+      <div className="flex flex-1 flex-col p-7">
+        <h3 className="font-display text-xl text-primary group-hover:text-gold transition-colors">
+          {m.name}
+        </h3>
+        <p className="mt-2 text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
+          {m.role}
+        </p>
+        {m.bio && (
+          <p className="mt-5 text-[13.5px] leading-[1.7] text-ink-soft flex-1">
+            {m.bio}
+          </p>
+        )}
+        {m.credentials && (
+          <ul className="mt-6 space-y-1.5 text-[12.5px] text-ink-soft">
+            {m.credentials.map((c) => (
+              <li key={c} className="flex gap-2">
+                <span className="text-gold">·</span>
+                <span>{c}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+        {m.slug && (
+          <p className="mt-6 text-[10.5px] uppercase tracking-[0.28em] text-primary">
+            Ver perfil <span className="cta-arrow">→</span>
+          </p>
+        )}
+      </div>
+    </article>
+  );
+  return m.slug ? (
+    <Link to="/equipe/$slug" params={{ slug: m.slug }} className="block h-full">
+      {card}
+    </Link>
+  ) : (
+    <div className="h-full">{card}</div>
+  );
+}
 
 function EquipePage() {
   return (
@@ -43,40 +99,11 @@ function EquipePage() {
               <h2 className="mt-6 text-primary">{group.title}</h2>
               {group.description && <p className="mt-6 lead">{group.description}</p>}
             </div>
-            <div className="lg:col-span-7 lg:col-start-6">
-              <div className="grid gap-px bg-border border border-border sm:grid-cols-2">
-                {group.members.map((m) => {
-                  const card = (
-                    <div className="bg-background p-8 h-full editorial-card group">
-                      <h3 className="text-primary group-hover:text-gold transition-colors">{m.name}</h3>
-                      <p className="mt-2 text-[12px] uppercase tracking-[0.24em] text-muted-foreground">
-                        {m.role}
-                      </p>
-                      {m.credentials && (
-                        <ul className="mt-6 space-y-1.5 text-sm text-ink-soft">
-                          {m.credentials.map((c) => (
-                            <li key={c} className="flex gap-2">
-                              <span className="text-gold">·</span>
-                              <span>{c}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                      {m.slug && (
-                        <p className="mt-6 text-[11px] uppercase tracking-[0.26em] text-primary">
-                          Ver perfil <span className="cta-arrow">→</span>
-                        </p>
-                      )}
-                    </div>
-                  );
-                  return m.slug ? (
-                    <Link key={m.name} to="/equipe/$slug" params={{ slug: m.slug }} className="block">
-                      {card}
-                    </Link>
-                  ) : (
-                    <div key={m.name}>{card}</div>
-                  );
-                })}
+            <div className="lg:col-span-8">
+              <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+                {group.members.map((m) => (
+                  <MemberCard key={m.name} m={m} />
+                ))}
               </div>
             </div>
           </div>
