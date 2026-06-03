@@ -1,8 +1,21 @@
+import andre from "@/assets/team-andre.jpg";
+import nicholas from "@/assets/team-nicholas.jpg";
+import juliana from "@/assets/team-juliana.avif";
+import fernanda from "@/assets/team-fernanda-ruiz.png";
+import andrea from "@/assets/team-andrea-almeida.jpg";
+import sheron from "@/assets/team-sheron-carvalho.jpg";
+import andressa from "@/assets/team-andressa-hughes.jpg";
+import gabriele from "@/assets/team-gabriele-souza.jpg";
+import joao from "@/assets/team-joao-miranda.jpg";
+import daniel from "@/assets/team-daniel-mendes.jpg";
+
 export interface TeamMember {
   name: string;
   role: string;
   credentials?: string[];
   slug?: string;
+  portrait?: string;
+  bio?: string;
 }
 
 export interface TeamGroup {
@@ -24,44 +37,65 @@ export const teamGroups: TeamGroup[] = [
         role: "Advogado Fundador e CEO",
         credentials: ["D.C. Bar", "New York Bar"],
         slug: "andre-linhares",
+        portrait: andre,
+        bio: "Fundador da Linhares Law, com mais de 14 anos de prática exclusiva em imigração americana e referência reconhecida entre profissionais e investidores brasileiros.",
       },
       {
         name: "Nicholas Perry, Esq.",
         role: "Advogado de Imigração",
         credentials: ["Nebraska Bar", "North Carolina Bar", "U.S. Supreme Court"],
         slug: "nicholas-perry",
+        portrait: nicholas,
+        bio: "Trajetória nas principais agências federais americanas dedicadas à imigração — USCIS, DHS, ICE, CBP e Department of Justice.",
       },
       {
         name: "Juliana Mosquera Soler, Esq.",
         role: "Of Counsel",
         credentials: ["Florida Bar", "Puerto Rico Bar"],
+        portrait: juliana,
+        bio: "Of Counsel da Linhares Law, com atuação em direito migratório e experiência multijurisdicional entre Florida e Puerto Rico.",
       },
     ],
   },
   {
     eyebrow: "II. Gestão Jurídica",
-    title: "Legal Managers",
+    title: "Coordenação Jurídica",
     description:
       "Coordenação técnica das equipes jurídicas, garantindo consistência editorial e rigor em cada petição apresentada.",
     members: [
-      { name: "Fernanda Ruiz", role: "Legal Manager" },
-      { name: "Andrea Almeida", role: "Legal Manager" },
+      {
+        name: "Fernanda Ruiz",
+        role: "Legal Manager",
+        portrait: fernanda,
+        bio: "Coordenadora de equipe jurídica, especialista em imigração e responsável pelo padrão técnico das petições do escritório.",
+      },
+      {
+        name: "Andrea Almeida",
+        role: "Legal Manager",
+        portrait: andrea,
+        bio: "Paralegal sênior e coordenadora jurídica, com atuação ampla em processos de imigração baseada em emprego.",
+      },
     ],
   },
   {
     eyebrow: "III. Especialistas Jurídicos",
-    title: "Legal Specialists",
+    title: "Especialistas Jurídicos",
     description:
       "Profissionais responsáveis pela construção argumentativa e pela curadoria documental de cada caso.",
     members: [
+      {
+        name: "Sheron Carvalho",
+        role: "Immigration Specialist",
+        portrait: sheron,
+        bio: "Especialista em imigração dedicada à preparação técnica de petições e ao acompanhamento estratégico de cada cliente.",
+      },
       { name: "Deborah Carvalho", role: "Legal Specialist" },
-      { name: "Sheron Carvalho", role: "Legal Specialist" },
       { name: "Rafaela Barbosa", role: "Legal Specialist" },
     ],
   },
   {
     eyebrow: "IV. Assistência Jurídica",
-    title: "Legal Assistants",
+    title: "Assistência Jurídica",
     description:
       "Equipe ampliada de suporte técnico que sustenta a operação jurídica em volume e detalhamento.",
     members: [
@@ -76,11 +110,16 @@ export const teamGroups: TeamGroup[] = [
   },
   {
     eyebrow: "V. Gestão de Casos",
-    title: "Case Management",
+    title: "Gestão de Casos",
     description:
       "Responsáveis pelo acompanhamento integral de cada processo, do protocolo inicial à aprovação final.",
     members: [
-      { name: "Andressa Hughes", role: "Case Manager" },
+      {
+        name: "Andressa Hughes",
+        role: "Assistant Case Manager",
+        portrait: andressa,
+        bio: "Responsável pelo acompanhamento operacional de processos migratórios, com foco em comunicação institucional com o cliente.",
+      },
       { name: "Aline Mayer", role: "Assistant Case Manager" },
       { name: "Manuela Truschelli", role: "Assistant Case Manager" },
       { name: "Gabriel Mothe", role: "Assistant Case Manager" },
@@ -93,11 +132,26 @@ export const teamGroups: TeamGroup[] = [
     description:
       "Estrutura administrativa que sustenta a experiência de atendimento e a operação dos escritórios.",
     members: [
-      { name: "Gabriele Souza", role: "Office Manager" },
+      {
+        name: "Gabriele Souza",
+        role: "Office Manager",
+        portrait: gabriele,
+        bio: "Responsável pela operação institucional dos escritórios e pela experiência presencial de clientes da Linhares Law.",
+      },
       { name: "Edson Matunaga", role: "Operations & Customer Experience" },
       { name: "Paola Irvin", role: "Office Assistant" },
-      { name: "João Miranda", role: "Project Manager" },
-      { name: "Daniel Mendes", role: "Project Manager" },
+      {
+        name: "João Miranda",
+        role: "Project Manager",
+        portrait: joao,
+        bio: "Coordenação de projetos institucionais e iniciativas estratégicas internas do escritório.",
+      },
+      {
+        name: "Daniel Mendes",
+        role: "Project Manager",
+        portrait: daniel,
+        bio: "Gestão de projetos operacionais e implementação de processos jurídicos internos.",
+      },
     ],
   },
 ];
