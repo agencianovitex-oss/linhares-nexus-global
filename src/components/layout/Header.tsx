@@ -30,7 +30,6 @@ export function Header({ transparentOverHero = false }: Props) {
     { label: t.nav.media, to: "/na-midia" },
     { label: t.nav.success, to: "/casos-de-sucesso" },
     { label: t.nav.blog, to: "/blog" },
-    { label: t.nav.contact, to: "/contato" },
   ];
 
   return (
