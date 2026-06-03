@@ -15,34 +15,34 @@ import { Route as SiteQuemSomosRouteImport } from './routes/_site.quem-somos'
 import { Route as SitePremiacoesRouteImport } from './routes/_site.premiacoes'
 import { Route as SiteNaMidiaRouteImport } from './routes/_site.na-midia'
 import { Route as SiteEscritoriosRouteImport } from './routes/_site.escritorios'
-import { Route as SiteEquipeRouteImport } from './routes/_site.equipe'
 import { Route as SiteContatoRouteImport } from './routes/_site.contato'
 import { Route as SiteCasosDeSucessoRouteImport } from './routes/_site.casos-de-sucesso'
 import { Route as SiteBlogRouteImport } from './routes/_site.blog'
-import { Route as SiteAreasDeAtuacaoRouteImport } from './routes/_site.areas-de-atuacao'
 import { Route as SiteEsIndexRouteImport } from './routes/_site.es.index'
+import { Route as SiteEquipeIndexRouteImport } from './routes/_site.equipe.index'
 import { Route as SiteEnIndexRouteImport } from './routes/_site.en.index'
-import { Route as SiteEsServicosRouteImport } from './routes/_site.es.servicos'
+import { Route as SiteAreasDeAtuacaoIndexRouteImport } from './routes/_site.areas-de-atuacao.index'
 import { Route as SiteEsQuemSomosRouteImport } from './routes/_site.es.quem-somos'
 import { Route as SiteEsPremiacoesRouteImport } from './routes/_site.es.premiacoes'
 import { Route as SiteEsNaMidiaRouteImport } from './routes/_site.es.na-midia'
 import { Route as SiteEsEscritoriosRouteImport } from './routes/_site.es.escritorios'
-import { Route as SiteEsEquipeRouteImport } from './routes/_site.es.equipe'
 import { Route as SiteEsContatoRouteImport } from './routes/_site.es.contato'
 import { Route as SiteEsCasosDeSucessoRouteImport } from './routes/_site.es.casos-de-sucesso'
 import { Route as SiteEsBlogRouteImport } from './routes/_site.es.blog'
 import { Route as SiteEquipeSlugRouteImport } from './routes/_site.equipe.$slug'
-import { Route as SiteEnServicosRouteImport } from './routes/_site.en.servicos'
 import { Route as SiteEnQuemSomosRouteImport } from './routes/_site.en.quem-somos'
 import { Route as SiteEnPremiacoesRouteImport } from './routes/_site.en.premiacoes'
 import { Route as SiteEnNaMidiaRouteImport } from './routes/_site.en.na-midia'
 import { Route as SiteEnEscritoriosRouteImport } from './routes/_site.en.escritorios'
-import { Route as SiteEnEquipeRouteImport } from './routes/_site.en.equipe'
 import { Route as SiteEnContatoRouteImport } from './routes/_site.en.contato'
 import { Route as SiteEnCasosDeSucessoRouteImport } from './routes/_site.en.casos-de-sucesso'
 import { Route as SiteEnBlogRouteImport } from './routes/_site.en.blog'
 import { Route as SiteBlogSlugRouteImport } from './routes/_site.blog.$slug'
 import { Route as SiteAreasDeAtuacaoSlugRouteImport } from './routes/_site.areas-de-atuacao.$slug'
+import { Route as SiteEsServicosIndexRouteImport } from './routes/_site.es.servicos.index'
+import { Route as SiteEsEquipeIndexRouteImport } from './routes/_site.es.equipe.index'
+import { Route as SiteEnServicosIndexRouteImport } from './routes/_site.en.servicos.index'
+import { Route as SiteEnEquipeIndexRouteImport } from './routes/_site.en.equipe.index'
 import { Route as SiteEsServicosSlugRouteImport } from './routes/_site.es.servicos.$slug'
 import { Route as SiteEsEquipeSlugRouteImport } from './routes/_site.es.equipe.$slug'
 import { Route as SiteEsBlogSlugRouteImport } from './routes/_site.es.blog.$slug'
@@ -79,11 +79,6 @@ const SiteEscritoriosRoute = SiteEscritoriosRouteImport.update({
   path: '/escritorios',
   getParentRoute: () => SiteRoute,
 } as any)
-const SiteEquipeRoute = SiteEquipeRouteImport.update({
-  id: '/equipe',
-  path: '/equipe',
-  getParentRoute: () => SiteRoute,
-} as any)
 const SiteContatoRoute = SiteContatoRouteImport.update({
   id: '/contato',
   path: '/contato',
@@ -99,14 +94,14 @@ const SiteBlogRoute = SiteBlogRouteImport.update({
   path: '/blog',
   getParentRoute: () => SiteRoute,
 } as any)
-const SiteAreasDeAtuacaoRoute = SiteAreasDeAtuacaoRouteImport.update({
-  id: '/areas-de-atuacao',
-  path: '/areas-de-atuacao',
-  getParentRoute: () => SiteRoute,
-} as any)
 const SiteEsIndexRoute = SiteEsIndexRouteImport.update({
   id: '/es/',
   path: '/es/',
+  getParentRoute: () => SiteRoute,
+} as any)
+const SiteEquipeIndexRoute = SiteEquipeIndexRouteImport.update({
+  id: '/equipe/',
+  path: '/equipe/',
   getParentRoute: () => SiteRoute,
 } as any)
 const SiteEnIndexRoute = SiteEnIndexRouteImport.update({
@@ -114,9 +109,9 @@ const SiteEnIndexRoute = SiteEnIndexRouteImport.update({
   path: '/en/',
   getParentRoute: () => SiteRoute,
 } as any)
-const SiteEsServicosRoute = SiteEsServicosRouteImport.update({
-  id: '/es/servicos',
-  path: '/es/servicos',
+const SiteAreasDeAtuacaoIndexRoute = SiteAreasDeAtuacaoIndexRouteImport.update({
+  id: '/areas-de-atuacao/',
+  path: '/areas-de-atuacao/',
   getParentRoute: () => SiteRoute,
 } as any)
 const SiteEsQuemSomosRoute = SiteEsQuemSomosRouteImport.update({
@@ -139,11 +134,6 @@ const SiteEsEscritoriosRoute = SiteEsEscritoriosRouteImport.update({
   path: '/es/escritorios',
   getParentRoute: () => SiteRoute,
 } as any)
-const SiteEsEquipeRoute = SiteEsEquipeRouteImport.update({
-  id: '/es/equipe',
-  path: '/es/equipe',
-  getParentRoute: () => SiteRoute,
-} as any)
 const SiteEsContatoRoute = SiteEsContatoRouteImport.update({
   id: '/es/contato',
   path: '/es/contato',
@@ -160,13 +150,8 @@ const SiteEsBlogRoute = SiteEsBlogRouteImport.update({
   getParentRoute: () => SiteRoute,
 } as any)
 const SiteEquipeSlugRoute = SiteEquipeSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => SiteEquipeRoute,
-} as any)
-const SiteEnServicosRoute = SiteEnServicosRouteImport.update({
-  id: '/en/servicos',
-  path: '/en/servicos',
+  id: '/equipe/$slug',
+  path: '/equipe/$slug',
   getParentRoute: () => SiteRoute,
 } as any)
 const SiteEnQuemSomosRoute = SiteEnQuemSomosRouteImport.update({
@@ -187,11 +172,6 @@ const SiteEnNaMidiaRoute = SiteEnNaMidiaRouteImport.update({
 const SiteEnEscritoriosRoute = SiteEnEscritoriosRouteImport.update({
   id: '/en/escritorios',
   path: '/en/escritorios',
-  getParentRoute: () => SiteRoute,
-} as any)
-const SiteEnEquipeRoute = SiteEnEquipeRouteImport.update({
-  id: '/en/equipe',
-  path: '/en/equipe',
   getParentRoute: () => SiteRoute,
 } as any)
 const SiteEnContatoRoute = SiteEnContatoRouteImport.update({
@@ -215,19 +195,39 @@ const SiteBlogSlugRoute = SiteBlogSlugRouteImport.update({
   getParentRoute: () => SiteBlogRoute,
 } as any)
 const SiteAreasDeAtuacaoSlugRoute = SiteAreasDeAtuacaoSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => SiteAreasDeAtuacaoRoute,
+  id: '/areas-de-atuacao/$slug',
+  path: '/areas-de-atuacao/$slug',
+  getParentRoute: () => SiteRoute,
+} as any)
+const SiteEsServicosIndexRoute = SiteEsServicosIndexRouteImport.update({
+  id: '/es/servicos/',
+  path: '/es/servicos/',
+  getParentRoute: () => SiteRoute,
+} as any)
+const SiteEsEquipeIndexRoute = SiteEsEquipeIndexRouteImport.update({
+  id: '/es/equipe/',
+  path: '/es/equipe/',
+  getParentRoute: () => SiteRoute,
+} as any)
+const SiteEnServicosIndexRoute = SiteEnServicosIndexRouteImport.update({
+  id: '/en/servicos/',
+  path: '/en/servicos/',
+  getParentRoute: () => SiteRoute,
+} as any)
+const SiteEnEquipeIndexRoute = SiteEnEquipeIndexRouteImport.update({
+  id: '/en/equipe/',
+  path: '/en/equipe/',
+  getParentRoute: () => SiteRoute,
 } as any)
 const SiteEsServicosSlugRoute = SiteEsServicosSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => SiteEsServicosRoute,
+  id: '/es/servicos/$slug',
+  path: '/es/servicos/$slug',
+  getParentRoute: () => SiteRoute,
 } as any)
 const SiteEsEquipeSlugRoute = SiteEsEquipeSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => SiteEsEquipeRoute,
+  id: '/es/equipe/$slug',
+  path: '/es/equipe/$slug',
+  getParentRoute: () => SiteRoute,
 } as any)
 const SiteEsBlogSlugRoute = SiteEsBlogSlugRouteImport.update({
   id: '/$slug',
@@ -235,14 +235,14 @@ const SiteEsBlogSlugRoute = SiteEsBlogSlugRouteImport.update({
   getParentRoute: () => SiteEsBlogRoute,
 } as any)
 const SiteEnServicosSlugRoute = SiteEnServicosSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => SiteEnServicosRoute,
+  id: '/en/servicos/$slug',
+  path: '/en/servicos/$slug',
+  getParentRoute: () => SiteRoute,
 } as any)
 const SiteEnEquipeSlugRoute = SiteEnEquipeSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => SiteEnEquipeRoute,
+  id: '/en/equipe/$slug',
+  path: '/en/equipe/$slug',
+  getParentRoute: () => SiteRoute,
 } as any)
 const SiteEnBlogSlugRoute = SiteEnBlogSlugRouteImport.update({
   id: '/$slug',
@@ -252,11 +252,9 @@ const SiteEnBlogSlugRoute = SiteEnBlogSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof SiteIndexRoute
-  '/areas-de-atuacao': typeof SiteAreasDeAtuacaoRouteWithChildren
   '/blog': typeof SiteBlogRouteWithChildren
   '/casos-de-sucesso': typeof SiteCasosDeSucessoRoute
   '/contato': typeof SiteContatoRoute
-  '/equipe': typeof SiteEquipeRouteWithChildren
   '/escritorios': typeof SiteEscritoriosRoute
   '/na-midia': typeof SiteNaMidiaRoute
   '/premiacoes': typeof SitePremiacoesRoute
@@ -266,23 +264,21 @@ export interface FileRoutesByFullPath {
   '/en/blog': typeof SiteEnBlogRouteWithChildren
   '/en/casos-de-sucesso': typeof SiteEnCasosDeSucessoRoute
   '/en/contato': typeof SiteEnContatoRoute
-  '/en/equipe': typeof SiteEnEquipeRouteWithChildren
   '/en/escritorios': typeof SiteEnEscritoriosRoute
   '/en/na-midia': typeof SiteEnNaMidiaRoute
   '/en/premiacoes': typeof SiteEnPremiacoesRoute
   '/en/quem-somos': typeof SiteEnQuemSomosRoute
-  '/en/servicos': typeof SiteEnServicosRouteWithChildren
   '/equipe/$slug': typeof SiteEquipeSlugRoute
   '/es/blog': typeof SiteEsBlogRouteWithChildren
   '/es/casos-de-sucesso': typeof SiteEsCasosDeSucessoRoute
   '/es/contato': typeof SiteEsContatoRoute
-  '/es/equipe': typeof SiteEsEquipeRouteWithChildren
   '/es/escritorios': typeof SiteEsEscritoriosRoute
   '/es/na-midia': typeof SiteEsNaMidiaRoute
   '/es/premiacoes': typeof SiteEsPremiacoesRoute
   '/es/quem-somos': typeof SiteEsQuemSomosRoute
-  '/es/servicos': typeof SiteEsServicosRouteWithChildren
+  '/areas-de-atuacao/': typeof SiteAreasDeAtuacaoIndexRoute
   '/en/': typeof SiteEnIndexRoute
+  '/equipe/': typeof SiteEquipeIndexRoute
   '/es/': typeof SiteEsIndexRoute
   '/en/blog/$slug': typeof SiteEnBlogSlugRoute
   '/en/equipe/$slug': typeof SiteEnEquipeSlugRoute
@@ -290,13 +286,15 @@ export interface FileRoutesByFullPath {
   '/es/blog/$slug': typeof SiteEsBlogSlugRoute
   '/es/equipe/$slug': typeof SiteEsEquipeSlugRoute
   '/es/servicos/$slug': typeof SiteEsServicosSlugRoute
+  '/en/equipe/': typeof SiteEnEquipeIndexRoute
+  '/en/servicos/': typeof SiteEnServicosIndexRoute
+  '/es/equipe/': typeof SiteEsEquipeIndexRoute
+  '/es/servicos/': typeof SiteEsServicosIndexRoute
 }
 export interface FileRoutesByTo {
-  '/areas-de-atuacao': typeof SiteAreasDeAtuacaoRouteWithChildren
   '/blog': typeof SiteBlogRouteWithChildren
   '/casos-de-sucesso': typeof SiteCasosDeSucessoRoute
   '/contato': typeof SiteContatoRoute
-  '/equipe': typeof SiteEquipeRouteWithChildren
   '/escritorios': typeof SiteEscritoriosRoute
   '/na-midia': typeof SiteNaMidiaRoute
   '/premiacoes': typeof SitePremiacoesRoute
@@ -307,23 +305,21 @@ export interface FileRoutesByTo {
   '/en/blog': typeof SiteEnBlogRouteWithChildren
   '/en/casos-de-sucesso': typeof SiteEnCasosDeSucessoRoute
   '/en/contato': typeof SiteEnContatoRoute
-  '/en/equipe': typeof SiteEnEquipeRouteWithChildren
   '/en/escritorios': typeof SiteEnEscritoriosRoute
   '/en/na-midia': typeof SiteEnNaMidiaRoute
   '/en/premiacoes': typeof SiteEnPremiacoesRoute
   '/en/quem-somos': typeof SiteEnQuemSomosRoute
-  '/en/servicos': typeof SiteEnServicosRouteWithChildren
   '/equipe/$slug': typeof SiteEquipeSlugRoute
   '/es/blog': typeof SiteEsBlogRouteWithChildren
   '/es/casos-de-sucesso': typeof SiteEsCasosDeSucessoRoute
   '/es/contato': typeof SiteEsContatoRoute
-  '/es/equipe': typeof SiteEsEquipeRouteWithChildren
   '/es/escritorios': typeof SiteEsEscritoriosRoute
   '/es/na-midia': typeof SiteEsNaMidiaRoute
   '/es/premiacoes': typeof SiteEsPremiacoesRoute
   '/es/quem-somos': typeof SiteEsQuemSomosRoute
-  '/es/servicos': typeof SiteEsServicosRouteWithChildren
+  '/areas-de-atuacao': typeof SiteAreasDeAtuacaoIndexRoute
   '/en': typeof SiteEnIndexRoute
+  '/equipe': typeof SiteEquipeIndexRoute
   '/es': typeof SiteEsIndexRoute
   '/en/blog/$slug': typeof SiteEnBlogSlugRoute
   '/en/equipe/$slug': typeof SiteEnEquipeSlugRoute
@@ -331,15 +327,17 @@ export interface FileRoutesByTo {
   '/es/blog/$slug': typeof SiteEsBlogSlugRoute
   '/es/equipe/$slug': typeof SiteEsEquipeSlugRoute
   '/es/servicos/$slug': typeof SiteEsServicosSlugRoute
+  '/en/equipe': typeof SiteEnEquipeIndexRoute
+  '/en/servicos': typeof SiteEnServicosIndexRoute
+  '/es/equipe': typeof SiteEsEquipeIndexRoute
+  '/es/servicos': typeof SiteEsServicosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_site': typeof SiteRouteWithChildren
-  '/_site/areas-de-atuacao': typeof SiteAreasDeAtuacaoRouteWithChildren
   '/_site/blog': typeof SiteBlogRouteWithChildren
   '/_site/casos-de-sucesso': typeof SiteCasosDeSucessoRoute
   '/_site/contato': typeof SiteContatoRoute
-  '/_site/equipe': typeof SiteEquipeRouteWithChildren
   '/_site/escritorios': typeof SiteEscritoriosRoute
   '/_site/na-midia': typeof SiteNaMidiaRoute
   '/_site/premiacoes': typeof SitePremiacoesRoute
@@ -350,23 +348,21 @@ export interface FileRoutesById {
   '/_site/en/blog': typeof SiteEnBlogRouteWithChildren
   '/_site/en/casos-de-sucesso': typeof SiteEnCasosDeSucessoRoute
   '/_site/en/contato': typeof SiteEnContatoRoute
-  '/_site/en/equipe': typeof SiteEnEquipeRouteWithChildren
   '/_site/en/escritorios': typeof SiteEnEscritoriosRoute
   '/_site/en/na-midia': typeof SiteEnNaMidiaRoute
   '/_site/en/premiacoes': typeof SiteEnPremiacoesRoute
   '/_site/en/quem-somos': typeof SiteEnQuemSomosRoute
-  '/_site/en/servicos': typeof SiteEnServicosRouteWithChildren
   '/_site/equipe/$slug': typeof SiteEquipeSlugRoute
   '/_site/es/blog': typeof SiteEsBlogRouteWithChildren
   '/_site/es/casos-de-sucesso': typeof SiteEsCasosDeSucessoRoute
   '/_site/es/contato': typeof SiteEsContatoRoute
-  '/_site/es/equipe': typeof SiteEsEquipeRouteWithChildren
   '/_site/es/escritorios': typeof SiteEsEscritoriosRoute
   '/_site/es/na-midia': typeof SiteEsNaMidiaRoute
   '/_site/es/premiacoes': typeof SiteEsPremiacoesRoute
   '/_site/es/quem-somos': typeof SiteEsQuemSomosRoute
-  '/_site/es/servicos': typeof SiteEsServicosRouteWithChildren
+  '/_site/areas-de-atuacao/': typeof SiteAreasDeAtuacaoIndexRoute
   '/_site/en/': typeof SiteEnIndexRoute
+  '/_site/equipe/': typeof SiteEquipeIndexRoute
   '/_site/es/': typeof SiteEsIndexRoute
   '/_site/en/blog/$slug': typeof SiteEnBlogSlugRoute
   '/_site/en/equipe/$slug': typeof SiteEnEquipeSlugRoute
@@ -374,16 +370,18 @@ export interface FileRoutesById {
   '/_site/es/blog/$slug': typeof SiteEsBlogSlugRoute
   '/_site/es/equipe/$slug': typeof SiteEsEquipeSlugRoute
   '/_site/es/servicos/$slug': typeof SiteEsServicosSlugRoute
+  '/_site/en/equipe/': typeof SiteEnEquipeIndexRoute
+  '/_site/en/servicos/': typeof SiteEnServicosIndexRoute
+  '/_site/es/equipe/': typeof SiteEsEquipeIndexRoute
+  '/_site/es/servicos/': typeof SiteEsServicosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/areas-de-atuacao'
     | '/blog'
     | '/casos-de-sucesso'
     | '/contato'
-    | '/equipe'
     | '/escritorios'
     | '/na-midia'
     | '/premiacoes'
@@ -393,23 +391,21 @@ export interface FileRouteTypes {
     | '/en/blog'
     | '/en/casos-de-sucesso'
     | '/en/contato'
-    | '/en/equipe'
     | '/en/escritorios'
     | '/en/na-midia'
     | '/en/premiacoes'
     | '/en/quem-somos'
-    | '/en/servicos'
     | '/equipe/$slug'
     | '/es/blog'
     | '/es/casos-de-sucesso'
     | '/es/contato'
-    | '/es/equipe'
     | '/es/escritorios'
     | '/es/na-midia'
     | '/es/premiacoes'
     | '/es/quem-somos'
-    | '/es/servicos'
+    | '/areas-de-atuacao/'
     | '/en/'
+    | '/equipe/'
     | '/es/'
     | '/en/blog/$slug'
     | '/en/equipe/$slug'
@@ -417,13 +413,15 @@ export interface FileRouteTypes {
     | '/es/blog/$slug'
     | '/es/equipe/$slug'
     | '/es/servicos/$slug'
+    | '/en/equipe/'
+    | '/en/servicos/'
+    | '/es/equipe/'
+    | '/es/servicos/'
   fileRoutesByTo: FileRoutesByTo
   to:
-    | '/areas-de-atuacao'
     | '/blog'
     | '/casos-de-sucesso'
     | '/contato'
-    | '/equipe'
     | '/escritorios'
     | '/na-midia'
     | '/premiacoes'
@@ -434,23 +432,21 @@ export interface FileRouteTypes {
     | '/en/blog'
     | '/en/casos-de-sucesso'
     | '/en/contato'
-    | '/en/equipe'
     | '/en/escritorios'
     | '/en/na-midia'
     | '/en/premiacoes'
     | '/en/quem-somos'
-    | '/en/servicos'
     | '/equipe/$slug'
     | '/es/blog'
     | '/es/casos-de-sucesso'
     | '/es/contato'
-    | '/es/equipe'
     | '/es/escritorios'
     | '/es/na-midia'
     | '/es/premiacoes'
     | '/es/quem-somos'
-    | '/es/servicos'
+    | '/areas-de-atuacao'
     | '/en'
+    | '/equipe'
     | '/es'
     | '/en/blog/$slug'
     | '/en/equipe/$slug'
@@ -458,14 +454,16 @@ export interface FileRouteTypes {
     | '/es/blog/$slug'
     | '/es/equipe/$slug'
     | '/es/servicos/$slug'
+    | '/en/equipe'
+    | '/en/servicos'
+    | '/es/equipe'
+    | '/es/servicos'
   id:
     | '__root__'
     | '/_site'
-    | '/_site/areas-de-atuacao'
     | '/_site/blog'
     | '/_site/casos-de-sucesso'
     | '/_site/contato'
-    | '/_site/equipe'
     | '/_site/escritorios'
     | '/_site/na-midia'
     | '/_site/premiacoes'
@@ -476,23 +474,21 @@ export interface FileRouteTypes {
     | '/_site/en/blog'
     | '/_site/en/casos-de-sucesso'
     | '/_site/en/contato'
-    | '/_site/en/equipe'
     | '/_site/en/escritorios'
     | '/_site/en/na-midia'
     | '/_site/en/premiacoes'
     | '/_site/en/quem-somos'
-    | '/_site/en/servicos'
     | '/_site/equipe/$slug'
     | '/_site/es/blog'
     | '/_site/es/casos-de-sucesso'
     | '/_site/es/contato'
-    | '/_site/es/equipe'
     | '/_site/es/escritorios'
     | '/_site/es/na-midia'
     | '/_site/es/premiacoes'
     | '/_site/es/quem-somos'
-    | '/_site/es/servicos'
+    | '/_site/areas-de-atuacao/'
     | '/_site/en/'
+    | '/_site/equipe/'
     | '/_site/es/'
     | '/_site/en/blog/$slug'
     | '/_site/en/equipe/$slug'
@@ -500,6 +496,10 @@ export interface FileRouteTypes {
     | '/_site/es/blog/$slug'
     | '/_site/es/equipe/$slug'
     | '/_site/es/servicos/$slug'
+    | '/_site/en/equipe/'
+    | '/_site/en/servicos/'
+    | '/_site/es/equipe/'
+    | '/_site/es/servicos/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -550,13 +550,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SiteEscritoriosRouteImport
       parentRoute: typeof SiteRoute
     }
-    '/_site/equipe': {
-      id: '/_site/equipe'
-      path: '/equipe'
-      fullPath: '/equipe'
-      preLoaderRoute: typeof SiteEquipeRouteImport
-      parentRoute: typeof SiteRoute
-    }
     '/_site/contato': {
       id: '/_site/contato'
       path: '/contato'
@@ -578,18 +571,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SiteBlogRouteImport
       parentRoute: typeof SiteRoute
     }
-    '/_site/areas-de-atuacao': {
-      id: '/_site/areas-de-atuacao'
-      path: '/areas-de-atuacao'
-      fullPath: '/areas-de-atuacao'
-      preLoaderRoute: typeof SiteAreasDeAtuacaoRouteImport
-      parentRoute: typeof SiteRoute
-    }
     '/_site/es/': {
       id: '/_site/es/'
       path: '/es'
       fullPath: '/es/'
       preLoaderRoute: typeof SiteEsIndexRouteImport
+      parentRoute: typeof SiteRoute
+    }
+    '/_site/equipe/': {
+      id: '/_site/equipe/'
+      path: '/equipe'
+      fullPath: '/equipe/'
+      preLoaderRoute: typeof SiteEquipeIndexRouteImport
       parentRoute: typeof SiteRoute
     }
     '/_site/en/': {
@@ -599,11 +592,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SiteEnIndexRouteImport
       parentRoute: typeof SiteRoute
     }
-    '/_site/es/servicos': {
-      id: '/_site/es/servicos'
-      path: '/es/servicos'
-      fullPath: '/es/servicos'
-      preLoaderRoute: typeof SiteEsServicosRouteImport
+    '/_site/areas-de-atuacao/': {
+      id: '/_site/areas-de-atuacao/'
+      path: '/areas-de-atuacao'
+      fullPath: '/areas-de-atuacao/'
+      preLoaderRoute: typeof SiteAreasDeAtuacaoIndexRouteImport
       parentRoute: typeof SiteRoute
     }
     '/_site/es/quem-somos': {
@@ -634,13 +627,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SiteEsEscritoriosRouteImport
       parentRoute: typeof SiteRoute
     }
-    '/_site/es/equipe': {
-      id: '/_site/es/equipe'
-      path: '/es/equipe'
-      fullPath: '/es/equipe'
-      preLoaderRoute: typeof SiteEsEquipeRouteImport
-      parentRoute: typeof SiteRoute
-    }
     '/_site/es/contato': {
       id: '/_site/es/contato'
       path: '/es/contato'
@@ -664,16 +650,9 @@ declare module '@tanstack/react-router' {
     }
     '/_site/equipe/$slug': {
       id: '/_site/equipe/$slug'
-      path: '/$slug'
+      path: '/equipe/$slug'
       fullPath: '/equipe/$slug'
       preLoaderRoute: typeof SiteEquipeSlugRouteImport
-      parentRoute: typeof SiteEquipeRoute
-    }
-    '/_site/en/servicos': {
-      id: '/_site/en/servicos'
-      path: '/en/servicos'
-      fullPath: '/en/servicos'
-      preLoaderRoute: typeof SiteEnServicosRouteImport
       parentRoute: typeof SiteRoute
     }
     '/_site/en/quem-somos': {
@@ -702,13 +681,6 @@ declare module '@tanstack/react-router' {
       path: '/en/escritorios'
       fullPath: '/en/escritorios'
       preLoaderRoute: typeof SiteEnEscritoriosRouteImport
-      parentRoute: typeof SiteRoute
-    }
-    '/_site/en/equipe': {
-      id: '/_site/en/equipe'
-      path: '/en/equipe'
-      fullPath: '/en/equipe'
-      preLoaderRoute: typeof SiteEnEquipeRouteImport
       parentRoute: typeof SiteRoute
     }
     '/_site/en/contato': {
@@ -741,24 +713,52 @@ declare module '@tanstack/react-router' {
     }
     '/_site/areas-de-atuacao/$slug': {
       id: '/_site/areas-de-atuacao/$slug'
-      path: '/$slug'
+      path: '/areas-de-atuacao/$slug'
       fullPath: '/areas-de-atuacao/$slug'
       preLoaderRoute: typeof SiteAreasDeAtuacaoSlugRouteImport
-      parentRoute: typeof SiteAreasDeAtuacaoRoute
+      parentRoute: typeof SiteRoute
+    }
+    '/_site/es/servicos/': {
+      id: '/_site/es/servicos/'
+      path: '/es/servicos'
+      fullPath: '/es/servicos/'
+      preLoaderRoute: typeof SiteEsServicosIndexRouteImport
+      parentRoute: typeof SiteRoute
+    }
+    '/_site/es/equipe/': {
+      id: '/_site/es/equipe/'
+      path: '/es/equipe'
+      fullPath: '/es/equipe/'
+      preLoaderRoute: typeof SiteEsEquipeIndexRouteImport
+      parentRoute: typeof SiteRoute
+    }
+    '/_site/en/servicos/': {
+      id: '/_site/en/servicos/'
+      path: '/en/servicos'
+      fullPath: '/en/servicos/'
+      preLoaderRoute: typeof SiteEnServicosIndexRouteImport
+      parentRoute: typeof SiteRoute
+    }
+    '/_site/en/equipe/': {
+      id: '/_site/en/equipe/'
+      path: '/en/equipe'
+      fullPath: '/en/equipe/'
+      preLoaderRoute: typeof SiteEnEquipeIndexRouteImport
+      parentRoute: typeof SiteRoute
     }
     '/_site/es/servicos/$slug': {
       id: '/_site/es/servicos/$slug'
-      path: '/$slug'
+      path: '/es/servicos/$slug'
       fullPath: '/es/servicos/$slug'
       preLoaderRoute: typeof SiteEsServicosSlugRouteImport
-      parentRoute: typeof SiteEsServicosRoute
+      parentRoute: typeof SiteRoute
     }
     '/_site/es/equipe/$slug': {
       id: '/_site/es/equipe/$slug'
-      path: '/$slug'
+      path: '/es/equipe/$slug'
       fullPath: '/es/equipe/$slug'
       preLoaderRoute: typeof SiteEsEquipeSlugRouteImport
-      parentRoute: typeof SiteEsEquipeRoute
+      parentRoute: typeof SiteRoute
     }
     '/_site/es/blog/$slug': {
       id: '/_site/es/blog/$slug'
@@ -769,17 +769,17 @@ declare module '@tanstack/react-router' {
     }
     '/_site/en/servicos/$slug': {
       id: '/_site/en/servicos/$slug'
-      path: '/$slug'
+      path: '/en/servicos/$slug'
       fullPath: '/en/servicos/$slug'
       preLoaderRoute: typeof SiteEnServicosSlugRouteImport
-      parentRoute: typeof SiteEnServicosRoute
+      parentRoute: typeof SiteRoute
     }
     '/_site/en/equipe/$slug': {
       id: '/_site/en/equipe/$slug'
-      path: '/$slug'
+      path: '/en/equipe/$slug'
       fullPath: '/en/equipe/$slug'
       preLoaderRoute: typeof SiteEnEquipeSlugRouteImport
-      parentRoute: typeof SiteEnEquipeRoute
+      parentRoute: typeof SiteRoute
     }
     '/_site/en/blog/$slug': {
       id: '/_site/en/blog/$slug'
@@ -791,17 +791,6 @@ declare module '@tanstack/react-router' {
   }
 }
 
-interface SiteAreasDeAtuacaoRouteChildren {
-  SiteAreasDeAtuacaoSlugRoute: typeof SiteAreasDeAtuacaoSlugRoute
-}
-
-const SiteAreasDeAtuacaoRouteChildren: SiteAreasDeAtuacaoRouteChildren = {
-  SiteAreasDeAtuacaoSlugRoute: SiteAreasDeAtuacaoSlugRoute,
-}
-
-const SiteAreasDeAtuacaoRouteWithChildren =
-  SiteAreasDeAtuacaoRoute._addFileChildren(SiteAreasDeAtuacaoRouteChildren)
-
 interface SiteBlogRouteChildren {
   SiteBlogSlugRoute: typeof SiteBlogSlugRoute
 }
@@ -812,18 +801,6 @@ const SiteBlogRouteChildren: SiteBlogRouteChildren = {
 
 const SiteBlogRouteWithChildren = SiteBlogRoute._addFileChildren(
   SiteBlogRouteChildren,
-)
-
-interface SiteEquipeRouteChildren {
-  SiteEquipeSlugRoute: typeof SiteEquipeSlugRoute
-}
-
-const SiteEquipeRouteChildren: SiteEquipeRouteChildren = {
-  SiteEquipeSlugRoute: SiteEquipeSlugRoute,
-}
-
-const SiteEquipeRouteWithChildren = SiteEquipeRoute._addFileChildren(
-  SiteEquipeRouteChildren,
 )
 
 interface SiteEnBlogRouteChildren {
@@ -838,30 +815,6 @@ const SiteEnBlogRouteWithChildren = SiteEnBlogRoute._addFileChildren(
   SiteEnBlogRouteChildren,
 )
 
-interface SiteEnEquipeRouteChildren {
-  SiteEnEquipeSlugRoute: typeof SiteEnEquipeSlugRoute
-}
-
-const SiteEnEquipeRouteChildren: SiteEnEquipeRouteChildren = {
-  SiteEnEquipeSlugRoute: SiteEnEquipeSlugRoute,
-}
-
-const SiteEnEquipeRouteWithChildren = SiteEnEquipeRoute._addFileChildren(
-  SiteEnEquipeRouteChildren,
-)
-
-interface SiteEnServicosRouteChildren {
-  SiteEnServicosSlugRoute: typeof SiteEnServicosSlugRoute
-}
-
-const SiteEnServicosRouteChildren: SiteEnServicosRouteChildren = {
-  SiteEnServicosSlugRoute: SiteEnServicosSlugRoute,
-}
-
-const SiteEnServicosRouteWithChildren = SiteEnServicosRoute._addFileChildren(
-  SiteEnServicosRouteChildren,
-)
-
 interface SiteEsBlogRouteChildren {
   SiteEsBlogSlugRoute: typeof SiteEsBlogSlugRoute
 }
@@ -874,94 +827,82 @@ const SiteEsBlogRouteWithChildren = SiteEsBlogRoute._addFileChildren(
   SiteEsBlogRouteChildren,
 )
 
-interface SiteEsEquipeRouteChildren {
-  SiteEsEquipeSlugRoute: typeof SiteEsEquipeSlugRoute
-}
-
-const SiteEsEquipeRouteChildren: SiteEsEquipeRouteChildren = {
-  SiteEsEquipeSlugRoute: SiteEsEquipeSlugRoute,
-}
-
-const SiteEsEquipeRouteWithChildren = SiteEsEquipeRoute._addFileChildren(
-  SiteEsEquipeRouteChildren,
-)
-
-interface SiteEsServicosRouteChildren {
-  SiteEsServicosSlugRoute: typeof SiteEsServicosSlugRoute
-}
-
-const SiteEsServicosRouteChildren: SiteEsServicosRouteChildren = {
-  SiteEsServicosSlugRoute: SiteEsServicosSlugRoute,
-}
-
-const SiteEsServicosRouteWithChildren = SiteEsServicosRoute._addFileChildren(
-  SiteEsServicosRouteChildren,
-)
-
 interface SiteRouteChildren {
-  SiteAreasDeAtuacaoRoute: typeof SiteAreasDeAtuacaoRouteWithChildren
   SiteBlogRoute: typeof SiteBlogRouteWithChildren
   SiteCasosDeSucessoRoute: typeof SiteCasosDeSucessoRoute
   SiteContatoRoute: typeof SiteContatoRoute
-  SiteEquipeRoute: typeof SiteEquipeRouteWithChildren
   SiteEscritoriosRoute: typeof SiteEscritoriosRoute
   SiteNaMidiaRoute: typeof SiteNaMidiaRoute
   SitePremiacoesRoute: typeof SitePremiacoesRoute
   SiteQuemSomosRoute: typeof SiteQuemSomosRoute
   SiteIndexRoute: typeof SiteIndexRoute
+  SiteAreasDeAtuacaoSlugRoute: typeof SiteAreasDeAtuacaoSlugRoute
   SiteEnBlogRoute: typeof SiteEnBlogRouteWithChildren
   SiteEnCasosDeSucessoRoute: typeof SiteEnCasosDeSucessoRoute
   SiteEnContatoRoute: typeof SiteEnContatoRoute
-  SiteEnEquipeRoute: typeof SiteEnEquipeRouteWithChildren
   SiteEnEscritoriosRoute: typeof SiteEnEscritoriosRoute
   SiteEnNaMidiaRoute: typeof SiteEnNaMidiaRoute
   SiteEnPremiacoesRoute: typeof SiteEnPremiacoesRoute
   SiteEnQuemSomosRoute: typeof SiteEnQuemSomosRoute
-  SiteEnServicosRoute: typeof SiteEnServicosRouteWithChildren
+  SiteEquipeSlugRoute: typeof SiteEquipeSlugRoute
   SiteEsBlogRoute: typeof SiteEsBlogRouteWithChildren
   SiteEsCasosDeSucessoRoute: typeof SiteEsCasosDeSucessoRoute
   SiteEsContatoRoute: typeof SiteEsContatoRoute
-  SiteEsEquipeRoute: typeof SiteEsEquipeRouteWithChildren
   SiteEsEscritoriosRoute: typeof SiteEsEscritoriosRoute
   SiteEsNaMidiaRoute: typeof SiteEsNaMidiaRoute
   SiteEsPremiacoesRoute: typeof SiteEsPremiacoesRoute
   SiteEsQuemSomosRoute: typeof SiteEsQuemSomosRoute
-  SiteEsServicosRoute: typeof SiteEsServicosRouteWithChildren
+  SiteAreasDeAtuacaoIndexRoute: typeof SiteAreasDeAtuacaoIndexRoute
   SiteEnIndexRoute: typeof SiteEnIndexRoute
+  SiteEquipeIndexRoute: typeof SiteEquipeIndexRoute
   SiteEsIndexRoute: typeof SiteEsIndexRoute
+  SiteEnEquipeSlugRoute: typeof SiteEnEquipeSlugRoute
+  SiteEnServicosSlugRoute: typeof SiteEnServicosSlugRoute
+  SiteEsEquipeSlugRoute: typeof SiteEsEquipeSlugRoute
+  SiteEsServicosSlugRoute: typeof SiteEsServicosSlugRoute
+  SiteEnEquipeIndexRoute: typeof SiteEnEquipeIndexRoute
+  SiteEnServicosIndexRoute: typeof SiteEnServicosIndexRoute
+  SiteEsEquipeIndexRoute: typeof SiteEsEquipeIndexRoute
+  SiteEsServicosIndexRoute: typeof SiteEsServicosIndexRoute
 }
 
 const SiteRouteChildren: SiteRouteChildren = {
-  SiteAreasDeAtuacaoRoute: SiteAreasDeAtuacaoRouteWithChildren,
   SiteBlogRoute: SiteBlogRouteWithChildren,
   SiteCasosDeSucessoRoute: SiteCasosDeSucessoRoute,
   SiteContatoRoute: SiteContatoRoute,
-  SiteEquipeRoute: SiteEquipeRouteWithChildren,
   SiteEscritoriosRoute: SiteEscritoriosRoute,
   SiteNaMidiaRoute: SiteNaMidiaRoute,
   SitePremiacoesRoute: SitePremiacoesRoute,
   SiteQuemSomosRoute: SiteQuemSomosRoute,
   SiteIndexRoute: SiteIndexRoute,
+  SiteAreasDeAtuacaoSlugRoute: SiteAreasDeAtuacaoSlugRoute,
   SiteEnBlogRoute: SiteEnBlogRouteWithChildren,
   SiteEnCasosDeSucessoRoute: SiteEnCasosDeSucessoRoute,
   SiteEnContatoRoute: SiteEnContatoRoute,
-  SiteEnEquipeRoute: SiteEnEquipeRouteWithChildren,
   SiteEnEscritoriosRoute: SiteEnEscritoriosRoute,
   SiteEnNaMidiaRoute: SiteEnNaMidiaRoute,
   SiteEnPremiacoesRoute: SiteEnPremiacoesRoute,
   SiteEnQuemSomosRoute: SiteEnQuemSomosRoute,
-  SiteEnServicosRoute: SiteEnServicosRouteWithChildren,
+  SiteEquipeSlugRoute: SiteEquipeSlugRoute,
   SiteEsBlogRoute: SiteEsBlogRouteWithChildren,
   SiteEsCasosDeSucessoRoute: SiteEsCasosDeSucessoRoute,
   SiteEsContatoRoute: SiteEsContatoRoute,
-  SiteEsEquipeRoute: SiteEsEquipeRouteWithChildren,
   SiteEsEscritoriosRoute: SiteEsEscritoriosRoute,
   SiteEsNaMidiaRoute: SiteEsNaMidiaRoute,
   SiteEsPremiacoesRoute: SiteEsPremiacoesRoute,
   SiteEsQuemSomosRoute: SiteEsQuemSomosRoute,
-  SiteEsServicosRoute: SiteEsServicosRouteWithChildren,
+  SiteAreasDeAtuacaoIndexRoute: SiteAreasDeAtuacaoIndexRoute,
   SiteEnIndexRoute: SiteEnIndexRoute,
+  SiteEquipeIndexRoute: SiteEquipeIndexRoute,
   SiteEsIndexRoute: SiteEsIndexRoute,
+  SiteEnEquipeSlugRoute: SiteEnEquipeSlugRoute,
+  SiteEnServicosSlugRoute: SiteEnServicosSlugRoute,
+  SiteEsEquipeSlugRoute: SiteEsEquipeSlugRoute,
+  SiteEsServicosSlugRoute: SiteEsServicosSlugRoute,
+  SiteEnEquipeIndexRoute: SiteEnEquipeIndexRoute,
+  SiteEnServicosIndexRoute: SiteEnServicosIndexRoute,
+  SiteEsEquipeIndexRoute: SiteEsEquipeIndexRoute,
+  SiteEsServicosIndexRoute: SiteEsServicosIndexRoute,
 }
 
 const SiteRouteWithChildren = SiteRoute._addFileChildren(SiteRouteChildren)
@@ -972,3 +913,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
