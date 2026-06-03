@@ -3,10 +3,10 @@ import { InstitutionalHero, InstitutionalButton, InstitutionalCard, EditorialIma
 import { SectionBlock } from "@/components/institutional/SectionBlock";
 import { SectionTitle } from "@/components/layout/SectionTitle";
 import { buildLocaleHead } from "@/lib/seo";
-import andre from "@/assets/andre-6.jpg";
+import andre from "@/assets/team-andre.jpg";
 import andreAlt from "@/assets/andre-5.jpg";
 import andreSpeaking from "@/assets/andre-speaking-01.jpg";
-import nicholas from "@/assets/nicholas-3.jpg";
+import nicholas from "@/assets/team-nicholas.jpg";
 
 const L = "pt" as const;
 
