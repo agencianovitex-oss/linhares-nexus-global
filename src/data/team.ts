@@ -8,6 +8,27 @@ import andressa from "@/assets/team-andressa-hughes.jpg";
 import gabriele from "@/assets/team-gabriele-souza.jpg";
 import joao from "@/assets/team-joao-miranda.jpg";
 import daniel from "@/assets/team-daniel-mendes.jpg";
+import rafaelaAsset from "@/assets/team-rafaela-barbosa.jpg.asset.json";
+import deborahAsset from "@/assets/team-deborah-carvalho.jpg.asset.json";
+import alineAsset from "@/assets/team-aline-mayer.jpg.asset.json";
+import rafaelAsset from "@/assets/team-rafael-frinhani.jpg.asset.json";
+import brunaCAsset from "@/assets/team-bruna-carvalho.jpg.asset.json";
+import nadyneAsset from "@/assets/team-nadyne-santos.jpg.asset.json";
+import julyanaAsset from "@/assets/team-julyana-fama.jpg.asset.json";
+import brunaAAsset from "@/assets/team-bruna-alves.jpg.asset.json";
+import samaraAsset from "@/assets/team-samara-silvestre.jpg.asset.json";
+import vyvianAsset from "@/assets/team-vyvian-bastos.jpg.asset.json";
+
+const rafaela = rafaelaAsset.url;
+const deborah = deborahAsset.url;
+const aline = alineAsset.url;
+const rafael = rafaelAsset.url;
+const brunaC = brunaCAsset.url;
+const nadyne = nadyneAsset.url;
+const julyana = julyanaAsset.url;
+const brunaA = brunaAAsset.url;
+const samara = samaraAsset.url;
+const vyvian = vyvianAsset.url;
 
 export interface TeamMember {
   name: string;
@@ -89,8 +110,8 @@ export const teamGroups: TeamGroup[] = [
         portrait: sheron,
         bio: "Especialista em imigração dedicada à preparação técnica de petições e ao acompanhamento estratégico de cada cliente.",
       },
-      { name: "Deborah Carvalho", role: "Legal Specialist" },
-      { name: "Rafaela Barbosa", role: "Legal Specialist" },
+      { name: "Deborah Carvalho", role: "Legal Specialist", portrait: deborah },
+      { name: "Rafaela Barbosa", role: "Legal Specialist", portrait: rafaela },
     ],
   },
   {
@@ -99,13 +120,13 @@ export const teamGroups: TeamGroup[] = [
     description:
       "Equipe ampliada de suporte técnico que sustenta a operação jurídica em volume e detalhamento.",
     members: [
-      { name: "Vivyan Bastos", role: "Senior Legal Assistant" },
-      { name: "Samara Silvestre", role: "Senior Legal Assistant" },
-      { name: "Bruna Alves", role: "Junior Legal Assistant" },
-      { name: "Julyana Fama", role: "Junior Legal Assistant" },
-      { name: "Nadyne Santos", role: "Junior Legal Assistant" },
-      { name: "Bruna Carvalho", role: "Junior Legal Assistant" },
-      { name: "Rafael Frinhani", role: "Junior Legal Assistant" },
+      { name: "Vivyan Bastos", role: "Senior Legal Assistant", portrait: vyvian },
+      { name: "Samara Silvestre", role: "Senior Legal Assistant", portrait: samara },
+      { name: "Bruna Alves", role: "Junior Legal Assistant", portrait: brunaA },
+      { name: "Julyana Fama", role: "Junior Legal Assistant", portrait: julyana },
+      { name: "Nadyne Santos", role: "Junior Legal Assistant", portrait: nadyne },
+      { name: "Bruna Carvalho", role: "Junior Legal Assistant", portrait: brunaC },
+      { name: "Rafael Frinhani", role: "Junior Legal Assistant", portrait: rafael },
     ],
   },
   {
@@ -120,7 +141,7 @@ export const teamGroups: TeamGroup[] = [
         portrait: andressa,
         bio: "Responsável pelo acompanhamento operacional de processos migratórios, com foco em comunicação institucional com o cliente.",
       },
-      { name: "Aline Mayer", role: "Assistant Case Manager" },
+      { name: "Aline Mayer", role: "Assistant Case Manager", portrait: aline },
       { name: "Manuela Truschelli", role: "Assistant Case Manager" },
       { name: "Gabriel Mothe", role: "Assistant Case Manager" },
       { name: "Renata Liberman", role: "Assistant Case Manager" },

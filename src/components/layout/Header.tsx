@@ -71,8 +71,7 @@ export function Header({ transparentOverHero = false }: Props) {
           ))}
         </nav>
 
-        <div className="flex items-center gap-7">
-          <LanguageSwitcher onDark={onDark} />
+        <div className="flex items-center gap-6">
           <Link
             to={withLocale(locale, "/contato")}
             className={cn(
@@ -84,6 +83,7 @@ export function Header({ transparentOverHero = false }: Props) {
           >
             {t.cta}
           </Link>
+          <LanguageSwitcher onDark={onDark} />
         </div>
       </Container>
     </header>
