@@ -4,7 +4,8 @@ import { SectionBlock } from "@/components/institutional/SectionBlock";
 import { SectionTitle } from "@/components/layout/SectionTitle";
 import { buildLocaleHead } from "@/lib/seo";
 import andrePortrait from "@/assets/andre-5.jpg";
-import gptw from "@/assets/gptw-2026.jpg";
+import gptwAsset from "@/assets/company-badge.webp.asset.json";
+const gptw = gptwAsset.url;
 
 const L = "pt" as const;
 
@@ -150,7 +151,9 @@ function QuemSomos() {
           </div>
           <div className="lg:col-span-6 lg:col-start-7">
             <InstitutionalCard variant="light" className="p-0 overflow-hidden">
-              <img src={gptw} alt="Great Place To Work 2026" className="w-full aspect-[16/10] object-cover" />
+              <div className="w-full aspect-[16/10] bg-surface flex items-center justify-center p-8">
+                <img src={gptw} alt="Great Place To Work 2026" className="max-h-full max-w-full object-contain" />
+              </div>
               <div className="p-10">
                 <span className="eyebrow">Great Place To Work · 2026</span>
                 <h3 className="mt-4 text-primary">Certificação com 100% de aprovação interna.</h3>

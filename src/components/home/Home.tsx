@@ -8,7 +8,8 @@ import nicholas3 from "@/assets/nicholas-3.jpg";
 import ibi3 from "@/assets/ibi-3.jpg";
 import tenBest from "@/assets/10-best-law-firms.png";
 import lawAwards from "@/assets/law-awards-2024.jpg";
-import gptwBadge from "@/assets/gptw-badge.webp";
+import gptwBadgeAsset from "@/assets/company-badge.webp.asset.json";
+const gptwBadge = gptwBadgeAsset.url;
 import andreSpeaking from "@/assets/andre-speaking-01.jpg";
 import eventoImigracao from "@/assets/evento-imigracao-01.jpg";
 
@@ -511,7 +512,7 @@ function CultureSection() {
               </div>
             </dl>
             <p className="mt-8 text-[10.5px] uppercase tracking-[0.28em] text-muted-foreground">
-              Great Place To Work · USA · Oct 2024 — Oct 2025
+              Great Place To Work · USA · Oct 2025 — Oct 2026
             </p>
           </div>
         </div>

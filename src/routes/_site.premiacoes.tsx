@@ -3,8 +3,9 @@ import { InstitutionalHero, InstitutionalButton, InstitutionalCard } from "@/com
 import { SectionBlock } from "@/components/institutional/SectionBlock";
 import { SectionTitle } from "@/components/layout/SectionTitle";
 import { buildLocaleHead } from "@/lib/seo";
-import gptw from "@/assets/gptw-2026.jpg";
-import gptwBadge from "@/assets/gptw-badge.webp";
+import gptwAsset from "@/assets/company-badge.webp.asset.json";
+const gptw = gptwAsset.url;
+const gptwBadge = gptwAsset.url;
 import lawAwards from "@/assets/law-awards-2024.jpg";
 import tenBest from "@/assets/10-best-law-firms.png";
 import ibi from "@/assets/ibi-3.jpg";
