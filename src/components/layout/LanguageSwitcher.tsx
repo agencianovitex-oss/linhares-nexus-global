@@ -2,6 +2,9 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { LOCALES, type Locale } from "@/i18n/locales";
 import { localeFromPath, stripLocale, withLocale } from "@/i18n/useI18n";
 import { cn } from "@/lib/utils";
+import flagBr from "@/assets/flag-br.png.asset.json";
+import flagUs from "@/assets/flag-us.png.asset.json";
+import flagEs from "@/assets/flag-es.png.asset.json";
 
 interface Props {
   className?: string;
@@ -9,9 +12,9 @@ interface Props {
 }
 
 const FLAG: Record<Locale, string> = {
-  pt: "🇧🇷",
-  en: "🇺🇸",
-  es: "🇪🇸",
+  pt: flagBr.url,
+  en: flagUs.url,
+  es: flagEs.url,
 };
 
 const LABEL: Record<Locale, string> = {
@@ -28,7 +31,7 @@ export function LanguageSwitcher({ className, onDark = false }: Props) {
   return (
     <div
       aria-label="Language selector"
-      className={cn("flex items-center gap-1", className)}
+      className={cn("flex items-center gap-2", className)}
     >
       {LOCALES.map((l: Locale) => {
         const active = current === l;
@@ -39,15 +42,13 @@ export function LanguageSwitcher({ className, onDark = false }: Props) {
             aria-label={LABEL[l]}
             title={LABEL[l]}
             className={cn(
-              "inline-flex h-8 w-8 items-center justify-center rounded-full text-base leading-none transition-all",
+              "inline-flex h-7 w-7 items-center justify-center rounded-full overflow-hidden transition-all",
               active
-                ? onDark
-                  ? "ring-1 ring-gold/80 bg-primary-foreground/5"
-                  : "ring-1 ring-gold/80 bg-surface"
-                : "opacity-60 hover:opacity-100",
+                ? "ring-2 ring-gold ring-offset-1 " + (onDark ? "ring-offset-primary" : "ring-offset-background")
+                : "opacity-70 hover:opacity-100",
             )}
           >
-            <span aria-hidden className="text-[15px]">{FLAG[l]}</span>
+            <img src={FLAG[l]} alt={LABEL[l]} className="h-full w-full object-cover" />
           </Link>
         );
       })}

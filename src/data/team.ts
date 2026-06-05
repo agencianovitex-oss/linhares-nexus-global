@@ -18,6 +18,11 @@ import julyanaAsset from "@/assets/team-julyana-fama.jpg.asset.json";
 import brunaAAsset from "@/assets/team-bruna-alves.jpg.asset.json";
 import samaraAsset from "@/assets/team-samara-silvestre.jpg.asset.json";
 import vyvianAsset from "@/assets/team-vyvian-bastos.jpg.asset.json";
+import renataAsset from "@/assets/renata-liberman.jpg.asset.json";
+import edsonAsset from "@/assets/edson-matunaga.jpg.asset.json";
+import paolaAsset from "@/assets/paola-irvin.jpg.asset.json";
+import gabrielAsset from "@/assets/gabriel-mothe.avif.asset.json";
+import manuelaAsset from "@/assets/manuela-truschelli.jpg.asset.json";
 
 const rafaela = rafaelaAsset.url;
 const deborah = deborahAsset.url;
@@ -29,6 +34,11 @@ const julyana = julyanaAsset.url;
 const brunaA = brunaAAsset.url;
 const samara = samaraAsset.url;
 const vyvian = vyvianAsset.url;
+const renata = renataAsset.url;
+const edson = edsonAsset.url;
+const paola = paolaAsset.url;
+const gabriel = gabrielAsset.url;
+const manuela = manuelaAsset.url;
 
 export interface TeamMember {
   name: string;
@@ -142,9 +152,9 @@ export const teamGroups: TeamGroup[] = [
         bio: "Responsável pelo acompanhamento operacional de processos migratórios, com foco em comunicação institucional com o cliente.",
       },
       { name: "Aline Mayer", role: "Assistant Case Manager", portrait: aline },
-      { name: "Manuela Truschelli", role: "Assistant Case Manager" },
-      { name: "Gabriel Mothe", role: "Assistant Case Manager" },
-      { name: "Renata Liberman", role: "Assistant Case Manager" },
+      { name: "Manuela Truschelli", role: "Assistant Case Manager", portrait: manuela },
+      { name: "Gabriel Mothe", role: "Assistant Case Manager", portrait: gabriel },
+      { name: "Renata Liberman", role: "Assistant Case Manager", portrait: renata },
     ],
   },
   {
@@ -159,8 +169,8 @@ export const teamGroups: TeamGroup[] = [
         portrait: gabriele,
         bio: "Responsável pela operação institucional dos escritórios e pela experiência presencial de clientes da Linhares Law.",
       },
-      { name: "Edson Matunaga", role: "Operations & Customer Experience" },
-      { name: "Paola Irvin", role: "Office Assistant" },
+      { name: "Edson Matunaga", role: "Operations & Customer Experience", portrait: edson },
+      { name: "Paola Irvin", role: "Office Assistant", portrait: paola },
       {
         name: "João Miranda",
         role: "Project Manager",
