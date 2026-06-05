@@ -44,7 +44,7 @@ const awards: Award[] = [
   },
   {
     title: "The Law Awards",
-    year: "2024",
+    year: "2026",
     institution: "The Law Awards",
     description:
       "Reconhecimento entre os escritórios de imigração de maior destaque na atuação junto ao público brasileiro nos Estados Unidos.",
@@ -53,7 +53,7 @@ const awards: Award[] = [
   },
   {
     title: "10 Best Law Firms",
-    year: "2024",
+    year: "2026",
     institution: "American Institute of Legal Professionals",
     description:
       "Inclusão entre os dez melhores escritórios na categoria de satisfação do cliente em prática de imigração.",
@@ -61,7 +61,7 @@ const awards: Award[] = [
   },
   {
     title: "International Business Institute · IBI Award",
-    year: "2023",
+    year: "2026",
     institution: "International Business Institute",
     description:
       "Distinção concedida pela contribuição da Linhares Law ao ecossistema empresarial internacional.",
@@ -69,14 +69,14 @@ const awards: Award[] = [
   },
   {
     title: "Top Empreendedor",
-    year: "2023",
+    year: "2025",
     institution: "Premiação Empresarial Brasil–EUA",
     description:
       "Reconhecimento à trajetória empreendedora do Dr. André Linhares à frente da Linhares Law.",
   },
   {
     title: "LIDE Orlando · Presidência",
-    year: "2024 – Presente",
+    year: "2026 – Presente",
     institution: "LIDE — Grupo de Líderes Empresariais",
     description:
       "Eleição do Dr. André Linhares para a presidência do capítulo de Orlando, articulando lideranças empresariais brasileiras e americanas.",
