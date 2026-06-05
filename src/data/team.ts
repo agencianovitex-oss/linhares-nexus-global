@@ -8,6 +8,27 @@ import andressa from "@/assets/team-andressa-hughes.jpg";
 import gabriele from "@/assets/team-gabriele-souza.jpg";
 import joao from "@/assets/team-joao-miranda.jpg";
 import daniel from "@/assets/team-daniel-mendes.jpg";
+import rafaelaAsset from "@/assets/team-rafaela-barbosa.jpg.asset.json";
+import deborahAsset from "@/assets/team-deborah-carvalho.jpg.asset.json";
+import alineAsset from "@/assets/team-aline-mayer.jpg.asset.json";
+import rafaelAsset from "@/assets/team-rafael-frinhani.jpg.asset.json";
+import brunaCAsset from "@/assets/team-bruna-carvalho.jpg.asset.json";
+import nadyneAsset from "@/assets/team-nadyne-santos.jpg.asset.json";
+import julyanaAsset from "@/assets/team-julyana-fama.jpg.asset.json";
+import brunaAAsset from "@/assets/team-bruna-alves.jpg.asset.json";
+import samaraAsset from "@/assets/team-samara-silvestre.jpg.asset.json";
+import vyvianAsset from "@/assets/team-vyvian-bastos.jpg.asset.json";
+
+const rafaela = rafaelaAsset.url;
+const deborah = deborahAsset.url;
+const aline = alineAsset.url;
+const rafael = rafaelAsset.url;
+const brunaC = brunaCAsset.url;
+const nadyne = nadyneAsset.url;
+const julyana = julyanaAsset.url;
+const brunaA = brunaAAsset.url;
+const samara = samaraAsset.url;
+const vyvian = vyvianAsset.url;
 
 export interface TeamMember {
   name: string;
