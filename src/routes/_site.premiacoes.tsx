@@ -101,8 +101,8 @@ function Premiacoes() {
           {featured.map((a) => (
             <article key={a.title} className="group">
               {a.image && (
-                <div className="editorial-frame aspect-[16/10]">
-                  <img src={a.image} alt={a.title} />
+                <div className={`editorial-frame aspect-[16/10] ${a.image === gptw ? "bg-surface flex items-center justify-center p-8" : ""}`}>
+                  <img src={a.image} alt={a.title} className={a.image === gptw ? "max-h-full max-w-full object-contain" : ""} />
                 </div>
               )}
               <div className="mt-8">
