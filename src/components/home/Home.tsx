@@ -185,7 +185,7 @@ function AwardsSection() {
                 </div>
               </div>
               <div className="mt-6 text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/55">
-                IBI Awards · 2024
+                IBI Awards · 2026
               </div>
             </div>
 
@@ -199,17 +199,17 @@ function AwardsSection() {
                   Immigration Law — Linhares Law, Florida.
                 </div>
                 <div className="mt-3 text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/55">
-                  American Institute of Legal Counsel
+                  American Institute of Legal Professionals
                 </div>
               </div>
             </div>
 
             <div className="bg-primary p-8 lg:p-10 flex items-center gap-6">
               <div className="editorial-frame w-28 h-20 shrink-0">
-                <img src={lawAwards} alt="The Law Awards 2024" className="h-full w-full object-cover" />
+                <img src={lawAwards} alt="The Law Awards 2026" className="h-full w-full object-cover" />
               </div>
               <div>
-                <div className="text-[10.5px] uppercase tracking-[0.3em] text-gold">The Law Awards · 2024</div>
+                <div className="text-[10.5px] uppercase tracking-[0.3em] text-gold">The Law Awards · 2026</div>
                 <div className="mt-3 text-lg font-light text-primary-foreground tracking-tight">
                   Winner — Immigration Practice
                 </div>
@@ -220,7 +220,7 @@ function AwardsSection() {
 
         <div className="mt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
           <p className="text-[11px] uppercase tracking-[0.28em] text-primary-foreground/55">
-            Distinções institucionais · 2024 — 2026
+            Distinções institucionais · 2026 — Presente
           </p>
           <Link
             to="/premiacoes"
