@@ -671,7 +671,9 @@ function PublicationsSection() {
 
 function FinalCTA() {
   return (
-    <section className="section-y-lg bg-primary text-primary-foreground">
+    <section className="section-y-lg surface-premium-dark texture-grain relative overflow-hidden">
+      <span className="fade-edge-top" aria-hidden />
+
       <Container width="narrow">
         <div className="text-center">
           <div className="flex items-center justify-center gap-4">
