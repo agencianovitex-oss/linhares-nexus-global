@@ -419,7 +419,10 @@ function LeadershipSection() {
 
 function ThoughtLeadershipSection() {
   return (
-    <section className="section-y-lg bg-primary text-primary-foreground">
+    <section className="section-y-lg surface-premium-dark texture-grain relative overflow-hidden">
+      <span className="fade-edge-top" aria-hidden />
+      <span className="fade-edge-bottom" aria-hidden />
+
       <Container>
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-16 items-start">
           <div className="lg:col-span-5">
