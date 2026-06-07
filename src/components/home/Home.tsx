@@ -153,7 +153,10 @@ function AuthoritySection() {
 
 function AwardsSection() {
   return (
-    <section className="section-y-lg bg-primary text-primary-foreground">
+    <section className="section-y-lg surface-premium-dark texture-grain relative overflow-hidden">
+      <span className="fade-edge-top" aria-hidden />
+      <span className="fade-edge-bottom" aria-hidden />
+
       <Container>
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-16 items-end">
           <div className="lg:col-span-7">
