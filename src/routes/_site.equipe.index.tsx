@@ -90,25 +90,36 @@ function EquipePage() {
         }
       />
 
-      {teamGroups.map((group, idx) => (
-        <SectionBlock key={group.eyebrow} tone={idx % 2 === 0 ? "light" : "surface"}>
-          <div className="grid gap-12 lg:grid-cols-12">
-            <div className="lg:col-span-4">
-              <span className="rule-gold" />
-              <p className="mt-5 eyebrow">{group.eyebrow}</p>
-              <h2 className="mt-6 text-primary">{group.title}</h2>
-              {group.description && <p className="mt-6 lead">{group.description}</p>}
-            </div>
-            <div className="lg:col-span-8">
-              <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-                {group.members.map((m) => (
-                  <MemberCard key={m.name} m={m} />
-                ))}
+      {teamGroups.map((group, idx) => {
+        const isLeadership = idx === 0;
+        return (
+          <SectionBlock key={group.eyebrow} tone={idx % 2 === 0 ? "light" : "surface"}>
+            <div className="grid gap-12 lg:grid-cols-12">
+              <div className="lg:col-span-4">
+                <span className="rule-gold" />
+                <p className="mt-5 eyebrow">{group.eyebrow}</p>
+                <h2 className="mt-6 text-primary">{group.title}</h2>
+                {group.description && <p className="mt-6 lead">{group.description}</p>}
+              </div>
+              <div className="lg:col-span-8">
+                <div
+                  className={
+                    isLeadership
+                      ? "grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+                      : "grid gap-6 sm:grid-cols-2 xl:grid-cols-3"
+                  }
+                >
+                  {group.members.map((m) => (
+                    <div key={m.name} className="reveal-up">
+                      <MemberCard m={m} />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        </SectionBlock>
-      ))}
+          </SectionBlock>
+        );
+      })}
 
       <SectionBlock tone="dark">
         <div className="max-w-3xl">
