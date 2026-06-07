@@ -26,7 +26,7 @@ export function SectionBlock({
   return (
     <section
       className={cn(
-        "relative overflow-hidden",
+        "relative overflow-hidden isolate",
         size === "lg" ? "section-y-lg" : "section-y",
         bg,
         className,
@@ -37,7 +37,9 @@ export function SectionBlock({
       {tone !== "dark" && (
         <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
       )}
-      <Container width={width}>{children}</Container>
+      <div className="relative z-10">
+        <Container width={width}>{children}</Container>
+      </div>
     </section>
   );
 }
