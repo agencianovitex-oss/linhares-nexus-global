@@ -9,7 +9,7 @@ export function Container({ className, width = "wide", ...props }: Props) {
   return (
     <div
       className={cn(
-        "relative",
+        "relative z-10",
         width === "narrow" ? "container-narrow" : "container-institutional",
         className,
       )}
