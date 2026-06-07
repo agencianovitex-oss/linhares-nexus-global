@@ -259,7 +259,9 @@ function ServicesSection() {
   const featured = strategies[0];
   const rest = strategies.slice(1);
   return (
-    <section className="section-y-lg bg-surface">
+    <section className="section-y-lg surface-premium-surface relative">
+      <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
+
       <Container>
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
           <SectionTitle
