@@ -356,7 +356,9 @@ function LeadershipSection() {
     },
   ];
   return (
-    <section className="section-y-lg bg-background">
+    <section className="section-y-lg surface-premium-light relative">
+      <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
+
       <Container>
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
           <SectionTitle
