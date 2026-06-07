@@ -19,7 +19,9 @@ import eventoImigracao from "@/assets/evento-imigracao-01.jpg";
 
 function HeroSection() {
   return (
-    <section className="relative bg-primary text-primary-foreground pt-32 pb-20 lg:pt-40 lg:pb-24 overflow-hidden">
+    <section className="relative surface-premium-dark texture-grain pt-32 pb-20 lg:pt-40 lg:pb-24 overflow-hidden">
+      <span className="fade-edge-bottom" aria-hidden />
+
       <Container>
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 items-center">
           <div className="lg:col-span-7 order-2 lg:order-1">
