@@ -19,7 +19,9 @@ import eventoImigracao from "@/assets/evento-imigracao-01.jpg";
 
 function HeroSection() {
   return (
-    <section className="relative bg-primary text-primary-foreground pt-32 pb-20 lg:pt-40 lg:pb-24 overflow-hidden">
+    <section className="relative surface-premium-dark texture-grain pt-32 pb-20 lg:pt-40 lg:pb-24 overflow-hidden">
+      <span className="fade-edge-bottom" aria-hidden />
+
       <Container>
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 items-center">
           <div className="lg:col-span-7 order-2 lg:order-1">
@@ -98,7 +100,9 @@ function HeroSection() {
 
 function AuthoritySection() {
   return (
-    <section className="section-y-lg bg-background">
+    <section className="section-y-lg surface-premium-light relative">
+      <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
+
       <Container>
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-20 items-center">
           <div className="lg:col-span-6">
@@ -149,7 +153,10 @@ function AuthoritySection() {
 
 function AwardsSection() {
   return (
-    <section className="section-y-lg bg-primary text-primary-foreground">
+    <section className="section-y-lg surface-premium-dark texture-grain relative overflow-hidden">
+      <span className="fade-edge-top" aria-hidden />
+      <span className="fade-edge-bottom" aria-hidden />
+
       <Container>
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-16 items-end">
           <div className="lg:col-span-7">
@@ -252,7 +259,9 @@ function ServicesSection() {
   const featured = strategies[0];
   const rest = strategies.slice(1);
   return (
-    <section className="section-y-lg bg-surface">
+    <section className="section-y-lg surface-premium-surface relative">
+      <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
+
       <Container>
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
           <SectionTitle
@@ -347,7 +356,9 @@ function LeadershipSection() {
     },
   ];
   return (
-    <section className="section-y-lg bg-background">
+    <section className="section-y-lg surface-premium-light relative">
+      <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
+
       <Container>
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
           <SectionTitle
@@ -408,7 +419,10 @@ function LeadershipSection() {
 
 function ThoughtLeadershipSection() {
   return (
-    <section className="section-y-lg bg-primary text-primary-foreground">
+    <section className="section-y-lg surface-premium-dark texture-grain relative overflow-hidden">
+      <span className="fade-edge-top" aria-hidden />
+      <span className="fade-edge-bottom" aria-hidden />
+
       <Container>
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-16 items-start">
           <div className="lg:col-span-5">
@@ -474,7 +488,9 @@ function ThoughtLeadershipSection() {
 
 function CultureSection() {
   return (
-    <section className="section-y-lg bg-background">
+    <section className="section-y-lg surface-premium-light relative">
+      <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
+
       <Container>
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-20 items-center">
           <div className="lg:col-span-5">
@@ -533,7 +549,9 @@ function OfficesSection() {
     { city: "Salt Lake City", state: "Utah", role: "Escritório Regional", coord: "40.7° N · 111.8° W" },
   ];
   return (
-    <section className="section-y-lg bg-surface">
+    <section className="section-y-lg surface-premium-surface relative">
+      <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
+
       <Container>
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
           <SectionTitle
@@ -603,7 +621,9 @@ function PublicationsSection() {
     },
   ];
   return (
-    <section className="section-y-lg bg-background">
+    <section className="section-y-lg surface-premium-light relative">
+      <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
+
       <Container>
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
           <SectionTitle
@@ -651,7 +671,9 @@ function PublicationsSection() {
 
 function FinalCTA() {
   return (
-    <section className="section-y-lg bg-primary text-primary-foreground">
+    <section className="section-y-lg surface-premium-dark texture-grain relative overflow-hidden">
+      <span className="fade-edge-top" aria-hidden />
+
       <Container width="narrow">
         <div className="text-center">
           <div className="flex items-center justify-center gap-4">

@@ -19,16 +19,27 @@ export function SectionBlock({
 }: Props) {
   const bg =
     tone === "dark"
-      ? "bg-primary text-primary-foreground"
+      ? "surface-premium-dark texture-grain text-primary-foreground"
       : tone === "surface"
-        ? "bg-surface text-ink"
-        : "bg-background text-ink";
+        ? "surface-premium-surface text-ink"
+        : "surface-premium-light text-ink";
   return (
     <section
-      className={cn(size === "lg" ? "section-y-lg" : "section-y", bg, className)}
+      className={cn(
+        "relative overflow-hidden isolate",
+        size === "lg" ? "section-y-lg" : "section-y",
+        bg,
+        className,
+      )}
       {...rest}
     >
-      <Container width={width}>{children}</Container>
+      {tone === "dark" && <span className="fade-edge-top" aria-hidden />}
+      {tone !== "dark" && (
+        <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
+      )}
+      <div className="relative z-10">
+        <Container width={width}>{children}</Container>
+      </div>
     </section>
   );
 }

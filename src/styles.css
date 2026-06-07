@@ -312,4 +312,125 @@
     color: var(--color-ink-soft);
     letter-spacing: -0.003em;
   }
+
+  /* ──────────────────────────────────────────────────────────────
+     Premium institutional surfaces — added for Phase 4.0.
+     Layered backgrounds, subtle textures, and section transitions
+     that prevent the "stacked blocks" feeling.
+     ────────────────────────────────────────────────────────────── */
+
+  /* Sophisticated dark navy surface with directional depth.
+     Diagonal gradient + soft radial highlights. */
+  .surface-premium-dark {
+    background-color: var(--color-primary);
+    background-image:
+      radial-gradient(ellipse 80% 60% at 85% 0%,
+        oklch(0.34 0.08 258 / 0.55), transparent 60%),
+      radial-gradient(ellipse 70% 50% at 0% 100%,
+        oklch(0.20 0.05 258 / 0.7), transparent 65%),
+      linear-gradient(135deg,
+        oklch(0.22 0.055 258) 0%,
+        oklch(0.27 0.065 258) 55%,
+        oklch(0.23 0.06 258) 100%);
+    color: var(--color-primary-foreground);
+  }
+
+  /* Light institutional surface with a barely-there vertical wash. */
+  .surface-premium-light {
+    background-color: var(--color-background);
+    background-image: linear-gradient(180deg,
+      var(--color-background) 0%,
+      oklch(0.985 0.003 250) 50%,
+      var(--color-surface) 100%);
+  }
+
+  .surface-premium-surface {
+    background-color: var(--color-surface);
+    background-image: linear-gradient(180deg,
+      var(--color-surface) 0%,
+      oklch(0.975 0.004 252) 60%,
+      var(--color-surface-2) 100%);
+  }
+
+  /* Discreet printed-paper grain — inline SVG, no extra request. */
+  .texture-grain {
+    position: relative;
+    isolation: isolate;
+  }
+  .texture-grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.04;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    background-size: 160px 160px;
+  }
+  .texture-grain > * { position: relative; z-index: 1; }
+
+  /* Hairline gold seam — intentional break between sections. */
+  .section-seam {
+    height: 1px; width: 100%;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      var(--color-border-strong) 20%,
+      var(--color-gold) 50%,
+      var(--color-border-strong) 80%,
+      transparent 100%);
+    opacity: 0.55;
+  }
+  .section-seam-dark {
+    background: linear-gradient(90deg,
+      transparent 0%,
+      oklch(1 0 0 / 0.12) 20%,
+      var(--color-gold) 50%,
+      oklch(1 0 0 / 0.12) 80%,
+      transparent 100%);
+    opacity: 0.7;
+  }
+
+  /* Soft edge washes — soften cuts between contrasting sections. */
+  .fade-edge-top {
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 6rem; pointer-events: none; z-index: 0;
+    background: linear-gradient(180deg, oklch(0 0 0 / 0.18), transparent);
+  }
+  .fade-edge-bottom {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 6rem; pointer-events: none; z-index: 0;
+    background: linear-gradient(0deg, oklch(0 0 0 / 0.18), transparent);
+  }
+
+  /* Scroll-reveal — fade & rise on enter. CSS-only. */
+  @keyframes reveal-up {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .reveal-up {
+    animation: reveal-up 1100ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  @supports (animation-timeline: view()) {
+    .reveal-up {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 28%;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-up {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+
+  /* Editorial photo overlay — depth on dark surfaces. */
+  .image-overlay-editorial { position: relative; }
+  .image-overlay-editorial::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(180deg, transparent 50%, oklch(0.16 0.04 258 / 0.55) 100%);
+    z-index: 2;
+  }
 }

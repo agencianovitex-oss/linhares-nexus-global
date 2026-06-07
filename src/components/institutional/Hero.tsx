@@ -25,11 +25,14 @@ export function InstitutionalHero({
   return (
     <section
       className={cn(
-        "relative pt-48 pb-32",
-        isDark ? "bg-primary text-primary-foreground" : "bg-background text-ink",
+        "relative pt-48 pb-32 overflow-hidden",
+        isDark
+          ? "surface-premium-dark texture-grain"
+          : "surface-premium-light",
         !isDark && "border-b border-border",
       )}
     >
+      {isDark && <span className="fade-edge-bottom" aria-hidden />}
       <Container>
         <div className={cn("max-w-4xl", align === "center" && "mx-auto text-center")}>
           {eyebrow && (
