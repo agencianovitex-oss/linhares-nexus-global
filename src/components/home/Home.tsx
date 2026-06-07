@@ -549,7 +549,9 @@ function OfficesSection() {
     { city: "Salt Lake City", state: "Utah", role: "Escritório Regional", coord: "40.7° N · 111.8° W" },
   ];
   return (
-    <section className="section-y-lg bg-surface">
+    <section className="section-y-lg surface-premium-surface relative">
+      <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
+
       <Container>
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
           <SectionTitle
