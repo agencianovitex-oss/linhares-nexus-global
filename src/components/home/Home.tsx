@@ -100,7 +100,9 @@ function HeroSection() {
 
 function AuthoritySection() {
   return (
-    <section className="section-y-lg bg-background">
+    <section className="section-y-lg surface-premium-light relative">
+      <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
+
       <Container>
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-20 items-center">
           <div className="lg:col-span-6">
