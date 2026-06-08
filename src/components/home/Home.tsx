@@ -5,6 +5,7 @@ import { InstitutionalButton } from "@/components/institutional/Button";
 import andre6 from "@/assets/andre-6.jpg";
 import andre5 from "@/assets/andre-5.jpg";
 import nicholas3 from "@/assets/nicholas-3.jpg";
+import juliana from "@/assets/team-juliana.avif";
 import ibi3 from "@/assets/ibi-3.jpg";
 import tenBest from "@/assets/10-best-law-firms.png";
 import lawAwards from "@/assets/law-awards-2024.jpg";
