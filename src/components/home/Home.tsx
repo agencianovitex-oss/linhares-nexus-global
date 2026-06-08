@@ -19,12 +19,20 @@ import eventoImigracao from "@/assets/evento-imigracao-01.jpg";
 
 function HeroSection() {
   return (
-    <section className="relative surface-premium-dark texture-grain pt-32 pb-20 lg:pt-40 lg:pb-24 overflow-hidden">
+    <section className="relative surface-premium-dark texture-grain pt-32 pb-32 lg:pt-40 lg:pb-40 overflow-hidden">
       <span className="fade-edge-bottom" aria-hidden />
 
+      {/* Oversized serif glyph — editorial direction-of-art marker */}
+      <div
+        aria-hidden
+        className="serif-marker pointer-events-none absolute -right-6 top-24 lg:top-28 text-[18rem] lg:text-[26rem] opacity-[0.06] select-none"
+      >
+        L
+      </div>
+
       <Container>
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 items-center">
-          <div className="lg:col-span-7 order-2 lg:order-1">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-12 items-end">
+          <div className="lg:col-span-6 order-2 lg:order-1 lg:pb-10">
             <div className="flex items-center gap-4">
               <span className="rule-gold" />
               <span className="eyebrow eyebrow-on-dark">
@@ -51,17 +59,20 @@ function HeroSection() {
             </div>
           </div>
 
-          <div className="lg:col-span-5 order-1 lg:order-2">
-            <div className="relative">
-              <span className="absolute -top-3 left-0 h-px w-16 bg-gold" />
-              <div className="editorial-frame aspect-[4/5] w-full">
+          {/* Editorial portrait — taller, dominant, breaks the column. */}
+          <div className="lg:col-span-6 order-1 lg:order-2 relative">
+            <div className="relative lg:-mr-12 xl:-mr-20">
+              <span className="absolute -top-4 -left-4 h-px w-24 bg-gold z-10" />
+              <span className="absolute -top-4 -left-4 w-px h-24 bg-gold z-10" />
+              <div className="editorial-frame photo-vignette aspect-[3/4] lg:aspect-[4/5.6] w-full">
                 <img
                   src={andre6}
                   alt="Dr. André Linhares — Founding Attorney, Linhares Law"
                   className="h-full w-full object-cover object-top"
                 />
               </div>
-              <div className="mt-5 flex items-baseline justify-between gap-4 border-t border-primary-foreground/15 pt-5">
+              {/* Caption plate floating over the photo edge */}
+              <div className="absolute -bottom-6 left-6 right-6 lg:left-10 lg:right-10 bg-primary border border-primary-foreground/15 px-6 py-5 flex items-baseline justify-between gap-4 shadow-[0_30px_60px_-30px_oklch(0_0_0/0.6)]">
                 <div>
                   <div className="text-base font-light text-primary-foreground tracking-tight">Dr. André Linhares</div>
                   <div className="mt-1 text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/55">
@@ -74,7 +85,7 @@ function HeroSection() {
           </div>
         </div>
 
-        <div className="mt-20 grid grid-cols-2 gap-y-10 gap-x-8 border-t border-primary-foreground/15 pt-12 lg:grid-cols-4">
+        <div className="mt-28 grid grid-cols-2 gap-y-10 gap-x-8 border-t border-primary-foreground/15 pt-12 lg:grid-cols-4">
           {[
             { k: "14+", l: "Anos de prática jurídica" },
             { k: "04", l: "Escritórios nos Estados Unidos" },
@@ -100,43 +111,70 @@ function HeroSection() {
 
 function AuthoritySection() {
   return (
-    <section className="section-y-lg surface-premium-light relative">
+    <section className="section-y-lg surface-premium-light relative overflow-hidden">
       <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
 
+      {/* Oversized editorial numeral */}
+      <div
+        aria-hidden
+        className="serif-marker pointer-events-none absolute left-[3vw] top-10 text-[14rem] lg:text-[20rem] opacity-[0.05] select-none"
+      >
+        01
+      </div>
+
       <Container>
-        <div className="grid gap-14 lg:grid-cols-12 lg:gap-20 items-center">
-          <div className="lg:col-span-6">
-            <div className="editorial-frame aspect-[4/5] w-full">
-              <img
-                src={andre5}
-                alt="Dr. André Linhares"
-                className="h-full w-full object-cover object-top"
-              />
+        <div className="grid gap-16 lg:grid-cols-12 lg:gap-24 items-start">
+          {/* Editorial vertical portrait — taller than the text column,
+              breaks the rigid grid by extending below. */}
+          <div className="lg:col-span-5 relative">
+            <div className="relative lg:-mt-10">
+              <span className="absolute -top-3 -left-3 h-px w-20 bg-gold z-10" />
+              <div className="editorial-frame aspect-[3/4.4] w-full">
+                <img
+                  src={andre5}
+                  alt="Dr. André Linhares"
+                  className="h-full w-full object-cover object-top"
+                />
+              </div>
+              <figcaption className="mt-5 flex items-center gap-4">
+                <span className="rule-gold" />
+                <span className="text-[10.5px] uppercase tracking-[0.28em] text-muted-foreground">
+                  Dr. André Linhares · Founding Attorney
+                </span>
+              </figcaption>
             </div>
           </div>
-          <div className="lg:col-span-6">
+
+          {/* Editorial text column — breathes, asymmetric inline meta */}
+          <div className="lg:col-span-7 lg:pt-12">
             <div className="flex items-center gap-4">
               <span className="rule-gold" />
               <span className="eyebrow">Nossa Prática</span>
             </div>
-            <h2 className="mt-7 text-balance text-primary max-w-[20ch]">
+            <h2 className="mt-7 text-balance text-primary max-w-[22ch]">
               Representando profissionais, investidores e famílias em estratégias de imigração para os Estados Unidos.
             </h2>
-            <p className="mt-8 text-lg leading-[1.8] text-ink-soft max-w-xl">
+            <p className="mt-10 text-lg leading-[1.85] text-ink-soft max-w-[58ch]">
               A Linhares Law atua exclusivamente em direito de imigração americana. Cada estratégia é construída a partir de uma leitura técnica precisa do perfil profissional, patrimonial e familiar do cliente — sustentada pela autoridade institucional de um escritório de advocacia reconhecido nos Estados Unidos.
             </p>
-            <p className="mt-6 text-lg leading-[1.8] text-ink-soft max-w-xl">
+            <p className="mt-6 text-lg leading-[1.85] text-ink-soft max-w-[58ch]">
               Nossa atuação é pautada por discrição, profundidade técnica e relacionamento de longo prazo com cada cliente representado.
             </p>
-            <div className="mt-10 grid grid-cols-3 gap-px bg-border border border-border">
+
+            {/* Inline editorial meta — no card grid, hairline separators */}
+            <div className="mt-14 border-t border-border pt-10 space-y-8">
               {[
-                { k: "Federal", v: "Atuação perante USCIS, DOS e DOL" },
-                { k: "Nacional", v: "Quatro escritórios nos Estados Unidos" },
-                { k: "Internacional", v: "Clientes em três continentes" },
+                { k: "Federal", v: "Atuação perante USCIS, DOS e DOL." },
+                { k: "Nacional", v: "Quatro escritórios nos Estados Unidos." },
+                { k: "Internacional", v: "Clientes em três continentes." },
               ].map((i) => (
-                <div key={i.k} className="bg-background p-6">
-                  <div className="text-[10.5px] uppercase tracking-[0.28em] text-gold">{i.k}</div>
-                  <div className="mt-3 text-sm leading-[1.6] text-ink-soft">{i.v}</div>
+                <div key={i.k} className="grid grid-cols-12 gap-6 items-baseline">
+                  <div className="col-span-12 sm:col-span-3 text-[10.5px] uppercase tracking-[0.32em] text-gold">
+                    {i.k}
+                  </div>
+                  <div className="col-span-12 sm:col-span-9 text-base lg:text-lg leading-[1.7] text-ink-soft font-light">
+                    {i.v}
+                  </div>
                 </div>
               ))}
             </div>
@@ -175,56 +213,94 @@ function AwardsSection() {
           </div>
         </div>
 
-        <div className="mt-16 grid gap-px bg-primary-foreground/10 border border-primary-foreground/10 lg:grid-cols-12">
-          {/* Main editorial visual */}
-          <div className="lg:col-span-7 bg-primary">
-            <div className="editorial-frame aspect-[4/5] lg:aspect-[5/6] w-full">
-              <img src={ibi3} alt="International Business Institute — Award Ceremony" className="h-full w-full object-cover" />
+        {/* Editorial composition — small ceremony photo + dominant recognitions */}
+        <div className="mt-16 grid gap-12 lg:gap-16 lg:grid-cols-12 items-start">
+          {/* Compact ceremony photo with caption — refined, no longer hero-sized */}
+          <div className="lg:col-span-4 relative">
+            <div className="relative">
+              <span className="absolute -top-3 -left-3 h-px w-16 bg-gold z-10" />
+              <div className="editorial-frame photo-vignette aspect-[4/5] w-full">
+                <img src={ibi3} alt="International Business Institute — Award Ceremony" className="h-full w-full object-cover" />
+              </div>
+              <figcaption className="mt-5 text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/55 leading-relaxed">
+                Cerimônia · International Business Institute Awards
+              </figcaption>
             </div>
           </div>
 
-          {/* Right column: stacked recognition cards */}
-          <div className="lg:col-span-5 grid grid-rows-3 gap-px bg-primary-foreground/10">
-            <div className="bg-primary p-8 lg:p-10 flex flex-col justify-between">
-              <div>
-                <div className="text-[10.5px] uppercase tracking-[0.3em] text-gold">International Business Institute</div>
-                <div className="mt-4 text-xl lg:text-2xl font-light text-primary-foreground tracking-tight max-w-[22ch]">
-                  Distinção internacional por excelência na prática jurídica.
+          {/* Recognitions — protagonism, breathing space, prominent seal plates */}
+          <div className="lg:col-span-8 space-y-10">
+            {/* IBI — flagship recognition, larger statement */}
+            <div className="border-t border-primary-foreground/15 pt-10">
+              <div className="grid gap-8 lg:grid-cols-12 items-start">
+                <div className="lg:col-span-3 award-plate h-32 lg:h-36 p-6">
+                  <div className="text-center">
+                    <div className="serif-marker text-3xl text-primary-foreground/80">IBI</div>
+                    <div className="mt-2 text-[9px] uppercase tracking-[0.28em] text-gold">Awards · 2026</div>
+                  </div>
                 </div>
-              </div>
-              <div className="mt-6 text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/55">
-                IBI Awards · 2026
-              </div>
-            </div>
-
-            <div className="bg-primary p-8 lg:p-10 flex items-center gap-6">
-              <div className="editorial-frame w-24 h-32 shrink-0">
-                <img src={tenBest} alt="10 Best Law Firms — American Institute of Legal Counsel" className="h-full w-full object-cover object-center" />
-              </div>
-              <div>
-                <div className="text-[10.5px] uppercase tracking-[0.3em] text-gold">10 Best Law Firms · 2026</div>
-                <div className="mt-3 text-lg font-light text-primary-foreground tracking-tight max-w-[24ch]">
-                  Immigration Law — Linhares Law, Florida.
-                </div>
-                <div className="mt-3 text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/55">
-                  American Institute of Legal Professionals
+                <div className="lg:col-span-9">
+                  <div className="text-[10.5px] uppercase tracking-[0.32em] text-gold">International Business Institute</div>
+                  <h3 className="mt-4 text-2xl lg:text-[1.75rem] font-light text-primary-foreground tracking-tight leading-[1.25] max-w-[28ch]">
+                    Distinção internacional por excelência na prática jurídica de imigração americana.
+                  </h3>
                 </div>
               </div>
             </div>
 
-            <div className="bg-primary p-8 lg:p-10 flex items-center gap-6">
-              <div className="editorial-frame w-28 h-20 shrink-0">
-                <img src={lawAwards} alt="The Law Awards 2026" className="h-full w-full object-cover" />
+            {/* 10 Best Law Firms */}
+            <div className="border-t border-primary-foreground/15 pt-10">
+              <div className="grid gap-8 lg:grid-cols-12 items-center">
+                <div className="lg:col-span-3 award-plate h-32 lg:h-36 p-4 overflow-hidden">
+                  <img src={tenBest} alt="10 Best Law Firms — American Institute of Legal Counsel" className="max-h-full w-auto object-contain" />
+                </div>
+                <div className="lg:col-span-9">
+                  <div className="text-[10.5px] uppercase tracking-[0.32em] text-gold">10 Best Law Firms · 2026</div>
+                  <h3 className="mt-4 text-xl lg:text-2xl font-light text-primary-foreground tracking-tight max-w-[32ch]">
+                    Immigration Law — Linhares Law, Florida.
+                  </h3>
+                  <div className="mt-3 text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/55">
+                    American Institute of Legal Professionals
+                  </div>
+                </div>
               </div>
-              <div>
-                <div className="text-[10.5px] uppercase tracking-[0.3em] text-gold">The Law Awards · 2026</div>
-                <div className="mt-3 text-lg font-light text-primary-foreground tracking-tight">
-                  Winner — Immigration Practice
+            </div>
+
+            {/* The Law Awards */}
+            <div className="border-t border-primary-foreground/15 pt-10">
+              <div className="grid gap-8 lg:grid-cols-12 items-center">
+                <div className="lg:col-span-3 award-plate h-32 lg:h-36 p-4 overflow-hidden">
+                  <img src={lawAwards} alt="The Law Awards 2026" className="max-h-full w-auto object-contain" />
+                </div>
+                <div className="lg:col-span-9">
+                  <div className="text-[10.5px] uppercase tracking-[0.32em] text-gold">The Law Awards · 2026</div>
+                  <h3 className="mt-4 text-xl lg:text-2xl font-light text-primary-foreground tracking-tight">
+                    Winner — Immigration Practice
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            {/* Great Place To Work — institutional seal */}
+            <div className="border-t border-primary-foreground/15 pt-10">
+              <div className="grid gap-8 lg:grid-cols-12 items-center">
+                <div className="lg:col-span-3 award-plate h-32 lg:h-36 p-4 overflow-hidden">
+                  <img src={gptwBadge} alt="Great Place To Work Certified" className="max-h-full w-auto object-contain" />
+                </div>
+                <div className="lg:col-span-9">
+                  <div className="text-[10.5px] uppercase tracking-[0.32em] text-gold">Great Place To Work® · Certified</div>
+                  <h3 className="mt-4 text-xl lg:text-2xl font-light text-primary-foreground tracking-tight max-w-[32ch]">
+                    Excelência organizacional reconhecida nos Estados Unidos.
+                  </h3>
+                  <div className="mt-3 text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/55">
+                    USA · Oct 2025 — Oct 2026
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
 
         <div className="mt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
           <p className="text-[11px] uppercase tracking-[0.28em] text-primary-foreground/55">

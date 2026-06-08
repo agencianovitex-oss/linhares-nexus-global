@@ -433,4 +433,63 @@
     background: linear-gradient(180deg, transparent 50%, oklch(0.16 0.04 258 / 0.55) 100%);
     z-index: 2;
   }
+
+  /* Editorial composition — image bleeds outside its section column,
+     creating overlap between sections without breaking layout. */
+  .image-bleed-bottom {
+    margin-bottom: calc(var(--section-y) * -0.42);
+    position: relative;
+    z-index: 5;
+  }
+  .image-bleed-top {
+    margin-top: calc(var(--section-y) * -0.32);
+    position: relative;
+    z-index: 5;
+  }
+
+  /* Oversized serif marker — editorial numerals and brand glyphs. */
+  .serif-marker {
+    font-family: var(--font-display);
+    font-weight: 300;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: var(--color-gold);
+    opacity: 0.85;
+  }
+
+  /* Vignette wash — radial depth, used on dark photo containers. */
+  .photo-vignette { position: relative; }
+  .photo-vignette::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 70% 90% at 50% 30%, transparent 50%,
+      oklch(0.16 0.04 258 / 0.4) 100%);
+    z-index: 2;
+  }
+
+  /* Gold serif rule — vertical hairline accent for editorial blocks. */
+  .rule-gold-v {
+    display: inline-block;
+    width: 1px;
+    height: 3rem;
+    background: var(--color-gold);
+    vertical-align: middle;
+  }
+
+  /* Award logo plate — institutional seal background. */
+  .award-plate {
+    background-color: oklch(1 0 0 / 0.04);
+    border: 1px solid oklch(1 0 0 / 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 500ms ease, border-color 500ms ease;
+  }
+  .award-plate:hover {
+    background-color: oklch(1 0 0 / 0.07);
+    border-color: oklch(1 0 0 / 0.18);
+  }
+  .award-plate-light {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+  }
 }
