@@ -19,12 +19,20 @@ import eventoImigracao from "@/assets/evento-imigracao-01.jpg";
 
 function HeroSection() {
   return (
-    <section className="relative surface-premium-dark texture-grain pt-32 pb-20 lg:pt-40 lg:pb-24 overflow-hidden">
+    <section className="relative surface-premium-dark texture-grain pt-32 pb-32 lg:pt-40 lg:pb-40 overflow-hidden">
       <span className="fade-edge-bottom" aria-hidden />
 
+      {/* Oversized serif glyph — editorial direction-of-art marker */}
+      <div
+        aria-hidden
+        className="serif-marker pointer-events-none absolute -right-6 top-24 lg:top-28 text-[18rem] lg:text-[26rem] opacity-[0.06] select-none"
+      >
+        L
+      </div>
+
       <Container>
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 items-center">
-          <div className="lg:col-span-7 order-2 lg:order-1">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-12 items-end">
+          <div className="lg:col-span-6 order-2 lg:order-1 lg:pb-10">
             <div className="flex items-center gap-4">
               <span className="rule-gold" />
               <span className="eyebrow eyebrow-on-dark">
@@ -51,17 +59,20 @@ function HeroSection() {
             </div>
           </div>
 
-          <div className="lg:col-span-5 order-1 lg:order-2">
-            <div className="relative">
-              <span className="absolute -top-3 left-0 h-px w-16 bg-gold" />
-              <div className="editorial-frame aspect-[4/5] w-full">
+          {/* Editorial portrait — taller, dominant, breaks the column. */}
+          <div className="lg:col-span-6 order-1 lg:order-2 relative">
+            <div className="relative lg:-mr-12 xl:-mr-20">
+              <span className="absolute -top-4 -left-4 h-px w-24 bg-gold z-10" />
+              <span className="absolute -top-4 -left-4 w-px h-24 bg-gold z-10" />
+              <div className="editorial-frame photo-vignette aspect-[3/4] lg:aspect-[4/5.6] w-full">
                 <img
                   src={andre6}
                   alt="Dr. André Linhares — Founding Attorney, Linhares Law"
                   className="h-full w-full object-cover object-top"
                 />
               </div>
-              <div className="mt-5 flex items-baseline justify-between gap-4 border-t border-primary-foreground/15 pt-5">
+              {/* Caption plate floating over the photo edge */}
+              <div className="absolute -bottom-6 left-6 right-6 lg:left-10 lg:right-10 bg-primary border border-primary-foreground/15 px-6 py-5 flex items-baseline justify-between gap-4 shadow-[0_30px_60px_-30px_oklch(0_0_0/0.6)]">
                 <div>
                   <div className="text-base font-light text-primary-foreground tracking-tight">Dr. André Linhares</div>
                   <div className="mt-1 text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/55">
@@ -74,7 +85,7 @@ function HeroSection() {
           </div>
         </div>
 
-        <div className="mt-20 grid grid-cols-2 gap-y-10 gap-x-8 border-t border-primary-foreground/15 pt-12 lg:grid-cols-4">
+        <div className="mt-28 grid grid-cols-2 gap-y-10 gap-x-8 border-t border-primary-foreground/15 pt-12 lg:grid-cols-4">
           {[
             { k: "14+", l: "Anos de prática jurídica" },
             { k: "04", l: "Escritórios nos Estados Unidos" },
