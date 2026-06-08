@@ -5,6 +5,7 @@ import { InstitutionalButton } from "@/components/institutional/Button";
 import andre6 from "@/assets/andre-6.jpg";
 import andre5 from "@/assets/andre-5.jpg";
 import nicholas3 from "@/assets/nicholas-3.jpg";
+import juliana from "@/assets/team-juliana.avif";
 import ibi3 from "@/assets/ibi-3.jpg";
 import tenBest from "@/assets/10-best-law-firms.png";
 import lawAwards from "@/assets/law-awards-2024.jpg";
@@ -430,6 +431,14 @@ function LeadershipSection() {
       img: nicholas3,
       bio: "Advogado de imigração com formação americana e atuação dedicada à elaboração e defesa de petições de visto perante as autoridades federais.",
     },
+    {
+      slug: "juliana-mosquera-soler",
+      name: "Juliana Mosquera Soler, Esq.",
+      role: "Of Counsel",
+      cred: "Florida Bar · Puerto Rico Bar",
+      img: juliana,
+      bio: "Of Counsel da Linhares Law, com atuação em direito migratório e experiência multijurisdicional entre Florida e Puerto Rico.",
+    },
   ];
   return (
     <section className="section-y-lg surface-premium-light relative">
@@ -447,38 +456,35 @@ function LeadershipSection() {
           </InstitutionalButton>
         </div>
 
-        <div className="mt-16 grid gap-px bg-border border border-border lg:grid-cols-2">
+        <div className="mt-16 grid gap-10 lg:gap-12 lg:grid-cols-3">
           {leaders.map((a) => (
             <Link
               key={a.slug}
               to="/equipe/$slug"
               params={{ slug: a.slug }}
-              className="group editorial-card block bg-background"
+              className="group block reveal-up"
             >
-              <div className="grid grid-cols-12 gap-0">
-                <div className="col-span-12 sm:col-span-7">
-                  <div className="editorial-frame aspect-[4/5] w-full">
-                    <img
-                      src={a.img}
-                      alt={a.name}
-                      className="h-full w-full object-cover object-top"
-                    />
-                  </div>
+              <div className="relative">
+                <span className="absolute -top-3 -left-3 h-px w-16 bg-gold z-10" />
+                <div className="editorial-frame aspect-[4/5] w-full">
+                  <img
+                    src={a.img}
+                    alt={a.name}
+                    className="h-full w-full object-cover object-top"
+                  />
                 </div>
-                <div className="col-span-12 sm:col-span-5 p-8 lg:p-10 flex flex-col justify-between bg-surface">
-                  <div>
-                    <div className="text-[10.5px] uppercase tracking-[0.3em] text-gold">{a.cred}</div>
-                    <div className="mt-5 text-2xl lg:text-3xl font-light text-primary tracking-tight leading-[1.15] group-hover:text-gold transition-colors">
-                      {a.name}
-                    </div>
-                    <div className="mt-3 text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
-                      {a.role}
-                    </div>
-                    <p className="mt-6 text-sm leading-[1.7] text-ink-soft">{a.bio}</p>
-                  </div>
-                  <div className="mt-8 text-[10.5px] uppercase tracking-[0.28em] text-primary group-hover:text-gold transition-colors border-t border-border pt-5">
-                    Ver perfil completo →
-                  </div>
+              </div>
+              <div className="mt-6">
+                <div className="text-[10.5px] uppercase tracking-[0.3em] text-gold">{a.cred}</div>
+                <div className="mt-4 text-2xl font-light text-primary tracking-tight leading-[1.15] group-hover:text-gold transition-colors">
+                  {a.name}
+                </div>
+                <div className="mt-2 text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
+                  {a.role}
+                </div>
+                <p className="mt-5 text-sm leading-[1.7] text-ink-soft">{a.bio}</p>
+                <div className="mt-6 text-[10.5px] uppercase tracking-[0.28em] text-primary group-hover:text-gold transition-colors border-t border-border pt-5">
+                  Ver perfil completo →
                 </div>
               </div>
             </Link>
