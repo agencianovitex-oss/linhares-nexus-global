@@ -83,6 +83,7 @@ export const teamGroups: TeamGroup[] = [
         name: "Juliana Mosquera Soler, Esq.",
         role: "Of Counsel",
         credentials: ["Florida Bar", "Puerto Rico Bar"],
+        slug: "juliana-mosquera-soler",
         portrait: juliana,
         bio: "Of Counsel da Linhares Law, com atuação em direito migratório e experiência multijurisdicional entre Florida e Puerto Rico.",
       },
