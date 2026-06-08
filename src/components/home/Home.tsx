@@ -213,56 +213,94 @@ function AwardsSection() {
           </div>
         </div>
 
-        <div className="mt-16 grid gap-px bg-primary-foreground/10 border border-primary-foreground/10 lg:grid-cols-12">
-          {/* Main editorial visual */}
-          <div className="lg:col-span-7 bg-primary">
-            <div className="editorial-frame aspect-[4/5] lg:aspect-[5/6] w-full">
-              <img src={ibi3} alt="International Business Institute — Award Ceremony" className="h-full w-full object-cover" />
+        {/* Editorial composition — small ceremony photo + dominant recognitions */}
+        <div className="mt-16 grid gap-12 lg:gap-16 lg:grid-cols-12 items-start">
+          {/* Compact ceremony photo with caption — refined, no longer hero-sized */}
+          <div className="lg:col-span-4 relative">
+            <div className="relative">
+              <span className="absolute -top-3 -left-3 h-px w-16 bg-gold z-10" />
+              <div className="editorial-frame photo-vignette aspect-[4/5] w-full">
+                <img src={ibi3} alt="International Business Institute — Award Ceremony" className="h-full w-full object-cover" />
+              </div>
+              <figcaption className="mt-5 text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/55 leading-relaxed">
+                Cerimônia · International Business Institute Awards
+              </figcaption>
             </div>
           </div>
 
-          {/* Right column: stacked recognition cards */}
-          <div className="lg:col-span-5 grid grid-rows-3 gap-px bg-primary-foreground/10">
-            <div className="bg-primary p-8 lg:p-10 flex flex-col justify-between">
-              <div>
-                <div className="text-[10.5px] uppercase tracking-[0.3em] text-gold">International Business Institute</div>
-                <div className="mt-4 text-xl lg:text-2xl font-light text-primary-foreground tracking-tight max-w-[22ch]">
-                  Distinção internacional por excelência na prática jurídica.
+          {/* Recognitions — protagonism, breathing space, prominent seal plates */}
+          <div className="lg:col-span-8 space-y-10">
+            {/* IBI — flagship recognition, larger statement */}
+            <div className="border-t border-primary-foreground/15 pt-10">
+              <div className="grid gap-8 lg:grid-cols-12 items-start">
+                <div className="lg:col-span-3 award-plate h-32 lg:h-36 p-6">
+                  <div className="text-center">
+                    <div className="serif-marker text-3xl text-primary-foreground/80">IBI</div>
+                    <div className="mt-2 text-[9px] uppercase tracking-[0.28em] text-gold">Awards · 2026</div>
+                  </div>
                 </div>
-              </div>
-              <div className="mt-6 text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/55">
-                IBI Awards · 2026
-              </div>
-            </div>
-
-            <div className="bg-primary p-8 lg:p-10 flex items-center gap-6">
-              <div className="editorial-frame w-24 h-32 shrink-0">
-                <img src={tenBest} alt="10 Best Law Firms — American Institute of Legal Counsel" className="h-full w-full object-cover object-center" />
-              </div>
-              <div>
-                <div className="text-[10.5px] uppercase tracking-[0.3em] text-gold">10 Best Law Firms · 2026</div>
-                <div className="mt-3 text-lg font-light text-primary-foreground tracking-tight max-w-[24ch]">
-                  Immigration Law — Linhares Law, Florida.
-                </div>
-                <div className="mt-3 text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/55">
-                  American Institute of Legal Professionals
+                <div className="lg:col-span-9">
+                  <div className="text-[10.5px] uppercase tracking-[0.32em] text-gold">International Business Institute</div>
+                  <h3 className="mt-4 text-2xl lg:text-[1.75rem] font-light text-primary-foreground tracking-tight leading-[1.25] max-w-[28ch]">
+                    Distinção internacional por excelência na prática jurídica de imigração americana.
+                  </h3>
                 </div>
               </div>
             </div>
 
-            <div className="bg-primary p-8 lg:p-10 flex items-center gap-6">
-              <div className="editorial-frame w-28 h-20 shrink-0">
-                <img src={lawAwards} alt="The Law Awards 2026" className="h-full w-full object-cover" />
+            {/* 10 Best Law Firms */}
+            <div className="border-t border-primary-foreground/15 pt-10">
+              <div className="grid gap-8 lg:grid-cols-12 items-center">
+                <div className="lg:col-span-3 award-plate h-32 lg:h-36 p-4 overflow-hidden">
+                  <img src={tenBest} alt="10 Best Law Firms — American Institute of Legal Counsel" className="max-h-full w-auto object-contain" />
+                </div>
+                <div className="lg:col-span-9">
+                  <div className="text-[10.5px] uppercase tracking-[0.32em] text-gold">10 Best Law Firms · 2026</div>
+                  <h3 className="mt-4 text-xl lg:text-2xl font-light text-primary-foreground tracking-tight max-w-[32ch]">
+                    Immigration Law — Linhares Law, Florida.
+                  </h3>
+                  <div className="mt-3 text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/55">
+                    American Institute of Legal Professionals
+                  </div>
+                </div>
               </div>
-              <div>
-                <div className="text-[10.5px] uppercase tracking-[0.3em] text-gold">The Law Awards · 2026</div>
-                <div className="mt-3 text-lg font-light text-primary-foreground tracking-tight">
-                  Winner — Immigration Practice
+            </div>
+
+            {/* The Law Awards */}
+            <div className="border-t border-primary-foreground/15 pt-10">
+              <div className="grid gap-8 lg:grid-cols-12 items-center">
+                <div className="lg:col-span-3 award-plate h-32 lg:h-36 p-4 overflow-hidden">
+                  <img src={lawAwards} alt="The Law Awards 2026" className="max-h-full w-auto object-contain" />
+                </div>
+                <div className="lg:col-span-9">
+                  <div className="text-[10.5px] uppercase tracking-[0.32em] text-gold">The Law Awards · 2026</div>
+                  <h3 className="mt-4 text-xl lg:text-2xl font-light text-primary-foreground tracking-tight">
+                    Winner — Immigration Practice
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            {/* Great Place To Work — institutional seal */}
+            <div className="border-t border-primary-foreground/15 pt-10">
+              <div className="grid gap-8 lg:grid-cols-12 items-center">
+                <div className="lg:col-span-3 award-plate h-32 lg:h-36 p-4 overflow-hidden">
+                  <img src={gptwBadge} alt="Great Place To Work Certified" className="max-h-full w-auto object-contain" />
+                </div>
+                <div className="lg:col-span-9">
+                  <div className="text-[10.5px] uppercase tracking-[0.32em] text-gold">Great Place To Work® · Certified</div>
+                  <h3 className="mt-4 text-xl lg:text-2xl font-light text-primary-foreground tracking-tight max-w-[32ch]">
+                    Excelência organizacional reconhecida nos Estados Unidos.
+                  </h3>
+                  <div className="mt-3 text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/55">
+                    USA · Oct 2025 — Oct 2026
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
 
         <div className="mt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
           <p className="text-[11px] uppercase tracking-[0.28em] text-primary-foreground/55">
