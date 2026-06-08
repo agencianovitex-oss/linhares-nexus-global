@@ -111,43 +111,70 @@ function HeroSection() {
 
 function AuthoritySection() {
   return (
-    <section className="section-y-lg surface-premium-light relative">
+    <section className="section-y-lg surface-premium-light relative overflow-hidden">
       <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
 
+      {/* Oversized editorial numeral */}
+      <div
+        aria-hidden
+        className="serif-marker pointer-events-none absolute left-[3vw] top-10 text-[14rem] lg:text-[20rem] opacity-[0.05] select-none"
+      >
+        01
+      </div>
+
       <Container>
-        <div className="grid gap-14 lg:grid-cols-12 lg:gap-20 items-center">
-          <div className="lg:col-span-6">
-            <div className="editorial-frame aspect-[4/5] w-full">
-              <img
-                src={andre5}
-                alt="Dr. André Linhares"
-                className="h-full w-full object-cover object-top"
-              />
+        <div className="grid gap-16 lg:grid-cols-12 lg:gap-24 items-start">
+          {/* Editorial vertical portrait — taller than the text column,
+              breaks the rigid grid by extending below. */}
+          <div className="lg:col-span-5 relative">
+            <div className="relative lg:-mt-10">
+              <span className="absolute -top-3 -left-3 h-px w-20 bg-gold z-10" />
+              <div className="editorial-frame aspect-[3/4.4] w-full">
+                <img
+                  src={andre5}
+                  alt="Dr. André Linhares"
+                  className="h-full w-full object-cover object-top"
+                />
+              </div>
+              <figcaption className="mt-5 flex items-center gap-4">
+                <span className="rule-gold" />
+                <span className="text-[10.5px] uppercase tracking-[0.28em] text-muted-foreground">
+                  Dr. André Linhares · Founding Attorney
+                </span>
+              </figcaption>
             </div>
           </div>
-          <div className="lg:col-span-6">
+
+          {/* Editorial text column — breathes, asymmetric inline meta */}
+          <div className="lg:col-span-7 lg:pt-12">
             <div className="flex items-center gap-4">
               <span className="rule-gold" />
               <span className="eyebrow">Nossa Prática</span>
             </div>
-            <h2 className="mt-7 text-balance text-primary max-w-[20ch]">
+            <h2 className="mt-7 text-balance text-primary max-w-[22ch]">
               Representando profissionais, investidores e famílias em estratégias de imigração para os Estados Unidos.
             </h2>
-            <p className="mt-8 text-lg leading-[1.8] text-ink-soft max-w-xl">
+            <p className="mt-10 text-lg leading-[1.85] text-ink-soft max-w-[58ch]">
               A Linhares Law atua exclusivamente em direito de imigração americana. Cada estratégia é construída a partir de uma leitura técnica precisa do perfil profissional, patrimonial e familiar do cliente — sustentada pela autoridade institucional de um escritório de advocacia reconhecido nos Estados Unidos.
             </p>
-            <p className="mt-6 text-lg leading-[1.8] text-ink-soft max-w-xl">
+            <p className="mt-6 text-lg leading-[1.85] text-ink-soft max-w-[58ch]">
               Nossa atuação é pautada por discrição, profundidade técnica e relacionamento de longo prazo com cada cliente representado.
             </p>
-            <div className="mt-10 grid grid-cols-3 gap-px bg-border border border-border">
+
+            {/* Inline editorial meta — no card grid, hairline separators */}
+            <div className="mt-14 border-t border-border pt-10 space-y-8">
               {[
-                { k: "Federal", v: "Atuação perante USCIS, DOS e DOL" },
-                { k: "Nacional", v: "Quatro escritórios nos Estados Unidos" },
-                { k: "Internacional", v: "Clientes em três continentes" },
+                { k: "Federal", v: "Atuação perante USCIS, DOS e DOL." },
+                { k: "Nacional", v: "Quatro escritórios nos Estados Unidos." },
+                { k: "Internacional", v: "Clientes em três continentes." },
               ].map((i) => (
-                <div key={i.k} className="bg-background p-6">
-                  <div className="text-[10.5px] uppercase tracking-[0.28em] text-gold">{i.k}</div>
-                  <div className="mt-3 text-sm leading-[1.6] text-ink-soft">{i.v}</div>
+                <div key={i.k} className="grid grid-cols-12 gap-6 items-baseline">
+                  <div className="col-span-12 sm:col-span-3 text-[10.5px] uppercase tracking-[0.32em] text-gold">
+                    {i.k}
+                  </div>
+                  <div className="col-span-12 sm:col-span-9 text-base lg:text-lg leading-[1.7] text-ink-soft font-light">
+                    {i.v}
+                  </div>
                 </div>
               ))}
             </div>
