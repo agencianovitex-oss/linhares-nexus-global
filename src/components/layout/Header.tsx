@@ -48,7 +48,10 @@ export function Header({ transparentOverHero = false }: Props) {
           <img
             src={onDark ? logoWhite.url : logoBlack.url}
             alt={t.brand}
-            className="h-12 w-auto object-contain"
+            width="640"
+            height="180"
+            decoding="async"
+            className="h-20 w-auto object-contain [image-rendering:auto]"
           />
         </Link>
 
