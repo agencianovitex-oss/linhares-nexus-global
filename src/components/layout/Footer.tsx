@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useI18n, withLocale } from "@/i18n/useI18n";
 import { Container } from "./Container";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import logoWhite from "@/assets/logo-horizontal-white.png.asset.json";
 
 const OFFICES = [
   { city: "Orlando", state: "Florida" },
@@ -28,11 +29,12 @@ export function Footer() {
     <footer className="mt-32 border-t border-border bg-primary text-primary-foreground">
       <Container className="grid gap-16 py-24 lg:grid-cols-12">
         <div className="lg:col-span-5">
-          <div className="flex items-baseline gap-3">
-            <span className="text-[1.35rem] font-light tracking-[0.04em]">Linhares</span>
-            <span className="text-[1.35rem] font-light tracking-[0.04em] text-gold">Law</span>
-          </div>
-          <p className="mt-4 text-[11px] uppercase tracking-[0.32em] text-primary-foreground/60">
+          <img
+            src={logoWhite.url}
+            alt="Linhares Law"
+            className="h-16 w-auto object-contain"
+          />
+          <p className="mt-6 text-[11px] uppercase tracking-[0.32em] text-primary-foreground/60">
             {t.slogan}
           </p>
           <p className="mt-10 max-w-md text-[15px] leading-[1.75] text-primary-foreground/75">
