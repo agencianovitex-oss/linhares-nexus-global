@@ -4,6 +4,8 @@ import { useI18n, withLocale } from "@/i18n/useI18n";
 import { Container } from "./Container";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { cn } from "@/lib/utils";
+import logoWhite from "@/assets/logo-horizontal-white.png.asset.json";
+import logoBlack from "@/assets/logo-horizontal-black.png.asset.json";
 
 interface Props {
   transparentOverHero?: boolean;
@@ -42,13 +44,12 @@ export function Header({ transparentOverHero = false }: Props) {
       )}
     >
       <Container className="flex h-24 items-center justify-between gap-8">
-        <Link to={withLocale(locale, "/")} aria-label={t.brand} className="flex items-baseline gap-3">
-          <span className={cn("font-light tracking-[0.04em] text-[1.35rem] leading-none", onDark ? "text-primary-foreground" : "text-primary")}>
-            Linhares
-          </span>
-          <span className="font-light tracking-[0.04em] text-[1.35rem] leading-none text-gold">
-            Law
-          </span>
+        <Link to={withLocale(locale, "/")} aria-label={t.brand} className="flex items-center">
+          <img
+            src={onDark ? logoWhite.url : logoBlack.url}
+            alt={t.brand}
+            className="h-12 w-auto object-contain"
+          />
         </Link>
 
         <nav
