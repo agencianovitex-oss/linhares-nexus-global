@@ -32,8 +32,12 @@ export function Footer() {
           <img
             src={logoWhite.url}
             alt="Linhares Law"
-            className="h-16 w-auto object-contain"
+            width="640"
+            height="180"
+            decoding="async"
+            className="h-20 w-auto object-contain [image-rendering:auto]"
           />
+
           <p className="mt-6 text-[11px] uppercase tracking-[0.32em] text-primary-foreground/60">
             {t.slogan}
           </p>
