@@ -710,11 +710,25 @@ function PublicationsSection() {
     },
   ];
   return (
-    <section className="section-y-lg surface-premium-light relative">
+    <section
+      className="section-y relative overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(180deg, oklch(0.97 0.025 80) 0%, oklch(0.94 0.035 78) 60%, oklch(0.92 0.045 78) 100%)",
+      }}
+    >
       <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 80% 10%, oklch(0.72 0.08 78), transparent 55%)",
+        }}
+      />
 
       <Container>
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
+        <div className="relative flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
           <SectionTitle
             eyebrow="Linhares Law · Publicações"
             title="Análises jurídicas em imigração americana."
@@ -725,12 +739,12 @@ function PublicationsSection() {
           </InstitutionalButton>
         </div>
 
-        <div className="mt-16 grid gap-px bg-border border border-border lg:grid-cols-3">
+        <div className="relative mt-14 grid gap-px bg-gold/30 border border-gold/30 lg:grid-cols-3">
           {items.map((p, i) => (
             <Link
               key={i}
               to="/blog"
-              className="group editorial-card bg-background p-10 flex flex-col justify-between min-h-[320px] hover:bg-surface"
+              className="group editorial-card bg-background/80 backdrop-blur-sm p-10 flex flex-col justify-between min-h-[300px] hover:bg-background"
             >
               <div>
                 <div className="text-[10.5px] uppercase tracking-[0.3em] text-gold">{p.cat}</div>
