@@ -774,30 +774,41 @@ function PublicationsSection() {
 
 function FinalCTA() {
   return (
-    <section className="section-y-lg surface-premium-dark texture-grain relative overflow-hidden">
+    <section className="section-y surface-premium-dark texture-grain relative overflow-hidden">
       <span className="fade-edge-top" aria-hidden />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 85% 50%, oklch(0.72 0.08 78 / 0.6), transparent 55%)",
+        }}
+      />
 
-      <Container width="narrow">
-        <div className="text-center">
-          <div className="flex items-center justify-center gap-4">
-            <span className="rule-gold" />
-            <span className="eyebrow eyebrow-on-dark">Planejamento Migratório Estratégico</span>
-            <span className="rule-gold" />
+      <Container>
+        <div className="relative grid gap-12 lg:grid-cols-12 lg:gap-20 items-center">
+          <div className="lg:col-span-7">
+            <div className="flex items-center gap-4">
+              <span className="rule-gold" />
+              <span className="eyebrow eyebrow-on-dark">Planejamento Imigratório</span>
+            </div>
+            <h2 className="mt-8 text-primary-foreground text-[clamp(2rem,4.5vw,3.75rem)] font-light leading-[1.05] tracking-tight max-w-[18ch]">
+              Planejamento migratório para objetivos de longo prazo.
+            </h2>
           </div>
-          <h2 className="mt-10 text-primary-foreground text-[clamp(2.5rem,6vw,5rem)] font-light leading-[1.05] tracking-tight max-w-[16ch] mx-auto">
-            Planejamento migratório para objetivos de longo prazo.
-          </h2>
-          <p className="mt-10 text-lg leading-[1.8] text-primary-foreground/75 max-w-2xl mx-auto">
-            Iniciar uma conversa institucional com a Linhares Law é o primeiro passo para construir uma estratégia jurídica sólida — orientada por advogados americanos e alinhada aos seus objetivos profissionais, patrimoniais e familiares.
-          </p>
-          <div className="mt-12 flex justify-center">
-            <InstitutionalButton
-              to="/contato"
-              variant="onDark"
-              className="bg-primary-foreground text-primary border-primary-foreground hover:bg-transparent hover:text-primary-foreground"
-            >
-              Agendar Consulta
-            </InstitutionalButton>
+          <div className="lg:col-span-5 lg:border-l lg:border-primary-foreground/15 lg:pl-12">
+            <p className="text-lg leading-[1.8] text-primary-foreground/75">
+              Iniciar uma conversa institucional com a Linhares Law é o primeiro passo para construir uma estratégia jurídica sólida — orientada por advogados americanos e alinhada aos seus objetivos profissionais, patrimoniais e familiares.
+            </p>
+            <div className="mt-10">
+              <InstitutionalButton
+                to="/contato"
+                variant="onDark"
+                className="bg-primary-foreground text-primary border-primary-foreground hover:bg-transparent hover:text-primary-foreground"
+              >
+                Agendar Consulta
+              </InstitutionalButton>
+            </div>
           </div>
         </div>
       </Container>
