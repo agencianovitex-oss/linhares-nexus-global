@@ -18,10 +18,26 @@ import andreSpeaking from "@/assets/andre-speaking-01.jpg";
 
 function HeroSection() {
   return (
-    <section className="relative surface-premium-dark texture-grain pt-32 pb-32 lg:pt-40 lg:pb-40 overflow-hidden">
+    <section className="relative surface-premium-dark texture-grain pt-32 pb-24 lg:pt-36 lg:pb-28 overflow-hidden">
+      {/* Subtle US flag-inspired backdrop — discreet stripes + star field */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-screen"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, transparent 0 38px, oklch(1 0 0 / 0.55) 38px 39px), radial-gradient(circle at 18% 22%, oklch(1 0 0 / 0.18), transparent 42%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(115deg, oklch(0.18 0.06 258 / 0.92) 0%, oklch(0.24 0.07 258 / 0.78) 50%, oklch(0.20 0.06 258 / 0.92) 100%)",
+        }}
+      />
       <span className="fade-edge-bottom" aria-hidden />
 
-      {/* Oversized serif glyph — editorial direction-of-art marker */}
       <div
         aria-hidden
         className="serif-marker pointer-events-none absolute -right-6 top-24 lg:top-28 text-[18rem] lg:text-[26rem] opacity-[0.06] select-none"
@@ -30,7 +46,7 @@ function HeroSection() {
       </div>
 
       <Container>
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-12 items-end">
+        <div className="relative grid gap-12 lg:grid-cols-12 lg:gap-12 items-end">
           <div className="lg:col-span-6 order-2 lg:order-1 lg:pb-10">
             <div className="flex items-center gap-4">
               <span className="rule-gold" />
@@ -58,7 +74,6 @@ function HeroSection() {
             </div>
           </div>
 
-          {/* Editorial portrait — taller, dominant, breaks the column. */}
           <div className="lg:col-span-6 order-1 lg:order-2 relative">
             <div className="relative lg:-mr-12 xl:-mr-20">
               <span className="absolute -top-4 -left-4 h-px w-24 bg-gold z-10" />
@@ -70,7 +85,6 @@ function HeroSection() {
                   className="h-full w-full object-cover object-top"
                 />
               </div>
-              {/* Caption plate floating over the photo edge */}
               <div className="absolute -bottom-6 left-6 right-6 lg:left-10 lg:right-10 bg-primary border border-primary-foreground/15 px-6 py-5 flex items-baseline justify-between gap-4 shadow-[0_30px_60px_-30px_oklch(0_0_0/0.6)]">
                 <div>
                   <div className="text-base font-light text-primary-foreground tracking-tight">Dr. André Linhares</div>
@@ -84,16 +98,18 @@ function HeroSection() {
           </div>
         </div>
 
-        <div className="mt-28 grid grid-cols-2 gap-y-10 gap-x-8 border-t border-primary-foreground/15 pt-12 lg:grid-cols-4">
+        <div className="relative mt-24 grid grid-cols-2 gap-y-12 gap-x-8 border-t border-primary-foreground/15 pt-12 lg:grid-cols-4">
           {[
             { k: "14+", l: "Anos de prática jurídica" },
             { k: "04", l: "Escritórios nos Estados Unidos" },
-            { k: "USA", l: "Escritório de advocacia licenciado nos EUA" },
-            { k: "Global", l: "Clientes em três continentes" },
+            { k: "USA", l: "Escritório licenciado nos EUA" },
+            { k: "INT.", l: "Atuação Internacional · 3 continentes" },
           ].map((it) => (
             <div key={it.l}>
-              <div className="text-4xl font-light text-primary-foreground tracking-tight">{it.k}</div>
-              <div className="mt-3 text-[11px] uppercase tracking-[0.24em] text-primary-foreground/60 max-w-[22ch] leading-relaxed">
+              <div className="font-display text-[clamp(3.5rem,6vw,5.5rem)] font-light text-primary-foreground tracking-[-0.03em] leading-[0.95]">
+                {it.k}
+              </div>
+              <div className="mt-5 text-[11px] uppercase tracking-[0.26em] text-primary-foreground/65 max-w-[22ch] leading-relaxed">
                 {it.l}
               </div>
             </div>
