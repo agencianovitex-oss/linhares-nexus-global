@@ -126,7 +126,7 @@ function HeroSection() {
 
 function AuthoritySection() {
   return (
-    <section className="section-y-lg surface-premium-light relative overflow-hidden">
+    <section className="section-y surface-premium-light relative overflow-hidden">
       <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
 
       {/* Oversized editorial numeral */}
@@ -323,7 +323,7 @@ function ServicesSection() {
   const featured = strategies[0];
   const rest = strategies.slice(1);
   return (
-    <section className="section-y-lg surface-premium-surface relative">
+    <section className="section-y surface-premium-surface relative">
       <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
 
       <Container>
@@ -638,7 +638,7 @@ function OfficesSection() {
     { city: "Salt Lake City", state: "Utah", role: "Escritório Regional", coord: "40.7° N · 111.8° W" },
   ];
   return (
-    <section className="section-y-lg surface-premium-surface relative">
+    <section className="section-y surface-premium-surface relative">
       <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
 
       <Container>
