@@ -58,8 +58,8 @@ export function Header({ transparentOverHero = false }: Props) {
         <nav
           aria-label="Primary"
           className={cn(
-            "hidden flex-nowrap items-center gap-x-6 whitespace-nowrap text-[12px] font-medium tracking-[0.06em] xl:flex 2xl:gap-x-8",
-            onDark ? "text-primary-foreground/80" : "text-secondary",
+            "hidden flex-nowrap items-center gap-x-9 whitespace-nowrap text-[12px] font-medium tracking-[0.08em] xl:flex 2xl:gap-x-12",
+            onDark ? "text-primary-foreground/85" : "text-primary/85",
           )}
         >
           {links.map((l) => (
