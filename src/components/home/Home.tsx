@@ -571,48 +571,54 @@ function ThoughtLeadershipSection() {
 
 function CultureSection() {
   return (
-    <section className="section-y-lg surface-premium-light relative">
+    <section className="section-y surface-premium-light relative">
       <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
 
       <Container>
-        <div className="grid gap-14 lg:grid-cols-12 lg:gap-20 items-center">
-          <div className="lg:col-span-5">
-            <div className="bg-surface p-10 lg:p-14 flex items-center justify-center border border-border">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12 items-stretch">
+          {/* Badge — full, never cropped */}
+          <div className="lg:col-span-4">
+            <div className="h-full bg-surface border border-border p-10 lg:p-12 flex items-center justify-center">
               <img
                 src={gptwBadge}
                 alt="Great Place To Work Certified — Linhares Law USA"
-                className="w-full max-w-[280px] h-auto object-contain"
+                className="w-full max-w-[320px] h-auto object-contain"
+                style={{ objectFit: "contain" }}
               />
             </div>
           </div>
-          <div className="lg:col-span-7">
+
+          {/* Statement column */}
+          <div className="lg:col-span-4 flex flex-col justify-center">
             <div className="flex items-center gap-4">
               <span className="rule-gold" />
               <span className="eyebrow">Excelência Organizacional</span>
             </div>
-            <h2 className="mt-7 text-balance text-primary max-w-[22ch]">
+            <h2 className="mt-6 text-balance text-primary max-w-[18ch] text-[clamp(1.5rem,2vw,2rem)] leading-[1.15]">
               Great Place To Work® · Certificada nos Estados Unidos.
             </h2>
-            <p className="mt-7 max-w-xl text-lg leading-[1.8] text-ink-soft">
+            <p className="mt-5 text-[15px] leading-[1.75] text-ink-soft">
               A consistência interna que sustenta o padrão de atendimento entregue a cada cliente — reconhecida por uma das mais respeitadas certificações organizacionais do mundo.
             </p>
-            <dl className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-px bg-border border border-border">
-              <div className="bg-surface p-10">
-                <dt className="text-5xl lg:text-6xl font-light text-primary tracking-tight">100%</dt>
-                <dd className="mt-5 text-sm leading-[1.7] text-ink-soft max-w-[26ch]">
-                  dos colaboradores se sentiram bem-vindos ao ingressar no escritório.
-                </dd>
-              </div>
-              <div className="bg-surface p-10">
-                <dt className="text-5xl lg:text-6xl font-light text-primary tracking-tight">100%</dt>
-                <dd className="mt-5 text-sm leading-[1.7] text-ink-soft max-w-[28ch]">
-                  consideram a Linhares Law um excelente lugar para trabalhar.
-                </dd>
-              </div>
-            </dl>
-            <p className="mt-8 text-[10.5px] uppercase tracking-[0.28em] text-muted-foreground">
-              Great Place To Work · USA · Oct 2025 — Oct 2026
+            <p className="mt-6 text-[10.5px] uppercase tracking-[0.28em] text-muted-foreground">
+              USA · Oct 2025 — Oct 2026
             </p>
+          </div>
+
+          {/* Two differentiated stat cards stacked */}
+          <div className="lg:col-span-4 flex flex-col gap-px bg-border border border-border">
+            <div className="bg-primary text-primary-foreground p-8 lg:p-10 flex-1 flex flex-col justify-center">
+              <div className="font-display text-5xl lg:text-6xl font-light tracking-[-0.02em] leading-none">100%</div>
+              <div className="mt-4 text-[13px] leading-[1.6] text-primary-foreground/80 max-w-[26ch]">
+                dos colaboradores se sentiram bem-vindos ao ingressar no escritório.
+              </div>
+            </div>
+            <div className="bg-gold text-gold-foreground p-8 lg:p-10 flex-1 flex flex-col justify-center">
+              <div className="font-display text-5xl lg:text-6xl font-light tracking-[-0.02em] leading-none">100%</div>
+              <div className="mt-4 text-[13px] leading-[1.6] text-gold-foreground/85 max-w-[28ch]">
+                consideram a Linhares Law um excelente lugar para trabalhar.
+              </div>
+            </div>
           </div>
         </div>
       </Container>
