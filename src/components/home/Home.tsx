@@ -511,61 +511,52 @@ function LeadershipSection() {
 
 function ThoughtLeadershipSection() {
   return (
-    <section className="section-y-lg surface-premium-dark texture-grain relative overflow-hidden">
+    <section className="section-y surface-premium-dark texture-grain relative overflow-hidden">
       <span className="fade-edge-top" aria-hidden />
       <span className="fade-edge-bottom" aria-hidden />
 
       <Container>
-        <div className="grid gap-14 lg:grid-cols-12 lg:gap-16 items-start">
-          <div className="lg:col-span-5">
-            <div className="flex items-center gap-4">
-              <span className="rule-gold" />
-              <span className="eyebrow eyebrow-on-dark">Reconhecimento Institucional</span>
-            </div>
-            <h2 className="mt-7 text-balance text-primary-foreground max-w-[18ch]">
-              Autoridade construída pela prática.
-            </h2>
-            <p className="mt-8 text-lg leading-[1.8] text-primary-foreground/75 max-w-xl">
-              Dr. André Linhares é convidado a proferir palestras, conceder entrevistas e integrar painéis institucionais como consequência da profundidade técnica de sua atuação em imigração americana — e não o contrário.
-            </p>
-            <div className="mt-10 space-y-6 border-t border-primary-foreground/15 pt-8">
-              {[
-                { k: "Palestras", v: "Conferências para empresários, profissionais e investidores internacionais." },
-                { k: "Imprensa", v: "Entrevistas e contribuições editoriais em veículos qualificados." },
-                { k: "Setor", v: "Participação em painéis e eventos especializados em imigração americana." },
-              ].map((b) => (
-                <div key={b.k} className="grid grid-cols-12 gap-4">
-                  <div className="col-span-4 text-[11px] uppercase tracking-[0.28em] text-gold pt-1">{b.k}</div>
-                  <div className="col-span-8 text-base leading-[1.7] text-primary-foreground/80">{b.v}</div>
-                </div>
-              ))}
+        <div className="grid gap-14 lg:grid-cols-12 lg:gap-20 items-center">
+          {/* Single dominant image */}
+          <div className="lg:col-span-6 order-2 lg:order-1">
+            <div className="relative">
+              <span className="absolute -top-3 -left-3 h-px w-20 bg-gold z-10" />
+              <div className="editorial-frame photo-vignette aspect-[4/5] w-full">
+                <img src={andreSpeaking} alt="André Linhares · The Next Chapter — Vistos Imigratórios" className="h-full w-full object-cover" />
+              </div>
+              <div className="mt-5 flex items-center gap-4">
+                <span className="rule-gold" />
+                <span className="text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/60">
+                  The Next Chapter · Vistos Imigratórios para Profissionais e Empresários
+                </span>
+              </div>
             </div>
           </div>
 
-          <div className="lg:col-span-7">
-            <div className="grid grid-cols-12 gap-3 lg:gap-4">
-              <div className="col-span-12">
-                <div className="editorial-frame aspect-[16/10] w-full">
-                  <img src={andreSpeaking} alt="André Linhares · The Next Chapter — Vistos Imigratórios" className="h-full w-full object-cover" />
+          {/* Institutional content column */}
+          <div className="lg:col-span-6 order-1 lg:order-2">
+            <div className="flex items-center gap-4">
+              <span className="rule-gold" />
+              <span className="eyebrow eyebrow-on-dark">Conhecimento & Autoridade</span>
+            </div>
+            <h2 className="mt-7 text-balance text-primary-foreground max-w-[20ch]">
+              Autoridade construída pela prática.
+            </h2>
+            <p className="mt-7 text-lg leading-[1.8] text-primary-foreground/75 max-w-xl">
+              Dr. André Linhares é convidado a proferir palestras, conceder entrevistas e integrar painéis institucionais como consequência da profundidade técnica de sua atuação em imigração americana — e não o contrário.
+            </p>
+            <div className="mt-10 border-t border-primary-foreground/15">
+              {[
+                { k: "Palestras", v: "Conferências para empresários, profissionais e investidores internacionais." },
+                { k: "Mídia", v: "Entrevistas e contribuições editoriais em veículos qualificados." },
+                { k: "Conteúdo Jurídico", v: "Publicações técnicas e análises sobre estratégia migratória americana." },
+                { k: "Setor", v: "Participação em painéis e eventos especializados em imigração americana." },
+              ].map((b) => (
+                <div key={b.k} className="grid grid-cols-12 gap-4 py-5 border-b border-primary-foreground/10 items-baseline">
+                  <div className="col-span-4 text-[11px] uppercase tracking-[0.28em] text-gold">{b.k}</div>
+                  <div className="col-span-8 text-[15px] leading-[1.65] text-primary-foreground/80">{b.v}</div>
                 </div>
-                <div className="mt-4 flex items-center gap-4">
-                  <span className="rule-gold" />
-                  <span className="text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/60">
-                    The Next Chapter · Vistos Imigratórios para Profissionais e Empresários
-                  </span>
-                </div>
-              </div>
-              <div className="col-span-12 mt-4">
-                <div className="editorial-frame aspect-[16/10] w-full">
-                  <img src={eventoImigracao} alt="Painel institucional · Dois Caminhos na Imigração Americana" className="h-full w-full object-cover" />
-                </div>
-                <div className="mt-4 flex items-center gap-4">
-                  <span className="rule-gold" />
-                  <span className="text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/60">
-                    Painel institucional · Dois Caminhos na Imigração Americana
-                  </span>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
