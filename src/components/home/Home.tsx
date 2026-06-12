@@ -427,8 +427,10 @@ function LeadershipSection() {
       bio: "Of Counsel da Linhares Law, com atuação em direito migratório e experiência multijurisdicional entre Florida e Puerto Rico.",
     },
   ];
+  const founder = leaders[0];
+  const others = leaders.slice(1);
   return (
-    <section className="section-y-lg surface-premium-light relative">
+    <section className="section-y surface-premium-light relative">
       <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
 
       <Container>
@@ -443,39 +445,60 @@ function LeadershipSection() {
           </InstitutionalButton>
         </div>
 
-        <div className="mt-16 grid gap-10 lg:gap-12 lg:grid-cols-3">
-          {leaders.map((a) => (
-            <Link
-              key={a.slug}
-              to="/equipe/$slug"
-              params={{ slug: a.slug }}
-              className="group block reveal-up"
-            >
-              <div className="relative">
-                <span className="absolute -top-3 -left-3 h-px w-16 bg-gold z-10" />
-                <div className="editorial-frame aspect-[4/5] w-full">
-                  <img
-                    src={a.img}
-                    alt={a.name}
-                    className="h-full w-full object-cover object-top"
-                  />
-                </div>
+        <div className="mt-16 grid gap-12 lg:gap-16 lg:grid-cols-12 items-start">
+          {/* Founder — dominant column */}
+          <Link
+            to="/equipe/$slug"
+            params={{ slug: founder.slug }}
+            className="group block reveal-up lg:col-span-7"
+          >
+            <div className="relative">
+              <span className="absolute -top-3 -left-3 h-px w-20 bg-gold z-10" />
+              <div className="editorial-frame photo-vignette aspect-[4/5] lg:aspect-[5/6] w-full">
+                <img src={founder.img} alt={founder.name} className="h-full w-full object-cover object-top" />
               </div>
-              <div className="mt-6">
-                <div className="text-[10.5px] uppercase tracking-[0.3em] text-gold">{a.cred}</div>
-                <div className="mt-4 text-2xl font-light text-primary tracking-tight leading-[1.15] group-hover:text-gold transition-colors">
-                  {a.name}
-                </div>
-                <div className="mt-2 text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
-                  {a.role}
-                </div>
-                <p className="mt-5 text-sm leading-[1.7] text-ink-soft">{a.bio}</p>
-                <div className="mt-6 text-[10.5px] uppercase tracking-[0.28em] text-primary group-hover:text-gold transition-colors border-t border-border pt-5">
-                  Ver perfil completo →
-                </div>
+            </div>
+            <div className="mt-7 max-w-[52ch]">
+              <div className="text-[10.5px] uppercase tracking-[0.3em] text-gold">{founder.cred}</div>
+              <div className="mt-4 text-3xl lg:text-[2.25rem] font-light text-primary tracking-tight leading-[1.1] group-hover:text-gold transition-colors">
+                {founder.name}
               </div>
-            </Link>
-          ))}
+              <div className="mt-2 text-[11px] uppercase tracking-[0.24em] text-muted-foreground">{founder.role}</div>
+              <p className="mt-5 text-base leading-[1.75] text-ink-soft">{founder.bio}</p>
+              <div className="mt-6 text-[10.5px] uppercase tracking-[0.28em] text-primary group-hover:text-gold transition-colors border-t border-border pt-5">
+                Ver perfil completo →
+              </div>
+            </div>
+          </Link>
+
+          {/* Other leaders — horizontal cards stacked */}
+          <div className="lg:col-span-5 space-y-8">
+            {others.map((a) => (
+              <Link
+                key={a.slug}
+                to="/equipe/$slug"
+                params={{ slug: a.slug }}
+                className="group block reveal-up"
+              >
+                <div className="grid grid-cols-12 gap-5 items-start border-t border-border pt-7">
+                  <div className="col-span-5 relative">
+                    <span className="absolute -top-2 -left-2 h-px w-10 bg-gold z-10" />
+                    <div className="editorial-frame aspect-[4/5] w-full">
+                      <img src={a.img} alt={a.name} className="h-full w-full object-cover object-top" />
+                    </div>
+                  </div>
+                  <div className="col-span-7">
+                    <div className="text-[10px] uppercase tracking-[0.28em] text-gold">{a.cred}</div>
+                    <div className="mt-2 text-lg lg:text-xl font-light text-primary tracking-tight leading-[1.2] group-hover:text-gold transition-colors">
+                      {a.name}
+                    </div>
+                    <div className="mt-1 text-[10px] uppercase tracking-[0.22em] text-muted-foreground">{a.role}</div>
+                    <p className="mt-3 text-[13px] leading-[1.65] text-ink-soft">{a.bio}</p>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </Container>
     </section>
