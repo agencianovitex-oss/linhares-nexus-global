@@ -6,13 +6,11 @@ import andre6 from "@/assets/andre-6.jpg";
 import andre5 from "@/assets/andre-5.jpg";
 import nicholas3 from "@/assets/nicholas-3.jpg";
 import juliana from "@/assets/team-juliana.avif";
-import ibi3 from "@/assets/ibi-3.jpg";
-import tenBest from "@/assets/10-best-law-firms.png";
-import lawAwards from "@/assets/law-awards-2024.jpg";
+import ibiCeremonyAsset from "@/assets/ibi-award-ceremony.jpg.asset.json";
+const ibiCeremony = ibiCeremonyAsset.url;
 import gptwBadgeAsset from "@/assets/company-badge.webp.asset.json";
 const gptwBadge = gptwBadgeAsset.url;
 import andreSpeaking from "@/assets/andre-speaking-01.jpg";
-import eventoImigracao from "@/assets/evento-imigracao-01.jpg";
 
 /* ------------------------------------------------------------------ */
 /* 1 — Hero                                                            */
@@ -20,10 +18,26 @@ import eventoImigracao from "@/assets/evento-imigracao-01.jpg";
 
 function HeroSection() {
   return (
-    <section className="relative surface-premium-dark texture-grain pt-32 pb-32 lg:pt-40 lg:pb-40 overflow-hidden">
+    <section className="relative surface-premium-dark texture-grain pt-32 pb-24 lg:pt-36 lg:pb-28 overflow-hidden">
+      {/* Subtle US flag-inspired backdrop — discreet stripes + star field */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-screen"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, transparent 0 38px, oklch(1 0 0 / 0.55) 38px 39px), radial-gradient(circle at 18% 22%, oklch(1 0 0 / 0.18), transparent 42%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(115deg, oklch(0.18 0.06 258 / 0.92) 0%, oklch(0.24 0.07 258 / 0.78) 50%, oklch(0.20 0.06 258 / 0.92) 100%)",
+        }}
+      />
       <span className="fade-edge-bottom" aria-hidden />
 
-      {/* Oversized serif glyph — editorial direction-of-art marker */}
       <div
         aria-hidden
         className="serif-marker pointer-events-none absolute -right-6 top-24 lg:top-28 text-[18rem] lg:text-[26rem] opacity-[0.06] select-none"
@@ -32,7 +46,7 @@ function HeroSection() {
       </div>
 
       <Container>
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-12 items-end">
+        <div className="relative grid gap-12 lg:grid-cols-12 lg:gap-12 items-end">
           <div className="lg:col-span-6 order-2 lg:order-1 lg:pb-10">
             <div className="flex items-center gap-4">
               <span className="rule-gold" />
@@ -60,7 +74,6 @@ function HeroSection() {
             </div>
           </div>
 
-          {/* Editorial portrait — taller, dominant, breaks the column. */}
           <div className="lg:col-span-6 order-1 lg:order-2 relative">
             <div className="relative lg:-mr-12 xl:-mr-20">
               <span className="absolute -top-4 -left-4 h-px w-24 bg-gold z-10" />
@@ -72,7 +85,6 @@ function HeroSection() {
                   className="h-full w-full object-cover object-top"
                 />
               </div>
-              {/* Caption plate floating over the photo edge */}
               <div className="absolute -bottom-6 left-6 right-6 lg:left-10 lg:right-10 bg-primary border border-primary-foreground/15 px-6 py-5 flex items-baseline justify-between gap-4 shadow-[0_30px_60px_-30px_oklch(0_0_0/0.6)]">
                 <div>
                   <div className="text-base font-light text-primary-foreground tracking-tight">Dr. André Linhares</div>
@@ -86,16 +98,18 @@ function HeroSection() {
           </div>
         </div>
 
-        <div className="mt-28 grid grid-cols-2 gap-y-10 gap-x-8 border-t border-primary-foreground/15 pt-12 lg:grid-cols-4">
+        <div className="relative mt-24 grid grid-cols-2 gap-y-12 gap-x-8 border-t border-primary-foreground/15 pt-12 lg:grid-cols-4">
           {[
             { k: "14+", l: "Anos de prática jurídica" },
             { k: "04", l: "Escritórios nos Estados Unidos" },
-            { k: "USA", l: "Escritório de advocacia licenciado nos EUA" },
-            { k: "Global", l: "Clientes em três continentes" },
+            { k: "USA", l: "Escritório licenciado nos EUA" },
+            { k: "INT.", l: "Atuação Internacional · 3 continentes" },
           ].map((it) => (
             <div key={it.l}>
-              <div className="text-4xl font-light text-primary-foreground tracking-tight">{it.k}</div>
-              <div className="mt-3 text-[11px] uppercase tracking-[0.24em] text-primary-foreground/60 max-w-[22ch] leading-relaxed">
+              <div className="font-display text-[clamp(3.5rem,6vw,5.5rem)] font-light text-primary-foreground tracking-[-0.03em] leading-[0.95]">
+                {it.k}
+              </div>
+              <div className="mt-5 text-[11px] uppercase tracking-[0.26em] text-primary-foreground/65 max-w-[22ch] leading-relaxed">
                 {it.l}
               </div>
             </div>
@@ -112,7 +126,7 @@ function HeroSection() {
 
 function AuthoritySection() {
   return (
-    <section className="section-y-lg surface-premium-light relative overflow-hidden">
+    <section className="section-y surface-premium-light relative overflow-hidden">
       <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
 
       {/* Oversized editorial numeral */}
@@ -191,8 +205,28 @@ function AuthoritySection() {
 /* ------------------------------------------------------------------ */
 
 function AwardsSection() {
+  const recognitions = [
+    {
+      title: "10 Best Law Firms",
+      org: "American Institute of Legal Professionals",
+      year: "2026",
+      desc: "Immigration Law — Linhares Law, Florida.",
+    },
+    {
+      title: "The Law Awards",
+      org: "Winner — Immigration Practice",
+      year: "2026",
+      desc: "Distinção internacional pela excelência na prática de imigração americana.",
+    },
+    {
+      title: "Great Place To Work®",
+      org: "Certified — Estados Unidos",
+      year: "2025 — 2026",
+      desc: "Reconhecimento institucional pela cultura organizacional do escritório.",
+    },
+  ];
   return (
-    <section className="section-y-lg surface-premium-dark texture-grain relative overflow-hidden">
+    <section className="section-y surface-premium-dark texture-grain relative overflow-hidden">
       <span className="fade-edge-top" aria-hidden />
       <span className="fade-edge-bottom" aria-hidden />
 
@@ -214,96 +248,49 @@ function AwardsSection() {
           </div>
         </div>
 
-        {/* Editorial composition — small ceremony photo + dominant recognitions */}
-        <div className="mt-16 grid gap-12 lg:gap-16 lg:grid-cols-12 items-start">
-          {/* Compact ceremony photo with caption — refined, no longer hero-sized */}
-          <div className="lg:col-span-4 relative">
+        <div className="mt-16 grid gap-12 lg:gap-20 lg:grid-cols-12 items-start">
+          {/* IBI flagship — single ceremony photo */}
+          <div className="lg:col-span-5 relative">
             <div className="relative">
               <span className="absolute -top-3 -left-3 h-px w-16 bg-gold z-10" />
-              <div className="editorial-frame photo-vignette aspect-[4/5] w-full">
-                <img src={ibi3} alt="International Business Institute — Award Ceremony" className="h-full w-full object-cover" />
+              <div className="editorial-frame photo-vignette aspect-[3/4] w-full">
+                <img src={ibiCeremony} alt="Dr. André Linhares · International Business Institute Awards" className="h-full w-full object-cover object-top" />
               </div>
-              <figcaption className="mt-5 text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/55 leading-relaxed">
-                Cerimônia · International Business Institute Awards
-              </figcaption>
+              <div className="mt-6">
+                <div className="text-[10.5px] uppercase tracking-[0.32em] text-gold">International Business Institute · 2026</div>
+                <h3 className="mt-4 text-2xl lg:text-[1.75rem] font-light text-primary-foreground tracking-tight leading-[1.25] max-w-[26ch]">
+                  Distinção internacional por excelência na prática jurídica de imigração americana.
+                </h3>
+              </div>
             </div>
           </div>
 
-          {/* Recognitions — protagonism, breathing space, prominent seal plates */}
-          <div className="lg:col-span-8 space-y-10">
-            {/* IBI — flagship recognition, larger statement */}
-            <div className="border-t border-primary-foreground/15 pt-10">
-              <div className="grid gap-8 lg:grid-cols-12 items-start">
-                <div className="lg:col-span-3 award-plate h-32 lg:h-36 p-6">
-                  <div className="text-center">
-                    <div className="serif-marker text-3xl text-primary-foreground/80">IBI</div>
-                    <div className="mt-2 text-[9px] uppercase tracking-[0.28em] text-gold">Awards · 2026</div>
+          {/* Other recognitions — typography only, no thumbnails */}
+          <div className="lg:col-span-7 lg:pt-4">
+            <div className="border-t border-primary-foreground/15">
+              {recognitions.map((r) => (
+                <div key={r.title} className="grid grid-cols-12 gap-6 py-8 lg:py-10 border-b border-primary-foreground/15 items-baseline">
+                  <div className="col-span-12 sm:col-span-3 text-[10.5px] uppercase tracking-[0.32em] text-gold">
+                    {r.year}
+                  </div>
+                  <div className="col-span-12 sm:col-span-9">
+                    <h3 className="text-2xl lg:text-[1.6rem] font-light text-primary-foreground tracking-tight leading-[1.25]">
+                      {r.title}
+                    </h3>
+                    <div className="mt-2 text-[11px] uppercase tracking-[0.24em] text-primary-foreground/55">
+                      {r.org}
+                    </div>
+                    <p className="mt-3 text-base leading-[1.7] text-primary-foreground/75 max-w-[48ch]">
+                      {r.desc}
+                    </p>
                   </div>
                 </div>
-                <div className="lg:col-span-9">
-                  <div className="text-[10.5px] uppercase tracking-[0.32em] text-gold">International Business Institute</div>
-                  <h3 className="mt-4 text-2xl lg:text-[1.75rem] font-light text-primary-foreground tracking-tight leading-[1.25] max-w-[28ch]">
-                    Distinção internacional por excelência na prática jurídica de imigração americana.
-                  </h3>
-                </div>
-              </div>
-            </div>
-
-            {/* 10 Best Law Firms */}
-            <div className="border-t border-primary-foreground/15 pt-10">
-              <div className="grid gap-8 lg:grid-cols-12 items-center">
-                <div className="lg:col-span-3 award-plate h-32 lg:h-36 p-4 overflow-hidden">
-                  <img src={tenBest} alt="10 Best Law Firms — American Institute of Legal Counsel" className="max-h-full w-auto object-contain" />
-                </div>
-                <div className="lg:col-span-9">
-                  <div className="text-[10.5px] uppercase tracking-[0.32em] text-gold">10 Best Law Firms · 2026</div>
-                  <h3 className="mt-4 text-xl lg:text-2xl font-light text-primary-foreground tracking-tight max-w-[32ch]">
-                    Immigration Law — Linhares Law, Florida.
-                  </h3>
-                  <div className="mt-3 text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/55">
-                    American Institute of Legal Professionals
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* The Law Awards */}
-            <div className="border-t border-primary-foreground/15 pt-10">
-              <div className="grid gap-8 lg:grid-cols-12 items-center">
-                <div className="lg:col-span-3 award-plate h-32 lg:h-36 p-4 overflow-hidden">
-                  <img src={lawAwards} alt="The Law Awards 2026" className="max-h-full w-auto object-contain" />
-                </div>
-                <div className="lg:col-span-9">
-                  <div className="text-[10.5px] uppercase tracking-[0.32em] text-gold">The Law Awards · 2026</div>
-                  <h3 className="mt-4 text-xl lg:text-2xl font-light text-primary-foreground tracking-tight">
-                    Winner — Immigration Practice
-                  </h3>
-                </div>
-              </div>
-            </div>
-
-            {/* Great Place To Work — institutional seal */}
-            <div className="border-t border-primary-foreground/15 pt-10">
-              <div className="grid gap-8 lg:grid-cols-12 items-center">
-                <div className="lg:col-span-3 award-plate h-32 lg:h-36 p-4 overflow-hidden">
-                  <img src={gptwBadge} alt="Great Place To Work Certified" className="max-h-full w-auto object-contain" />
-                </div>
-                <div className="lg:col-span-9">
-                  <div className="text-[10.5px] uppercase tracking-[0.32em] text-gold">Great Place To Work® · Certified</div>
-                  <h3 className="mt-4 text-xl lg:text-2xl font-light text-primary-foreground tracking-tight max-w-[32ch]">
-                    Excelência organizacional reconhecida nos Estados Unidos.
-                  </h3>
-                  <div className="mt-3 text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/55">
-                    USA · Oct 2025 — Oct 2026
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
 
-
-        <div className="mt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+        <div className="mt-12 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
           <p className="text-[11px] uppercase tracking-[0.28em] text-primary-foreground/55">
             Distinções institucionais · 2026 — Presente
           </p>
@@ -336,7 +323,7 @@ function ServicesSection() {
   const featured = strategies[0];
   const rest = strategies.slice(1);
   return (
-    <section className="section-y-lg surface-premium-surface relative">
+    <section className="section-y surface-premium-surface relative">
       <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
 
       <Container>
@@ -440,8 +427,10 @@ function LeadershipSection() {
       bio: "Of Counsel da Linhares Law, com atuação em direito migratório e experiência multijurisdicional entre Florida e Puerto Rico.",
     },
   ];
+  const founder = leaders[0];
+  const others = leaders.slice(1);
   return (
-    <section className="section-y-lg surface-premium-light relative">
+    <section className="section-y surface-premium-light relative">
       <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
 
       <Container>
@@ -456,39 +445,60 @@ function LeadershipSection() {
           </InstitutionalButton>
         </div>
 
-        <div className="mt-16 grid gap-10 lg:gap-12 lg:grid-cols-3">
-          {leaders.map((a) => (
-            <Link
-              key={a.slug}
-              to="/equipe/$slug"
-              params={{ slug: a.slug }}
-              className="group block reveal-up"
-            >
-              <div className="relative">
-                <span className="absolute -top-3 -left-3 h-px w-16 bg-gold z-10" />
-                <div className="editorial-frame aspect-[4/5] w-full">
-                  <img
-                    src={a.img}
-                    alt={a.name}
-                    className="h-full w-full object-cover object-top"
-                  />
-                </div>
+        <div className="mt-16 grid gap-12 lg:gap-16 lg:grid-cols-12 items-start">
+          {/* Founder — dominant column */}
+          <Link
+            to="/equipe/$slug"
+            params={{ slug: founder.slug }}
+            className="group block reveal-up lg:col-span-7"
+          >
+            <div className="relative">
+              <span className="absolute -top-3 -left-3 h-px w-20 bg-gold z-10" />
+              <div className="editorial-frame photo-vignette aspect-[4/5] lg:aspect-[5/6] w-full">
+                <img src={founder.img} alt={founder.name} className="h-full w-full object-cover object-top" />
               </div>
-              <div className="mt-6">
-                <div className="text-[10.5px] uppercase tracking-[0.3em] text-gold">{a.cred}</div>
-                <div className="mt-4 text-2xl font-light text-primary tracking-tight leading-[1.15] group-hover:text-gold transition-colors">
-                  {a.name}
-                </div>
-                <div className="mt-2 text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
-                  {a.role}
-                </div>
-                <p className="mt-5 text-sm leading-[1.7] text-ink-soft">{a.bio}</p>
-                <div className="mt-6 text-[10.5px] uppercase tracking-[0.28em] text-primary group-hover:text-gold transition-colors border-t border-border pt-5">
-                  Ver perfil completo →
-                </div>
+            </div>
+            <div className="mt-7 max-w-[52ch]">
+              <div className="text-[10.5px] uppercase tracking-[0.3em] text-gold">{founder.cred}</div>
+              <div className="mt-4 text-3xl lg:text-[2.25rem] font-light text-primary tracking-tight leading-[1.1] group-hover:text-gold transition-colors">
+                {founder.name}
               </div>
-            </Link>
-          ))}
+              <div className="mt-2 text-[11px] uppercase tracking-[0.24em] text-muted-foreground">{founder.role}</div>
+              <p className="mt-5 text-base leading-[1.75] text-ink-soft">{founder.bio}</p>
+              <div className="mt-6 text-[10.5px] uppercase tracking-[0.28em] text-primary group-hover:text-gold transition-colors border-t border-border pt-5">
+                Ver perfil completo →
+              </div>
+            </div>
+          </Link>
+
+          {/* Other leaders — horizontal cards stacked */}
+          <div className="lg:col-span-5 space-y-8">
+            {others.map((a) => (
+              <Link
+                key={a.slug}
+                to="/equipe/$slug"
+                params={{ slug: a.slug }}
+                className="group block reveal-up"
+              >
+                <div className="grid grid-cols-12 gap-5 items-start border-t border-border pt-7">
+                  <div className="col-span-5 relative">
+                    <span className="absolute -top-2 -left-2 h-px w-10 bg-gold z-10" />
+                    <div className="editorial-frame aspect-[4/5] w-full">
+                      <img src={a.img} alt={a.name} className="h-full w-full object-cover object-top" />
+                    </div>
+                  </div>
+                  <div className="col-span-7">
+                    <div className="text-[10px] uppercase tracking-[0.28em] text-gold">{a.cred}</div>
+                    <div className="mt-2 text-lg lg:text-xl font-light text-primary tracking-tight leading-[1.2] group-hover:text-gold transition-colors">
+                      {a.name}
+                    </div>
+                    <div className="mt-1 text-[10px] uppercase tracking-[0.22em] text-muted-foreground">{a.role}</div>
+                    <p className="mt-3 text-[13px] leading-[1.65] text-ink-soft">{a.bio}</p>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </Container>
     </section>
@@ -501,61 +511,52 @@ function LeadershipSection() {
 
 function ThoughtLeadershipSection() {
   return (
-    <section className="section-y-lg surface-premium-dark texture-grain relative overflow-hidden">
+    <section className="section-y surface-premium-dark texture-grain relative overflow-hidden">
       <span className="fade-edge-top" aria-hidden />
       <span className="fade-edge-bottom" aria-hidden />
 
       <Container>
-        <div className="grid gap-14 lg:grid-cols-12 lg:gap-16 items-start">
-          <div className="lg:col-span-5">
-            <div className="flex items-center gap-4">
-              <span className="rule-gold" />
-              <span className="eyebrow eyebrow-on-dark">Reconhecimento Institucional</span>
-            </div>
-            <h2 className="mt-7 text-balance text-primary-foreground max-w-[18ch]">
-              Autoridade construída pela prática.
-            </h2>
-            <p className="mt-8 text-lg leading-[1.8] text-primary-foreground/75 max-w-xl">
-              Dr. André Linhares é convidado a proferir palestras, conceder entrevistas e integrar painéis institucionais como consequência da profundidade técnica de sua atuação em imigração americana — e não o contrário.
-            </p>
-            <div className="mt-10 space-y-6 border-t border-primary-foreground/15 pt-8">
-              {[
-                { k: "Palestras", v: "Conferências para empresários, profissionais e investidores internacionais." },
-                { k: "Imprensa", v: "Entrevistas e contribuições editoriais em veículos qualificados." },
-                { k: "Setor", v: "Participação em painéis e eventos especializados em imigração americana." },
-              ].map((b) => (
-                <div key={b.k} className="grid grid-cols-12 gap-4">
-                  <div className="col-span-4 text-[11px] uppercase tracking-[0.28em] text-gold pt-1">{b.k}</div>
-                  <div className="col-span-8 text-base leading-[1.7] text-primary-foreground/80">{b.v}</div>
-                </div>
-              ))}
+        <div className="grid gap-14 lg:grid-cols-12 lg:gap-20 items-center">
+          {/* Single dominant image */}
+          <div className="lg:col-span-6 order-2 lg:order-1">
+            <div className="relative">
+              <span className="absolute -top-3 -left-3 h-px w-20 bg-gold z-10" />
+              <div className="editorial-frame photo-vignette aspect-[4/5] w-full">
+                <img src={andreSpeaking} alt="André Linhares · The Next Chapter — Vistos Imigratórios" className="h-full w-full object-cover" />
+              </div>
+              <div className="mt-5 flex items-center gap-4">
+                <span className="rule-gold" />
+                <span className="text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/60">
+                  The Next Chapter · Vistos Imigratórios para Profissionais e Empresários
+                </span>
+              </div>
             </div>
           </div>
 
-          <div className="lg:col-span-7">
-            <div className="grid grid-cols-12 gap-3 lg:gap-4">
-              <div className="col-span-12">
-                <div className="editorial-frame aspect-[16/10] w-full">
-                  <img src={andreSpeaking} alt="André Linhares · The Next Chapter — Vistos Imigratórios" className="h-full w-full object-cover" />
+          {/* Institutional content column */}
+          <div className="lg:col-span-6 order-1 lg:order-2">
+            <div className="flex items-center gap-4">
+              <span className="rule-gold" />
+              <span className="eyebrow eyebrow-on-dark">Conhecimento & Autoridade</span>
+            </div>
+            <h2 className="mt-7 text-balance text-primary-foreground max-w-[20ch]">
+              Autoridade construída pela prática.
+            </h2>
+            <p className="mt-7 text-lg leading-[1.8] text-primary-foreground/75 max-w-xl">
+              Dr. André Linhares é convidado a proferir palestras, conceder entrevistas e integrar painéis institucionais como consequência da profundidade técnica de sua atuação em imigração americana — e não o contrário.
+            </p>
+            <div className="mt-10 border-t border-primary-foreground/15">
+              {[
+                { k: "Palestras", v: "Conferências para empresários, profissionais e investidores internacionais." },
+                { k: "Mídia", v: "Entrevistas e contribuições editoriais em veículos qualificados." },
+                { k: "Conteúdo Jurídico", v: "Publicações técnicas e análises sobre estratégia migratória americana." },
+                { k: "Setor", v: "Participação em painéis e eventos especializados em imigração americana." },
+              ].map((b) => (
+                <div key={b.k} className="grid grid-cols-12 gap-4 py-5 border-b border-primary-foreground/10 items-baseline">
+                  <div className="col-span-4 text-[11px] uppercase tracking-[0.28em] text-gold">{b.k}</div>
+                  <div className="col-span-8 text-[15px] leading-[1.65] text-primary-foreground/80">{b.v}</div>
                 </div>
-                <div className="mt-4 flex items-center gap-4">
-                  <span className="rule-gold" />
-                  <span className="text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/60">
-                    The Next Chapter · Vistos Imigratórios para Profissionais e Empresários
-                  </span>
-                </div>
-              </div>
-              <div className="col-span-12 mt-4">
-                <div className="editorial-frame aspect-[16/10] w-full">
-                  <img src={eventoImigracao} alt="Painel institucional · Dois Caminhos na Imigração Americana" className="h-full w-full object-cover" />
-                </div>
-                <div className="mt-4 flex items-center gap-4">
-                  <span className="rule-gold" />
-                  <span className="text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/60">
-                    Painel institucional · Dois Caminhos na Imigração Americana
-                  </span>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -570,48 +571,54 @@ function ThoughtLeadershipSection() {
 
 function CultureSection() {
   return (
-    <section className="section-y-lg surface-premium-light relative">
+    <section className="section-y surface-premium-light relative">
       <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
 
       <Container>
-        <div className="grid gap-14 lg:grid-cols-12 lg:gap-20 items-center">
-          <div className="lg:col-span-5">
-            <div className="bg-surface p-10 lg:p-14 flex items-center justify-center border border-border">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12 items-stretch">
+          {/* Badge — full, never cropped */}
+          <div className="lg:col-span-4">
+            <div className="h-full bg-surface border border-border p-10 lg:p-12 flex items-center justify-center">
               <img
                 src={gptwBadge}
                 alt="Great Place To Work Certified — Linhares Law USA"
-                className="w-full max-w-[280px] h-auto object-contain"
+                className="w-full max-w-[320px] h-auto object-contain"
+                style={{ objectFit: "contain" }}
               />
             </div>
           </div>
-          <div className="lg:col-span-7">
+
+          {/* Statement column */}
+          <div className="lg:col-span-4 flex flex-col justify-center">
             <div className="flex items-center gap-4">
               <span className="rule-gold" />
               <span className="eyebrow">Excelência Organizacional</span>
             </div>
-            <h2 className="mt-7 text-balance text-primary max-w-[22ch]">
+            <h2 className="mt-6 text-balance text-primary max-w-[18ch] text-[clamp(1.5rem,2vw,2rem)] leading-[1.15]">
               Great Place To Work® · Certificada nos Estados Unidos.
             </h2>
-            <p className="mt-7 max-w-xl text-lg leading-[1.8] text-ink-soft">
+            <p className="mt-5 text-[15px] leading-[1.75] text-ink-soft">
               A consistência interna que sustenta o padrão de atendimento entregue a cada cliente — reconhecida por uma das mais respeitadas certificações organizacionais do mundo.
             </p>
-            <dl className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-px bg-border border border-border">
-              <div className="bg-surface p-10">
-                <dt className="text-5xl lg:text-6xl font-light text-primary tracking-tight">100%</dt>
-                <dd className="mt-5 text-sm leading-[1.7] text-ink-soft max-w-[26ch]">
-                  dos colaboradores se sentiram bem-vindos ao ingressar no escritório.
-                </dd>
-              </div>
-              <div className="bg-surface p-10">
-                <dt className="text-5xl lg:text-6xl font-light text-primary tracking-tight">100%</dt>
-                <dd className="mt-5 text-sm leading-[1.7] text-ink-soft max-w-[28ch]">
-                  consideram a Linhares Law um excelente lugar para trabalhar.
-                </dd>
-              </div>
-            </dl>
-            <p className="mt-8 text-[10.5px] uppercase tracking-[0.28em] text-muted-foreground">
-              Great Place To Work · USA · Oct 2025 — Oct 2026
+            <p className="mt-6 text-[10.5px] uppercase tracking-[0.28em] text-muted-foreground">
+              USA · Oct 2025 — Oct 2026
             </p>
+          </div>
+
+          {/* Two differentiated stat cards stacked */}
+          <div className="lg:col-span-4 flex flex-col gap-px bg-border border border-border">
+            <div className="bg-primary text-primary-foreground p-8 lg:p-10 flex-1 flex flex-col justify-center">
+              <div className="font-display text-5xl lg:text-6xl font-light tracking-[-0.02em] leading-none">100%</div>
+              <div className="mt-4 text-[13px] leading-[1.6] text-primary-foreground/80 max-w-[26ch]">
+                dos colaboradores se sentiram bem-vindos ao ingressar no escritório.
+              </div>
+            </div>
+            <div className="bg-gold text-gold-foreground p-8 lg:p-10 flex-1 flex flex-col justify-center">
+              <div className="font-display text-5xl lg:text-6xl font-light tracking-[-0.02em] leading-none">100%</div>
+              <div className="mt-4 text-[13px] leading-[1.6] text-gold-foreground/85 max-w-[28ch]">
+                consideram a Linhares Law um excelente lugar para trabalhar.
+              </div>
+            </div>
           </div>
         </div>
       </Container>
@@ -631,7 +638,7 @@ function OfficesSection() {
     { city: "Salt Lake City", state: "Utah", role: "Escritório Regional", coord: "40.7° N · 111.8° W" },
   ];
   return (
-    <section className="section-y-lg surface-premium-surface relative">
+    <section className="section-y surface-premium-surface relative">
       <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
 
       <Container>
@@ -703,11 +710,25 @@ function PublicationsSection() {
     },
   ];
   return (
-    <section className="section-y-lg surface-premium-light relative">
+    <section
+      className="section-y relative overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(180deg, oklch(0.97 0.025 80) 0%, oklch(0.94 0.035 78) 60%, oklch(0.92 0.045 78) 100%)",
+      }}
+    >
       <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 80% 10%, oklch(0.72 0.08 78), transparent 55%)",
+        }}
+      />
 
       <Container>
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
+        <div className="relative flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
           <SectionTitle
             eyebrow="Linhares Law · Publicações"
             title="Análises jurídicas em imigração americana."
@@ -718,12 +739,12 @@ function PublicationsSection() {
           </InstitutionalButton>
         </div>
 
-        <div className="mt-16 grid gap-px bg-border border border-border lg:grid-cols-3">
+        <div className="relative mt-14 grid gap-px bg-gold/30 border border-gold/30 lg:grid-cols-3">
           {items.map((p, i) => (
             <Link
               key={i}
               to="/blog"
-              className="group editorial-card bg-background p-10 flex flex-col justify-between min-h-[320px] hover:bg-surface"
+              className="group editorial-card bg-background/80 backdrop-blur-sm p-10 flex flex-col justify-between min-h-[300px] hover:bg-background"
             >
               <div>
                 <div className="text-[10.5px] uppercase tracking-[0.3em] text-gold">{p.cat}</div>
@@ -753,30 +774,41 @@ function PublicationsSection() {
 
 function FinalCTA() {
   return (
-    <section className="section-y-lg surface-premium-dark texture-grain relative overflow-hidden">
+    <section className="section-y surface-premium-dark texture-grain relative overflow-hidden">
       <span className="fade-edge-top" aria-hidden />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 85% 50%, oklch(0.72 0.08 78 / 0.6), transparent 55%)",
+        }}
+      />
 
-      <Container width="narrow">
-        <div className="text-center">
-          <div className="flex items-center justify-center gap-4">
-            <span className="rule-gold" />
-            <span className="eyebrow eyebrow-on-dark">Planejamento Migratório Estratégico</span>
-            <span className="rule-gold" />
+      <Container>
+        <div className="relative grid gap-12 lg:grid-cols-12 lg:gap-20 items-center">
+          <div className="lg:col-span-7">
+            <div className="flex items-center gap-4">
+              <span className="rule-gold" />
+              <span className="eyebrow eyebrow-on-dark">Planejamento Imigratório</span>
+            </div>
+            <h2 className="mt-8 text-primary-foreground text-[clamp(2rem,4.5vw,3.75rem)] font-light leading-[1.05] tracking-tight max-w-[18ch]">
+              Planejamento migratório para objetivos de longo prazo.
+            </h2>
           </div>
-          <h2 className="mt-10 text-primary-foreground text-[clamp(2.5rem,6vw,5rem)] font-light leading-[1.05] tracking-tight max-w-[16ch] mx-auto">
-            Planejamento migratório para objetivos de longo prazo.
-          </h2>
-          <p className="mt-10 text-lg leading-[1.8] text-primary-foreground/75 max-w-2xl mx-auto">
-            Iniciar uma conversa institucional com a Linhares Law é o primeiro passo para construir uma estratégia jurídica sólida — orientada por advogados americanos e alinhada aos seus objetivos profissionais, patrimoniais e familiares.
-          </p>
-          <div className="mt-12 flex justify-center">
-            <InstitutionalButton
-              to="/contato"
-              variant="onDark"
-              className="bg-primary-foreground text-primary border-primary-foreground hover:bg-transparent hover:text-primary-foreground"
-            >
-              Agendar Consulta
-            </InstitutionalButton>
+          <div className="lg:col-span-5 lg:border-l lg:border-primary-foreground/15 lg:pl-12">
+            <p className="text-lg leading-[1.8] text-primary-foreground/75">
+              Iniciar uma conversa institucional com a Linhares Law é o primeiro passo para construir uma estratégia jurídica sólida — orientada por advogados americanos e alinhada aos seus objetivos profissionais, patrimoniais e familiares.
+            </p>
+            <div className="mt-10">
+              <InstitutionalButton
+                to="/contato"
+                variant="onDark"
+                className="bg-primary-foreground text-primary border-primary-foreground hover:bg-transparent hover:text-primary-foreground"
+              >
+                Agendar Consulta
+              </InstitutionalButton>
+            </div>
           </div>
         </div>
       </Container>
