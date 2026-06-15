@@ -4,6 +4,7 @@ import { SectionTitle } from "@/components/layout/SectionTitle";
 import { InstitutionalButton } from "@/components/institutional/Button";
 import andre6 from "@/assets/andre-6.jpg";
 import andre5 from "@/assets/andre-5.jpg";
+import andrePratica from "@/assets/andre-pratica.jpg.asset.json";
 import nicholas3 from "@/assets/nicholas-3.jpg";
 import juliana from "@/assets/team-juliana.avif";
 import ibiCeremonyAsset from "@/assets/ibi-award-ceremony-2.jpg.asset.json";
