@@ -141,7 +141,7 @@ function AuthoritySection() {
         />
         <div className="absolute inset-y-0 left-0 lg:w-[46%] xl:w-[42%]">
           <img
-            src={andre5}
+            src={andrePratica.url}
             alt=""
             className="absolute inset-0 h-full w-full object-contain object-left-bottom"
             style={{
@@ -174,7 +174,7 @@ function AuthoritySection() {
       <div className="relative lg:hidden">
         <div className="relative h-[62vh] min-h-[420px] max-h-[560px] w-full overflow-hidden">
           <img
-            src={andre5}
+            src={andrePratica.url}
             alt="Dr. André Linhares"
             className="absolute inset-0 h-full w-full object-cover object-[30%_top]"
           />
