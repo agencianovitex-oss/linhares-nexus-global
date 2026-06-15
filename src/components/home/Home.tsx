@@ -129,81 +129,36 @@ function AuthoritySection() {
     <section className="relative overflow-hidden bg-[oklch(0.13_0.04_258)] texture-grain pt-0 pb-20 lg:section-y">
       <span className="section-seam absolute top-0 left-0 right-0 z-20" aria-hidden />
 
-      {/* DESKTOP portrait — waist-up, anchored bottom-left, blended into the canvas */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 hidden lg:block">
-        {/* Soft luminous cloud bridging the lighter portrait backdrop into the navy canvas */}
+      {/* Full-bleed background portrait — same image on desktop and mobile */}
+      <div aria-hidden className="absolute inset-0">
+        <img
+          src={andrePratica.url}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover object-[20%_center] lg:object-[left_center]"
+        />
+        {/* Right-side dark wash for text legibility (desktop) */}
         <div
-          className="absolute -inset-y-20 left-[18%] w-[55%] blur-3xl opacity-90"
+          className="absolute inset-0 hidden lg:block"
           style={{
             background:
-              "radial-gradient(ellipse 70% 65% at 35% 50%, oklch(0.45 0.04 258 / 0.55) 0%, oklch(0.28 0.05 258 / 0.45) 35%, oklch(0.18 0.04 258 / 0.25) 60%, transparent 80%)",
+              "linear-gradient(90deg, transparent 0%, transparent 35%, oklch(0.13 0.04 258 / 0.55) 55%, oklch(0.13 0.04 258 / 0.88) 75%, oklch(0.13 0.04 258 / 0.96) 100%)",
           }}
         />
-        <div className="absolute inset-y-0 left-0 lg:w-[46%] xl:w-[42%]">
-          <img
-            src={andrePratica.url}
-            alt=""
-            className="absolute inset-0 h-full w-full object-contain object-left-bottom"
-            style={{
-              WebkitMaskImage:
-                "linear-gradient(90deg, #000 50%, rgba(0,0,0,0.85) 70%, rgba(0,0,0,0.4) 88%, rgba(0,0,0,0) 100%)",
-              maskImage:
-                "linear-gradient(90deg, #000 50%, rgba(0,0,0,0.85) 70%, rgba(0,0,0,0.4) 88%, rgba(0,0,0,0) 100%)",
-            }}
-          />
-        </div>
-        {/* Cloud-like wash: starts transparent over the portrait, dissolves into deep navy on the right */}
+        {/* Bottom dark wash for text legibility (mobile) */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 lg:hidden"
           style={{
             background:
-              "linear-gradient(90deg, transparent 0%, transparent 40%, oklch(0.16 0.04 258 / 0.55) 56%, oklch(0.13 0.04 258 / 0.92) 72%, oklch(0.13 0.04 258) 85%)",
-          }}
-        />
-        {/* Faint highlight to soften the seam further */}
-        <div
-          className="absolute inset-y-0 left-[36%] w-[24%] blur-2xl opacity-70"
-          style={{
-            background:
-              "radial-gradient(ellipse 60% 80% at 30% 50%, oklch(0.55 0.03 258 / 0.30) 0%, transparent 70%)",
+              "linear-gradient(180deg, transparent 0%, oklch(0.13 0.04 258 / 0.35) 38%, oklch(0.13 0.04 258 / 0.85) 62%, oklch(0.13 0.04 258 / 0.96) 100%)",
           }}
         />
       </div>
 
-      {/* MOBILE portrait — cinematic top hero, fades into the dark canvas */}
-      <div className="relative lg:hidden">
-        <div className="relative h-[62vh] min-h-[420px] max-h-[560px] w-full overflow-hidden">
-          <img
-            src={andrePratica.url}
-            alt="Dr. André Linhares"
-            className="absolute inset-0 h-full w-full object-cover object-[30%_top]"
-          />
-          {/* Side + bottom navy wash so the portrait dissolves into the section */}
-          <div
-            aria-hidden
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(180deg, oklch(0.13 0.04 258 / 0.25) 0%, oklch(0.13 0.04 258 / 0.15) 45%, oklch(0.13 0.04 258 / 0.85) 82%, oklch(0.13 0.04 258) 100%)",
-            }}
-          />
-          <div
-            aria-hidden
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(90deg, oklch(0.13 0.04 258 / 0.35) 0%, transparent 35%, transparent 65%, oklch(0.13 0.04 258 / 0.35) 100%)",
-            }}
-          />
-        </div>
-      </div>
-
-      <Container>
-        <div className="relative grid gap-12 lg:grid-cols-12 lg:gap-24 items-center lg:min-h-[560px]">
-          {/* Spacer where the portrait reads through on desktop */}
+      <Container className="relative">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-24 items-center lg:min-h-[560px] pt-[55vh] sm:pt-[60vh] lg:pt-0">
           <div className="hidden lg:block lg:col-span-5" aria-hidden />
 
-          <div className="lg:col-span-7 lg:pt-12 relative -mt-10 lg:mt-0">
+          <div className="lg:col-span-7 lg:pt-12 relative">
             <div className="flex items-center gap-4">
               <span className="rule-gold" />
               <span className="eyebrow eyebrow-on-dark">Nossa Prática</span>
