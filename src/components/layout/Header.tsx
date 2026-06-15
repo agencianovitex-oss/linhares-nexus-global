@@ -79,7 +79,7 @@ export function Header({ transparentOverHero = false }: Props) {
           <Link
             to={withLocale(locale, "/contato")}
             className={cn(
-              "hidden items-center justify-center whitespace-nowrap px-5 py-3 text-[11px] font-semibold tracking-[0.18em] uppercase transition-colors md:inline-flex [@media(min-width:1280px)_and_(max-width:1535px)]:hidden",
+              "hidden items-center justify-center whitespace-nowrap px-5 py-3 text-[11px] font-semibold tracking-[0.18em] uppercase transition-colors md:inline-flex xl:hidden",
               onDark
                 ? "border border-primary-foreground/70 text-primary-foreground hover:border-gold hover:text-gold"
                 : "border border-primary text-primary hover:border-gold hover:text-gold",
