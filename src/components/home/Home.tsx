@@ -46,26 +46,27 @@ function HeroSection() {
 
   return (
     <section className="relative surface-premium-dark pt-32 pb-28 lg:pt-40 lg:pb-32 overflow-hidden">
-      {/* Stylized US flag — large, extremely low opacity */}
+      {/* Stylized US flag — more present, still institutional */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.09]"
+        className="pointer-events-none absolute inset-0 opacity-[0.22]"
         style={{
           backgroundImage: `url("data:image/svg+xml;utf8,${flagSvg}")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: "blur(0.5px) saturate(0.85)",
+          filter: "saturate(0.95)",
         }}
       />
-      {/* Strong navy institutional overlay — keeps the flag subliminal */}
+      {/* Navy institutional overlay — lets the flag breathe through */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "linear-gradient(120deg, oklch(0.16 0.06 258 / 0.94) 0%, oklch(0.22 0.07 258 / 0.86) 50%, oklch(0.17 0.06 258 / 0.95) 100%)",
+            "linear-gradient(120deg, oklch(0.17 0.06 258 / 0.82) 0%, oklch(0.22 0.07 258 / 0.7) 50%, oklch(0.17 0.06 258 / 0.85) 100%)",
         }}
       />
+
       {/* Radial highlight, faint paper grain via existing texture */}
       <div
         aria-hidden
