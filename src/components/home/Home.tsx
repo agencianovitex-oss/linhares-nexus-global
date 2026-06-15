@@ -270,9 +270,10 @@ function AwardsSection() {
             <div className="border-t border-primary-foreground/15">
               {recognitions.map((r) => (
                 <div key={r.title} className="grid grid-cols-12 gap-6 py-8 lg:py-10 border-b border-primary-foreground/15 items-baseline">
-                  <div className="col-span-12 sm:col-span-3 text-[10.5px] uppercase tracking-[0.32em] text-gold">
+                  <div className="col-span-12 sm:col-span-3 font-display text-2xl lg:text-3xl font-light text-gold tracking-tight leading-none">
                     {r.year}
                   </div>
+
                   <div className="col-span-12 sm:col-span-9">
                     <h3 className="text-2xl lg:text-[1.6rem] font-light text-primary-foreground tracking-tight leading-[1.25]">
                       {r.title}
