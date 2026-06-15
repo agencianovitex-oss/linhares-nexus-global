@@ -188,24 +188,6 @@ function AuthoritySection() {
             <p className="mt-6 text-lg leading-[1.85] text-ink-soft max-w-[58ch]">
               Nossa atuação é pautada por discrição, profundidade técnica e relacionamento de longo prazo com cada cliente representado.
             </p>
-
-            {/* Inline editorial meta — no card grid, hairline separators */}
-            <div className="mt-14 border-t border-border pt-10 space-y-8">
-              {[
-                { k: "Federal", v: "Atuação perante USCIS, DOS e DOL." },
-                { k: "Nacional", v: "Quatro escritórios nos Estados Unidos." },
-                { k: "Internacional", v: "Clientes em três continentes." },
-              ].map((i) => (
-                <div key={i.k} className="grid grid-cols-12 gap-6 items-baseline">
-                  <div className="col-span-12 sm:col-span-3 text-[10.5px] uppercase tracking-[0.32em] text-gold">
-                    {i.k}
-                  </div>
-                  <div className="col-span-12 sm:col-span-9 text-base lg:text-lg leading-[1.7] text-ink-soft font-light">
-                    {i.v}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </Container>
