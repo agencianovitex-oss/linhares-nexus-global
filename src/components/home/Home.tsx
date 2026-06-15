@@ -13,6 +13,10 @@ const gptwBadge = gptwBadgeAsset.url;
 import skylineAsset from "@/assets/skyline-us.jpg.asset.json";
 const skylineUs = skylineAsset.url;
 import andreSpeaking from "@/assets/andre-speaking-01.jpg";
+import heroFlagDesktopAsset from "@/assets/hero-flag-desktop.jpg.asset.json";
+import heroFlagMobileAsset from "@/assets/hero-flag-mobile.jpg.asset.json";
+const heroFlagDesktop = heroFlagDesktopAsset.url;
+const heroFlagMobile = heroFlagMobileAsset.url;
 
 /* ------------------------------------------------------------------ */
 /* 1 — Hero                                                            */
