@@ -68,8 +68,8 @@
 
   --container-max: 1320px;
   --container-narrow: 920px;
-  --section-y: 7rem;
-  --section-y-lg: 10rem;
+  --section-y: 5.5rem;
+  --section-y-lg: 8rem;
 }
 
 :root {
