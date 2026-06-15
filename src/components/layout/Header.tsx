@@ -43,7 +43,7 @@ export function Header({ transparentOverHero = false }: Props) {
           : "border-b border-border bg-background text-secondary",
       )}
     >
-      <Container className="flex h-24 items-center justify-between gap-8 lg:h-32">
+      <Container className="flex h-24 items-center justify-between gap-6 lg:h-28 xl:gap-8">
         <Link to={withLocale(locale, "/")} aria-label={t.brand} className="flex shrink-0 items-center">
           <img
             src={onDark ? logoWhite.url : logoBlack.url}
