@@ -108,6 +108,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "format-detection", content: "telephone=no" },
+      { property: "og:title", content: "Linhares Law — U.S. Immigration · Boutique Practice" },
+      { name: "twitter:title", content: "Linhares Law — U.S. Immigration · Boutique Practice" },
+      { name: "description", content: "A premium multilingual institutional website for Linhares Law, a US immigration firm." },
+      { property: "og:description", content: "A premium multilingual institutional website for Linhares Law, a US immigration firm." },
+      { name: "twitter:description", content: "A premium multilingual institutional website for Linhares Law, a US immigration firm." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6ce1a148-1eb3-40be-b641-fa258b0652fe/id-preview-6e187369--5d07c35f-ca6c-48e6-9b46-689d39426690.lovable.app-1781552287847.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6ce1a148-1eb3-40be-b641-fa258b0652fe/id-preview-6e187369--5d07c35f-ca6c-48e6-9b46-689d39426690.lovable.app-1781552287847.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
