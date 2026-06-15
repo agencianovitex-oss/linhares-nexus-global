@@ -4,6 +4,7 @@ import { SectionTitle } from "@/components/layout/SectionTitle";
 import { InstitutionalButton } from "@/components/institutional/Button";
 import andre6 from "@/assets/andre-6.jpg";
 import andre5 from "@/assets/andre-5.jpg";
+import andrePratica from "@/assets/andre-pratica.jpg.asset.json";
 import nicholas3 from "@/assets/nicholas-3.jpg";
 import juliana from "@/assets/team-juliana.avif";
 import ibiCeremonyAsset from "@/assets/ibi-award-ceremony-2.jpg.asset.json";
@@ -140,7 +141,7 @@ function AuthoritySection() {
         />
         <div className="absolute inset-y-0 left-0 lg:w-[46%] xl:w-[42%]">
           <img
-            src={andre5}
+            src={andrePratica.url}
             alt=""
             className="absolute inset-0 h-full w-full object-contain object-left-bottom"
             style={{
@@ -173,7 +174,7 @@ function AuthoritySection() {
       <div className="relative lg:hidden">
         <div className="relative h-[62vh] min-h-[420px] max-h-[560px] w-full overflow-hidden">
           <img
-            src={andre5}
+            src={andrePratica.url}
             alt="Dr. André Linhares"
             className="absolute inset-0 h-full w-full object-cover object-[30%_top]"
           />
