@@ -6,10 +6,12 @@ import andre6 from "@/assets/andre-6.jpg";
 import andre5 from "@/assets/andre-5.jpg";
 import nicholas3 from "@/assets/nicholas-3.jpg";
 import juliana from "@/assets/team-juliana.avif";
-import ibiCeremonyAsset from "@/assets/ibi-award-ceremony.jpg.asset.json";
+import ibiCeremonyAsset from "@/assets/ibi-award-ceremony-2.jpg.asset.json";
 const ibiCeremony = ibiCeremonyAsset.url;
 import gptwBadgeAsset from "@/assets/company-badge.webp.asset.json";
 const gptwBadge = gptwBadgeAsset.url;
+import skylineAsset from "@/assets/skyline-us.jpg.asset.json";
+const skylineUs = skylineAsset.url;
 import andreSpeaking from "@/assets/andre-speaking-01.jpg";
 
 /* ------------------------------------------------------------------ */
@@ -17,84 +19,97 @@ import andreSpeaking from "@/assets/andre-speaking-01.jpg";
 /* ------------------------------------------------------------------ */
 
 function HeroSection() {
+  // Stylized US flag — pure SVG, no extra requests. Drawn at large scale,
+  // very low opacity, behind a strong navy overlay so it reads as institutional
+  // depth rather than patriotic imagery.
+  const flagSvg = encodeURIComponent(`
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1900 1000' preserveAspectRatio='xMidYMid slice'>
+  <rect width='1900' height='1000' fill='#0a1f3d'/>
+  ${Array.from({ length: 13 })
+    .map((_, i) =>
+      i % 2 === 0
+        ? `<rect x='0' y='${i * (1000 / 13)}' width='1900' height='${1000 / 13}' fill='#ffffff' opacity='0.55'/>`
+        : `<rect x='0' y='${i * (1000 / 13)}' width='1900' height='${1000 / 13}' fill='#b3132f' opacity='0.55'/>`
+    )
+    .join("")}
+  <rect x='0' y='0' width='760' height='${(1000 / 13) * 7}' fill='#0a1f3d'/>
+  ${Array.from({ length: 9 })
+    .flatMap((_, r) =>
+      Array.from({ length: r % 2 === 0 ? 6 : 5 }).map((_, c) => {
+        const x = (r % 2 === 0 ? 70 : 130) + c * 120;
+        const y = 50 + r * 55;
+        return `<circle cx='${x}' cy='${y}' r='8' fill='#ffffff' opacity='0.85'/>`;
+      })
+    )
+    .join("")}
+</svg>`);
+
   return (
-    <section className="relative surface-premium-dark texture-grain pt-32 pb-24 lg:pt-36 lg:pb-28 overflow-hidden">
-      {/* Subtle US flag-inspired backdrop — discreet stripes + star field */}
+    <section className="relative surface-premium-dark pt-32 pb-28 lg:pt-40 lg:pb-32 overflow-hidden">
+      {/* Stylized US flag — large, extremely low opacity */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-screen"
+        className="pointer-events-none absolute inset-0 opacity-[0.09]"
         style={{
-          backgroundImage:
-            "repeating-linear-gradient(0deg, transparent 0 38px, oklch(1 0 0 / 0.55) 38px 39px), radial-gradient(circle at 18% 22%, oklch(1 0 0 / 0.18), transparent 42%)",
+          backgroundImage: `url("data:image/svg+xml;utf8,${flagSvg}")`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "blur(0.5px) saturate(0.85)",
         }}
       />
+      {/* Strong navy institutional overlay — keeps the flag subliminal */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "linear-gradient(115deg, oklch(0.18 0.06 258 / 0.92) 0%, oklch(0.24 0.07 258 / 0.78) 50%, oklch(0.20 0.06 258 / 0.92) 100%)",
+            "linear-gradient(120deg, oklch(0.16 0.06 258 / 0.94) 0%, oklch(0.22 0.07 258 / 0.86) 50%, oklch(0.17 0.06 258 / 0.95) 100%)",
+        }}
+      />
+      {/* Radial highlight, faint paper grain via existing texture */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 70% 55% at 80% 20%, oklch(1 0 0 / 0.06), transparent 60%)",
         }}
       />
       <span className="fade-edge-bottom" aria-hidden />
 
       <div
         aria-hidden
-        className="serif-marker pointer-events-none absolute -right-6 top-24 lg:top-28 text-[18rem] lg:text-[26rem] opacity-[0.06] select-none"
+        className="serif-marker pointer-events-none absolute -right-10 top-20 text-[22rem] lg:text-[32rem] opacity-[0.05] select-none"
       >
         L
       </div>
 
       <Container>
-        <div className="relative grid gap-12 lg:grid-cols-12 lg:gap-12 items-end">
-          <div className="lg:col-span-6 order-2 lg:order-1 lg:pb-10">
-            <div className="flex items-center gap-4">
-              <span className="rule-gold" />
-              <span className="eyebrow eyebrow-on-dark">
-                Linhares Law · Escritório de Advocacia de Imigração Americana
-              </span>
-            </div>
-            <h1 className="mt-8 text-balance text-primary-foreground max-w-[18ch]">
-              Advogados de imigração americana para profissionais, executivos, investidores e famílias.
-            </h1>
-            <p className="mt-8 max-w-xl text-lg leading-[1.8] text-primary-foreground/75">
-              Representação jurídica estratégica perante as autoridades federais de imigração dos Estados Unidos. Conduzimos cada caso com profundidade técnica, discrição e visão de longo prazo.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <InstitutionalButton
-                to="/contato"
-                variant="onDark"
-                className="bg-primary-foreground text-primary border-primary-foreground hover:bg-transparent hover:text-primary-foreground"
-              >
-                Agendar Consulta
-              </InstitutionalButton>
-              <InstitutionalButton to="/areas-de-atuacao" variant="onDark">
-                Conhecer nossas estratégias
-              </InstitutionalButton>
-            </div>
+        <div className="relative max-w-5xl mx-auto text-center">
+          <div className="flex items-center justify-center gap-4">
+            <span className="rule-gold" />
+            <span className="eyebrow eyebrow-on-dark">
+              Linhares Law · Escritório de Advocacia de Imigração Americana
+            </span>
+            <span className="rule-gold" />
           </div>
-
-          <div className="lg:col-span-6 order-1 lg:order-2 relative">
-            <div className="relative lg:-mr-12 xl:-mr-20">
-              <span className="absolute -top-4 -left-4 h-px w-24 bg-gold z-10" />
-              <span className="absolute -top-4 -left-4 w-px h-24 bg-gold z-10" />
-              <div className="editorial-frame photo-vignette aspect-[3/4] lg:aspect-[4/5.6] w-full">
-                <img
-                  src={andre6}
-                  alt="Dr. André Linhares — Founding Attorney, Linhares Law"
-                  className="h-full w-full object-cover object-top"
-                />
-              </div>
-              <div className="absolute -bottom-6 left-6 right-6 lg:left-10 lg:right-10 bg-primary border border-primary-foreground/15 px-6 py-5 flex items-baseline justify-between gap-4 shadow-[0_30px_60px_-30px_oklch(0_0_0/0.6)]">
-                <div>
-                  <div className="text-base font-light text-primary-foreground tracking-tight">Dr. André Linhares</div>
-                  <div className="mt-1 text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/55">
-                    Advogado Fundador
-                  </div>
-                </div>
-                <div className="text-[10.5px] uppercase tracking-[0.28em] text-gold">USA</div>
-              </div>
-            </div>
+          <h1 className="mt-10 text-balance text-primary-foreground mx-auto max-w-[22ch]">
+            Advogados de imigração americana para profissionais, executivos, investidores e famílias.
+          </h1>
+          <p className="mt-8 mx-auto max-w-2xl text-lg leading-[1.85] text-primary-foreground/75">
+            Representação jurídica estratégica perante as autoridades federais de imigração dos Estados Unidos. Conduzimos cada caso com profundidade técnica, discrição e visão de longo prazo.
+          </p>
+          <div className="mt-12 flex flex-wrap justify-center gap-4">
+            <InstitutionalButton
+              to="/contato"
+              variant="onDark"
+              className="bg-primary-foreground text-primary border-primary-foreground hover:bg-transparent hover:text-primary-foreground"
+            >
+              Agendar Consulta
+            </InstitutionalButton>
+            <InstitutionalButton to="/areas-de-atuacao" variant="onDark">
+              Conhecer nossas estratégias
+            </InstitutionalButton>
           </div>
         </div>
 
@@ -106,7 +121,7 @@ function HeroSection() {
             { k: "INT.", l: "Atuação Internacional · 3 continentes" },
           ].map((it) => (
             <div key={it.l}>
-              <div className="font-display text-[clamp(3.5rem,6vw,5.5rem)] font-light text-primary-foreground tracking-[-0.03em] leading-[0.95]">
+              <div className="font-display text-[clamp(3rem,5.5vw,5rem)] font-light text-primary-foreground tracking-[-0.03em] leading-[0.95]">
                 {it.k}
               </div>
               <div className="mt-5 text-[11px] uppercase tracking-[0.26em] text-primary-foreground/65 max-w-[22ch] leading-relaxed">
@@ -175,24 +190,6 @@ function AuthoritySection() {
             <p className="mt-6 text-lg leading-[1.85] text-ink-soft max-w-[58ch]">
               Nossa atuação é pautada por discrição, profundidade técnica e relacionamento de longo prazo com cada cliente representado.
             </p>
-
-            {/* Inline editorial meta — no card grid, hairline separators */}
-            <div className="mt-14 border-t border-border pt-10 space-y-8">
-              {[
-                { k: "Federal", v: "Atuação perante USCIS, DOS e DOL." },
-                { k: "Nacional", v: "Quatro escritórios nos Estados Unidos." },
-                { k: "Internacional", v: "Clientes em três continentes." },
-              ].map((i) => (
-                <div key={i.k} className="grid grid-cols-12 gap-6 items-baseline">
-                  <div className="col-span-12 sm:col-span-3 text-[10.5px] uppercase tracking-[0.32em] text-gold">
-                    {i.k}
-                  </div>
-                  <div className="col-span-12 sm:col-span-9 text-base lg:text-lg leading-[1.7] text-ink-soft font-light">
-                    {i.v}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </Container>
@@ -253,8 +250,8 @@ function AwardsSection() {
           <div className="lg:col-span-5 relative">
             <div className="relative">
               <span className="absolute -top-3 -left-3 h-px w-16 bg-gold z-10" />
-              <div className="editorial-frame photo-vignette aspect-[3/4] w-full">
-                <img src={ibiCeremony} alt="Dr. André Linhares · International Business Institute Awards" className="h-full w-full object-cover object-top" />
+              <div className="editorial-frame photo-vignette aspect-[4/5] w-full">
+                <img src={ibiCeremony} alt="Dr. André Linhares · International Business Institute Awards" className="h-full w-full object-cover object-center" />
               </div>
               <div className="mt-6">
                 <div className="text-[10.5px] uppercase tracking-[0.32em] text-gold">International Business Institute · 2026</div>
@@ -638,51 +635,78 @@ function OfficesSection() {
     { city: "Salt Lake City", state: "Utah", role: "Escritório Regional", coord: "40.7° N · 111.8° W" },
   ];
   return (
-    <section className="section-y surface-premium-surface relative">
-      <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
+    <section className="relative surface-premium-dark overflow-hidden">
+      {/* Skyline backdrop — full bleed, deep navy overlay */}
+      <div aria-hidden className="absolute inset-0">
+        <img
+          src={skylineUs}
+          alt=""
+          aria-hidden
+          loading="lazy"
+          className="h-full w-full object-cover object-center opacity-[0.35]"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, oklch(0.16 0.06 258 / 0.85) 0%, oklch(0.20 0.07 258 / 0.78) 50%, oklch(0.16 0.06 258 / 0.95) 100%)",
+          }}
+        />
+      </div>
+      <span className="section-seam-dark absolute top-0 left-0 right-0" aria-hidden />
 
-      <Container>
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
-          <SectionTitle
-            eyebrow="Presença Nacional"
-            title="Quatro escritórios nos Estados Unidos."
-            description="Uma estrutura nacional construída para representar clientes internacionais com proximidade institucional em pontos estratégicos do território americano."
-          />
-          <InstitutionalButton to="/escritorios" variant="outline">
-            Ver todos os escritórios
-          </InstitutionalButton>
-        </div>
+      <div className="relative section-y">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 items-end">
+            <div className="lg:col-span-7">
+              <div className="flex items-center gap-4">
+                <span className="rule-gold" />
+                <span className="eyebrow eyebrow-on-dark">Presença nos Estados Unidos</span>
+              </div>
+              <h2 className="mt-7 text-balance text-primary-foreground max-w-[22ch]">
+                Quatro escritórios em pontos estratégicos do território americano.
+              </h2>
+              <p className="mt-7 max-w-xl text-lg leading-[1.85] text-primary-foreground/75">
+                Uma estrutura nacional construída para representar clientes internacionais com proximidade institucional, alcance federal e atuação coordenada entre Florida, New York e Utah.
+              </p>
+            </div>
+            <div className="lg:col-span-5 lg:text-right">
+              <InstitutionalButton to="/escritorios" variant="onDark">
+                Ver todos os escritórios
+              </InstitutionalButton>
+            </div>
+          </div>
 
-        <div className="mt-16 grid gap-px bg-border border border-border lg:grid-cols-4">
-          {offices.map((o, idx) => (
-            <Link
-              key={o.city}
-              to="/escritorios"
-              className="group editorial-card bg-background p-8 lg:p-10 min-h-[260px] flex flex-col justify-between hover:bg-surface-2"
-            >
-              <div>
-                <div className="flex items-center justify-between">
-                  <div className="text-[10.5px] uppercase tracking-[0.3em] text-gold">{o.state}</div>
-                  <div className="text-[10.5px] uppercase tracking-[0.28em] text-muted-foreground">
-                    0{idx + 1}
+          {/* Editorial roster — typographic, hairline rules, no boxes */}
+          <div className="mt-16 border-t border-primary-foreground/15">
+            {offices.map((o, idx) => (
+              <Link
+                key={o.city}
+                to="/escritorios"
+                className="group grid grid-cols-12 gap-6 items-baseline py-7 lg:py-8 border-b border-primary-foreground/15 transition-colors"
+              >
+                <div className="col-span-2 sm:col-span-1 text-[10.5px] uppercase tracking-[0.32em] text-gold">
+                  0{idx + 1}
+                </div>
+                <div className="col-span-10 sm:col-span-4">
+                  <div className="text-2xl lg:text-[1.75rem] font-light text-primary-foreground tracking-tight leading-[1.1] group-hover:text-gold transition-colors">
+                    {o.city}
+                  </div>
+                  <div className="mt-1 text-[10.5px] uppercase tracking-[0.26em] text-primary-foreground/55">
+                    {o.state}
                   </div>
                 </div>
-                <div className="mt-6 text-3xl font-light text-primary tracking-tight group-hover:text-gold transition-colors">
-                  {o.city}
-                </div>
-                <div className="mt-3 text-[11px] uppercase tracking-[0.26em] text-muted-foreground">
+                <div className="col-span-6 sm:col-span-4 text-[12px] uppercase tracking-[0.26em] text-primary-foreground/75">
                   {o.role}
                 </div>
-              </div>
-              <div className="mt-10 border-t border-border pt-5">
-                <div className="text-[10.5px] uppercase tracking-[0.26em] text-ink-soft">
+                <div className="col-span-6 sm:col-span-3 text-right text-[10.5px] uppercase tracking-[0.26em] text-primary-foreground/55 font-mono">
                   {o.coord}
                 </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </Container>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </div>
     </section>
   );
 }

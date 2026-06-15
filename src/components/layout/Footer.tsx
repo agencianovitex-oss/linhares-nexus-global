@@ -26,7 +26,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="mt-32 border-t border-border bg-primary text-primary-foreground">
+    <footer className="border-t border-primary-foreground/10 bg-primary text-primary-foreground">
       <Container className="grid gap-16 py-24 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <img
