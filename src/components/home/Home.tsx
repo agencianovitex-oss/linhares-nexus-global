@@ -704,9 +704,10 @@ function OfficesSection() {
                 <div className="col-span-6 sm:col-span-4 text-[12px] uppercase tracking-[0.26em] text-primary-foreground/75">
                   {o.role}
                 </div>
-                <div className="col-span-6 sm:col-span-3 text-right text-[10.5px] uppercase tracking-[0.26em] text-primary-foreground/55 font-mono">
-                  {o.coord}
+                <div className="col-span-12 sm:col-span-3 text-right text-[11px] uppercase tracking-[0.22em] text-primary-foreground/65 leading-snug">
+                  {o.address}
                 </div>
+
               </Link>
             ))}
           </div>
