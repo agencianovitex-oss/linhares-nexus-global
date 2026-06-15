@@ -231,7 +231,7 @@ function AwardsSection() {
 
       <Container>
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-16 items-end">
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-5">
             <div className="flex items-center gap-4">
               <span className="rule-gold" />
               <span className="eyebrow eyebrow-on-dark">Autoridade & Reconhecimento</span>
@@ -240,12 +240,13 @@ function AwardsSection() {
               Reconhecimento institucional por entidades de referência.
             </h2>
           </div>
-          <div className="lg:col-span-5">
-            <p className="text-lg leading-[1.8] text-primary-foreground/75">
+          <div className="lg:col-span-7">
+            <p className="text-lg leading-[1.8] text-primary-foreground/75 max-w-[58ch]">
               Premiações nacionais e internacionais que refletem consistência técnica, postura ética e padrão de atendimento.
             </p>
           </div>
         </div>
+
 
         <div className="mt-16 grid gap-12 lg:gap-20 lg:grid-cols-12 items-start">
           {/* IBI flagship — single ceremony photo */}
