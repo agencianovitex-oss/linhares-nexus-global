@@ -125,12 +125,12 @@ function HeroSection() {
 
 function AuthoritySection() {
   return (
-    <section className="section-y relative overflow-hidden bg-[oklch(0.13_0.04_258)] texture-grain">
-      <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
+    <section className="relative overflow-hidden bg-[oklch(0.13_0.04_258)] texture-grain pt-0 pb-20 lg:section-y">
+      <span className="section-seam absolute top-0 left-0 right-0 z-20" aria-hidden />
 
-      {/* Editorial portrait — waist-up, anchored bottom-left, blended into the canvas */}
-      <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-y-0 left-0 w-full lg:w-[46%] xl:w-[42%]">
+      {/* DESKTOP portrait — waist-up, anchored bottom-left, blended into the canvas */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 hidden lg:block">
+        <div className="absolute inset-y-0 left-0 lg:w-[46%] xl:w-[42%]">
           <img
             src={andre5}
             alt=""
@@ -143,7 +143,6 @@ function AuthoritySection() {
             }}
           />
         </div>
-        {/* Cinematic wash blending the portrait into the canvas */}
         <div
           className="absolute inset-0"
           style={{
@@ -160,13 +159,40 @@ function AuthoritySection() {
         />
       </div>
 
+      {/* MOBILE portrait — cinematic top hero, fades into the dark canvas */}
+      <div className="relative lg:hidden">
+        <div className="relative h-[62vh] min-h-[420px] max-h-[560px] w-full overflow-hidden">
+          <img
+            src={andre5}
+            alt="Dr. André Linhares"
+            className="absolute inset-0 h-full w-full object-cover object-[30%_top]"
+          />
+          {/* Side + bottom navy wash so the portrait dissolves into the section */}
+          <div
+            aria-hidden
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(180deg, oklch(0.13 0.04 258 / 0.25) 0%, oklch(0.13 0.04 258 / 0.15) 45%, oklch(0.13 0.04 258 / 0.85) 82%, oklch(0.13 0.04 258) 100%)",
+            }}
+          />
+          <div
+            aria-hidden
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(90deg, oklch(0.13 0.04 258 / 0.35) 0%, transparent 35%, transparent 65%, oklch(0.13 0.04 258 / 0.35) 100%)",
+            }}
+          />
+        </div>
+      </div>
 
       <Container>
-        <div className="relative grid gap-16 lg:grid-cols-12 lg:gap-24 items-center min-h-[560px]">
+        <div className="relative grid gap-12 lg:grid-cols-12 lg:gap-24 items-center lg:min-h-[560px]">
           {/* Spacer where the portrait reads through on desktop */}
           <div className="hidden lg:block lg:col-span-5" aria-hidden />
 
-          <div className="lg:col-span-7 lg:pt-12 relative">
+          <div className="lg:col-span-7 lg:pt-12 relative -mt-10 lg:mt-0">
             <div className="flex items-center gap-4">
               <span className="rule-gold" />
               <span className="eyebrow eyebrow-on-dark">Nossa Prática</span>
@@ -174,10 +200,10 @@ function AuthoritySection() {
             <h2 className="mt-7 text-balance text-primary-foreground max-w-[22ch]">
               Representando profissionais, investidores e famílias em estratégias de imigração para os Estados Unidos.
             </h2>
-            <p className="mt-10 text-lg leading-[1.85] text-primary-foreground/80 max-w-[58ch]">
+            <p className="mt-8 lg:mt-10 text-base lg:text-lg leading-[1.85] text-primary-foreground/80 max-w-[58ch]">
               A Linhares Law atua exclusivamente em direito de imigração americana. Cada estratégia é construída a partir de uma leitura técnica precisa do perfil profissional, patrimonial e familiar do cliente — sustentada pela autoridade institucional de um escritório de advocacia reconhecido nos Estados Unidos.
             </p>
-            <p className="mt-6 text-lg leading-[1.85] text-primary-foreground/75 max-w-[58ch]">
+            <p className="mt-6 text-base lg:text-lg leading-[1.85] text-primary-foreground/75 max-w-[58ch]">
               Nossa atuação é pautada por discrição, profundidade técnica e relacionamento de longo prazo com cada cliente representado.
             </p>
             <div className="mt-10 flex items-center gap-4">
@@ -192,6 +218,7 @@ function AuthoritySection() {
     </section>
   );
 }
+
 
 /* ------------------------------------------------------------------ */
 /* 3 — Awards & Recognition (editorial grid)                           */
