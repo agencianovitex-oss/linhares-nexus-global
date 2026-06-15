@@ -130,6 +130,14 @@ function AuthoritySection() {
 
       {/* DESKTOP portrait — waist-up, anchored bottom-left, blended into the canvas */}
       <div aria-hidden className="pointer-events-none absolute inset-0 hidden lg:block">
+        {/* Soft luminous cloud bridging the lighter portrait backdrop into the navy canvas */}
+        <div
+          className="absolute -inset-y-20 left-[18%] w-[55%] blur-3xl opacity-90"
+          style={{
+            background:
+              "radial-gradient(ellipse 70% 65% at 35% 50%, oklch(0.45 0.04 258 / 0.55) 0%, oklch(0.28 0.05 258 / 0.45) 35%, oklch(0.18 0.04 258 / 0.25) 60%, transparent 80%)",
+          }}
+        />
         <div className="absolute inset-y-0 left-0 lg:w-[46%] xl:w-[42%]">
           <img
             src={andre5}
@@ -137,25 +145,26 @@ function AuthoritySection() {
             className="absolute inset-0 h-full w-full object-contain object-left-bottom"
             style={{
               WebkitMaskImage:
-                "linear-gradient(90deg, #000 60%, rgba(0,0,0,0.7) 82%, rgba(0,0,0,0) 100%)",
+                "linear-gradient(90deg, #000 50%, rgba(0,0,0,0.85) 70%, rgba(0,0,0,0.4) 88%, rgba(0,0,0,0) 100%)",
               maskImage:
-                "linear-gradient(90deg, #000 60%, rgba(0,0,0,0.7) 82%, rgba(0,0,0,0) 100%)",
+                "linear-gradient(90deg, #000 50%, rgba(0,0,0,0.85) 70%, rgba(0,0,0,0.4) 88%, rgba(0,0,0,0) 100%)",
             }}
           />
         </div>
-        {/* Navy wash applied ONLY to the right side, leaving the portrait crisp */}
+        {/* Cloud-like wash: starts transparent over the portrait, dissolves into deep navy on the right */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, transparent 0%, transparent 42%, oklch(0.13 0.04 258 / 0.85) 58%, oklch(0.13 0.04 258) 72%)",
+              "linear-gradient(90deg, transparent 0%, transparent 40%, oklch(0.16 0.04 258 / 0.55) 56%, oklch(0.13 0.04 258 / 0.92) 72%, oklch(0.13 0.04 258) 85%)",
           }}
         />
+        {/* Faint highlight to soften the seam further */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-y-0 left-[36%] w-[24%] blur-2xl opacity-70"
           style={{
             background:
-              "radial-gradient(ellipse 70% 55% at 88% 18%, oklch(1 0 0 / 0.04), transparent 60%)",
+              "radial-gradient(ellipse 60% 80% at 30% 50%, oklch(0.55 0.03 258 / 0.30) 0%, transparent 70%)",
           }}
         />
       </div>
