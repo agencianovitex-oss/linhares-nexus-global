@@ -6,10 +6,12 @@ import andre6 from "@/assets/andre-6.jpg";
 import andre5 from "@/assets/andre-5.jpg";
 import nicholas3 from "@/assets/nicholas-3.jpg";
 import juliana from "@/assets/team-juliana.avif";
-import ibiCeremonyAsset from "@/assets/ibi-award-ceremony.jpg.asset.json";
+import ibiCeremonyAsset from "@/assets/ibi-award-ceremony-2.jpg.asset.json";
 const ibiCeremony = ibiCeremonyAsset.url;
 import gptwBadgeAsset from "@/assets/company-badge.webp.asset.json";
 const gptwBadge = gptwBadgeAsset.url;
+import skylineAsset from "@/assets/skyline-us.jpg.asset.json";
+const skylineUs = skylineAsset.url;
 import andreSpeaking from "@/assets/andre-speaking-01.jpg";
 
 /* ------------------------------------------------------------------ */
