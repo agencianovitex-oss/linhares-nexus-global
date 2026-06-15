@@ -46,26 +46,27 @@ function HeroSection() {
 
   return (
     <section className="relative surface-premium-dark pt-32 pb-28 lg:pt-40 lg:pb-32 overflow-hidden">
-      {/* Stylized US flag — large, extremely low opacity */}
+      {/* Stylized US flag — more present, still institutional */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.09]"
+        className="pointer-events-none absolute inset-0 opacity-[0.22]"
         style={{
           backgroundImage: `url("data:image/svg+xml;utf8,${flagSvg}")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: "blur(0.5px) saturate(0.85)",
+          filter: "saturate(0.95)",
         }}
       />
-      {/* Strong navy institutional overlay — keeps the flag subliminal */}
+      {/* Navy institutional overlay — lets the flag breathe through */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "linear-gradient(120deg, oklch(0.16 0.06 258 / 0.94) 0%, oklch(0.22 0.07 258 / 0.86) 50%, oklch(0.17 0.06 258 / 0.95) 100%)",
+            "linear-gradient(120deg, oklch(0.17 0.06 258 / 0.82) 0%, oklch(0.22 0.07 258 / 0.7) 50%, oklch(0.17 0.06 258 / 0.85) 100%)",
         }}
       />
+
       {/* Radial highlight, faint paper grain via existing texture */}
       <div
         aria-hidden
@@ -212,9 +213,10 @@ function AwardsSection() {
     {
       title: "The Law Awards",
       org: "Winner — Immigration Practice",
-      year: "2026",
+      year: "2024",
       desc: "Distinção internacional pela excelência na prática de imigração americana.",
     },
+
     {
       title: "Great Place To Work®",
       org: "Certified — Estados Unidos",
@@ -229,7 +231,7 @@ function AwardsSection() {
 
       <Container>
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-16 items-end">
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-5">
             <div className="flex items-center gap-4">
               <span className="rule-gold" />
               <span className="eyebrow eyebrow-on-dark">Autoridade & Reconhecimento</span>
@@ -238,12 +240,13 @@ function AwardsSection() {
               Reconhecimento institucional por entidades de referência.
             </h2>
           </div>
-          <div className="lg:col-span-5">
-            <p className="text-lg leading-[1.8] text-primary-foreground/75">
+          <div className="lg:col-span-7">
+            <p className="text-lg leading-[1.8] text-primary-foreground/75 max-w-[58ch]">
               Premiações nacionais e internacionais que refletem consistência técnica, postura ética e padrão de atendimento.
             </p>
           </div>
         </div>
+
 
         <div className="mt-16 grid gap-12 lg:gap-20 lg:grid-cols-12 items-start">
           {/* IBI flagship — single ceremony photo */}
@@ -254,7 +257,7 @@ function AwardsSection() {
                 <img src={ibiCeremony} alt="Dr. André Linhares · International Business Institute Awards" className="h-full w-full object-cover object-center" />
               </div>
               <div className="mt-6">
-                <div className="text-[10.5px] uppercase tracking-[0.32em] text-gold">International Business Institute · 2026</div>
+                <div className="text-[13px] uppercase tracking-[0.32em] text-gold">International Business Institute · 2026</div>
                 <h3 className="mt-4 text-2xl lg:text-[1.75rem] font-light text-primary-foreground tracking-tight leading-[1.25] max-w-[26ch]">
                   Distinção internacional por excelência na prática jurídica de imigração americana.
                 </h3>
@@ -267,9 +270,10 @@ function AwardsSection() {
             <div className="border-t border-primary-foreground/15">
               {recognitions.map((r) => (
                 <div key={r.title} className="grid grid-cols-12 gap-6 py-8 lg:py-10 border-b border-primary-foreground/15 items-baseline">
-                  <div className="col-span-12 sm:col-span-3 text-[10.5px] uppercase tracking-[0.32em] text-gold">
+                  <div className="col-span-12 sm:col-span-3 font-display text-2xl lg:text-3xl font-light text-gold tracking-tight leading-none">
                     {r.year}
                   </div>
+
                   <div className="col-span-12 sm:col-span-9">
                     <h3 className="text-2xl lg:text-[1.6rem] font-light text-primary-foreground tracking-tight leading-[1.25]">
                       {r.title}
@@ -629,30 +633,31 @@ function CultureSection() {
 
 function OfficesSection() {
   const offices = [
-    { city: "Orlando", state: "Florida", role: "Sede", coord: "28.5° N · 81.3° W" },
-    { city: "Miami", state: "Florida", role: "Escritório Regional", coord: "25.7° N · 80.1° W" },
-    { city: "New York", state: "New York", role: "Escritório Regional", coord: "40.7° N · 74.0° W" },
-    { city: "Salt Lake City", state: "Utah", role: "Escritório Regional", coord: "40.7° N · 111.8° W" },
+    { city: "Orlando", state: "Florida", role: "Sede", address: "2295 S Hiawassee Rd, Suite 414, Orlando, FL 32835" },
+    { city: "Miami", state: "Florida", role: "Escritório Regional", address: "1200 Brickell Ave, Miami, FL 33131" },
+    { city: "New York", state: "New York", role: "Escritório Regional", address: "77 Madison Ave, New York, NY 10022" },
+    { city: "Salt Lake City", state: "Utah", role: "Escritório Regional", address: "136 E S Temple, Salt Lake City, UT 84111" },
   ];
   return (
     <section className="relative surface-premium-dark overflow-hidden">
-      {/* Skyline backdrop — full bleed, deep navy overlay */}
+      {/* Skyline backdrop — more present, softer overlay */}
       <div aria-hidden className="absolute inset-0">
         <img
           src={skylineUs}
           alt=""
           aria-hidden
           loading="lazy"
-          className="h-full w-full object-cover object-center opacity-[0.35]"
+          className="h-full w-full object-cover object-center opacity-[0.6]"
         />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, oklch(0.16 0.06 258 / 0.85) 0%, oklch(0.20 0.07 258 / 0.78) 50%, oklch(0.16 0.06 258 / 0.95) 100%)",
+              "linear-gradient(180deg, oklch(0.16 0.06 258 / 0.72) 0%, oklch(0.20 0.07 258 / 0.6) 50%, oklch(0.16 0.06 258 / 0.85) 100%)",
           }}
         />
       </div>
+
       <span className="section-seam-dark absolute top-0 left-0 right-0" aria-hidden />
 
       <div className="relative section-y">
@@ -699,9 +704,10 @@ function OfficesSection() {
                 <div className="col-span-6 sm:col-span-4 text-[12px] uppercase tracking-[0.26em] text-primary-foreground/75">
                   {o.role}
                 </div>
-                <div className="col-span-6 sm:col-span-3 text-right text-[10.5px] uppercase tracking-[0.26em] text-primary-foreground/55 font-mono">
-                  {o.coord}
+                <div className="col-span-12 sm:col-span-3 text-right text-[11px] uppercase tracking-[0.22em] text-primary-foreground/65 leading-snug">
+                  {o.address}
                 </div>
+
               </Link>
             ))}
           </div>
