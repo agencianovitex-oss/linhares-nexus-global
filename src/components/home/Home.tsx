@@ -213,9 +213,10 @@ function AwardsSection() {
     {
       title: "The Law Awards",
       org: "Winner — Immigration Practice",
-      year: "2026",
+      year: "2024",
       desc: "Distinção internacional pela excelência na prática de imigração americana.",
     },
+
     {
       title: "Great Place To Work®",
       org: "Certified — Estados Unidos",
