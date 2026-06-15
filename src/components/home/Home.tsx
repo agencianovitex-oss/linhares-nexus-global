@@ -160,12 +160,6 @@ function AuthoritySection() {
         />
       </div>
 
-      <div
-        aria-hidden
-        className="serif-marker pointer-events-none absolute right-[4vw] top-10 text-[14rem] lg:text-[20rem] opacity-[0.06] select-none text-primary-foreground"
-      >
-        01
-      </div>
 
       <Container>
         <div className="relative grid gap-16 lg:grid-cols-12 lg:gap-24 items-center min-h-[560px]">
