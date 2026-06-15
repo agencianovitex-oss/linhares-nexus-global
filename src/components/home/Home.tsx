@@ -250,8 +250,8 @@ function AwardsSection() {
           <div className="lg:col-span-5 relative">
             <div className="relative">
               <span className="absolute -top-3 -left-3 h-px w-16 bg-gold z-10" />
-              <div className="editorial-frame photo-vignette aspect-[3/4] w-full">
-                <img src={ibiCeremony} alt="Dr. André Linhares · International Business Institute Awards" className="h-full w-full object-cover object-top" />
+              <div className="editorial-frame photo-vignette aspect-[4/5] w-full">
+                <img src={ibiCeremony} alt="Dr. André Linhares · International Business Institute Awards" className="h-full w-full object-cover object-center" />
               </div>
               <div className="mt-6">
                 <div className="text-[10.5px] uppercase tracking-[0.32em] text-gold">International Business Institute · 2026</div>
