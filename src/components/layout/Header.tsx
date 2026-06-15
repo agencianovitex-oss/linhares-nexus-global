@@ -44,14 +44,14 @@ export function Header({ transparentOverHero = false }: Props) {
       )}
     >
       <Container className="flex h-24 items-center justify-between gap-8 lg:h-32">
-        <Link to={withLocale(locale, "/")} aria-label={t.brand} className="flex items-center">
+        <Link to={withLocale(locale, "/")} aria-label={t.brand} className="flex shrink-0 items-center">
           <img
             src={onDark ? logoWhite.url : logoBlack.url}
             alt={t.brand}
             width="640"
             height="180"
             decoding="async"
-            className="h-12 w-auto object-contain [image-rendering:auto] md:h-20 lg:h-24 xl:h-28"
+            className="block h-12 w-auto max-w-none shrink-0 object-contain [image-rendering:auto] md:h-16 lg:h-20 xl:h-24"
           />
         </Link>
 
