@@ -13,59 +13,48 @@ const gptwBadge = gptwBadgeAsset.url;
 import skylineAsset from "@/assets/skyline-us.jpg.asset.json";
 const skylineUs = skylineAsset.url;
 import andreSpeaking from "@/assets/andre-speaking-01.jpg";
+import heroFlagDesktopAsset from "@/assets/hero-flag-desktop.jpg.asset.json";
+import heroFlagMobileAsset from "@/assets/hero-flag-mobile.jpg.asset.json";
+const heroFlagDesktop = heroFlagDesktopAsset.url;
+const heroFlagMobile = heroFlagMobileAsset.url;
 
 /* ------------------------------------------------------------------ */
 /* 1 — Hero                                                            */
 /* ------------------------------------------------------------------ */
 
 function HeroSection() {
-  // Stylized US flag — pure SVG, no extra requests. Drawn at large scale,
-  // very low opacity, behind a strong navy overlay so it reads as institutional
-  // depth rather than patriotic imagery.
-  const flagSvg = encodeURIComponent(`
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1900 1000' preserveAspectRatio='xMidYMid slice'>
-  <rect width='1900' height='1000' fill='#0a1f3d'/>
-  ${Array.from({ length: 13 })
-    .map((_, i) =>
-      i % 2 === 0
-        ? `<rect x='0' y='${i * (1000 / 13)}' width='1900' height='${1000 / 13}' fill='#ffffff' opacity='0.55'/>`
-        : `<rect x='0' y='${i * (1000 / 13)}' width='1900' height='${1000 / 13}' fill='#b3132f' opacity='0.55'/>`
-    )
-    .join("")}
-  <rect x='0' y='0' width='760' height='${(1000 / 13) * 7}' fill='#0a1f3d'/>
-  ${Array.from({ length: 9 })
-    .flatMap((_, r) =>
-      Array.from({ length: r % 2 === 0 ? 6 : 5 }).map((_, c) => {
-        const x = (r % 2 === 0 ? 70 : 130) + c * 120;
-        const y = 50 + r * 55;
-        return `<circle cx='${x}' cy='${y}' r='8' fill='#ffffff' opacity='0.85'/>`;
-      })
-    )
-    .join("")}
-</svg>`);
-
   return (
     <section className="relative surface-premium-dark pt-32 pb-28 lg:pt-40 lg:pb-32 overflow-hidden">
-      {/* Stylized US flag — more present, still institutional */}
+      {/* Real US flag photography — desktop (Chris) */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.22]"
+        className="pointer-events-none absolute inset-0 hidden md:block"
         style={{
-          backgroundImage: `url("data:image/svg+xml;utf8,${flagSvg}")`,
+          backgroundImage: `url("${heroFlagDesktop}")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: "saturate(0.95)",
         }}
       />
-      {/* Navy institutional overlay — lets the flag breathe through */}
+      {/* Real US flag photography — mobile (Andrew, vertical) */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 md:hidden"
+        style={{
+          backgroundImage: `url("${heroFlagMobile}")`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+      {/* Navy institutional overlay — keeps the photo legible and on-brand */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "linear-gradient(120deg, oklch(0.17 0.06 258 / 0.82) 0%, oklch(0.22 0.07 258 / 0.7) 50%, oklch(0.17 0.06 258 / 0.85) 100%)",
+            "linear-gradient(120deg, oklch(0.17 0.06 258 / 0.86) 0%, oklch(0.22 0.07 258 / 0.74) 50%, oklch(0.17 0.06 258 / 0.88) 100%)",
         }}
       />
+
 
       {/* Radial highlight, faint paper grain via existing texture */}
       <div
