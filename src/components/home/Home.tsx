@@ -131,55 +131,71 @@ function HeroSection() {
 
 function AuthoritySection() {
   return (
-    <section className="section-y surface-premium-light relative overflow-hidden">
+    <section className="section-y relative overflow-hidden bg-[oklch(0.13_0.04_258)] texture-grain">
       <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
 
-      {/* Oversized editorial numeral */}
+      {/* Editorial portrait — blended full-bleed into the dark canvas */}
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <img
+          src={andre5}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover object-[20%_top] opacity-95"
+          style={{
+            WebkitMaskImage:
+              "radial-gradient(ellipse 65% 100% at 20% 45%, #000 30%, rgba(0,0,0,0.6) 58%, rgba(0,0,0,0) 80%)",
+            maskImage:
+              "radial-gradient(ellipse 65% 100% at 20% 45%, #000 30%, rgba(0,0,0,0.6) 58%, rgba(0,0,0,0) 80%)",
+          }}
+        />
+        {/* Cinematic wash blending the portrait into the canvas */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(90deg, oklch(0.13 0.04 258 / 0.35) 0%, oklch(0.13 0.04 258 / 0.55) 40%, oklch(0.13 0.04 258 / 0.92) 64%, oklch(0.13 0.04 258) 82%)",
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 80% 60% at 85% 20%, oklch(1 0 0 / 0.05), transparent 60%)",
+          }}
+        />
+      </div>
+
       <div
         aria-hidden
-        className="serif-marker pointer-events-none absolute left-[3vw] top-10 text-[14rem] lg:text-[20rem] opacity-[0.05] select-none"
+        className="serif-marker pointer-events-none absolute right-[4vw] top-10 text-[14rem] lg:text-[20rem] opacity-[0.06] select-none text-primary-foreground"
       >
         01
       </div>
 
       <Container>
-        <div className="grid gap-16 lg:grid-cols-12 lg:gap-24 items-start">
-          {/* Editorial vertical portrait — taller than the text column,
-              breaks the rigid grid by extending below. */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative lg:-mt-10">
-              <span className="absolute -top-3 -left-3 h-px w-20 bg-gold z-10" />
-              <div className="editorial-frame aspect-[3/4.4] w-full">
-                <img
-                  src={andre5}
-                  alt="Dr. André Linhares"
-                  className="h-full w-full object-cover object-top"
-                />
-              </div>
-              <figcaption className="mt-5 flex items-center gap-4">
-                <span className="rule-gold" />
-                <span className="text-[10.5px] uppercase tracking-[0.28em] text-muted-foreground">
-                  Dr. André Linhares · Founding Attorney
-                </span>
-              </figcaption>
-            </div>
-          </div>
+        <div className="relative grid gap-16 lg:grid-cols-12 lg:gap-24 items-center min-h-[560px]">
+          {/* Spacer where the portrait reads through on desktop */}
+          <div className="hidden lg:block lg:col-span-5" aria-hidden />
 
-          {/* Editorial text column — breathes, asymmetric inline meta */}
-          <div className="lg:col-span-7 lg:pt-12">
+          <div className="lg:col-span-7 lg:pt-12 relative">
             <div className="flex items-center gap-4">
               <span className="rule-gold" />
-              <span className="eyebrow">Nossa Prática</span>
+              <span className="eyebrow eyebrow-on-dark">Nossa Prática</span>
             </div>
-            <h2 className="mt-7 text-balance text-primary max-w-[22ch]">
+            <h2 className="mt-7 text-balance text-primary-foreground max-w-[22ch]">
               Representando profissionais, investidores e famílias em estratégias de imigração para os Estados Unidos.
             </h2>
-            <p className="mt-10 text-lg leading-[1.85] text-ink-soft max-w-[58ch]">
+            <p className="mt-10 text-lg leading-[1.85] text-primary-foreground/80 max-w-[58ch]">
               A Linhares Law atua exclusivamente em direito de imigração americana. Cada estratégia é construída a partir de uma leitura técnica precisa do perfil profissional, patrimonial e familiar do cliente — sustentada pela autoridade institucional de um escritório de advocacia reconhecido nos Estados Unidos.
             </p>
-            <p className="mt-6 text-lg leading-[1.85] text-ink-soft max-w-[58ch]">
+            <p className="mt-6 text-lg leading-[1.85] text-primary-foreground/75 max-w-[58ch]">
               Nossa atuação é pautada por discrição, profundidade técnica e relacionamento de longo prazo com cada cliente representado.
             </p>
+            <div className="mt-10 flex items-center gap-4">
+              <span className="rule-gold" />
+              <span className="text-[10.5px] uppercase tracking-[0.28em] text-primary-foreground/60">
+                Dr. André Linhares · Founding Attorney
+              </span>
+            </div>
           </div>
         </div>
       </Container>
