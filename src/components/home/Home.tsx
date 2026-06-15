@@ -67,12 +67,6 @@ function HeroSection() {
       />
       <span className="fade-edge-bottom" aria-hidden />
 
-      <div
-        aria-hidden
-        className="serif-marker pointer-events-none absolute -right-10 top-20 text-[22rem] lg:text-[32rem] opacity-[0.05] select-none"
-      >
-        L
-      </div>
 
       <Container>
         <div className="relative max-w-5xl mx-auto text-center">
