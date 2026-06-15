@@ -134,25 +134,27 @@ function AuthoritySection() {
     <section className="section-y relative overflow-hidden bg-[oklch(0.13_0.04_258)] texture-grain">
       <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
 
-      {/* Editorial portrait — blended full-bleed into the dark canvas */}
+      {/* Editorial portrait — waist-up, anchored bottom-left, blended into the canvas */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <img
-          src={andre5}
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover object-[20%_top] opacity-95"
-          style={{
-            WebkitMaskImage:
-              "radial-gradient(ellipse 65% 100% at 20% 45%, #000 30%, rgba(0,0,0,0.6) 58%, rgba(0,0,0,0) 80%)",
-            maskImage:
-              "radial-gradient(ellipse 65% 100% at 20% 45%, #000 30%, rgba(0,0,0,0.6) 58%, rgba(0,0,0,0) 80%)",
-          }}
-        />
+        <div className="absolute inset-y-0 left-0 w-full lg:w-[46%] xl:w-[42%]">
+          <img
+            src={andre5}
+            alt=""
+            className="absolute inset-0 h-full w-full object-contain object-left-bottom opacity-95"
+            style={{
+              WebkitMaskImage:
+                "linear-gradient(90deg, #000 55%, rgba(0,0,0,0.7) 78%, rgba(0,0,0,0) 100%)",
+              maskImage:
+                "linear-gradient(90deg, #000 55%, rgba(0,0,0,0.7) 78%, rgba(0,0,0,0) 100%)",
+            }}
+          />
+        </div>
         {/* Cinematic wash blending the portrait into the canvas */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, oklch(0.13 0.04 258 / 0.35) 0%, oklch(0.13 0.04 258 / 0.55) 40%, oklch(0.13 0.04 258 / 0.92) 64%, oklch(0.13 0.04 258) 82%)",
+              "linear-gradient(90deg, oklch(0.13 0.04 258 / 0.45) 0%, oklch(0.13 0.04 258 / 0.35) 30%, oklch(0.13 0.04 258 / 0.85) 52%, oklch(0.13 0.04 258) 70%)",
           }}
         />
         <div
