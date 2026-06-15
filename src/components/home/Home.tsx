@@ -635,51 +635,78 @@ function OfficesSection() {
     { city: "Salt Lake City", state: "Utah", role: "Escritório Regional", coord: "40.7° N · 111.8° W" },
   ];
   return (
-    <section className="section-y surface-premium-surface relative">
-      <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
+    <section className="relative surface-premium-dark overflow-hidden">
+      {/* Skyline backdrop — full bleed, deep navy overlay */}
+      <div aria-hidden className="absolute inset-0">
+        <img
+          src={skylineUs}
+          alt=""
+          aria-hidden
+          loading="lazy"
+          className="h-full w-full object-cover object-center opacity-[0.35]"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, oklch(0.16 0.06 258 / 0.85) 0%, oklch(0.20 0.07 258 / 0.78) 50%, oklch(0.16 0.06 258 / 0.95) 100%)",
+          }}
+        />
+      </div>
+      <span className="section-seam-dark absolute top-0 left-0 right-0" aria-hidden />
 
-      <Container>
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
-          <SectionTitle
-            eyebrow="Presença Nacional"
-            title="Quatro escritórios nos Estados Unidos."
-            description="Uma estrutura nacional construída para representar clientes internacionais com proximidade institucional em pontos estratégicos do território americano."
-          />
-          <InstitutionalButton to="/escritorios" variant="outline">
-            Ver todos os escritórios
-          </InstitutionalButton>
-        </div>
+      <div className="relative section-y">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 items-end">
+            <div className="lg:col-span-7">
+              <div className="flex items-center gap-4">
+                <span className="rule-gold" />
+                <span className="eyebrow eyebrow-on-dark">Presença nos Estados Unidos</span>
+              </div>
+              <h2 className="mt-7 text-balance text-primary-foreground max-w-[22ch]">
+                Quatro escritórios em pontos estratégicos do território americano.
+              </h2>
+              <p className="mt-7 max-w-xl text-lg leading-[1.85] text-primary-foreground/75">
+                Uma estrutura nacional construída para representar clientes internacionais com proximidade institucional, alcance federal e atuação coordenada entre Florida, New York e Utah.
+              </p>
+            </div>
+            <div className="lg:col-span-5 lg:text-right">
+              <InstitutionalButton to="/escritorios" variant="onDark">
+                Ver todos os escritórios
+              </InstitutionalButton>
+            </div>
+          </div>
 
-        <div className="mt-16 grid gap-px bg-border border border-border lg:grid-cols-4">
-          {offices.map((o, idx) => (
-            <Link
-              key={o.city}
-              to="/escritorios"
-              className="group editorial-card bg-background p-8 lg:p-10 min-h-[260px] flex flex-col justify-between hover:bg-surface-2"
-            >
-              <div>
-                <div className="flex items-center justify-between">
-                  <div className="text-[10.5px] uppercase tracking-[0.3em] text-gold">{o.state}</div>
-                  <div className="text-[10.5px] uppercase tracking-[0.28em] text-muted-foreground">
-                    0{idx + 1}
+          {/* Editorial roster — typographic, hairline rules, no boxes */}
+          <div className="mt-16 border-t border-primary-foreground/15">
+            {offices.map((o, idx) => (
+              <Link
+                key={o.city}
+                to="/escritorios"
+                className="group grid grid-cols-12 gap-6 items-baseline py-7 lg:py-8 border-b border-primary-foreground/15 transition-colors"
+              >
+                <div className="col-span-2 sm:col-span-1 text-[10.5px] uppercase tracking-[0.32em] text-gold">
+                  0{idx + 1}
+                </div>
+                <div className="col-span-10 sm:col-span-4">
+                  <div className="text-2xl lg:text-[1.75rem] font-light text-primary-foreground tracking-tight leading-[1.1] group-hover:text-gold transition-colors">
+                    {o.city}
+                  </div>
+                  <div className="mt-1 text-[10.5px] uppercase tracking-[0.26em] text-primary-foreground/55">
+                    {o.state}
                   </div>
                 </div>
-                <div className="mt-6 text-3xl font-light text-primary tracking-tight group-hover:text-gold transition-colors">
-                  {o.city}
-                </div>
-                <div className="mt-3 text-[11px] uppercase tracking-[0.26em] text-muted-foreground">
+                <div className="col-span-6 sm:col-span-4 text-[12px] uppercase tracking-[0.26em] text-primary-foreground/75">
                   {o.role}
                 </div>
-              </div>
-              <div className="mt-10 border-t border-border pt-5">
-                <div className="text-[10.5px] uppercase tracking-[0.26em] text-ink-soft">
+                <div className="col-span-6 sm:col-span-3 text-right text-[10.5px] uppercase tracking-[0.26em] text-primary-foreground/55 font-mono">
                   {o.coord}
                 </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </Container>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </div>
     </section>
   );
 }
