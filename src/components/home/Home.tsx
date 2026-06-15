@@ -633,30 +633,31 @@ function CultureSection() {
 
 function OfficesSection() {
   const offices = [
-    { city: "Orlando", state: "Florida", role: "Sede", coord: "28.5° N · 81.3° W" },
-    { city: "Miami", state: "Florida", role: "Escritório Regional", coord: "25.7° N · 80.1° W" },
-    { city: "New York", state: "New York", role: "Escritório Regional", coord: "40.7° N · 74.0° W" },
-    { city: "Salt Lake City", state: "Utah", role: "Escritório Regional", coord: "40.7° N · 111.8° W" },
+    { city: "Orlando", state: "Florida", role: "Sede", address: "2295 S Hiawassee Rd, Suite 414, Orlando, FL 32835" },
+    { city: "Miami", state: "Florida", role: "Escritório Regional", address: "1200 Brickell Ave, Miami, FL 33131" },
+    { city: "New York", state: "New York", role: "Escritório Regional", address: "77 Madison Ave, New York, NY 10022" },
+    { city: "Salt Lake City", state: "Utah", role: "Escritório Regional", address: "136 E S Temple, Salt Lake City, UT 84111" },
   ];
   return (
     <section className="relative surface-premium-dark overflow-hidden">
-      {/* Skyline backdrop — full bleed, deep navy overlay */}
+      {/* Skyline backdrop — more present, softer overlay */}
       <div aria-hidden className="absolute inset-0">
         <img
           src={skylineUs}
           alt=""
           aria-hidden
           loading="lazy"
-          className="h-full w-full object-cover object-center opacity-[0.35]"
+          className="h-full w-full object-cover object-center opacity-[0.6]"
         />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, oklch(0.16 0.06 258 / 0.85) 0%, oklch(0.20 0.07 258 / 0.78) 50%, oklch(0.16 0.06 258 / 0.95) 100%)",
+              "linear-gradient(180deg, oklch(0.16 0.06 258 / 0.72) 0%, oklch(0.20 0.07 258 / 0.6) 50%, oklch(0.16 0.06 258 / 0.85) 100%)",
           }}
         />
       </div>
+
       <span className="section-seam-dark absolute top-0 left-0 right-0" aria-hidden />
 
       <div className="relative section-y">
