@@ -108,7 +108,7 @@ function HeroSection() {
             { k: "14+", l: "Anos de prática jurídica" },
             { k: "04", l: "Escritórios nos Estados Unidos" },
             { k: "USA", l: "Escritório licenciado nos EUA" },
-            { k: "INT.", l: "Atuação Internacional · 3 continentes" },
+            { k: "INT.", l: "ATUAÇÃO INTERNACIONAL" },
           ].map((it) => (
             <div key={it.l}>
               <div className="font-display text-[clamp(3rem,5.5vw,5rem)] font-light text-primary-foreground tracking-[-0.03em] leading-[0.95]">
