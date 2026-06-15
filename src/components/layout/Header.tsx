@@ -43,7 +43,7 @@ export function Header({ transparentOverHero = false }: Props) {
           : "border-b border-border bg-background text-secondary",
       )}
     >
-      <Container className="flex h-24 items-center justify-between gap-8">
+      <Container className="flex h-24 items-center justify-between gap-8 lg:h-32">
         <Link to={withLocale(locale, "/")} aria-label={t.brand} className="flex items-center">
           <img
             src={onDark ? logoWhite.url : logoBlack.url}
@@ -51,7 +51,7 @@ export function Header({ transparentOverHero = false }: Props) {
             width="640"
             height="180"
             decoding="async"
-            className="h-20 w-auto object-contain [image-rendering:auto]"
+            className="h-12 w-auto object-contain [image-rendering:auto] md:h-20 lg:h-24 xl:h-28"
           />
         </Link>
 
