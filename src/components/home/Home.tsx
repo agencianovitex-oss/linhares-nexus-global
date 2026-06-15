@@ -4,6 +4,7 @@ import { SectionTitle } from "@/components/layout/SectionTitle";
 import { InstitutionalButton } from "@/components/institutional/Button";
 import andre6 from "@/assets/andre-6.jpg";
 import andre5 from "@/assets/andre-5.jpg";
+import andrePracticeBg from "@/assets/andre-practice-bg.jpg.asset.json";
 import nicholas3 from "@/assets/nicholas-3.jpg";
 import juliana from "@/assets/team-juliana.avif";
 import ibiCeremonyAsset from "@/assets/ibi-award-ceremony-2.jpg.asset.json";
@@ -128,34 +129,19 @@ function AuthoritySection() {
     <section className="relative overflow-hidden bg-[oklch(0.13_0.04_258)] texture-grain pt-0 pb-20 lg:section-y">
       <span className="section-seam absolute top-0 left-0 right-0 z-20" aria-hidden />
 
-      {/* DESKTOP portrait — waist-up, anchored bottom-left, blended into the canvas */}
+      {/* DESKTOP background — full-bleed studio portrait blended with the navy canvas */}
       <div aria-hidden className="pointer-events-none absolute inset-0 hidden lg:block">
-        <div className="absolute inset-y-0 left-0 lg:w-[46%] xl:w-[42%]">
-          <img
-            src={andre5}
-            alt=""
-            className="absolute inset-0 h-full w-full object-contain object-left-bottom"
-            style={{
-              WebkitMaskImage:
-                "linear-gradient(90deg, #000 60%, rgba(0,0,0,0.7) 82%, rgba(0,0,0,0) 100%)",
-              maskImage:
-                "linear-gradient(90deg, #000 60%, rgba(0,0,0,0.7) 82%, rgba(0,0,0,0) 100%)",
-            }}
-          />
-        </div>
-        {/* Navy wash applied ONLY to the right side, leaving the portrait crisp */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(90deg, transparent 0%, transparent 42%, oklch(0.13 0.04 258 / 0.85) 58%, oklch(0.13 0.04 258) 72%)",
-          }}
+        <img
+          src={andrePracticeBg.url}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover object-center"
         />
+        {/* Soft navy tint to harmonize the studio background with the section */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 70% 55% at 88% 18%, oklch(1 0 0 / 0.04), transparent 60%)",
+              "linear-gradient(90deg, oklch(0.13 0.04 258 / 0.15) 0%, oklch(0.13 0.04 258 / 0.25) 40%, oklch(0.13 0.04 258 / 0.7) 70%, oklch(0.13 0.04 258 / 0.85) 100%)",
           }}
         />
       </div>
