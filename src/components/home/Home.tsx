@@ -134,27 +134,28 @@ function AuthoritySection() {
           <img
             src={andre5}
             alt=""
-            className="absolute inset-0 h-full w-full object-contain object-left-bottom opacity-95"
+            className="absolute inset-0 h-full w-full object-contain object-left-bottom"
             style={{
               WebkitMaskImage:
-                "linear-gradient(90deg, #000 55%, rgba(0,0,0,0.7) 78%, rgba(0,0,0,0) 100%)",
+                "linear-gradient(90deg, #000 60%, rgba(0,0,0,0.7) 82%, rgba(0,0,0,0) 100%)",
               maskImage:
-                "linear-gradient(90deg, #000 55%, rgba(0,0,0,0.7) 78%, rgba(0,0,0,0) 100%)",
+                "linear-gradient(90deg, #000 60%, rgba(0,0,0,0.7) 82%, rgba(0,0,0,0) 100%)",
             }}
           />
         </div>
+        {/* Navy wash applied ONLY to the right side, leaving the portrait crisp */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, oklch(0.13 0.04 258 / 0.45) 0%, oklch(0.13 0.04 258 / 0.35) 30%, oklch(0.13 0.04 258 / 0.85) 52%, oklch(0.13 0.04 258) 70%)",
+              "linear-gradient(90deg, transparent 0%, transparent 42%, oklch(0.13 0.04 258 / 0.85) 58%, oklch(0.13 0.04 258) 72%)",
           }}
         />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 80% 60% at 85% 20%, oklch(1 0 0 / 0.05), transparent 60%)",
+              "radial-gradient(ellipse 70% 55% at 88% 18%, oklch(1 0 0 / 0.04), transparent 60%)",
           }}
         />
       </div>
