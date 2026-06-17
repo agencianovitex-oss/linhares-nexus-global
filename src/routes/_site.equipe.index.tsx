@@ -20,7 +20,10 @@ export const Route = createFileRoute("/_site/equipe/")({
 
 function MemberCard({ m }: { m: TeamMember }) {
   const card = (
-    <article className="group bg-background border border-border h-full flex flex-col transition-colors hover:border-border-strong">
+    <article
+      className="group border border-border h-full flex flex-col transition-colors hover:border-border-strong"
+      style={{ backgroundColor: "color-mix(in oklab, var(--color-primary) 6%, white)" }}
+    >
       <div className="relative aspect-[3/4] w-full overflow-hidden bg-surface">
         {m.portrait ? (
           <img
@@ -98,7 +101,7 @@ function EquipePage() {
               <div className="lg:col-span-4">
                 <span className="rule-gold" />
                 <p className="mt-5 eyebrow">{group.eyebrow}</p>
-                <h2 className="mt-6 text-primary">{group.title}</h2>
+                <h2 className="mt-6 text-gold font-semibold">{group.title}</h2>
                 {group.description && <p className="mt-6 lead">{group.description}</p>}
               </div>
               <div className="lg:col-span-8">
