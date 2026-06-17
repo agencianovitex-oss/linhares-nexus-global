@@ -18,11 +18,11 @@ export const Route = createFileRoute("/_site/equipe/")({
   component: EquipePage,
 });
 
-function MemberCard({ m }: { m: TeamMember }) {
+function MemberCard({ m, cardBg }: { m: TeamMember; cardBg: string }) {
   const card = (
     <article
       className="group border border-border h-full flex flex-col transition-colors hover:border-border-strong"
-      style={{ backgroundColor: "color-mix(in oklab, var(--color-primary) 16%, white)" }}
+      style={{ backgroundColor: cardBg }}
     >
       <div className="relative aspect-[3/4] w-full overflow-hidden bg-surface">
         {m.portrait ? (
@@ -119,7 +119,7 @@ function EquipePage() {
                   >
                     {group.members.map((m) => (
                       <div key={m.name} className="reveal-up">
-                        <MemberCard m={m} />
+                        <MemberCard m={m} cardBg={isWhite ? "color-mix(in oklab, var(--color-primary) 16%, white)" : "#ffffff"} />
                       </div>
                     ))}
                   </div>
