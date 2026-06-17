@@ -91,13 +91,11 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
               </Link>
             );
             if (isLastAlone) {
-              return (
-                <>
-                  <div key="fill-before-o1" aria-hidden className="hidden lg:block surface-premium-light" />
-                  {card}
-                  <div key="fill-after-o1" aria-hidden className="hidden lg:block surface-premium-light" />
-                </>
-              );
+              return [
+                <div key="fill-before-o1" aria-hidden className="hidden lg:block surface-premium-light" />,
+                card,
+                <div key="fill-after-o1" aria-hidden className="hidden lg:block surface-premium-light" />,
+              ];
             }
             return card;
           })}
