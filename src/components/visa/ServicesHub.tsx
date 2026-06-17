@@ -32,10 +32,11 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
       <SectionBlock>
         <SectionTitle eyebrow="Categorias Migratórias" title="Sete estratégias jurídicas conduzidas pelo escritório." />
         <div className="mt-16 grid gap-px bg-border border border-border md:grid-cols-2 lg:grid-cols-3">
-          {VISA_ORDER.map((s) => {
+          {VISA_ORDER.map((s, idx) => {
             const v = VISAS[locale][s];
-            const featured = s === "eb2-niw" || s === "eb5";
-            return (
+            const featured = s === "eb2-niw" || s === "eb5" || s === "e2";
+            const isLastAlone = s === "o1";
+            const card = (
               <Link
                 key={s}
                 to={visaHref(s)}
@@ -89,10 +90,15 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
                 </div>
               </Link>
             );
+            if (isLastAlone) {
+              return [
+                <div key="fill-before-o1" aria-hidden className="hidden lg:block surface-premium-light" />,
+                card,
+                <div key="fill-after-o1" aria-hidden className="hidden lg:block surface-premium-light" />,
+              ];
+            }
+            return card;
           })}
-          {/* Fill remaining grid cells with section background to avoid floating borders */}
-          <div aria-hidden className="hidden lg:block surface-premium-light" />
-          <div aria-hidden className="hidden lg:block surface-premium-light" />
           <div aria-hidden className="hidden md:block lg:hidden surface-premium-light" />
         </div>
       </SectionBlock>
