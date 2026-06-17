@@ -233,7 +233,7 @@ function AwardsSection() {
                 <img src={ibiCeremony} alt="Dr. André Linhares · International Business Institute Awards" className="h-full w-full object-cover object-center" />
               </div>
               <div className="mt-6">
-                <div className="text-[13px] uppercase tracking-[0.32em] text-gold">International Business Institute · 2026</div>
+                <div className="text-[13px] uppercase tracking-[0.32em] text-gold">International Business Institute · 2026 – PRESENTE</div>
                 <h3 className="mt-4 text-2xl lg:text-[1.75rem] font-light text-primary-foreground tracking-tight leading-[1.25] max-w-[26ch]">
                   Distinção internacional por excelência na prática jurídica de imigração americana.
                 </h3>
@@ -267,7 +267,7 @@ function AwardsSection() {
 
         <div className="mt-12 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
           <p className="text-[11px] uppercase tracking-[0.28em] text-primary-foreground/55">
-            Distinções institucionais · 2026 — Presente
+            Distinções institucionais · 2026 — PRESENTE
           </p>
           <Link
             to="/premiacoes"
