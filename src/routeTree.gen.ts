@@ -14,7 +14,6 @@ import { Route as SiteIndexRouteImport } from './routes/_site.index'
 import { Route as SiteQuemSomosRouteImport } from './routes/_site.quem-somos'
 import { Route as SitePremiacoesRouteImport } from './routes/_site.premiacoes'
 import { Route as SiteNaMidiaRouteImport } from './routes/_site.na-midia'
-import { Route as SiteEscritoriosRouteImport } from './routes/_site.escritorios'
 import { Route as SiteContatoRouteImport } from './routes/_site.contato'
 import { Route as SiteCasosDeSucessoRouteImport } from './routes/_site.casos-de-sucesso'
 import { Route as SiteBlogRouteImport } from './routes/_site.blog'
@@ -25,7 +24,6 @@ import { Route as SiteAreasDeAtuacaoIndexRouteImport } from './routes/_site.area
 import { Route as SiteEsQuemSomosRouteImport } from './routes/_site.es.quem-somos'
 import { Route as SiteEsPremiacoesRouteImport } from './routes/_site.es.premiacoes'
 import { Route as SiteEsNaMidiaRouteImport } from './routes/_site.es.na-midia'
-import { Route as SiteEsEscritoriosRouteImport } from './routes/_site.es.escritorios'
 import { Route as SiteEsContatoRouteImport } from './routes/_site.es.contato'
 import { Route as SiteEsCasosDeSucessoRouteImport } from './routes/_site.es.casos-de-sucesso'
 import { Route as SiteEsBlogRouteImport } from './routes/_site.es.blog'
@@ -33,7 +31,6 @@ import { Route as SiteEquipeSlugRouteImport } from './routes/_site.equipe.$slug'
 import { Route as SiteEnQuemSomosRouteImport } from './routes/_site.en.quem-somos'
 import { Route as SiteEnPremiacoesRouteImport } from './routes/_site.en.premiacoes'
 import { Route as SiteEnNaMidiaRouteImport } from './routes/_site.en.na-midia'
-import { Route as SiteEnEscritoriosRouteImport } from './routes/_site.en.escritorios'
 import { Route as SiteEnContatoRouteImport } from './routes/_site.en.contato'
 import { Route as SiteEnCasosDeSucessoRouteImport } from './routes/_site.en.casos-de-sucesso'
 import { Route as SiteEnBlogRouteImport } from './routes/_site.en.blog'
@@ -72,11 +69,6 @@ const SitePremiacoesRoute = SitePremiacoesRouteImport.update({
 const SiteNaMidiaRoute = SiteNaMidiaRouteImport.update({
   id: '/na-midia',
   path: '/na-midia',
-  getParentRoute: () => SiteRoute,
-} as any)
-const SiteEscritoriosRoute = SiteEscritoriosRouteImport.update({
-  id: '/escritorios',
-  path: '/escritorios',
   getParentRoute: () => SiteRoute,
 } as any)
 const SiteContatoRoute = SiteContatoRouteImport.update({
@@ -129,11 +121,6 @@ const SiteEsNaMidiaRoute = SiteEsNaMidiaRouteImport.update({
   path: '/es/na-midia',
   getParentRoute: () => SiteRoute,
 } as any)
-const SiteEsEscritoriosRoute = SiteEsEscritoriosRouteImport.update({
-  id: '/es/escritorios',
-  path: '/es/escritorios',
-  getParentRoute: () => SiteRoute,
-} as any)
 const SiteEsContatoRoute = SiteEsContatoRouteImport.update({
   id: '/es/contato',
   path: '/es/contato',
@@ -167,11 +154,6 @@ const SiteEnPremiacoesRoute = SiteEnPremiacoesRouteImport.update({
 const SiteEnNaMidiaRoute = SiteEnNaMidiaRouteImport.update({
   id: '/en/na-midia',
   path: '/en/na-midia',
-  getParentRoute: () => SiteRoute,
-} as any)
-const SiteEnEscritoriosRoute = SiteEnEscritoriosRouteImport.update({
-  id: '/en/escritorios',
-  path: '/en/escritorios',
   getParentRoute: () => SiteRoute,
 } as any)
 const SiteEnContatoRoute = SiteEnContatoRouteImport.update({
@@ -255,7 +237,6 @@ export interface FileRoutesByFullPath {
   '/blog': typeof SiteBlogRouteWithChildren
   '/casos-de-sucesso': typeof SiteCasosDeSucessoRoute
   '/contato': typeof SiteContatoRoute
-  '/escritorios': typeof SiteEscritoriosRoute
   '/na-midia': typeof SiteNaMidiaRoute
   '/premiacoes': typeof SitePremiacoesRoute
   '/quem-somos': typeof SiteQuemSomosRoute
@@ -264,7 +245,6 @@ export interface FileRoutesByFullPath {
   '/en/blog': typeof SiteEnBlogRouteWithChildren
   '/en/casos-de-sucesso': typeof SiteEnCasosDeSucessoRoute
   '/en/contato': typeof SiteEnContatoRoute
-  '/en/escritorios': typeof SiteEnEscritoriosRoute
   '/en/na-midia': typeof SiteEnNaMidiaRoute
   '/en/premiacoes': typeof SiteEnPremiacoesRoute
   '/en/quem-somos': typeof SiteEnQuemSomosRoute
@@ -272,7 +252,6 @@ export interface FileRoutesByFullPath {
   '/es/blog': typeof SiteEsBlogRouteWithChildren
   '/es/casos-de-sucesso': typeof SiteEsCasosDeSucessoRoute
   '/es/contato': typeof SiteEsContatoRoute
-  '/es/escritorios': typeof SiteEsEscritoriosRoute
   '/es/na-midia': typeof SiteEsNaMidiaRoute
   '/es/premiacoes': typeof SiteEsPremiacoesRoute
   '/es/quem-somos': typeof SiteEsQuemSomosRoute
@@ -295,7 +274,6 @@ export interface FileRoutesByTo {
   '/blog': typeof SiteBlogRouteWithChildren
   '/casos-de-sucesso': typeof SiteCasosDeSucessoRoute
   '/contato': typeof SiteContatoRoute
-  '/escritorios': typeof SiteEscritoriosRoute
   '/na-midia': typeof SiteNaMidiaRoute
   '/premiacoes': typeof SitePremiacoesRoute
   '/quem-somos': typeof SiteQuemSomosRoute
@@ -305,7 +283,6 @@ export interface FileRoutesByTo {
   '/en/blog': typeof SiteEnBlogRouteWithChildren
   '/en/casos-de-sucesso': typeof SiteEnCasosDeSucessoRoute
   '/en/contato': typeof SiteEnContatoRoute
-  '/en/escritorios': typeof SiteEnEscritoriosRoute
   '/en/na-midia': typeof SiteEnNaMidiaRoute
   '/en/premiacoes': typeof SiteEnPremiacoesRoute
   '/en/quem-somos': typeof SiteEnQuemSomosRoute
@@ -313,7 +290,6 @@ export interface FileRoutesByTo {
   '/es/blog': typeof SiteEsBlogRouteWithChildren
   '/es/casos-de-sucesso': typeof SiteEsCasosDeSucessoRoute
   '/es/contato': typeof SiteEsContatoRoute
-  '/es/escritorios': typeof SiteEsEscritoriosRoute
   '/es/na-midia': typeof SiteEsNaMidiaRoute
   '/es/premiacoes': typeof SiteEsPremiacoesRoute
   '/es/quem-somos': typeof SiteEsQuemSomosRoute
@@ -338,7 +314,6 @@ export interface FileRoutesById {
   '/_site/blog': typeof SiteBlogRouteWithChildren
   '/_site/casos-de-sucesso': typeof SiteCasosDeSucessoRoute
   '/_site/contato': typeof SiteContatoRoute
-  '/_site/escritorios': typeof SiteEscritoriosRoute
   '/_site/na-midia': typeof SiteNaMidiaRoute
   '/_site/premiacoes': typeof SitePremiacoesRoute
   '/_site/quem-somos': typeof SiteQuemSomosRoute
@@ -348,7 +323,6 @@ export interface FileRoutesById {
   '/_site/en/blog': typeof SiteEnBlogRouteWithChildren
   '/_site/en/casos-de-sucesso': typeof SiteEnCasosDeSucessoRoute
   '/_site/en/contato': typeof SiteEnContatoRoute
-  '/_site/en/escritorios': typeof SiteEnEscritoriosRoute
   '/_site/en/na-midia': typeof SiteEnNaMidiaRoute
   '/_site/en/premiacoes': typeof SiteEnPremiacoesRoute
   '/_site/en/quem-somos': typeof SiteEnQuemSomosRoute
@@ -356,7 +330,6 @@ export interface FileRoutesById {
   '/_site/es/blog': typeof SiteEsBlogRouteWithChildren
   '/_site/es/casos-de-sucesso': typeof SiteEsCasosDeSucessoRoute
   '/_site/es/contato': typeof SiteEsContatoRoute
-  '/_site/es/escritorios': typeof SiteEsEscritoriosRoute
   '/_site/es/na-midia': typeof SiteEsNaMidiaRoute
   '/_site/es/premiacoes': typeof SiteEsPremiacoesRoute
   '/_site/es/quem-somos': typeof SiteEsQuemSomosRoute
@@ -382,7 +355,6 @@ export interface FileRouteTypes {
     | '/blog'
     | '/casos-de-sucesso'
     | '/contato'
-    | '/escritorios'
     | '/na-midia'
     | '/premiacoes'
     | '/quem-somos'
@@ -391,7 +363,6 @@ export interface FileRouteTypes {
     | '/en/blog'
     | '/en/casos-de-sucesso'
     | '/en/contato'
-    | '/en/escritorios'
     | '/en/na-midia'
     | '/en/premiacoes'
     | '/en/quem-somos'
@@ -399,7 +370,6 @@ export interface FileRouteTypes {
     | '/es/blog'
     | '/es/casos-de-sucesso'
     | '/es/contato'
-    | '/es/escritorios'
     | '/es/na-midia'
     | '/es/premiacoes'
     | '/es/quem-somos'
@@ -422,7 +392,6 @@ export interface FileRouteTypes {
     | '/blog'
     | '/casos-de-sucesso'
     | '/contato'
-    | '/escritorios'
     | '/na-midia'
     | '/premiacoes'
     | '/quem-somos'
@@ -432,7 +401,6 @@ export interface FileRouteTypes {
     | '/en/blog'
     | '/en/casos-de-sucesso'
     | '/en/contato'
-    | '/en/escritorios'
     | '/en/na-midia'
     | '/en/premiacoes'
     | '/en/quem-somos'
@@ -440,7 +408,6 @@ export interface FileRouteTypes {
     | '/es/blog'
     | '/es/casos-de-sucesso'
     | '/es/contato'
-    | '/es/escritorios'
     | '/es/na-midia'
     | '/es/premiacoes'
     | '/es/quem-somos'
@@ -464,7 +431,6 @@ export interface FileRouteTypes {
     | '/_site/blog'
     | '/_site/casos-de-sucesso'
     | '/_site/contato'
-    | '/_site/escritorios'
     | '/_site/na-midia'
     | '/_site/premiacoes'
     | '/_site/quem-somos'
@@ -474,7 +440,6 @@ export interface FileRouteTypes {
     | '/_site/en/blog'
     | '/_site/en/casos-de-sucesso'
     | '/_site/en/contato'
-    | '/_site/en/escritorios'
     | '/_site/en/na-midia'
     | '/_site/en/premiacoes'
     | '/_site/en/quem-somos'
@@ -482,7 +447,6 @@ export interface FileRouteTypes {
     | '/_site/es/blog'
     | '/_site/es/casos-de-sucesso'
     | '/_site/es/contato'
-    | '/_site/es/escritorios'
     | '/_site/es/na-midia'
     | '/_site/es/premiacoes'
     | '/_site/es/quem-somos'
@@ -541,13 +505,6 @@ declare module '@tanstack/react-router' {
       path: '/na-midia'
       fullPath: '/na-midia'
       preLoaderRoute: typeof SiteNaMidiaRouteImport
-      parentRoute: typeof SiteRoute
-    }
-    '/_site/escritorios': {
-      id: '/_site/escritorios'
-      path: '/escritorios'
-      fullPath: '/escritorios'
-      preLoaderRoute: typeof SiteEscritoriosRouteImport
       parentRoute: typeof SiteRoute
     }
     '/_site/contato': {
@@ -620,13 +577,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SiteEsNaMidiaRouteImport
       parentRoute: typeof SiteRoute
     }
-    '/_site/es/escritorios': {
-      id: '/_site/es/escritorios'
-      path: '/es/escritorios'
-      fullPath: '/es/escritorios'
-      preLoaderRoute: typeof SiteEsEscritoriosRouteImport
-      parentRoute: typeof SiteRoute
-    }
     '/_site/es/contato': {
       id: '/_site/es/contato'
       path: '/es/contato'
@@ -674,13 +624,6 @@ declare module '@tanstack/react-router' {
       path: '/en/na-midia'
       fullPath: '/en/na-midia'
       preLoaderRoute: typeof SiteEnNaMidiaRouteImport
-      parentRoute: typeof SiteRoute
-    }
-    '/_site/en/escritorios': {
-      id: '/_site/en/escritorios'
-      path: '/en/escritorios'
-      fullPath: '/en/escritorios'
-      preLoaderRoute: typeof SiteEnEscritoriosRouteImport
       parentRoute: typeof SiteRoute
     }
     '/_site/en/contato': {
@@ -831,7 +774,6 @@ interface SiteRouteChildren {
   SiteBlogRoute: typeof SiteBlogRouteWithChildren
   SiteCasosDeSucessoRoute: typeof SiteCasosDeSucessoRoute
   SiteContatoRoute: typeof SiteContatoRoute
-  SiteEscritoriosRoute: typeof SiteEscritoriosRoute
   SiteNaMidiaRoute: typeof SiteNaMidiaRoute
   SitePremiacoesRoute: typeof SitePremiacoesRoute
   SiteQuemSomosRoute: typeof SiteQuemSomosRoute
@@ -840,7 +782,6 @@ interface SiteRouteChildren {
   SiteEnBlogRoute: typeof SiteEnBlogRouteWithChildren
   SiteEnCasosDeSucessoRoute: typeof SiteEnCasosDeSucessoRoute
   SiteEnContatoRoute: typeof SiteEnContatoRoute
-  SiteEnEscritoriosRoute: typeof SiteEnEscritoriosRoute
   SiteEnNaMidiaRoute: typeof SiteEnNaMidiaRoute
   SiteEnPremiacoesRoute: typeof SiteEnPremiacoesRoute
   SiteEnQuemSomosRoute: typeof SiteEnQuemSomosRoute
@@ -848,7 +789,6 @@ interface SiteRouteChildren {
   SiteEsBlogRoute: typeof SiteEsBlogRouteWithChildren
   SiteEsCasosDeSucessoRoute: typeof SiteEsCasosDeSucessoRoute
   SiteEsContatoRoute: typeof SiteEsContatoRoute
-  SiteEsEscritoriosRoute: typeof SiteEsEscritoriosRoute
   SiteEsNaMidiaRoute: typeof SiteEsNaMidiaRoute
   SiteEsPremiacoesRoute: typeof SiteEsPremiacoesRoute
   SiteEsQuemSomosRoute: typeof SiteEsQuemSomosRoute
@@ -870,7 +810,6 @@ const SiteRouteChildren: SiteRouteChildren = {
   SiteBlogRoute: SiteBlogRouteWithChildren,
   SiteCasosDeSucessoRoute: SiteCasosDeSucessoRoute,
   SiteContatoRoute: SiteContatoRoute,
-  SiteEscritoriosRoute: SiteEscritoriosRoute,
   SiteNaMidiaRoute: SiteNaMidiaRoute,
   SitePremiacoesRoute: SitePremiacoesRoute,
   SiteQuemSomosRoute: SiteQuemSomosRoute,
@@ -879,7 +818,6 @@ const SiteRouteChildren: SiteRouteChildren = {
   SiteEnBlogRoute: SiteEnBlogRouteWithChildren,
   SiteEnCasosDeSucessoRoute: SiteEnCasosDeSucessoRoute,
   SiteEnContatoRoute: SiteEnContatoRoute,
-  SiteEnEscritoriosRoute: SiteEnEscritoriosRoute,
   SiteEnNaMidiaRoute: SiteEnNaMidiaRoute,
   SiteEnPremiacoesRoute: SiteEnPremiacoesRoute,
   SiteEnQuemSomosRoute: SiteEnQuemSomosRoute,
@@ -887,7 +825,6 @@ const SiteRouteChildren: SiteRouteChildren = {
   SiteEsBlogRoute: SiteEsBlogRouteWithChildren,
   SiteEsCasosDeSucessoRoute: SiteEsCasosDeSucessoRoute,
   SiteEsContatoRoute: SiteEsContatoRoute,
-  SiteEsEscritoriosRoute: SiteEsEscritoriosRoute,
   SiteEsNaMidiaRoute: SiteEsNaMidiaRoute,
   SiteEsPremiacoesRoute: SiteEsPremiacoesRoute,
   SiteEsQuemSomosRoute: SiteEsQuemSomosRoute,
