@@ -16,7 +16,7 @@ import jovemPanLogo from "@/assets/media/jovempan.png.asset.json";
 import bandNewsLogo from "@/assets/media/bandnews.svg.asset.json";
 import sbtLogo from "@/assets/media/sbt.png.asset.json";
 import recordAmericasLogo from "@/assets/media/record-americas.jpg.asset.json";
-import redeTvLogo from "@/assets/media/redetv.jpg.asset.json";
+import redeTvLogo from "@/assets/media/redetv.png.asset.json";
 
 import bandNewsVideo from "@/assets/media/band-news.mp4.asset.json";
 import sbtVideo from "@/assets/media/sbt-brasil.mp4.asset.json";
@@ -53,7 +53,6 @@ const veiculos: Veiculo[] = [
     description:
       "Participação como especialista em legislação migratória americana, comentando atualizações regulatórias.",
     logo: redeTvLogo.url,
-    blend: true,
   },
   {
     name: "Record Americas",
