@@ -132,40 +132,6 @@ export function VisaPage({ locale, slug, servicesHref, contactHref, visaHref }: 
         </SectionBlock>
       )}
 
-      <SectionBlock>
-        <SectionTitle eyebrow="Processo" title={v.process.title} />
-        <ol className="mt-16 grid gap-px bg-border md:grid-cols-2 lg:grid-cols-3 border border-border">
-          {v.process.items?.map((step, idx) => (
-            <li key={step} className="bg-background p-10 editorial-card">
-              <span className="font-display text-3xl text-gold">{String(idx + 1).padStart(2, "0")}</span>
-              <p className="mt-6 lead">{step}</p>
-            </li>
-          ))}
-        </ol>
-      </SectionBlock>
-
-      {v.profiles && v.profiles.length > 0 && (
-        <SectionBlock tone="surface">
-          <SectionTitle eyebrow="Perfis Profissionais" title="Trajetórias representativas." />
-          <div className="mt-16 grid gap-8 md:grid-cols-2">
-            {v.profiles.map((p) => (
-              <InstitutionalCard key={p.title} variant="light" className="editorial-card">
-                <span className="eyebrow">{p.title}</span>
-                <p className="mt-6 lead">{p.intro}</p>
-                <ul className="mt-8 space-y-3 text-ink-soft">
-                  {p.bullets.map((b) => (
-                    <li key={b} className="flex gap-3">
-                      <span aria-hidden className="mt-3 h-px w-4 shrink-0 bg-gold" />
-                      <span>{b}</span>
-                    </li>
-                  ))}
-                </ul>
-              </InstitutionalCard>
-            ))}
-          </div>
-        </SectionBlock>
-      )}
-
       {/* Institutional block — Dr. André Linhares */}
       <SectionBlock>
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-20 items-center">
