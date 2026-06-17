@@ -83,8 +83,8 @@ export function Footer() {
         <div className="lg:col-span-2">
           <h4 className="eyebrow eyebrow-on-dark">{t.footer.contact}</h4>
           <ul className="mt-7 space-y-3 text-[13.5px] text-primary-foreground/85">
-            <li>contact@linhareslaw.com</li>
-            <li>+1 (407) 000-0000</li>
+            <li>info@linhareslaw.com</li>
+            <li>+1 (407) 725-0000</li>
           </ul>
           <div className="mt-10">
             <LanguageSwitcher onDark />
