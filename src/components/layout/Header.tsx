@@ -11,6 +11,16 @@ interface Props {
   transparentOverHero?: boolean;
 }
 
+const VISA_SUBMENU = [
+  { code: "EB-2 NIW", slug: "eb2-niw" },
+  { code: "EB-1", slug: "eb1" },
+  { code: "E-2", slug: "e2" },
+  { code: "L-1", slug: "l1" },
+  { code: "O-1", slug: "o1" },
+  { code: "H-1B", slug: "h1b" },
+  { code: "EB-5", slug: "eb5" },
+];
+
 export function Header({ transparentOverHero = false }: Props) {
   const { locale, t } = useI18n();
   const [scrolled, setScrolled] = useState(false);
@@ -23,10 +33,11 @@ export function Header({ transparentOverHero = false }: Props) {
   }, []);
 
   const onDark = transparentOverHero && !scrolled;
+  const visasBase = locale === "pt" ? "/areas-de-atuacao" : "/servicos";
 
-  const links: Array<{ label: string; to: string }> = [
+  const links: Array<{ label: string; to: string; hasSubmenu?: boolean }> = [
     { label: t.nav.about, to: "/quem-somos" },
-    { label: t.nav.services, to: locale === "pt" ? "/areas-de-atuacao" : "/servicos" },
+    { label: t.nav.services, to: visasBase, hasSubmenu: true },
     { label: t.nav.team, to: "/equipe" },
     { label: t.nav.awards, to: "/premiacoes" },
     { label: t.nav.media, to: "/na-midia" },
@@ -62,17 +73,71 @@ export function Header({ transparentOverHero = false }: Props) {
             onDark ? "text-primary-foreground/85" : "text-primary/85",
           )}
         >
-          {links.map((l) => (
-            <Link
-              key={l.to}
-              to={withLocale(locale, l.to)}
-              className={cn("whitespace-nowrap transition-colors", onDark ? "hover:text-gold" : "hover:text-primary")}
-              activeProps={{ className: onDark ? "text-gold" : "text-primary" }}
-              activeOptions={{ exact: false }}
-            >
-              {l.label}
-            </Link>
-          ))}
+          {links.map((l) =>
+            l.hasSubmenu ? (
+              <div key={l.to} className="group relative">
+                <Link
+                  to={withLocale(locale, l.to)}
+                  className={cn(
+                    "inline-flex items-center gap-1.5 whitespace-nowrap transition-colors",
+                    onDark ? "hover:text-gold" : "hover:text-primary",
+                  )}
+                  activeProps={{ className: onDark ? "text-gold" : "text-primary" }}
+                  activeOptions={{ exact: false }}
+                >
+                  {l.label}
+                  <span aria-hidden className="text-[9px] mt-px transition-transform duration-300 group-hover:rotate-180">
+                    ▾
+                  </span>
+                </Link>
+
+                {/* Submenu */}
+                <div
+                  className="invisible opacity-0 translate-y-1 pointer-events-none absolute left-1/2 -translate-x-1/2 top-full pt-5 transition-[opacity,transform,visibility] duration-300 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto"
+                >
+                  <div className="min-w-[240px] bg-background border border-border shadow-[0_30px_80px_-30px_rgb(6_36_67/0.25)]">
+                    <div className="px-6 py-4 border-b border-border">
+                      <span className="text-[10px] font-semibold uppercase tracking-[0.32em] text-gold">
+                        Vistos Imigratórios
+                      </span>
+                    </div>
+                    <ul className="py-2">
+                      {VISA_SUBMENU.map((v) => (
+                        <li key={v.slug}>
+                          <Link
+                            to={`${visasBase}/$slug`}
+                            params={{ slug: v.slug }}
+                            className="flex items-center justify-between gap-4 px-6 py-3 text-[12.5px] font-medium tracking-[0.08em] text-primary hover:bg-surface hover:text-gold transition-colors"
+                          >
+                            <span className="font-display text-[15px] font-semibold tracking-tight">{v.code}</span>
+                            <span aria-hidden className="text-[10px] opacity-40 group-hover:opacity-100">→</span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="border-t border-border">
+                      <Link
+                        to={visasBase}
+                        className="block px-6 py-3 text-[10.5px] font-semibold uppercase tracking-[0.28em] text-primary hover:text-gold transition-colors"
+                      >
+                        Ver todos os vistos →
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <Link
+                key={l.to}
+                to={withLocale(locale, l.to)}
+                className={cn("whitespace-nowrap transition-colors", onDark ? "hover:text-gold" : "hover:text-primary")}
+                activeProps={{ className: onDark ? "text-gold" : "text-primary" }}
+                activeOptions={{ exact: false }}
+              >
+                {l.label}
+              </Link>
+            ),
+          )}
         </nav>
 
         <div className="flex shrink-0 items-center gap-4 lg:gap-6">
