@@ -53,7 +53,6 @@ const veiculos: Veiculo[] = [
     description:
       "Participação como especialista em legislação migratória americana, comentando atualizações regulatórias.",
     logo: redeTvLogo.url,
-    blend: true,
   },
   {
     name: "Record Americas",
