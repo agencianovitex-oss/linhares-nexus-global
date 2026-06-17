@@ -3,8 +3,11 @@ import { InstitutionalHero, InstitutionalButton, InstitutionalCard, EditorialIma
 import { SectionBlock } from "@/components/institutional/SectionBlock";
 import { SectionTitle } from "@/components/layout/SectionTitle";
 import { buildLocaleHead } from "@/lib/seo";
-import andrePortrait from "@/assets/andre-5.jpg";
+import andrePortraitAsset from "@/assets/andre-linhares-new.jpg.asset.json";
+import officeAsset from "@/assets/linhares-law-office.jpg.asset.json";
 import gptwAsset from "@/assets/company-badge.webp.asset.json";
+const andrePortrait = andrePortraitAsset.url;
+const office = officeAsset.url;
 const gptw = gptwAsset.url;
 
 const L = "pt" as const;
