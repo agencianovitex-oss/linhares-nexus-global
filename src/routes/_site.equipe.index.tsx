@@ -119,7 +119,7 @@ function EquipePage() {
                   >
                     {group.members.map((m) => (
                       <div key={m.name} className="reveal-up">
-                        <MemberCard m={m} />
+                        <MemberCard m={m} cardBg={isWhite ? "color-mix(in oklab, var(--color-primary) 16%, white)" : "#ffffff"} />
                       </div>
                     ))}
                   </div>
