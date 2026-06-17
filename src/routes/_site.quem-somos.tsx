@@ -35,8 +35,8 @@ const linhaTempo = [
   { ano: "2011", titulo: "Início da prática jurídica", body: "Dr. André Linhares inicia sua trajetória na advocacia americana de imigração." },
   { ano: "2017", titulo: "Fundação da Linhares Law", body: "O escritório nasce com o propósito de representar profissionais e famílias brasileiras nos Estados Unidos." },
   { ano: "2020", titulo: "Expansão Nacional", body: "Abertura de escritórios em Miami, New York e Salt Lake City a partir da sede em Orlando." },
-  { ano: "2024", titulo: "Reconhecimento Internacional", body: "Premiação no International Business Institute e nomeação para o The Law Awards." },
-  { ano: "2024", titulo: "Great Place To Work", body: "Certificação como Great Place To Work com 100% de satisfação interna." },
+  { ano: "2025", titulo: "Reconhecimento Internacional", body: "Premiação no International Business Institute e nomeação para o The Law Awards." },
+  { ano: "2025", titulo: "Great Place To Work", body: "Certificação como Great Place To Work com 100% de satisfação interna." },
 ];
 
 function QuemSomos() {
@@ -173,10 +173,10 @@ function QuemSomos() {
           <div className="lg:col-span-6 lg:col-start-7">
             <InstitutionalCard variant="light" className="p-0 overflow-hidden">
               <div className="w-full aspect-[16/10] bg-surface flex items-center justify-center p-8">
-                <img src={gptw} alt="Great Place To Work 2024" className="max-h-full max-w-full object-contain" />
+                <img src={gptw} alt="Great Place To Work 2025" className="max-h-full max-w-full object-contain" />
               </div>
               <div className="p-10">
-                <span className="eyebrow">Great Place To Work · 2024</span>
+                <span className="eyebrow">Great Place To Work · 2025</span>
                 <h3 className="mt-4 text-primary">Certificação com 100% de aprovação interna.</h3>
               </div>
             </InstitutionalCard>
