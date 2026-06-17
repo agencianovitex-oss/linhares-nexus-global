@@ -199,8 +199,8 @@ function AuthoritySection() {
 function AwardsSection() {
   const recognitions = [
     { title: "10 Best Law Firms", org: "American Institute of Legal Professionals", year: "2026", desc: "Immigration Law — Linhares Law, Florida." },
-    { title: "The Law Awards", org: "Winner — Immigration Practice", year: "2025", desc: "Distinção internacional pela excelência na prática de imigração americana." },
-    { title: "Great Place To Work®", org: "Certified — Estados Unidos", year: "2025 — 2026", desc: "Reconhecimento institucional pela cultura organizacional do escritório." },
+    { title: "The Law Awards", org: "Winner — Immigration Practice", year: "2024", desc: "Distinção internacional pela excelência na prática de imigração americana." },
+    { title: "Great Place To Work®", org: "Certified — Estados Unidos", year: "2024 — 2026", desc: "Reconhecimento institucional pela cultura organizacional do escritório." },
   ];
   return (
     <section className="section-y surface-premium-dark texture-grain relative overflow-hidden">
@@ -588,7 +588,7 @@ function CultureSection() {
               A consistência interna que sustenta o padrão de atendimento entregue a cada cliente — reconhecida por uma das mais respeitadas certificações organizacionais do mundo.
             </p>
             <p className="mt-5 text-[10.5px] uppercase tracking-[0.28em] text-muted-foreground">
-              USA · Oct 2025 — Oct 2026
+              USA · Oct 2024 — Oct 2026
             </p>
           </div>
 
