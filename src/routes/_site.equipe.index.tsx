@@ -101,7 +101,7 @@ function EquipePage() {
               <div className="lg:col-span-4">
                 <span className="rule-gold" />
                 <p className="mt-5 eyebrow">{group.eyebrow}</p>
-                <h2 className="mt-6 text-primary">{group.title}</h2>
+                <h2 className="mt-6 text-gold font-semibold">{group.title}</h2>
                 {group.description && <p className="mt-6 lead">{group.description}</p>}
               </div>
               <div className="lg:col-span-8">
