@@ -34,28 +34,66 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
         <div className="mt-16 grid gap-px bg-border border border-border md:grid-cols-2 lg:grid-cols-3">
           {VISA_ORDER.map((s) => {
             const v = VISAS[locale][s];
+            const featured = s === "eb2-niw" || s === "eb5";
             return (
               <Link
                 key={s}
                 to={visaHref(s)}
-                className="group bg-background p-10 editorial-card flex flex-col"
+                className={
+                  "group relative p-10 editorial-card flex flex-col overflow-hidden " +
+                  (featured
+                    ? "bg-[rgb(223,164,89)] text-primary"
+                    : "bg-background hover:bg-[rgba(223,164,89,0.06)]")
+                }
               >
-                <span className="rule-gold" />
-                <div className="mt-6 font-display text-4xl text-primary group-hover:text-gold transition-colors">
+                <span
+                  aria-hidden
+                  className={
+                    "absolute top-0 left-0 h-[3px] w-16 " +
+                    (featured ? "bg-primary" : "bg-[rgb(223,164,89)]")
+                  }
+                />
+                <div
+                  className={
+                    "mt-8 font-display text-4xl transition-colors " +
+                    (featured ? "text-primary" : "text-primary group-hover:text-[rgb(223,164,89)]")
+                  }
+                >
                   {v.acronym}
                 </div>
-                <p className="mt-3 text-[12px] uppercase tracking-[0.22em] text-muted-foreground">
+                <p
+                  className={
+                    "mt-3 text-[12px] uppercase tracking-[0.22em] " +
+                    (featured ? "text-primary/75" : "text-muted-foreground")
+                  }
+                >
                   {v.heroSubhead}
                 </p>
-                <p className="mt-8 text-ink-soft leading-relaxed flex-1">
+                <p
+                  className={
+                    "mt-8 leading-relaxed flex-1 " +
+                    (featured ? "text-primary/85" : "text-ink-soft")
+                  }
+                >
                   {v.tagline}
                 </p>
-                <div className="mt-10 text-[11px] uppercase tracking-[0.26em] text-primary group-hover:text-gold transition-colors">
+                <div
+                  className={
+                    "mt-10 text-[11px] uppercase tracking-[0.26em] transition-colors " +
+                    (featured
+                      ? "text-primary"
+                      : "text-primary group-hover:text-[rgb(223,164,89)]")
+                  }
+                >
                   Conhecer Estratégia <span className="cta-arrow">→</span>
                 </div>
               </Link>
             );
           })}
+          {/* Fill remaining grid cells with section background to avoid floating borders */}
+          <div aria-hidden className="hidden lg:block surface-premium-light" />
+          <div aria-hidden className="hidden lg:block surface-premium-light" />
+          <div aria-hidden className="hidden md:block lg:hidden surface-premium-light" />
         </div>
       </SectionBlock>
 
