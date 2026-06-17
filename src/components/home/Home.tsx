@@ -588,7 +588,7 @@ function CultureSection() {
               A consistência interna que sustenta o padrão de atendimento entregue a cada cliente — reconhecida por uma das mais respeitadas certificações organizacionais do mundo.
             </p>
             <p className="mt-5 text-[10.5px] uppercase tracking-[0.28em] text-muted-foreground">
-              USA · Oct 2025 — Oct 2026
+              USA · Oct 2024 — Oct 2026
             </p>
           </div>
 
