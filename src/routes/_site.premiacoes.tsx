@@ -34,7 +34,7 @@ interface Award {
 const featuredAwards: Award[] = [
   {
     title: "International Business Institute · IBI Award",
-    year: "2024",
+    year: "2026",
     institution: "International Business Institute",
     description:
       "Distinção concedida pela contribuição da Linhares Law ao ecossistema empresarial internacional, reconhecendo a relevância da prática institucional do escritório no cenário global.",
@@ -42,7 +42,7 @@ const featuredAwards: Award[] = [
   },
   {
     title: "10 Best Law Firms",
-    year: "2024",
+    year: "2026",
     institution: "American Institute of Legal Counsel",
     description:
       "Inclusão entre os dez melhores escritórios de imigração nos Estados Unidos, com base em critérios independentes de excelência e satisfação do cliente.",
@@ -53,7 +53,7 @@ const featuredAwards: Award[] = [
 const textualAwards: Award[] = [
   {
     title: "Great Place To Work",
-    year: "2024",
+    year: "2025",
     institution: "Great Place To Work Institute",
     description:
       "Certificação concedida com 100% de aprovação da equipe interna, refletindo o ambiente institucional construído pela Linhares Law.",
@@ -74,7 +74,7 @@ const textualAwards: Award[] = [
   },
   {
     title: "Top Empreendedor",
-    year: "2024",
+    year: "2025",
     institution: "Premiação Empresarial Brasil–EUA",
     description:
       "Reconhecimento à trajetória empreendedora do Dr. André Linhares à frente da Linhares Law.",
@@ -104,7 +104,7 @@ function Premiacoes() {
 
       <SectionBlock>
         <SectionTitle eyebrow="Destaques" title="Reconhecimentos Principais" />
-        <div className="mt-16 grid gap-12 lg:grid-cols-2">
+        <div className="mt-16 mx-auto grid max-w-3xl gap-8 sm:grid-cols-2">
           {featuredAwards.map((a) => (
             <article
               key={a.title}
