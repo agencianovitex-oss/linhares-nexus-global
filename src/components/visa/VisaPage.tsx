@@ -133,8 +133,8 @@ export function VisaPage({ locale, slug, servicesHref, contactHref, visaHref }: 
       )}
 
       {/* Institutional block — Dr. André Linhares quote (centered, no image) */}
-      <SectionBlock size="compact">
-        <div className="mx-auto max-w-3xl text-center">
+      <SectionBlock>
+        <div className="mx-auto max-w-3xl text-center py-6 lg:py-10">
           <span className="rule-gold mx-auto" />
           <p className="mt-8 font-display text-2xl lg:text-3xl leading-[1.4] text-primary">
             “A imigração é uma decisão estratégica. Cada trajetória exige uma análise individualizada e uma estrutura jurídica construída de acordo com os objetivos do cliente.”
@@ -142,27 +142,6 @@ export function VisaPage({ locale, slug, servicesHref, contactHref, visaHref }: 
           <div className="mt-8 flex flex-col items-center gap-1.5">
             <span className="text-base font-light text-primary tracking-tight">Dr. André Linhares</span>
             <span className="text-[10.5px] uppercase tracking-[0.28em] text-muted-foreground">Advogado Fundador · Linhares Law</span>
-          </div>
-        </div>
-      </SectionBlock>
-
-      {/* Institutional block — Dr. André Linhares */}
-      <SectionBlock>
-        <div className="grid gap-14 lg:grid-cols-12 lg:gap-20 items-center">
-          <div className="lg:col-span-5">
-            <div className="editorial-frame aspect-[4/5] w-full">
-              <img src={andreImg} alt="Dr. André Linhares — Advogado Fundador" className="h-full w-full object-cover object-top" />
-            </div>
-          </div>
-          <div className="lg:col-span-7">
-            <span className="rule-gold" />
-            <p className="mt-8 font-display text-2xl lg:text-3xl leading-[1.35] text-primary max-w-[34ch]">
-              “A imigração é uma decisão estratégica. Cada trajetória exige uma análise individualizada e uma estrutura jurídica construída de acordo com os objetivos do cliente.”
-            </p>
-            <div className="mt-8 flex items-baseline gap-3">
-              <span className="text-base font-light text-primary tracking-tight">Dr. André Linhares</span>
-              <span className="text-[10.5px] uppercase tracking-[0.28em] text-muted-foreground">Advogado Fundador · Linhares Law</span>
-            </div>
           </div>
         </div>
       </SectionBlock>
