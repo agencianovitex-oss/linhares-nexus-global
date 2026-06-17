@@ -131,7 +131,7 @@ function AuthoritySection() {
         <img
           src={andrePracticeBg.url}
           alt=""
-          className="absolute inset-0 h-full w-full object-cover object-center"
+          className="absolute inset-y-0 left-0 h-full w-auto max-w-none object-contain object-left"
         />
         <div
           className="absolute inset-0"
