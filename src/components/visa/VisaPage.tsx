@@ -112,7 +112,7 @@ export function VisaPage({ locale, slug, servicesHref, contactHref, visaHref }: 
             {v.profiles.map((p) => (
               <div
                 key={p.title}
-                className="editorial-card p-10 border-l-2 border-l-[rgb(223,164,89)] bg-background shadow-[0_18px_50px_-32px_rgba(6,36,67,0.18)]"
+                className="editorial-card p-10 border-l-2 border-l-[rgb(223,164,89)] bg-[rgba(223,164,89,0.18)] shadow-[0_18px_50px_-32px_rgba(6,36,67,0.22)]"
               >
                 <h3 className="font-display text-2xl lg:text-[1.75rem] text-primary leading-tight">
                   {p.title}
@@ -131,6 +131,20 @@ export function VisaPage({ locale, slug, servicesHref, contactHref, visaHref }: 
           </div>
         </SectionBlock>
       )}
+
+      {/* Institutional block — Dr. André Linhares quote (centered, no image) */}
+      <SectionBlock size="compact">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="rule-gold mx-auto" />
+          <p className="mt-8 font-display text-2xl lg:text-3xl leading-[1.4] text-primary">
+            “A imigração é uma decisão estratégica. Cada trajetória exige uma análise individualizada e uma estrutura jurídica construída de acordo com os objetivos do cliente.”
+          </p>
+          <div className="mt-8 flex flex-col items-center gap-1.5">
+            <span className="text-base font-light text-primary tracking-tight">Dr. André Linhares</span>
+            <span className="text-[10.5px] uppercase tracking-[0.28em] text-muted-foreground">Advogado Fundador · Linhares Law</span>
+          </div>
+        </div>
+      </SectionBlock>
 
       {/* Institutional block — Dr. André Linhares */}
       <SectionBlock>
