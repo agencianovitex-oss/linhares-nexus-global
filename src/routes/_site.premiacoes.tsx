@@ -70,7 +70,7 @@ const textualAwards: Award[] = [
     year: "2024",
     institution: "Quality Justiça",
     description:
-      "O Prêmio Quality Justiça reconhece organizações e profissionais que se destacam pela excelência na prestação de serviços, qualidade institucional e compromisso contínuo com padrões elevados de atuação. A premiação busca dar visibilidade a empresas e profissionais que se diferenciam em seus respectivos mercados por sua credibilidade, reputação e busca permanente pela excelência.",
+      "O Prêmio Quality Justiça reconhece organizações e profissionais que se destacam pela excelência na prestação de serviços, qualidade institucional e compromisso contínuo com padrões elevados de atuação.",
   },
   {
     title: "Top Empreendedor",
