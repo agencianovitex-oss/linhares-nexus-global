@@ -149,11 +149,10 @@ function NaMidia() {
       </SectionBlock>
 
       <SectionBlock tone="surface">
-        <SectionTitle
-          eyebrow="Galeria"
-          title="Aparições em Vídeo."
-          intro="Curadoria de participações e entrevistas em veículos de referência."
-        />
+        <SectionTitle eyebrow="Galeria" title="Aparições em Vídeo." />
+        <p className="mt-6 max-w-2xl lead text-ink-soft">
+          Curadoria de participações e entrevistas em veículos de referência.
+        </p>
         <div className="mt-16">
           <VideoCarousel items={videos} />
         </div>
