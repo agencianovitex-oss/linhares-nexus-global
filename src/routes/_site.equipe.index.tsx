@@ -22,7 +22,7 @@ function MemberCard({ m }: { m: TeamMember }) {
   const card = (
     <article
       className="group border border-border h-full flex flex-col transition-colors hover:border-border-strong"
-      style={{ backgroundColor: "color-mix(in oklab, var(--color-primary) 6%, white)" }}
+      style={{ backgroundColor: "color-mix(in oklab, var(--color-primary) 16%, white)" }}
     >
       <div className="relative aspect-[3/4] w-full overflow-hidden bg-surface">
         {m.portrait ? (
@@ -95,32 +95,38 @@ function EquipePage() {
 
       {teamGroups.map((group, idx) => {
         const isLeadership = idx === 0;
+        const isWhite = idx % 2 === 0;
         return (
-          <SectionBlock key={group.eyebrow} tone={idx % 2 === 0 ? "light" : "surface"}>
-            <div className="grid gap-12 lg:grid-cols-12">
-              <div className="lg:col-span-4">
-                <span className="rule-gold" />
-                <p className="mt-5 eyebrow">{group.eyebrow}</p>
-                <h2 className="mt-6 text-gold font-semibold">{group.title}</h2>
-                {group.description && <p className="mt-6 lead">{group.description}</p>}
-              </div>
-              <div className="lg:col-span-8">
-                <div
-                  className={
-                    isLeadership
-                      ? "grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-                      : "grid gap-6 sm:grid-cols-2 xl:grid-cols-3"
-                  }
-                >
-                  {group.members.map((m) => (
-                    <div key={m.name} className="reveal-up">
-                      <MemberCard m={m} />
-                    </div>
-                  ))}
+          <div
+            key={group.eyebrow}
+            style={{ backgroundColor: isWhite ? "#ffffff" : "#eef0f3" }}
+          >
+            <SectionBlock tone={isWhite ? "light" : "surface"} className="!bg-transparent !bg-none">
+              <div className="grid gap-12 lg:grid-cols-12">
+                <div className="lg:col-span-4">
+                  <span className="rule-gold" />
+                  <p className="mt-5 eyebrow">{group.eyebrow}</p>
+                  <h2 className="mt-6 text-gold font-semibold">{group.title}</h2>
+                  {group.description && <p className="mt-6 lead">{group.description}</p>}
+                </div>
+                <div className="lg:col-span-8">
+                  <div
+                    className={
+                      isLeadership
+                        ? "grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+                        : "grid gap-6 sm:grid-cols-2 xl:grid-cols-3"
+                    }
+                  >
+                    {group.members.map((m) => (
+                      <div key={m.name} className="reveal-up">
+                        <MemberCard m={m} />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          </SectionBlock>
+            </SectionBlock>
+          </div>
         );
       })}
 
