@@ -5,7 +5,7 @@ import { SectionTitle } from "@/components/layout/SectionTitle";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { VISAS, VISA_ORDER, type VisaSlug } from "@/data/visas";
 import type { Locale } from "@/i18n/locales";
-import andreImg from "@/assets/andre-5.jpg";
+
 
 interface Props {
   locale: Locale;
