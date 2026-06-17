@@ -267,7 +267,7 @@ function AwardsSection() {
 
         <div className="mt-12 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
           <p className="text-[11px] uppercase tracking-[0.28em] text-primary-foreground/55">
-            Distinções institucionais · 2026 — Presente
+            Distinções institucionais · 2026 — PRESENTE
           </p>
           <Link
             to="/premiacoes"
