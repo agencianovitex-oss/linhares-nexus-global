@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-type Variant = "primary" | "outline" | "ghost" | "onDark";
+type Variant = "primary" | "outline" | "ghost" | "onDark" | "gold";
 
 const base =
   "group/btn relative inline-flex items-center justify-center gap-3 px-8 py-4 text-[11px] font-semibold tracking-[0.26em] uppercase transition-[background-color,color,border-color,transform] duration-300 ease-out will-change-transform";
@@ -15,6 +15,8 @@ const variants: Record<Variant, string> = {
   ghost: "text-primary hover:text-gold",
   onDark:
     "border border-primary-foreground/80 text-primary-foreground hover:border-gold hover:text-gold hover:-translate-y-[1px]",
+  gold:
+    "bg-gold text-gold-foreground hover:bg-[rgb(204_148_76)] hover:-translate-y-[1px] shadow-[0_10px_30px_-18px_rgba(223,164,89,0.65)]",
 };
 
 interface CommonProps {
