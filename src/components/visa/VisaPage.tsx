@@ -85,10 +85,52 @@ export function VisaPage({ locale, slug, servicesHref, contactHref, visaHref }: 
             </p>
           </div>
           <div className="lg:col-span-4 lg:text-right">
-            <InstitutionalButton to={contactHref} variant="onDark">Fale com nossa equipe</InstitutionalButton>
+            <InstitutionalButton to={contactHref} variant="gold">Fale com nossa equipe</InstitutionalButton>
           </div>
         </div>
       </SectionBlock>
+
+      <SectionBlock>
+        <SectionTitle eyebrow="Processo" title={v.process.title} />
+        <ol className="mt-16 grid gap-px bg-border md:grid-cols-2 lg:grid-cols-3 border border-border">
+          {v.process.items?.map((step, idx) => (
+            <li
+              key={step}
+              className="relative bg-background p-10 editorial-card border-t-2 border-t-[rgb(223,164,89)]/0 hover:border-t-[rgb(223,164,89)] transition-colors"
+            >
+              <span className="font-display text-6xl text-[rgb(223,164,89)] leading-none">{String(idx + 1).padStart(2, "0")}</span>
+              <p className="mt-6 lead text-primary font-medium">{step}</p>
+            </li>
+          ))}
+        </ol>
+      </SectionBlock>
+
+      {v.profiles && v.profiles.length > 0 && (
+        <SectionBlock tone="surface">
+          <SectionTitle eyebrow="Perfis Profissionais" title="Trajetórias representativas." />
+          <div className="mt-16 grid gap-8 md:grid-cols-2">
+            {v.profiles.map((p) => (
+              <div
+                key={p.title}
+                className="editorial-card p-10 border-l-2 border-l-[rgb(223,164,89)] bg-background shadow-[0_18px_50px_-32px_rgba(6,36,67,0.18)]"
+              >
+                <h3 className="font-display text-2xl lg:text-[1.75rem] text-primary leading-tight">
+                  {p.title}
+                </h3>
+                <p className="mt-5 text-ink-soft leading-relaxed">{p.intro}</p>
+                <ul className="mt-8 space-y-3 text-ink-soft text-[0.95rem]">
+                  {p.bullets.map((b) => (
+                    <li key={b} className="flex gap-3">
+                      <span aria-hidden className="mt-3 h-px w-4 shrink-0 bg-[rgb(223,164,89)]" />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </SectionBlock>
+      )}
 
       <SectionBlock>
         <SectionTitle eyebrow="Processo" title={v.process.title} />
