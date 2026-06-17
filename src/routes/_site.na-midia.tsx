@@ -347,7 +347,7 @@ function MobileVideoCarousel({
   return (
     <div className="md:hidden">
       <div
-        className="relative h-[260px] overflow-hidden"
+        className="relative h-[560px] overflow-hidden"
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
@@ -356,7 +356,8 @@ function MobileVideoCarousel({
         {/* next peek */}
         <PeekVideo item={items[nextI]} side="right" />
         {/* main */}
-        <div className="absolute left-1/2 top-1/2 z-20 aspect-video w-[80%] -translate-x-1/2 -translate-y-1/2 border border-border bg-primary shadow-2xl">
+        <div className="absolute left-1/2 top-1/2 z-20 aspect-[9/16] h-full -translate-x-1/2 -translate-y-1/2 border border-border bg-primary shadow-2xl">
+
           <video
             key={items[active].src}
             src={items[active].src}
