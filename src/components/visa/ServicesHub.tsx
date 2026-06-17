@@ -106,7 +106,7 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
             A metodologia estratégica do escritório.
           </h2>
           <p className="mt-6 lead text-primary-foreground/80">
-            Antes da escolha da categoria migratória, conduzimos uma leitura institucional do perfil profissional, patrimonial e familiar do cliente. É essa análise que define qual estratégia jurídica produz o melhor resultado.
+            A Linhares Law assessora famílias que desejam construir uma nova vida nos Estados Unidos e, com a mesma profundidade técnica, empresários, investidores, executivos e profissionais qualificados que buscam expansão internacional, estruturação societária e oportunidades estratégicas no mercado americano.
           </p>
         </div>
         <div className="mt-16 grid gap-px bg-primary-foreground/15 border border-primary-foreground/15 md:grid-cols-2 lg:grid-cols-4">
