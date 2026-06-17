@@ -403,8 +403,8 @@ function PeekVideo({ item, side }: { item: VideoItem; side: "left" | "right" }) 
   return (
     <div
       className={cn(
-        "absolute top-1/2 z-10 aspect-video w-[70%] -translate-y-1/2 overflow-hidden border border-border bg-primary opacity-50",
-        side === "left" ? "-left-[35%]" : "-right-[35%]",
+        "absolute top-1/2 z-10 aspect-[9/16] h-[80%] -translate-y-1/2 overflow-hidden border border-border bg-primary opacity-50",
+        side === "left" ? "-left-[18%]" : "-right-[18%]",
       )}
       aria-hidden
     >
