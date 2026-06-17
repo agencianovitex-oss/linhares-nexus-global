@@ -67,8 +67,12 @@ function HeroSection() {
             </span>
             <span className="rule-gold" />
           </div>
-          <h1 className="mt-10 text-balance text-primary-foreground mx-auto max-w-[22ch]">
-            Advogados de imigração americana para profissionais, executivos, investidores e famílias.
+          <h1 className="mt-10 text-primary-foreground mx-auto max-w-[60ch]">
+            Advogados de imigração americana
+            <br />
+            para profissionais, executivos,
+            <br />
+            investidores e famílias.
           </h1>
           <p className="mt-8 mx-auto max-w-2xl text-lg leading-[1.85] text-primary-foreground/75">
             Representação jurídica estratégica perante as autoridades federais de imigração dos Estados Unidos. Conduzimos cada caso com profundidade técnica, discrição e visão de longo prazo.
