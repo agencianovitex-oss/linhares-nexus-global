@@ -76,8 +76,8 @@ function HeroSection() {
           <div className="mt-12 flex flex-wrap justify-center gap-4">
             <InstitutionalButton
               to="/contato"
-              variant="onDark"
-              className="bg-primary-foreground text-primary border-primary-foreground hover:bg-transparent hover:text-primary-foreground"
+              variant="primary"
+              className="bg-gold text-primary border-gold hover:bg-[rgb(200,145,70)] hover:text-primary"
             >
               Agendar Consulta
             </InstitutionalButton>
@@ -304,7 +304,11 @@ function ServicesSection() {
             title="Estratégias jurídicas para diferentes perfis internacionais."
             description="Cada categoria de visto exige uma leitura jurídica precisa. Definimos a estratégia adequada ao perfil profissional, patrimonial e familiar de cada cliente."
           />
-          <InstitutionalButton to="/areas-de-atuacao" variant="outline">
+          <InstitutionalButton
+            to="/areas-de-atuacao"
+            variant="primary"
+            className="bg-gold text-primary border-gold hover:bg-[rgb(200,145,70)] hover:text-primary"
+          >
             Ver todos os vistos
           </InstitutionalButton>
         </div>
@@ -744,7 +748,7 @@ function PublicationsSection() {
           </div>
           <Link
             to="/blog"
-            className="inline-flex items-center gap-3 px-7 py-4 text-[11px] font-semibold tracking-[0.26em] uppercase border border-[rgb(6_36_67)] text-[rgb(6_36_67)] hover:bg-[rgb(6_36_67)] hover:text-primary-foreground transition-colors whitespace-nowrap"
+            className="inline-flex items-center gap-3 px-7 py-4 text-[11px] font-semibold tracking-[0.26em] uppercase border border-white bg-white text-[rgb(6_36_67)] hover:bg-transparent hover:text-white transition-colors whitespace-nowrap"
           >
             Ver todas as publicações <span aria-hidden>→</span>
           </Link>
@@ -824,8 +828,8 @@ function FinalCTA() {
             <div className="mt-10">
               <InstitutionalButton
                 to="/contato"
-                variant="onDark"
-                className="bg-primary-foreground text-primary border-primary-foreground hover:bg-transparent hover:text-primary-foreground"
+                variant="primary"
+                className="bg-gold text-primary border-gold hover:bg-[rgb(200,145,70)] hover:text-primary"
               >
                 Agendar Consulta
               </InstitutionalButton>
