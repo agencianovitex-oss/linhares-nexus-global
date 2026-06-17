@@ -26,7 +26,7 @@ export const dict = {
       "Esta seção do nosso site institucional está em curadoria final. Em breve publicaremos o conteúdo completo.",
     nav: {
       about: "Quem Somos",
-      services: "Áreas de Atuação",
+      services: "Vistos",
       team: "Equipe",
       awards: "Reconhecimentos",
       media: "Na Mídia",
@@ -48,7 +48,7 @@ export const dict = {
     pages: {
       home: { title: "Linhares Law", intro: "Escritório de advocacia dedicado à imigração americana, com atuação institucional em Orlando, Miami, New York e Salt Lake City." },
       about: { title: "Quem Somos", intro: "Uma prática jurídica fundamentada em rigor técnico, discrição e atendimento personalizado." },
-      services: { title: "Áreas de Atuação", intro: "Estratégias de imigração para profissionais, executivos, investidores e famílias internacionais." },
+      services: { title: "Vistos", intro: "Estratégias de imigração para profissionais, executivos, investidores e famílias internacionais." },
       team: { title: "Equipe", intro: "Advogados e profissionais dedicados a representar trajetórias de excelência." },
       awards: { title: "Reconhecimentos", intro: "Distinções institucionais que refletem nossa reputação e consistência." },
       media: { title: "Na Mídia", intro: "Entrevistas, aparições e contribuições editoriais em veículos de referência." },
