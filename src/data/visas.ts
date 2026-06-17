@@ -542,7 +542,7 @@ const ES: Record<VisaSlug, VisaContent> = Object.fromEntries(
 
 export const VISAS: Record<Locale, Record<VisaSlug, VisaContent>> = { pt: PT, en: EN, es: ES };
 
-export const VISA_ORDER: VisaSlug[] = ["eb2-niw", "eb1", "e2", "l1", "o1", "h1b", "eb5"];
+export const VISA_ORDER: VisaSlug[] = ["eb2-niw", "eb1", "e2", "l1", "eb5", "h1b", "o1"];
 
 export interface VisaSummary {
   slug: VisaSlug;
@@ -613,8 +613,8 @@ export const VISA_CATEGORIES: VisaCategory[] = [
 ];
 
 export const PLANNING_PILLARS = [
-  { title: "Estratégias familiares", body: "Estruturação migratória de núcleos familiares completos, considerando cônjuges, filhos e dependentes." },
-  { title: "Avaliação de elegibilidade", body: "Diagnóstico jurídico individualizado das categorias migratórias aderentes ao perfil do cliente." },
-  { title: "Planejamento de longo prazo", body: "Construção de trajetórias com visão de residência permanente, cidadania, sucessão e atuação internacional." },
-  { title: "Estruturação documental", body: "Curadoria e construção do acervo documental que sustenta cada etapa do processo migratório." },
+  { title: "Estratégias profissionais e familiares", body: "Estruturação migratória para profissionais, executivos e núcleos familiares completos, alinhada aos objetivos de carreira, patrimônio e qualidade de vida." },
+  { title: "Empresários e investidores", body: "Planejamento jurídico para expansão internacional de negócios, estruturação societária nos Estados Unidos e investimento qualificado." },
+  { title: "Avaliação de elegibilidade", body: "Diagnóstico individualizado das categorias migratórias aderentes ao perfil profissional, empresarial e familiar do cliente." },
+  { title: "Planejamento de longo prazo", body: "Trajetórias construídas com visão de residência permanente, cidadania, sucessão patrimonial e atuação internacional contínua." },
 ];
