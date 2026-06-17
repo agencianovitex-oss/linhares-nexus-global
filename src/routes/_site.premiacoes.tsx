@@ -81,7 +81,7 @@ const textualAwards: Award[] = [
   },
   {
     title: "LIDE Orlando · Presidência",
-    year: "2024 – Presente",
+    year: "2025 – Presente",
     institution: "LIDE — Grupo de Líderes Empresariais",
     description:
       "Eleição do Dr. André Linhares para a presidência do capítulo de Orlando, articulando lideranças empresariais brasileiras e americanas.",
