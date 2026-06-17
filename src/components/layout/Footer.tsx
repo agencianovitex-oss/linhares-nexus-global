@@ -70,16 +70,15 @@ export function Footer() {
           <ul className="mt-7 space-y-4 text-[13.5px] text-primary-foreground/85">
             {OFFICES.map((o) => (
               <li key={o.city}>
-                <Link to={withLocale(locale, "/escritorios")} className="transition-colors hover:text-gold">
-                  <span className="block">{o.city}</span>
-                  <span className="block text-[11px] uppercase tracking-[0.22em] text-primary-foreground/45">
-                    {o.state}
-                  </span>
-                </Link>
+                <span className="block">{o.city}</span>
+                <span className="block text-[11px] uppercase tracking-[0.22em] text-primary-foreground/45">
+                  {o.state}
+                </span>
               </li>
             ))}
           </ul>
         </div>
+
 
         <div className="lg:col-span-2">
           <h4 className="eyebrow eyebrow-on-dark">{t.footer.contact}</h4>
