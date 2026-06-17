@@ -1,14 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { InstitutionalHero, InstitutionalButton, InstitutionalCard } from "@/components/institutional";
+import { InstitutionalHero, InstitutionalButton } from "@/components/institutional";
 import { SectionBlock } from "@/components/institutional/SectionBlock";
 import { SectionTitle } from "@/components/layout/SectionTitle";
 import { buildLocaleHead } from "@/lib/seo";
-import gptwAsset from "@/assets/company-badge.webp.asset.json";
-const gptw = gptwAsset.url;
-const gptwBadge = gptwAsset.url;
-import lawAwards from "@/assets/law-awards-2024.jpg";
-import tenBest from "@/assets/10-best-law-firms.png";
-import ibi from "@/assets/ibi-3.jpg";
+import tenBestAsset from "@/assets/10-best-law-firms-2.png.asset.json";
+import ibiAsset from "@/assets/ibi-awards-2.jpg.asset.json";
+
+const tenBest = tenBestAsset.url;
+const ibi = ibiAsset.url;
 
 const L = "pt" as const;
 
@@ -19,7 +18,7 @@ export const Route = createFileRoute("/_site/premiacoes")({
       locale: L,
       title: "Reconhecimentos — Linhares Law",
       description:
-        "Premiações e reconhecimentos institucionais recebidos pela Linhares Law, incluindo Great Place To Work, The Law Awards, 10 Best Law Firms e International Business Institute.",
+        "Premiações e reconhecimentos institucionais recebidos pela Linhares Law, incluindo IBI Award, 10 Best Law Firms, The Law Awards, Great Place To Work e Prêmio Quality Justiça.",
     }),
   component: Premiacoes,
 });
@@ -30,18 +29,34 @@ interface Award {
   institution: string;
   description: string;
   image?: string;
-  featured?: boolean;
 }
 
-const awards: Award[] = [
+const featuredAwards: Award[] = [
+  {
+    title: "International Business Institute · IBI Award",
+    year: "2024",
+    institution: "International Business Institute",
+    description:
+      "Distinção concedida pela contribuição da Linhares Law ao ecossistema empresarial internacional, reconhecendo a relevância da prática institucional do escritório no cenário global.",
+    image: ibi,
+  },
+  {
+    title: "10 Best Law Firms",
+    year: "2024",
+    institution: "American Institute of Legal Counsel",
+    description:
+      "Inclusão entre os dez melhores escritórios de imigração nos Estados Unidos, com base em critérios independentes de excelência e satisfação do cliente.",
+    image: tenBest,
+  },
+];
+
+const textualAwards: Award[] = [
   {
     title: "Great Place To Work",
     year: "2024",
     institution: "Great Place To Work Institute",
     description:
       "Certificação concedida com 100% de aprovação da equipe interna, refletindo o ambiente institucional construído pela Linhares Law.",
-    image: gptw,
-    featured: true,
   },
   {
     title: "The Law Awards",
@@ -49,28 +64,17 @@ const awards: Award[] = [
     institution: "The Law Awards",
     description:
       "Reconhecimento entre os escritórios de imigração de maior destaque na atuação junto ao público brasileiro nos Estados Unidos.",
-    image: lawAwards,
-    featured: true,
   },
   {
-    title: "10 Best Law Firms",
+    title: "Prêmio Quality Justiça",
     year: "2024",
-    institution: "American Institute of Legal Professionals",
+    institution: "Quality Justiça",
     description:
-      "Inclusão entre os dez melhores escritórios na categoria de satisfação do cliente em prática de imigração.",
-    image: tenBest,
-  },
-  {
-    title: "International Business Institute · IBI Award",
-    year: "2024",
-    institution: "International Business Institute",
-    description:
-      "Distinção concedida pela contribuição da Linhares Law ao ecossistema empresarial internacional.",
-    image: ibi,
+      "O Prêmio Quality Justiça reconhece organizações e profissionais que se destacam pela excelência na prestação de serviços, qualidade institucional e compromisso contínuo com padrões elevados de atuação. A premiação busca dar visibilidade a empresas e profissionais que se diferenciam em seus respectivos mercados por sua credibilidade, reputação e busca permanente pela excelência.",
   },
   {
     title: "Top Empreendedor",
-    year: "2025",
+    year: "2024",
     institution: "Premiação Empresarial Brasil–EUA",
     description:
       "Reconhecimento à trajetória empreendedora do Dr. André Linhares à frente da Linhares Law.",
@@ -84,9 +88,12 @@ const awards: Award[] = [
   },
 ];
 
+// Suavização do dourado institucional rgb(223,164,89) para fundo de card
+const cardBg = "color-mix(in oklab, rgb(223 164 89) 14%, white)";
+const cardBorder = "color-mix(in oklab, rgb(223 164 89) 38%, white)";
+const titleColor = "rgb(6, 36, 67)";
+
 function Premiacoes() {
-  const featured = awards.filter((a) => a.featured);
-  const rest = awards.filter((a) => !a.featured);
   return (
     <>
       <InstitutionalHero
@@ -96,23 +103,35 @@ function Premiacoes() {
       />
 
       <SectionBlock>
-        <SectionTitle eyebrow="Destaques" title="Reconhecimentos Recentes" />
+        <SectionTitle eyebrow="Destaques" title="Reconhecimentos Principais" />
         <div className="mt-16 grid gap-12 lg:grid-cols-2">
-          {featured.map((a) => (
-            <article key={a.title} className="group">
+          {featuredAwards.map((a) => (
+            <article
+              key={a.title}
+              className="group flex flex-col overflow-hidden border transition-colors duration-300"
+              style={{ backgroundColor: cardBg, borderColor: cardBorder }}
+            >
               {a.image && (
-                <div className={`editorial-frame aspect-[16/10] ${a.image === gptw ? "bg-surface flex items-center justify-center p-8" : ""}`}>
-                  <img src={a.image} alt={a.title} className={a.image === gptw ? "max-h-full max-w-full object-contain" : ""} />
+                <div className="aspect-[4/5] overflow-hidden bg-[rgb(6,36,67)]">
+                  <img
+                    src={a.image}
+                    alt={a.title}
+                    className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
+                  />
                 </div>
               )}
-              <div className="mt-8">
-                <div className="flex items-center gap-4 text-[11px] uppercase tracking-[0.28em] text-muted-foreground">
-                  <span className="text-gold">{a.year}</span>
-                  <span>·</span>
-                  <span>{a.institution}</span>
+              <div className="p-10">
+                <div className="flex items-center gap-4 text-[11px] uppercase tracking-[0.28em]" style={{ color: titleColor }}>
+                  <span className="font-semibold">{a.year}</span>
+                  <span className="opacity-40">·</span>
+                  <span className="opacity-80">{a.institution}</span>
                 </div>
-                <h3 className="mt-4 text-primary">{a.title}</h3>
-                <p className="mt-4 lead">{a.description}</p>
+                <h3 className="mt-5 font-semibold" style={{ color: titleColor }}>
+                  {a.title}
+                </h3>
+                <p className="mt-5 leading-relaxed" style={{ color: "rgb(6 36 67 / 0.82)" }}>
+                  {a.description}
+                </p>
               </div>
             </article>
           ))}
@@ -121,38 +140,43 @@ function Premiacoes() {
 
       <SectionBlock tone="surface">
         <SectionTitle eyebrow="Demais Reconhecimentos" title="Trajetória de Distinções." />
-        <div className="mt-12 grid gap-px bg-border md:grid-cols-2 border border-border">
-          {rest.map((a) => (
-            <InstitutionalCard key={a.title} variant="light" className="border-0 p-10 bg-background editorial-card">
-              <div className="flex items-center gap-4 text-[11px] uppercase tracking-[0.28em] text-muted-foreground">
-                <span className="text-gold">{a.year}</span>
-                <span>·</span>
-                <span>{a.institution}</span>
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
+          {textualAwards.map((a) => (
+            <article
+              key={a.title}
+              className="p-10 border transition-colors duration-300"
+              style={{ backgroundColor: cardBg, borderColor: cardBorder }}
+            >
+              <div className="flex items-center gap-4 text-[11px] uppercase tracking-[0.28em]" style={{ color: titleColor }}>
+                <span className="font-semibold">{a.year}</span>
+                <span className="opacity-40">·</span>
+                <span className="opacity-80">{a.institution}</span>
               </div>
-              <h3 className="mt-5 text-primary">{a.title}</h3>
-              <p className="mt-4 text-ink-soft leading-relaxed">{a.description}</p>
-            </InstitutionalCard>
+              <h3 className="mt-5 font-semibold" style={{ color: titleColor }}>
+                {a.title}
+              </h3>
+              <p className="mt-4 leading-relaxed" style={{ color: "rgb(6 36 67 / 0.82)" }}>
+                {a.description}
+              </p>
+            </article>
           ))}
         </div>
       </SectionBlock>
 
       <SectionBlock tone="dark">
-        <div className="grid gap-12 lg:grid-cols-12 items-center">
-          <div className="lg:col-span-7">
-            <span className="rule-gold" />
-            <h2 className="mt-8 text-primary-foreground">
-              Excelência reconhecida pelas instituições do setor.
-            </h2>
-            <p className="mt-6 lead text-primary-foreground/80">
-              Cada distinção reflete o compromisso da Linhares Law com a representação técnica e
-              institucional de seus clientes diante das autoridades americanas.
-            </p>
-            <div className="mt-10">
-              <InstitutionalButton to="/contato">Agendar Consulta</InstitutionalButton>
-            </div>
-          </div>
-          <div className="lg:col-span-4 lg:col-start-9">
-            <img src={gptwBadge} alt="Great Place To Work Badge" className="w-full max-w-[260px] mx-auto" />
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="rule-gold mx-auto" />
+          <h2 className="mt-8 text-primary-foreground">
+            Excelência reconhecida pelas instituições do setor.
+          </h2>
+          <p className="mt-6 lead text-primary-foreground/80">
+            Cada distinção reflete o compromisso da Linhares Law com a representação técnica e
+            institucional de seus clientes diante das autoridades americanas.
+          </p>
+          <div className="mt-10 flex justify-center">
+            <InstitutionalButton variant="gold" to="/contato">
+              Agendar Consulta
+            </InstitutionalButton>
           </div>
         </div>
       </SectionBlock>
