@@ -193,23 +193,20 @@ function VideoCarousel({ items }: { items: VideoItem[] }) {
     <div className="relative">
       {/* Desktop: 3-up showcase */}
       <div className="relative hidden md:block">
-        <div className="relative mx-auto flex h-[440px] max-w-5xl items-center justify-center">
+        <div className="relative mx-auto flex h-[640px] max-w-5xl items-center justify-center">
           {items.map((item, i) => {
-            const offset = ((i - active + total) % total + Math.floor(total / 2)) % total - Math.floor(total / 2);
-            // Normalize offset to [-1, 0, 1, hidden]
             let pos: -1 | 0 | 1 | "hidden" = "hidden";
             if (i === active) pos = 0;
             else if (i === wrap(active - 1)) pos = -1;
             else if (i === wrap(active + 1)) pos = 1;
-            void offset;
 
             const isMain = pos === 0;
             const isSide = pos === -1 || pos === 1;
             const translate =
               pos === -1
-                ? "-translate-x-[58%] scale-[0.72]"
+                ? "-translate-x-[110%] scale-[0.72]"
                 : pos === 1
-                  ? "translate-x-[58%] scale-[0.72]"
+                  ? "translate-x-[110%] scale-[0.72]"
                   : pos === 0
                     ? "translate-x-0 scale-100"
                     : "scale-90 opacity-0 pointer-events-none";
@@ -221,12 +218,13 @@ function VideoCarousel({ items }: { items: VideoItem[] }) {
                 onClick={() => setActive(i)}
                 aria-label={`Selecionar vídeo ${item.title}`}
                 className={cn(
-                  "absolute top-1/2 left-1/2 -translate-y-1/2 aspect-video w-[58%] max-w-[680px]",
+                  "absolute top-1/2 left-1/2 -translate-y-1/2 aspect-[9/16] h-full",
                   "transform-gpu transition-all duration-700 ease-out",
                   translate,
                   isMain ? "z-20" : "z-10",
                 )}
               >
+
                 <div
                   className={cn(
                     "relative h-full w-full overflow-hidden border border-border bg-primary shadow-2xl",
@@ -349,7 +347,7 @@ function MobileVideoCarousel({
   return (
     <div className="md:hidden">
       <div
-        className="relative h-[260px] overflow-hidden"
+        className="relative h-[560px] overflow-hidden"
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
@@ -358,7 +356,8 @@ function MobileVideoCarousel({
         {/* next peek */}
         <PeekVideo item={items[nextI]} side="right" />
         {/* main */}
-        <div className="absolute left-1/2 top-1/2 z-20 aspect-video w-[80%] -translate-x-1/2 -translate-y-1/2 border border-border bg-primary shadow-2xl">
+        <div className="absolute left-1/2 top-1/2 z-20 aspect-[9/16] h-full -translate-x-1/2 -translate-y-1/2 border border-border bg-primary shadow-2xl">
+
           <video
             key={items[active].src}
             src={items[active].src}
@@ -404,8 +403,8 @@ function PeekVideo({ item, side }: { item: VideoItem; side: "left" | "right" }) 
   return (
     <div
       className={cn(
-        "absolute top-1/2 z-10 aspect-video w-[70%] -translate-y-1/2 overflow-hidden border border-border bg-primary opacity-50",
-        side === "left" ? "-left-[35%]" : "-right-[35%]",
+        "absolute top-1/2 z-10 aspect-[9/16] h-[80%] -translate-y-1/2 overflow-hidden border border-border bg-primary opacity-50",
+        side === "left" ? "-left-[18%]" : "-right-[18%]",
       )}
       aria-hidden
     >
