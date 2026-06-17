@@ -3,8 +3,11 @@ import { InstitutionalHero, InstitutionalButton, InstitutionalCard, EditorialIma
 import { SectionBlock } from "@/components/institutional/SectionBlock";
 import { SectionTitle } from "@/components/layout/SectionTitle";
 import { buildLocaleHead } from "@/lib/seo";
-import andrePortrait from "@/assets/andre-5.jpg";
+import andrePortraitAsset from "@/assets/andre-linhares-new.jpg.asset.json";
+import officeAsset from "@/assets/linhares-law-office.jpg.asset.json";
 import gptwAsset from "@/assets/company-badge.webp.asset.json";
+const andrePortrait = andrePortraitAsset.url;
+const office = officeAsset.url;
 const gptw = gptwAsset.url;
 
 const L = "pt" as const;
@@ -54,11 +57,12 @@ function QuemSomos() {
 
       {/* História */}
       <SectionBlock>
-        <div className="grid gap-16 lg:grid-cols-12">
-          <div className="lg:col-span-5">
-            <SectionTitle eyebrow="Nossa História" title="Um escritório fundado sobre rigor jurídico e propósito." />
+        <SectionTitle eyebrow="Nossa História" title="Um escritório fundado sobre rigor jurídico e propósito." />
+        <div className="mt-12 grid gap-12 lg:grid-cols-12 items-center">
+          <div className="lg:col-span-6">
+            <EditorialImage src={office} ratio="landscape" alt="Recepção institucional Linhares Law" className="editorial-frame" />
           </div>
-          <div className="lg:col-span-6 lg:col-start-7 space-y-6 lead">
+          <div className="lg:col-span-6 space-y-5 lead">
             <p>
               A Linhares Law nasceu da convicção de que a imigração americana exige mais do que processo. Exige
               estratégia jurídica, leitura técnica de cenário e o acompanhamento contínuo de cada etapa.
@@ -118,23 +122,40 @@ function QuemSomos() {
       </SectionBlock>
 
       {/* Linha do tempo */}
-      <SectionBlock tone="surface">
-        <SectionTitle eyebrow="Trajetória Institucional" title="Marcos relevantes da Linhares Law." />
-        <div className="mt-16 relative">
-          <div aria-hidden className="absolute left-[7.5rem] top-0 bottom-0 w-px bg-border hidden md:block" />
-          <div className="space-y-12">
-            {linhaTempo.map((m) => (
-              <div key={m.ano} className="grid gap-6 md:grid-cols-[8rem_1fr] items-start">
-                <div className="font-display text-3xl text-gold">{m.ano}</div>
-                <div className="md:pl-12 md:border-l md:border-border">
-                  <h3 className="text-primary">{m.titulo}</h3>
-                  <p className="mt-3 lead">{m.body}</p>
+      <section className="relative isolate py-20 md:py-24" style={{ backgroundColor: "rgb(223, 164, 89)" }}>
+        <div className="relative z-10">
+          <div className="mx-auto w-full max-w-[1280px] px-6 lg:px-10">
+            <div style={{ color: "rgb(6, 36, 67)" }}>
+              <span className="eyebrow" style={{ color: "rgb(6, 36, 67)", opacity: 0.75 }}>Trajetória Institucional</span>
+              <h2 className="mt-3 font-display text-3xl md:text-4xl lg:text-5xl leading-[1.05]" style={{ color: "rgb(6, 36, 67)" }}>
+                Marcos relevantes da Linhares Law.
+              </h2>
+              <span className="mt-5 block h-px w-16" style={{ backgroundColor: "rgb(6, 36, 67)" }} />
+            </div>
+            <div className="mt-10 grid gap-x-10 gap-y-6 md:grid-cols-2">
+              {linhaTempo.map((m) => (
+                <div
+                  key={m.ano}
+                  className="grid grid-cols-[5rem_1fr] gap-5 items-start border-t pt-5"
+                  style={{ borderColor: "rgba(6, 36, 67, 0.25)" }}
+                >
+                  <div className="font-display text-3xl md:text-4xl leading-none" style={{ color: "rgb(6, 36, 67)" }}>
+                    {m.ano}
+                  </div>
+                  <div>
+                    <h3 className="font-display text-lg md:text-xl leading-tight" style={{ color: "rgb(6, 36, 67)" }}>
+                      {m.titulo}
+                    </h3>
+                    <p className="mt-2 text-sm md:text-[15px] leading-relaxed" style={{ color: "rgba(6, 36, 67, 0.82)" }}>
+                      {m.body}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-      </SectionBlock>
+      </section>
 
       {/* Reconhecimentos */}
       <SectionBlock>
