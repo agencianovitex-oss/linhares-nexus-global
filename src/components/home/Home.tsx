@@ -5,7 +5,7 @@ import { InstitutionalButton } from "@/components/institutional/Button";
 import andre6 from "@/assets/andre-6.jpg";
 import andreLinharesPortraitAsset from "@/assets/andre-linhares-portrait.jpg.asset.json";
 const andreLinharesPortrait = andreLinharesPortraitAsset.url;
-import andrePracticeBg from "@/assets/andre-practice-bg.jpg.asset.json";
+import andrePracticeBg from "@/assets/andre-practice-bg.png.asset.json";
 import nicholas3 from "@/assets/nicholas-3.jpg";
 import juliana from "@/assets/team-juliana.avif";
 import ibiCeremonyAsset from "@/assets/ibi-award-ceremony-2.jpg.asset.json";
