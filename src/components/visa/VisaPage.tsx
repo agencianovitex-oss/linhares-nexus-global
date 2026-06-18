@@ -96,9 +96,9 @@ export function VisaPage({ locale, slug, servicesHref, contactHref, visaHref }: 
           {v.process.items?.map((step, idx) => (
             <li
               key={step}
-              className="relative bg-background p-10 editorial-card border-t-2 border-t-[rgb(223,164,89)]/0 hover:border-t-[rgb(223,164,89)] transition-colors"
+              className="relative bg-background p-10 editorial-card border-t-2 border-t-[rgb(179,134,66)]/0 hover:border-t-[rgb(179,134,66)] transition-colors"
             >
-              <span className="font-display text-6xl text-[rgb(223,164,89)] leading-none">{String(idx + 1).padStart(2, "0")}</span>
+              <span className="font-display text-6xl text-[rgb(179,134,66)] leading-none">{String(idx + 1).padStart(2, "0")}</span>
               <p className="mt-6 lead text-primary font-medium">{step}</p>
             </li>
           ))}
@@ -112,7 +112,7 @@ export function VisaPage({ locale, slug, servicesHref, contactHref, visaHref }: 
             {v.profiles.map((p) => (
               <div
                 key={p.title}
-                className="editorial-card p-10 border-l-2 border-l-[rgb(223,164,89)] bg-[rgba(223,164,89,0.18)] shadow-[0_18px_50px_-32px_rgba(6,36,67,0.22)]"
+                className="editorial-card p-10 border-l-2 border-l-[rgb(179,134,66)] bg-[rgba(179,134,66,0.18)] shadow-[0_18px_50px_-32px_rgba(6,36,67,0.22)]"
               >
                 <h3 className="font-display text-2xl lg:text-[1.75rem] text-primary leading-tight">
                   {p.title}
@@ -121,7 +121,7 @@ export function VisaPage({ locale, slug, servicesHref, contactHref, visaHref }: 
                 <ul className="mt-8 space-y-3 text-ink-soft text-[0.95rem]">
                   {p.bullets.map((b) => (
                     <li key={b} className="flex gap-3">
-                      <span aria-hidden className="mt-3 h-px w-4 shrink-0 bg-[rgb(223,164,89)]" />
+                      <span aria-hidden className="mt-3 h-px w-4 shrink-0 bg-[rgb(179,134,66)]" />
                       <span>{b}</span>
                     </li>
                   ))}

@@ -43,21 +43,21 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
                 className={
                   "group relative p-10 editorial-card flex flex-col overflow-hidden " +
                   (featured
-                    ? "bg-[rgb(223,164,89)] text-primary"
-                    : "bg-background hover:bg-[rgba(223,164,89,0.06)]")
+                    ? "bg-[rgb(179,134,66)] text-primary"
+                    : "bg-background hover:bg-[rgba(179,134,66,0.06)]")
                 }
               >
                 <span
                   aria-hidden
                   className={
                     "absolute top-0 left-0 h-[3px] w-16 " +
-                    (featured ? "bg-primary" : "bg-[rgb(223,164,89)]")
+                    (featured ? "bg-primary" : "bg-[rgb(179,134,66)]")
                   }
                 />
                 <div
                   className={
                     "mt-8 font-display text-4xl transition-colors " +
-                    (featured ? "text-primary" : "text-primary group-hover:text-[rgb(223,164,89)]")
+                    (featured ? "text-primary" : "text-primary group-hover:text-[rgb(179,134,66)]")
                   }
                 >
                   {v.acronym}
@@ -83,7 +83,7 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
                     "mt-10 text-[11px] uppercase tracking-[0.26em] transition-colors " +
                     (featured
                       ? "text-primary"
-                      : "text-primary group-hover:text-[rgb(223,164,89)]")
+                      : "text-primary group-hover:text-[rgb(179,134,66)]")
                   }
                 >
                   Conhecer Estratégia <span className="cta-arrow">→</span>

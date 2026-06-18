@@ -428,7 +428,7 @@ function LeadershipSection() {
           <InstitutionalButton
             to="/equipe"
             variant="primary"
-            className="bg-gold text-gold-foreground hover:bg-[rgb(204_148_75)] border-0"
+            className="bg-gold text-gold-foreground hover:bg-[rgb(153_108_40)] border-0"
           >
             Conhecer toda a equipe
           </InstitutionalButton>
@@ -722,7 +722,7 @@ function PublicationsSection() {
   return (
     <section
       className="section-y relative overflow-hidden"
-      style={{ backgroundColor: "rgb(223 164 89)" }}
+      style={{ backgroundColor: "rgb(179 134 66)" }}
     >
       <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
       <div
@@ -730,7 +730,7 @@ function PublicationsSection() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgb(228 174 105) 0%, rgb(223 164 89) 50%, rgb(210 152 80) 100%)",
+            "linear-gradient(180deg, rgb(199 154 86) 0%, rgb(179 134 66) 50%, rgb(159 114 46) 100%)",
         }}
       />
 
@@ -810,7 +810,7 @@ function FinalCTA() {
         className="pointer-events-none absolute inset-0 opacity-[0.05]"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 85% 50%, rgb(223 164 89 / 0.6), transparent 55%)",
+            "radial-gradient(circle at 85% 50%, rgb(179 134 66 / 0.6), transparent 55%)",
         }}
       />
 
