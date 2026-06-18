@@ -9,7 +9,10 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as SiteRouteImport } from './routes/_site'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as SiteIndexRouteImport } from './routes/_site.index'
 import { Route as SiteQuemSomosRouteImport } from './routes/_site.quem-somos'
 import { Route as SitePremiacoesRouteImport } from './routes/_site.premiacoes'
@@ -17,10 +20,12 @@ import { Route as SiteNaMidiaRouteImport } from './routes/_site.na-midia'
 import { Route as SiteContatoRouteImport } from './routes/_site.contato'
 import { Route as SiteCasosDeSucessoRouteImport } from './routes/_site.casos-de-sucesso'
 import { Route as SiteBlogRouteImport } from './routes/_site.blog'
+import { Route as AuthenticatedAdminRouteRouteImport } from './routes/_authenticated/admin/route'
 import { Route as SiteEsIndexRouteImport } from './routes/_site.es.index'
 import { Route as SiteEquipeIndexRouteImport } from './routes/_site.equipe.index'
 import { Route as SiteEnIndexRouteImport } from './routes/_site.en.index'
 import { Route as SiteAreasDeAtuacaoIndexRouteImport } from './routes/_site.areas-de-atuacao.index'
+import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin/index'
 import { Route as SiteEsQuemSomosRouteImport } from './routes/_site.es.quem-somos'
 import { Route as SiteEsPremiacoesRouteImport } from './routes/_site.es.premiacoes'
 import { Route as SiteEsNaMidiaRouteImport } from './routes/_site.es.na-midia'
@@ -36,19 +41,44 @@ import { Route as SiteEnCasosDeSucessoRouteImport } from './routes/_site.en.caso
 import { Route as SiteEnBlogRouteImport } from './routes/_site.en.blog'
 import { Route as SiteBlogSlugRouteImport } from './routes/_site.blog.$slug'
 import { Route as SiteAreasDeAtuacaoSlugRouteImport } from './routes/_site.areas-de-atuacao.$slug'
+import { Route as AuthenticatedAdminTagsRouteImport } from './routes/_authenticated/admin/tags'
+import { Route as AuthenticatedAdminSeoRouteImport } from './routes/_authenticated/admin/seo'
+import { Route as AuthenticatedAdminProfissoesRouteImport } from './routes/_authenticated/admin/profissoes'
+import { Route as AuthenticatedAdminMidiaRouteImport } from './routes/_authenticated/admin/midia'
+import { Route as AuthenticatedAdminEquipeRouteImport } from './routes/_authenticated/admin/equipe'
+import { Route as AuthenticatedAdminCategoriasRouteImport } from './routes/_authenticated/admin/categorias'
+import { Route as AuthenticatedAdminAutoresRouteImport } from './routes/_authenticated/admin/autores'
 import { Route as SiteEsServicosIndexRouteImport } from './routes/_site.es.servicos.index'
 import { Route as SiteEsEquipeIndexRouteImport } from './routes/_site.es.equipe.index'
 import { Route as SiteEnServicosIndexRouteImport } from './routes/_site.en.servicos.index'
 import { Route as SiteEnEquipeIndexRouteImport } from './routes/_site.en.equipe.index'
+import { Route as AuthenticatedAdminPostsIndexRouteImport } from './routes/_authenticated/admin/posts/index'
 import { Route as SiteEsServicosSlugRouteImport } from './routes/_site.es.servicos.$slug'
 import { Route as SiteEsEquipeSlugRouteImport } from './routes/_site.es.equipe.$slug'
 import { Route as SiteEsBlogSlugRouteImport } from './routes/_site.es.blog.$slug'
 import { Route as SiteEnServicosSlugRouteImport } from './routes/_site.en.servicos.$slug'
 import { Route as SiteEnEquipeSlugRouteImport } from './routes/_site.en.equipe.$slug'
 import { Route as SiteEnBlogSlugRouteImport } from './routes/_site.en.blog.$slug'
+import { Route as AuthenticatedAdminPostsNovoRouteImport } from './routes/_authenticated/admin/posts/novo'
+import { Route as AuthenticatedAdminPostsDestaquesRouteImport } from './routes/_authenticated/admin/posts/destaques'
+import { Route as AuthenticatedAdminPostsIdRouteImport } from './routes/_authenticated/admin/posts/$id'
 
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SiteRoute = SiteRouteImport.update({
   id: '/_site',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SiteIndexRoute = SiteIndexRouteImport.update({
@@ -86,6 +116,11 @@ const SiteBlogRoute = SiteBlogRouteImport.update({
   path: '/blog',
   getParentRoute: () => SiteRoute,
 } as any)
+const AuthenticatedAdminRouteRoute = AuthenticatedAdminRouteRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const SiteEsIndexRoute = SiteEsIndexRouteImport.update({
   id: '/es/',
   path: '/es/',
@@ -105,6 +140,11 @@ const SiteAreasDeAtuacaoIndexRoute = SiteAreasDeAtuacaoIndexRouteImport.update({
   id: '/areas-de-atuacao/',
   path: '/areas-de-atuacao/',
   getParentRoute: () => SiteRoute,
+} as any)
+const AuthenticatedAdminIndexRoute = AuthenticatedAdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AuthenticatedAdminRouteRoute,
 } as any)
 const SiteEsQuemSomosRoute = SiteEsQuemSomosRouteImport.update({
   id: '/es/quem-somos',
@@ -181,6 +221,45 @@ const SiteAreasDeAtuacaoSlugRoute = SiteAreasDeAtuacaoSlugRouteImport.update({
   path: '/areas-de-atuacao/$slug',
   getParentRoute: () => SiteRoute,
 } as any)
+const AuthenticatedAdminTagsRoute = AuthenticatedAdminTagsRouteImport.update({
+  id: '/tags',
+  path: '/tags',
+  getParentRoute: () => AuthenticatedAdminRouteRoute,
+} as any)
+const AuthenticatedAdminSeoRoute = AuthenticatedAdminSeoRouteImport.update({
+  id: '/seo',
+  path: '/seo',
+  getParentRoute: () => AuthenticatedAdminRouteRoute,
+} as any)
+const AuthenticatedAdminProfissoesRoute =
+  AuthenticatedAdminProfissoesRouteImport.update({
+    id: '/profissoes',
+    path: '/profissoes',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
+const AuthenticatedAdminMidiaRoute = AuthenticatedAdminMidiaRouteImport.update({
+  id: '/midia',
+  path: '/midia',
+  getParentRoute: () => AuthenticatedAdminRouteRoute,
+} as any)
+const AuthenticatedAdminEquipeRoute =
+  AuthenticatedAdminEquipeRouteImport.update({
+    id: '/equipe',
+    path: '/equipe',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
+const AuthenticatedAdminCategoriasRoute =
+  AuthenticatedAdminCategoriasRouteImport.update({
+    id: '/categorias',
+    path: '/categorias',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
+const AuthenticatedAdminAutoresRoute =
+  AuthenticatedAdminAutoresRouteImport.update({
+    id: '/autores',
+    path: '/autores',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
 const SiteEsServicosIndexRoute = SiteEsServicosIndexRouteImport.update({
   id: '/es/servicos/',
   path: '/es/servicos/',
@@ -201,6 +280,12 @@ const SiteEnEquipeIndexRoute = SiteEnEquipeIndexRouteImport.update({
   path: '/en/equipe/',
   getParentRoute: () => SiteRoute,
 } as any)
+const AuthenticatedAdminPostsIndexRoute =
+  AuthenticatedAdminPostsIndexRouteImport.update({
+    id: '/posts/',
+    path: '/posts/',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
 const SiteEsServicosSlugRoute = SiteEsServicosSlugRouteImport.update({
   id: '/es/servicos/$slug',
   path: '/es/servicos/$slug',
@@ -231,15 +316,43 @@ const SiteEnBlogSlugRoute = SiteEnBlogSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => SiteEnBlogRoute,
 } as any)
+const AuthenticatedAdminPostsNovoRoute =
+  AuthenticatedAdminPostsNovoRouteImport.update({
+    id: '/posts/novo',
+    path: '/posts/novo',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
+const AuthenticatedAdminPostsDestaquesRoute =
+  AuthenticatedAdminPostsDestaquesRouteImport.update({
+    id: '/posts/destaques',
+    path: '/posts/destaques',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
+const AuthenticatedAdminPostsIdRoute =
+  AuthenticatedAdminPostsIdRouteImport.update({
+    id: '/posts/$id',
+    path: '/posts/$id',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof SiteIndexRoute
+  '/auth': typeof AuthRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/admin': typeof AuthenticatedAdminRouteRouteWithChildren
   '/blog': typeof SiteBlogRouteWithChildren
   '/casos-de-sucesso': typeof SiteCasosDeSucessoRoute
   '/contato': typeof SiteContatoRoute
   '/na-midia': typeof SiteNaMidiaRoute
   '/premiacoes': typeof SitePremiacoesRoute
   '/quem-somos': typeof SiteQuemSomosRoute
+  '/admin/autores': typeof AuthenticatedAdminAutoresRoute
+  '/admin/categorias': typeof AuthenticatedAdminCategoriasRoute
+  '/admin/equipe': typeof AuthenticatedAdminEquipeRoute
+  '/admin/midia': typeof AuthenticatedAdminMidiaRoute
+  '/admin/profissoes': typeof AuthenticatedAdminProfissoesRoute
+  '/admin/seo': typeof AuthenticatedAdminSeoRoute
+  '/admin/tags': typeof AuthenticatedAdminTagsRoute
   '/areas-de-atuacao/$slug': typeof SiteAreasDeAtuacaoSlugRoute
   '/blog/$slug': typeof SiteBlogSlugRoute
   '/en/blog': typeof SiteEnBlogRouteWithChildren
@@ -255,29 +368,43 @@ export interface FileRoutesByFullPath {
   '/es/na-midia': typeof SiteEsNaMidiaRoute
   '/es/premiacoes': typeof SiteEsPremiacoesRoute
   '/es/quem-somos': typeof SiteEsQuemSomosRoute
+  '/admin/': typeof AuthenticatedAdminIndexRoute
   '/areas-de-atuacao/': typeof SiteAreasDeAtuacaoIndexRoute
   '/en/': typeof SiteEnIndexRoute
   '/equipe/': typeof SiteEquipeIndexRoute
   '/es/': typeof SiteEsIndexRoute
+  '/admin/posts/$id': typeof AuthenticatedAdminPostsIdRoute
+  '/admin/posts/destaques': typeof AuthenticatedAdminPostsDestaquesRoute
+  '/admin/posts/novo': typeof AuthenticatedAdminPostsNovoRoute
   '/en/blog/$slug': typeof SiteEnBlogSlugRoute
   '/en/equipe/$slug': typeof SiteEnEquipeSlugRoute
   '/en/servicos/$slug': typeof SiteEnServicosSlugRoute
   '/es/blog/$slug': typeof SiteEsBlogSlugRoute
   '/es/equipe/$slug': typeof SiteEsEquipeSlugRoute
   '/es/servicos/$slug': typeof SiteEsServicosSlugRoute
+  '/admin/posts/': typeof AuthenticatedAdminPostsIndexRoute
   '/en/equipe/': typeof SiteEnEquipeIndexRoute
   '/en/servicos/': typeof SiteEnServicosIndexRoute
   '/es/equipe/': typeof SiteEsEquipeIndexRoute
   '/es/servicos/': typeof SiteEsServicosIndexRoute
 }
 export interface FileRoutesByTo {
+  '/': typeof SiteIndexRoute
+  '/auth': typeof AuthRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/blog': typeof SiteBlogRouteWithChildren
   '/casos-de-sucesso': typeof SiteCasosDeSucessoRoute
   '/contato': typeof SiteContatoRoute
   '/na-midia': typeof SiteNaMidiaRoute
   '/premiacoes': typeof SitePremiacoesRoute
   '/quem-somos': typeof SiteQuemSomosRoute
-  '/': typeof SiteIndexRoute
+  '/admin/autores': typeof AuthenticatedAdminAutoresRoute
+  '/admin/categorias': typeof AuthenticatedAdminCategoriasRoute
+  '/admin/equipe': typeof AuthenticatedAdminEquipeRoute
+  '/admin/midia': typeof AuthenticatedAdminMidiaRoute
+  '/admin/profissoes': typeof AuthenticatedAdminProfissoesRoute
+  '/admin/seo': typeof AuthenticatedAdminSeoRoute
+  '/admin/tags': typeof AuthenticatedAdminTagsRoute
   '/areas-de-atuacao/$slug': typeof SiteAreasDeAtuacaoSlugRoute
   '/blog/$slug': typeof SiteBlogSlugRoute
   '/en/blog': typeof SiteEnBlogRouteWithChildren
@@ -293,16 +420,21 @@ export interface FileRoutesByTo {
   '/es/na-midia': typeof SiteEsNaMidiaRoute
   '/es/premiacoes': typeof SiteEsPremiacoesRoute
   '/es/quem-somos': typeof SiteEsQuemSomosRoute
+  '/admin': typeof AuthenticatedAdminIndexRoute
   '/areas-de-atuacao': typeof SiteAreasDeAtuacaoIndexRoute
   '/en': typeof SiteEnIndexRoute
   '/equipe': typeof SiteEquipeIndexRoute
   '/es': typeof SiteEsIndexRoute
+  '/admin/posts/$id': typeof AuthenticatedAdminPostsIdRoute
+  '/admin/posts/destaques': typeof AuthenticatedAdminPostsDestaquesRoute
+  '/admin/posts/novo': typeof AuthenticatedAdminPostsNovoRoute
   '/en/blog/$slug': typeof SiteEnBlogSlugRoute
   '/en/equipe/$slug': typeof SiteEnEquipeSlugRoute
   '/en/servicos/$slug': typeof SiteEnServicosSlugRoute
   '/es/blog/$slug': typeof SiteEsBlogSlugRoute
   '/es/equipe/$slug': typeof SiteEsEquipeSlugRoute
   '/es/servicos/$slug': typeof SiteEsServicosSlugRoute
+  '/admin/posts': typeof AuthenticatedAdminPostsIndexRoute
   '/en/equipe': typeof SiteEnEquipeIndexRoute
   '/en/servicos': typeof SiteEnServicosIndexRoute
   '/es/equipe': typeof SiteEsEquipeIndexRoute
@@ -310,7 +442,11 @@ export interface FileRoutesByTo {
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/_site': typeof SiteRouteWithChildren
+  '/auth': typeof AuthRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/_authenticated/admin': typeof AuthenticatedAdminRouteRouteWithChildren
   '/_site/blog': typeof SiteBlogRouteWithChildren
   '/_site/casos-de-sucesso': typeof SiteCasosDeSucessoRoute
   '/_site/contato': typeof SiteContatoRoute
@@ -318,6 +454,13 @@ export interface FileRoutesById {
   '/_site/premiacoes': typeof SitePremiacoesRoute
   '/_site/quem-somos': typeof SiteQuemSomosRoute
   '/_site/': typeof SiteIndexRoute
+  '/_authenticated/admin/autores': typeof AuthenticatedAdminAutoresRoute
+  '/_authenticated/admin/categorias': typeof AuthenticatedAdminCategoriasRoute
+  '/_authenticated/admin/equipe': typeof AuthenticatedAdminEquipeRoute
+  '/_authenticated/admin/midia': typeof AuthenticatedAdminMidiaRoute
+  '/_authenticated/admin/profissoes': typeof AuthenticatedAdminProfissoesRoute
+  '/_authenticated/admin/seo': typeof AuthenticatedAdminSeoRoute
+  '/_authenticated/admin/tags': typeof AuthenticatedAdminTagsRoute
   '/_site/areas-de-atuacao/$slug': typeof SiteAreasDeAtuacaoSlugRoute
   '/_site/blog/$slug': typeof SiteBlogSlugRoute
   '/_site/en/blog': typeof SiteEnBlogRouteWithChildren
@@ -333,16 +476,21 @@ export interface FileRoutesById {
   '/_site/es/na-midia': typeof SiteEsNaMidiaRoute
   '/_site/es/premiacoes': typeof SiteEsPremiacoesRoute
   '/_site/es/quem-somos': typeof SiteEsQuemSomosRoute
+  '/_authenticated/admin/': typeof AuthenticatedAdminIndexRoute
   '/_site/areas-de-atuacao/': typeof SiteAreasDeAtuacaoIndexRoute
   '/_site/en/': typeof SiteEnIndexRoute
   '/_site/equipe/': typeof SiteEquipeIndexRoute
   '/_site/es/': typeof SiteEsIndexRoute
+  '/_authenticated/admin/posts/$id': typeof AuthenticatedAdminPostsIdRoute
+  '/_authenticated/admin/posts/destaques': typeof AuthenticatedAdminPostsDestaquesRoute
+  '/_authenticated/admin/posts/novo': typeof AuthenticatedAdminPostsNovoRoute
   '/_site/en/blog/$slug': typeof SiteEnBlogSlugRoute
   '/_site/en/equipe/$slug': typeof SiteEnEquipeSlugRoute
   '/_site/en/servicos/$slug': typeof SiteEnServicosSlugRoute
   '/_site/es/blog/$slug': typeof SiteEsBlogSlugRoute
   '/_site/es/equipe/$slug': typeof SiteEsEquipeSlugRoute
   '/_site/es/servicos/$slug': typeof SiteEsServicosSlugRoute
+  '/_authenticated/admin/posts/': typeof AuthenticatedAdminPostsIndexRoute
   '/_site/en/equipe/': typeof SiteEnEquipeIndexRoute
   '/_site/en/servicos/': typeof SiteEnServicosIndexRoute
   '/_site/es/equipe/': typeof SiteEsEquipeIndexRoute
@@ -352,12 +500,22 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/auth'
+    | '/reset-password'
+    | '/admin'
     | '/blog'
     | '/casos-de-sucesso'
     | '/contato'
     | '/na-midia'
     | '/premiacoes'
     | '/quem-somos'
+    | '/admin/autores'
+    | '/admin/categorias'
+    | '/admin/equipe'
+    | '/admin/midia'
+    | '/admin/profissoes'
+    | '/admin/seo'
+    | '/admin/tags'
     | '/areas-de-atuacao/$slug'
     | '/blog/$slug'
     | '/en/blog'
@@ -373,29 +531,43 @@ export interface FileRouteTypes {
     | '/es/na-midia'
     | '/es/premiacoes'
     | '/es/quem-somos'
+    | '/admin/'
     | '/areas-de-atuacao/'
     | '/en/'
     | '/equipe/'
     | '/es/'
+    | '/admin/posts/$id'
+    | '/admin/posts/destaques'
+    | '/admin/posts/novo'
     | '/en/blog/$slug'
     | '/en/equipe/$slug'
     | '/en/servicos/$slug'
     | '/es/blog/$slug'
     | '/es/equipe/$slug'
     | '/es/servicos/$slug'
+    | '/admin/posts/'
     | '/en/equipe/'
     | '/en/servicos/'
     | '/es/equipe/'
     | '/es/servicos/'
   fileRoutesByTo: FileRoutesByTo
   to:
+    | '/'
+    | '/auth'
+    | '/reset-password'
     | '/blog'
     | '/casos-de-sucesso'
     | '/contato'
     | '/na-midia'
     | '/premiacoes'
     | '/quem-somos'
-    | '/'
+    | '/admin/autores'
+    | '/admin/categorias'
+    | '/admin/equipe'
+    | '/admin/midia'
+    | '/admin/profissoes'
+    | '/admin/seo'
+    | '/admin/tags'
     | '/areas-de-atuacao/$slug'
     | '/blog/$slug'
     | '/en/blog'
@@ -411,23 +583,32 @@ export interface FileRouteTypes {
     | '/es/na-midia'
     | '/es/premiacoes'
     | '/es/quem-somos'
+    | '/admin'
     | '/areas-de-atuacao'
     | '/en'
     | '/equipe'
     | '/es'
+    | '/admin/posts/$id'
+    | '/admin/posts/destaques'
+    | '/admin/posts/novo'
     | '/en/blog/$slug'
     | '/en/equipe/$slug'
     | '/en/servicos/$slug'
     | '/es/blog/$slug'
     | '/es/equipe/$slug'
     | '/es/servicos/$slug'
+    | '/admin/posts'
     | '/en/equipe'
     | '/en/servicos'
     | '/es/equipe'
     | '/es/servicos'
   id:
     | '__root__'
+    | '/_authenticated'
     | '/_site'
+    | '/auth'
+    | '/reset-password'
+    | '/_authenticated/admin'
     | '/_site/blog'
     | '/_site/casos-de-sucesso'
     | '/_site/contato'
@@ -435,6 +616,13 @@ export interface FileRouteTypes {
     | '/_site/premiacoes'
     | '/_site/quem-somos'
     | '/_site/'
+    | '/_authenticated/admin/autores'
+    | '/_authenticated/admin/categorias'
+    | '/_authenticated/admin/equipe'
+    | '/_authenticated/admin/midia'
+    | '/_authenticated/admin/profissoes'
+    | '/_authenticated/admin/seo'
+    | '/_authenticated/admin/tags'
     | '/_site/areas-de-atuacao/$slug'
     | '/_site/blog/$slug'
     | '/_site/en/blog'
@@ -450,16 +638,21 @@ export interface FileRouteTypes {
     | '/_site/es/na-midia'
     | '/_site/es/premiacoes'
     | '/_site/es/quem-somos'
+    | '/_authenticated/admin/'
     | '/_site/areas-de-atuacao/'
     | '/_site/en/'
     | '/_site/equipe/'
     | '/_site/es/'
+    | '/_authenticated/admin/posts/$id'
+    | '/_authenticated/admin/posts/destaques'
+    | '/_authenticated/admin/posts/novo'
     | '/_site/en/blog/$slug'
     | '/_site/en/equipe/$slug'
     | '/_site/en/servicos/$slug'
     | '/_site/es/blog/$slug'
     | '/_site/es/equipe/$slug'
     | '/_site/es/servicos/$slug'
+    | '/_authenticated/admin/posts/'
     | '/_site/en/equipe/'
     | '/_site/en/servicos/'
     | '/_site/es/equipe/'
@@ -467,16 +660,40 @@ export interface FileRouteTypes {
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   SiteRoute: typeof SiteRouteWithChildren
+  AuthRoute: typeof AuthRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_site': {
       id: '/_site'
       path: ''
       fullPath: '/'
       preLoaderRoute: typeof SiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_site/': {
@@ -528,6 +745,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SiteBlogRouteImport
       parentRoute: typeof SiteRoute
     }
+    '/_authenticated/admin': {
+      id: '/_authenticated/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AuthenticatedAdminRouteRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_site/es/': {
       id: '/_site/es/'
       path: '/es'
@@ -555,6 +779,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/areas-de-atuacao/'
       preLoaderRoute: typeof SiteAreasDeAtuacaoIndexRouteImport
       parentRoute: typeof SiteRoute
+    }
+    '/_authenticated/admin/': {
+      id: '/_authenticated/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AuthenticatedAdminIndexRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
     }
     '/_site/es/quem-somos': {
       id: '/_site/es/quem-somos'
@@ -661,6 +892,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SiteAreasDeAtuacaoSlugRouteImport
       parentRoute: typeof SiteRoute
     }
+    '/_authenticated/admin/tags': {
+      id: '/_authenticated/admin/tags'
+      path: '/tags'
+      fullPath: '/admin/tags'
+      preLoaderRoute: typeof AuthenticatedAdminTagsRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/seo': {
+      id: '/_authenticated/admin/seo'
+      path: '/seo'
+      fullPath: '/admin/seo'
+      preLoaderRoute: typeof AuthenticatedAdminSeoRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/profissoes': {
+      id: '/_authenticated/admin/profissoes'
+      path: '/profissoes'
+      fullPath: '/admin/profissoes'
+      preLoaderRoute: typeof AuthenticatedAdminProfissoesRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/midia': {
+      id: '/_authenticated/admin/midia'
+      path: '/midia'
+      fullPath: '/admin/midia'
+      preLoaderRoute: typeof AuthenticatedAdminMidiaRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/equipe': {
+      id: '/_authenticated/admin/equipe'
+      path: '/equipe'
+      fullPath: '/admin/equipe'
+      preLoaderRoute: typeof AuthenticatedAdminEquipeRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/categorias': {
+      id: '/_authenticated/admin/categorias'
+      path: '/categorias'
+      fullPath: '/admin/categorias'
+      preLoaderRoute: typeof AuthenticatedAdminCategoriasRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/autores': {
+      id: '/_authenticated/admin/autores'
+      path: '/autores'
+      fullPath: '/admin/autores'
+      preLoaderRoute: typeof AuthenticatedAdminAutoresRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
     '/_site/es/servicos/': {
       id: '/_site/es/servicos/'
       path: '/es/servicos'
@@ -688,6 +968,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/en/equipe/'
       preLoaderRoute: typeof SiteEnEquipeIndexRouteImport
       parentRoute: typeof SiteRoute
+    }
+    '/_authenticated/admin/posts/': {
+      id: '/_authenticated/admin/posts/'
+      path: '/posts'
+      fullPath: '/admin/posts/'
+      preLoaderRoute: typeof AuthenticatedAdminPostsIndexRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
     }
     '/_site/es/servicos/$slug': {
       id: '/_site/es/servicos/$slug'
@@ -731,8 +1018,77 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SiteEnBlogSlugRouteImport
       parentRoute: typeof SiteEnBlogRoute
     }
+    '/_authenticated/admin/posts/novo': {
+      id: '/_authenticated/admin/posts/novo'
+      path: '/posts/novo'
+      fullPath: '/admin/posts/novo'
+      preLoaderRoute: typeof AuthenticatedAdminPostsNovoRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/posts/destaques': {
+      id: '/_authenticated/admin/posts/destaques'
+      path: '/posts/destaques'
+      fullPath: '/admin/posts/destaques'
+      preLoaderRoute: typeof AuthenticatedAdminPostsDestaquesRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/posts/$id': {
+      id: '/_authenticated/admin/posts/$id'
+      path: '/posts/$id'
+      fullPath: '/admin/posts/$id'
+      preLoaderRoute: typeof AuthenticatedAdminPostsIdRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
   }
 }
+
+interface AuthenticatedAdminRouteRouteChildren {
+  AuthenticatedAdminAutoresRoute: typeof AuthenticatedAdminAutoresRoute
+  AuthenticatedAdminCategoriasRoute: typeof AuthenticatedAdminCategoriasRoute
+  AuthenticatedAdminEquipeRoute: typeof AuthenticatedAdminEquipeRoute
+  AuthenticatedAdminMidiaRoute: typeof AuthenticatedAdminMidiaRoute
+  AuthenticatedAdminProfissoesRoute: typeof AuthenticatedAdminProfissoesRoute
+  AuthenticatedAdminSeoRoute: typeof AuthenticatedAdminSeoRoute
+  AuthenticatedAdminTagsRoute: typeof AuthenticatedAdminTagsRoute
+  AuthenticatedAdminIndexRoute: typeof AuthenticatedAdminIndexRoute
+  AuthenticatedAdminPostsIdRoute: typeof AuthenticatedAdminPostsIdRoute
+  AuthenticatedAdminPostsDestaquesRoute: typeof AuthenticatedAdminPostsDestaquesRoute
+  AuthenticatedAdminPostsNovoRoute: typeof AuthenticatedAdminPostsNovoRoute
+  AuthenticatedAdminPostsIndexRoute: typeof AuthenticatedAdminPostsIndexRoute
+}
+
+const AuthenticatedAdminRouteRouteChildren: AuthenticatedAdminRouteRouteChildren =
+  {
+    AuthenticatedAdminAutoresRoute: AuthenticatedAdminAutoresRoute,
+    AuthenticatedAdminCategoriasRoute: AuthenticatedAdminCategoriasRoute,
+    AuthenticatedAdminEquipeRoute: AuthenticatedAdminEquipeRoute,
+    AuthenticatedAdminMidiaRoute: AuthenticatedAdminMidiaRoute,
+    AuthenticatedAdminProfissoesRoute: AuthenticatedAdminProfissoesRoute,
+    AuthenticatedAdminSeoRoute: AuthenticatedAdminSeoRoute,
+    AuthenticatedAdminTagsRoute: AuthenticatedAdminTagsRoute,
+    AuthenticatedAdminIndexRoute: AuthenticatedAdminIndexRoute,
+    AuthenticatedAdminPostsIdRoute: AuthenticatedAdminPostsIdRoute,
+    AuthenticatedAdminPostsDestaquesRoute:
+      AuthenticatedAdminPostsDestaquesRoute,
+    AuthenticatedAdminPostsNovoRoute: AuthenticatedAdminPostsNovoRoute,
+    AuthenticatedAdminPostsIndexRoute: AuthenticatedAdminPostsIndexRoute,
+  }
+
+const AuthenticatedAdminRouteRouteWithChildren =
+  AuthenticatedAdminRouteRoute._addFileChildren(
+    AuthenticatedAdminRouteRouteChildren,
+  )
+
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminRouteRoute: typeof AuthenticatedAdminRouteRouteWithChildren
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminRouteRoute: AuthenticatedAdminRouteRouteWithChildren,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
 interface SiteBlogRouteChildren {
   SiteBlogSlugRoute: typeof SiteBlogSlugRoute
@@ -845,7 +1201,10 @@ const SiteRouteChildren: SiteRouteChildren = {
 const SiteRouteWithChildren = SiteRoute._addFileChildren(SiteRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   SiteRoute: SiteRouteWithChildren,
+  AuthRoute: AuthRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

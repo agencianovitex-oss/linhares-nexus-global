@@ -14,6 +14,80 @@ export type Database = {
   }
   public: {
     Tables: {
+      author_translations: {
+        Row: {
+          author_id: string
+          created_at: string
+          id: string
+          locale: Database["public"]["Enums"]["locale_code"]
+          role_title: string | null
+          short_bio: string | null
+          updated_at: string
+        }
+        Insert: {
+          author_id: string
+          created_at?: string
+          id?: string
+          locale: Database["public"]["Enums"]["locale_code"]
+          role_title?: string | null
+          short_bio?: string | null
+          updated_at?: string
+        }
+        Update: {
+          author_id?: string
+          created_at?: string
+          id?: string
+          locale?: Database["public"]["Enums"]["locale_code"]
+          role_title?: string | null
+          short_bio?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "author_translations_author_id_fkey"
+            columns: ["author_id"]
+            isOneToOne: false
+            referencedRelation: "authors"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      authors: {
+        Row: {
+          created_at: string
+          id: string
+          is_active: boolean
+          linkedin_url: string | null
+          name: string
+          photo_url: string | null
+          position: number
+          slug: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          linkedin_url?: string | null
+          name: string
+          photo_url?: string | null
+          position?: number
+          slug: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          linkedin_url?: string | null
+          name?: string
+          photo_url?: string | null
+          position?: number
+          slug?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       award_translations: {
         Row: {
           award_id: string
@@ -86,22 +160,36 @@ export type Database = {
         Row: {
           created_at: string
           id: string
+          parent_id: string | null
+          position: number
           slug: string
           updated_at: string
         }
         Insert: {
           created_at?: string
           id?: string
+          parent_id?: string | null
+          position?: number
           slug: string
           updated_at?: string
         }
         Update: {
           created_at?: string
           id?: string
+          parent_id?: string | null
+          position?: number
           slug?: string
           updated_at?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "categories_parent_id_fkey"
+            columns: ["parent_id"]
+            isOneToOne: false
+            referencedRelation: "categories"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       category_translations: {
         Row: {
@@ -476,6 +564,36 @@ export type Database = {
         }
         Relationships: []
       }
+      post_professions: {
+        Row: {
+          post_id: string
+          profession_id: string
+        }
+        Insert: {
+          post_id: string
+          profession_id: string
+        }
+        Update: {
+          post_id?: string
+          profession_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "post_professions_post_id_fkey"
+            columns: ["post_id"]
+            isOneToOne: false
+            referencedRelation: "posts"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "post_professions_profession_id_fkey"
+            columns: ["profession_id"]
+            isOneToOne: false
+            referencedRelation: "professions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       post_tags: {
         Row: {
           post_id: string
@@ -511,6 +629,7 @@ export type Database = {
           body: Json
           created_at: string
           excerpt: string | null
+          faq: Json
           id: string
           locale: Database["public"]["Enums"]["locale_code"]
           meta_description: string | null
@@ -523,6 +642,7 @@ export type Database = {
           body?: Json
           created_at?: string
           excerpt?: string | null
+          faq?: Json
           id?: string
           locale: Database["public"]["Enums"]["locale_code"]
           meta_description?: string | null
@@ -535,6 +655,7 @@ export type Database = {
           body?: Json
           created_at?: string
           excerpt?: string | null
+          faq?: Json
           id?: string
           locale?: Database["public"]["Enums"]["locale_code"]
           meta_description?: string | null
@@ -559,8 +680,17 @@ export type Database = {
           category_id: string | null
           cover_image_url: string | null
           created_at: string
+          cta_button_text: string | null
+          cta_description: string | null
+          cta_title: string | null
+          cta_type: string | null
+          cta_url: string | null
+          featured_order: number | null
           id: string
+          is_featured: boolean
+          is_pillar_content: boolean
           published_at: string | null
+          reading_time_minutes: number | null
           slug: string
           status: Database["public"]["Enums"]["content_status"]
           updated_at: string
@@ -570,8 +700,17 @@ export type Database = {
           category_id?: string | null
           cover_image_url?: string | null
           created_at?: string
+          cta_button_text?: string | null
+          cta_description?: string | null
+          cta_title?: string | null
+          cta_type?: string | null
+          cta_url?: string | null
+          featured_order?: number | null
           id?: string
+          is_featured?: boolean
+          is_pillar_content?: boolean
           published_at?: string | null
+          reading_time_minutes?: number | null
           slug: string
           status?: Database["public"]["Enums"]["content_status"]
           updated_at?: string
@@ -581,13 +720,29 @@ export type Database = {
           category_id?: string | null
           cover_image_url?: string | null
           created_at?: string
+          cta_button_text?: string | null
+          cta_description?: string | null
+          cta_title?: string | null
+          cta_type?: string | null
+          cta_url?: string | null
+          featured_order?: number | null
           id?: string
+          is_featured?: boolean
+          is_pillar_content?: boolean
           published_at?: string | null
+          reading_time_minutes?: number | null
           slug?: string
           status?: Database["public"]["Enums"]["content_status"]
           updated_at?: string
         }
         Relationships: [
+          {
+            foreignKeyName: "posts_author_id_fkey"
+            columns: ["author_id"]
+            isOneToOne: false
+            referencedRelation: "authors"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "posts_category_id_fkey"
             columns: ["category_id"]
@@ -596,6 +751,83 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      profession_translations: {
+        Row: {
+          id: string
+          locale: Database["public"]["Enums"]["locale_code"]
+          name: string
+          profession_id: string
+        }
+        Insert: {
+          id?: string
+          locale: Database["public"]["Enums"]["locale_code"]
+          name: string
+          profession_id: string
+        }
+        Update: {
+          id?: string
+          locale?: Database["public"]["Enums"]["locale_code"]
+          name?: string
+          profession_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "profession_translations_profession_id_fkey"
+            columns: ["profession_id"]
+            isOneToOne: false
+            referencedRelation: "professions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      professions: {
+        Row: {
+          created_at: string
+          id: string
+          position: number
+          slug: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          position?: number
+          slug: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          position?: number
+          slug?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          display_name: string | null
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          id: string
+          updated_at?: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
       }
       seo_metadata: {
         Row: {
@@ -884,11 +1116,18 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
+      publish_scheduled_posts: { Args: never; Returns: undefined }
     }
     Enums: {
       app_role: "admin" | "editor" | "viewer"
-      content_status: "draft" | "published" | "archived"
+      content_status: "draft" | "published" | "archived" | "scheduled"
       locale_code: "pt" | "en" | "es"
       visa_type:
         | "eb2_niw"
@@ -1027,7 +1266,7 @@ export const Constants = {
   public: {
     Enums: {
       app_role: ["admin", "editor", "viewer"],
-      content_status: ["draft", "published", "archived"],
+      content_status: ["draft", "published", "archived", "scheduled"],
       locale_code: ["pt", "en", "es"],
       visa_type: ["eb2_niw", "eb1", "e2", "l1", "h1b", "o1", "eb5", "other"],
     },
