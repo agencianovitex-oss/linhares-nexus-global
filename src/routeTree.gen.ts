@@ -52,6 +52,8 @@ import { Route as SiteEsBlogSlugRouteImport } from './routes/_site.es.blog.$slug
 import { Route as SiteEnServicosSlugRouteImport } from './routes/_site.en.servicos.$slug'
 import { Route as SiteEnEquipeSlugRouteImport } from './routes/_site.en.equipe.$slug'
 import { Route as SiteEnBlogSlugRouteImport } from './routes/_site.en.blog.$slug'
+import { Route as AuthenticatedAdminPostsNovoRouteImport } from './routes/_authenticated/admin/posts/novo'
+import { Route as AuthenticatedAdminPostsIdRouteImport } from './routes/_authenticated/admin/posts/$id'
 
 const ResetPasswordRoute = ResetPasswordRouteImport.update({
   id: '/reset-password',
@@ -267,6 +269,18 @@ const SiteEnBlogSlugRoute = SiteEnBlogSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => SiteEnBlogRoute,
 } as any)
+const AuthenticatedAdminPostsNovoRoute =
+  AuthenticatedAdminPostsNovoRouteImport.update({
+    id: '/posts/novo',
+    path: '/posts/novo',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
+const AuthenticatedAdminPostsIdRoute =
+  AuthenticatedAdminPostsIdRouteImport.update({
+    id: '/posts/$id',
+    path: '/posts/$id',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof SiteIndexRoute
@@ -299,6 +313,8 @@ export interface FileRoutesByFullPath {
   '/en/': typeof SiteEnIndexRoute
   '/equipe/': typeof SiteEquipeIndexRoute
   '/es/': typeof SiteEsIndexRoute
+  '/admin/posts/$id': typeof AuthenticatedAdminPostsIdRoute
+  '/admin/posts/novo': typeof AuthenticatedAdminPostsNovoRoute
   '/en/blog/$slug': typeof SiteEnBlogSlugRoute
   '/en/equipe/$slug': typeof SiteEnEquipeSlugRoute
   '/en/servicos/$slug': typeof SiteEnServicosSlugRoute
@@ -341,6 +357,8 @@ export interface FileRoutesByTo {
   '/en': typeof SiteEnIndexRoute
   '/equipe': typeof SiteEquipeIndexRoute
   '/es': typeof SiteEsIndexRoute
+  '/admin/posts/$id': typeof AuthenticatedAdminPostsIdRoute
+  '/admin/posts/novo': typeof AuthenticatedAdminPostsNovoRoute
   '/en/blog/$slug': typeof SiteEnBlogSlugRoute
   '/en/equipe/$slug': typeof SiteEnEquipeSlugRoute
   '/en/servicos/$slug': typeof SiteEnServicosSlugRoute
@@ -387,6 +405,8 @@ export interface FileRoutesById {
   '/_site/en/': typeof SiteEnIndexRoute
   '/_site/equipe/': typeof SiteEquipeIndexRoute
   '/_site/es/': typeof SiteEsIndexRoute
+  '/_authenticated/admin/posts/$id': typeof AuthenticatedAdminPostsIdRoute
+  '/_authenticated/admin/posts/novo': typeof AuthenticatedAdminPostsNovoRoute
   '/_site/en/blog/$slug': typeof SiteEnBlogSlugRoute
   '/_site/en/equipe/$slug': typeof SiteEnEquipeSlugRoute
   '/_site/en/servicos/$slug': typeof SiteEnServicosSlugRoute
@@ -432,6 +452,8 @@ export interface FileRouteTypes {
     | '/en/'
     | '/equipe/'
     | '/es/'
+    | '/admin/posts/$id'
+    | '/admin/posts/novo'
     | '/en/blog/$slug'
     | '/en/equipe/$slug'
     | '/en/servicos/$slug'
@@ -474,6 +496,8 @@ export interface FileRouteTypes {
     | '/en'
     | '/equipe'
     | '/es'
+    | '/admin/posts/$id'
+    | '/admin/posts/novo'
     | '/en/blog/$slug'
     | '/en/equipe/$slug'
     | '/en/servicos/$slug'
@@ -519,6 +543,8 @@ export interface FileRouteTypes {
     | '/_site/en/'
     | '/_site/equipe/'
     | '/_site/es/'
+    | '/_authenticated/admin/posts/$id'
+    | '/_authenticated/admin/posts/novo'
     | '/_site/en/blog/$slug'
     | '/_site/en/equipe/$slug'
     | '/_site/en/servicos/$slug'
@@ -842,17 +868,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SiteEnBlogSlugRouteImport
       parentRoute: typeof SiteEnBlogRoute
     }
+    '/_authenticated/admin/posts/novo': {
+      id: '/_authenticated/admin/posts/novo'
+      path: '/posts/novo'
+      fullPath: '/admin/posts/novo'
+      preLoaderRoute: typeof AuthenticatedAdminPostsNovoRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/posts/$id': {
+      id: '/_authenticated/admin/posts/$id'
+      path: '/posts/$id'
+      fullPath: '/admin/posts/$id'
+      preLoaderRoute: typeof AuthenticatedAdminPostsIdRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
   }
 }
 
 interface AuthenticatedAdminRouteRouteChildren {
   AuthenticatedAdminIndexRoute: typeof AuthenticatedAdminIndexRoute
+  AuthenticatedAdminPostsIdRoute: typeof AuthenticatedAdminPostsIdRoute
+  AuthenticatedAdminPostsNovoRoute: typeof AuthenticatedAdminPostsNovoRoute
   AuthenticatedAdminPostsIndexRoute: typeof AuthenticatedAdminPostsIndexRoute
 }
 
 const AuthenticatedAdminRouteRouteChildren: AuthenticatedAdminRouteRouteChildren =
   {
     AuthenticatedAdminIndexRoute: AuthenticatedAdminIndexRoute,
+    AuthenticatedAdminPostsIdRoute: AuthenticatedAdminPostsIdRoute,
+    AuthenticatedAdminPostsNovoRoute: AuthenticatedAdminPostsNovoRoute,
     AuthenticatedAdminPostsIndexRoute: AuthenticatedAdminPostsIndexRoute,
   }
 
