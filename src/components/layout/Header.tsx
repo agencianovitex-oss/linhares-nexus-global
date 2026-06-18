@@ -1,5 +1,6 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 import { useI18n, withLocale } from "@/i18n/useI18n";
 import { Container } from "./Container";
 import { LanguageSwitcher } from "./LanguageSwitcher";
@@ -24,6 +25,8 @@ const VISA_SUBMENU = [
 export function Header({ transparentOverHero = false }: Props) {
   const { locale, t } = useI18n();
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -31,6 +34,21 @@ export function Header({ transparentOverHero = false }: Props) {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
 
   const onDark = transparentOverHero && !scrolled;
   const visasBase = locale === "pt" ? "/areas-de-atuacao" : "/servicos";
@@ -153,8 +171,75 @@ export function Header({ transparentOverHero = false }: Props) {
             {t.cta}
           </Link>
           <LanguageSwitcher onDark={onDark} />
+          <button
+            type="button"
+            aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen((v) => !v)}
+            className={cn(
+              "inline-flex h-10 w-10 items-center justify-center xl:hidden transition-colors",
+              onDark ? "text-primary-foreground hover:text-gold" : "text-primary hover:text-gold",
+            )}
+          >
+            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
       </Container>
+
+      {/* Mobile menu panel */}
+      <div
+        className={cn(
+          "xl:hidden fixed inset-x-0 top-24 bottom-0 z-40 bg-background border-t border-border overflow-y-auto transition-[opacity,transform] duration-300",
+          mobileOpen
+            ? "opacity-100 translate-y-0 pointer-events-auto"
+            : "opacity-0 -translate-y-2 pointer-events-none",
+        )}
+      >
+        <Container className="py-6">
+          <nav aria-label="Mobile" className="flex flex-col divide-y divide-border">
+            {links.map((l) => (
+              <Link
+                key={l.to}
+                to={withLocale(locale, l.to)}
+                className="py-4 text-[14px] font-medium tracking-[0.06em] text-primary hover:text-gold transition-colors"
+                activeProps={{ className: "py-4 text-[14px] font-medium tracking-[0.06em] text-gold" }}
+                activeOptions={{ exact: false }}
+                onClick={() => setMobileOpen(false)}
+              >
+                {l.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="mt-6 pt-6 border-t border-border">
+            <div className="text-[10px] font-semibold uppercase tracking-[0.32em] text-gold mb-3">
+              Vistos Imigratórios
+            </div>
+            <ul className="grid grid-cols-2 gap-2">
+              {VISA_SUBMENU.map((v) => (
+                <li key={v.slug}>
+                  <Link
+                    to={`${visasBase}/$slug`}
+                    params={{ slug: v.slug }}
+                    className="block px-3 py-2 text-[13px] font-semibold text-primary border border-border hover:border-gold hover:text-gold transition-colors"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {v.code}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <Link
+            to={withLocale(locale, "/contato")}
+            onClick={() => setMobileOpen(false)}
+            className="mt-6 inline-flex w-full items-center justify-center whitespace-nowrap px-5 py-3 text-[11px] font-semibold tracking-[0.18em] uppercase border border-primary text-primary hover:border-gold hover:text-gold transition-colors"
+          >
+            {t.cta}
+          </Link>
+        </Container>
+      </div>
     </header>
   );
 }
