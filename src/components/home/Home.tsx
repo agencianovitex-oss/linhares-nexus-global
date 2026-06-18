@@ -564,20 +564,8 @@ function CultureSection() {
 
       <Container>
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-10 items-stretch">
-          {/* Badge — reduzido */}
-          <div className="lg:col-span-3">
-            <div className="h-full bg-surface border border-border p-6 lg:p-8 flex items-center justify-center">
-              <img
-                src={gptwBadge}
-                alt="Great Place To Work Certified — Linhares Law USA"
-                className="w-full max-w-[200px] h-auto object-contain"
-                style={{ objectFit: "contain" }}
-              />
-            </div>
-          </div>
-
-          {/* Statement — destaque central */}
-          <div className="lg:col-span-5 flex flex-col justify-center">
+          {/* Statement — destaque central (texto primeiro no mobile) */}
+          <div className="order-1 lg:order-2 lg:col-span-5 flex flex-col justify-center">
             <div className="flex items-center gap-4">
               <span className="rule-gold" />
               <span className="eyebrow">Excelência Organizacional</span>
@@ -594,7 +582,7 @@ function CultureSection() {
           </div>
 
           {/* Stats — percentuais ampliados, cards compactos */}
-          <div className="lg:col-span-4 flex flex-col gap-px bg-border border border-border">
+          <div className="order-2 lg:order-3 lg:col-span-4 flex flex-col gap-px bg-border border border-border">
             <div className="bg-primary text-primary-foreground px-7 py-6 lg:px-8 lg:py-7 flex-1 flex flex-col justify-center">
               <div className="font-display font-light tracking-[-0.03em] leading-none text-[clamp(3.5rem,5.5vw,5rem)]">100%</div>
               <div className="mt-3 text-[12.5px] leading-[1.55] text-primary-foreground/85 max-w-[28ch]">
@@ -606,6 +594,18 @@ function CultureSection() {
               <div className="mt-3 text-[12.5px] leading-[1.55] text-gold-foreground/85 max-w-[28ch]">
                 consideram a Linhares Law um excelente lugar para trabalhar.
               </div>
+            </div>
+          </div>
+
+          {/* Badge — por último no mobile, à esquerda no desktop */}
+          <div className="order-3 lg:order-1 lg:col-span-3">
+            <div className="h-full bg-surface border border-border p-6 lg:p-8 flex items-center justify-center">
+              <img
+                src={gptwBadge}
+                alt="Great Place To Work Certified — Linhares Law USA"
+                className="w-full max-w-[200px] h-auto object-contain"
+                style={{ objectFit: "contain" }}
+              />
             </div>
           </div>
         </div>
@@ -667,23 +667,30 @@ function OfficesSection() {
             {offices.map((o, idx) => (
               <div
                 key={o.city}
-                className="grid grid-cols-12 gap-6 items-baseline py-7 lg:py-8 border-b border-primary-foreground/15"
+                className="grid grid-cols-12 gap-3 sm:gap-6 items-baseline py-5 sm:py-7 lg:py-8 border-b border-primary-foreground/15"
               >
                 <div className="col-span-2 sm:col-span-1 text-[10.5px] uppercase tracking-[0.32em] text-gold">
                   0{idx + 1}
                 </div>
                 <div className="col-span-10 sm:col-span-4">
-                  <div className="text-2xl lg:text-[1.75rem] font-light text-primary-foreground tracking-tight leading-[1.1]">
-                    {o.city}
+                  <div className="flex items-baseline justify-between gap-3 sm:block">
+                    <div className="text-xl sm:text-2xl lg:text-[1.75rem] font-light text-primary-foreground tracking-tight leading-[1.1]">
+                      {o.city}
+                    </div>
+                    <div className="sm:hidden text-[9.5px] uppercase tracking-[0.22em] text-primary-foreground/55 text-right shrink-0">
+                      {o.role}
+                    </div>
                   </div>
-                  <div className="mt-1 text-[10.5px] uppercase tracking-[0.26em] text-primary-foreground/55">
-                    {o.state}
+                  <div className="mt-1 flex items-baseline justify-between gap-3 sm:block">
+                    <div className="text-[10.5px] uppercase tracking-[0.26em] text-primary-foreground/55">
+                      {o.state}
+                    </div>
                   </div>
                 </div>
-                <div className="col-span-6 sm:col-span-4 text-[12px] uppercase tracking-[0.26em] text-primary-foreground/75">
+                <div className="hidden sm:block sm:col-span-4 text-[12px] uppercase tracking-[0.26em] text-primary-foreground/75">
                   {o.role}
                 </div>
-                <div className="col-span-12 sm:col-span-3 text-right text-[11px] uppercase tracking-[0.22em] text-primary-foreground/65 leading-snug">
+                <div className="col-span-12 sm:col-span-3 sm:text-right text-[11px] uppercase tracking-[0.22em] text-primary-foreground/65 leading-snug">
                   {o.address}
                 </div>
               </div>
