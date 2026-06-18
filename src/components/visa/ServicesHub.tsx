@@ -43,7 +43,7 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
                 className={
                   "group relative p-10 editorial-card flex flex-col overflow-hidden " +
                   (featured
-                    ? "bg-[rgb(179,134,66)] text-primary"
+                    ? "bg-[rgb(179,134,66)] text-white"
                     : "bg-background hover:bg-[rgba(179,134,66,0.06)]")
                 }
               >
@@ -51,13 +51,13 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
                   aria-hidden
                   className={
                     "absolute top-0 left-0 h-[3px] w-16 " +
-                    (featured ? "bg-primary" : "bg-[rgb(179,134,66)]")
+                    (featured ? "bg-white" : "bg-[rgb(179,134,66)]")
                   }
                 />
                 <div
                   className={
                     "mt-8 font-display text-4xl transition-colors " +
-                    (featured ? "text-primary" : "text-primary group-hover:text-[rgb(179,134,66)]")
+                    (featured ? "text-white" : "text-primary group-hover:text-[rgb(179,134,66)]")
                   }
                 >
                   {v.acronym}
@@ -65,7 +65,7 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
                 <p
                   className={
                     "mt-3 text-[12px] uppercase tracking-[0.22em] " +
-                    (featured ? "text-primary/75" : "text-muted-foreground")
+                    (featured ? "text-white/85" : "text-muted-foreground")
                   }
                 >
                   {v.heroSubhead}
@@ -73,7 +73,7 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
                 <p
                   className={
                     "mt-8 leading-relaxed flex-1 " +
-                    (featured ? "text-primary/85" : "text-ink-soft")
+                    (featured ? "text-white/90" : "text-ink-soft")
                   }
                 >
                   {v.tagline}
@@ -82,7 +82,7 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
                   className={
                     "mt-10 text-[11px] uppercase tracking-[0.26em] transition-colors " +
                     (featured
-                      ? "text-primary"
+                      ? "text-white"
                       : "text-primary group-hover:text-[rgb(179,134,66)]")
                   }
                 >
