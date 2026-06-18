@@ -738,15 +738,15 @@ function PublicationsSection() {
         <div className="relative flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
           <div>
             <div className="flex items-center gap-4">
-              <span className="inline-block h-px w-11 bg-[rgb(6_36_67)]" />
-              <span className="text-[11px] font-semibold uppercase tracking-[0.34em] text-[rgb(6_36_67)]/80">
+              <span className="inline-block h-px w-11 bg-white" />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.34em] text-white/85">
                 Linhares Law · Publicações
               </span>
             </div>
-            <h2 className="mt-6 text-balance text-[rgb(6_36_67)] max-w-[22ch]">
+            <h2 className="mt-6 text-balance text-white max-w-[22ch]">
               Análises jurídicas em imigração americana.
             </h2>
-            <p className="mt-5 max-w-2xl text-base lg:text-lg leading-[1.8] text-[rgb(6_36_67)]/80">
+            <p className="mt-5 max-w-2xl text-base lg:text-lg leading-[1.8] text-white/85">
               Artigos e análises técnicas sobre estratégia migratória, jurisprudência e práticas das autoridades federais de imigração dos Estados Unidos.
             </p>
           </div>
