@@ -81,7 +81,7 @@ function HeroSection() {
             <InstitutionalButton
               to="/contato"
               variant="primary"
-              className="bg-gold text-primary border-gold hover:bg-[rgb(200,145,70)] hover:text-primary"
+              className="bg-gold text-white border-gold hover:bg-[rgb(200,145,70)] hover:text-white"
             >
               Agendar Consulta
             </InstitutionalButton>
@@ -311,7 +311,7 @@ function ServicesSection() {
           <InstitutionalButton
             to="/areas-de-atuacao"
             variant="primary"
-            className="bg-gold text-primary border-gold hover:bg-[rgb(200,145,70)] hover:text-primary"
+            className="bg-gold text-white border-gold hover:bg-[rgb(200,145,70)] hover:text-white"
           >
             Ver todos os vistos
           </InstitutionalButton>
@@ -355,7 +355,7 @@ function ServicesSection() {
               key={v.slug}
               to="/areas-de-atuacao/$slug"
               params={{ slug: v.slug }}
-              className="group editorial-card relative bg-gold text-primary p-8 lg:p-10 flex flex-col justify-between min-h-[260px] hover:bg-[rgb(200,145,70)] overflow-hidden"
+              className="group editorial-card relative bg-gold text-white p-8 lg:p-10 flex flex-col justify-between min-h-[260px] hover:bg-[rgb(200,145,70)] overflow-hidden"
             >
               <span className="absolute top-0 left-0 h-px w-16 bg-primary opacity-0 group-hover:opacity-100 transition-opacity" />
               <div>
@@ -738,15 +738,15 @@ function PublicationsSection() {
         <div className="relative flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
           <div>
             <div className="flex items-center gap-4">
-              <span className="inline-block h-px w-11 bg-[rgb(6_36_67)]" />
-              <span className="text-[11px] font-semibold uppercase tracking-[0.34em] text-[rgb(6_36_67)]/80">
+              <span className="inline-block h-px w-11 bg-white" />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.34em] text-white/85">
                 Linhares Law · Publicações
               </span>
             </div>
-            <h2 className="mt-6 text-balance text-[rgb(6_36_67)] max-w-[22ch]">
+            <h2 className="mt-6 text-balance text-white max-w-[22ch]">
               Análises jurídicas em imigração americana.
             </h2>
-            <p className="mt-5 max-w-2xl text-base lg:text-lg leading-[1.8] text-[rgb(6_36_67)]/80">
+            <p className="mt-5 max-w-2xl text-base lg:text-lg leading-[1.8] text-white/85">
               Artigos e análises técnicas sobre estratégia migratória, jurisprudência e práticas das autoridades federais de imigração dos Estados Unidos.
             </p>
           </div>
@@ -833,7 +833,7 @@ function FinalCTA() {
               <InstitutionalButton
                 to="/contato"
                 variant="primary"
-                className="bg-gold text-primary border-gold hover:bg-[rgb(200,145,70)] hover:text-primary"
+                className="bg-gold text-white border-gold hover:bg-[rgb(200,145,70)] hover:text-white"
               >
                 Agendar Consulta
               </InstitutionalButton>

@@ -125,28 +125,28 @@ function QuemSomos() {
       <section className="relative isolate py-20 md:py-24" style={{ backgroundColor: "rgb(179, 134, 66)" }}>
         <div className="relative z-10">
           <div className="mx-auto w-full max-w-[1280px] px-6 lg:px-10">
-            <div style={{ color: "rgb(6, 36, 67)" }}>
-              <span className="eyebrow" style={{ color: "rgb(6, 36, 67)", opacity: 0.75 }}>Trajetória Institucional</span>
-              <h2 className="mt-3 font-display text-3xl md:text-4xl lg:text-5xl leading-[1.05]" style={{ color: "rgb(6, 36, 67)" }}>
+            <div style={{ color: "rgb(255, 255, 255)" }}>
+              <span className="eyebrow" style={{ color: "rgb(255, 255, 255)", opacity: 0.85 }}>Trajetória Institucional</span>
+              <h2 className="mt-3 font-display text-3xl md:text-4xl lg:text-5xl leading-[1.05]" style={{ color: "rgb(255, 255, 255)" }}>
                 Marcos relevantes da Linhares Law.
               </h2>
-              <span className="mt-5 block h-px w-16" style={{ backgroundColor: "rgb(6, 36, 67)" }} />
+              <span className="mt-5 block h-px w-16" style={{ backgroundColor: "rgb(255, 255, 255)" }} />
             </div>
             <div className="mt-10 grid gap-x-10 gap-y-6 md:grid-cols-2">
               {linhaTempo.map((m) => (
                 <div
                   key={m.ano}
                   className="grid grid-cols-[5rem_1fr] gap-5 items-start border-t pt-5"
-                  style={{ borderColor: "rgba(6, 36, 67, 0.25)" }}
+                  style={{ borderColor: "rgba(255, 255, 255, 0.35)" }}
                 >
-                  <div className="font-display text-3xl md:text-4xl leading-none" style={{ color: "rgb(6, 36, 67)" }}>
+                  <div className="font-display text-3xl md:text-4xl leading-none" style={{ color: "rgb(255, 255, 255)" }}>
                     {m.ano}
                   </div>
                   <div>
-                    <h3 className="font-display text-lg md:text-xl leading-tight" style={{ color: "rgb(6, 36, 67)" }}>
+                    <h3 className="font-display text-lg md:text-xl leading-tight" style={{ color: "rgb(255, 255, 255)" }}>
                       {m.titulo}
                     </h3>
-                    <p className="mt-2 text-sm md:text-[15px] leading-relaxed" style={{ color: "rgba(6, 36, 67, 0.82)" }}>
+                    <p className="mt-2 text-sm md:text-[15px] leading-relaxed" style={{ color: "rgba(255, 255, 255, 0.9)" }}>
                       {m.body}
                     </p>
                   </div>
