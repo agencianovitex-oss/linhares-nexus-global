@@ -357,20 +357,20 @@ function ServicesSection() {
               params={{ slug: v.slug }}
               className="group editorial-card relative bg-gold text-white p-8 lg:p-10 flex flex-col justify-between min-h-[260px] hover:bg-[rgb(200,145,70)] overflow-hidden"
             >
-              <span className="absolute top-0 left-0 h-px w-16 bg-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+              <span className="absolute top-0 left-0 h-px w-16 bg-white opacity-0 group-hover:opacity-100 transition-opacity" />
               <div>
                 {/* Sigla — protagonista */}
-                <div className="font-display font-semibold text-primary tracking-[-0.03em] leading-[0.95] text-[clamp(2.5rem,4.2vw,3.75rem)]">
+                <div className="font-display font-semibold text-white tracking-[-0.03em] leading-[0.95] text-[clamp(2.5rem,4.2vw,3.75rem)]">
                   {v.code}
                 </div>
-                <div className="mt-3 text-[10.5px] uppercase tracking-[0.3em] text-primary/80">{v.title}</div>
-                <p className="mt-4 text-sm leading-[1.7] text-primary/70">{v.desc}</p>
+                <div className="mt-3 text-[10.5px] uppercase tracking-[0.3em] text-white/85">{v.title}</div>
+                <p className="mt-4 text-sm leading-[1.7] text-white/80">{v.desc}</p>
               </div>
-              <div className="mt-6 flex items-center justify-between gap-4 border-t border-primary/15 pt-5">
-                <span className="text-[10px] uppercase tracking-[0.28em] text-primary/55">
+              <div className="mt-6 flex items-center justify-between gap-4 border-t border-white/25 pt-5">
+                <span className="text-[10px] uppercase tracking-[0.28em] text-white/70">
                   {v.profile}
                 </span>
-                <span className="text-[10.5px] uppercase tracking-[0.28em] text-primary group-hover:translate-x-1 transition-transform">
+                <span className="text-[10.5px] uppercase tracking-[0.28em] text-white group-hover:translate-x-1 transition-transform">
                   →
                 </span>
               </div>
