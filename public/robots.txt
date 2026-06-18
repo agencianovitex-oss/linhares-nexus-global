@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /auth
+Disallow: /reset-password
+
+Sitemap: https://linhares-nexus-global.lovable.app/sitemap.xml
