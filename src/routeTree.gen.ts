@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as SiteRouteImport } from './routes/_site'
@@ -78,6 +79,11 @@ import { Route as SiteEnBlogProfessionSlugRouteImport } from './routes/_site.en.
 import { Route as SiteEnBlogCategorySlugRouteImport } from './routes/_site.en.blog.category.$slug'
 import { Route as SiteEnBlogAuthorSlugRouteImport } from './routes/_site.en.blog.author.$slug'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ResetPasswordRoute = ResetPasswordRouteImport.update({
   id: '/reset-password',
   path: '/reset-password',
@@ -430,6 +436,7 @@ export interface FileRoutesByFullPath {
   '/': typeof SiteIndexRoute
   '/auth': typeof AuthRoute
   '/reset-password': typeof ResetPasswordRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin': typeof AuthenticatedAdminRouteRouteWithChildren
   '/blog': typeof SiteBlogRouteWithChildren
   '/casos-de-sucesso': typeof SiteCasosDeSucessoRoute
@@ -498,6 +505,7 @@ export interface FileRoutesByTo {
   '/': typeof SiteIndexRoute
   '/auth': typeof AuthRoute
   '/reset-password': typeof ResetPasswordRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog': typeof SiteBlogRouteWithChildren
   '/casos-de-sucesso': typeof SiteCasosDeSucessoRoute
   '/contato': typeof SiteContatoRoute
@@ -567,6 +575,7 @@ export interface FileRoutesById {
   '/_site': typeof SiteRouteWithChildren
   '/auth': typeof AuthRoute
   '/reset-password': typeof ResetPasswordRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRouteRouteWithChildren
   '/_site/blog': typeof SiteBlogRouteWithChildren
   '/_site/casos-de-sucesso': typeof SiteCasosDeSucessoRoute
@@ -638,6 +647,7 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/reset-password'
+    | '/sitemap.xml'
     | '/admin'
     | '/blog'
     | '/casos-de-sucesso'
@@ -706,6 +716,7 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/reset-password'
+    | '/sitemap.xml'
     | '/blog'
     | '/casos-de-sucesso'
     | '/contato'
@@ -774,6 +785,7 @@ export interface FileRouteTypes {
     | '/_site'
     | '/auth'
     | '/reset-password'
+    | '/sitemap.xml'
     | '/_authenticated/admin'
     | '/_site/blog'
     | '/_site/casos-de-sucesso'
@@ -845,10 +857,18 @@ export interface RootRouteChildren {
   SiteRoute: typeof SiteRouteWithChildren
   AuthRoute: typeof AuthRoute
   ResetPasswordRoute: typeof ResetPasswordRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/reset-password': {
       id: '/reset-password'
       path: '/reset-password'
@@ -1521,6 +1541,7 @@ const rootRouteChildren: RootRouteChildren = {
   SiteRoute: SiteRouteWithChildren,
   AuthRoute: AuthRoute,
   ResetPasswordRoute: ResetPasswordRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { ArticleCard } from "./ArticleCard";
 import { tBlog, blogBasePath } from "@/lib/blog/i18n-strings";
 import type { PublicPostListItem } from "@/lib/blog/public.functions";
@@ -17,6 +16,7 @@ export function ArticleGrid({ posts, locale, page, pageSize, total, basePath }: 
   const t = tBlog(locale);
   const pages = Math.max(1, Math.ceil(total / pageSize));
   const base = basePath ?? blogBasePath(locale);
+  const link = (p: number) => `${base}?page=${p}`;
 
   if (posts.length === 0) {
     return <p className="py-16 text-center text-ink/60">{t.noResults}</p>;
@@ -30,18 +30,15 @@ export function ArticleGrid({ posts, locale, page, pageSize, total, basePath }: 
       {pages > 1 && (
         <nav className="flex items-center justify-center gap-3 text-sm" aria-label="Pagination">
           {page > 1 && (
-            <Link to={base} search={{ page: page - 1 } as any} className="rounded border border-border/60 px-3 py-1.5 hover:border-[rgb(179_134_66)]">
-              ← {t.prev}
-            </Link>
+            <a href={link(page - 1)} className="rounded border border-border/60 px-3 py-1.5 hover:border-[rgb(179_134_66)]">← {t.prev}</a>
           )}
           <span className="text-ink/60">{t.page} {page} {t.of} {pages}</span>
           {page < pages && (
-            <Link to={base} search={{ page: page + 1 } as any} className="rounded border border-border/60 px-3 py-1.5 hover:border-[rgb(179_134_66)]">
-              {t.next} →
-            </Link>
+            <a href={link(page + 1)} className="rounded border border-border/60 px-3 py-1.5 hover:border-[rgb(179_134_66)]">{t.next} →</a>
           )}
         </nav>
       )}
     </div>
   );
 }
+
