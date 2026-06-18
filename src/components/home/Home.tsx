@@ -667,23 +667,30 @@ function OfficesSection() {
             {offices.map((o, idx) => (
               <div
                 key={o.city}
-                className="grid grid-cols-12 gap-6 items-baseline py-7 lg:py-8 border-b border-primary-foreground/15"
+                className="grid grid-cols-12 gap-3 sm:gap-6 items-baseline py-5 sm:py-7 lg:py-8 border-b border-primary-foreground/15"
               >
                 <div className="col-span-2 sm:col-span-1 text-[10.5px] uppercase tracking-[0.32em] text-gold">
                   0{idx + 1}
                 </div>
                 <div className="col-span-10 sm:col-span-4">
-                  <div className="text-2xl lg:text-[1.75rem] font-light text-primary-foreground tracking-tight leading-[1.1]">
-                    {o.city}
+                  <div className="flex items-baseline justify-between gap-3 sm:block">
+                    <div className="text-xl sm:text-2xl lg:text-[1.75rem] font-light text-primary-foreground tracking-tight leading-[1.1]">
+                      {o.city}
+                    </div>
+                    <div className="sm:hidden text-[9.5px] uppercase tracking-[0.22em] text-primary-foreground/55 text-right shrink-0">
+                      {o.role}
+                    </div>
                   </div>
-                  <div className="mt-1 text-[10.5px] uppercase tracking-[0.26em] text-primary-foreground/55">
-                    {o.state}
+                  <div className="mt-1 flex items-baseline justify-between gap-3 sm:block">
+                    <div className="text-[10.5px] uppercase tracking-[0.26em] text-primary-foreground/55">
+                      {o.state}
+                    </div>
                   </div>
                 </div>
-                <div className="col-span-6 sm:col-span-4 text-[12px] uppercase tracking-[0.26em] text-primary-foreground/75">
+                <div className="hidden sm:block sm:col-span-4 text-[12px] uppercase tracking-[0.26em] text-primary-foreground/75">
                   {o.role}
                 </div>
-                <div className="col-span-12 sm:col-span-3 text-right text-[11px] uppercase tracking-[0.22em] text-primary-foreground/65 leading-snug">
+                <div className="col-span-12 sm:col-span-3 sm:text-right text-[11px] uppercase tracking-[0.22em] text-primary-foreground/65 leading-snug">
                   {o.address}
                 </div>
               </div>
