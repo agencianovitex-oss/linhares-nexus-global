@@ -81,7 +81,7 @@ function HeroSection() {
             <InstitutionalButton
               to="/contato"
               variant="primary"
-              className="bg-gold text-primary border-gold hover:bg-[rgb(200,145,70)] hover:text-primary"
+              className="bg-gold text-white border-gold hover:bg-[rgb(200,145,70)] hover:text-white"
             >
               Agendar Consulta
             </InstitutionalButton>
@@ -311,7 +311,7 @@ function ServicesSection() {
           <InstitutionalButton
             to="/areas-de-atuacao"
             variant="primary"
-            className="bg-gold text-primary border-gold hover:bg-[rgb(200,145,70)] hover:text-primary"
+            className="bg-gold text-white border-gold hover:bg-[rgb(200,145,70)] hover:text-white"
           >
             Ver todos os vistos
           </InstitutionalButton>
@@ -355,7 +355,7 @@ function ServicesSection() {
               key={v.slug}
               to="/areas-de-atuacao/$slug"
               params={{ slug: v.slug }}
-              className="group editorial-card relative bg-gold text-primary p-8 lg:p-10 flex flex-col justify-between min-h-[260px] hover:bg-[rgb(200,145,70)] overflow-hidden"
+              className="group editorial-card relative bg-gold text-white p-8 lg:p-10 flex flex-col justify-between min-h-[260px] hover:bg-[rgb(200,145,70)] overflow-hidden"
             >
               <span className="absolute top-0 left-0 h-px w-16 bg-primary opacity-0 group-hover:opacity-100 transition-opacity" />
               <div>
@@ -833,7 +833,7 @@ function FinalCTA() {
               <InstitutionalButton
                 to="/contato"
                 variant="primary"
-                className="bg-gold text-primary border-gold hover:bg-[rgb(200,145,70)] hover:text-primary"
+                className="bg-gold text-white border-gold hover:bg-[rgb(200,145,70)] hover:text-white"
               >
                 Agendar Consulta
               </InstitutionalButton>
