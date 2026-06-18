@@ -59,6 +59,7 @@ import { Route as SiteEsEquipeSlugRouteImport } from './routes/_site.es.equipe.$
 import { Route as SiteEsBlogSlugRouteImport } from './routes/_site.es.blog.$slug'
 import { Route as SiteEnServicosSlugRouteImport } from './routes/_site.en.servicos.$slug'
 import { Route as SiteEnEquipeSlugRouteImport } from './routes/_site.en.equipe.$slug'
+import { Route as SiteEnBlogSearchRouteImport } from './routes/_site.en.blog.search'
 import { Route as SiteEnBlogSlugRouteImport } from './routes/_site.en.blog.$slug'
 import { Route as SiteBlogTagSlugRouteImport } from './routes/_site.blog.tag.$slug'
 import { Route as SiteBlogProfissaoSlugRouteImport } from './routes/_site.blog.profissao.$slug'
@@ -67,6 +68,10 @@ import { Route as SiteBlogAutorSlugRouteImport } from './routes/_site.blog.autor
 import { Route as AuthenticatedAdminPostsNovoRouteImport } from './routes/_authenticated/admin/posts/novo'
 import { Route as AuthenticatedAdminPostsDestaquesRouteImport } from './routes/_authenticated/admin/posts/destaques'
 import { Route as AuthenticatedAdminPostsIdRouteImport } from './routes/_authenticated/admin/posts/$id'
+import { Route as SiteEnBlogTagSlugRouteImport } from './routes/_site.en.blog.tag.$slug'
+import { Route as SiteEnBlogProfessionSlugRouteImport } from './routes/_site.en.blog.profession.$slug'
+import { Route as SiteEnBlogCategorySlugRouteImport } from './routes/_site.en.blog.category.$slug'
+import { Route as SiteEnBlogAuthorSlugRouteImport } from './routes/_site.en.blog.author.$slug'
 
 const ResetPasswordRoute = ResetPasswordRouteImport.update({
   id: '/reset-password',
@@ -321,6 +326,11 @@ const SiteEnEquipeSlugRoute = SiteEnEquipeSlugRouteImport.update({
   path: '/en/equipe/$slug',
   getParentRoute: () => SiteRoute,
 } as any)
+const SiteEnBlogSearchRoute = SiteEnBlogSearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => SiteEnBlogRoute,
+} as any)
 const SiteEnBlogSlugRoute = SiteEnBlogSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -364,6 +374,27 @@ const AuthenticatedAdminPostsIdRoute =
     path: '/posts/$id',
     getParentRoute: () => AuthenticatedAdminRouteRoute,
   } as any)
+const SiteEnBlogTagSlugRoute = SiteEnBlogTagSlugRouteImport.update({
+  id: '/tag/$slug',
+  path: '/tag/$slug',
+  getParentRoute: () => SiteEnBlogRoute,
+} as any)
+const SiteEnBlogProfessionSlugRoute =
+  SiteEnBlogProfessionSlugRouteImport.update({
+    id: '/profession/$slug',
+    path: '/profession/$slug',
+    getParentRoute: () => SiteEnBlogRoute,
+  } as any)
+const SiteEnBlogCategorySlugRoute = SiteEnBlogCategorySlugRouteImport.update({
+  id: '/category/$slug',
+  path: '/category/$slug',
+  getParentRoute: () => SiteEnBlogRoute,
+} as any)
+const SiteEnBlogAuthorSlugRoute = SiteEnBlogAuthorSlugRouteImport.update({
+  id: '/author/$slug',
+  path: '/author/$slug',
+  getParentRoute: () => SiteEnBlogRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof SiteIndexRoute
@@ -412,6 +443,7 @@ export interface FileRoutesByFullPath {
   '/blog/profissao/$slug': typeof SiteBlogProfissaoSlugRoute
   '/blog/tag/$slug': typeof SiteBlogTagSlugRoute
   '/en/blog/$slug': typeof SiteEnBlogSlugRoute
+  '/en/blog/search': typeof SiteEnBlogSearchRoute
   '/en/equipe/$slug': typeof SiteEnEquipeSlugRoute
   '/en/servicos/$slug': typeof SiteEnServicosSlugRoute
   '/es/blog/$slug': typeof SiteEsBlogSlugRoute
@@ -422,6 +454,10 @@ export interface FileRoutesByFullPath {
   '/en/servicos/': typeof SiteEnServicosIndexRoute
   '/es/equipe/': typeof SiteEsEquipeIndexRoute
   '/es/servicos/': typeof SiteEsServicosIndexRoute
+  '/en/blog/author/$slug': typeof SiteEnBlogAuthorSlugRoute
+  '/en/blog/category/$slug': typeof SiteEnBlogCategorySlugRoute
+  '/en/blog/profession/$slug': typeof SiteEnBlogProfessionSlugRoute
+  '/en/blog/tag/$slug': typeof SiteEnBlogTagSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof SiteIndexRoute
@@ -469,6 +505,7 @@ export interface FileRoutesByTo {
   '/blog/profissao/$slug': typeof SiteBlogProfissaoSlugRoute
   '/blog/tag/$slug': typeof SiteBlogTagSlugRoute
   '/en/blog/$slug': typeof SiteEnBlogSlugRoute
+  '/en/blog/search': typeof SiteEnBlogSearchRoute
   '/en/equipe/$slug': typeof SiteEnEquipeSlugRoute
   '/en/servicos/$slug': typeof SiteEnServicosSlugRoute
   '/es/blog/$slug': typeof SiteEsBlogSlugRoute
@@ -479,6 +516,10 @@ export interface FileRoutesByTo {
   '/en/servicos': typeof SiteEnServicosIndexRoute
   '/es/equipe': typeof SiteEsEquipeIndexRoute
   '/es/servicos': typeof SiteEsServicosIndexRoute
+  '/en/blog/author/$slug': typeof SiteEnBlogAuthorSlugRoute
+  '/en/blog/category/$slug': typeof SiteEnBlogCategorySlugRoute
+  '/en/blog/profession/$slug': typeof SiteEnBlogProfessionSlugRoute
+  '/en/blog/tag/$slug': typeof SiteEnBlogTagSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -530,6 +571,7 @@ export interface FileRoutesById {
   '/_site/blog/profissao/$slug': typeof SiteBlogProfissaoSlugRoute
   '/_site/blog/tag/$slug': typeof SiteBlogTagSlugRoute
   '/_site/en/blog/$slug': typeof SiteEnBlogSlugRoute
+  '/_site/en/blog/search': typeof SiteEnBlogSearchRoute
   '/_site/en/equipe/$slug': typeof SiteEnEquipeSlugRoute
   '/_site/en/servicos/$slug': typeof SiteEnServicosSlugRoute
   '/_site/es/blog/$slug': typeof SiteEsBlogSlugRoute
@@ -540,6 +582,10 @@ export interface FileRoutesById {
   '/_site/en/servicos/': typeof SiteEnServicosIndexRoute
   '/_site/es/equipe/': typeof SiteEsEquipeIndexRoute
   '/_site/es/servicos/': typeof SiteEsServicosIndexRoute
+  '/_site/en/blog/author/$slug': typeof SiteEnBlogAuthorSlugRoute
+  '/_site/en/blog/category/$slug': typeof SiteEnBlogCategorySlugRoute
+  '/_site/en/blog/profession/$slug': typeof SiteEnBlogProfessionSlugRoute
+  '/_site/en/blog/tag/$slug': typeof SiteEnBlogTagSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -590,6 +636,7 @@ export interface FileRouteTypes {
     | '/blog/profissao/$slug'
     | '/blog/tag/$slug'
     | '/en/blog/$slug'
+    | '/en/blog/search'
     | '/en/equipe/$slug'
     | '/en/servicos/$slug'
     | '/es/blog/$slug'
@@ -600,6 +647,10 @@ export interface FileRouteTypes {
     | '/en/servicos/'
     | '/es/equipe/'
     | '/es/servicos/'
+    | '/en/blog/author/$slug'
+    | '/en/blog/category/$slug'
+    | '/en/blog/profession/$slug'
+    | '/en/blog/tag/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -647,6 +698,7 @@ export interface FileRouteTypes {
     | '/blog/profissao/$slug'
     | '/blog/tag/$slug'
     | '/en/blog/$slug'
+    | '/en/blog/search'
     | '/en/equipe/$slug'
     | '/en/servicos/$slug'
     | '/es/blog/$slug'
@@ -657,6 +709,10 @@ export interface FileRouteTypes {
     | '/en/servicos'
     | '/es/equipe'
     | '/es/servicos'
+    | '/en/blog/author/$slug'
+    | '/en/blog/category/$slug'
+    | '/en/blog/profession/$slug'
+    | '/en/blog/tag/$slug'
   id:
     | '__root__'
     | '/_authenticated'
@@ -707,6 +763,7 @@ export interface FileRouteTypes {
     | '/_site/blog/profissao/$slug'
     | '/_site/blog/tag/$slug'
     | '/_site/en/blog/$slug'
+    | '/_site/en/blog/search'
     | '/_site/en/equipe/$slug'
     | '/_site/en/servicos/$slug'
     | '/_site/es/blog/$slug'
@@ -717,6 +774,10 @@ export interface FileRouteTypes {
     | '/_site/en/servicos/'
     | '/_site/es/equipe/'
     | '/_site/es/servicos/'
+    | '/_site/en/blog/author/$slug'
+    | '/_site/en/blog/category/$slug'
+    | '/_site/en/blog/profession/$slug'
+    | '/_site/en/blog/tag/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -1078,6 +1139,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SiteEnEquipeSlugRouteImport
       parentRoute: typeof SiteRoute
     }
+    '/_site/en/blog/search': {
+      id: '/_site/en/blog/search'
+      path: '/search'
+      fullPath: '/en/blog/search'
+      preLoaderRoute: typeof SiteEnBlogSearchRouteImport
+      parentRoute: typeof SiteEnBlogRoute
+    }
     '/_site/en/blog/$slug': {
       id: '/_site/en/blog/$slug'
       path: '/$slug'
@@ -1133,6 +1201,34 @@ declare module '@tanstack/react-router' {
       fullPath: '/admin/posts/$id'
       preLoaderRoute: typeof AuthenticatedAdminPostsIdRouteImport
       parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_site/en/blog/tag/$slug': {
+      id: '/_site/en/blog/tag/$slug'
+      path: '/tag/$slug'
+      fullPath: '/en/blog/tag/$slug'
+      preLoaderRoute: typeof SiteEnBlogTagSlugRouteImport
+      parentRoute: typeof SiteEnBlogRoute
+    }
+    '/_site/en/blog/profession/$slug': {
+      id: '/_site/en/blog/profession/$slug'
+      path: '/profession/$slug'
+      fullPath: '/en/blog/profession/$slug'
+      preLoaderRoute: typeof SiteEnBlogProfessionSlugRouteImport
+      parentRoute: typeof SiteEnBlogRoute
+    }
+    '/_site/en/blog/category/$slug': {
+      id: '/_site/en/blog/category/$slug'
+      path: '/category/$slug'
+      fullPath: '/en/blog/category/$slug'
+      preLoaderRoute: typeof SiteEnBlogCategorySlugRouteImport
+      parentRoute: typeof SiteEnBlogRoute
+    }
+    '/_site/en/blog/author/$slug': {
+      id: '/_site/en/blog/author/$slug'
+      path: '/author/$slug'
+      fullPath: '/en/blog/author/$slug'
+      preLoaderRoute: typeof SiteEnBlogAuthorSlugRouteImport
+      parentRoute: typeof SiteEnBlogRoute
     }
   }
 }
@@ -1209,10 +1305,20 @@ const SiteBlogRouteWithChildren = SiteBlogRoute._addFileChildren(
 
 interface SiteEnBlogRouteChildren {
   SiteEnBlogSlugRoute: typeof SiteEnBlogSlugRoute
+  SiteEnBlogSearchRoute: typeof SiteEnBlogSearchRoute
+  SiteEnBlogAuthorSlugRoute: typeof SiteEnBlogAuthorSlugRoute
+  SiteEnBlogCategorySlugRoute: typeof SiteEnBlogCategorySlugRoute
+  SiteEnBlogProfessionSlugRoute: typeof SiteEnBlogProfessionSlugRoute
+  SiteEnBlogTagSlugRoute: typeof SiteEnBlogTagSlugRoute
 }
 
 const SiteEnBlogRouteChildren: SiteEnBlogRouteChildren = {
   SiteEnBlogSlugRoute: SiteEnBlogSlugRoute,
+  SiteEnBlogSearchRoute: SiteEnBlogSearchRoute,
+  SiteEnBlogAuthorSlugRoute: SiteEnBlogAuthorSlugRoute,
+  SiteEnBlogCategorySlugRoute: SiteEnBlogCategorySlugRoute,
+  SiteEnBlogProfessionSlugRoute: SiteEnBlogProfessionSlugRoute,
+  SiteEnBlogTagSlugRoute: SiteEnBlogTagSlugRoute,
 }
 
 const SiteEnBlogRouteWithChildren = SiteEnBlogRoute._addFileChildren(
