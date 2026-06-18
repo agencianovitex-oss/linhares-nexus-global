@@ -122,7 +122,7 @@ function QuemSomos() {
       </SectionBlock>
 
       {/* Linha do tempo */}
-      <section className="relative isolate py-20 md:py-24" style={{ backgroundColor: "rgb(223, 164, 89)" }}>
+      <section className="relative isolate py-20 md:py-24" style={{ backgroundColor: "rgb(179, 134, 66)" }}>
         <div className="relative z-10">
           <div className="mx-auto w-full max-w-[1280px] px-6 lg:px-10">
             <div style={{ color: "rgb(6, 36, 67)" }}>

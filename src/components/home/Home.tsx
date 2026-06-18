@@ -428,7 +428,7 @@ function LeadershipSection() {
           <InstitutionalButton
             to="/equipe"
             variant="primary"
-            className="bg-gold text-gold-foreground hover:bg-[rgb(204_148_75)] border-0"
+            className="bg-gold text-gold-foreground hover:bg-[rgb(153_108_40)] border-0"
           >
             Conhecer toda a equipe
           </InstitutionalButton>
