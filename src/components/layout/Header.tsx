@@ -1,5 +1,6 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 import { useI18n, withLocale } from "@/i18n/useI18n";
 import { Container } from "./Container";
 import { LanguageSwitcher } from "./LanguageSwitcher";
