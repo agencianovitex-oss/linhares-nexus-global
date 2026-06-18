@@ -36,6 +36,7 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
             const v = VISAS[locale][s];
             const featured = s === "eb2-niw" || s === "eb5" || s === "e2";
             const isLastAlone = s === "o1";
+            const mobileGold = s === "o1" && !featured;
             const card = (
               <Link
                 key={s}
@@ -44,20 +45,30 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
                   "group relative p-10 editorial-card flex flex-col overflow-hidden " +
                   (featured
                     ? "bg-[rgb(179,134,66)] text-white"
-                    : "bg-background hover:bg-[rgba(179,134,66,0.06)]")
+                    : mobileGold
+                      ? "bg-[rgb(179,134,66)] text-white md:bg-background md:text-inherit md:hover:bg-[rgba(179,134,66,0.06)]"
+                      : "bg-background hover:bg-[rgba(179,134,66,0.06)]")
                 }
               >
                 <span
                   aria-hidden
                   className={
                     "absolute top-0 left-0 h-[3px] w-16 " +
-                    (featured ? "bg-white" : "bg-[rgb(179,134,66)]")
+                    (featured
+                      ? "bg-white"
+                      : mobileGold
+                        ? "bg-white md:bg-[rgb(179,134,66)]"
+                        : "bg-[rgb(179,134,66)]")
                   }
                 />
                 <div
                   className={
                     "mt-8 font-display text-4xl transition-colors " +
-                    (featured ? "text-white" : "text-primary group-hover:text-[rgb(179,134,66)]")
+                    (featured
+                      ? "text-white"
+                      : mobileGold
+                        ? "text-white md:text-primary md:group-hover:text-[rgb(179,134,66)]"
+                        : "text-primary group-hover:text-[rgb(179,134,66)]")
                   }
                 >
                   {v.acronym}
@@ -65,7 +76,11 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
                 <p
                   className={
                     "mt-3 text-[12px] uppercase tracking-[0.22em] " +
-                    (featured ? "text-white/85" : "text-muted-foreground")
+                    (featured
+                      ? "text-white/85"
+                      : mobileGold
+                        ? "text-white/85 md:text-muted-foreground"
+                        : "text-muted-foreground")
                   }
                 >
                   {v.heroSubhead}
@@ -73,7 +88,11 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
                 <p
                   className={
                     "mt-8 leading-relaxed flex-1 " +
-                    (featured ? "text-white/90" : "text-ink-soft")
+                    (featured
+                      ? "text-white/90"
+                      : mobileGold
+                        ? "text-white/90 md:text-ink-soft"
+                        : "text-ink-soft")
                   }
                 >
                   {v.tagline}
@@ -83,7 +102,9 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
                     "mt-10 text-[11px] uppercase tracking-[0.26em] transition-colors " +
                     (featured
                       ? "text-white"
-                      : "text-primary group-hover:text-[rgb(179,134,66)]")
+                      : mobileGold
+                        ? "text-white md:text-primary md:group-hover:text-[rgb(179,134,66)]"
+                        : "text-primary group-hover:text-[rgb(179,134,66)]")
                   }
                 >
                   Conhecer Estratégia <span className="cta-arrow">→</span>
