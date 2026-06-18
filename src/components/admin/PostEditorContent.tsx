@@ -1,4 +1,4 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useNavigate } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useMemo, useState } from "react";
@@ -71,13 +71,8 @@ const initialForm = (): FormState => ({
   tag_ids: [], profession_ids: [],
 });
 
-export const Route = createFileRoute("/_authenticated/admin/posts/editor")({
-  validateSearch: (s: Record<string, unknown>) => ({ id: typeof s.id === "string" ? s.id : undefined }),
-  component: PostEditor,
-});
-
-function PostEditor() {
-  const { id: routeId } = Route.useSearch();
+export function PostEditorContent({ postId }: { postId?: string }) {
+  const routeId = postId;
   const navigate = useNavigate();
   const qc = useQueryClient();
   const getOne = useServerFn(getPost);
