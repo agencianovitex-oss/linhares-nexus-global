@@ -9,7 +9,10 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as SiteRouteImport } from './routes/_site'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as SiteIndexRouteImport } from './routes/_site.index'
 import { Route as SiteQuemSomosRouteImport } from './routes/_site.quem-somos'
 import { Route as SitePremiacoesRouteImport } from './routes/_site.premiacoes'
@@ -17,10 +20,12 @@ import { Route as SiteNaMidiaRouteImport } from './routes/_site.na-midia'
 import { Route as SiteContatoRouteImport } from './routes/_site.contato'
 import { Route as SiteCasosDeSucessoRouteImport } from './routes/_site.casos-de-sucesso'
 import { Route as SiteBlogRouteImport } from './routes/_site.blog'
+import { Route as AuthenticatedAdminRouteRouteImport } from './routes/_authenticated/admin/route'
 import { Route as SiteEsIndexRouteImport } from './routes/_site.es.index'
 import { Route as SiteEquipeIndexRouteImport } from './routes/_site.equipe.index'
 import { Route as SiteEnIndexRouteImport } from './routes/_site.en.index'
 import { Route as SiteAreasDeAtuacaoIndexRouteImport } from './routes/_site.areas-de-atuacao.index'
+import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin/index'
 import { Route as SiteEsQuemSomosRouteImport } from './routes/_site.es.quem-somos'
 import { Route as SiteEsPremiacoesRouteImport } from './routes/_site.es.premiacoes'
 import { Route as SiteEsNaMidiaRouteImport } from './routes/_site.es.na-midia'
@@ -47,8 +52,22 @@ import { Route as SiteEnServicosSlugRouteImport } from './routes/_site.en.servic
 import { Route as SiteEnEquipeSlugRouteImport } from './routes/_site.en.equipe.$slug'
 import { Route as SiteEnBlogSlugRouteImport } from './routes/_site.en.blog.$slug'
 
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SiteRoute = SiteRouteImport.update({
   id: '/_site',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SiteIndexRoute = SiteIndexRouteImport.update({
@@ -86,6 +105,11 @@ const SiteBlogRoute = SiteBlogRouteImport.update({
   path: '/blog',
   getParentRoute: () => SiteRoute,
 } as any)
+const AuthenticatedAdminRouteRoute = AuthenticatedAdminRouteRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const SiteEsIndexRoute = SiteEsIndexRouteImport.update({
   id: '/es/',
   path: '/es/',
@@ -105,6 +129,11 @@ const SiteAreasDeAtuacaoIndexRoute = SiteAreasDeAtuacaoIndexRouteImport.update({
   id: '/areas-de-atuacao/',
   path: '/areas-de-atuacao/',
   getParentRoute: () => SiteRoute,
+} as any)
+const AuthenticatedAdminIndexRoute = AuthenticatedAdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AuthenticatedAdminRouteRoute,
 } as any)
 const SiteEsQuemSomosRoute = SiteEsQuemSomosRouteImport.update({
   id: '/es/quem-somos',
@@ -234,6 +263,9 @@ const SiteEnBlogSlugRoute = SiteEnBlogSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof SiteIndexRoute
+  '/auth': typeof AuthRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/admin': typeof AuthenticatedAdminRouteRouteWithChildren
   '/blog': typeof SiteBlogRouteWithChildren
   '/casos-de-sucesso': typeof SiteCasosDeSucessoRoute
   '/contato': typeof SiteContatoRoute
@@ -255,6 +287,7 @@ export interface FileRoutesByFullPath {
   '/es/na-midia': typeof SiteEsNaMidiaRoute
   '/es/premiacoes': typeof SiteEsPremiacoesRoute
   '/es/quem-somos': typeof SiteEsQuemSomosRoute
+  '/admin/': typeof AuthenticatedAdminIndexRoute
   '/areas-de-atuacao/': typeof SiteAreasDeAtuacaoIndexRoute
   '/en/': typeof SiteEnIndexRoute
   '/equipe/': typeof SiteEquipeIndexRoute
@@ -271,13 +304,15 @@ export interface FileRoutesByFullPath {
   '/es/servicos/': typeof SiteEsServicosIndexRoute
 }
 export interface FileRoutesByTo {
+  '/': typeof SiteIndexRoute
+  '/auth': typeof AuthRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/blog': typeof SiteBlogRouteWithChildren
   '/casos-de-sucesso': typeof SiteCasosDeSucessoRoute
   '/contato': typeof SiteContatoRoute
   '/na-midia': typeof SiteNaMidiaRoute
   '/premiacoes': typeof SitePremiacoesRoute
   '/quem-somos': typeof SiteQuemSomosRoute
-  '/': typeof SiteIndexRoute
   '/areas-de-atuacao/$slug': typeof SiteAreasDeAtuacaoSlugRoute
   '/blog/$slug': typeof SiteBlogSlugRoute
   '/en/blog': typeof SiteEnBlogRouteWithChildren
@@ -293,6 +328,7 @@ export interface FileRoutesByTo {
   '/es/na-midia': typeof SiteEsNaMidiaRoute
   '/es/premiacoes': typeof SiteEsPremiacoesRoute
   '/es/quem-somos': typeof SiteEsQuemSomosRoute
+  '/admin': typeof AuthenticatedAdminIndexRoute
   '/areas-de-atuacao': typeof SiteAreasDeAtuacaoIndexRoute
   '/en': typeof SiteEnIndexRoute
   '/equipe': typeof SiteEquipeIndexRoute
@@ -310,7 +346,11 @@ export interface FileRoutesByTo {
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/_site': typeof SiteRouteWithChildren
+  '/auth': typeof AuthRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/_authenticated/admin': typeof AuthenticatedAdminRouteRouteWithChildren
   '/_site/blog': typeof SiteBlogRouteWithChildren
   '/_site/casos-de-sucesso': typeof SiteCasosDeSucessoRoute
   '/_site/contato': typeof SiteContatoRoute
@@ -333,6 +373,7 @@ export interface FileRoutesById {
   '/_site/es/na-midia': typeof SiteEsNaMidiaRoute
   '/_site/es/premiacoes': typeof SiteEsPremiacoesRoute
   '/_site/es/quem-somos': typeof SiteEsQuemSomosRoute
+  '/_authenticated/admin/': typeof AuthenticatedAdminIndexRoute
   '/_site/areas-de-atuacao/': typeof SiteAreasDeAtuacaoIndexRoute
   '/_site/en/': typeof SiteEnIndexRoute
   '/_site/equipe/': typeof SiteEquipeIndexRoute
@@ -352,6 +393,9 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/auth'
+    | '/reset-password'
+    | '/admin'
     | '/blog'
     | '/casos-de-sucesso'
     | '/contato'
@@ -373,6 +417,7 @@ export interface FileRouteTypes {
     | '/es/na-midia'
     | '/es/premiacoes'
     | '/es/quem-somos'
+    | '/admin/'
     | '/areas-de-atuacao/'
     | '/en/'
     | '/equipe/'
@@ -389,13 +434,15 @@ export interface FileRouteTypes {
     | '/es/servicos/'
   fileRoutesByTo: FileRoutesByTo
   to:
+    | '/'
+    | '/auth'
+    | '/reset-password'
     | '/blog'
     | '/casos-de-sucesso'
     | '/contato'
     | '/na-midia'
     | '/premiacoes'
     | '/quem-somos'
-    | '/'
     | '/areas-de-atuacao/$slug'
     | '/blog/$slug'
     | '/en/blog'
@@ -411,6 +458,7 @@ export interface FileRouteTypes {
     | '/es/na-midia'
     | '/es/premiacoes'
     | '/es/quem-somos'
+    | '/admin'
     | '/areas-de-atuacao'
     | '/en'
     | '/equipe'
@@ -427,7 +475,11 @@ export interface FileRouteTypes {
     | '/es/servicos'
   id:
     | '__root__'
+    | '/_authenticated'
     | '/_site'
+    | '/auth'
+    | '/reset-password'
+    | '/_authenticated/admin'
     | '/_site/blog'
     | '/_site/casos-de-sucesso'
     | '/_site/contato'
@@ -450,6 +502,7 @@ export interface FileRouteTypes {
     | '/_site/es/na-midia'
     | '/_site/es/premiacoes'
     | '/_site/es/quem-somos'
+    | '/_authenticated/admin/'
     | '/_site/areas-de-atuacao/'
     | '/_site/en/'
     | '/_site/equipe/'
@@ -467,16 +520,40 @@ export interface FileRouteTypes {
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   SiteRoute: typeof SiteRouteWithChildren
+  AuthRoute: typeof AuthRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_site': {
       id: '/_site'
       path: ''
       fullPath: '/'
       preLoaderRoute: typeof SiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_site/': {
@@ -528,6 +605,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SiteBlogRouteImport
       parentRoute: typeof SiteRoute
     }
+    '/_authenticated/admin': {
+      id: '/_authenticated/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AuthenticatedAdminRouteRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_site/es/': {
       id: '/_site/es/'
       path: '/es'
@@ -555,6 +639,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/areas-de-atuacao/'
       preLoaderRoute: typeof SiteAreasDeAtuacaoIndexRouteImport
       parentRoute: typeof SiteRoute
+    }
+    '/_authenticated/admin/': {
+      id: '/_authenticated/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AuthenticatedAdminIndexRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
     }
     '/_site/es/quem-somos': {
       id: '/_site/es/quem-somos'
@@ -734,6 +825,31 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface AuthenticatedAdminRouteRouteChildren {
+  AuthenticatedAdminIndexRoute: typeof AuthenticatedAdminIndexRoute
+}
+
+const AuthenticatedAdminRouteRouteChildren: AuthenticatedAdminRouteRouteChildren =
+  {
+    AuthenticatedAdminIndexRoute: AuthenticatedAdminIndexRoute,
+  }
+
+const AuthenticatedAdminRouteRouteWithChildren =
+  AuthenticatedAdminRouteRoute._addFileChildren(
+    AuthenticatedAdminRouteRouteChildren,
+  )
+
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminRouteRoute: typeof AuthenticatedAdminRouteRouteWithChildren
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminRouteRoute: AuthenticatedAdminRouteRouteWithChildren,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 interface SiteBlogRouteChildren {
   SiteBlogSlugRoute: typeof SiteBlogSlugRoute
 }
@@ -845,7 +961,10 @@ const SiteRouteChildren: SiteRouteChildren = {
 const SiteRouteWithChildren = SiteRoute._addFileChildren(SiteRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   SiteRoute: SiteRouteWithChildren,
+  AuthRoute: AuthRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

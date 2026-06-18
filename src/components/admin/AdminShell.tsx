@@ -7,7 +7,8 @@ import { LayoutDashboard, FileText, FolderTree, Tag, Briefcase, Users, Image as 
 import { Button } from "@/components/ui/button";
 import { useQueryClient } from "@tanstack/react-query";
 
-const NAV = [
+type NavItem = { to: string; label: string; icon: any; exact?: boolean; adminOnly?: boolean };
+const NAV: NavItem[] = [
   { to: "/admin", label: "Dashboard", icon: LayoutDashboard, exact: true },
   { to: "/admin/posts", label: "Posts", icon: FileText },
   { to: "/admin/categorias", label: "Categorias", icon: FolderTree },
@@ -17,7 +18,7 @@ const NAV = [
   { to: "/admin/midia", label: "Mídia", icon: ImageIcon },
   { to: "/admin/seo", label: "SEO", icon: Search },
   { to: "/admin/equipe", label: "Equipe", icon: ShieldCheck, adminOnly: true },
-] as const;
+];
 
 export function AdminShell() {
   const navigate = useNavigate();
