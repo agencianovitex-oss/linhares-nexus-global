@@ -888,7 +888,7 @@ export type Database = {
     }
     Enums: {
       app_role: "admin" | "editor" | "viewer"
-      content_status: "draft" | "published" | "archived"
+      content_status: "draft" | "published" | "archived" | "scheduled"
       locale_code: "pt" | "en" | "es"
       visa_type:
         | "eb2_niw"
@@ -1027,7 +1027,7 @@ export const Constants = {
   public: {
     Enums: {
       app_role: ["admin", "editor", "viewer"],
-      content_status: ["draft", "published", "archived"],
+      content_status: ["draft", "published", "archived", "scheduled"],
       locale_code: ["pt", "en", "es"],
       visa_type: ["eb2_niw", "eb1", "e2", "l1", "h1b", "o1", "eb5", "other"],
     },
