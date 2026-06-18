@@ -25,6 +25,8 @@ const VISA_SUBMENU = [
 export function Header({ transparentOverHero = false }: Props) {
   const { locale, t } = useI18n();
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -32,6 +34,21 @@ export function Header({ transparentOverHero = false }: Props) {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
 
   const onDark = transparentOverHero && !scrolled;
   const visasBase = locale === "pt" ? "/areas-de-atuacao" : "/servicos";
