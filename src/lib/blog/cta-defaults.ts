@@ -8,7 +8,7 @@ type CTACopy = { title: string; description: string; button: string; url: string
 
 const defaults: Record<Locale, CTACopy> = {
   pt: {
-    title: "Avalie a sua trajetória com a Linhares Law",
+    title: "Avalie a sua trajetória com o Linhares Law",
     description:
       "Receba uma análise estratégica do seu caso com um advogado dedicado à imigração americana.",
     button: "Agendar consulta",

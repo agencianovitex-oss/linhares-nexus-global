@@ -175,7 +175,7 @@ function AuthoritySection() {
               Representando profissionais, investidores e famílias em estratégias de imigração para os Estados Unidos.
             </h2>
             <p className="mt-8 lg:mt-10 text-base lg:text-lg leading-[1.85] text-primary-foreground/80 max-w-[58ch]">
-              A Linhares Law atua exclusivamente em direito de imigração americana. Cada estratégia é construída a partir de uma leitura técnica precisa do perfil profissional, patrimonial e familiar do cliente — sustentada pela autoridade institucional de um escritório de advocacia reconhecido nos Estados Unidos.
+              O Linhares Law atua exclusivamente em direito de imigração americana. Cada estratégia é construída a partir de uma leitura técnica precisa do perfil profissional, patrimonial e familiar do cliente — sustentada pela autoridade institucional de um escritório de advocacia reconhecido nos Estados Unidos.
             </p>
             <p className="mt-6 text-base lg:text-lg leading-[1.85] text-primary-foreground/75 max-w-[58ch]">
               Nossa atuação é pautada por discrição, profundidade técnica e relacionamento de longo prazo com cada cliente representado.
@@ -394,7 +394,7 @@ function LeadershipSection() {
     role: "Advogado Fundador",
     cred: "Founding Attorney · U.S. Immigration Law",
     img: andreLinharesPortrait,
-    bio: "Fundador da Linhares Law e autoridade reconhecida em direito de imigração americana. Há mais de 14 anos representando profissionais, executivos, investidores e famílias internacionais perante as autoridades federais dos Estados Unidos.",
+    bio: "Fundador do Linhares Law e autoridade reconhecida em direito de imigração americana. Há mais de 14 anos representando profissionais, executivos, investidores e famílias internacionais perante as autoridades federais dos Estados Unidos.",
   };
   const others = [
     {
@@ -411,7 +411,7 @@ function LeadershipSection() {
       role: "Of Counsel",
       cred: "Florida Bar · Puerto Rico Bar",
       img: juliana,
-      bio: "Of Counsel da Linhares Law, com atuação em direito migratório e experiência multijurisdicional entre Florida e Puerto Rico.",
+      bio: "Of Counsel do Linhares Law, com atuação em direito migratório e experiência multijurisdicional entre Florida e Puerto Rico.",
     },
   ];
 
@@ -424,7 +424,7 @@ function LeadershipSection() {
           <SectionTitle
             eyebrow="Liderança Jurídica"
             title="Advogados que sustentam a autoridade do escritório."
-            description="Sob a liderança de Dr. André Linhares, a equipe da Linhares Law reúne advogados dedicados exclusivamente à representação jurídica em imigração americana."
+            description="Sob a liderança de Dr. André Linhares, a equipe do Linhares Law reúne advogados dedicados exclusivamente à representação jurídica em imigração americana."
           />
           <InstitutionalButton
             to="/equipe"
@@ -592,7 +592,7 @@ function CultureSection() {
             <div className="bg-gold text-gold-foreground px-7 py-6 lg:px-8 lg:py-7 flex-1 flex flex-col justify-center">
               <div className="font-display font-light tracking-[-0.03em] leading-none text-[clamp(3.5rem,5.5vw,5rem)]">100%</div>
               <div className="mt-3 text-[12.5px] leading-[1.55] text-gold-foreground/85 max-w-[28ch]">
-                consideram a Linhares Law um excelente lugar para trabalhar.
+                consideram o Linhares Law um excelente lugar para trabalhar.
               </div>
             </div>
           </div>
@@ -835,7 +835,7 @@ function FinalCTA() {
           </div>
           <div className="lg:col-span-5 lg:border-l lg:border-primary-foreground/15 lg:pl-12">
             <p className="text-lg leading-[1.8] text-primary-foreground/75">
-              Iniciar uma conversa institucional com a Linhares Law é o primeiro passo para construir uma estratégia jurídica sólida — orientada por advogados americanos e alinhada aos seus objetivos profissionais, patrimoniais e familiares.
+              Iniciar uma conversa institucional com o Linhares Law é o primeiro passo para construir uma estratégia jurídica sólida — orientada por advogados americanos e alinhada aos seus objetivos profissionais, patrimoniais e familiares.
             </p>
             <div className="mt-10">
               <InstitutionalButton

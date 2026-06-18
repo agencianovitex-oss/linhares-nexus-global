@@ -62,7 +62,7 @@ export const teamGroups: TeamGroup[] = [
     eyebrow: "I. Liderança Jurídica",
     title: "Advogados Responsáveis",
     description:
-      "Advogados licenciados nos Estados Unidos que coordenam a estratégia jurídica de cada cliente da Linhares Law.",
+      "Advogados licenciados nos Estados Unidos que coordenam a estratégia jurídica de cada cliente do Linhares Law.",
     members: [
       {
         name: "André Linhares, Esq.",
@@ -70,7 +70,7 @@ export const teamGroups: TeamGroup[] = [
         credentials: ["D.C. Bar", "New York Bar"],
         slug: "andre-linhares",
         portrait: andre,
-        bio: "Fundador da Linhares Law, com mais de 14 anos de prática exclusiva em imigração americana e referência reconhecida entre profissionais e investidores brasileiros.",
+        bio: "Fundador do Linhares Law, com mais de 14 anos de prática exclusiva em imigração americana e referência reconhecida entre profissionais e investidores brasileiros.",
       },
       {
         name: "Nicholas Perry, Esq.",
@@ -86,7 +86,7 @@ export const teamGroups: TeamGroup[] = [
         credentials: ["Florida Bar", "Puerto Rico Bar"],
         slug: "juliana-mosquera-soler",
         portrait: juliana,
-        bio: "Of Counsel da Linhares Law, com atuação em direito migratório e experiência multijurisdicional entre Florida e Puerto Rico.",
+        bio: "Of Counsel do Linhares Law, com atuação em direito migratório e experiência multijurisdicional entre Florida e Puerto Rico.",
       },
     ],
   },
