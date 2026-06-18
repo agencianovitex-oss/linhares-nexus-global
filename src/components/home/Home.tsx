@@ -564,20 +564,8 @@ function CultureSection() {
 
       <Container>
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-10 items-stretch">
-          {/* Badge — reduzido */}
-          <div className="lg:col-span-3">
-            <div className="h-full bg-surface border border-border p-6 lg:p-8 flex items-center justify-center">
-              <img
-                src={gptwBadge}
-                alt="Great Place To Work Certified — Linhares Law USA"
-                className="w-full max-w-[200px] h-auto object-contain"
-                style={{ objectFit: "contain" }}
-              />
-            </div>
-          </div>
-
-          {/* Statement — destaque central */}
-          <div className="lg:col-span-5 flex flex-col justify-center">
+          {/* Statement — destaque central (texto primeiro no mobile) */}
+          <div className="order-1 lg:order-2 lg:col-span-5 flex flex-col justify-center">
             <div className="flex items-center gap-4">
               <span className="rule-gold" />
               <span className="eyebrow">Excelência Organizacional</span>
@@ -594,7 +582,7 @@ function CultureSection() {
           </div>
 
           {/* Stats — percentuais ampliados, cards compactos */}
-          <div className="lg:col-span-4 flex flex-col gap-px bg-border border border-border">
+          <div className="order-2 lg:order-3 lg:col-span-4 flex flex-col gap-px bg-border border border-border">
             <div className="bg-primary text-primary-foreground px-7 py-6 lg:px-8 lg:py-7 flex-1 flex flex-col justify-center">
               <div className="font-display font-light tracking-[-0.03em] leading-none text-[clamp(3.5rem,5.5vw,5rem)]">100%</div>
               <div className="mt-3 text-[12.5px] leading-[1.55] text-primary-foreground/85 max-w-[28ch]">
@@ -606,6 +594,18 @@ function CultureSection() {
               <div className="mt-3 text-[12.5px] leading-[1.55] text-gold-foreground/85 max-w-[28ch]">
                 consideram a Linhares Law um excelente lugar para trabalhar.
               </div>
+            </div>
+          </div>
+
+          {/* Badge — por último no mobile, à esquerda no desktop */}
+          <div className="order-3 lg:order-1 lg:col-span-3">
+            <div className="h-full bg-surface border border-border p-6 lg:p-8 flex items-center justify-center">
+              <img
+                src={gptwBadge}
+                alt="Great Place To Work Certified — Linhares Law USA"
+                className="w-full max-w-[200px] h-auto object-contain"
+                style={{ objectFit: "contain" }}
+              />
             </div>
           </div>
         </div>
