@@ -19,7 +19,7 @@ export const Route = createFileRoute("/_site/quem-somos")({
       locale: L,
       title: "Quem Somos — Linhares Law",
       description:
-        "Conheça a história e os valores da Linhares Law, escritório de advocacia dedicado exclusivamente à imigração americana, com mais de 14 anos de atuação e quatro escritórios nos Estados Unidos.",
+        "Conheça a história e os valores do Linhares Law, escritório de advocacia dedicado exclusivamente à imigração americana, com mais de 14 anos de atuação e quatro escritórios nos Estados Unidos.",
     }),
   component: QuemSomos,
 });
@@ -33,7 +33,7 @@ const valores = [
 
 const linhaTempo = [
   { ano: "2011", titulo: "Início da prática jurídica", body: "Dr. André Linhares inicia sua trajetória na advocacia americana de imigração." },
-  { ano: "2017", titulo: "Fundação da Linhares Law", body: "O escritório nasce com o propósito de representar profissionais e famílias brasileiras nos Estados Unidos." },
+  { ano: "2017", titulo: "Fundação do Linhares Law", body: "O escritório nasce com o propósito de representar profissionais e famílias brasileiras nos Estados Unidos." },
   { ano: "2020", titulo: "Expansão Nacional", body: "Abertura de escritórios em Miami, New York e Salt Lake City a partir da sede em Orlando." },
   { ano: "2024", titulo: "Reconhecimento Internacional", body: "Premiação no International Business Institute e nomeação para o The Law Awards." },
   { ano: "2024", titulo: "Great Place To Work", body: "Certificação como Great Place To Work com 100% de satisfação interna." },
@@ -45,7 +45,7 @@ function QuemSomos() {
       <InstitutionalHero
         eyebrow="Linhares Law · Quem Somos"
         title="Uma trajetória construída pela representação jurídica de quem busca os Estados Unidos."
-        intro="A Linhares Law é um escritório de advocacia dedicado exclusivamente à imigração americana. Há mais de 14 anos representamos profissionais, executivos, investidores e famílias internacionais em estratégias migratórias para os Estados Unidos."
+        intro="O Linhares Law é um escritório de advocacia dedicado exclusivamente à imigração americana. Há mais de 14 anos representamos profissionais, executivos, investidores e famílias internacionais em estratégias migratórias para os Estados Unidos."
         meta={
           <>
             <span>Mais de 14 anos</span>
@@ -64,7 +64,7 @@ function QuemSomos() {
           </div>
           <div className="lg:col-span-6 space-y-5 lead">
             <p>
-              A Linhares Law nasceu da convicção de que a imigração americana exige mais do que processo. Exige
+              O Linhares Law nasceu da convicção de que a imigração americana exige mais do que processo. Exige
               estratégia jurídica, leitura técnica de cenário e o acompanhamento contínuo de cada etapa.
             </p>
             <p>
@@ -128,7 +128,7 @@ function QuemSomos() {
             <div style={{ color: "rgb(255, 255, 255)" }}>
               <span className="eyebrow" style={{ color: "rgb(255, 255, 255)", opacity: 0.85 }}>Trajetória Institucional</span>
               <h2 className="mt-3 font-display text-3xl md:text-4xl lg:text-5xl leading-[1.05]" style={{ color: "rgb(255, 255, 255)" }}>
-                Marcos relevantes da Linhares Law.
+                Marcos relevantes do Linhares Law.
               </h2>
               <span className="mt-5 block h-px w-16" style={{ backgroundColor: "rgb(255, 255, 255)" }} />
             </div>
@@ -164,7 +164,7 @@ function QuemSomos() {
             <SectionTitle eyebrow="Reconhecimento Institucional" title="Distinções que refletem nossa consistência." />
             <p className="mt-6 lead">
               Premiações concedidas por instituições jurídicas, empresariais e de cultura organizacional reconhecem
-              o trabalho técnico, ético e humano da Linhares Law.
+              o trabalho técnico, ético e humano do Linhares Law.
             </p>
             <InstitutionalButton to="/premiacoes" variant="outline" className="mt-10">
               Ver Reconhecimentos

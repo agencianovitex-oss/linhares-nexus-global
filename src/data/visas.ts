@@ -80,7 +80,7 @@ const PT: Record<VisaSlug, VisaContent> = {
       {
         title: "Dentistas",
         intro:
-          "A Linhares Law mantém parceria institucional com a ABO-US, oferecendo estrutura complementar de preparação técnica e licenciamento americano para dentistas brasileiros.",
+          "O Linhares Law mantém parceria institucional com a ABO-US, oferecendo estrutura complementar de preparação técnica e licenciamento americano para dentistas brasileiros.",
         bullets: [
           "Construção do dossiê de mérito profissional e produção qualificada.",
           "Suporte estratégico para licenciamento americano (NBDE / INBDE).",
@@ -152,7 +152,7 @@ const PT: Record<VisaSlug, VisaContent> = {
     ],
     seoTitle: "EB-2 NIW — Green Card por Interesse Nacional | Linhares Law",
     seoDescription:
-      "Estratégia EB-2 NIW para profissionais qualificados obterem residência permanente nos Estados Unidos sem oferta de emprego. Atuação institucional da Linhares Law.",
+      "Estratégia EB-2 NIW para profissionais qualificados obterem residência permanente nos Estados Unidos sem oferta de emprego. Atuação institucional do Linhares Law.",
   },
 
   eb1: {
@@ -219,7 +219,7 @@ const PT: Record<VisaSlug, VisaContent> = {
     ],
     seoTitle: "EB-1 — Habilidade Extraordinária e Executivos | Linhares Law",
     seoDescription:
-      "Estratégia EB-1 (EB-1A, EB-1B e EB-1C) para profissionais de destaque, pesquisadores e executivos multinacionais conduzida pela Linhares Law.",
+      "Estratégia EB-1 (EB-1A, EB-1B e EB-1C) para profissionais de destaque, pesquisadores e executivos multinacionais conduzida pelo Linhares Law.",
   },
 
   e2: {
@@ -280,7 +280,7 @@ const PT: Record<VisaSlug, VisaContent> = {
     ],
     seoTitle: "E-2 — Investidor por Tratado Comercial | Linhares Law",
     seoDescription:
-      "Visto E-2 para investidores e empresários estabelecerem e operarem negócios nos Estados Unidos. Estratégia institucional da Linhares Law.",
+      "Visto E-2 para investidores e empresários estabelecerem e operarem negócios nos Estados Unidos. Estratégia institucional do Linhares Law.",
   },
 
   l1: {
@@ -512,7 +512,7 @@ const PT: Record<VisaSlug, VisaContent> = {
       ],
     },
     faqs: [
-      { q: "Qual o valor mínimo de investimento?", a: "O valor mínimo é definido por lei e varia conforme o tipo de projeto (área-alvo de emprego ou padrão). A Linhares Law informa o patamar vigente durante a análise institucional." },
+      { q: "Qual o valor mínimo de investimento?", a: "O valor mínimo é definido por lei e varia conforme o tipo de projeto (área-alvo de emprego ou padrão). O Linhares Law informa o patamar vigente durante a análise institucional." },
       { q: "Preciso administrar o negócio?", a: "Não. O EB-5 admite participação passiva, especialmente via Regional Centers, desde que cumpridos os requisitos de geração de empregos." },
       { q: "Posso usar recursos de venda de imóveis ou empresas?", a: "Sim, desde que a origem seja documentalmente comprovada conforme exigências do USCIS." },
       { q: "Quanto tempo leva o processo EB-5?", a: "Os prazos variam conforme o calendário consular, a demanda do USCIS e a nacionalidade do investidor. A análise institucional considera a janela atual de processamento." },

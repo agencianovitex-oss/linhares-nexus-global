@@ -42,7 +42,7 @@ const profiles: Record<string, AttorneyProfile> = {
     education: [{ school: "Faculdade de Direito nos Estados Unidos" }],
     experience: [
       "Mais de 14 anos de prática exclusiva em imigração americana",
-      "Fundador e CEO da Linhares Law",
+      "Fundador e CEO do Linhares Law",
       "Presidência da LIDE Orlando",
       "Palestrante recorrente em eventos internacionais de imigração",
     ],
@@ -54,9 +54,9 @@ const profiles: Record<string, AttorneyProfile> = {
       "Top Empreendedor",
     ],
     longBio: [
-      "Dr. André Linhares é o advogado fundador da Linhares Law. Em mais de uma década de prática exclusiva em imigração americana, construiu uma reputação reconhecida por advogados, executivos, investidores e famílias internacionais que buscam representação técnica nos Estados Unidos.",
+      "Dr. André Linhares é o advogado fundador do Linhares Law. Em mais de uma década de prática exclusiva em imigração americana, construiu uma reputação reconhecida por advogados, executivos, investidores e famílias internacionais que buscam representação técnica nos Estados Unidos.",
       "Sua atuação se concentra em estratégias migratórias de alto valor agregado — vistos de habilidade extraordinária, dispensa por interesse nacional, investimento e transferência intracompanhia — sempre conduzidas com leitura individualizada de cada trajetória profissional e patrimonial.",
-      "Como presidente da LIDE Orlando, articula o relacionamento entre lideranças empresariais brasileiras e o ecossistema institucional norte-americano. Sua presença em painéis, entrevistas e eventos do setor consolida a Linhares Law como referência no mercado.",
+      "Como presidente da LIDE Orlando, articula o relacionamento entre lideranças empresariais brasileiras e o ecossistema institucional norte-americano. Sua presença em painéis, entrevistas e eventos do setor consolida o Linhares Law como referência no mercado.",
     ],
     mission:
       "Representar com rigor jurídico e discrição as trajetórias de quem escolheu os Estados Unidos como destino profissional, familiar e patrimonial.",
@@ -82,7 +82,7 @@ const profiles: Record<string, AttorneyProfile> = {
     ],
     practice: ["EB-1", "EB-2 NIW", "Ajuste de Status", "Imigração Familiar"],
     longBio: [
-      "Nicholas Perry traz para a Linhares Law uma trajetória rara: passagem pelas principais agências federais americanas responsáveis pela imigração — USCIS, DHS, ICE, CBP e o Department of Justice.",
+      "Nicholas Perry traz para o Linhares Law uma trajetória rara: passagem pelas principais agências federais americanas responsáveis pela imigração — USCIS, DHS, ICE, CBP e o Department of Justice.",
       "Essa vivência institucional confere à sua atuação um entendimento técnico aprofundado dos critérios adotados pelos analistas e oficiais federais que avaliam petições migratórias.",
       "Formado como Valedictorian pela North Carolina Central School of Law, é graduado pela University of Notre Dame e licenciado em Nebraska, North Carolina e perante a Suprema Corte dos Estados Unidos.",
     ],
