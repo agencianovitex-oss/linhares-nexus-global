@@ -1,21 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Placeholder } from "@/components/layout/Placeholder";
-import { buildLocaleHead } from "@/lib/seo";
-import { dict } from "@/i18n/locales";
+import { BlogArticlePage, articleQueries } from "@/components/blog/pages/BlogArticlePage";
+import { BlogError, BlogNotFound } from "@/components/blog/BlogBoundaries";
+import { buildArticleHead } from "@/lib/blog/article-head";
+import { blogArticlePath } from "@/lib/blog/i18n-strings";
 
 const L = "pt" as const;
-const t = dict[L].pages.blog;
 
 export const Route = createFileRoute("/_site/blog/$slug")({
-  head: ({ params }: { params: { slug: string } }) =>
-    buildLocaleHead({
-      path: `/blog/${params.slug}`,
-      locale: L,
-      title: `${params.slug} — Linhares Law`,
-      description: t.intro,
-    }),
+  loader: ({ context, params }) =>
+    context.queryClient.ensureQueryData(articleQueries(L, params.slug).post),
+  head: ({ loaderData, params }) => {
+    if (!loaderData) return {};
+    return buildArticleHead(loaderData as any, L, blogArticlePath(L, params.slug));
+  },
+  errorComponent: ({ error }) => <BlogError locale={L} error={error as Error} />,
+  notFoundComponent: () => <BlogNotFound locale={L} />,
   component: function Page() {
     const { slug } = Route.useParams();
-    return <Placeholder title={`${t.title} · ${slug}`} intro={t.intro} eyebrow={dict[L].brand} />;
+    return <BlogArticlePage locale={L} slug={slug} />;
   },
 });
