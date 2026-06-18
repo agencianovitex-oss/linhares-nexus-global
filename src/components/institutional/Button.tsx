@@ -16,7 +16,7 @@ const variants: Record<Variant, string> = {
   onDark:
     "border border-primary-foreground/80 text-primary-foreground hover:border-gold hover:text-gold hover:-translate-y-[1px]",
   gold:
-    "bg-gold text-gold-foreground hover:bg-[rgb(204_148_76)] hover:-translate-y-[1px] shadow-[0_10px_30px_-18px_rgba(223,164,89,0.65)]",
+    "bg-gold text-gold-foreground hover:bg-[rgb(153_108_40)] hover:-translate-y-[1px] shadow-[0_10px_30px_-18px_rgba(179,134,66,0.65)]",
 };
 
 interface CommonProps {

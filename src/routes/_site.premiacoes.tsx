@@ -88,9 +88,9 @@ const textualAwards: Award[] = [
   },
 ];
 
-// Suavização do dourado institucional rgb(223,164,89) para fundo de card
-const cardBg = "color-mix(in oklab, rgb(223 164 89) 14%, white)";
-const cardBorder = "color-mix(in oklab, rgb(223 164 89) 38%, white)";
+// Suavização do dourado institucional rgb(179,134,66) para fundo de card
+const cardBg = "color-mix(in oklab, rgb(179 134 66) 14%, white)";
+const cardBorder = "color-mix(in oklab, rgb(179 134 66) 38%, white)";
 const titleColor = "rgb(6, 36, 67)";
 
 function Premiacoes() {
