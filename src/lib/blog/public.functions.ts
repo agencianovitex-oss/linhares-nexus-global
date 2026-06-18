@@ -54,7 +54,7 @@ export type PublicPostListItem = {
 };
 
 export type PublicPostDetail = PublicPostListItem & {
-  body: unknown;
+  body: any;
   meta_title: string | null;
   meta_description: string | null;
   faq: Array<{ question: string; answer: string }>;
@@ -104,9 +104,9 @@ type PostRow = {
   author: { id: string; slug: string; name: string; photo_url: string | null; linkedin_url: string | null; translations: Array<{ locale: string; role_title: string | null; short_bio: string | null }> } | null;
 };
 
-function pickTr<T extends { locale: string }>(arr: T[] | null | undefined, loc: string): T | null {
+function pickTr(arr: any[] | null | undefined, loc: string): any {
   if (!arr || arr.length === 0) return null;
-  return arr.find((t) => t.locale === loc) ?? arr.find((t) => t.locale === "pt") ?? arr[0];
+  return arr.find((t: any) => t.locale === loc) ?? arr.find((t: any) => t.locale === "pt") ?? arr[0];
 }
 
 function rowToListItem(row: PostRow, loc: string): PublicPostListItem | null {
