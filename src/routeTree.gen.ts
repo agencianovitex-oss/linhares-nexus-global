@@ -45,6 +45,7 @@ import { Route as SiteEsServicosIndexRouteImport } from './routes/_site.es.servi
 import { Route as SiteEsEquipeIndexRouteImport } from './routes/_site.es.equipe.index'
 import { Route as SiteEnServicosIndexRouteImport } from './routes/_site.en.servicos.index'
 import { Route as SiteEnEquipeIndexRouteImport } from './routes/_site.en.equipe.index'
+import { Route as AuthenticatedAdminPostsIndexRouteImport } from './routes/_authenticated/admin/posts/index'
 import { Route as SiteEsServicosSlugRouteImport } from './routes/_site.es.servicos.$slug'
 import { Route as SiteEsEquipeSlugRouteImport } from './routes/_site.es.equipe.$slug'
 import { Route as SiteEsBlogSlugRouteImport } from './routes/_site.es.blog.$slug'
@@ -230,6 +231,12 @@ const SiteEnEquipeIndexRoute = SiteEnEquipeIndexRouteImport.update({
   path: '/en/equipe/',
   getParentRoute: () => SiteRoute,
 } as any)
+const AuthenticatedAdminPostsIndexRoute =
+  AuthenticatedAdminPostsIndexRouteImport.update({
+    id: '/posts/',
+    path: '/posts/',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
 const SiteEsServicosSlugRoute = SiteEsServicosSlugRouteImport.update({
   id: '/es/servicos/$slug',
   path: '/es/servicos/$slug',
@@ -298,6 +305,7 @@ export interface FileRoutesByFullPath {
   '/es/blog/$slug': typeof SiteEsBlogSlugRoute
   '/es/equipe/$slug': typeof SiteEsEquipeSlugRoute
   '/es/servicos/$slug': typeof SiteEsServicosSlugRoute
+  '/admin/posts/': typeof AuthenticatedAdminPostsIndexRoute
   '/en/equipe/': typeof SiteEnEquipeIndexRoute
   '/en/servicos/': typeof SiteEnServicosIndexRoute
   '/es/equipe/': typeof SiteEsEquipeIndexRoute
@@ -339,6 +347,7 @@ export interface FileRoutesByTo {
   '/es/blog/$slug': typeof SiteEsBlogSlugRoute
   '/es/equipe/$slug': typeof SiteEsEquipeSlugRoute
   '/es/servicos/$slug': typeof SiteEsServicosSlugRoute
+  '/admin/posts': typeof AuthenticatedAdminPostsIndexRoute
   '/en/equipe': typeof SiteEnEquipeIndexRoute
   '/en/servicos': typeof SiteEnServicosIndexRoute
   '/es/equipe': typeof SiteEsEquipeIndexRoute
@@ -384,6 +393,7 @@ export interface FileRoutesById {
   '/_site/es/blog/$slug': typeof SiteEsBlogSlugRoute
   '/_site/es/equipe/$slug': typeof SiteEsEquipeSlugRoute
   '/_site/es/servicos/$slug': typeof SiteEsServicosSlugRoute
+  '/_authenticated/admin/posts/': typeof AuthenticatedAdminPostsIndexRoute
   '/_site/en/equipe/': typeof SiteEnEquipeIndexRoute
   '/_site/en/servicos/': typeof SiteEnServicosIndexRoute
   '/_site/es/equipe/': typeof SiteEsEquipeIndexRoute
@@ -428,6 +438,7 @@ export interface FileRouteTypes {
     | '/es/blog/$slug'
     | '/es/equipe/$slug'
     | '/es/servicos/$slug'
+    | '/admin/posts/'
     | '/en/equipe/'
     | '/en/servicos/'
     | '/es/equipe/'
@@ -469,6 +480,7 @@ export interface FileRouteTypes {
     | '/es/blog/$slug'
     | '/es/equipe/$slug'
     | '/es/servicos/$slug'
+    | '/admin/posts'
     | '/en/equipe'
     | '/en/servicos'
     | '/es/equipe'
@@ -513,6 +525,7 @@ export interface FileRouteTypes {
     | '/_site/es/blog/$slug'
     | '/_site/es/equipe/$slug'
     | '/_site/es/servicos/$slug'
+    | '/_authenticated/admin/posts/'
     | '/_site/en/equipe/'
     | '/_site/en/servicos/'
     | '/_site/es/equipe/'
@@ -780,6 +793,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SiteEnEquipeIndexRouteImport
       parentRoute: typeof SiteRoute
     }
+    '/_authenticated/admin/posts/': {
+      id: '/_authenticated/admin/posts/'
+      path: '/posts'
+      fullPath: '/admin/posts/'
+      preLoaderRoute: typeof AuthenticatedAdminPostsIndexRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
     '/_site/es/servicos/$slug': {
       id: '/_site/es/servicos/$slug'
       path: '/es/servicos/$slug'
@@ -827,11 +847,13 @@ declare module '@tanstack/react-router' {
 
 interface AuthenticatedAdminRouteRouteChildren {
   AuthenticatedAdminIndexRoute: typeof AuthenticatedAdminIndexRoute
+  AuthenticatedAdminPostsIndexRoute: typeof AuthenticatedAdminPostsIndexRoute
 }
 
 const AuthenticatedAdminRouteRouteChildren: AuthenticatedAdminRouteRouteChildren =
   {
     AuthenticatedAdminIndexRoute: AuthenticatedAdminIndexRoute,
+    AuthenticatedAdminPostsIndexRoute: AuthenticatedAdminPostsIndexRoute,
   }
 
 const AuthenticatedAdminRouteRouteWithChildren =
