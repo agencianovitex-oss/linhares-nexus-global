@@ -4,13 +4,11 @@ import juliana from "@/assets/team-juliana.avif";
 import fernanda from "@/assets/team-fernanda-ruiz.png";
 import andrea from "@/assets/team-andrea-almeida.jpg";
 import sheron from "@/assets/team-sheron-carvalho.jpg";
-import andressa from "@/assets/team-andressa-hughes.jpg";
 import gabriele from "@/assets/team-gabriele-souza.jpg";
 import joao from "@/assets/team-joao-miranda.jpg";
 import danielAsset from "@/assets/team-daniel-mendes.png.asset.json";
 const daniel = danielAsset.url;
 import rafaelaAsset from "@/assets/team-rafaela-barbosa.jpg.asset.json";
-import deborahAsset from "@/assets/team-deborah-carvalho.jpg.asset.json";
 import alineAsset from "@/assets/team-aline-mayer.jpg.asset.json";
 import rafaelAsset from "@/assets/team-rafael-frinhani.jpg.asset.json";
 import brunaCAsset from "@/assets/team-bruna-carvalho.jpg.asset.json";
@@ -22,11 +20,9 @@ import vyvianAsset from "@/assets/team-vyvian-bastos.jpg.asset.json";
 import renataAsset from "@/assets/renata-liberman.jpg.asset.json";
 import edsonAsset from "@/assets/edson-matunaga.jpg.asset.json";
 import paolaAsset from "@/assets/paola-irvin.jpg.asset.json";
-import gabrielAsset from "@/assets/gabriel-mothe.avif.asset.json";
 import manuelaAsset from "@/assets/manuela-truschelli.jpg.asset.json";
 
 const rafaela = rafaelaAsset.url;
-const deborah = deborahAsset.url;
 const aline = alineAsset.url;
 const rafael = rafaelAsset.url;
 const brunaC = brunaCAsset.url;
@@ -38,7 +34,6 @@ const vyvian = vyvianAsset.url;
 const renata = renataAsset.url;
 const edson = edsonAsset.url;
 const paola = paolaAsset.url;
-const gabriel = gabrielAsset.url;
 const manuela = manuelaAsset.url;
 
 export interface TeamMember {
@@ -59,10 +54,10 @@ export interface TeamGroup {
 
 export const teamGroups: TeamGroup[] = [
   {
-    eyebrow: "I. Liderança Jurídica",
-    title: "Advogados Responsáveis",
+    eyebrow: "I. Attorneys",
+    title: "Attorneys",
     description:
-      "Advogados licenciados nos Estados Unidos que coordenam a estratégia jurídica de cada cliente do Linhares Law.",
+      "Advogados licenciados nos Estados Unidos que conduzem a estratégia jurídica de cada cliente do Linhares Law.",
     members: [
       {
         name: "André Linhares, Esq.",
@@ -86,105 +81,68 @@ export const teamGroups: TeamGroup[] = [
         credentials: ["Florida Bar", "Puerto Rico Bar"],
         slug: "juliana-mosquera-soler",
         portrait: juliana,
-        bio: "Of Counsel do Linhares Law, com atuação em direito migratório e experiência multijurisdicional entre Florida e Puerto Rico.",
+        bio: "Advogada especializada em imigração corporativa, com mais de 18 anos de experiência em casos baseados em emprego, como EB-1, EB-2 (NIW) e O-1.",
       },
     ],
   },
   {
-    eyebrow: "II. Gestão Jurídica",
-    title: "Coordenação Jurídica",
+    eyebrow: "II. Case Managers",
+    title: "Case Managers",
     description:
-      "Coordenação técnica das equipes jurídicas, garantindo consistência editorial e rigor em cada petição apresentada.",
+      "Responsáveis pela condução integral de cada caso, do protocolo inicial à aprovação final.",
     members: [
-      {
-        name: "Fernanda Ruiz",
-        role: "Legal Manager",
-        portrait: fernanda,
-        bio: "\n",
-      },
-      {
-        name: "Andrea Almeida",
-        role: "Legal Manager",
-        portrait: andrea,
-        bio: "\n",
-      },
+      { name: "Vivyan Bastos", role: "Case Manager", portrait: vyvian },
+      { name: "Edson Matunaga", role: "Case Manager", portrait: edson },
+      { name: "Bruna Carvalho", role: "Case Manager", portrait: brunaC },
     ],
   },
   {
-    eyebrow: "III. Especialistas Jurídicos",
-    title: "Especialistas Jurídicos",
+    eyebrow: "III. Paralegals",
+    title: "Paralegals",
     description:
       "Profissionais responsáveis pela construção argumentativa e pela curadoria documental de cada caso.",
     members: [
-      {
-        name: "Sheron Carvalho",
-        role: "Immigration Specialist",
-        portrait: sheron,
-        bio: "\n",
-      },
-      { name: "Deborah Carvalho", role: "Legal Specialist", portrait: deborah },
-      { name: "Rafaela Barbosa", role: "Legal Specialist", portrait: rafaela },
+      { name: "Andrea Almeida", role: "Paralegal", portrait: andrea },
+      { name: "Sheron Carvalho", role: "Paralegal", portrait: sheron },
+      { name: "Fernanda Ruiz", role: "Paralegal", portrait: fernanda },
+      { name: "Rafaela Barbosa", role: "Paralegal", portrait: rafaela },
+      { name: "Samara Silvestre", role: "Paralegal", portrait: samara },
+      { name: "Heitor", role: "Paralegal" },
     ],
   },
   {
-    eyebrow: "IV. Assistência Jurídica",
-    title: "Assistência Jurídica",
+    eyebrow: "IV. Legal Assistants",
+    title: "Legal Assistants",
     description:
       "Equipe ampliada de suporte técnico que sustenta a operação jurídica em volume e detalhamento.",
     members: [
-      { name: "Vivyan Bastos", role: "Senior Legal Assistant", portrait: vyvian },
-      { name: "Samara Silvestre", role: "Senior Legal Assistant", portrait: samara },
-      { name: "Bruna Alves", role: "Junior Legal Assistant", portrait: brunaA },
-      { name: "Julyana Fama", role: "Junior Legal Assistant", portrait: julyana },
-      { name: "Nadyne Santos", role: "Junior Legal Assistant", portrait: nadyne },
-      { name: "Bruna Carvalho", role: "Junior Legal Assistant", portrait: brunaC },
-      { name: "Rafael Frinhani", role: "Junior Legal Assistant", portrait: rafael },
+      { name: "Julyana Fama", role: "Legal Assistant", portrait: julyana },
+      { name: "Bruna Mayara Alves", role: "Legal Assistant", portrait: brunaA },
+      { name: "Rafael Frinhani", role: "Legal Assistant", portrait: rafael },
+      { name: "Nadyne Santos", role: "Legal Assistant", portrait: nadyne },
     ],
   },
   {
-    eyebrow: "V. Gestão de Casos",
-    title: "Gestão de Casos",
+    eyebrow: "V. Project Managers",
+    title: "Project Managers",
     description:
-      "Responsáveis pelo acompanhamento integral de cada processo, do protocolo inicial à aprovação final.",
+      "Coordenação de projetos institucionais e iniciativas estratégicas do escritório.",
     members: [
-      {
-        name: "Andressa Hughes",
-        role: "Assistant Case Manager",
-        portrait: andressa,
-        bio: "\n",
-      },
-      { name: "Aline Mayer", role: "Assistant Case Manager", portrait: aline },
-      { name: "Manuela Truschelli", role: "Assistant Case Manager", portrait: manuela },
-      { name: "Gabriel Mothe", role: "Assistant Case Manager", portrait: gabriel },
-      { name: "Renata Liberman", role: "Assistant Case Manager", portrait: renata },
+      { name: "João Miranda", role: "Project Manager", portrait: joao },
+      { name: "Daniel Mendes", role: "Project Manager", portrait: daniel },
     ],
   },
   {
-    eyebrow: "VI. Operações e Suporte",
-    title: "Operações Institucionais",
+    eyebrow: "VI. Equipe Administrativa",
+    title: "Equipe Administrativa",
     description:
       "Estrutura administrativa que sustenta a experiência de atendimento e a operação dos escritórios.",
     members: [
-      {
-        name: "Gabriele Souza",
-        role: "Office Manager",
-        portrait: gabriele,
-        bio: "\n",
-      },
-      { name: "Edson Matunaga", role: "Operations & Customer Experience", portrait: edson },
+      { name: "Gabriele Souza", role: "Office Manager", portrait: gabriele },
       { name: "Paola Irvin", role: "Office Assistant", portrait: paola },
-      {
-        name: "João Miranda",
-        role: "Project Manager",
-        portrait: joao,
-        bio: "\n",
-      },
-      {
-        name: "Daniel Mendes",
-        role: "Project Manager",
-        portrait: daniel,
-        bio: "\n",
-      },
+      { name: "Aline Mayer", role: "Immigration Client Specialist", portrait: aline },
+      { name: "Renata Liberman", role: "Immigration Client Specialist", portrait: renata },
+      { name: "Manuela Truschelli", role: "Immigration Client Specialist", portrait: manuela },
     ],
   },
 ];
