@@ -728,6 +728,9 @@ export const VISA_MATRIX: Record<Locale, VisaSummary[]> = {
     { slug: "o1", acronym: "O-1", name: "Habilidade Extraordinária", audience: "Artistas, cientistas, atletas, executivos", type: "Não-Imigrante", outcome: "Visto temporário" },
     { slug: "h1b", acronym: "H-1B", name: "Profissionais Especializados", audience: "Profissionais com diploma superior", type: "Não-Imigrante", outcome: "Visto temporário" },
     { slug: "eb5", acronym: "EB-5", name: "Investidor Imigrante", audience: "Investidores qualificados", type: "Imigrante", outcome: "Green Card" },
+    { slug: "eb3", acronym: "EB-3", name: "Emprego Permanente", audience: "Profissionais qualificados e trabalhadores especializados", type: "Imigrante", outcome: "Green Card" },
+    { slug: "i130", acronym: "I-130", name: "Petição Familiar", audience: "Familiares de cidadãos e residentes", type: "Imigrante", outcome: "Green Card" },
+    { slug: "vawa", acronym: "VAWA", name: "Proteção para Vítimas de Abuso", audience: "Vítimas de abuso por cidadão ou residente", type: "Imigrante", outcome: "Green Card" },
   ],
   en: [],
   es: [],
@@ -762,7 +765,7 @@ export const VISA_CATEGORIES: VisaCategory[] = [
     id: "residencia",
     title: "Residência Permanente",
     description: "Estratégias para obtenção do Green Card com base em mérito profissional, reconhecimento internacional ou investimento qualificado.",
-    slugs: ["eb2-niw", "eb1", "eb5"],
+    slugs: ["eb2-niw", "eb1", "eb5", "eb3"],
   },
   {
     id: "empresarios",
@@ -774,7 +777,13 @@ export const VISA_CATEGORIES: VisaCategory[] = [
     id: "profissionais",
     title: "Profissionais Qualificados",
     description: "Caminhos jurídicos para profissionais técnicos e especialistas com formação avançada ou reconhecimento setorial.",
-    slugs: ["eb2-niw", "h1b", "o1"],
+    slugs: ["eb2-niw", "h1b", "o1", "eb3"],
+  },
+  {
+    id: "familia",
+    title: "Família e Proteção",
+    description: "Estratégias jurídicas para reunificação familiar e proteção migratória.",
+    slugs: ["i130", "vawa"],
   },
 ];
 
