@@ -4,10 +4,8 @@ import { SectionBlock } from "@/components/institutional/SectionBlock";
 import { SectionTitle } from "@/components/layout/SectionTitle";
 import { buildLocaleHead } from "@/lib/seo";
 import andrePortraitAsset from "@/assets/andre-linhares-new.jpg.asset.json";
-import officeAsset from "@/assets/linhares-law-office.jpg.asset.json";
 import gptwAsset from "@/assets/company-badge.webp.asset.json";
 const andrePortrait = andrePortraitAsset.url;
-const office = officeAsset.url;
 const gptw = gptwAsset.url;
 
 const L = "pt" as const;
@@ -32,11 +30,14 @@ const valores = [
 ];
 
 const linhaTempo = [
-  { ano: "2011", titulo: "Início da prática jurídica", body: "Dr. André Linhares inicia sua trajetória na advocacia americana de imigração." },
-  { ano: "2017", titulo: "Fundação do Linhares Law", body: "O escritório nasce com o propósito de representar profissionais e famílias brasileiras nos Estados Unidos." },
-  { ano: "2020", titulo: "Expansão Nacional", body: "Abertura de escritórios em Miami, New York e Salt Lake City a partir da sede em Orlando." },
+  { ano: "2012", titulo: "Início da Prática Jurídica", body: "Dr. André Linhares inicia sua trajetória na advocacia americana de imigração." },
+  { ano: "2016", titulo: "Fundação do Linhares Law", body: "O escritório nasce com o propósito de representar profissionais e famílias internacionais nos Estados Unidos." },
+  { ano: "2023", titulo: "Expansão", body: "Abertura de novos escritórios e ampliação da estrutura institucional." },
   { ano: "2024", titulo: "Reconhecimento Internacional", body: "Premiação no International Business Institute e nomeação para o The Law Awards." },
-  { ano: "2024", titulo: "Great Place To Work", body: "Certificação como Great Place To Work com 100% de satisfação interna." },
+  { ano: "2024", titulo: "Great Place to Work", body: "Certificação como Great Place to Work com alto índice de satisfação interna." },
+  { ano: "2025", titulo: "Palestrante AILA", body: "Atuação como palestrante em conferências da American Immigration Lawyers Association." },
+  { ano: "2026", titulo: "Premiações", body: "Reconhecimento institucional consolidado por entidades jurídicas e empresariais internacionais." },
+  { ano: "2026", titulo: "Contratação de Nicholas Perry e Juliana Mosquera", body: "Reforço estratégico do quadro de advogados com trajetória federal e atuação corporativa internacional." },
 ];
 
 function QuemSomos() {
@@ -58,11 +59,8 @@ function QuemSomos() {
       {/* História */}
       <SectionBlock>
         <SectionTitle eyebrow="Nossa História" title="Um escritório fundado sobre rigor jurídico e propósito." />
-        <div className="mt-12 grid gap-12 lg:grid-cols-12 items-center">
-          <div className="lg:col-span-6">
-            <EditorialImage src={office} ratio="landscape" alt="Recepção institucional Linhares Law" className="editorial-frame" />
-          </div>
-          <div className="lg:col-span-6 space-y-5 lead">
+        <div className="mt-12 grid gap-12 lg:grid-cols-1 items-center">
+          <div className="space-y-5 lead max-w-3xl">
             <p>
               O Linhares Law nasceu da convicção de que a imigração americana exige mais do que processo. Exige
               estratégia jurídica, leitura técnica de cenário e o acompanhamento contínuo de cada etapa.
@@ -177,7 +175,7 @@ function QuemSomos() {
               </div>
               <div className="p-10">
                 <span className="eyebrow">Great Place To Work · 2024</span>
-                <h3 className="mt-4 text-primary">Certificação com 100% de aprovação interna.</h3>
+                <h3 className="mt-4 text-primary">95% de aprovação histórica até 2022.</h3>
               </div>
             </InstitutionalCard>
           </div>

@@ -25,19 +25,17 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
         eyebrow="Linhares Law · Áreas de Atuação"
         title="Estratégias migratórias para profissionais, empresários, investidores e famílias."
         intro="O Linhares Law atua exclusivamente em imigração americana, desenvolvendo estratégias jurídicas personalizadas para residência permanente, mobilidade executiva, expansão empresarial e oportunidades profissionais nos Estados Unidos."
-        meta={<><span>EB-2 NIW</span><span>EB-1</span><span>E-2</span><span>L-1</span><span>O-1</span><span>H-1B</span><span>EB-5</span></>}
+        meta={<><span>EB-2 NIW</span><span>EB-1</span><span>E-2</span><span>L-1</span><span>O-1</span><span>H-1B</span><span>EB-5</span><span>EB-3</span><span>I-130</span><span>VAWA</span></>}
       />
 
       {/* Single premium grid — 7 visa categories */}
       <SectionBlock>
-        <SectionTitle eyebrow="Categorias Migratórias" title="Sete estratégias jurídicas conduzidas pelo escritório." />
+        <SectionTitle eyebrow="Categorias Migratórias" title="Estratégias jurídicas conduzidas pelo escritório." />
         <div className="mt-16 grid gap-px bg-border border border-border md:grid-cols-2 lg:grid-cols-3">
-          {VISA_ORDER.map((s, idx) => {
+          {VISA_ORDER.map((s) => {
             const v = VISAS[locale][s];
             const featured = s === "eb2-niw" || s === "eb5" || s === "e2";
-            const isLastAlone = s === "o1";
-            const mobileGold = s === "o1" && !featured;
-            const card = (
+            return (
               <Link
                 key={s}
                 to={visaHref(s)}
@@ -45,20 +43,14 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
                   "group relative p-10 editorial-card flex flex-col overflow-hidden " +
                   (featured
                     ? "bg-[rgb(179,134,66)] text-white"
-                    : mobileGold
-                      ? "bg-[rgb(179,134,66)] text-white md:bg-background md:text-inherit md:hover:bg-[rgba(179,134,66,0.06)]"
-                      : "bg-background hover:bg-[rgba(179,134,66,0.06)]")
+                    : "bg-background hover:bg-[rgba(179,134,66,0.06)]")
                 }
               >
                 <span
                   aria-hidden
                   className={
                     "absolute top-0 left-0 h-[3px] w-16 " +
-                    (featured
-                      ? "bg-white"
-                      : mobileGold
-                        ? "bg-white md:bg-[rgb(179,134,66)]"
-                        : "bg-[rgb(179,134,66)]")
+                    (featured ? "bg-white" : "bg-[rgb(179,134,66)]")
                   }
                 />
                 <div
@@ -66,9 +58,7 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
                     "mt-8 font-display text-4xl transition-colors " +
                     (featured
                       ? "text-white"
-                      : mobileGold
-                        ? "text-white md:text-primary md:group-hover:text-[rgb(179,134,66)]"
-                        : "text-primary group-hover:text-[rgb(179,134,66)]")
+                      : "text-primary group-hover:text-[rgb(179,134,66)]")
                   }
                 >
                   {v.acronym}
@@ -76,11 +66,7 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
                 <p
                   className={
                     "mt-3 text-[12px] uppercase tracking-[0.22em] " +
-                    (featured
-                      ? "text-white/85"
-                      : mobileGold
-                        ? "text-white/85 md:text-muted-foreground"
-                        : "text-muted-foreground")
+                    (featured ? "text-white/85" : "text-muted-foreground")
                   }
                 >
                   {v.heroSubhead}
@@ -88,11 +74,7 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
                 <p
                   className={
                     "mt-8 leading-relaxed flex-1 " +
-                    (featured
-                      ? "text-white/90"
-                      : mobileGold
-                        ? "text-white/90 md:text-ink-soft"
-                        : "text-ink-soft")
+                    (featured ? "text-white/90" : "text-ink-soft")
                   }
                 >
                   {v.tagline}
@@ -102,25 +84,18 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
                     "mt-10 text-[11px] uppercase tracking-[0.26em] transition-colors " +
                     (featured
                       ? "text-white"
-                      : mobileGold
-                        ? "text-white md:text-primary md:group-hover:text-[rgb(179,134,66)]"
-                        : "text-primary group-hover:text-[rgb(179,134,66)]")
+                      : "text-primary group-hover:text-[rgb(179,134,66)]")
                   }
                 >
                   Conhecer Estratégia <span className="cta-arrow">→</span>
                 </div>
               </Link>
             );
-            if (isLastAlone) {
-              return [
-                <div key="fill-before-o1" aria-hidden className="hidden lg:block surface-premium-light" />,
-                card,
-                <div key="fill-after-o1" aria-hidden className="hidden lg:block surface-premium-light" />,
-              ];
-            }
-            return card;
           })}
+          {/* trailing filler so the grid keeps clean alignment when count % 3 !== 0 */}
           <div aria-hidden className="hidden md:block lg:hidden surface-premium-light" />
+          <div aria-hidden className="hidden lg:block surface-premium-light" />
+          <div aria-hidden className="hidden lg:block surface-premium-light" />
         </div>
       </SectionBlock>
 

@@ -20,6 +20,9 @@ const VISA_SUBMENU = [
   { code: "O-1", slug: "o1" },
   { code: "H-1B", slug: "h1b" },
   { code: "EB-5", slug: "eb5" },
+  { code: "EB-3", slug: "eb3" },
+  { code: "I-130", slug: "i130" },
+  { code: "VAWA", slug: "vawa" },
 ];
 
 export function Header({ transparentOverHero = false }: Props) {

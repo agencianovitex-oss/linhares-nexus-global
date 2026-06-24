@@ -7,6 +7,7 @@ import andre from "@/assets/team-andre.jpg";
 import andreAlt from "@/assets/andre-5.jpg";
 import andreSpeaking from "@/assets/andre-speaking-01.jpg";
 import nicholas from "@/assets/team-nicholas.jpg";
+import juliana from "@/assets/team-juliana.avif";
 
 const L = "pt" as const;
 
@@ -85,6 +86,33 @@ const profiles: Record<string, AttorneyProfile> = {
       "Nicholas Perry traz para o Linhares Law uma trajetória rara: passagem pelas principais agências federais americanas responsáveis pela imigração — USCIS, DHS, ICE, CBP e o Department of Justice.",
       "Essa vivência institucional confere à sua atuação um entendimento técnico aprofundado dos critérios adotados pelos analistas e oficiais federais que avaliam petições migratórias.",
       "Formado como Valedictorian pela North Carolina Central School of Law, é graduado pela University of Notre Dame e licenciado em Nebraska, North Carolina e perante a Suprema Corte dos Estados Unidos.",
+    ],
+  },
+  "juliana-mosquera-soler": {
+    name: "Juliana Mosquera Soler, Esq.",
+    title: "Of Counsel",
+    shortBio:
+      "Advogada especializada em imigração corporativa, com mais de 18 anos de experiência nos setores público e privado, atuando principalmente em casos baseados em emprego, como EB-1, EB-2 (NIW) e O-1.",
+    hero: juliana,
+    portrait: juliana,
+    bars: ["Florida Bar", "Puerto Rico Bar"],
+    education: [
+      { school: "Juris Doctor", detail: "Magna Cum Laude" },
+      { school: "Bacharelado em Economia" },
+    ],
+    experience: [
+      "Mais de 18 anos de experiência nos setores público e privado",
+      "Atuação prévia em direito empresarial, administrativo e público",
+      "Experiência em tribunais e cortes superiores",
+      "Atendimento multilíngue (português, espanhol e inglês)",
+    ],
+    practice: ["EB-1", "EB-2 NIW", "O-1", "Imigração Corporativa"],
+    longBio: [
+      "Dra. Juliana Mosquera Soler é advogada especializada em imigração corporativa, com mais de 18 anos de experiência nos setores público e privado, atuando principalmente em casos baseados em emprego, como EB-1, EB-2 (NIW) e O-1.",
+      "É bacharel em Economia e possui Juris Doctor com distinção Magna Cum Laude.",
+      "Antes de atuar com imigração, trabalhou em direito empresarial, administrativo e público, além de experiência em tribunais e cortes superiores, o que fortaleceu sua capacidade de análise estratégica de casos e elaboração de peças jurídicas.",
+      "Fluente em espanhol, atende clientes de diversas origens com foco em clareza e acompanhamento próximo durante todo o processo.",
+      "É licenciada para exercer a advocacia na Flórida e em Porto Rico.",
     ],
   },
 };
