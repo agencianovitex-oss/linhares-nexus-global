@@ -175,7 +175,7 @@ function QuemSomos() {
               </div>
               <div className="p-10">
                 <span className="eyebrow">Great Place To Work · 2024</span>
-                <h3 className="mt-4 text-primary">Certificação com 100% de aprovação interna.</h3>
+                <h3 className="mt-4 text-primary">95% de aprovação histórica até 2022.</h3>
               </div>
             </InstitutionalCard>
           </div>
