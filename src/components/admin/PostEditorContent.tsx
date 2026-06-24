@@ -145,7 +145,9 @@ export function PostEditorContent({ postId }: { postId?: string }) {
         cta_description: merged.cta_description || null,
         cta_button_text: merged.cta_button_text || null,
         cta_url: merged.cta_url || null,
-        translations: (["pt","en","es"] as Locale[]).map((l) => merged.translations[l]),
+        translations: (["pt","en","es"] as Locale[])
+          .map((l) => merged.translations[l])
+          .filter((t) => t.title.trim().length > 0),
         tag_ids: merged.tag_ids,
         profession_ids: merged.profession_ids,
       };
