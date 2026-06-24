@@ -25,12 +25,12 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
         eyebrow="Linhares Law · Áreas de Atuação"
         title="Estratégias migratórias para profissionais, empresários, investidores e famílias."
         intro="O Linhares Law atua exclusivamente em imigração americana, desenvolvendo estratégias jurídicas personalizadas para residência permanente, mobilidade executiva, expansão empresarial e oportunidades profissionais nos Estados Unidos."
-        meta={<><span>EB-2 NIW</span><span>EB-1</span><span>E-2</span><span>L-1</span><span>O-1</span><span>H-1B</span><span>EB-5</span></>}
+        meta={<><span>EB-2 NIW</span><span>EB-1</span><span>E-2</span><span>L-1</span><span>O-1</span><span>H-1B</span><span>EB-5</span><span>EB-3</span><span>I-130</span><span>VAWA</span></>}
       />
 
       {/* Single premium grid — 7 visa categories */}
       <SectionBlock>
-        <SectionTitle eyebrow="Categorias Migratórias" title="Sete estratégias jurídicas conduzidas pelo escritório." />
+        <SectionTitle eyebrow="Categorias Migratórias" title="Estratégias jurídicas conduzidas pelo escritório." />
         <div className="mt-16 grid gap-px bg-border border border-border md:grid-cols-2 lg:grid-cols-3">
           {VISA_ORDER.map((s, idx) => {
             const v = VISAS[locale][s];
