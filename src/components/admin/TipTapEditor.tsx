@@ -103,7 +103,6 @@ export function TipTapEditor({ value, onChange, placeholder }: Props) {
       {/* Contextual bubble menu (Notion/Medium style) */}
       <BubbleMenu
         editor={editor}
-        tippyOptions={{ duration: 120, placement: "top" }}
         shouldShow={({ editor, from, to }: { editor: any; from: number; to: number }) => from !== to && !editor.isActive("image")}
       >
         <div className="flex items-center gap-0.5 rounded-md border border-border bg-white p-1 shadow-lg">
