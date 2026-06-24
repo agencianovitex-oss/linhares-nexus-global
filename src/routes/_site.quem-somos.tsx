@@ -59,11 +59,8 @@ function QuemSomos() {
       {/* História */}
       <SectionBlock>
         <SectionTitle eyebrow="Nossa História" title="Um escritório fundado sobre rigor jurídico e propósito." />
-        <div className="mt-12 grid gap-12 lg:grid-cols-12 items-center">
-          <div className="lg:col-span-6">
-            <EditorialImage src={office} ratio="landscape" alt="Recepção institucional Linhares Law" className="editorial-frame" />
-          </div>
-          <div className="lg:col-span-6 space-y-5 lead">
+        <div className="mt-12 grid gap-12 lg:grid-cols-1 items-center">
+          <div className="space-y-5 lead max-w-3xl">
             <p>
               O Linhares Law nasceu da convicção de que a imigração americana exige mais do que processo. Exige
               estratégia jurídica, leitura técnica de cenário e o acompanhamento contínuo de cada etapa.
