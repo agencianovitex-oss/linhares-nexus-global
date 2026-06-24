@@ -1,4 +1,5 @@
-import { useEditor, EditorContent, BubbleMenu, type JSONContent } from "@tiptap/react";
+import { useEditor, EditorContent, type JSONContent } from "@tiptap/react";
+import { BubbleMenu } from "@tiptap/react/menus";
 import StarterKit from "@tiptap/starter-kit";
 import Image from "@tiptap/extension-image";
 import Link from "@tiptap/extension-link";
@@ -103,7 +104,7 @@ export function TipTapEditor({ value, onChange, placeholder }: Props) {
       <BubbleMenu
         editor={editor}
         tippyOptions={{ duration: 120, placement: "top" }}
-        shouldShow={({ editor, from, to }) => from !== to && !editor.isActive("image")}
+        shouldShow={({ editor, from, to }: { editor: any; from: number; to: number }) => from !== to && !editor.isActive("image")}
       >
         <div className="flex items-center gap-0.5 rounded-md border border-border bg-white p-1 shadow-lg">
           <Btn title="Negrito" active={editor.isActive("bold")} onClick={() => editor.chain().focus().toggleBold().run()}><Bold size={14} /></Btn>
