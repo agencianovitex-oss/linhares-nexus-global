@@ -4,10 +4,8 @@ import { SectionBlock } from "@/components/institutional/SectionBlock";
 import { SectionTitle } from "@/components/layout/SectionTitle";
 import { buildLocaleHead } from "@/lib/seo";
 import andrePortraitAsset from "@/assets/andre-linhares-new.jpg.asset.json";
-import officeAsset from "@/assets/linhares-law-office.jpg.asset.json";
 import gptwAsset from "@/assets/company-badge.webp.asset.json";
 const andrePortrait = andrePortraitAsset.url;
-const office = officeAsset.url;
 const gptw = gptwAsset.url;
 
 const L = "pt" as const;
@@ -32,11 +30,14 @@ const valores = [
 ];
 
 const linhaTempo = [
-  { ano: "2011", titulo: "Início da prática jurídica", body: "Dr. André Linhares inicia sua trajetória na advocacia americana de imigração." },
-  { ano: "2017", titulo: "Fundação do Linhares Law", body: "O escritório nasce com o propósito de representar profissionais e famílias brasileiras nos Estados Unidos." },
-  { ano: "2020", titulo: "Expansão Nacional", body: "Abertura de escritórios em Miami, New York e Salt Lake City a partir da sede em Orlando." },
+  { ano: "2012", titulo: "Início da Prática Jurídica", body: "Dr. André Linhares inicia sua trajetória na advocacia americana de imigração." },
+  { ano: "2016", titulo: "Fundação do Linhares Law", body: "O escritório nasce com o propósito de representar profissionais e famílias internacionais nos Estados Unidos." },
+  { ano: "2023", titulo: "Expansão", body: "Abertura de novos escritórios e ampliação da estrutura institucional." },
   { ano: "2024", titulo: "Reconhecimento Internacional", body: "Premiação no International Business Institute e nomeação para o The Law Awards." },
-  { ano: "2024", titulo: "Great Place To Work", body: "Certificação como Great Place To Work com 100% de satisfação interna." },
+  { ano: "2024", titulo: "Great Place to Work", body: "Certificação como Great Place to Work com alto índice de satisfação interna." },
+  { ano: "2025", titulo: "Palestrante AILA", body: "Atuação como palestrante em conferências da American Immigration Lawyers Association." },
+  { ano: "2026", titulo: "Premiações", body: "Reconhecimento institucional consolidado por entidades jurídicas e empresariais internacionais." },
+  { ano: "2026", titulo: "Contratação de Nicholas Perry e Juliana Mosquera", body: "Reforço estratégico do quadro de advogados com trajetória federal e atuação corporativa internacional." },
 ];
 
 function QuemSomos() {
