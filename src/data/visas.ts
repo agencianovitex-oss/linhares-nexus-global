@@ -1,6 +1,6 @@
 import type { Locale } from "@/i18n/locales";
 
-export type VisaSlug = "eb2-niw" | "eb1" | "e2" | "l1" | "o1" | "h1b" | "eb5";
+export type VisaSlug = "eb2-niw" | "eb1" | "e2" | "l1" | "o1" | "h1b" | "eb5" | "eb3" | "i130" | "vawa";
 
 interface FAQ { q: string; a: string }
 interface Section { title: string; body?: string; items?: string[] }
@@ -527,6 +527,172 @@ const PT: Record<VisaSlug, VisaContent> = {
     seoDescription:
       "Estratégia EB-5 para investidores obterem Green Card mediante investimento qualificado e geração de empregos nos Estados Unidos.",
   },
+
+  eb3: {
+    slug: "eb3",
+    acronym: "EB-3",
+    title: "EB-3",
+    heroSubhead: "Green Card por oferta de emprego permanente",
+    tagline:
+      "Categoria de imigração baseada em emprego para profissionais qualificados, trabalhadores especializados e outros trabalhadores com oferta permanente nos Estados Unidos.",
+    intro:
+      "O EB-3 é uma categoria de imigração baseada em emprego destinada a profissionais qualificados, trabalhadores especializados e outros trabalhadores. Para se qualificar, normalmente é necessário ter uma oferta de trabalho permanente de uma empresa nos Estados Unidos e passar pelo processo de certificação laboral (PERM). Após a aprovação, o beneficiário e seus familiares elegíveis podem obter o Green Card e residir permanentemente nos EUA.",
+    meta: ["Residência permanente", "Oferta de emprego", "Certificação PERM", "Inclusão familiar"],
+    what: {
+      title: "O que é o EB-3",
+      body:
+        "Categoria de terceira preferência baseada em emprego, destinada a profissionais qualificados, trabalhadores especializados e outros trabalhadores com oferta permanente de empregador americano após processo de certificação laboral.",
+    },
+    qualify: {
+      title: "Quem pode se qualificar",
+      items: [
+        "Profissionais com diploma superior (skilled professionals).",
+        "Trabalhadores especializados com pelo menos dois anos de experiência ou treinamento.",
+        "Outros trabalhadores em funções que não exigem qualificação especializada.",
+        "Oferta de trabalho permanente em tempo integral por empregador americano.",
+        "Aprovação prévia da certificação laboral (PERM) pelo Department of Labor.",
+      ],
+    },
+    benefits: {
+      title: "Principais benefícios",
+      items: [
+        "Green Card — residência permanente nos Estados Unidos.",
+        "Inclusão de cônjuge e filhos solteiros menores de 21 anos.",
+        "Caminho estruturado para profissionais com oferta de emprego nos EUA.",
+        "Possibilidade de mudança de empregador após cumpridos os requisitos legais.",
+        "Caminho natural para a cidadania americana.",
+      ],
+    },
+    process: {
+      title: "Como construímos um caso EB-3",
+      items: [
+        "Análise da oferta de emprego, função e adequação à categoria.",
+        "Coordenação do processo de certificação laboral (PERM).",
+        "Protocolo da petição I-140 perante o USCIS.",
+        "Ajuste de status (I-485) ou processamento consular conforme o caso.",
+      ],
+    },
+    faqs: [
+      { q: "Preciso de oferta de emprego para o EB-3?", a: "Sim. O EB-3 exige oferta formal de emprego permanente por empregador americano patrocinador." },
+      { q: "O que é a certificação PERM?", a: "É o processo conduzido pelo Department of Labor que confirma a inexistência de trabalhador americano qualificado para a função ofertada." },
+      { q: "Posso incluir minha família?", a: "Sim. Cônjuge e filhos solteiros menores de 21 anos recebem o Green Card junto ao beneficiário principal." },
+      { q: "Quanto tempo leva o processo EB-3?", a: "Os prazos variam conforme o calendário do USCIS, o país de origem e a subcategoria. A análise institucional é feita caso a caso." },
+      { q: "Posso mudar de empregador após o Green Card?", a: "Sim, observados os requisitos legais sobre intenção de boa-fé na oferta original e o tempo de permanência na função." },
+    ],
+    seoTitle: "EB-3 — Green Card por Emprego Permanente | Linhares Law",
+    seoDescription:
+      "Estratégia EB-3 para profissionais qualificados, trabalhadores especializados e outros trabalhadores obterem residência permanente nos Estados Unidos.",
+  },
+
+  i130: {
+    slug: "i130",
+    acronym: "I-130",
+    title: "I-130",
+    heroSubhead: "Petição familiar para imigração",
+    tagline:
+      "Petição utilizada por cidadãos americanos e residentes permanentes legais para solicitar a imigração de determinados familiares para os Estados Unidos.",
+    intro:
+      "O Formulário I-130 é utilizado por cidadãos americanos e residentes permanentes legais para solicitar a imigração de determinados familiares para os Estados Unidos. A petição comprova a existência de um relacionamento familiar válido e é o primeiro passo para que o beneficiário possa solicitar o Green Card por meio de vínculo familiar.",
+    meta: ["Imigração familiar", "Cidadãos e residentes", "Primeiro passo do Green Card"],
+    what: {
+      title: "O que é a petição I-130",
+      body:
+        "É a petição que estabelece formalmente o vínculo familiar válido perante o USCIS. Sua aprovação habilita o beneficiário a iniciar o pedido de residência permanente, seja por ajuste de status nos EUA ou por processamento consular.",
+    },
+    qualify: {
+      title: "Quem pode peticionar",
+      items: [
+        "Cidadãos americanos solicitando cônjuge, filhos, pais ou irmãos.",
+        "Residentes permanentes solicitando cônjuge e filhos solteiros.",
+        "Comprovação documental do vínculo familiar válido.",
+        "Capacidade financeira do peticionário para prestar suporte (Affidavit of Support).",
+      ],
+    },
+    benefits: {
+      title: "Principais benefícios",
+      items: [
+        "Caminho legal para reunificação familiar nos Estados Unidos.",
+        "Habilita o beneficiário a pleitear residência permanente.",
+        "Categorias com prioridade para familiares imediatos de cidadãos americanos.",
+        "Estrutura jurídica formal e amplamente reconhecida.",
+      ],
+    },
+    process: {
+      title: "Como conduzimos a petição I-130",
+      items: [
+        "Análise do vínculo familiar e da categoria aplicável.",
+        "Curadoria documental para comprovar a relação válida.",
+        "Protocolo da petição I-130 junto ao USCIS.",
+        "Acompanhamento até a etapa de ajuste de status ou processamento consular.",
+      ],
+    },
+    faqs: [
+      { q: "Quais familiares podem ser peticionados via I-130?", a: "Cônjuge, filhos, pais e irmãos de cidadãos americanos; cônjuge e filhos solteiros de residentes permanentes legais." },
+      { q: "A I-130 concede o Green Card?", a: "Não diretamente. Ela estabelece o vínculo familiar válido; a residência é solicitada posteriormente, por ajuste de status ou via consular." },
+      { q: "Quanto tempo leva o processo?", a: "Os prazos variam conforme a categoria familiar e a nacionalidade do beneficiário, conforme o calendário consular publicado mensalmente." },
+      { q: "Posso peticionar mais de um familiar?", a: "Sim. Cada beneficiário exige uma petição I-130 individual." },
+      { q: "É exigido suporte financeiro?", a: "Sim. O peticionário assina o Affidavit of Support, comprometendo-se a sustentar o beneficiário conforme parâmetros oficiais." },
+    ],
+    seoTitle: "I-130 — Petição Familiar para Imigração | Linhares Law",
+    seoDescription:
+      "Petição I-130 para reunificação familiar nos Estados Unidos. Estratégia jurídica conduzida pelo Linhares Law para cidadãos americanos e residentes permanentes.",
+  },
+
+  vawa: {
+    slug: "vawa",
+    acronym: "VAWA",
+    title: "VAWA",
+    heroSubhead: "Proteção e independência migratória para vítimas de abuso",
+    tagline:
+      "O VAWA permite que vítimas de abuso cometido por cidadão americano ou residente permanente solicitem benefícios imigratórios sem depender do agressor.",
+    intro:
+      "O VAWA (Violence Against Women Act) permite que vítimas de abuso cometido por um cidadão americano ou residente permanente solicitem benefícios imigratórios sem depender do agressor. A proteção está disponível para cônjuges, filhos e, em determinadas situações, pais de cidadãos americanos. O processo é confidencial e pode levar à obtenção do Green Card, proporcionando segurança e independência à vítima.",
+    meta: ["Confidencial", "Autopetição", "Caminho para o Green Card"],
+    what: {
+      title: "O que é o VAWA",
+      body:
+        "Mecanismo legal que permite a autopetição da vítima de abuso, dispensando o envolvimento ou conhecimento do agressor. O processo é tratado com sigilo institucional pelo USCIS.",
+    },
+    qualify: {
+      title: "Quem pode pleitear",
+      items: [
+        "Cônjuges abusados por cidadão americano ou residente permanente.",
+        "Filhos solteiros menores de 21 anos abusados pelo pai ou padrasto qualificado.",
+        "Pais de cidadãos americanos maiores de 21 anos vítimas de abuso.",
+        "Comprovação documental do vínculo e da boa-fé da relação.",
+        "Evidências do abuso ou crueldade extrema sofridos.",
+      ],
+    },
+    benefits: {
+      title: "Principais benefícios",
+      items: [
+        "Petição confidencial, sem necessidade de envolvimento do agressor.",
+        "Caminho para residência permanente (Green Card).",
+        "Possibilidade de autorização de trabalho durante o processo.",
+        "Inclusão de filhos elegíveis na petição.",
+        "Independência migratória em relação ao agressor.",
+      ],
+    },
+    process: {
+      title: "Como conduzimos um caso VAWA",
+      items: [
+        "Avaliação confidencial das circunstâncias e do vínculo qualificado.",
+        "Curadoria de evidências documentais, testemunhais e técnicas.",
+        "Protocolo da petição I-360 perante o USCIS, com sigilo institucional.",
+        "Acompanhamento até o ajuste de status (I-485) e obtenção do Green Card.",
+      ],
+    },
+    faqs: [
+      { q: "O agressor é notificado da petição VAWA?", a: "Não. O processo é confidencial e o USCIS adota protocolos específicos para preservar o sigilo da vítima." },
+      { q: "Homens podem pleitear o VAWA?", a: "Sim. Apesar do nome, a proteção alcança vítimas de qualquer gênero." },
+      { q: "Quais provas são consideradas?", a: "Registros policiais, laudos médicos, relatos de profissionais de saúde, fotografias, mensagens, declarações de terceiros e demais evidências relevantes." },
+      { q: "É necessário ainda estar casado com o agressor?", a: "Não obrigatoriamente. A petição pode ser apresentada em determinadas circunstâncias mesmo após o divórcio, dentro dos prazos legais." },
+      { q: "O VAWA leva ao Green Card?", a: "Sim. Após a aprovação da I-360, a vítima pode pleitear ajuste de status para residência permanente." },
+    ],
+    seoTitle: "VAWA — Proteção Migratória para Vítimas de Abuso | Linhares Law",
+    seoDescription:
+      "Estratégia VAWA confidencial para vítimas de abuso por cidadão americano ou residente permanente obterem independência migratória e Green Card.",
+  },
 };
 
 function mirror(data: VisaContent): VisaContent {
@@ -542,7 +708,7 @@ const ES: Record<VisaSlug, VisaContent> = Object.fromEntries(
 
 export const VISAS: Record<Locale, Record<VisaSlug, VisaContent>> = { pt: PT, en: EN, es: ES };
 
-export const VISA_ORDER: VisaSlug[] = ["eb2-niw", "eb1", "e2", "l1", "eb5", "h1b", "o1"];
+export const VISA_ORDER: VisaSlug[] = ["eb2-niw", "eb1", "e2", "l1", "eb5", "h1b", "o1", "eb3", "i130", "vawa"];
 
 export interface VisaSummary {
   slug: VisaSlug;
