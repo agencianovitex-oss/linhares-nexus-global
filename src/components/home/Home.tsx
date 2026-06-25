@@ -121,18 +121,18 @@ const AUTHORITY_SLIDES: AuthoritySlide[] = [
 const HERO_SEQUENCE: AuthoritySlide[] = [AUTHORITY_OVERVIEW, ...AUTHORITY_SLIDES];
 
 function ItemIcon({ kind }: { kind: AuthorityItem["icon"] }) {
-  const cls = "h-[18px] w-[18px] text-gold shrink-0";
+  const cls = "h-[18px] w-[18px] text-gold shrink-0 mt-[3px]";
   switch (kind) {
     case "landmark":
-      return <Award className={cls} strokeWidth={1.4} />;
+      return <Landmark className={cls} strokeWidth={1.4} />;
     case "flag":
-      return <Scale className={cls} strokeWidth={1.4} />;
+      return <Flag className={cls} strokeWidth={1.4} />;
     case "scale":
       return <Scale className={cls} strokeWidth={1.4} />;
     case "trophy":
-      return <Award className={cls} strokeWidth={1.4} />;
+      return <Trophy className={cls} strokeWidth={1.4} />;
     case "star":
-      return <Award className={cls} strokeWidth={1.4} />;
+      return <Star className={cls} strokeWidth={1.4} />;
   }
 }
 
