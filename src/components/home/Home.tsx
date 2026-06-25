@@ -29,9 +29,177 @@ import pubExecAsset from "@/assets/pub-exec.jpg.asset.json";
 /* 1 — Hero                                                            */
 /* ------------------------------------------------------------------ */
 
+type AuthoritySlide = {
+  id: string;
+  eyebrow: string;
+  title: string;
+  description: string;
+  portrait?: string;
+  icon?: "award" | "scale";
+};
+
+const AUTHORITY_OVERVIEW: AuthoritySlide = {
+  id: "overview",
+  eyebrow: "Reconhecimento Internacional",
+  title: "Autoridade institucional em imigração americana",
+  description:
+    "Único advogado brasileiro palestrante da AILA · Experiência nas principais agências federais americanas · Florida Bar · 10 Best Immigration Law Firms · +14 anos de prática jurídica.",
+  icon: "award",
+};
+
+const AUTHORITY_SLIDES: AuthoritySlide[] = [
+  {
+    id: "andre",
+    eyebrow: "Liderança Jurídica",
+    title: "Único advogado brasileiro palestrante da AILA",
+    description:
+      "Participação como palestrante na principal associação americana de advogados de imigração, reconhecendo sua atuação e contribuição técnica para a advocacia migratória.",
+    portrait: andreLinharesPortrait,
+  },
+  {
+    id: "nicholas",
+    eyebrow: "Experiência Federal",
+    title: "Trajetória nas principais agências federais americanas",
+    description:
+      "Atuação no USCIS, Department of Homeland Security (DHS), Immigration and Customs Enforcement (ICE), Customs and Border Protection (CBP) e Department of Justice.",
+    portrait: nicholas3,
+  },
+  {
+    id: "juliana",
+    eyebrow: "Imigração Corporativa",
+    title: "Florida Bar e imigração corporativa",
+    description:
+      "Advogada licenciada pela Florida Bar com mais de 18 anos de experiência em imigração corporativa e mobilidade internacional de executivos e empresas.",
+    portrait: juliana,
+  },
+  {
+    id: "ten-best",
+    eyebrow: "Reconhecimento Internacional",
+    title: "10 Best Immigration Law Firms",
+    description:
+      "Reconhecimento internacional concedido ao Linhares Law entre os principais escritórios especializados em imigração americana.",
+    icon: "award",
+  },
+  {
+    id: "years",
+    eyebrow: "Tradição Jurídica",
+    title: "Mais de 14 anos de prática jurídica",
+    description:
+      "Escritório com atuação exclusiva em imigração americana, desenvolvendo estratégias jurídicas para profissionais, empresários, investidores e famílias.",
+    icon: "scale",
+  },
+];
+
+const HERO_SEQUENCE: AuthoritySlide[] = [AUTHORITY_OVERVIEW, ...AUTHORITY_SLIDES];
+
+function AuthorityPanel() {
+  const [index, setIndex] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const fadeOut = setTimeout(() => setVisible(false), 5600);
+    const next = setTimeout(() => {
+      setIndex((i) => (i + 1) % HERO_SEQUENCE.length);
+      setVisible(true);
+    }, 6000);
+    return () => {
+      clearTimeout(fadeOut);
+      clearTimeout(next);
+    };
+  }, [index]);
+
+  const slide = HERO_SEQUENCE[index];
+
+  return (
+    <div className="relative w-full max-w-md mx-auto lg:mx-0 lg:ml-auto">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -inset-6 rounded-[2rem]"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 70% at 50% 40%, oklch(1 0 0 / 0.05), transparent 70%)",
+        }}
+      />
+      <div
+        className="relative px-6 py-10 lg:px-8 lg:py-12 text-center"
+        style={{ minHeight: "26rem" }}
+      >
+        <div
+          key={slide.id}
+          className={`transition-all duration-[1100ms] ease-out ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+          }`}
+        >
+          <div className="flex justify-center">
+            {slide.portrait ? (
+              <div
+                className="h-24 w-24 rounded-full overflow-hidden ring-1 ring-gold/40"
+                style={{
+                  boxShadow:
+                    "0 0 0 4px oklch(1 0 0 / 0.04), 0 20px 40px -20px rgb(0 0 0 / 0.5)",
+                }}
+              >
+                <img
+                  src={slide.portrait}
+                  alt=""
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            ) : (
+              <div
+                className="h-24 w-24 rounded-full flex items-center justify-center ring-1 ring-gold/40"
+                style={{
+                  background:
+                    "radial-gradient(circle at 50% 35%, oklch(1 0 0 / 0.08), oklch(1 0 0 / 0.02))",
+                }}
+              >
+                {slide.icon === "award" ? (
+                  <Award className="h-10 w-10 text-gold" strokeWidth={1.25} />
+                ) : (
+                  <Scale className="h-10 w-10 text-gold" strokeWidth={1.25} />
+                )}
+              </div>
+            )}
+          </div>
+
+          <div className="mt-6 text-[10.5px] uppercase tracking-[0.3em] text-gold/90">
+            {slide.eyebrow}
+          </div>
+          <h3 className="mt-3 font-display text-[1.35rem] lg:text-[1.5rem] leading-[1.25] text-primary-foreground">
+            {slide.title}
+          </h3>
+          <p className="mt-4 text-[0.95rem] leading-[1.7] text-primary-foreground/75 max-w-sm mx-auto">
+            {slide.description}
+          </p>
+        </div>
+
+        <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-2">
+          {HERO_SEQUENCE.map((s, i) => (
+            <button
+              key={s.id}
+              type="button"
+              aria-label={`Ver ${s.title}`}
+              onClick={() => {
+                setVisible(false);
+                setTimeout(() => {
+                  setIndex(i);
+                  setVisible(true);
+                }, 250);
+              }}
+              className={`h-[3px] rounded-full transition-all duration-500 ${
+                i === index ? "w-8 bg-gold" : "w-3 bg-primary-foreground/25 hover:bg-primary-foreground/50"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function HeroSection() {
   return (
-    <section className="relative surface-premium-dark pt-32 pb-28 lg:pt-40 lg:pb-32 overflow-hidden">
+    <section className="relative surface-premium-dark pt-32 pb-24 lg:pt-40 lg:pb-28 overflow-hidden">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 hidden md:block"
@@ -47,7 +215,7 @@ function HeroSection() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "linear-gradient(120deg, oklch(0.17 0.06 258 / 0.86) 0%, oklch(0.22 0.07 258 / 0.74) 50%, oklch(0.17 0.06 258 / 0.88) 100%)",
+            "linear-gradient(120deg, oklch(0.17 0.06 258 / 0.88) 0%, oklch(0.22 0.07 258 / 0.76) 50%, oklch(0.17 0.06 258 / 0.9) 100%)",
         }}
       />
       <div
@@ -61,58 +229,39 @@ function HeroSection() {
       <span className="fade-edge-bottom" aria-hidden />
 
       <Container>
-        <div className="relative max-w-5xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-4">
-            <span className="rule-gold" />
-            <span className="eyebrow eyebrow-on-dark">
-              Linhares Law · Escritório de Advocacia de Imigração Americana
-            </span>
-            <span className="rule-gold" />
-          </div>
-          <h1 className="mt-10 text-primary-foreground mx-auto max-w-[60ch]">
-            Advogados de imigração americana
-            <br />
-            para profissionais, executivos,
-            <br />
-            investidores e famílias.
-          </h1>
-          <p className="mt-8 mx-auto max-w-2xl text-lg leading-[1.85] text-primary-foreground/75">
-            Representação jurídica estratégica perante as autoridades federais de imigração dos Estados Unidos. Conduzimos cada caso com profundidade técnica, discrição e visão de longo prazo.
-          </p>
-          <div className="mt-12 flex flex-wrap justify-center gap-4">
-            <InstitutionalButton
-              to="/contato"
-              variant="primary"
-              className="bg-gold text-white border-gold hover:bg-[rgb(200,145,70)] hover:text-white"
-            >
-              Agendar Consulta
-            </InstitutionalButton>
-            <InstitutionalButton to="/areas-de-atuacao" variant="onDark">
-              Conhecer nossas estratégias
-            </InstitutionalButton>
-          </div>
-        </div>
-
-        {/* Big numbers — unified scale, baseline-aligned, fixed-height labels */}
-        <div className="relative mt-24 grid grid-cols-2 gap-y-14 gap-x-8 border-t border-primary-foreground/15 pt-14 lg:grid-cols-4 lg:divide-x lg:divide-primary-foreground/10">
-          {[
-            { k: "14+", l: "Anos de prática jurídica" },
-            { k: "04", l: "Escritórios nos Estados Unidos" },
-            { k: "USA", l: "Escritório licenciado nos EUA" },
-            { k: "INT.", l: "Atuação internacional" },
-          ].map((it, i) => (
-            <div
-              key={it.l}
-              className={`flex flex-col items-center text-center ${i > 0 ? "lg:pl-8" : ""} ${i < 3 ? "lg:pr-8" : ""}`}
-            >
-              <div className="font-display font-light text-primary-foreground tracking-[-0.03em] leading-none h-[5.5rem] lg:h-[6.5rem] flex items-end justify-center text-[clamp(3.5rem,5.5vw,5.5rem)]">
-                {it.k}
-              </div>
-              <div className="mt-5 text-[10.5px] uppercase tracking-[0.3em] text-primary-foreground/60 max-w-[22ch] leading-relaxed">
-                {it.l}
-              </div>
+        <div className="relative grid gap-16 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12 lg:items-center">
+          <div className="text-center lg:text-left">
+            <div className="flex items-center justify-center lg:justify-start gap-4">
+              <span className="rule-gold" />
+              <span className="eyebrow eyebrow-on-dark">
+                Linhares Law · Escritório de Advocacia de Imigração Americana
+              </span>
             </div>
-          ))}
+            <h1 className="mt-10 text-primary-foreground max-w-[60ch] mx-auto lg:mx-0">
+              Advogados de imigração americana
+              <br />
+              para profissionais, executivos,
+              <br />
+              investidores e famílias.
+            </h1>
+            <p className="mt-8 max-w-2xl mx-auto lg:mx-0 text-lg leading-[1.85] text-primary-foreground/75">
+              Representação jurídica estratégica perante as autoridades federais de imigração dos Estados Unidos. Conduzimos cada caso com profundidade técnica, discrição e visão de longo prazo.
+            </p>
+            <div className="mt-12 flex flex-wrap justify-center lg:justify-start gap-4">
+              <InstitutionalButton
+                to="/contato"
+                variant="primary"
+                className="bg-gold text-white border-gold hover:bg-[rgb(200,145,70)] hover:text-white"
+              >
+                Agendar Consulta
+              </InstitutionalButton>
+              <InstitutionalButton to="/areas-de-atuacao" variant="onDark">
+                Conhecer nossas estratégias
+              </InstitutionalButton>
+            </div>
+          </div>
+
+          <AuthorityPanel />
         </div>
       </Container>
     </section>
