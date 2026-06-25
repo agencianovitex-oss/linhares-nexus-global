@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Award, Scale } from "lucide-react";
+import { Award, Scale, Landmark, Flag, Trophy, Star } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { SectionTitle } from "@/components/layout/SectionTitle";
 import { InstitutionalButton } from "@/components/institutional/Button";
@@ -29,68 +29,112 @@ import pubExecAsset from "@/assets/pub-exec.jpg.asset.json";
 /* 1 — Hero                                                            */
 /* ------------------------------------------------------------------ */
 
+type AuthorityItem = {
+  icon: "landmark" | "flag" | "scale" | "trophy" | "star";
+  label: string;
+};
+
 type AuthoritySlide = {
   id: string;
+  kind: "overview" | "highlight";
   eyebrow: string;
+  name?: string;
   title: string;
   description: string;
   portrait?: string;
+  portraitPosition?: string;
   icon?: "award" | "scale";
+  items?: AuthorityItem[];
 };
 
 const AUTHORITY_OVERVIEW: AuthoritySlide = {
   id: "overview",
-  eyebrow: "Reconhecimento Internacional",
-  title: "Autoridade institucional em imigração americana",
-  description:
-    "Único advogado brasileiro palestrante da AILA · Experiência nas principais agências federais americanas · Florida Bar · 10 Best Immigration Law Firms · +14 anos de prática jurídica.",
-  icon: "award",
+  kind: "overview",
+  eyebrow: "Autoridade Internacional",
+  title: "Reconhecimento institucional em imigração americana",
+  description: "",
+  items: [
+    { icon: "landmark", label: "Único advogado brasileiro palestrante da AILA" },
+    { icon: "flag", label: "Nicholas Perry — USCIS, DHS, ICE, CBP e Department of Justice" },
+    { icon: "scale", label: "Juliana Mosquera — Florida Bar · +18 anos em imigração corporativa" },
+    { icon: "trophy", label: "Entre os 10 Best Immigration Law Firms" },
+    { icon: "star", label: "Mais de 14 anos de prática jurídica em imigração americana" },
+  ],
 };
 
 const AUTHORITY_SLIDES: AuthoritySlide[] = [
   {
     id: "andre",
+    kind: "highlight",
     eyebrow: "Liderança Jurídica",
+    name: "André Linhares",
     title: "Único advogado brasileiro palestrante da AILA",
     description:
-      "Participação como palestrante na principal associação americana de advogados de imigração, reconhecendo sua atuação e contribuição técnica para a advocacia migratória.",
+      "Participação como palestrante na principal associação americana de advogados de imigração, reconhecendo sua contribuição técnica para a advocacia migratória internacional.",
     portrait: andreLinharesPortrait,
+    portraitPosition: "center 20%",
   },
   {
     id: "nicholas",
+    kind: "highlight",
     eyebrow: "Experiência Federal",
-    title: "Trajetória nas principais agências federais americanas",
+    name: "Nicholas Perry",
+    title: "Atuação nas principais agências federais americanas",
     description:
-      "Atuação no USCIS, Department of Homeland Security (DHS), Immigration and Customs Enforcement (ICE), Customs and Border Protection (CBP) e Department of Justice.",
+      "Trajetória profissional no USCIS, DHS, ICE, CBP e Department of Justice, proporcionando uma compreensão aprofundada do sistema migratório americano.",
     portrait: nicholas3,
+    portraitPosition: "center 18%",
   },
   {
     id: "juliana",
+    kind: "highlight",
     eyebrow: "Imigração Corporativa",
+    name: "Juliana Mosquera",
     title: "Florida Bar e imigração corporativa",
     description:
-      "Advogada licenciada pela Florida Bar com mais de 18 anos de experiência em imigração corporativa e mobilidade internacional de executivos e empresas.",
+      "Mais de 18 anos assessorando empresas, executivos e profissionais em processos de imigração corporativa internacional.",
     portrait: juliana,
+    portraitPosition: "center 20%",
   },
   {
     id: "ten-best",
+    kind: "highlight",
     eyebrow: "Reconhecimento Internacional",
-    title: "10 Best Immigration Law Firms",
+    name: "10 Best Immigration Law Firms",
+    title: "Entre os principais escritórios de imigração americana",
     description:
-      "Reconhecimento internacional concedido ao Linhares Law entre os principais escritórios especializados em imigração americana.",
+      "Reconhecimento internacional concedido aos escritórios de maior excelência técnica e reputação em imigração nos Estados Unidos.",
     icon: "award",
   },
   {
     id: "years",
+    kind: "highlight",
     eyebrow: "Tradição Jurídica",
-    title: "Mais de 14 anos de prática jurídica",
+    name: "+14 anos de prática",
+    title: "Atuação exclusiva em imigração americana",
     description:
-      "Escritório com atuação exclusiva em imigração americana, desenvolvendo estratégias jurídicas para profissionais, empresários, investidores e famílias.",
+      "Mais de uma década assessorando profissionais, empresários, investidores e famílias em estratégias migratórias para os Estados Unidos.",
     icon: "scale",
   },
 ];
 
 const HERO_SEQUENCE: AuthoritySlide[] = [AUTHORITY_OVERVIEW, ...AUTHORITY_SLIDES];
+
+function ItemIcon({ kind }: { kind: AuthorityItem["icon"] }) {
+  const cls = "h-[18px] w-[18px] text-gold shrink-0 mt-[3px]";
+  switch (kind) {
+    case "landmark":
+      return <Landmark className={cls} strokeWidth={1.4} />;
+    case "flag":
+      return <Flag className={cls} strokeWidth={1.4} />;
+    case "scale":
+      return <Scale className={cls} strokeWidth={1.4} />;
+    case "trophy":
+      return <Trophy className={cls} strokeWidth={1.4} />;
+    case "star":
+      return <Star className={cls} strokeWidth={1.4} />;
+  }
+}
 
 function AuthorityPanel() {
   const [index, setIndex] = useState(0);
@@ -109,71 +153,111 @@ function AuthorityPanel() {
   }, [index]);
 
   const slide = HERO_SEQUENCE[index];
+  const isOverview = slide.kind === "overview";
 
   return (
-    <div className="relative w-full max-w-md mx-auto lg:mx-0 lg:ml-auto">
+    <div className="relative w-full max-w-xl mx-auto lg:mx-0 lg:ml-auto">
       <div
         aria-hidden
-        className="pointer-events-none absolute -inset-6 rounded-[2rem]"
+        className="pointer-events-none absolute -inset-8 rounded-[2.25rem]"
         style={{
           background:
-            "radial-gradient(ellipse 80% 70% at 50% 40%, oklch(1 0 0 / 0.05), transparent 70%)",
+            "radial-gradient(ellipse 85% 75% at 50% 40%, oklch(1 0 0 / 0.06), transparent 70%)",
         }}
       />
       <div
-        className="relative px-6 py-10 lg:px-8 lg:py-12 text-center"
-        style={{ minHeight: "26rem" }}
+        className="relative px-8 py-12 lg:px-10 lg:py-14"
+        style={{ minHeight: "34rem" }}
       >
         <div
           key={slide.id}
           className={`transition-all duration-[1100ms] ease-out ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+            visible
+              ? "opacity-100 translate-y-0 blur-0"
+              : "opacity-0 translate-y-3 blur-[2px]"
           }`}
         >
+          {/* Header — portrait/icon */}
           <div className="flex justify-center">
             {slide.portrait ? (
               <div
-                className="h-24 w-24 rounded-full overflow-hidden ring-1 ring-gold/40"
+                className="h-[88px] w-[88px] rounded-full overflow-hidden ring-1 ring-gold/45"
                 style={{
                   boxShadow:
-                    "0 0 0 4px oklch(1 0 0 / 0.04), 0 20px 40px -20px rgb(0 0 0 / 0.5)",
+                    "0 0 0 5px oklch(1 0 0 / 0.04), 0 24px 50px -22px rgb(0 0 0 / 0.55)",
                 }}
               >
                 <img
                   src={slide.portrait}
                   alt=""
                   className="h-full w-full object-cover"
+                  style={{ objectPosition: slide.portraitPosition ?? "center 20%" }}
                 />
               </div>
             ) : (
               <div
-                className="h-24 w-24 rounded-full flex items-center justify-center ring-1 ring-gold/40"
+                className="h-[88px] w-[88px] rounded-full flex items-center justify-center ring-1 ring-gold/45"
                 style={{
                   background:
-                    "radial-gradient(circle at 50% 35%, oklch(1 0 0 / 0.08), oklch(1 0 0 / 0.02))",
+                    "radial-gradient(circle at 50% 35%, oklch(1 0 0 / 0.09), oklch(1 0 0 / 0.02))",
+                  boxShadow:
+                    "0 0 0 5px oklch(1 0 0 / 0.04), 0 24px 50px -22px rgb(0 0 0 / 0.55)",
                 }}
               >
                 {slide.icon === "award" ? (
-                  <Award className="h-10 w-10 text-gold" strokeWidth={1.25} />
+                  <Award className="h-11 w-11 text-gold" strokeWidth={1.25} />
                 ) : (
-                  <Scale className="h-10 w-10 text-gold" strokeWidth={1.25} />
+                  <Scale className="h-11 w-11 text-gold" strokeWidth={1.25} />
                 )}
               </div>
             )}
           </div>
 
-          <div className="mt-6 text-[10.5px] uppercase tracking-[0.3em] text-gold/90">
+          {/* Eyebrow */}
+          <div className="mt-7 text-center text-[11px] uppercase tracking-[0.32em] text-gold/90">
             {slide.eyebrow}
           </div>
-          <h3 className="mt-3 font-display text-[1.35rem] lg:text-[1.5rem] leading-[1.25] text-primary-foreground">
+
+          {/* Name (only for highlights) */}
+          {slide.name && !isOverview && (
+            <div className="mt-3 text-center font-display text-[1.05rem] tracking-wide text-primary-foreground/85">
+              {slide.name}
+            </div>
+          )}
+
+          {/* Title */}
+          <h3
+            className={`mt-3 text-center font-display font-semibold text-primary-foreground leading-[1.2] ${
+              isOverview
+                ? "text-[1.6rem] lg:text-[1.85rem]"
+                : "text-[1.5rem] lg:text-[1.75rem]"
+            }`}
+          >
             {slide.title}
           </h3>
-          <p className="mt-4 text-[0.95rem] leading-[1.7] text-primary-foreground/75 max-w-sm mx-auto">
-            {slide.description}
-          </p>
+
+          {/* Body */}
+          {isOverview ? (
+            <ul className="mt-7 mx-auto max-w-md space-y-3.5">
+              {slide.items!.map((it, i) => (
+                <li
+                  key={i}
+                  className="flex items-start gap-3 text-[0.95rem] leading-[1.55] text-primary-foreground/85"
+                >
+                  <ItemIcon kind={it.icon} />
+                  <span>{it.label}</span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="mt-5 text-center text-[0.98rem] leading-[1.75] text-primary-foreground/75 max-w-md mx-auto">
+              {slide.description}
+            </p>
+          )}
         </div>
 
-        <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-2">
+        {/* Progress indicator */}
+        <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
           {HERO_SEQUENCE.map((s, i) => (
             <button
               key={s.id}
@@ -187,7 +271,9 @@ function AuthorityPanel() {
                 }, 250);
               }}
               className={`h-[3px] rounded-full transition-all duration-500 ${
-                i === index ? "w-8 bg-gold" : "w-3 bg-primary-foreground/25 hover:bg-primary-foreground/50"
+                i === index
+                  ? "w-10 bg-gold"
+                  : "w-5 bg-primary-foreground/25 hover:bg-primary-foreground/50"
               }`}
             />
           ))}
