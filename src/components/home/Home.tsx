@@ -326,8 +326,8 @@ function HeroSection() {
             <h1 className="mt-10 text-primary-foreground max-w-[60ch] mx-auto lg:mx-0">
               Estratégias migratórias conduzidas por advogados premiados internacionalmente.
             </h1>
-            <p className="mt-8 max-w-2xl mx-auto lg:mx-0 text-lg leading-[1.85] text-primary-foreground/75">
-              Representação jurídica estratégica perante as autoridades federais de imigração dos Estados Unidos. Conduzimos cada caso com profundidade técnica, discrição e visão de longo prazo.
+            <p className="mt-8 max-w-2xl mx-auto lg:mx-0 text-lg leading-[1.85] text-primary-foreground/80">
+              Garantimos representação jurídica de excelência para que profissionais, investidores e famílias alcancem seus objetivos nos Estados Unidos com segurança e discrição.
             </p>
             <div className="mt-12 flex flex-wrap justify-center lg:justify-start gap-4">
               <InstitutionalButton
