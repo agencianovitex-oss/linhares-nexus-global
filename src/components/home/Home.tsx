@@ -682,11 +682,11 @@ function LeadershipSection() {
               </div>
             </div>
             <div className="mt-6 max-w-[48ch]">
-              <div className="text-[10.5px] uppercase tracking-[0.3em] text-gold">{founder.cred}</div>
+              <div className="text-[10.5px] font-semibold uppercase tracking-[0.3em] text-gold">{founder.cred}</div>
               <div className="mt-3 text-3xl lg:text-[2rem] font-semibold text-primary tracking-tight leading-[1.1] group-hover:text-gold transition-colors">
                 {founder.name}
               </div>
-              <div className="mt-2 text-[11px] uppercase tracking-[0.24em] text-muted-foreground">{founder.role}</div>
+              <div className="mt-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-primary/75">{founder.role}</div>
               <p className="mt-5 text-[15px] leading-[1.75] text-ink-soft">{founder.bio}</p>
               <div className="mt-5 text-[10.5px] uppercase tracking-[0.28em] text-primary group-hover:text-gold transition-colors border-t border-border pt-4">
                 Ver perfil completo →
