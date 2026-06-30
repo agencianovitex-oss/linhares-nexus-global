@@ -214,13 +214,13 @@ function AuthorityPanel() {
           </div>
 
           {/* Eyebrow */}
-          <div className="mt-7 text-center text-[11px] uppercase tracking-[0.32em] text-gold/90">
+          <div className="mt-7 text-center text-[11px] font-bold uppercase tracking-[0.32em] text-gold">
             {slide.eyebrow}
           </div>
 
           {/* Name (only for highlights) */}
           {slide.name && !isOverview && (
-            <div className="mt-3 text-center font-display text-[1.05rem] tracking-wide text-primary-foreground/85">
+            <div className="mt-3 text-center font-display text-[1.05rem] tracking-wide text-primary-foreground/90">
               {slide.name}
             </div>
           )}
@@ -288,12 +288,12 @@ function HeroSection() {
     <section className="relative surface-premium-dark pt-32 pb-24 lg:pt-40 lg:pb-28 overflow-hidden">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 hidden md:block"
+        className="hero-bg-fade pointer-events-none absolute inset-0 hidden md:block"
         style={{ backgroundImage: `url("${heroFlagDesktop}")`, backgroundSize: "cover", backgroundPosition: "center" }}
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 md:hidden"
+        className="hero-bg-fade pointer-events-none absolute inset-0 md:hidden"
         style={{ backgroundImage: `url("${heroFlagMobile}")`, backgroundSize: "cover", backgroundPosition: "center" }}
       />
       <div
@@ -326,8 +326,8 @@ function HeroSection() {
             <h1 className="mt-10 text-primary-foreground max-w-[60ch] mx-auto lg:mx-0">
               Estratégias migratórias conduzidas por advogados premiados internacionalmente.
             </h1>
-            <p className="mt-8 max-w-2xl mx-auto lg:mx-0 text-lg leading-[1.85] text-primary-foreground/75">
-              Representação jurídica estratégica perante as autoridades federais de imigração dos Estados Unidos. Conduzimos cada caso com profundidade técnica, discrição e visão de longo prazo.
+            <p className="mt-8 max-w-2xl mx-auto lg:mx-0 text-lg leading-[1.85] text-primary-foreground/80">
+              Garantimos representação jurídica de excelência para que profissionais, investidores e famílias alcancem seus objetivos nos Estados Unidos com segurança e discrição.
             </p>
             <div className="mt-12 flex flex-wrap justify-center lg:justify-start gap-4">
               <InstitutionalButton
@@ -520,7 +520,7 @@ function AwardsSection() {
 /* ------------------------------------------------------------------ */
 
 const strategies = [
-  { slug: "eb2-niw", code: "EB-2 NIW", title: "Dispensa por Interesse Nacional", profile: "Profissionais qualificados", desc: "Para profissionais cuja atuação represente interesse nacional dos Estados Unidos — sem necessidade de oferta de emprego.", featured: true },
+  { slug: "eb2-niw", code: "EB-2 NIW", title: "Dispensa por Interesse Nacional", profile: "Profissionais qualificados", desc: "Para profissionais altamente qualificados cuja atuação representa interesse nacional para os Estados Unidos. O EB-2 NIW permite solicitar o Green Card sem depender de uma oferta de emprego ou do patrocínio de uma empresa, oferecendo um caminho estratégico para pesquisadores, médicos, engenheiros, empresários, executivos e outros especialistas com trajetória de destaque.", featured: true },
   { slug: "eb1", code: "EB-1", title: "Habilidade Extraordinária", profile: "Pesquisadores · Executivos", desc: "Residência permanente para profissionais com habilidades extraordinárias, pesquisadores de destaque e executivos multinacionais." },
   { slug: "e2", code: "E-2", title: "Investidor por Tratado Comercial", profile: "Investidores · Empresários", desc: "Para investidores que estabelecem ou adquirem negócios substanciais nos Estados Unidos." },
   { slug: "l1", code: "L-1", title: "Transferência entre Empresas", profile: "Executivos · Gestores", desc: "Transferência de executivos, gestores e profissionais com conhecimento especializado entre empresas multinacionais." },
@@ -682,11 +682,11 @@ function LeadershipSection() {
               </div>
             </div>
             <div className="mt-6 max-w-[48ch]">
-              <div className="text-[10.5px] uppercase tracking-[0.3em] text-gold">{founder.cred}</div>
+              <div className="text-[10.5px] font-semibold uppercase tracking-[0.3em] text-gold">{founder.cred}</div>
               <div className="mt-3 text-3xl lg:text-[2rem] font-semibold text-primary tracking-tight leading-[1.1] group-hover:text-gold transition-colors">
                 {founder.name}
               </div>
-              <div className="mt-2 text-[11px] uppercase tracking-[0.24em] text-muted-foreground">{founder.role}</div>
+              <div className="mt-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-primary/75">{founder.role}</div>
               <p className="mt-5 text-[15px] leading-[1.75] text-ink-soft">{founder.bio}</p>
               <div className="mt-5 text-[10.5px] uppercase tracking-[0.28em] text-primary group-hover:text-gold transition-colors border-t border-border pt-4">
                 Ver perfil completo →
@@ -711,11 +711,11 @@ function LeadershipSection() {
                     </div>
                   </div>
                   <div className="col-span-7 sm:col-span-8">
-                    <div className="text-[10px] uppercase tracking-[0.28em] text-gold">{a.cred}</div>
+                    <div className="text-[10px] font-semibold uppercase tracking-[0.28em] text-gold">{a.cred}</div>
                     <div className="mt-2 text-xl lg:text-[1.4rem] font-semibold text-primary tracking-tight leading-[1.15] group-hover:text-gold transition-colors">
                       {a.name}
                     </div>
-                    <div className="mt-1 text-[10px] uppercase tracking-[0.22em] text-muted-foreground">{a.role}</div>
+                    <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-primary/75">{a.role}</div>
                     <p className="mt-3 text-[13.5px] leading-[1.65] text-ink-soft">{a.bio}</p>
                   </div>
                 </div>
@@ -763,8 +763,8 @@ function ThoughtLeadershipSection() {
             <h2 className="mt-7 text-balance text-primary-foreground max-w-[20ch]">
               Autoridade construída pela prática.
             </h2>
-            <p className="mt-7 text-lg leading-[1.8] text-primary-foreground/75 max-w-xl">
-              Dr. André Linhares é convidado a proferir palestras, conceder entrevistas e integrar painéis institucionais como consequência da profundidade técnica de sua atuação em imigração americana — e não o contrário.
+            <p className="mt-7 text-lg leading-[1.8] text-primary-foreground/80 max-w-xl">
+              A presença do Dr. André Linhares em palestras, entrevistas e painéis institucionais é o reflexo direto da profundidade técnica e do impacto real de sua atuação no direito de imigração americano.
             </p>
             <div className="mt-10 border-t border-primary-foreground/15">
               {[

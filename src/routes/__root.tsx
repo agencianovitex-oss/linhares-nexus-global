@@ -125,6 +125,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap",
       },
+      // Preload hero background images so the first paint is sharp on home.
+      { rel: "preload", as: "image", href: "/__l5e/assets-v1/9e1a0a8e-4405-4f02-8d8e-be2ca5533292/hero-skyline-desktop.jpg", media: "(min-width: 768px)" },
+      { rel: "preload", as: "image", href: "/__l5e/assets-v1/27aa9258-bffb-49a2-83d6-6c1f74be8e89/hero-skyline-mobile.jpg", media: "(max-width: 767px)" },
     ],
     scripts: [
       {

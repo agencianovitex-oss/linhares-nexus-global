@@ -192,7 +192,7 @@ function VideoCarousel({ items }: { items: VideoItem[] }) {
     <div className="relative">
       {/* Desktop: 3-up showcase */}
       <div className="relative hidden md:block">
-        <div className="relative mx-auto flex h-[640px] max-w-5xl items-center justify-center">
+        <div className="relative mx-auto flex h-[640px] w-full max-w-5xl items-center justify-center overflow-hidden">
           {items.map((item, i) => {
             let pos: -1 | 0 | 1 | "hidden" = "hidden";
             if (i === active) pos = 0;
@@ -203,12 +203,12 @@ function VideoCarousel({ items }: { items: VideoItem[] }) {
             const isSide = pos === -1 || pos === 1;
             const translate =
               pos === -1
-                ? "-translate-x-[110%] scale-[0.72]"
+                ? "-translate-x-[140%] -translate-y-1/2 scale-[0.72]"
                 : pos === 1
-                  ? "translate-x-[110%] scale-[0.72]"
+                  ? "translate-x-[40%] -translate-y-1/2 scale-[0.72]"
                   : pos === 0
-                    ? "translate-x-0 scale-100"
-                    : "scale-90 opacity-0 pointer-events-none";
+                    ? "-translate-x-1/2 -translate-y-1/2 scale-100"
+                    : "-translate-x-1/2 -translate-y-1/2 scale-90 opacity-0 pointer-events-none";
 
             return (
               <button
@@ -217,24 +217,24 @@ function VideoCarousel({ items }: { items: VideoItem[] }) {
                 onClick={() => setActive(i)}
                 aria-label={`Selecionar vídeo ${item.title}`}
                 className={cn(
-                  "absolute top-1/2 left-1/2 -translate-y-1/2 aspect-[9/16] h-full",
+                  "absolute top-1/2 left-1/2 aspect-[9/16] h-full",
                   "transform-gpu transition-all duration-700 ease-out",
                   translate,
                   isMain ? "z-20" : "z-10",
                 )}
               >
-
                 <div
                   className={cn(
-                    "relative h-full w-full overflow-hidden border border-border bg-primary shadow-2xl",
+                    "relative h-full w-full overflow-hidden border border-border bg-black shadow-2xl",
                     isSide && "opacity-60",
                   )}
                 >
                   <video
+                    key={item.src}
                     src={item.src}
                     controls={isMain}
                     playsInline
-                    preload="metadata"
+                    preload={isMain ? "auto" : "metadata"}
                     muted={!isMain}
                     className={cn(
                       "h-full w-full object-cover",
