@@ -31,7 +31,7 @@ const PT: Record<VisaSlug, VisaContent> = {
     title: "EB-2 NIW",
     heroSubhead: "Green Card por Interesse Nacional",
     tagline:
-      "O EB-2 NIW permite que profissionais qualificados solicitem residência permanente nos Estados Unidos sem depender de uma oferta formal de emprego.",
+      "Para profissionais altamente qualificados cuja atuação representa interesse nacional para os Estados Unidos. O EB-2 NIW permite solicitar o Green Card sem depender de uma oferta de emprego ou do patrocínio de uma empresa, oferecendo um caminho estratégico para pesquisadores, médicos, engenheiros, empresários, executivos e outros especialistas com trajetória de destaque.",
     intro:
       "O EB-2 National Interest Waiver é uma categoria migratória destinada a profissionais altamente qualificados cuja atuação pode gerar benefícios relevantes para os Estados Unidos.",
     meta: ["Residência permanente", "Autopetição", "Sem oferta de emprego", "Inclusão familiar"],
