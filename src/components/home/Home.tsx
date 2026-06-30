@@ -763,8 +763,8 @@ function ThoughtLeadershipSection() {
             <h2 className="mt-7 text-balance text-primary-foreground max-w-[20ch]">
               Autoridade construída pela prática.
             </h2>
-            <p className="mt-7 text-lg leading-[1.8] text-primary-foreground/75 max-w-xl">
-              Dr. André Linhares é convidado a proferir palestras, conceder entrevistas e integrar painéis institucionais como consequência da profundidade técnica de sua atuação em imigração americana — e não o contrário.
+            <p className="mt-7 text-lg leading-[1.8] text-primary-foreground/80 max-w-xl">
+              A presença do Dr. André Linhares em palestras, entrevistas e painéis institucionais é o reflexo direto da profundidade técnica e do impacto real de sua atuação no direito de imigração americano.
             </p>
             <div className="mt-10 border-t border-primary-foreground/15">
               {[
