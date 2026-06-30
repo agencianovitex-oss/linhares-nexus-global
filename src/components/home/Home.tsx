@@ -711,11 +711,11 @@ function LeadershipSection() {
                     </div>
                   </div>
                   <div className="col-span-7 sm:col-span-8">
-                    <div className="text-[10px] uppercase tracking-[0.28em] text-gold">{a.cred}</div>
+                    <div className="text-[10px] font-semibold uppercase tracking-[0.28em] text-gold">{a.cred}</div>
                     <div className="mt-2 text-xl lg:text-[1.4rem] font-semibold text-primary tracking-tight leading-[1.15] group-hover:text-gold transition-colors">
                       {a.name}
                     </div>
-                    <div className="mt-1 text-[10px] uppercase tracking-[0.22em] text-muted-foreground">{a.role}</div>
+                    <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-primary/75">{a.role}</div>
                     <p className="mt-3 text-[13.5px] leading-[1.65] text-ink-soft">{a.bio}</p>
                   </div>
                 </div>
