@@ -288,12 +288,12 @@ function HeroSection() {
     <section className="relative surface-premium-dark pt-32 pb-24 lg:pt-40 lg:pb-28 overflow-hidden">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 hidden md:block"
+        className="hero-bg-fade pointer-events-none absolute inset-0 hidden md:block"
         style={{ backgroundImage: `url("${heroFlagDesktop}")`, backgroundSize: "cover", backgroundPosition: "center" }}
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 md:hidden"
+        className="hero-bg-fade pointer-events-none absolute inset-0 md:hidden"
         style={{ backgroundImage: `url("${heroFlagMobile}")`, backgroundSize: "cover", backgroundPosition: "center" }}
       />
       <div
