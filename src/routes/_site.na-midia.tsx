@@ -203,9 +203,9 @@ function VideoCarousel({ items }: { items: VideoItem[] }) {
             const isSide = pos === -1 || pos === 1;
             const translate =
               pos === -1
-                ? "-translate-x-[105%] -translate-y-1/2 scale-[0.72]"
+                ? "-translate-x-[140%] -translate-y-1/2 scale-[0.72]"
                 : pos === 1
-                  ? "translate-x-[5%] -translate-y-1/2 scale-[0.72]"
+                  ? "translate-x-[40%] -translate-y-1/2 scale-[0.72]"
                   : pos === 0
                     ? "-translate-x-1/2 -translate-y-1/2 scale-100"
                     : "-translate-x-1/2 -translate-y-1/2 scale-90 opacity-0 pointer-events-none";
