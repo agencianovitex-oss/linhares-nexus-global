@@ -214,13 +214,13 @@ function AuthorityPanel() {
           </div>
 
           {/* Eyebrow */}
-          <div className="mt-7 text-center text-[11px] uppercase tracking-[0.32em] text-gold/90">
+          <div className="mt-7 text-center text-[11px] font-bold uppercase tracking-[0.32em] text-gold">
             {slide.eyebrow}
           </div>
 
           {/* Name (only for highlights) */}
           {slide.name && !isOverview && (
-            <div className="mt-3 text-center font-display text-[1.05rem] tracking-wide text-primary-foreground/85">
+            <div className="mt-3 text-center font-display text-[1.05rem] tracking-wide text-primary-foreground/90">
               {slide.name}
             </div>
           )}
