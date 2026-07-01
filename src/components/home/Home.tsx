@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Award, Scale, Landmark, Flag, Trophy, Star } from "lucide-react";
+import { Award, Scale, Landmark, Flag, Trophy, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { SectionTitle } from "@/components/layout/SectionTitle";
 import { InstitutionalButton } from "@/components/institutional/Button";
@@ -43,7 +43,7 @@ type AuthoritySlide = {
   description: string;
   portrait?: string;
   portraitPosition?: string;
-  icon?: "award" | "scale";
+  icon?: "award" | "scale" | "star";
   items?: AuthorityItem[];
 };
 
@@ -53,6 +53,7 @@ const AUTHORITY_OVERVIEW: AuthoritySlide = {
   eyebrow: "Autoridade Internacional",
   title: "Reconhecimento institucional em imigração americana",
   description: "",
+  icon: "star",
   items: [
     { icon: "landmark", label: "Único advogado brasileiro palestrante da AILA" },
     { icon: "flag", label: "Nicholas Perry — USCIS, DHS, ICE, CBP e Department of Justice" },
@@ -139,6 +140,7 @@ function ItemIcon({ kind }: { kind: AuthorityItem["icon"] }) {
 function AuthorityPanel() {
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(true);
+  const [cycleKey, setCycleKey] = useState(0);
 
   useEffect(() => {
     const fadeOut = setTimeout(() => setVisible(false), 5600);
@@ -150,7 +152,18 @@ function AuthorityPanel() {
       clearTimeout(fadeOut);
       clearTimeout(next);
     };
-  }, [index]);
+  }, [index, cycleKey]);
+
+  const goTo = (target: number) => {
+    setVisible(false);
+    setTimeout(() => {
+      setIndex(((target % HERO_SEQUENCE.length) + HERO_SEQUENCE.length) % HERO_SEQUENCE.length);
+      setVisible(true);
+      setCycleKey((k) => k + 1);
+    }, 250);
+  };
+  const prev = () => goTo(index - 1);
+  const next = () => goTo(index + 1);
 
   const slide = HERO_SEQUENCE[index];
   const isOverview = slide.kind === "overview";
@@ -206,6 +219,8 @@ function AuthorityPanel() {
               >
                 {slide.icon === "award" ? (
                   <Award className="h-11 w-11 text-gold" strokeWidth={1.25} />
+                ) : slide.icon === "star" ? (
+                  <Star className="h-11 w-11 text-gold" strokeWidth={1.25} />
                 ) : (
                   <Scale className="h-11 w-11 text-gold" strokeWidth={1.25} />
                 )}
@@ -256,6 +271,24 @@ function AuthorityPanel() {
           )}
         </div>
 
+        {/* Manual navigation arrows */}
+        <button
+          type="button"
+          aria-label="Slide anterior"
+          onClick={prev}
+          className="absolute left-1 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full flex items-center justify-center text-primary-foreground/60 hover:text-gold hover:bg-primary-foreground/5 transition-colors"
+        >
+          <ChevronLeft className="h-5 w-5" strokeWidth={1.5} />
+        </button>
+        <button
+          type="button"
+          aria-label="Próximo slide"
+          onClick={next}
+          className="absolute right-1 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full flex items-center justify-center text-primary-foreground/60 hover:text-gold hover:bg-primary-foreground/5 transition-colors"
+        >
+          <ChevronRight className="h-5 w-5" strokeWidth={1.5} />
+        </button>
+
         {/* Progress indicator */}
         <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
           {HERO_SEQUENCE.map((s, i) => (
@@ -263,13 +296,7 @@ function AuthorityPanel() {
               key={s.id}
               type="button"
               aria-label={`Ver ${s.title}`}
-              onClick={() => {
-                setVisible(false);
-                setTimeout(() => {
-                  setIndex(i);
-                  setVisible(true);
-                }, 250);
-              }}
+              onClick={() => goTo(i)}
               className={`h-[3px] rounded-full transition-all duration-500 ${
                 i === index
                   ? "w-10 bg-gold"
@@ -360,13 +387,16 @@ function AuthoritySection() {
       <span className="section-seam absolute top-0 left-0 right-0 z-20" aria-hidden />
 
       {/* DESKTOP background — full-bleed studio portrait blended with the navy canvas */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 hidden lg:block">
-        <img
-          src={andrePracticeBg.url}
-          alt=""
-          className="absolute inset-y-0 h-full w-auto max-w-none object-contain object-left"
-          style={{ left: "-8%" }}
-        />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 hidden lg:block"
+        style={{
+          backgroundImage: `url(${andrePracticeBg.url})`,
+          backgroundSize: "cover",
+          backgroundPosition: "left center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <div
           className="absolute inset-0"
           style={{

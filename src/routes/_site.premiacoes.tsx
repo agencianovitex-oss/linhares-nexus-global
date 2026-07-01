@@ -5,9 +5,11 @@ import { SectionTitle } from "@/components/layout/SectionTitle";
 import { buildLocaleHead } from "@/lib/seo";
 import tenBestAsset from "@/assets/10-best-law-firms-2.png.asset.json";
 import ibiAsset from "@/assets/ibi-awards-2.jpg.asset.json";
+import ailaAsset from "@/assets/aila-2025-andre-linhares.jpg.asset.json";
 
 const tenBest = tenBestAsset.url;
 const ibi = ibiAsset.url;
+const aila = ailaAsset.url;
 
 const L = "pt" as const;
 
@@ -47,6 +49,14 @@ const featuredAwards: Award[] = [
     description:
       "Inclusão entre os dez melhores escritórios de imigração nos Estados Unidos, com base em critérios independentes de excelência e satisfação do cliente.",
     image: tenBest,
+  },
+  {
+    title: "Palestrante na AILA 2025",
+    year: "2025",
+    institution: "American Immigration Lawyers Association",
+    description:
+      "Em 2025, o Dr. André Linhares tornou-se o único advogado de nacionalidade não americana convidado a atuar como palestrante na conferência anual da AILA (American Immigration Lawyers Association — Associação Americana de Advogados de Imigração), uma das mais importantes organizações jurídicas especializadas em imigração dos Estados Unidos. O convite representa um reconhecimento internacional de sua atuação técnica e de sua contribuição para o desenvolvimento da advocacia migratória.",
+    image: aila,
   },
 ];
 
@@ -104,7 +114,7 @@ function Premiacoes() {
 
       <SectionBlock>
         <SectionTitle eyebrow="Destaques" title="Reconhecimentos Principais" />
-        <div className="mt-16 mx-auto grid max-w-3xl gap-8 sm:grid-cols-2">
+        <div className="mt-16 mx-auto grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {featuredAwards.map((a) => (
             <article
               key={a.title}
