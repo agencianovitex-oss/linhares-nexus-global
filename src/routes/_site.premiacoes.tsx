@@ -50,6 +50,14 @@ const featuredAwards: Award[] = [
       "Inclusão entre os dez melhores escritórios de imigração nos Estados Unidos, com base em critérios independentes de excelência e satisfação do cliente.",
     image: tenBest,
   },
+  {
+    title: "Palestrante na AILA 2025",
+    year: "2025",
+    institution: "American Immigration Lawyers Association",
+    description:
+      "Em 2025, o Dr. André Linhares tornou-se o único advogado de nacionalidade não americana convidado a atuar como palestrante na conferência anual da AILA (American Immigration Lawyers Association — Associação Americana de Advogados de Imigração), uma das mais importantes organizações jurídicas especializadas em imigração dos Estados Unidos. O convite representa um reconhecimento internacional de sua atuação técnica e de sua contribuição para o desenvolvimento da advocacia migratória.",
+    image: aila,
+  },
 ];
 
 const textualAwards: Award[] = [
