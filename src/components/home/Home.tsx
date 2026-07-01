@@ -360,13 +360,16 @@ function AuthoritySection() {
       <span className="section-seam absolute top-0 left-0 right-0 z-20" aria-hidden />
 
       {/* DESKTOP background — full-bleed studio portrait blended with the navy canvas */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 hidden lg:block">
-        <img
-          src={andrePracticeBg.url}
-          alt=""
-          className="absolute inset-y-0 h-full w-auto max-w-none object-contain object-left"
-          style={{ left: "-8%" }}
-        />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 hidden lg:block"
+        style={{
+          backgroundImage: `url(${andrePracticeBg.url})`,
+          backgroundSize: "cover",
+          backgroundPosition: "left center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <div
           className="absolute inset-0"
           style={{
