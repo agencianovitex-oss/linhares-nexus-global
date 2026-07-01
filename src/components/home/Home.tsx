@@ -43,7 +43,7 @@ type AuthoritySlide = {
   description: string;
   portrait?: string;
   portraitPosition?: string;
-  icon?: "award" | "scale";
+  icon?: "award" | "scale" | "star";
   items?: AuthorityItem[];
 };
 
