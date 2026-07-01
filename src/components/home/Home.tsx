@@ -140,6 +140,7 @@ function ItemIcon({ kind }: { kind: AuthorityItem["icon"] }) {
 function AuthorityPanel() {
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(true);
+  const [cycleKey, setCycleKey] = useState(0);
 
   useEffect(() => {
     const fadeOut = setTimeout(() => setVisible(false), 5600);
@@ -151,7 +152,18 @@ function AuthorityPanel() {
       clearTimeout(fadeOut);
       clearTimeout(next);
     };
-  }, [index]);
+  }, [index, cycleKey]);
+
+  const goTo = (target: number) => {
+    setVisible(false);
+    setTimeout(() => {
+      setIndex(((target % HERO_SEQUENCE.length) + HERO_SEQUENCE.length) % HERO_SEQUENCE.length);
+      setVisible(true);
+      setCycleKey((k) => k + 1);
+    }, 250);
+  };
+  const prev = () => goTo(index - 1);
+  const next = () => goTo(index + 1);
 
   const slide = HERO_SEQUENCE[index];
   const isOverview = slide.kind === "overview";
