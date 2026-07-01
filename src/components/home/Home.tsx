@@ -207,6 +207,8 @@ function AuthorityPanel() {
               >
                 {slide.icon === "award" ? (
                   <Award className="h-11 w-11 text-gold" strokeWidth={1.25} />
+                ) : slide.icon === "star" ? (
+                  <Star className="h-11 w-11 text-gold" strokeWidth={1.25} />
                 ) : (
                   <Scale className="h-11 w-11 text-gold" strokeWidth={1.25} />
                 )}
