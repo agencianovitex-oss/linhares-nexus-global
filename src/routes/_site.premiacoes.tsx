@@ -114,7 +114,7 @@ function Premiacoes() {
 
       <SectionBlock>
         <SectionTitle eyebrow="Destaques" title="Reconhecimentos Principais" />
-        <div className="mt-16 mx-auto grid max-w-3xl gap-8 sm:grid-cols-2">
+        <div className="mt-16 mx-auto grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {featuredAwards.map((a) => (
             <article
               key={a.title}
