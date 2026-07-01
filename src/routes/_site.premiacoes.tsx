@@ -5,9 +5,11 @@ import { SectionTitle } from "@/components/layout/SectionTitle";
 import { buildLocaleHead } from "@/lib/seo";
 import tenBestAsset from "@/assets/10-best-law-firms-2.png.asset.json";
 import ibiAsset from "@/assets/ibi-awards-2.jpg.asset.json";
+import ailaAsset from "@/assets/aila-2025-andre-linhares.jpg.asset.json";
 
 const tenBest = tenBestAsset.url;
 const ibi = ibiAsset.url;
+const aila = ailaAsset.url;
 
 const L = "pt" as const;
 
