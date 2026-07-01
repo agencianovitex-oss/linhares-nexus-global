@@ -271,6 +271,24 @@ function AuthorityPanel() {
           )}
         </div>
 
+        {/* Manual navigation arrows */}
+        <button
+          type="button"
+          aria-label="Slide anterior"
+          onClick={prev}
+          className="absolute left-1 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full flex items-center justify-center text-primary-foreground/60 hover:text-gold hover:bg-primary-foreground/5 transition-colors"
+        >
+          <ChevronLeft className="h-5 w-5" strokeWidth={1.5} />
+        </button>
+        <button
+          type="button"
+          aria-label="Próximo slide"
+          onClick={next}
+          className="absolute right-1 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full flex items-center justify-center text-primary-foreground/60 hover:text-gold hover:bg-primary-foreground/5 transition-colors"
+        >
+          <ChevronRight className="h-5 w-5" strokeWidth={1.5} />
+        </button>
+
         {/* Progress indicator */}
         <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
           {HERO_SEQUENCE.map((s, i) => (
@@ -278,13 +296,7 @@ function AuthorityPanel() {
               key={s.id}
               type="button"
               aria-label={`Ver ${s.title}`}
-              onClick={() => {
-                setVisible(false);
-                setTimeout(() => {
-                  setIndex(i);
-                  setVisible(true);
-                }, 250);
-              }}
+              onClick={() => goTo(i)}
               className={`h-[3px] rounded-full transition-all duration-500 ${
                 i === index
                   ? "w-10 bg-gold"
