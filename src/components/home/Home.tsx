@@ -53,6 +53,7 @@ const AUTHORITY_OVERVIEW: AuthoritySlide = {
   eyebrow: "Autoridade Internacional",
   title: "Reconhecimento institucional em imigração americana",
   description: "",
+  icon: "star",
   items: [
     { icon: "landmark", label: "Único advogado brasileiro palestrante da AILA" },
     { icon: "flag", label: "Nicholas Perry — USCIS, DHS, ICE, CBP e Department of Justice" },
