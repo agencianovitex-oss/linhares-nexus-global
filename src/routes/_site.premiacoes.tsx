@@ -34,7 +34,7 @@ interface Award {
 const featuredAwards: Award[] = [
   {
     title: "International Business Institute · IBI Award",
-    year: "2026",
+    year: "2025",
     institution: "International Business Institute",
     description:
       "Distinção concedida pela contribuição do Linhares Law ao ecossistema empresarial internacional, reconhecendo a relevância da prática institucional do escritório no cenário global.",
