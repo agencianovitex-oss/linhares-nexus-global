@@ -1126,7 +1126,7 @@ export function Home() {
   return (
     <>
       <HeroSection />
-      <PhotoMosaic photos={mosaicPhotos} />
+      <PhotoMosaic photos={mosaicPhotos} compact />
       <AuthoritySection />
       <AwardsSection />
       <ServicesSection />
