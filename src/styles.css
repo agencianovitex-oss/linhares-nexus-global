@@ -455,6 +455,17 @@
     }
   }
 
+  @keyframes marquee-x {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [class*="animate-[marquee-x"] {
+      animation: none !important;
+    }
+  }
+
+
   /* Editorial photo overlay — depth on dark surfaces. */
   .image-overlay-editorial { position: relative; }
   .image-overlay-editorial::after {
