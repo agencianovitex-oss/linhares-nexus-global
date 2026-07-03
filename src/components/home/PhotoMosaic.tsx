@@ -4,14 +4,20 @@ interface Props {
   photos: MosaicPhoto[];
   /** Loop duration in seconds. Higher = slower. */
   durationSec?: number;
+  /** Reduces the block height by half for tighter layouts (home page). */
+  compact?: boolean;
 }
 
 /**
  * Full-bleed marquee of portrait photos. Duplicates the list to create a
  * seamless loop, translating -50% of the doubled track. Pauses on hover.
  */
-export function PhotoMosaic({ photos, durationSec = 90 }: Props) {
+export function PhotoMosaic({ photos, durationSec = 90, compact = false }: Props) {
   const track = [...photos, ...photos];
+
+  const itemClass = compact
+    ? "relative shrink-0 h-[180px] w-[144px] md:h-[300px] md:w-[240px] overflow-hidden bg-background"
+    : "relative shrink-0 h-[360px] w-[288px] md:h-[600px] md:w-[480px] overflow-hidden bg-background";
 
   return (
     <section
@@ -23,10 +29,7 @@ export function PhotoMosaic({ photos, durationSec = 90 }: Props) {
         style={{ animationDuration: `${durationSec}s` }}
       >
         {track.map((photo, i) => (
-          <div
-            key={i}
-            className="relative shrink-0 h-[360px] w-[288px] md:h-[600px] md:w-[480px] overflow-hidden bg-background"
-          >
+          <div key={i} className={itemClass}>
             <img
               src={photo.src}
               alt={photo.alt}
