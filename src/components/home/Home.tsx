@@ -24,6 +24,8 @@ const heroFlagMobile = heroFlagMobileAsset.url;
 import pubEb2Asset from "@/assets/pub-eb2.jpg.asset.json";
 import pubInvestAsset from "@/assets/pub-invest.jpg.asset.json";
 import pubExecAsset from "@/assets/pub-exec.jpg.asset.json";
+import { PhotoMosaic } from "@/components/home/PhotoMosaic";
+import { mosaicPhotos } from "@/data/mosaic";
 
 /* ------------------------------------------------------------------ */
 /* 1 — Hero                                                            */
@@ -1124,6 +1126,7 @@ export function Home() {
   return (
     <>
       <HeroSection />
+      <PhotoMosaic photos={mosaicPhotos} />
       <AuthoritySection />
       <AwardsSection />
       <ServicesSection />

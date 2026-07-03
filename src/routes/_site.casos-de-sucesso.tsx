@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { InstitutionalHero, InstitutionalButton } from "@/components/institutional";
 import { SectionBlock } from "@/components/institutional/SectionBlock";
+import { PhotoMosaic } from "@/components/home/PhotoMosaic";
+import { mosaicPhotos } from "@/data/mosaic";
 import { buildLocaleHead } from "@/lib/seo";
 
 const L = "pt" as const;
@@ -57,6 +59,21 @@ function Depoimentos() {
           ))}
         </div>
       </SectionBlock>
+
+      <SectionBlock>
+        <div className="max-w-3xl mb-10">
+          <span className="rule-gold" />
+          <p className="mt-6 eyebrow">Entregas de Green Card</p>
+          <h2 className="mt-4">Momentos de conquista dos nossos clientes.</h2>
+          <p className="mt-4 lead">
+            Registros do Dr. André Linhares ao lado de clientes do Linhares Law
+            no momento da entrega de seus Green Cards.
+          </p>
+        </div>
+      </SectionBlock>
+      <PhotoMosaic photos={mosaicPhotos} />
+
+
 
       <SectionBlock tone="dark">
         <div className="max-w-3xl">
