@@ -71,8 +71,10 @@ function Depoimentos() {
             no momento da entrega de seus Green Cards.
           </p>
         </div>
+        <PhotoCarousel photos={mosaicPhotos} />
       </SectionBlock>
-      <PhotoMosaic photos={mosaicPhotos} />
+
+
 
 
 
