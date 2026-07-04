@@ -1,65 +1,57 @@
+## Ajustes solicitados
 
-## Objetivo
+### 1. Travar a altura do bloco de autoridade na Hero
+Arquivo: `src/components/home/Home.tsx` (`AuthorityPanel`, ~L173-311).
 
-Adicionar um bloco tipo mosaico/marquee com 11 fotos deslizando lentamente, com pausa no hover. Aparece em duas páginas:
+- O bloco hoje usa `minHeight: 34rem`, então o slide inicial (overview, com 5 itens) expande o container e os demais slides ficam curtos. No mobile/tablet isso empurra a imagem de fundo.
+- Trocar para altura fixa responsiva: `h-[560px] md:h-[600px] lg:h-[620px]` (sem `minHeight`), com `overflow-hidden` no wrapper interno.
+- Ajustar o slide overview para caber:
+  - Reduzir o gap entre itens (`space-y-3.5` → `space-y-2.5`).
+  - Reduzir tamanho dos itens (`text-[0.95rem]` → `text-[0.9rem]`, `leading-[1.55]` → `leading-[1.5]`).
+  - Reduzir tipografia do título do overview (`text-[1.6rem] lg:text-[1.85rem]` → `text-[1.35rem] lg:text-[1.55rem]`).
+  - Reduzir margem superior da lista (`mt-7` → `mt-5`).
+- Resultado: bloco de altura fixa em todas as viewports; overview cabe sem estourar; slides menores não deixam “sobra”; a imagem de fundo da Hero deixa de se mexer entre slides.
 
-1. **Home** — logo abaixo da Hero, sem título/texto (bloco puramente visual, ~600px de altura no desktop).
-2. **Casos de Sucesso** (`/casos-de-sucesso`) — abaixo da grade de vídeos, com eyebrow + título curto explicando que são entregas de Green Card a clientes do Linhares Law.
+### 2. Equilibrar o bloco Liderança Jurídica
+Arquivo: `src/components/home/Home.tsx` (`LeadershipSection`, ~L683-761).
 
-## Aguardando upload
+- Hoje: André ocupa `lg:col-span-6` com foto `max-w-[460px]` + texto abaixo; Nicholas e Juliana ficam em coluna estreita `lg:col-span-6` empilhados, deixando um vazio grande abaixo da Juliana.
+- Trocar layout desktop para: André `lg:col-span-5` com foto que preenche toda a coluna (sem `max-w-[460px]`) e cresce verticalmente com o conjunto ao lado; Nicholas e Juliana em `lg:col-span-7` distribuídos verticalmente com `justify-between` e `h-full`, para preencherem toda a altura do card do André.
+- Nos cards laterais: aumentar a foto (col-span 4 → 5) e usar `aspect-[4/5]` com `h-full` para acompanhar altura, garantindo que as duas fichas somadas alinhem topo com topo do André e base com base do bloco descritivo dele.
+- Mobile permanece como está (empilhado).
 
-Preciso das **11 fotos** enviadas via chat antes de implementar. Ideal:
-- Proporção próxima de 4:5 (480×600) — se vierem em outra proporção, corto para `object-cover`.
-- Formatos JPG/PNG/WEBP.
-- Você pode nomear cada uma (ex.: "green-card-cliente-1.jpg") ou eu numero na ordem enviada.
+### 3. Textura nos heros das páginas dedicadas
+Arquivo: `src/components/institutional/Hero.tsx`.
 
-Após o upload, subo cada uma via `lovable-assets` (CDN) e crio os pointers em `src/assets/mosaic/`.
+- Hoje o hero escuro usa `surface-premium-dark texture-grain` — o `texture-grain` já existe em `src/styles.css`. O problema é que o gradiente azul sólido de `surface-premium-dark` cobre a textura visualmente.
+- Adicionar uma camada extra decorativa dentro de `<InstitutionalHero>` (quando `tone="dark"`):
+  - Um `<span aria-hidden />` posicionado atrás do título com um padrão sutil (linhas diagonais + ruído leve) usando `background-image` com `repeating-linear-gradient` e um `radial-gradient` dourado muito discreto (`rgb(200 145 70 / 0.06)`).
+  - Adicionar a classe utilitária `.hero-texture-veil` em `src/styles.css` com esse padrão + `mask-image` radial para desvanecer nas bordas do bloco de texto.
+- Efeito: quebra o azul sólido, dá sensação de material impresso/textura de papel de luxo, sem competir com o título.
 
-## Componente novo
+### 4. Corrigir o mosaico que não desliza em alguns dispositivos
+Arquivo: `src/components/home/PhotoMosaic.tsx` e `src/styles.css`.
 
-`src/components/home/PhotoMosaic.tsx`
-- Props: `photos: { src: string; alt: string }[]`, `caption?: ReactNode` (opcional, usado só em Casos de Sucesso).
-- Estrutura: container full-bleed com `overflow-hidden`, altura fixa `h-[600px]` desktop / `h-[380px]` mobile.
-- Trilha horizontal com as 11 fotos **duplicadas** (22 no total) para loop contínuo perfeito.
-- Cada foto: `w-[480px] h-[600px]` (desktop) / `w-[280px] h-[360px]` (mobile), `object-cover`, gap de ~16px entre elas.
-- Animação: keyframe CSS `translateX(0 → -50%)` em ~90s linear infinite (velocidade lenta, ajustável).
-- `hover:[animation-play-state:paused]` para pausar ao passar o mouse (mesmo comportamento em touch: pausa no `:active`).
-- Sem setas/dots — é um marquee visual, não um carrossel navegável.
-- `loading="lazy"` + `decoding="async"` nas imagens; primeiras 3 com `fetchpriority="high"`.
+- Diagnóstico provável:
+  1. O override `@media (prefers-reduced-motion: reduce)` adicionado em `styles.css` desativa a animação — muitos SOs (Windows corporativo, iOS com Motion Reduzido, macOS Accessibility) têm isso ligado por padrão, e nesse caso o mosaico simplesmente não anda em nada.
+  2. A classe `animate-[marquee-x_linear_infinite]` (shorthand arbitrário) + `style.animationDuration` inline: em alguns browsers a shorthand define `animation-duration: 0s` e o `style` inline pode não sobrescrever confiável.
+- Correções:
+  - Remover a regra `prefers-reduced-motion` que pausa o marquee (ou substituir por redução de velocidade em vez de pausa total — 90s → 180s).
+  - Trocar a classe utilitária arbitrária por classe dedicada `animate-marquee-x` definida em `styles.css` com `animation: marquee-x var(--marquee-duration, 90s) linear infinite;` e passar a duração via CSS var (`style={{ ['--marquee-duration' as any]: '90s' }}`) — evita a ambiguidade da shorthand.
+  - Garantir `will-change: transform` na trilha e `transform: translateZ(0)` para forçar composição em GPU (resolve travamentos em alguns Chromes/Edges corporativos).
 
-Keyframe adicionado em `src/styles.css`:
-```css
-@keyframes marquee-x { to { transform: translateX(-50%); } }
-```
+### 5. Carrossel navegável em Casos de Sucesso
+Arquivo: `src/routes/_site.casos-de-sucesso.tsx` + novo componente `src/components/home/PhotoCarousel.tsx`.
 
-## Integração
-
-**Home** (`src/components/home/Home.tsx`): inserir `<PhotoMosaic photos={mosaicPhotos} />` logo após o bloco Hero, antes de "Nossa Prática". Sem `SectionBlock` — full-bleed, fundo `bg-surface-2` para respirar entre Hero e o próximo bloco.
-
-**Casos de Sucesso** (`src/routes/_site.casos-de-sucesso.tsx`): adicionar após o `SectionBlock` dos vídeos e antes do CTA final:
-```
-<SectionBlock>
-  <div className="max-w-3xl mb-10">
-    <span className="rule-gold" />
-    <p className="mt-6 eyebrow">Entregas de Green Card</p>
-    <h2 className="mt-4">Momentos de conquista dos nossos clientes.</h2>
-    <p className="mt-4 lead">
-      Registros do Dr. André Linhares ao lado de clientes do Linhares Law
-      no momento da entrega de seus Green Cards.
-    </p>
-  </div>
-  <PhotoMosaic photos={mosaicPhotos} />
-</SectionBlock>
-```
-
-Fonte única das fotos: `src/data/mosaic.ts` exportando `mosaicPhotos`, importado nos dois lugares.
+- Manter `PhotoMosaic` (auto-slide) exclusivamente na Home.
+- Em Casos de Sucesso, substituir `<PhotoMosaic />` por `<PhotoCarousel photos={mosaicPhotos} />` — carrossel manual usando `@/components/ui/carousel` (Embla, já disponível):
+  - Sem autoplay; navegação por setas laterais (`CarouselPrevious` / `CarouselNext`).
+  - Layout: mostra ~3 fotos por vez no desktop, 2 no tablet, 1.2 no mobile (`basis-1/3 lg:basis-1/4`).
+  - Fotos em `aspect-[4/5]`, `object-cover`, com hover leve (`hover:scale-[1.02] transition-transform`).
+  - Setas posicionadas dentro do container, fora da área das imagens, seguindo o estilo institucional (borda dourada sutil no hover).
+- Home continua com o mosaico deslizante compacto (sem mudança).
 
 ## Fora de escopo
-
-- Versões `/en/` e `/es/` de casos de sucesso continuam como placeholder (já estão assim hoje).
-- Sem lightbox/clique ampliar — bloco puramente decorativo.
-- Sem mudanças no restante da Home ou da página.
-
-## Próximo passo
-
-Aprovar o plano e enviar as 11 fotos no próximo turno.
+- Não mexer nas versões `/en/` e `/es/` (permanecem placeholder como estão).
+- Não alterar tipografia global nem tokens de cor.
+- Não trocar as fotos do mosaico nem editar dados de equipe.

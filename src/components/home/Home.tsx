@@ -181,9 +181,9 @@ function AuthorityPanel() {
         }}
       />
       <div
-        className="relative px-8 py-12 lg:px-10 lg:py-14"
-        style={{ minHeight: "34rem" }}
+        className="relative px-8 py-10 lg:px-10 lg:py-12 h-[560px] md:h-[600px] lg:h-[620px] overflow-hidden"
       >
+
         <div
           key={slide.id}
           className={`transition-all duration-[1100ms] ease-out ${
@@ -246,7 +246,7 @@ function AuthorityPanel() {
           <h3
             className={`mt-3 text-center font-display font-semibold text-primary-foreground leading-[1.2] ${
               isOverview
-                ? "text-[1.6rem] lg:text-[1.85rem]"
+                ? "text-[1.35rem] lg:text-[1.55rem]"
                 : "text-[1.5rem] lg:text-[1.75rem]"
             }`}
           >
@@ -255,11 +255,11 @@ function AuthorityPanel() {
 
           {/* Body */}
           {isOverview ? (
-            <ul className="mt-7 mx-auto max-w-md space-y-3.5">
+            <ul className="mt-5 mx-auto max-w-md space-y-2.5">
               {slide.items!.map((it, i) => (
                 <li
                   key={i}
-                  className="flex items-start gap-3 text-[0.95rem] leading-[1.55] text-primary-foreground/85"
+                  className="flex items-start gap-3 text-[0.9rem] leading-[1.5] text-primary-foreground/85"
                 >
                   <ItemIcon kind={it.icon} />
                   <span>{it.label}</span>
@@ -272,6 +272,7 @@ function AuthorityPanel() {
             </p>
           )}
         </div>
+
 
         {/* Manual navigation arrows */}
         <button
@@ -700,49 +701,49 @@ function LeadershipSection() {
           </InstitutionalButton>
         </div>
 
-        <div className="mt-14 grid gap-10 lg:gap-14 lg:grid-cols-12 items-start">
-          {/* Founder — Coluna Esquerda, reduzida ~20% */}
+        <div className="mt-14 grid gap-10 lg:gap-12 lg:grid-cols-12 items-stretch">
+          {/* Founder — Coluna Esquerda */}
           <Link
             to="/equipe/$slug"
             params={{ slug: founder.slug }}
-            className="group block reveal-up lg:col-span-6"
+            className="group flex flex-col reveal-up lg:col-span-5"
           >
             <div className="relative">
               <span className="absolute -top-3 -left-3 h-px w-20 bg-gold z-10" />
-              <div className="editorial-frame photo-vignette aspect-[4/5] w-full max-w-[460px]">
+              <div className="editorial-frame photo-vignette aspect-[4/5] w-full">
                 <img src={founder.img} alt={founder.name} className="h-full w-full object-cover object-[50%_15%]" />
               </div>
             </div>
-            <div className="mt-6 max-w-[48ch]">
+            <div className="mt-6 flex-1 flex flex-col">
               <div className="text-[10.5px] font-semibold uppercase tracking-[0.3em] text-gold">{founder.cred}</div>
               <div className="mt-3 text-3xl lg:text-[2rem] font-semibold text-primary tracking-tight leading-[1.1] group-hover:text-gold transition-colors">
                 {founder.name}
               </div>
               <div className="mt-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-primary/75">{founder.role}</div>
               <p className="mt-5 text-[15px] leading-[1.75] text-ink-soft">{founder.bio}</p>
-              <div className="mt-5 text-[10.5px] uppercase tracking-[0.28em] text-primary group-hover:text-gold transition-colors border-t border-border pt-4">
+              <div className="mt-auto pt-5 text-[10.5px] uppercase tracking-[0.28em] text-primary group-hover:text-gold transition-colors border-t border-border">
                 Ver perfil completo →
               </div>
             </div>
           </Link>
 
-          {/* Other leaders — Coluna Direita, vertical, equilibrados */}
-          <div className="lg:col-span-6 flex flex-col gap-8">
+          {/* Other leaders — Coluna Direita, preenchendo toda a altura */}
+          <div className="lg:col-span-7 flex flex-col gap-8 h-full">
             {others.map((a) => (
               <Link
                 key={a.slug}
                 to="/equipe/$slug"
                 params={{ slug: a.slug }}
-                className="group block reveal-up"
+                className="group block reveal-up flex-1"
               >
-                <div className="grid grid-cols-12 gap-5 items-start border-t border-border pt-6">
-                  <div className="col-span-5 sm:col-span-4 relative">
+                <div className="grid grid-cols-12 gap-5 items-stretch border-t border-border pt-6 h-full">
+                  <div className="col-span-5 relative">
                     <span className="absolute -top-2 -left-2 h-px w-10 bg-gold z-10" />
-                    <div className="editorial-frame aspect-[4/5] w-full">
+                    <div className="editorial-frame aspect-[4/5] w-full h-full">
                       <img src={a.img} alt={a.name} className="h-full w-full object-cover object-top" />
                     </div>
                   </div>
-                  <div className="col-span-7 sm:col-span-8">
+                  <div className="col-span-7 flex flex-col">
                     <div className="text-[10px] font-semibold uppercase tracking-[0.28em] text-gold">{a.cred}</div>
                     <div className="mt-2 text-xl lg:text-[1.4rem] font-semibold text-primary tracking-tight leading-[1.15] group-hover:text-gold transition-colors">
                       {a.name}
@@ -755,6 +756,7 @@ function LeadershipSection() {
             ))}
           </div>
         </div>
+
       </Container>
     </section>
   );

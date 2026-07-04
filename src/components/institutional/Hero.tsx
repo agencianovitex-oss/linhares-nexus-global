@@ -32,7 +32,9 @@ export function InstitutionalHero({
         !isDark && "border-b border-border",
       )}
     >
+      {isDark && <span className="hero-texture-veil" aria-hidden />}
       {isDark && <span className="fade-edge-bottom" aria-hidden />}
+
       <Container>
         <div className={cn("max-w-4xl", align === "center" && "mx-auto text-center")}>
           {eyebrow && (
