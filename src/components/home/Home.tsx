@@ -246,7 +246,7 @@ function AuthorityPanel() {
           <h3
             className={`mt-3 text-center font-display font-semibold text-primary-foreground leading-[1.2] ${
               isOverview
-                ? "text-[1.6rem] lg:text-[1.85rem]"
+                ? "text-[1.35rem] lg:text-[1.55rem]"
                 : "text-[1.5rem] lg:text-[1.75rem]"
             }`}
           >
@@ -255,11 +255,11 @@ function AuthorityPanel() {
 
           {/* Body */}
           {isOverview ? (
-            <ul className="mt-7 mx-auto max-w-md space-y-3.5">
+            <ul className="mt-5 mx-auto max-w-md space-y-2.5">
               {slide.items!.map((it, i) => (
                 <li
                   key={i}
-                  className="flex items-start gap-3 text-[0.95rem] leading-[1.55] text-primary-foreground/85"
+                  className="flex items-start gap-3 text-[0.9rem] leading-[1.5] text-primary-foreground/85"
                 >
                   <ItemIcon kind={it.icon} />
                   <span>{it.label}</span>
@@ -272,6 +272,7 @@ function AuthorityPanel() {
             </p>
           )}
         </div>
+
 
         {/* Manual navigation arrows */}
         <button
