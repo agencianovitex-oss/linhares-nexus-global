@@ -456,14 +456,43 @@
   }
 
   @keyframes marquee-x {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(-50%, 0, 0); }
   }
+  .animate-marquee-x {
+    animation: marquee-x var(--marquee-duration, 90s) linear infinite;
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+  .animate-marquee-x.is-paused {
+    animation-play-state: paused;
+  }
+  /* Do NOT disable the marquee for reduced motion — many OS defaults have it on
+     and it would freeze the block. Slow it down instead. */
   @media (prefers-reduced-motion: reduce) {
-    [class*="animate-[marquee-x"] {
-      animation: none !important;
+    .animate-marquee-x {
+      animation-duration: calc(var(--marquee-duration, 90s) * 2);
     }
   }
+
+  /* Hero texture veil — subtle diagonal weave + gold radial glow behind titles
+     to break up the solid navy of institutional page heroes. */
+  .hero-texture-veil {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+      radial-gradient(ellipse 60% 55% at 30% 40%, rgb(200 145 70 / 0.08), transparent 65%),
+      repeating-linear-gradient(135deg,
+        oklch(1 0 0 / 0.025) 0px,
+        oklch(1 0 0 / 0.025) 1px,
+        transparent 1px,
+        transparent 8px);
+    mask-image: radial-gradient(ellipse 70% 80% at 30% 50%, black 30%, transparent 85%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 80% at 30% 50%, black 30%, transparent 85%);
+  }
+
 
 
   /* Editorial photo overlay — depth on dark surfaces. */
