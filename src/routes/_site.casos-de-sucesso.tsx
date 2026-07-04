@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { InstitutionalHero, InstitutionalButton } from "@/components/institutional";
 import { SectionBlock } from "@/components/institutional/SectionBlock";
-import { PhotoMosaic } from "@/components/home/PhotoMosaic";
+import { PhotoCarousel } from "@/components/home/PhotoCarousel";
 import { mosaicPhotos } from "@/data/mosaic";
+
 import { buildLocaleHead } from "@/lib/seo";
 
 const L = "pt" as const;
