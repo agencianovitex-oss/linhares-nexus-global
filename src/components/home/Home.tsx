@@ -181,9 +181,9 @@ function AuthorityPanel() {
         }}
       />
       <div
-        className="relative px-8 py-12 lg:px-10 lg:py-14"
-        style={{ minHeight: "34rem" }}
+        className="relative px-8 py-10 lg:px-10 lg:py-12 h-[560px] md:h-[600px] lg:h-[620px] overflow-hidden"
       >
+
         <div
           key={slide.id}
           className={`transition-all duration-[1100ms] ease-out ${
