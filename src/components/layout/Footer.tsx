@@ -52,31 +52,33 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="lg:col-span-3">
-          <h4 className="eyebrow eyebrow-on-dark">{t.footer.navigation}</h4>
-          <ul className="mt-7 space-y-4 text-[13.5px] text-primary-foreground/85">
-            {quick.map((l) => (
-              <li key={l.to}>
-                <Link to={withLocale(locale, l.to)} className="transition-colors hover:text-gold">
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <div className="grid grid-cols-2 gap-6 lg:col-span-5 lg:grid-cols-5 lg:gap-16">
+          <div className="col-span-1 lg:col-span-3">
+            <h4 className="eyebrow eyebrow-on-dark">{t.footer.navigation}</h4>
+            <ul className="mt-7 space-y-4 text-[13.5px] text-primary-foreground/85">
+              {quick.map((l) => (
+                <li key={l.to}>
+                  <Link to={withLocale(locale, l.to)} className="transition-colors hover:text-gold">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        <div className="lg:col-span-2">
-          <h4 className="eyebrow eyebrow-on-dark">{t.footer.offices}</h4>
-          <ul className="mt-7 space-y-4 text-[13.5px] text-primary-foreground/85">
-            {OFFICES.map((o) => (
-              <li key={o.city}>
-                <span className="block">{o.city}</span>
-                <span className="block text-[11px] uppercase tracking-[0.22em] text-primary-foreground/45">
-                  {o.state}
-                </span>
-              </li>
-            ))}
-          </ul>
+          <div className="col-span-1 lg:col-span-2">
+            <h4 className="eyebrow eyebrow-on-dark">{t.footer.offices}</h4>
+            <ul className="mt-7 space-y-4 text-[13.5px] text-primary-foreground/85">
+              {OFFICES.map((o) => (
+                <li key={o.city}>
+                  <span className="block">{o.city}</span>
+                  <span className="block text-[11px] uppercase tracking-[0.22em] text-primary-foreground/45">
+                    {o.state}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
 
