@@ -90,8 +90,8 @@ function Contato() {
               <ul className="mt-6 space-y-5">
                 <li>
                   <p className="text-[11px] uppercase tracking-[0.28em] text-muted-foreground">E-mail</p>
-                  <a href="mailto:contato@linhareslaw.com" className="mt-1 block text-ink hover:text-gold">
-                    contato@linhareslaw.com
+                  <a href="mailto:info@linhareslaw.com" className="mt-1 block text-ink hover:text-gold">
+                    info@linhareslaw.com
                   </a>
                 </li>
                 <li>
