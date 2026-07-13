@@ -25,7 +25,7 @@ export function InstitutionalHero({
   return (
     <section
       className={cn(
-        "relative pt-32 pb-16 overflow-hidden",
+        "relative pt-40 pb-16 overflow-hidden",
         isDark
           ? "surface-premium-dark texture-grain"
           : "surface-premium-light",
