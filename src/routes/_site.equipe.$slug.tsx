@@ -109,7 +109,7 @@ const profiles: Record<string, AttorneyProfile> = {
     practice: ["EB-1", "EB-2 NIW", "O-1", "Imigração Corporativa"],
     longBio: [
       "Dra. Juliana Mosquera Soler é advogada especializada em imigração corporativa, com mais de 18 anos de experiência nos setores público e privado, atuando principalmente em casos baseados em emprego, como EB-1, EB-2 (NIW) e O-1.",
-      "É bacharel em Economia e possui Juris Doctor com distinção Magna Cum Laude.",
+      "É bacharel em Economia e possui Juris Doctor com distinção Magna Cum Laude. Graduado em Direito nos EUA (Juris Doctor) com distinção Magna Cum Laude (Melhores 10%).",
       "Antes de atuar com imigração, trabalhou em direito empresarial, administrativo e público, além de experiência em tribunais e cortes superiores, o que fortaleceu sua capacidade de análise estratégica de casos e elaboração de peças jurídicas.",
       "Fluente em espanhol, atende clientes de diversas origens com foco em clareza e acompanhamento próximo durante todo o processo.",
       "É licenciada para exercer a advocacia na Flórida e em Porto Rico.",
