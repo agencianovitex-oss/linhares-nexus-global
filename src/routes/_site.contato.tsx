@@ -73,8 +73,7 @@ function Contato() {
                 />
               </div>
               <p className="text-xs text-muted-foreground">
-                As informações enviadas são tratadas com confidencialidade. Posteriormente este
-                formulário será integrado às plataformas Zoho Forms e Koalendar.
+                {"\n"}
               </p>
               <div>
                 <InstitutionalButton type="submit">
@@ -91,8 +90,8 @@ function Contato() {
               <ul className="mt-6 space-y-5">
                 <li>
                   <p className="text-[11px] uppercase tracking-[0.28em] text-muted-foreground">E-mail</p>
-                  <a href="mailto:contato@linhareslaw.com" className="mt-1 block text-ink hover:text-gold">
-                    contato@linhareslaw.com
+                  <a href="mailto:info@linhareslaw.com" className="mt-1 block text-ink hover:text-gold">
+                    info@linhareslaw.com
                   </a>
                 </li>
                 <li>
@@ -110,7 +109,7 @@ function Contato() {
               <span className="eyebrow eyebrow-on-dark">Atendimento</span>
               <h3 className="mt-4 text-primary-foreground">Segunda a Sexta · 9h às 18h (EST)</h3>
               <p className="mt-4 text-sm text-primary-foreground/75">
-                Resposta institucional em até 24 horas úteis.
+                Resposta em até 24 horas úteis.
               </p>
             </div>
           </aside>
