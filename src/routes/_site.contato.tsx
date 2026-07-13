@@ -109,7 +109,7 @@ function Contato() {
               <span className="eyebrow eyebrow-on-dark">Atendimento</span>
               <h3 className="mt-4 text-primary-foreground">Segunda a Sexta · 9h às 18h (EST)</h3>
               <p className="mt-4 text-sm text-primary-foreground/75">
-                Resposta institucional em até 24 horas úteis.
+                Resposta em até 24 horas úteis.
               </p>
             </div>
           </aside>
