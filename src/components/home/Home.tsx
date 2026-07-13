@@ -677,7 +677,7 @@ function LeadershipSection() {
       role: "ADVOGADA",
       cred: "Florida Bar · Puerto Rico Bar",
       img: juliana,
-      bio: "Advogada especializada em imigração corporativa, com mais de 18 anos de experiência em casos baseados em emprego como EB-1, EB-2 (NIW) e O-1. Juris Doctor Magna Cum Laude, licenciada na Flórida e em Puerto Rico.",
+      bio: "Advogada especializada em imigração corporativa, com mais de 18 anos de experiência em casos baseados em emprego como\nEB-1, EB-2 (NIW) e O-1. Graduado em Direito nos EUA (Juris Doctor) com distinção Magna Cum Laude (Melhores 10%).\u00a0Licenciada na Flórida e em Puerto Rico.",
     },
   ];
 
