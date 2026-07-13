@@ -73,8 +73,7 @@ function Contato() {
                 />
               </div>
               <p className="text-xs text-muted-foreground">
-                As informações enviadas são tratadas com confidencialidade. Posteriormente este
-                formulário será integrado às plataformas Zoho Forms e Koalendar.
+                {"\n"}
               </p>
               <div>
                 <InstitutionalButton type="submit">
