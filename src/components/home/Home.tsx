@@ -666,15 +666,15 @@ function LeadershipSection() {
     {
       slug: "nicholas-perry",
       name: "Nicholas Perry, Esq.",
-      role: "Advogado Sênior de Imigração",
+      role: "ADVOGADO",
       cred: "U.S. Immigration Attorney",
       img: nicholas3,
-      bio: "Advogado de imigração com formação americana e atuação dedicada à elaboração e defesa de petições de visto perante as autoridades federais.",
+      bio: "Advogado de imigração with formação americana e atuação dedicada à elaboração e defesa de petições de visto perante as autoridades federais.",
     },
     {
       slug: "juliana-mosquera-soler",
       name: "Juliana Mosquera Soler, Esq.",
-      role: "Of Counsel",
+      role: "ADVOGADA",
       cred: "Florida Bar · Puerto Rico Bar",
       img: juliana,
       bio: "Of Counsel do Linhares Law, com atuação em direito migratório e experiência multijurisdicional entre Florida e Puerto Rico.",
