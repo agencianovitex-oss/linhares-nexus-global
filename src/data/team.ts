@@ -69,7 +69,7 @@ export const teamGroups: TeamGroup[] = [
       },
       {
         name: "Nicholas Perry, Esq.",
-        role: "Advogado de Imigração",
+        role: "ADVOGADO",
         credentials: ["Nebraska Bar", "North Carolina Bar", "U.S. Supreme Court"],
         slug: "nicholas-perry",
         portrait: nicholas,
@@ -77,7 +77,7 @@ export const teamGroups: TeamGroup[] = [
       },
       {
         name: "Juliana Mosquera Soler, Esq.",
-        role: "Of Counsel",
+        role: "ADVOGADA",
         credentials: ["Florida Bar", "Puerto Rico Bar"],
         slug: "juliana-mosquera-soler",
         portrait: juliana,
