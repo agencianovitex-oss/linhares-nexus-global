@@ -669,7 +669,7 @@ function LeadershipSection() {
       role: "ADVOGADO",
       cred: "U.S. Immigration Attorney",
       img: nicholas3,
-      bio: "Advogado de imigração with formação americana e atuação dedicada à elaboração e defesa de petições de visto perante as autoridades federais.",
+      bio: "Advogado de imigração\u00a0 com formação americana e atuação dedicada à elaboração e defesa de petições de visto perante as autoridades federais. Tendo atuado ao longo de sua carreira nas principais agência federais americanas.",
     },
     {
       slug: "juliana-mosquera-soler",
