@@ -64,7 +64,7 @@ const profiles: Record<string, AttorneyProfile> = {
   },
   "nicholas-perry": {
     name: "Nicholas Perry, Esq.",
-    title: "Advogado de Imigração",
+    title: "ADVOGADO",
     shortBio:
       "Advogado com trajetória nas principais instituições do governo federal americano dedicadas à imigração e à aplicação da lei.",
     hero: nicholas,
@@ -90,7 +90,7 @@ const profiles: Record<string, AttorneyProfile> = {
   },
   "juliana-mosquera-soler": {
     name: "Juliana Mosquera Soler, Esq.",
-    title: "Of Counsel",
+    title: "ADVOGADA",
     shortBio:
       "Advogada especializada em imigração corporativa, com mais de 18 anos de experiência nos setores público e privado, atuando principalmente em casos baseados em emprego, como EB-1, EB-2 (NIW) e O-1.",
     hero: juliana,
