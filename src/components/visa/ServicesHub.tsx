@@ -50,7 +50,7 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
                   aria-hidden
                   className={
                     "absolute top-0 left-0 h-[3px] w-16 " +
-                    (featured ? "bg-white" : "bg-[rgb(179,134,66)]")
+                    (featured ? "bg-background" : "bg-[rgb(179,134,66)]")
                   }
                 />
                 <div
