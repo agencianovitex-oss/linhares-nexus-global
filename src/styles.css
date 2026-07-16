@@ -76,16 +76,16 @@
 :root {
   --radius: 2px;
 
-  --background: oklch(1 0 0);
+  --background: rgb(253 250 243);
   --foreground: oklch(0.205 0.012 264);
   --ink: oklch(0.205 0.012 264);
   --ink-soft: oklch(0.42 0.018 260);
-  --surface: oklch(0.985 0.003 250);
-  --surface-2: oklch(0.965 0.004 255);
+  --surface: oklch(0.975 0.006 85);
+  --surface-2: oklch(0.955 0.008 85);
 
-  --card: oklch(1 0 0);
+  --card: rgb(253 250 243);
   --card-foreground: oklch(0.205 0.012 264);
-  --popover: oklch(1 0 0);
+  --popover: rgb(253 250 243);
   --popover-foreground: oklch(0.205 0.012 264);
 
   /* Linhares Law — Official Brand Colors */
