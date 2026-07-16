@@ -70,7 +70,7 @@ const AUTHORITY_SLIDES: AuthoritySlide[] = [
     id: "andre",
     kind: "highlight",
     eyebrow: "Liderança Jurídica",
-    name: "André Linhares",
+    name: "André Linhares, Esq.",
     title: "Único advogado brasileiro palestrante da AILA",
     description:
       "Participação como palestrante na principal associação americana de advogados de imigração, reconhecendo sua contribuição técnica para a advocacia migratória internacional.",
@@ -121,7 +121,7 @@ const AUTHORITY_SLIDES: AuthoritySlide[] = [
   },
 ];
 
-const HERO_SEQUENCE: AuthoritySlide[] = [AUTHORITY_OVERVIEW, ...AUTHORITY_SLIDES];
+const HERO_SEQUENCE: AuthoritySlide[] = [...AUTHORITY_SLIDES, AUTHORITY_OVERVIEW];
 
 function ItemIcon({ kind }: { kind: AuthorityItem["icon"] }) {
   const cls = "h-[18px] w-[18px] text-gold shrink-0 mt-[3px]";
@@ -169,6 +169,7 @@ function AuthorityPanel() {
 
   const slide = HERO_SEQUENCE[index];
   const isOverview = slide.kind === "overview";
+  const isFeatured = slide.id === "andre";
 
   return (
     <div className="relative w-full max-w-xl mx-auto lg:mx-0 lg:ml-auto">
@@ -181,12 +182,28 @@ function AuthorityPanel() {
         }}
       />
       <div
-        className="relative px-8 py-10 lg:px-10 lg:py-12 h-[560px] md:h-[600px] lg:h-[620px] overflow-hidden"
+        className="relative px-8 py-10 lg:px-10 lg:py-12 h-[560px] md:h-[600px] lg:h-[660px] overflow-hidden"
       >
+        {isFeatured && (
+          <>
+            <span
+              aria-hidden
+              className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gold/80"
+            />
+            <span
+              aria-hidden
+              className="pointer-events-none absolute inset-0"
+              style={{
+                background:
+                  "radial-gradient(ellipse 60% 45% at 50% 22%, rgb(179 134 66 / 0.18), transparent 70%)",
+              }}
+            />
+          </>
+        )}
 
         <div
           key={slide.id}
-          className={`transition-all duration-[1100ms] ease-out ${
+          className={`relative transition-all duration-[1100ms] ease-out ${
             visible
               ? "opacity-100 translate-y-0 blur-0"
               : "opacity-0 translate-y-3 blur-[2px]"
@@ -196,10 +213,13 @@ function AuthorityPanel() {
           <div className="flex justify-center">
             {slide.portrait ? (
               <div
-                className="h-[88px] w-[88px] rounded-full overflow-hidden ring-1 ring-gold/45"
+                className={`${
+                  isFeatured ? "h-[128px] w-[128px] ring-gold/70" : "h-[88px] w-[88px] ring-gold/45"
+                } rounded-full overflow-hidden ring-1`}
                 style={{
-                  boxShadow:
-                    "0 0 0 5px oklch(1 0 0 / 0.04), 0 24px 50px -22px rgb(0 0 0 / 0.55)",
+                  boxShadow: isFeatured
+                    ? "0 0 0 6px oklch(1 0 0 / 0.05), 0 0 0 1px rgb(179 134 66 / 0.35), 0 32px 70px -22px rgb(0 0 0 / 0.7)"
+                    : "0 0 0 5px oklch(1 0 0 / 0.04), 0 24px 50px -22px rgb(0 0 0 / 0.55)",
                 }}
               >
                 <img
@@ -231,21 +251,31 @@ function AuthorityPanel() {
           </div>
 
           {/* Eyebrow */}
-          <div className="mt-7 text-center text-[11px] font-bold uppercase tracking-[0.32em] text-gold">
+          <div
+            className={`${isFeatured ? "mt-8 text-[12px] tracking-[0.36em]" : "mt-7 text-[11px] tracking-[0.32em]"} text-center font-bold uppercase text-gold`}
+          >
             {slide.eyebrow}
           </div>
 
           {/* Name (only for highlights) */}
           {slide.name && !isOverview && (
-            <div className="mt-3 text-center font-display text-[1.05rem] tracking-wide text-primary-foreground/90">
+            <div
+              className={`${
+                isFeatured
+                  ? "mt-4 font-display text-[1.4rem] lg:text-[1.55rem] tracking-wide text-primary-foreground"
+                  : "mt-3 font-display text-[1.05rem] tracking-wide text-primary-foreground/90"
+              } text-center`}
+            >
               {slide.name}
             </div>
           )}
 
           {/* Title */}
           <h3
-            className={`mt-3 text-center font-display font-semibold text-primary-foreground leading-[1.2] ${
-              isOverview
+            className={`mt-3 text-center font-display font-semibold text-primary-foreground leading-[1.15] ${
+              isFeatured
+                ? "text-[1.85rem] lg:text-[2.15rem]"
+                : isOverview
                 ? "text-[1.35rem] lg:text-[1.55rem]"
                 : "text-[1.5rem] lg:text-[1.75rem]"
             }`}
@@ -267,11 +297,18 @@ function AuthorityPanel() {
               ))}
             </ul>
           ) : (
-            <p className="mt-5 text-center text-[0.98rem] leading-[1.75] text-primary-foreground/75 max-w-md mx-auto">
+            <p
+              className={`${
+                isFeatured
+                  ? "mt-6 text-[1.02rem] leading-[1.8] text-primary-foreground/85"
+                  : "mt-5 text-[0.98rem] leading-[1.75] text-primary-foreground/75"
+              } text-center max-w-md mx-auto`}
+            >
               {slide.description}
             </p>
           )}
         </div>
+
 
 
         {/* Manual navigation arrows */}
@@ -538,11 +575,13 @@ function AwardsSection() {
           </p>
           <Link
             to="/premiacoes"
-            className="text-[11px] uppercase tracking-[0.28em] text-primary-foreground hover:text-gold transition-colors"
+            className="group/btn inline-flex items-center justify-center gap-3 bg-gold text-gold-foreground px-8 py-4 text-[11px] font-semibold uppercase tracking-[0.28em] shadow-[0_10px_30px_-18px_rgba(179,134,66,0.65)] transition-[background-color,transform] duration-300 ease-out hover:bg-[rgb(153_108_40)] hover:-translate-y-[1px]"
           >
-            Ver todas as premiações →
+            <span>Ver todas as premiações</span>
+            <span aria-hidden className="inline-block transition-transform duration-300 ease-out group-hover/btn:translate-x-[5px]">→</span>
           </Link>
         </div>
+
       </Container>
     </section>
   );

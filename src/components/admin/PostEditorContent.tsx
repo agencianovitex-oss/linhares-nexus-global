@@ -279,7 +279,7 @@ export function PostEditorContent({ postId }: { postId?: string }) {
                 <Label>Tipo</Label>
                 <select value={form.cta_type ?? ""}
                   onChange={(e) => setForm((f) => ({ ...f, cta_type: e.target.value || null }))}
-                  className="w-full border border-input px-3 h-10 text-sm bg-white">
+                  className="w-full border border-input px-3 h-10 text-sm bg-background">
                   <option value="">— Padrão —</option>
                   <option value="agendar_consulta">Agendar Consulta</option>
                   <option value="avaliacao_elegibilidade">Avaliação de Elegibilidade</option>
@@ -316,7 +316,7 @@ export function PostEditorContent({ postId }: { postId?: string }) {
                 <Input value={form.slug} onChange={(e) => setForm((f) => ({ ...f, slug: slugify(e.target.value) }))} /></div>
               <div><Label>Status</Label>
                 <select value={form.status} onChange={(e) => setForm((f) => ({ ...f, status: e.target.value as Status }))}
-                  className="w-full border border-input px-3 h-10 bg-white">
+                  className="w-full border border-input px-3 h-10 bg-background">
                   <option value="draft">Rascunho</option>
                   <option value="scheduled">Agendado</option>
                   <option value="published">Publicado</option>
@@ -347,7 +347,7 @@ export function PostEditorContent({ postId }: { postId?: string }) {
             <div className="space-y-3 text-sm">
               <div><Label>Categoria</Label>
                 <select value={form.category_id ?? ""} onChange={(e) => setForm((f) => ({ ...f, category_id: e.target.value || null }))}
-                  className="w-full border border-input px-3 h-10 bg-white">
+                  className="w-full border border-input px-3 h-10 bg-background">
                   <option value="">—</option>
                   {(cats.data ?? []).map((c: any) => (
                     <option key={c.id} value={c.id}>
@@ -357,7 +357,7 @@ export function PostEditorContent({ postId }: { postId?: string }) {
                 </select></div>
               <div><Label>Autor</Label>
                 <select value={form.author_id ?? ""} onChange={(e) => setForm((f) => ({ ...f, author_id: e.target.value || null }))}
-                  className="w-full border border-input px-3 h-10 bg-white">
+                  className="w-full border border-input px-3 h-10 bg-background">
                   <option value="">—</option>
                   {(authors.data ?? []).map((a: any) => <option key={a.id} value={a.id}>{a.name}</option>)}
                 </select></div>
@@ -399,7 +399,7 @@ export function PostEditorContent({ postId }: { postId?: string }) {
 
 function Card({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="bg-white border border-border p-6">
+    <section className="bg-background border border-border p-6">
       <h3 className="font-serif text-base mb-3 text-[rgb(6,36,67)]">{title}</h3>
       {children}
     </section>
@@ -410,7 +410,7 @@ function MultiPick({ items, selected, onChange }: {
   items: { id: string; label: string }[]; selected: string[]; onChange: (s: string[]) => void;
 }) {
   return (
-    <div className="border border-input p-2 max-h-40 overflow-y-auto bg-white space-y-1">
+    <div className="border border-input p-2 max-h-40 overflow-y-auto bg-background space-y-1">
       {items.length === 0 && <p className="text-xs text-muted-foreground p-1">Nenhum item.</p>}
       {items.map((it) => (
         <label key={it.id} className="flex items-center gap-2 text-sm cursor-pointer hover:bg-muted p-1">
