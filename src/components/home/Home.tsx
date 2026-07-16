@@ -475,7 +475,7 @@ function AuthoritySection() {
               <span className="eyebrow eyebrow-on-dark">Nossa Prática</span>
             </div>
             <h2 className="mt-7 text-balance text-primary-foreground max-w-[22ch]">
-              Representando profissionais, investidores e famílias em estratégias de imigração para os Estados Unidos.
+              Representando profissionais qualificados, investidores e famílias em estratégias de imigração para os Estados Unidos.
             </h2>
             <p className="mt-8 lg:mt-10 text-base lg:text-lg leading-[1.85] text-primary-foreground/80 max-w-[58ch]">
               O Linhares Law atua exclusivamente em direito de imigração americana. Cada estratégia é construída a partir de uma leitura técnica precisa do perfil profissional, patrimonial e familiar do cliente — sustentada pela autoridade institucional de um escritório de advocacia reconhecido nos Estados Unidos.
@@ -695,7 +695,7 @@ function ServicesSection() {
 function LeadershipSection() {
   const founder = {
     slug: "andre-linhares",
-    name: "Dr. André Linhares",
+    name: "André Linhares, Esq.",
     role: "Advogado Fundador",
     cred: "Founding Attorney · U.S. Immigration Law",
     img: andreLinharesPortrait,
