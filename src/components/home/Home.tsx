@@ -121,7 +121,7 @@ const AUTHORITY_SLIDES: AuthoritySlide[] = [
   },
 ];
 
-const HERO_SEQUENCE: AuthoritySlide[] = [AUTHORITY_OVERVIEW, ...AUTHORITY_SLIDES];
+const HERO_SEQUENCE: AuthoritySlide[] = [...AUTHORITY_SLIDES, AUTHORITY_OVERVIEW];
 
 function ItemIcon({ kind }: { kind: AuthorityItem["icon"] }) {
   const cls = "h-[18px] w-[18px] text-gold shrink-0 mt-[3px]";
