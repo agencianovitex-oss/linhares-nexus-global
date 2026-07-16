@@ -575,11 +575,13 @@ function AwardsSection() {
           </p>
           <Link
             to="/premiacoes"
-            className="text-[11px] uppercase tracking-[0.28em] text-primary-foreground hover:text-gold transition-colors"
+            className="group/btn inline-flex items-center justify-center gap-3 bg-gold text-gold-foreground px-8 py-4 text-[11px] font-semibold uppercase tracking-[0.28em] shadow-[0_10px_30px_-18px_rgba(179,134,66,0.65)] transition-[background-color,transform] duration-300 ease-out hover:bg-[rgb(153_108_40)] hover:-translate-y-[1px]"
           >
-            Ver todas as premiações →
+            <span>Ver todas as premiações</span>
+            <span aria-hidden className="inline-block transition-transform duration-300 ease-out group-hover/btn:translate-x-[5px]">→</span>
           </Link>
         </div>
+
       </Container>
     </section>
   );
