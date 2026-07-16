@@ -70,7 +70,7 @@ const AUTHORITY_SLIDES: AuthoritySlide[] = [
     id: "andre",
     kind: "highlight",
     eyebrow: "Liderança Jurídica",
-    name: "André Linhares",
+    name: "André Linhares, Esq.",
     title: "Único advogado brasileiro palestrante da AILA",
     description:
       "Participação como palestrante na principal associação americana de advogados de imigração, reconhecendo sua contribuição técnica para a advocacia migratória internacional.",
