@@ -101,7 +101,7 @@ export function AdminShell() {
       )}
 
       <main className="flex-1 min-w-0">
-        <header className="lg:hidden sticky top-0 z-20 bg-white border-b border-border flex items-center justify-between px-4 h-14">
+        <header className="lg:hidden sticky top-0 z-20 bg-background border-b border-border flex items-center justify-between px-4 h-14">
           <button onClick={() => setSidebarOpen(true)} className="p-2">
             {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
           </button>

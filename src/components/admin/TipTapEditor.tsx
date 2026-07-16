@@ -72,7 +72,7 @@ export function TipTapEditor({ value, onChange, placeholder }: Props) {
   };
 
   return (
-    <div className="border border-input bg-white rounded-md overflow-hidden flex flex-col" style={{ height: "70vh", minHeight: 500 }}>
+    <div className="border border-input bg-background rounded-md overflow-hidden flex flex-col" style={{ height: "70vh", minHeight: 500 }}>
       {/* Sticky main toolbar */}
       <div className="sticky top-0 z-10 flex flex-wrap items-center gap-1 border-b border-border bg-muted/40 p-2 backdrop-blur">
         <Btn title="Negrito" active={editor.isActive("bold")} onClick={() => editor.chain().focus().toggleBold().run()}><Bold size={14} /></Btn>
@@ -105,7 +105,7 @@ export function TipTapEditor({ value, onChange, placeholder }: Props) {
         editor={editor}
         shouldShow={({ editor, from, to }: { editor: any; from: number; to: number }) => from !== to && !editor.isActive("image")}
       >
-        <div className="flex items-center gap-0.5 rounded-md border border-border bg-white p-1 shadow-lg">
+        <div className="flex items-center gap-0.5 rounded-md border border-border bg-background p-1 shadow-lg">
           <Btn title="Negrito" active={editor.isActive("bold")} onClick={() => editor.chain().focus().toggleBold().run()}><Bold size={14} /></Btn>
           <Btn title="Itálico" active={editor.isActive("italic")} onClick={() => editor.chain().focus().toggleItalic().run()}><Italic size={14} /></Btn>
           <Btn title="Link" active={editor.isActive("link")} onClick={promptLink}><Link2 size={14} /></Btn>
