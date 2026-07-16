@@ -19,8 +19,10 @@ const skylineUs = skylineAsset.url;
 import andreSpeaking from "@/assets/andre-speaking-01.jpg";
 import heroFlagDesktopAsset from "@/assets/hero-skyline-desktop.jpg.asset.json";
 import heroFlagMobileAsset from "@/assets/hero-skyline-mobile.jpg.asset.json";
+import heroVideoAsset from "@/assets/linhares-hero.mp4.asset.json";
 const heroFlagDesktop = heroFlagDesktopAsset.url;
 const heroFlagMobile = heroFlagMobileAsset.url;
+const heroVideo = heroVideoAsset.url;
 import pubEb2Asset from "@/assets/pub-eb2.jpg.asset.json";
 import pubInvestAsset from "@/assets/pub-invest.jpg.asset.json";
 import pubExecAsset from "@/assets/pub-exec.jpg.asset.json";
@@ -353,10 +355,16 @@ function AuthorityPanel() {
 function HeroSection() {
   return (
     <section className="relative surface-premium-dark pt-32 pb-24 lg:pt-40 lg:pb-28 overflow-hidden">
-      <div
+      <video
         aria-hidden
-        className="hero-bg-fade pointer-events-none absolute inset-0 hidden md:block"
-        style={{ backgroundImage: `url("${heroFlagDesktop}")`, backgroundSize: "cover", backgroundPosition: "center" }}
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+        src={heroVideo}
+        poster={heroFlagDesktop}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
       />
       <div
         aria-hidden
