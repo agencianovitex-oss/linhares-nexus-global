@@ -169,7 +169,7 @@ function AuthorityPanel() {
 
   const slide = HERO_SEQUENCE[index];
   const isOverview = slide.kind === "overview";
-  const isFeatured = slide.id === "andre";
+  const isFeatured = !isOverview;
 
   return (
     <div className="relative w-full max-w-xl mx-auto lg:mx-0 lg:ml-auto">
