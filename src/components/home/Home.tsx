@@ -705,7 +705,7 @@ function LeadershipSection() {
     slug: "andre-linhares",
     name: "André Linhares, Esq.",
     role: "Advogado Fundador",
-    cred: "Founding Attorney · U.S. Immigration Law",
+    cred: "NEW YORK\u00a0 / WASHINGTON D.C BAR · U.S. IMMIGRATION LAW",
     img: andreLinharesPortrait,
     bio: "Fundador do Linhares Law e autoridade reconhecida em direito de imigração americana. Há mais de 14 anos representando profissionais, executivos, investidores e famílias internacionais perante as autoridades federais dos Estados Unidos.",
   };
@@ -714,7 +714,7 @@ function LeadershipSection() {
       slug: "nicholas-perry",
       name: "Nicholas Perry, Esq.",
       role: "ADVOGADO",
-      cred: "U.S. Immigration Attorney",
+      cred: "NEBRASKA BAR",
       img: nicholas3,
       bio: "Advogado de imigração\u00a0 com formação americana e atuação dedicada à elaboração e defesa de petições de visto perante as autoridades federais. Tendo atuado ao longo de sua carreira nas principais agência federais americanas.",
     },
