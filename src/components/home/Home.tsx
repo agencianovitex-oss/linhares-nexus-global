@@ -716,7 +716,7 @@ function LeadershipSection() {
       role: "ADVOGADO",
       cred: "NEBRASKA BAR",
       img: nicholas3,
-      bio: "Advogado de imigração\u00a0 com formação americana e atuação dedicada à elaboração e defesa de petições de visto perante as autoridades federais. Tendo atuado ao longo de sua carreira nas principais agência federais americanas.",
+      bio: "Advogado de imigração\u00a0 com formação americana e atuação dedicada à elaboração e defesa de petições de visto perante as autoridades federais. Tendo atuado ao longo de sua carreira nas principais agência federais americanas, inclusive como diretor setorial do U.S. Citizenship and Immigration Services (USCIS).",
     },
     {
       slug: "juliana-mosquera-soler",
@@ -724,7 +724,7 @@ function LeadershipSection() {
       role: "ADVOGADA",
       cred: "Florida Bar · Puerto Rico Bar",
       img: juliana,
-      bio: "Advogada especializada em imigração corporativa, com mais de 18 anos de experiência em casos baseados em emprego como\nEB-1, EB-2 NIW e O-1. Graduado em Direito nos EUA (Juris Doctor) com distinção Magna Cum Laude (Melhores 10%).\u00a0Licenciada na Flórida e em Puerto Rico.",
+      bio: "Advogada especializada em imigração corporativa, com mais de 18 anos de experiência em casos baseados em emprego como EB-1, EB-2 NIW e O-1. Graduada em Direito nos EUA (Juris Doctor) com distinção Magna Cum Laude (Melhores 10%).\u00a0Licenciada na Flórida e em Puerto Rico.",
     },
   ];
 
