@@ -59,7 +59,7 @@ const AUTHORITY_OVERVIEW: AuthoritySlide = {
   description: "",
   icon: "star",
   items: [
-    { icon: "landmark", label: "Único advogado brasileiro palestrante da AILA" },
+    { icon: "landmark", label: "Único advogado brasileiro convidado como palestrante da AILA" },
     { icon: "flag", label: "Nicholas Perry — USCIS, DHS, ICE, CBP e Department of Justice" },
     { icon: "scale", label: "Juliana Mosquera — Florida Bar · +18 anos em imigração corporativa" },
     { icon: "trophy", label: "Entre os 10 Best Immigration Law Firms" },
@@ -73,7 +73,7 @@ const AUTHORITY_SLIDES: AuthoritySlide[] = [
     kind: "highlight",
     eyebrow: "Liderança Jurídica",
     name: "André Linhares, Esq.",
-    title: "Único advogado brasileiro palestrante da AILA",
+    title: "Único advogado brasileiro convidado como palestrante da AILA",
     description:
       "Participação como palestrante na principal associação americana de advogados de imigração, reconhecendo sua contribuição técnica para a advocacia migratória internacional.",
     portrait: andreLinharesPortrait,
