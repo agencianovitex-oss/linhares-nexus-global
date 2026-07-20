@@ -59,7 +59,7 @@ const AUTHORITY_OVERVIEW: AuthoritySlide = {
   description: "",
   icon: "star",
   items: [
-    { icon: "landmark", label: "Único advogado brasileiro palestrante da AILA" },
+    { icon: "landmark", label: "Único advogado brasileiro convidado como palestrante da AILA" },
     { icon: "flag", label: "Nicholas Perry — USCIS, DHS, ICE, CBP e Department of Justice" },
     { icon: "scale", label: "Juliana Mosquera — Florida Bar · +18 anos em imigração corporativa" },
     { icon: "trophy", label: "Entre os 10 Best Immigration Law Firms" },
