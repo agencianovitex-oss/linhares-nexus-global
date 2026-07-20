@@ -402,7 +402,7 @@ function HeroSection() {
               Estratégias migratórias conduzidas por advogados premiados internacionalmente.
             </h1>
             <p className="mt-8 max-w-2xl mx-auto lg:mx-0 text-lg leading-[1.85] text-primary-foreground/80">
-              Garantimos representação jurídica de excelência para que profissionais, investidores e famílias alcancem seus objetivos nos Estados Unidos com segurança e discrição.
+              Garantimos representação jurídica de excelência para que profissionais qualificados, investidores e famílias alcancem seus objetivos nos Estados Unidos com segurança e confiança.
             </p>
             <div className="mt-12 flex flex-wrap justify-center lg:justify-start gap-4">
               <InstitutionalButton
