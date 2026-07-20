@@ -705,7 +705,7 @@ function LeadershipSection() {
     slug: "andre-linhares",
     name: "André Linhares, Esq.",
     role: "Advogado Fundador",
-    cred: "Founding Attorney · U.S. Immigration Law",
+    cred: "NEW YORK\u00a0 / WASHINGTON D.C BAR · U.S. IMMIGRATION LAW",
     img: andreLinharesPortrait,
     bio: "Fundador do Linhares Law e autoridade reconhecida em direito de imigração americana. Há mais de 14 anos representando profissionais, executivos, investidores e famílias internacionais perante as autoridades federais dos Estados Unidos.",
   };
