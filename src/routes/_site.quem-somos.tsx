@@ -45,7 +45,7 @@ function QuemSomos() {
     <>
       <InstitutionalHero
         eyebrow="Linhares Law · Quem Somos"
-        title="Uma trajetória construída pela representação jurídica de quem busca os Estados Unidos."
+        title="Uma trajetória construída pela representação jurídica de quem busca morar e trabalhar nos EUA."
         intro="O Linhares Law é um escritório de advocacia dedicado exclusivamente à imigração americana. Há mais de 14 anos representamos profissionais, executivos, investidores e famílias internacionais em estratégias migratórias para os Estados Unidos."
         meta={
           <>
