@@ -65,7 +65,7 @@ export const teamGroups: TeamGroup[] = [
         credentials: ["D.C. Bar", "New York Bar"],
         slug: "andre-linhares",
         portrait: andre,
-        bio: "Fundador do Linhares Law, com mais de 14 anos de prática exclusiva em imigração americana e referência reconhecida entre profissionais e investidores brasileiros.",
+        bio: "Fundador da Linhares Law, o Dr. André Linhares atua há mais de 14 anos no direito imigratório, sendo referência em vistos para profissionais qualificados e empresários que desejam viver ou investir nos Estados Unidos.",
       },
       {
         name: "Nicholas Perry, Esq.",
