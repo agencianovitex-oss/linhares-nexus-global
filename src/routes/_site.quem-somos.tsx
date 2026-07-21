@@ -31,7 +31,7 @@ const valores = [
 
 const linhaTempo = [
   { ano: "2012", titulo: "Início da Prática Jurídica", body: "Dr. André Linhares inicia sua trajetória na advocacia americana de imigração." },
-  { ano: "2016", titulo: "Fundação do Linhares Law", body: "O escritório nasce com o propósito de representar profissionais e famílias internacionais nos Estados Unidos." },
+  { ano: "2016", titulo: "Fundação do Linhares Law", body: "O escritório nasce com o propósito de representar profissionais qualificados e famílias nos Estados Unidos." },
   { ano: "2023", titulo: "Expansão", body: "Abertura de novos escritórios e ampliação da estrutura institucional." },
   { ano: "2024", titulo: "Reconhecimento Internacional", body: "Premiação no International Business Institute e nomeação para o The Law Awards." },
   { ano: "2024", titulo: "Great Place to Work", body: "Certificação como Great Place to Work com alto índice de satisfação interna." },
