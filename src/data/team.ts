@@ -123,13 +123,13 @@ export const teamGroups: TeamGroup[] = [
     ],
   },
   {
-    eyebrow: "V. Project Managers",
-    title: "Project Managers",
+    eyebrow: "V. Business Plan Specialists",
+    title: "Business Plan Specialists",
     description:
       "Coordenação de projetos institucionais e iniciativas estratégicas do escritório.",
     members: [
-      { name: "João Miranda", role: "Project Manager", portrait: joao },
-      { name: "Daniel Mendes", role: "Project Manager", portrait: daniel },
+      { name: "João Miranda", role: "Business Plan Specialist", portrait: joao },
+      { name: "Daniel Mendes", role: "Business Plan Specialist", portrait: daniel },
     ],
   },
   {
