@@ -9,9 +9,10 @@ export const Route = createFileRoute("/_site/")({
     buildLocaleHead({
       path: "/",
       locale: "pt",
-      title: `${dict.pt.pages.home.title}, Advogados de Imigração nos Estados Unidos`,
+      title: "Linhares Law, Advogados de Imigração Americana",
       description:
-        "Linhares Law é um escritório de advocacia dedicado à imigração americana. Há mais de 14 anos representamos profissionais, executivos, investidores e famílias em estratégias migratórias para os Estados Unidos. Escritórios em Orlando, Miami, New York e Salt Lake City.",
+        "Escritório boutique de imigração americana. Há mais de 14 anos representamos profissionais, investidores e famílias, com escritórios em Orlando, Miami, New York e Salt Lake City.",
+
       ogImage,
     }),
   component: Home,

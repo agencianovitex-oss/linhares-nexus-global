@@ -48,7 +48,7 @@ export function LanguageSwitcher({ className, onDark = false }: Props) {
                 : "opacity-70 hover:opacity-100",
             )}
           >
-            <img src={FLAG[l]} alt={LABEL[l]} className="h-full w-full object-cover" />
+            <img src={FLAG[l]} alt="" aria-hidden="true" className="h-full w-full object-cover" />
           </Link>
         );
       })}

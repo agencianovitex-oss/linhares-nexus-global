@@ -1,0 +1,39 @@
+# Linhares Law
+
+> Escritório boutique de advocacia dedicado à imigração americana, com mais de 14 anos representando profissionais qualificados, investidores e famílias internacionais. Escritórios em Orlando, Miami, New York e Salt Lake City.
+
+Linhares Law é uma firma de imigração dos Estados Unidos com atuação institucional e presença nacional. A prática inclui vistos baseados em emprego (EB-1, EB-2 NIW, O-1, L-1, H-1B), vistos de investidor (EB-5, E-2), petições familiares (I-130, VAWA), EB-3 e outras estratégias migratórias.
+
+## Pages
+
+- [Início](/): Visão geral do escritório e áreas de atuação.
+- [Quem Somos](/quem-somos): Trajetória institucional, missão e valores.
+- [Áreas de Atuação](/areas-de-atuacao): Catálogo de vistos e serviços de imigração.
+- [Equipe](/equipe): Advogados e profissionais do escritório.
+- [Premiações](/premiacoes): Reconhecimentos institucionais e certificações.
+- [Na Mídia](/na-midia): Participações do Dr. André Linhares na mídia.
+- [Depoimentos](/casos-de-sucesso): Depoimentos de clientes representados.
+- [Blog](/blog): Artigos sobre imigração americana em português, inglês e espanhol.
+- [Contato](/contato): Formulário de contato e endereços dos escritórios.
+
+## English
+
+- [Home](/en): Firm overview in English.
+- [About](/en/quem-somos): Institutional profile.
+- [Services](/en/servicos): U.S. immigration services catalog.
+- [Team](/en/equipe): Attorneys and professionals.
+- [Blog](/en/blog): Articles on U.S. immigration.
+- [Contact](/en/contato): Contact information.
+
+## Español
+
+- [Inicio](/es): Visión general del despacho.
+- [Nosotros](/es/quem-somos): Perfil institucional.
+- [Servicios](/es/servicos): Servicios de inmigración a EE. UU.
+- [Equipo](/es/equipe): Abogados y profesionales.
+- [Blog](/es/blog): Artículos sobre inmigración.
+- [Contacto](/es/contato): Información de contacto.
+
+## Optional
+
+- [Sitemap](/sitemap.xml): XML sitemap for crawlers.

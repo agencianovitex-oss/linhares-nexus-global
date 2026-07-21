@@ -11,10 +11,13 @@ const STATIC_PATHS = [
   "/casos-de-sucesso", "/blog", "/contato",
 ];
 
+// pt uses /areas-de-atuacao; en/es use /servicos
 function localizedPath(locale: Locale, path: string): string {
-  if (locale === "pt") return path;
-  return path === "/" ? `/${locale}` : `/${locale}${path}`;
+  const mapped = locale === "pt" && path === "/servicos" ? "/areas-de-atuacao" : path;
+  if (locale === "pt") return mapped;
+  return mapped === "/" ? `/${locale}` : `/${locale}${mapped}`;
 }
+
 
 function urlBlock(loc: string, lastmod?: string, alternates?: Array<{ hreflang: string; href: string }>, priority?: string) {
   const xhtml = (alternates ?? []).map(a =>
