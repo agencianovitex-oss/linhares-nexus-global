@@ -57,7 +57,7 @@ export const teamGroups: TeamGroup[] = [
     eyebrow: "I. Attorneys",
     title: "Attorneys",
     description:
-      "Advogados licenciados nos Estados Unidos que conduzem a estratégia jurídica de cada cliente do Linhares Law.",
+      "Advogados licenciados nos Estados Unidos que conduzem a estratégia jurídica de cada cliente da Linhares Law.",
     members: [
       {
         name: "André Linhares, Esq.",
@@ -73,7 +73,7 @@ export const teamGroups: TeamGroup[] = [
         credentials: ["Nebraska Bar", "North Carolina Bar", "U.S. Supreme Court"],
         slug: "nicholas-perry",
         portrait: nicholas,
-        bio: "Trajetória nas principais agências federais americanas dedicadas à imigração — USCIS, DHS, ICE, CBP e Department of Justice.",
+        bio: "Trajetória nas principais agências federais americanas dedicadas à imigração, USCIS, DHS, ICE, CBP e Department of Justice.",
       },
       {
         name: "Juliana Mosquera Soler, Esq.",

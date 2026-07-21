@@ -60,8 +60,8 @@ const AUTHORITY_OVERVIEW: AuthoritySlide = {
   icon: "star",
   items: [
     { icon: "landmark", label: "Único advogado brasileiro convidado como palestrante da AILA" },
-    { icon: "flag", label: "Nicholas Perry — USCIS, DHS, ICE, CBP e Department of Justice" },
-    { icon: "scale", label: "Juliana Mosquera — Florida Bar · +18 anos em imigração corporativa" },
+    { icon: "flag", label: "Nicholas Perry, USCIS, DHS, ICE, CBP e Department of Justice" },
+    { icon: "scale", label: "Juliana Mosquera, Florida Bar · +18 anos em imigração corporativa" },
     { icon: "trophy", label: "Entre os 10 Best Immigration Law Firms" },
     { icon: "star", label: "Mais de 14 anos de prática jurídica em imigração americana" },
   ],
@@ -486,7 +486,7 @@ function AuthoritySection() {
               Representando profissionais qualificados, investidores e famílias em estratégias de imigração para os Estados Unidos.
             </h2>
             <p className="mt-8 lg:mt-10 text-base lg:text-lg leading-[1.85] text-primary-foreground/80 max-w-[58ch]">
-              O Linhares Law atua exclusivamente em direito de imigração americana. Cada estratégia é construída a partir de uma leitura técnica precisa do perfil profissional, patrimonial e familiar do cliente — sustentada pela autoridade institucional de um escritório de advocacia reconhecido nos Estados Unidos.
+              A Linhares Law atua exclusivamente em direito de imigração americana. Cada estratégia é construída a partir de uma leitura técnica precisa do perfil profissional, patrimonial e familiar do cliente, sustentada pela autoridade institucional de um escritório de advocacia reconhecido nos Estados Unidos.
             </p>
             <p className="mt-6 text-base lg:text-lg leading-[1.85] text-primary-foreground/75 max-w-[58ch]">
               Nossa atuação é pautada por discrição, profundidade técnica e relacionamento de longo prazo com cada cliente representado.
@@ -510,9 +510,9 @@ function AuthoritySection() {
 
 function AwardsSection() {
   const recognitions = [
-    { title: "10 Best Law Firms", org: "American Institute of Legal Professionals", year: "2026", desc: "Immigration Law — Linhares Law, Florida." },
-    { title: "The Law Awards", org: "Winner — Immigration Practice", year: "2024", desc: "Distinção internacional pela excelência na prática de imigração americana." },
-    { title: "Great Place To Work®", org: "Certified — Estados Unidos", year: "2024 — 2026", desc: "Reconhecimento institucional pela cultura organizacional do escritório." },
+    { title: "10 Best Law Firms", org: "American Institute of Legal Professionals", year: "2026", desc: "Immigration Law, Linhares Law, Florida." },
+    { title: "The Law Awards", org: "Winner, Immigration Practice", year: "2024", desc: "Distinção internacional pela excelência na prática de imigração americana." },
+    { title: "Great Place To Work®", org: "Certified, Estados Unidos", year: "2024, 2026", desc: "Reconhecimento institucional pela cultura organizacional do escritório." },
   ];
   return (
     <section className="section-y surface-premium-dark texture-grain relative overflow-hidden">
@@ -545,7 +545,7 @@ function AwardsSection() {
                 <img src={ibiCeremony} alt="Dr. André Linhares · International Business Institute Awards" className="h-full w-full object-cover object-center" />
               </div>
               <div className="mt-6">
-                <div className="text-[13px] uppercase tracking-[0.32em] text-gold">INTERNATIONAL BUSINESS INSTITUTE · 2025 – PRESENTE</div>
+                <div className="text-[13px] uppercase tracking-[0.32em] text-gold">INTERNATIONAL BUSINESS INSTITUTE · 2025, PRESENTE</div>
                 <h3 className="mt-4 text-2xl lg:text-[1.75rem] font-light text-primary-foreground tracking-tight leading-[1.25] max-w-[26ch]">
                   Distinção internacional por excelência na prática jurídica de imigração americana.
                 </h3>
@@ -579,7 +579,7 @@ function AwardsSection() {
 
         <div className="mt-12 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
           <p className="text-[11px] uppercase tracking-[0.28em] text-primary-foreground/55">
-            Distinções institucionais · 2026 — PRESENTE
+            Distinções institucionais · 2026, PRESENTE
           </p>
           <Link
             to="/premiacoes"
@@ -707,7 +707,7 @@ function LeadershipSection() {
     role: "Advogado Fundador",
     cred: "NEW YORK\u00a0 / WASHINGTON D.C BAR · U.S. IMMIGRATION LAW",
     img: andreLinharesPortrait,
-    bio: "Fundador do Linhares Law e autoridade reconhecida em direito de imigração americana. Há mais de 14 anos representando profissionais, executivos, investidores e famílias internacionais perante as autoridades federais dos Estados Unidos.",
+    bio: "Fundador da Linhares Law e autoridade reconhecida em direito de imigração americana. Há mais de 14 anos representando profissionais, executivos, investidores e famílias internacionais perante as autoridades federais dos Estados Unidos.",
   };
   const others = [
     {
@@ -737,7 +737,7 @@ function LeadershipSection() {
           <SectionTitle
             eyebrow="Liderança Jurídica"
             title="Advogados que sustentam a autoridade do escritório."
-            description="Sob a liderança de Dr. André Linhares, a equipe do Linhares Law reúne advogados dedicados exclusivamente à representação jurídica em imigração americana."
+            description="Sob a liderança de Dr. André Linhares, a equipe da Linhares Law reúne advogados dedicados exclusivamente à representação jurídica em imigração americana."
           />
           <InstitutionalButton
             to="/equipe"
@@ -825,7 +825,7 @@ function ThoughtLeadershipSection() {
             <div className="relative">
               <span className="absolute -top-3 -left-3 h-px w-20 bg-gold z-10" />
               <div className="editorial-frame photo-vignette aspect-[4/5] w-full">
-                <img src={andreSpeaking} alt="André Linhares · The Next Chapter — Vistos Imigratórios" className="h-full w-full object-cover" />
+                <img src={andreSpeaking} alt="André Linhares · The Next Chapter, Vistos Imigratórios" className="h-full w-full object-cover" />
               </div>
               <div className="mt-5 flex items-center gap-4">
                 <span className="rule-gold" />
@@ -888,10 +888,10 @@ function CultureSection() {
               Great Place To Work® · Certificada nos Estados Unidos.
             </h2>
             <p className="mt-5 text-[15px] leading-[1.75] text-ink-soft max-w-[52ch]">
-              A consistência interna que sustenta o padrão de atendimento entregue a cada cliente — reconhecida por uma das mais respeitadas certificações organizacionais do mundo.
+              A consistência interna que sustenta o padrão de atendimento entregue a cada cliente, reconhecida por uma das mais respeitadas certificações organizacionais do mundo.
             </p>
             <p className="mt-5 text-[10.5px] uppercase tracking-[0.28em] text-muted-foreground">
-              USA · Oct 2024 — Oct 2026
+              USA · Oct 2024, Oct 2026
             </p>
           </div>
 
@@ -906,7 +906,7 @@ function CultureSection() {
             <div className="bg-gold text-gold-foreground px-7 py-6 lg:px-8 lg:py-7 flex-1 flex flex-col justify-center">
               <div className="font-display font-light tracking-[-0.03em] leading-none text-[clamp(3.5rem,5.5vw,5rem)]">100%</div>
               <div className="mt-3 text-[12.5px] leading-[1.55] text-gold-foreground/85 max-w-[28ch]">
-                consideram o Linhares Law um excelente lugar para trabalhar.
+                consideram a Linhares Law um excelente lugar para trabalhar.
               </div>
             </div>
           </div>
@@ -916,7 +916,7 @@ function CultureSection() {
             <div className="h-full bg-surface border border-border p-6 lg:p-8 flex items-center justify-center">
               <img
                 src={gptwBadge}
-                alt="Great Place To Work Certified — Linhares Law USA"
+                alt="Great Place To Work Certified, Linhares Law USA"
                 className="w-full max-w-[200px] h-auto object-contain"
                 style={{ objectFit: "contain" }}
               />
@@ -1149,7 +1149,7 @@ function FinalCTA() {
           </div>
           <div className="lg:col-span-5 lg:border-l lg:border-primary-foreground/15 lg:pl-12">
             <p className="text-lg leading-[1.8] text-primary-foreground/75">
-              Iniciar uma conversa institucional com o Linhares Law é o primeiro passo para construir uma estratégia jurídica sólida — orientada por advogados americanos e alinhada aos seus objetivos profissionais, patrimoniais e familiares.
+              Iniciar uma conversa institucional com a Linhares Law é o primeiro passo para construir uma estratégia jurídica sólida, orientada por advogados americanos e alinhada aos seus objetivos profissionais, patrimoniais e familiares.
             </p>
             <div className="mt-10">
               <InstitutionalButton

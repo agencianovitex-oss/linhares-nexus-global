@@ -58,7 +58,7 @@ const PT: Record<VisaSlug, VisaContent> = {
     benefits: {
       title: "Principais benefícios",
       items: [
-        "Green Card — residência permanente nos Estados Unidos.",
+        "Green Card, residência permanente nos Estados Unidos.",
         "Inclusão de cônjuge e filhos solteiros menores de 21 anos.",
         "Não exige oferta de emprego nem certificação PERM.",
         "Liberdade profissional para atuar como autônomo, empreendedor ou empregado.",
@@ -80,7 +80,7 @@ const PT: Record<VisaSlug, VisaContent> = {
       {
         title: "Dentistas",
         intro:
-          "O Linhares Law mantém parceria institucional com a ABO-US, oferecendo estrutura complementar de preparação técnica e licenciamento americano para dentistas brasileiros.",
+          "A Linhares Law mantém parceria institucional com a ABO-US, oferecendo estrutura complementar de preparação técnica e licenciamento americano para dentistas brasileiros.",
         bullets: [
           "Construção do dossiê de mérito profissional e produção qualificada.",
           "Suporte estratégico para licenciamento americano (NBDE / INBDE).",
@@ -150,9 +150,9 @@ const PT: Record<VisaSlug, VisaContent> = {
       { q: "É necessário ter empresa ou projeto formalmente constituído nos EUA?", a: "Não obrigatoriamente. O essencial é demonstrar de forma concreta a atuação proposta nos Estados Unidos e o benefício nacional que ela representa." },
       { q: "Após receber o Green Card, quando posso solicitar a cidadania?", a: "Em regra, após cinco anos de residência permanente, mantidas as condições legais de elegibilidade. O prazo pode variar conforme o histórico do residente." },
     ],
-    seoTitle: "EB-2 NIW — Green Card por Interesse Nacional | Linhares Law",
+    seoTitle: "EB-2 NIW, Green Card por Interesse Nacional | Linhares Law",
     seoDescription:
-      "Estratégia EB-2 NIW para profissionais qualificados obterem residência permanente nos Estados Unidos sem oferta de emprego. Atuação institucional do Linhares Law.",
+      "Estratégia EB-2 NIW para profissionais qualificados obterem residência permanente nos Estados Unidos sem oferta de emprego. Atuação institucional da Linhares Law.",
   },
 
   eb1: {
@@ -163,7 +163,7 @@ const PT: Record<VisaSlug, VisaContent> = {
     tagline:
       "Uma das categorias mais prestigiadas da imigração americana baseada em emprego, destinada a indivíduos que alcançaram reconhecimento significativo em suas áreas de atuação.",
     intro:
-      "O EB-1 reconhece profissionais que se destacam no topo de suas carreiras. Subdivide-se em três modalidades — EB-1A, EB-1B e EB-1C — cada uma direcionada a um perfil específico de reconhecimento e atuação.",
+      "O EB-1 reconhece profissionais que se destacam no topo de suas carreiras. Subdivide-se em três modalidades, EB-1A, EB-1B e EB-1C, cada uma direcionada a um perfil específico de reconhecimento e atuação.",
     meta: ["Primeira preferência", "Habilidade extraordinária", "Sem certificação PERM"],
     what: {
       title: "O que é o EB-1",
@@ -173,9 +173,9 @@ const PT: Record<VisaSlug, VisaContent> = {
     qualify: {
       title: "Categorias e quem pode se qualificar",
       items: [
-        "EB-1A — Habilidade Extraordinária: profissionais reconhecidos nacional ou internacionalmente por premiações, publicações, liderança e reconhecimento de mercado.",
-        "EB-1B — Professores e Pesquisadores: acadêmicos e pesquisadores com reconhecimento internacional e vínculo com instituição americana qualificada.",
-        "EB-1C — Executivos Multinacionais: executivos transferidos entre empresas relacionadas internacionalmente, com função estratégica e governança corporativa.",
+        "EB-1A, Habilidade Extraordinária: profissionais reconhecidos nacional ou internacionalmente por premiações, publicações, liderança e reconhecimento de mercado.",
+        "EB-1B, Professores e Pesquisadores: acadêmicos e pesquisadores com reconhecimento internacional e vínculo com instituição americana qualificada.",
+        "EB-1C, Executivos Multinacionais: executivos transferidos entre empresas relacionadas internacionalmente, com função estratégica e governança corporativa.",
         "Histórico de premiações, publicações e contribuições originais para a área de atuação.",
         "Reconhecimento sustentado por pares, mercado e instituições de referência.",
       ],
@@ -207,7 +207,7 @@ const PT: Record<VisaSlug, VisaContent> = {
     ],
     faqs: [
       { q: "Qual a principal diferença entre EB-1A e EB-2 NIW?", a: "O EB-1A exige aclamação nacional ou internacional comprovada e oferece prioridade no calendário. O EB-2 NIW exige mérito profissional e interesse nacional, com critérios mais acessíveis a um número maior de profissionais." },
-      { q: "Preciso de prêmios internacionais para o EB-1A?", a: "Não obrigatoriamente. A categoria avalia um conjunto de critérios — publicações, originalidade, valor de mercado, atuação em comitês, julgamento de pares e visibilidade institucional." },
+      { q: "Preciso de prêmios internacionais para o EB-1A?", a: "Não obrigatoriamente. A categoria avalia um conjunto de critérios, publicações, originalidade, valor de mercado, atuação em comitês, julgamento de pares e visibilidade institucional." },
       { q: "Quanto tempo costuma levar o EB-1?", a: "Por ser categoria de primeira preferência, o EB-1 geralmente avança com prioridade no calendário consular, ainda que os prazos variem conforme o USCIS e o consulado responsável." },
       { q: "É possível solicitar o EB-1A sem patrocínio empresarial?", a: "Sim. O EB-1A é uma das poucas categorias que admite autopetição, dispensando a participação de empregador americano." },
       { q: "Quem pode pleitear o EB-1B?", a: "Professores e pesquisadores com reconhecimento internacional e oferta de posição permanente ou de natureza estável em instituição americana qualificada." },
@@ -217,9 +217,9 @@ const PT: Record<VisaSlug, VisaContent> = {
       { q: "Existe limite anual de aprovações no EB-1?", a: "Há cotas anuais por categoria e por país de origem, definidas pela legislação americana. A análise estratégica considera a janela atual de processamento." },
       { q: "Posso continuar atuando profissionalmente durante o processo?", a: "Sim. Em regra, a fase petitória do EB-1 permite que o peticionário mantenha sua atuação profissional no exterior até o momento adequado de transferência." },
     ],
-    seoTitle: "EB-1 — Habilidade Extraordinária e Executivos | Linhares Law",
+    seoTitle: "EB-1, Habilidade Extraordinária e Executivos | Linhares Law",
     seoDescription:
-      "Estratégia EB-1 (EB-1A, EB-1B e EB-1C) para profissionais de destaque, pesquisadores e executivos multinacionais conduzida pelo Linhares Law.",
+      "Estratégia EB-1 (EB-1A, EB-1B e EB-1C) para profissionais de destaque, pesquisadores e executivos multinacionais conduzida pela Linhares Law.",
   },
 
   e2: {
@@ -242,7 +242,7 @@ const PT: Record<VisaSlug, VisaContent> = {
       items: [
         "Nacionalidade de país com tratado comercial vigente com os Estados Unidos.",
         "Investimento substancial em proporção à natureza do negócio.",
-        "Empresa real, operacional e não-marginal — capaz de gerar mais do que sustento mínimo.",
+        "Empresa real, operacional e não-marginal, capaz de gerar mais do que sustento mínimo.",
         "Participação efetiva do investidor na direção e desenvolvimento da empresa.",
         "Recursos com origem lícita e plenamente rastreáveis.",
       ],
@@ -268,7 +268,7 @@ const PT: Record<VisaSlug, VisaContent> = {
     },
     faqs: [
       { q: "Existe valor mínimo de investimento para o E-2?", a: "Não há valor fixo definido em lei. O investimento deve ser substancial em proporção à natureza do negócio e suficiente para garantir operação sustentável." },
-      { q: "O Brasil possui tratado E-2 com os Estados Unidos?", a: "Não. Brasileiros, em regra, precisam adquirir nacionalidade de país signatário antes de pleitear o E-2 — por exemplo, mediante cidadania europeia ou de outro país elegível." },
+      { q: "O Brasil possui tratado E-2 com os Estados Unidos?", a: "Não. Brasileiros, em regra, precisam adquirir nacionalidade de país signatário antes de pleitear o E-2, por exemplo, mediante cidadania europeia ou de outro país elegível." },
       { q: "É possível transformar o E-2 em Green Card?", a: "O E-2 é não-imigrante. A transição para residência permanente exige enquadramento em categoria imigratória própria, como EB-2 NIW, EB-1 ou EB-5." },
       { q: "Posso investir em uma franquia americana?", a: "Sim. Franquias são amplamente aceitas, desde que o investimento seja substancial, a empresa esteja operacional e o investidor exerça papel ativo na gestão." },
       { q: "Por quanto tempo o E-2 é concedido?", a: "O visto é tipicamente concedido por períodos de até cinco anos, renováveis indefinidamente enquanto a empresa permanecer operacional." },
@@ -278,9 +278,9 @@ const PT: Record<VisaSlug, VisaContent> = {
       { q: "É possível operar mais de uma empresa com o mesmo E-2?", a: "Sim, desde que as empresas estejam relacionadas e o investidor mantenha participação ativa na gestão das atividades vinculadas ao visto." },
       { q: "O que acontece com o visto se a empresa encerrar atividades?", a: "O E-2 perde sua fundamentação caso a empresa deixe de operar. O planejamento estratégico considera contingências e alternativas migratórias." },
     ],
-    seoTitle: "E-2 — Investidor por Tratado Comercial | Linhares Law",
+    seoTitle: "E-2, Investidor por Tratado Comercial | Linhares Law",
     seoDescription:
-      "Visto E-2 para investidores e empresários estabelecerem e operarem negócios nos Estados Unidos. Estratégia institucional do Linhares Law.",
+      "Visto E-2 para investidores e empresários estabelecerem e operarem negócios nos Estados Unidos. Estratégia institucional da Linhares Law.",
   },
 
   l1: {
@@ -339,7 +339,7 @@ const PT: Record<VisaSlug, VisaContent> = {
       { q: "Empresas com pouco tempo de operação podem patrocinar L-1?", a: "Sim, desde que estejam regularmente constituídas, em operação real no exterior e com vínculo societário válido com a empresa americana." },
       { q: "O que acontece se a empresa americana não se consolidar no primeiro ano?", a: "A renovação do L-1 pode ser indeferida. O planejamento institucional considera marcos operacionais e métricas que sustentem a continuidade do visto." },
     ],
-    seoTitle: "L-1 — Transferência entre Empresas | Linhares Law",
+    seoTitle: "L-1, Transferência entre Empresas | Linhares Law",
     seoDescription:
       "Estratégia L-1 para transferência de executivos, gestores e profissionais especializados em operações americanas de empresas internacionais.",
   },
@@ -392,7 +392,7 @@ const PT: Record<VisaSlug, VisaContent> = {
       ],
     },
     faqs: [
-      { q: "Preciso de um patrocinador americano para o O-1?", a: "Sim. O O-1 exige peticionário americano — empregador ou agente. Atletas e artistas podem atuar via agente, viabilizando múltiplos engajamentos." },
+      { q: "Preciso de um patrocinador americano para o O-1?", a: "Sim. O O-1 exige peticionário americano, empregador ou agente. Atletas e artistas podem atuar via agente, viabilizando múltiplos engajamentos." },
       { q: "O O-1 é um caminho para o Green Card?", a: "É frequente a transição do O-1 para o EB-1A, dado que ambas as categorias partilham critérios próximos de habilidade extraordinária." },
       { q: "Por quanto tempo o O-1 é concedido?", a: "O período inicial pode atingir até três anos, com renovações sucessivas em períodos de até um ano, vinculadas à continuidade da atividade." },
       { q: "Quais evidências costumam fundamentar a petição?", a: "Premiações, publicações, citações, atuação em comitês, julgamento de pares, contratos relevantes, salário compatível com o topo da carreira e cobertura midiática." },
@@ -403,7 +403,7 @@ const PT: Record<VisaSlug, VisaContent> = {
       { q: "É possível alterar o empregador titular do O-1?", a: "Sim, mediante nova petição apresentada pelo novo patrocinador. A continuidade da atividade no mesmo campo é elemento central da análise." },
       { q: "É necessário deixar o Brasil para iniciar o processo?", a: "Não. A petição pode ser construída e protocolada com o profissional ainda em seu país de origem, com posterior emissão consular do visto." },
     ],
-    seoTitle: "O-1 — Habilidade Extraordinária | Linhares Law",
+    seoTitle: "O-1, Habilidade Extraordinária | Linhares Law",
     seoDescription:
       "Estratégia O-1 para profissionais com reconhecimento extraordinário em ciências, negócios, artes, esportes e indústria do entretenimento.",
   },
@@ -454,16 +454,16 @@ const PT: Record<VisaSlug, VisaContent> = {
     faqs: [
       { q: "O H-1B sempre passa por loteria?", a: "Na maior parte dos casos sim, dada a alta demanda. Universidades, instituições de pesquisa e algumas entidades sem fins lucrativos têm isenção da cota." },
       { q: "Posso trocar de empregador durante o H-1B?", a: "Sim, mediante nova petição de transferência (H-1B transfer) protocolada pelo novo empregador." },
-      { q: "Cônjuge pode trabalhar com o H-4?", a: "Sim, em condições específicas — em regra, quando o titular do H-1B tem petição I-140 aprovada e aguarda data de prioridade." },
+      { q: "Cônjuge pode trabalhar com o H-4?", a: "Sim, em condições específicas, em regra, quando o titular do H-1B tem petição I-140 aprovada e aguarda data de prioridade." },
       { q: "Existe limite de renovações?", a: "O H-1B pode ser renovado até atingir o limite total de seis anos. Há prorrogações específicas vinculadas a processos imigratórios em andamento." },
-      { q: "É possível solicitar Green Card durante o H-1B?", a: "Sim. O H-1B é compatível com a abertura paralela de processo imigratório — EB-2 NIW, EB-2 PERM, EB-3 ou EB-1, conforme o caso." },
+      { q: "É possível solicitar Green Card durante o H-1B?", a: "Sim. O H-1B é compatível com a abertura paralela de processo imigratório, EB-2 NIW, EB-2 PERM, EB-3 ou EB-1, conforme o caso." },
       { q: "Qual o papel do prevailing wage?", a: "Define o salário mínimo legalmente aceitável para a função e a região, conforme metodologia do Department of Labor americano." },
       { q: "Empresas pequenas podem patrocinar H-1B?", a: "Sim, desde que demonstrem capacidade financeira, função técnica qualificada e compatibilidade salarial com o mercado." },
       { q: "É necessário estar nos Estados Unidos para participar da loteria?", a: "Não. A loteria é eletrônica e ocorre por meio de registro do empregador americano, independentemente do local atual do profissional." },
       { q: "Quanto tempo leva entre a loteria e o início do trabalho?", a: "Em regra, o início é em 1º de outubro do ano fiscal correspondente, com a petição protocolada nos meses seguintes à seleção." },
       { q: "Posso atuar como autônomo com H-1B?", a: "O H-1B exige vínculo de subordinação com empregador qualificado. Atuação autônoma exige enquadramento em outra categoria migratória." },
     ],
-    seoTitle: "H-1B — Profissionais Especializados | Linhares Law",
+    seoTitle: "H-1B, Profissionais Especializados | Linhares Law",
     seoDescription:
       "Estratégia H-1B para profissionais qualificados contratados por empresas americanas em ocupações de especialidade.",
   },
@@ -489,7 +489,7 @@ const PT: Record<VisaSlug, VisaContent> = {
         "Investimento qualificado em projeto americano elegível.",
         "Demonstração rigorosa da origem lícita dos recursos.",
         "Criação ou preservação de, no mínimo, dez empregos a tempo integral.",
-        "Participação empresarial — investimento direto ou via Regional Center aprovado pelo USCIS.",
+        "Participação empresarial, investimento direto ou via Regional Center aprovado pelo USCIS.",
       ],
     },
     benefits: {
@@ -512,7 +512,7 @@ const PT: Record<VisaSlug, VisaContent> = {
       ],
     },
     faqs: [
-      { q: "Qual o valor mínimo de investimento?", a: "O valor mínimo é definido por lei e varia conforme o tipo de projeto (área-alvo de emprego ou padrão). O Linhares Law informa o patamar vigente durante a análise institucional." },
+      { q: "Qual o valor mínimo de investimento?", a: "O valor mínimo é definido por lei e varia conforme o tipo de projeto (área-alvo de emprego ou padrão). A Linhares Law informa o patamar vigente durante a análise institucional." },
       { q: "Preciso administrar o negócio?", a: "Não. O EB-5 admite participação passiva, especialmente via Regional Centers, desde que cumpridos os requisitos de geração de empregos." },
       { q: "Posso usar recursos de venda de imóveis ou empresas?", a: "Sim, desde que a origem seja documentalmente comprovada conforme exigências do USCIS." },
       { q: "Quanto tempo leva o processo EB-5?", a: "Os prazos variam conforme o calendário consular, a demanda do USCIS e a nacionalidade do investidor. A análise institucional considera a janela atual de processamento." },
@@ -523,7 +523,7 @@ const PT: Record<VisaSlug, VisaContent> = {
       { q: "Empresas familiares podem ser objeto de investimento?", a: "Sim, desde que estruturadas como empreendimento qualificado, com geração de empregos compatível e governança adequada às exigências do USCIS." },
       { q: "Quais riscos jurídicos devem ser considerados?", a: "Risco de aprovação do projeto, risco de retorno financeiro e risco regulatório. A diligência institucional é parte central da estratégia EB-5." },
     ],
-    seoTitle: "EB-5 — Investidor Imigrante | Linhares Law",
+    seoTitle: "EB-5, Investidor Imigrante | Linhares Law",
     seoDescription:
       "Estratégia EB-5 para investidores obterem Green Card mediante investimento qualificado e geração de empregos nos Estados Unidos.",
   },
@@ -556,7 +556,7 @@ const PT: Record<VisaSlug, VisaContent> = {
     benefits: {
       title: "Principais benefícios",
       items: [
-        "Green Card — residência permanente nos Estados Unidos.",
+        "Green Card, residência permanente nos Estados Unidos.",
         "Inclusão de cônjuge e filhos solteiros menores de 21 anos.",
         "Caminho estruturado para profissionais com oferta de emprego nos EUA.",
         "Possibilidade de mudança de empregador após cumpridos os requisitos legais.",
@@ -579,7 +579,7 @@ const PT: Record<VisaSlug, VisaContent> = {
       { q: "Quanto tempo leva o processo EB-3?", a: "Os prazos variam conforme o calendário do USCIS, o país de origem e a subcategoria. A análise institucional é feita caso a caso." },
       { q: "Posso mudar de empregador após o Green Card?", a: "Sim, observados os requisitos legais sobre intenção de boa-fé na oferta original e o tempo de permanência na função." },
     ],
-    seoTitle: "EB-3 — Green Card por Emprego Permanente | Linhares Law",
+    seoTitle: "EB-3, Green Card por Emprego Permanente | Linhares Law",
     seoDescription:
       "Estratégia EB-3 para profissionais qualificados, trabalhadores especializados e outros trabalhadores obterem residência permanente nos Estados Unidos.",
   },
@@ -633,9 +633,9 @@ const PT: Record<VisaSlug, VisaContent> = {
       { q: "Posso peticionar mais de um familiar?", a: "Sim. Cada beneficiário exige uma petição I-130 individual." },
       { q: "É exigido suporte financeiro?", a: "Sim. O peticionário assina o Affidavit of Support, comprometendo-se a sustentar o beneficiário conforme parâmetros oficiais." },
     ],
-    seoTitle: "I-130 — Petição Familiar para Imigração | Linhares Law",
+    seoTitle: "I-130, Petição Familiar para Imigração | Linhares Law",
     seoDescription:
-      "Petição I-130 para reunificação familiar nos Estados Unidos. Estratégia jurídica conduzida pelo Linhares Law para cidadãos americanos e residentes permanentes.",
+      "Petição I-130 para reunificação familiar nos Estados Unidos. Estratégia jurídica conduzida pela Linhares Law para cidadãos americanos e residentes permanentes.",
   },
 
   vawa: {
@@ -689,7 +689,7 @@ const PT: Record<VisaSlug, VisaContent> = {
       { q: "É necessário ainda estar casado com o agressor?", a: "Não obrigatoriamente. A petição pode ser apresentada em determinadas circunstâncias mesmo após o divórcio, dentro dos prazos legais." },
       { q: "O VAWA leva ao Green Card?", a: "Sim. Após a aprovação da I-360, a vítima pode pleitear ajuste de status para residência permanente." },
     ],
-    seoTitle: "VAWA — Proteção Migratória para Vítimas de Abuso | Linhares Law",
+    seoTitle: "VAWA, Proteção Migratória para Vítimas de Abuso | Linhares Law",
     seoDescription:
       "Estratégia VAWA confidencial para vítimas de abuso por cidadão americano ou residente permanente obterem independência migratória e Green Card.",
   },

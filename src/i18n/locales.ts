@@ -37,7 +37,7 @@ export const dict = {
     },
     footer: {
       about:
-        "O Linhares Law é um escritório de advocacia dedicado exclusivamente à imigração americana, representando profissionais, executivos, investidores e famílias.",
+        "A Linhares Law é um escritório de advocacia dedicado exclusivamente à imigração americana, representando profissionais, executivos, investidores e famílias.",
       navigation: "Navegação",
       offices: "Escritórios",
       contact: "Contato",

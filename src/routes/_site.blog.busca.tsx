@@ -12,7 +12,7 @@ export const Route = createFileRoute("/_site/blog/busca")({
   validateSearch: search,
   head: () => buildLocaleHead({
     path: "/blog/busca", locale: L,
-    title: `${tBlog(L).searchArticles} — Linhares Law`,
+    title: `${tBlog(L).searchArticles}, Linhares Law`,
     description: tBlog(L).intro,
     noindex: true,
   }),

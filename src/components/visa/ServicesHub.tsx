@@ -13,9 +13,9 @@ interface Props {
 
 // Hub-level FAQ kept only for schema / SEO — not rendered.
 const HUB_FAQ = [
-  { q: "Qual estratégia migratória é a mais adequada ao meu perfil?", a: "A escolha depende da combinação entre formação, experiência, projeto profissional, estrutura familiar e horizonte patrimonial. A análise institucional do Linhares Law avalia todas as variáveis antes de qualquer recomendação." },
+  { q: "Qual estratégia migratória é a mais adequada ao meu perfil?", a: "A escolha depende da combinação entre formação, experiência, projeto profissional, estrutura familiar e horizonte patrimonial. A análise institucional da Linhares Law avalia todas as variáveis antes de qualquer recomendação." },
   { q: "É possível combinar diferentes estratégias migratórias?", a: "Sim. É comum que profissionais transitem entre vistos não-imigrantes (como L-1, O-1 ou E-2) e categorias de Green Card (EB-1, EB-2 NIW, EB-5) ao longo de sua trajetória." },
-  { q: "O Linhares Law oferece consultoria migratória?", a: "Não. O Linhares Law é um escritório de advocacia americano com atuação exclusiva em imigração, atuando como conselho jurídico permanente." },
+  { q: "A Linhares Law oferece consultoria migratória?", a: "Não. A Linhares Law é um escritório de advocacia americano com atuação exclusiva em imigração, atuando como conselho jurídico permanente." },
 ];
 
 export function ServicesHub({ locale, contactHref, visaHref }: Props) {
@@ -24,7 +24,7 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
       <InstitutionalHero
         eyebrow="Linhares Law · Áreas de Atuação"
         title="Estratégias migratórias para profissionais, empresários, investidores e famílias."
-        intro="O Linhares Law atua exclusivamente em imigração americana, desenvolvendo estratégias jurídicas personalizadas para residência permanente, mobilidade executiva, expansão empresarial e oportunidades profissionais nos Estados Unidos."
+        intro="A Linhares Law atua exclusivamente em imigração americana, desenvolvendo estratégias jurídicas personalizadas para residência permanente, mobilidade executiva, expansão empresarial e oportunidades profissionais nos Estados Unidos."
         meta={<><span>EB-2 NIW</span><span>EB-1</span><span>E-2</span><span>L-1</span><span>O-1</span><span>H-1B</span><span>EB-5</span><span>EB-3</span><span>I-130</span><span>VAWA</span></>}
       />
 
@@ -108,7 +108,7 @@ export function ServicesHub({ locale, contactHref, visaHref }: Props) {
             A metodologia estratégica do escritório.
           </h2>
           <p className="mt-6 lead text-primary-foreground/80">
-            O Linhares Law assessora famílias que desejam construir uma nova vida nos Estados Unidos e, com a mesma profundidade técnica, empresários, investidores, executivos e profissionais qualificados que buscam expansão internacional, estruturação societária e oportunidades estratégicas no mercado americano.
+            A Linhares Law assessora famílias que desejam construir uma nova vida nos Estados Unidos e, com a mesma profundidade técnica, empresários, investidores, executivos e profissionais qualificados que buscam expansão internacional, estruturação societária e oportunidades estratégicas no mercado americano.
           </p>
         </div>
         <div className="mt-16 grid gap-px bg-primary-foreground/15 border border-primary-foreground/15 md:grid-cols-2 lg:grid-cols-4">

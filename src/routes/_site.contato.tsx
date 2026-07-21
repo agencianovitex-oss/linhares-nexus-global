@@ -13,9 +13,9 @@ export const Route = createFileRoute("/_site/contato")({
     buildLocaleHead({
       path: "/contato",
       locale: L,
-      title: "Contato — Linhares Law",
+      title: "Contato, Linhares Law",
       description:
-        "Inicie uma conversa institucional com o Linhares Law. Formulário de atendimento, agendamento, telefone, e-mail e WhatsApp dos quatro escritórios nos Estados Unidos.",
+        "Inicie uma conversa institucional com a Linhares Law. Formulário de atendimento, agendamento, telefone, e-mail e WhatsApp dos quatro escritórios nos Estados Unidos.",
     }),
   component: Contato,
 });

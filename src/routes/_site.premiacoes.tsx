@@ -18,9 +18,9 @@ export const Route = createFileRoute("/_site/premiacoes")({
     buildLocaleHead({
       path: "/premiacoes",
       locale: L,
-      title: "Reconhecimentos — Linhares Law",
+      title: "Reconhecimentos, Linhares Law",
       description:
-        "Premiações e reconhecimentos institucionais recebidos pelo Linhares Law, incluindo IBI Award, 10 Best Law Firms, The Law Awards, Great Place To Work e Prêmio Quality Justiça.",
+        "Premiações e reconhecimentos institucionais recebidos pela Linhares Law, incluindo IBI Award, 10 Best Law Firms, The Law Awards, Great Place To Work e Prêmio Quality Justiça.",
     }),
   component: Premiacoes,
 });
@@ -39,7 +39,7 @@ const featuredAwards: Award[] = [
     year: "2025",
     institution: "International Business Institute",
     description:
-      "Distinção concedida pela contribuição do Linhares Law ao ecossistema empresarial internacional, reconhecendo a relevância da prática institucional do escritório no cenário global.",
+      "Distinção concedida pela contribuição da Linhares Law ao ecossistema empresarial internacional, reconhecendo a relevância da prática institucional do escritório no cenário global.",
     image: ibi,
   },
   {
@@ -66,7 +66,7 @@ const textualAwards: Award[] = [
     year: "2025",
     institution: "Great Place To Work Institute",
     description:
-      "Certificação concedida com 100% de aprovação da equipe interna, refletindo o ambiente institucional construído pelo Linhares Law.",
+      "Certificação concedida com 100% de aprovação da equipe interna, refletindo o ambiente institucional construído pela Linhares Law.",
   },
   {
     title: "The Law Awards",
@@ -85,14 +85,14 @@ const textualAwards: Award[] = [
   {
     title: "Top Empreendedor",
     year: "2025",
-    institution: "Premiação Empresarial Brasil–EUA",
+    institution: "Premiação Empresarial Brasil e EUA",
     description:
-      "Reconhecimento à trajetória empreendedora do Dr. André Linhares à frente do Linhares Law.",
+      "Reconhecimento à trajetória empreendedora do Dr. André Linhares à frente da Linhares Law.",
   },
   {
     title: "LIDE Orlando · Presidência",
-    year: "2025 – PRESENTE",
-    institution: "LIDE — Grupo de Líderes Empresariais",
+    year: "2025, PRESENTE",
+    institution: "LIDE, Grupo de Líderes Empresariais",
     description:
       "Eleição do Dr. André Linhares para a presidência do capítulo de Orlando, articulando lideranças empresariais brasileiras e americanas.",
   },
@@ -109,7 +109,7 @@ function Premiacoes() {
       <InstitutionalHero
         eyebrow="Linhares Law · Reconhecimentos"
         title="Distinções concedidas por instituições jurídicas e empresariais."
-        intro="As premiações recebidas pelo Linhares Law refletem a consistência de uma prática construída sobre rigor técnico, ética profissional e compromisso institucional com seus clientes."
+        intro="As premiações recebidas pela Linhares Law refletem a consistência de uma prática construída sobre rigor técnico, ética profissional e compromisso institucional com seus clientes."
       />
 
       <SectionBlock>
@@ -180,7 +180,7 @@ function Premiacoes() {
             Excelência reconhecida pelas instituições do setor.
           </h2>
           <p className="mt-6 lead text-primary-foreground/80">
-            Cada distinção reflete o compromisso do Linhares Law com a representação técnica e
+            Cada distinção reflete o compromisso da Linhares Law com a representação técnica e
             institucional de seus clientes diante das autoridades americanas.
           </p>
           <div className="mt-10 flex justify-center">

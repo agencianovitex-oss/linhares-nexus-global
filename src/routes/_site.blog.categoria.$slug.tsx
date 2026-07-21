@@ -21,7 +21,7 @@ export const Route = createFileRoute("/_site/blog/categoria/$slug")({
   head: ({ loaderData, params }) => buildLocaleHead({
     path: blogTaxonomyPath(L, KIND, params.slug).replace(/^\/(en|es)/, ""),
     locale: L,
-    title: `${loaderData?.name ?? params.slug} — ${tBlog(L).category} — Linhares Law`,
+    title: `${loaderData?.name ?? params.slug}, ${tBlog(L).category}, Linhares Law`,
     description: loaderData?.description ?? tBlog(L).intro,
   }),
   errorComponent: ({ error }) => <BlogError locale={L} error={error as Error} />,

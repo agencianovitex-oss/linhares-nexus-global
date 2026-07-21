@@ -17,7 +17,7 @@ export const Route = createFileRoute("/auth")({
   validateSearch: (s) => searchSchema.parse(s),
   head: () => ({
     meta: [
-      { title: "Entrar — Linhares Law" },
+      { title: "Entrar, Linhares Law" },
       { name: "description", content: "Acesso ao painel administrativo Linhares Law." },
       { name: "robots", content: "noindex,nofollow" },
     ],
