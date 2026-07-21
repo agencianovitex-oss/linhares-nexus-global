@@ -273,7 +273,7 @@ function AuthorityPanel() {
           )}
 
           {/* Title */}
-          <h3
+          <h2
             className={`mt-3 text-center font-display font-semibold text-primary-foreground leading-[1.15] ${
               isFeatured
                 ? "text-[1.85rem] lg:text-[2.15rem]"
@@ -283,7 +283,8 @@ function AuthorityPanel() {
             }`}
           >
             {slide.title}
-          </h3>
+          </h2>
+
 
           {/* Body */}
           {isOverview ? (
