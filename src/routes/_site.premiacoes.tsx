@@ -18,7 +18,7 @@ export const Route = createFileRoute("/_site/premiacoes")({
     buildLocaleHead({
       path: "/premiacoes",
       locale: L,
-      title: "Reconhecimentos — Linhares Law",
+      title: "Reconhecimentos, Linhares Law",
       description:
         "Premiações e reconhecimentos institucionais recebidos pela Linhares Law, incluindo IBI Award, 10 Best Law Firms, The Law Awards, Great Place To Work e Prêmio Quality Justiça.",
     }),
@@ -85,14 +85,14 @@ const textualAwards: Award[] = [
   {
     title: "Top Empreendedor",
     year: "2025",
-    institution: "Premiação Empresarial Brasil–EUA",
+    institution: "Premiação Empresarial Brasil e EUA",
     description:
       "Reconhecimento à trajetória empreendedora do Dr. André Linhares à frente da Linhares Law.",
   },
   {
     title: "LIDE Orlando · Presidência",
-    year: "2025 – PRESENTE",
-    institution: "LIDE — Grupo de Líderes Empresariais",
+    year: "2025, PRESENTE",
+    institution: "LIDE, Grupo de Líderes Empresariais",
     description:
       "Eleição do Dr. André Linhares para a presidência do capítulo de Orlando, articulando lideranças empresariais brasileiras e americanas.",
   },

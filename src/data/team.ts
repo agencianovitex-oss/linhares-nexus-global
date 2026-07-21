@@ -73,7 +73,7 @@ export const teamGroups: TeamGroup[] = [
         credentials: ["Nebraska Bar", "North Carolina Bar", "U.S. Supreme Court"],
         slug: "nicholas-perry",
         portrait: nicholas,
-        bio: "Trajetória nas principais agências federais americanas dedicadas à imigração — USCIS, DHS, ICE, CBP e Department of Justice.",
+        bio: "Trajetória nas principais agências federais americanas dedicadas à imigração, USCIS, DHS, ICE, CBP e Department of Justice.",
       },
       {
         name: "Juliana Mosquera Soler, Esq.",

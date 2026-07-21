@@ -83,7 +83,7 @@ const profiles: Record<string, AttorneyProfile> = {
     ],
     practice: ["EB-1", "EB-2 NIW", "Ajuste de Status", "Imigração Familiar"],
     longBio: [
-      "Nicholas Perry traz para a Linhares Law uma trajetória rara: passagem pelas principais agências federais americanas responsáveis pela imigração — USCIS, DHS, ICE, CBP e o Department of Justice.",
+      "Nicholas Perry traz para a Linhares Law uma trajetória rara: passagem pelas principais agências federais americanas responsáveis pela imigração, USCIS, DHS, ICE, CBP e o Department of Justice.",
       "Essa vivência institucional confere à sua atuação um entendimento técnico aprofundado dos critérios adotados pelos analistas e oficiais federais que avaliam petições migratórias.",
       "Formado como Valedictorian pela North Carolina Central School of Law, é graduado pela University of Notre Dame e licenciado em Nebraska, North Carolina e perante a Suprema Corte dos Estados Unidos.",
     ],
@@ -129,7 +129,7 @@ export const Route = createFileRoute("/_site/equipe/$slug")({
     return buildLocaleHead({
       path: `/equipe/${params.slug}`,
       locale: L,
-      title: `${name} — Linhares Law`,
+      title: `${name}, Linhares Law`,
       description: p?.shortBio ?? "Perfil institucional Linhares Law.",
       type: "profile",
     });

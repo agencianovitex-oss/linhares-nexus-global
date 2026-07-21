@@ -15,7 +15,7 @@ export const Route = createFileRoute("/_site/quem-somos")({
     buildLocaleHead({
       path: "/quem-somos",
       locale: L,
-      title: "Quem Somos — Linhares Law",
+      title: "Quem Somos, Linhares Law",
       description:
         "Conheça a história e os valores da Linhares Law, escritório de advocacia dedicado exclusivamente à imigração americana, com mais de 14 anos de atuação e quatro escritórios nos Estados Unidos.",
     }),
@@ -87,7 +87,7 @@ function QuemSomos() {
             <SectionTitle eyebrow="Missão" title="Representar trajetórias de excelência diante das autoridades americanas." onDark />
             <p className="mt-8 lead text-primary-foreground/80">
               Atuamos como conselheiros jurídicos permanentes. Construímos cada estratégia migratória com base nos
-              objetivos profissionais, familiares e patrimoniais do cliente — não em fórmulas pré-estabelecidas.
+              objetivos profissionais, familiares e patrimoniais do cliente, não em fórmulas pré-estabelecidas.
             </p>
             <div className="mt-12 grid gap-px bg-primary-foreground/15 sm:grid-cols-3 border border-primary-foreground/15">
               {[

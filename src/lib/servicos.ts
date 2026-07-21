@@ -28,7 +28,7 @@ export function notFoundIfInvalid(slug: string): asserts slug is VisaSlug {
 }
 
 export function hubHead(locale: Locale) {
-  const title = "Áreas de Atuação — Linhares Law";
+  const title = "Áreas de Atuação, Linhares Law";
   const description =
     "Estratégias migratórias para profissionais, empresários, investidores e famílias. EB-2 NIW, EB-1, E-2, L-1, O-1, H-1B e EB-5.";
   const head = buildLocaleHead({ path: servicesBase(locale), locale, title, description });
@@ -43,7 +43,7 @@ export function visaHead(locale: Locale, rawSlug: string) {
     return buildLocaleHead({
       path: `${servicesBase(locale)}/${rawSlug}`,
       locale,
-      title: "Áreas de Atuação — Linhares Law",
+      title: "Áreas de Atuação, Linhares Law",
       description: "Estratégias jurídicas de imigração americana.",
       noindex: true,
     });

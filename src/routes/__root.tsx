@@ -99,18 +99,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Linhares Law — U.S. Immigration · Boutique Practice" },
+      { title: "Linhares Law, U.S. Immigration · Boutique Practice" },
       {
         name: "description",
         content:
-          "Linhares Law is a boutique U.S. immigration firm with offices in Orlando, Miami, New York and Salt Lake City — representing international professionals, executives, investors and families.",
+          "Linhares Law is a boutique U.S. immigration firm with offices in Orlando, Miami, New York and Salt Lake City, representing international professionals, executives, investors and families.",
       },
       { property: "og:site_name", content: "Linhares Law" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "format-detection", content: "telephone=no" },
-      { property: "og:title", content: "Linhares Law — U.S. Immigration · Boutique Practice" },
-      { name: "twitter:title", content: "Linhares Law — U.S. Immigration · Boutique Practice" },
+      { property: "og:title", content: "Linhares Law, U.S. Immigration · Boutique Practice" },
+      { name: "twitter:title", content: "Linhares Law, U.S. Immigration · Boutique Practice" },
       { name: "description", content: "A premium multilingual institutional website for Linhares Law, a US immigration firm." },
       { property: "og:description", content: "A premium multilingual institutional website for Linhares Law, a US immigration firm." },
       { name: "twitter:description", content: "A premium multilingual institutional website for Linhares Law, a US immigration firm." },

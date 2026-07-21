@@ -8,7 +8,7 @@ interface MetaItem extends Record<string, string> {}
 export function buildArticleHead(post: PublicPostDetail, locale: Locale, localizedPath: string) {
   const origin = siteOrigin();
   const url = `${origin}${localizedPath}`;
-  const title = `${post.meta_title ?? post.title} — Linhares Law`;
+  const title = `${post.meta_title ?? post.title}, Linhares Law`;
   const description = post.meta_description ?? post.excerpt ?? "";
   const img = post.cover_image_url ?? undefined;
   const t = tBlog(locale);

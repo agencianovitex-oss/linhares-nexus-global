@@ -20,7 +20,7 @@ export const Route = createFileRoute("/_site/es/blog/autor/$slug")({
   },
   head: ({ loaderData, params }) => buildLocaleHead({
     path: `/blog/autor/${params.slug}`, locale: L,
-    title: `${loaderData?.name ?? params.slug} — ${tBlog(L).author} — Linhares Law`,
+    title: `${loaderData?.name ?? params.slug}, ${tBlog(L).author}, Linhares Law`,
     description: loaderData?.short_bio ?? tBlog(L).intro,
   }),
   errorComponent: ({ error }) => <BlogError locale={L} error={error as Error} />,

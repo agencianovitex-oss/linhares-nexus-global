@@ -10,7 +10,7 @@ export const Route = createFileRoute("/_site/en/")({
     buildLocaleHead({
       path: "/",
       locale: L,
-      title: `${dict[L].pages.home.title} — U.S. Immigration · Boutique Practice`,
+      title: `${dict[L].pages.home.title}, U.S. Immigration · Boutique Practice`,
       description: dict[L].pages.home.intro,
     }),
   component: () => (

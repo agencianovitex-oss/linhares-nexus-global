@@ -11,7 +11,7 @@ export const Route = createFileRoute("/_site/en/premiacoes")({
     buildLocaleHead({
       path: "/premiacoes",
       locale: L,
-      title: `${t.title} — Linhares Law`,
+      title: `${t.title}, Linhares Law`,
       description: t.intro,
     }),
   component: function Page() {

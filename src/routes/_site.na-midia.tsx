@@ -30,7 +30,7 @@ export const Route = createFileRoute("/_site/na-midia")({
     buildLocaleHead({
       path: "/na-midia",
       locale: L,
-      title: "Na Imprensa — Linhares Law",
+      title: "Na Imprensa, Linhares Law",
       description:
         "Entrevistas, aparições e contribuições editoriais da Linhares Law e do Dr. André Linhares em veículos de referência: RedeTV News, Record Americas, SBT Brasil, Band News, Jovem Pan News e CNBC.",
     }),

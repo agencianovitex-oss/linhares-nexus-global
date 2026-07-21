@@ -13,7 +13,7 @@ export function ShareButtons({ url, title, locale }: Props) {
   return (
     <div className="my-8 flex flex-wrap items-center gap-3 border-y border-border/40 py-4">
       <span className="text-xs uppercase tracking-[0.25em] text-ink/60">{t.share}</span>
-      <a href={`https://wa.me/?text=${enc(`${title} — ${full}`)}`} target="_blank" rel="noopener noreferrer"
+      <a href={`https://wa.me/?text=${enc(`${title}, ${full}`)}`} target="_blank" rel="noopener noreferrer"
         className="rounded border border-border/60 px-3 py-1.5 text-xs hover:border-[rgb(179_134_66)]">WhatsApp</a>
       <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${enc(full)}`} target="_blank" rel="noopener noreferrer"
         className="rounded border border-border/60 px-3 py-1.5 text-xs hover:border-[rgb(179_134_66)]">LinkedIn</a>

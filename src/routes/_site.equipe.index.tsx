@@ -11,7 +11,7 @@ export const Route = createFileRoute("/_site/equipe/")({
     buildLocaleHead({
       path: "/equipe",
       locale: L,
-      title: "Equipe — Linhares Law",
+      title: "Equipe, Linhares Law",
       description:
         "Conheça a equipe especializada da Linhares Law: advogados licenciados nos Estados Unidos, gestores jurídicos, especialistas e profissionais dedicados exclusivamente à imigração americana.",
     }),
