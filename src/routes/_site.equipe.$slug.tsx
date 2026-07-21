@@ -55,8 +55,8 @@ const profiles: Record<string, AttorneyProfile> = {
       "Top Empreendedor",
     ],
     longBio: [
-      "Dr. André Linhares é o advogado fundador do Linhares Law. Em mais de uma década de prática exclusiva em imigração americana, construiu uma reputação reconhecida por advogados, executivos, investidores e famílias internacionais que buscam representação técnica nos Estados Unidos.",
-      "Sua atuação se concentra em estratégias migratórias de alto valor agregado — vistos de habilidade extraordinária, dispensa por interesse nacional, investimento e transferência intracompanhia — sempre conduzidas com leitura individualizada de cada trajetória profissional e patrimonial.",
+      "Fundador da Linhares Law, o Dr. André Linhares atua há mais de 14 anos no direito imigratório, sendo referência em vistos para profissionais qualificados e empresários que desejam viver ou investir nos Estados Unidos.",
+      "O Dr. Linhares consolidou-se como uma das principais autoridades no visto EB-2 NIW nos EUA, atuando como palestrante na conferência nacional da American Immigration Lawyers Association (AILA), onde compartilha sua experiência e conhecimento com outros advogados militantes na área de imigração.",
       "Como presidente da LIDE Orlando, articula o relacionamento entre lideranças empresariais brasileiras e o ecossistema institucional norte-americano. Sua presença em painéis, entrevistas e eventos do setor consolida o Linhares Law como referência no mercado.",
     ],
     mission:
