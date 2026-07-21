@@ -87,7 +87,6 @@ function EquipePage() {
         meta={
           <>
             <span>3 Advogados</span>
-            <span>2 Legal Managers</span>
             <span>Equipe Multidisciplinar</span>
           </>
         }
