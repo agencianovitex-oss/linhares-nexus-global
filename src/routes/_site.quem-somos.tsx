@@ -17,7 +17,7 @@ export const Route = createFileRoute("/_site/quem-somos")({
       locale: L,
       title: "Quem Somos — Linhares Law",
       description:
-        "Conheça a história e os valores do Linhares Law, escritório de advocacia dedicado exclusivamente à imigração americana, com mais de 14 anos de atuação e quatro escritórios nos Estados Unidos.",
+        "Conheça a história e os valores da Linhares Law, escritório de advocacia dedicado exclusivamente à imigração americana, com mais de 14 anos de atuação e quatro escritórios nos Estados Unidos.",
     }),
   component: QuemSomos,
 });
@@ -31,7 +31,7 @@ const valores = [
 
 const linhaTempo = [
   { ano: "2012", titulo: "Início da Prática Jurídica", body: "Dr. André Linhares inicia sua trajetória na advocacia americana de imigração." },
-  { ano: "2016", titulo: "Fundação do Linhares Law", body: "O escritório nasce com o propósito de representar profissionais qualificados e famílias nos Estados Unidos." },
+  { ano: "2016", titulo: "Fundação da Linhares Law", body: "O escritório nasce com o propósito de representar profissionais qualificados e famílias nos Estados Unidos." },
   { ano: "2023", titulo: "Expansão", body: "Abertura de novos escritórios e ampliação da estrutura institucional." },
   { ano: "2024", titulo: "Reconhecimento Internacional", body: "Premiação no International Business Institute e nomeação para o The Law Awards." },
   { ano: "2024", titulo: "Great Place to Work", body: "Certificação como Great Place to Work com alto índice de satisfação interna." },
@@ -46,7 +46,7 @@ function QuemSomos() {
       <InstitutionalHero
         eyebrow="Linhares Law · Quem Somos"
         title="Uma trajetória construída pela representação jurídica de quem busca morar e trabalhar nos EUA."
-        intro="O Linhares Law é um escritório de advocacia dedicado exclusivamente à imigração americana. Há mais de 14 anos representamos profissionais, executivos, investidores e famílias internacionais em estratégias migratórias para os Estados Unidos."
+        intro="A Linhares Law é um escritório de advocacia dedicado exclusivamente à imigração americana. Há mais de 14 anos representamos profissionais, executivos, investidores e famílias internacionais em estratégias migratórias para os Estados Unidos."
         meta={
           <>
             <span>Mais de 14 anos</span>
@@ -62,7 +62,7 @@ function QuemSomos() {
         <div className="mt-12 grid gap-12 lg:grid-cols-1 items-center">
           <div className="space-y-5 lead max-w-3xl">
             <p>
-              O Linhares Law nasceu da convicção de que a imigração americana exige mais do que processo. Exige
+              A Linhares Law nasceu da convicção de que a imigração americana exige mais do que processo. Exige
               estratégia jurídica, leitura técnica de cenário e o acompanhamento contínuo de cada etapa.
             </p>
             <p>
@@ -126,7 +126,7 @@ function QuemSomos() {
             <div style={{ color: "rgb(255, 255, 255)" }}>
               <span className="eyebrow" style={{ color: "rgb(255, 255, 255)", opacity: 0.85 }}>Trajetória Institucional</span>
               <h2 className="mt-3 font-display text-3xl md:text-4xl lg:text-5xl leading-[1.05]" style={{ color: "rgb(255, 255, 255)" }}>
-                Marcos relevantes do Linhares Law.
+                Marcos relevantes da Linhares Law.
               </h2>
               <span className="mt-5 block h-px w-16" style={{ backgroundColor: "rgb(255, 255, 255)" }} />
             </div>
@@ -162,7 +162,7 @@ function QuemSomos() {
             <SectionTitle eyebrow="Reconhecimento Institucional" title="Distinções que refletem nossa consistência." />
             <p className="mt-6 lead">
               Premiações concedidas por instituições jurídicas, empresariais e de cultura organizacional reconhecem
-              o trabalho técnico, ético e humano do Linhares Law.
+              o trabalho técnico, ético e humano da Linhares Law.
             </p>
             <InstitutionalButton to="/premiacoes" variant="outline" className="mt-10">
               Ver Reconhecimentos

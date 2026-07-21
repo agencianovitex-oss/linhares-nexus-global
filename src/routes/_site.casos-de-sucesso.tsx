@@ -15,7 +15,7 @@ export const Route = createFileRoute("/_site/casos-de-sucesso")({
       locale: L,
       title: "Depoimentos — Linhares Law",
       description:
-        "Depoimentos reais de clientes do Linhares Law sobre suas trajetórias migratórias e aprovações conquistadas.",
+        "Depoimentos reais de clientes da Linhares Law sobre suas trajetórias migratórias e aprovações conquistadas.",
     }),
   component: Depoimentos,
 });
@@ -39,7 +39,7 @@ function Depoimentos() {
       <InstitutionalHero
         eyebrow="Linhares Law · Depoimentos"
         title="Depoimentos de quem viveu a experiência Linhares Law."
-        intro="Histórias reais de clientes representados pelo Linhares Law, contadas por quem conquistou sua aprovação e construiu uma nova trajetória nos Estados Unidos."
+        intro="Histórias reais de clientes representados pela Linhares Law, contadas por quem conquistou sua aprovação e construiu uma nova trajetória nos Estados Unidos."
       />
 
       <SectionBlock>
@@ -67,7 +67,7 @@ function Depoimentos() {
           <p className="mt-6 eyebrow">Entregas de Green Card</p>
           <h2 className="mt-4">Momentos de conquista dos nossos clientes.</h2>
           <p className="mt-4 lead">
-            Registros do Dr. André Linhares ao lado de clientes do Linhares Law
+            Registros do Dr. André Linhares ao lado de clientes da Linhares Law
             no momento da entrega de seus Green Cards.
           </p>
         </div>

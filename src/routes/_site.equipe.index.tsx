@@ -13,7 +13,7 @@ export const Route = createFileRoute("/_site/equipe/")({
       locale: L,
       title: "Equipe — Linhares Law",
       description:
-        "Conheça a equipe especializada do Linhares Law: advogados licenciados nos Estados Unidos, gestores jurídicos, especialistas e profissionais dedicados exclusivamente à imigração americana.",
+        "Conheça a equipe especializada da Linhares Law: advogados licenciados nos Estados Unidos, gestores jurídicos, especialistas e profissionais dedicados exclusivamente à imigração americana.",
     }),
   component: EquipePage,
 });
@@ -83,7 +83,7 @@ function EquipePage() {
       <InstitutionalHero
         eyebrow="Linhares Law · Equipe"
         title="Equipe Especializada Linhares Law."
-        intro="O Linhares Law reúne advogados, especialistas jurídicos e profissionais dedicados exclusivamente ao atendimento de clientes que buscam caminhos legais para viver, trabalhar, investir e construir seu futuro nos Estados Unidos."
+        intro="A Linhares Law reúne advogados, especialistas jurídicos e profissionais dedicados exclusivamente ao atendimento de clientes que buscam caminhos legais para viver, trabalhar, investir e construir seu futuro nos Estados Unidos."
         meta={
           <>
             <span>3 Advogados</span>

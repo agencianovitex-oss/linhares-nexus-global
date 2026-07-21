@@ -57,7 +57,7 @@ export const teamGroups: TeamGroup[] = [
     eyebrow: "I. Attorneys",
     title: "Attorneys",
     description:
-      "Advogados licenciados nos Estados Unidos que conduzem a estratégia jurídica de cada cliente do Linhares Law.",
+      "Advogados licenciados nos Estados Unidos que conduzem a estratégia jurídica de cada cliente da Linhares Law.",
     members: [
       {
         name: "André Linhares, Esq.",

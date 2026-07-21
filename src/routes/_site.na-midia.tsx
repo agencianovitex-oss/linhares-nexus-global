@@ -32,7 +32,7 @@ export const Route = createFileRoute("/_site/na-midia")({
       locale: L,
       title: "Na Imprensa — Linhares Law",
       description:
-        "Entrevistas, aparições e contribuições editoriais do Linhares Law e do Dr. André Linhares em veículos de referência: RedeTV News, Record Americas, SBT Brasil, Band News, Jovem Pan News e CNBC.",
+        "Entrevistas, aparições e contribuições editoriais da Linhares Law e do Dr. André Linhares em veículos de referência: RedeTV News, Record Americas, SBT Brasil, Band News, Jovem Pan News e CNBC.",
     }),
   component: NaMidia,
 });
@@ -111,7 +111,7 @@ function NaMidia() {
       <InstitutionalHero
         eyebrow="Linhares Law · Na Imprensa"
         title="Referência editorial em imigração americana."
-        intro="O Linhares Law é fonte recorrente em veículos brasileiros e americanos sobre temas relacionados à legislação migratória, atualizações regulatórias e estratégias jurídicas voltadas a profissionais e investidores."
+        intro="A Linhares Law é fonte recorrente em veículos brasileiros e americanos sobre temas relacionados à legislação migratória, atualizações regulatórias e estratégias jurídicas voltadas a profissionais e investidores."
       />
 
       <SectionBlock>

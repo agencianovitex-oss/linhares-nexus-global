@@ -43,7 +43,7 @@ const profiles: Record<string, AttorneyProfile> = {
     education: [{ school: "Faculdade de Direito nos Estados Unidos" }],
     experience: [
       "Mais de 14 anos de prática exclusiva em imigração americana",
-      "Fundador e CEO do Linhares Law",
+      "Fundador e CEO da Linhares Law",
       "Presidência da LIDE Orlando",
       "Palestrante recorrente em eventos internacionais de imigração",
     ],
@@ -57,7 +57,7 @@ const profiles: Record<string, AttorneyProfile> = {
     longBio: [
       "Fundador da Linhares Law, o Dr. André Linhares atua há mais de 14 anos no direito imigratório, sendo referência em vistos para profissionais qualificados e empresários que desejam viver ou investir nos Estados Unidos.",
       "O Dr. Linhares consolidou-se como uma das principais autoridades no visto EB-2 NIW nos EUA, atuando como palestrante na conferência nacional da American Immigration Lawyers Association (AILA), onde compartilha sua experiência e conhecimento com outros advogados militantes na área de imigração.",
-      "Como presidente da LIDE Orlando, articula o relacionamento entre lideranças empresariais brasileiras e o ecossistema institucional norte-americano. Sua presença em painéis, entrevistas e eventos do setor consolida o Linhares Law como referência no mercado.",
+      "Como presidente da LIDE Orlando, articula o relacionamento entre lideranças empresariais brasileiras e o ecossistema institucional norte-americano. Sua presença em painéis, entrevistas e eventos do setor consolida a Linhares Law como referência no mercado.",
     ],
     mission:
       "Representar com rigor jurídico e discrição as trajetórias de quem escolheu os Estados Unidos como destino profissional, familiar e patrimonial.",
@@ -83,7 +83,7 @@ const profiles: Record<string, AttorneyProfile> = {
     ],
     practice: ["EB-1", "EB-2 NIW", "Ajuste de Status", "Imigração Familiar"],
     longBio: [
-      "Nicholas Perry traz para o Linhares Law uma trajetória rara: passagem pelas principais agências federais americanas responsáveis pela imigração — USCIS, DHS, ICE, CBP e o Department of Justice.",
+      "Nicholas Perry traz para a Linhares Law uma trajetória rara: passagem pelas principais agências federais americanas responsáveis pela imigração — USCIS, DHS, ICE, CBP e o Department of Justice.",
       "Essa vivência institucional confere à sua atuação um entendimento técnico aprofundado dos critérios adotados pelos analistas e oficiais federais que avaliam petições migratórias.",
       "Formado como Valedictorian pela North Carolina Central School of Law, é graduado pela University of Notre Dame e licenciado em Nebraska, North Carolina e perante a Suprema Corte dos Estados Unidos.",
     ],

@@ -26,7 +26,7 @@ export function PhotoMosaic({ photos, durationSec = 90, compact = false }: Props
 
   return (
     <section
-      aria-label="Entregas de Green Card a clientes do Linhares Law"
+      aria-label="Entregas de Green Card a clientes da Linhares Law"
       className="relative w-full overflow-hidden bg-surface-2 group"
     >
       <div
