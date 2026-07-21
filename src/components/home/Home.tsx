@@ -972,7 +972,7 @@ function OfficesSection() {
                 Quatro escritórios em pontos estratégicos do território americano.
               </h2>
               <p className="mt-7 max-w-2xl text-lg leading-[1.85] text-primary-foreground/75">
-                Uma estrutura nacional construída para representar clientes internacionais com proximidade institucional, alcance federal e atuação coordenada entre Florida, New York e Utah.
+                Uma estrutura nacional construída para representar clientes internacionais com proximidade institucional, alcance federal e atuação coordenada em todo território americano. Com sedes em locais estratégicos.
               </p>
             </div>
           </div>
