@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
 import { InstitutionalHero, InstitutionalButton } from "@/components/institutional";
 import { SectionBlock } from "@/components/institutional/SectionBlock";
 import { SectionTitle } from "@/components/layout/SectionTitle";
@@ -8,6 +7,11 @@ import { offices } from "@/data/offices";
 
 const L = "pt" as const;
 
+const ZOHO_FORM_URL =
+  "https://forms.zohopublic.com/linhareslaw/form/LinharesLawFormulrioEB2NIW4/formperma/5dh53UTsQ8ZAbvB9N3egaAxOhZ4cdkorEqAkYPmhi5Y";
+const ZOHO_BOOKINGS_URL =
+  "https://linhareslaw.zohobookings.com/#/4689936000000037054";
+
 export const Route = createFileRoute("/_site/contato")({
   head: () =>
     buildLocaleHead({
@@ -15,104 +19,109 @@ export const Route = createFileRoute("/_site/contato")({
       locale: L,
       title: "Contato, Linhares Law",
       description:
-        "Inicie uma conversa institucional com a Linhares Law. Formulário de atendimento, agendamento, telefone, e-mail e WhatsApp dos quatro escritórios nos Estados Unidos.",
+        "Inicie uma conversa institucional com a Linhares Law. Consulta gratuita para EB-2 NIW e agendamento de consulta paga para os demais vistos, com atendimento nos quatro escritórios nos Estados Unidos.",
     }),
   component: Contato,
 });
 
 function Contato() {
-  const [enviado, setEnviado] = useState(false);
   return (
     <>
       <InstitutionalHero
         eyebrow="Linhares Law · Contato"
         title="Inicie uma conversa institucional."
-        intro="A primeira consulta é o início de uma relação de longo prazo. Nossa equipe responde a cada solicitação com a discrição e o rigor que cada trajetória exige."
+        intro="Oferecemos dois caminhos de atendimento: consulta preliminar gratuita para candidatos ao EB-2 NIW e consulta estratégica agendada para as demais categorias de visto."
       />
 
       <SectionBlock>
-        <div className="grid gap-16 lg:grid-cols-12">
-          {/* Formulário */}
-          <div className="lg:col-span-7">
-            <SectionTitle eyebrow="Formulário" title="Solicitar Atendimento" />
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                setEnviado(true);
-              }}
-              className="mt-12 grid gap-6"
-            >
-              <Field label="Nome Completo" name="nome" required />
-              <div className="grid gap-6 md:grid-cols-2">
-                <Field label="E-mail" name="email" type="email" required />
-                <Field label="Telefone / WhatsApp" name="telefone" />
-              </div>
-              <Field label="País de Residência Atual" name="pais" />
-              <div>
-                <label className="eyebrow">Estratégia de Interesse</label>
-                <select
-                  name="estrategia"
-                  className="mt-3 w-full border border-border bg-background px-5 py-4 text-ink focus:border-gold focus:outline-none"
-                >
-                  <option>Não tenho certeza</option>
-                  <option>EB-2 NIW</option>
-                  <option>EB-1</option>
-                  <option>E-2</option>
-                  <option>L-1</option>
-                  <option>O-1</option>
-                  <option>EB-5</option>
-                  <option>Imigração Familiar</option>
-                </select>
-              </div>
-              <div>
-                <label className="eyebrow">Mensagem</label>
-                <textarea
-                  name="mensagem"
-                  rows={5}
-                  className="mt-3 w-full border border-border bg-background px-5 py-4 text-ink focus:border-gold focus:outline-none resize-none"
-                />
-              </div>
-              <p className="text-xs text-muted-foreground">
-                {"\n"}
-              </p>
-              <div>
-                <InstitutionalButton type="submit">
-                  {enviado ? "Solicitação Enviada" : "Enviar Solicitação"}
-                </InstitutionalButton>
-              </div>
-            </form>
+        <SectionTitle eyebrow="Agendamento" title="Escolha o Caminho Adequado." />
+
+        <div className="mt-12 grid gap-10 lg:grid-cols-2">
+          {/* Card 1 — Consulta Gratuita EB-2 NIW */}
+          <div className="border border-border bg-surface p-8 md:p-10 flex flex-col">
+            <span className="eyebrow">Consulta Gratuita</span>
+            <h3 className="mt-4 text-primary">EB-2 NIW</h3>
+            <p className="mt-4 text-sm text-ink-soft">
+              Se seu objetivo é a imigração pela via de Interesse Nacional
+              (EB-2 NIW), preencha o formulário abaixo. Nossa equipe fará uma
+              análise preliminar e retornará com os próximos passos.
+            </p>
+            <span className="rule-gold mt-8" />
+            <div className="mt-8 flex-1">
+              <iframe
+                aria-label="Linhares Law: Formulário EB-2 NIW."
+                src={ZOHO_FORM_URL}
+                allow="geolocation;"
+                className="w-full border-0 bg-background"
+                style={{ height: 620, minHeight: 620 }}
+              />
+            </div>
           </div>
 
-          {/* Canais diretos */}
-          <aside className="lg:col-span-4 lg:col-start-9 space-y-10">
-            <div className="border border-border p-10 bg-surface">
-              <span className="eyebrow">Canais Diretos</span>
-              <ul className="mt-6 space-y-5">
-                <li>
-                  <p className="text-[11px] uppercase tracking-[0.28em] text-muted-foreground">E-mail</p>
-                  <a href="mailto:info@linhareslaw.com" className="mt-1 block text-ink hover:text-gold">
-                    info@linhareslaw.com
-                  </a>
-                </li>
-                <li>
-                  <p className="text-[11px] uppercase tracking-[0.28em] text-muted-foreground">WhatsApp</p>
-                  <p className="mt-1 text-ink">Atendimento institucional</p>
-                </li>
-                <li>
-                  <p className="text-[11px] uppercase tracking-[0.28em] text-muted-foreground">Agendamento</p>
-                  <p className="mt-1 text-ink">Koalendar · Em integração</p>
-                </li>
-              </ul>
-            </div>
+          {/* Card 2 — Consulta Paga (demais vistos) */}
+          <div className="border border-border bg-surface p-8 md:p-10 flex flex-col">
+            <span className="eyebrow">Consulta Estratégica</span>
+            <h3 className="mt-4 text-primary">Demais Vistos</h3>
+            <p className="mt-4 text-sm text-ink-soft">
+              Para EB-1, E-2, L-1, O-1, EB-5, imigração familiar e demais
+              estratégias, agende uma consulta com um de nossos advogados. O
+              agendamento é feito de forma segura pela plataforma Zoho
+              Bookings e envolve pagamento antecipado.
+            </p>
+            <span className="rule-gold mt-8" />
 
-            <div className="border border-border p-10 bg-primary text-primary-foreground">
-              <span className="eyebrow eyebrow-on-dark">Atendimento</span>
-              <h3 className="mt-4 text-primary-foreground">Segunda a Sexta · 9h às 18h (EST)</h3>
-              <p className="mt-4 text-sm text-primary-foreground/75">
-                Resposta em até 24 horas úteis.
+            <ul className="mt-8 space-y-3 text-sm text-ink-soft">
+              <li>· Análise personalizada da sua trajetória</li>
+              <li>· Definição da estratégia migratória adequada</li>
+              <li>· Atendimento com advogados sêniores do escritório</li>
+              <li>· Pagamento e confirmação em ambiente seguro</li>
+            </ul>
+
+            <div className="mt-auto pt-10">
+              <InstitutionalButton
+                variant="gold"
+                {...({
+                  href: ZOHO_BOOKINGS_URL,
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                } as unknown as { to: string })}
+              >
+                Agendar Consulta
+              </InstitutionalButton>
+              <p className="mt-4 text-xs text-muted-foreground">
+                Abre em uma nova aba, ambiente seguro do Zoho Bookings.
               </p>
             </div>
-          </aside>
+          </div>
+        </div>
+
+        {/* Canais diretos, faixa enxuta */}
+        <div className="mt-16 border border-border bg-background p-8 md:p-10 grid gap-8 md:grid-cols-3">
+          <div>
+            <p className="text-[11px] uppercase tracking-[0.28em] text-muted-foreground">
+              E-mail
+            </p>
+            <a
+              href="mailto:info@linhareslaw.com"
+              className="mt-2 block text-ink hover:text-gold"
+            >
+              info@linhareslaw.com
+            </a>
+          </div>
+          <div>
+            <p className="text-[11px] uppercase tracking-[0.28em] text-muted-foreground">
+              WhatsApp
+            </p>
+            <p className="mt-2 text-ink">Atendimento institucional</p>
+          </div>
+          <div>
+            <p className="text-[11px] uppercase tracking-[0.28em] text-muted-foreground">
+              Atendimento
+            </p>
+            <p className="mt-2 text-ink">
+              Segunda a Sexta, 9h às 18h (EST). Resposta em até 24 horas úteis.
+            </p>
+          </div>
         </div>
       </SectionBlock>
 
@@ -146,33 +155,5 @@ function Contato() {
         </div>
       </SectionBlock>
     </>
-  );
-}
-
-function Field({
-  label,
-  name,
-  type = "text",
-  required,
-}: {
-  label: string;
-  name: string;
-  type?: string;
-  required?: boolean;
-}) {
-  return (
-    <div>
-      <label htmlFor={name} className="eyebrow">
-        {label}
-        {required && <span className="text-gold ml-1">·</span>}
-      </label>
-      <input
-        id={name}
-        name={name}
-        type={type}
-        required={required}
-        className="mt-3 w-full border border-border bg-background px-5 py-4 text-ink focus:border-gold focus:outline-none"
-      />
-    </div>
   );
 }
