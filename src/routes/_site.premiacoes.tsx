@@ -55,7 +55,7 @@ const featuredAwards: Award[] = [
     year: "2025",
     institution: "American Immigration Lawyers Association",
     description:
-      "Em 2025, o Dr. André Linhares tornou-se o único advogado de nacionalidade não americana convidado a atuar como palestrante na conferência anual da AILA (Associação Americana de Advogados de Imigração), uma das mais importantes organizações jurídicas especializadas em imigração dos Estados Unidos.\u00a0",
+      "Em 2025, o Dr. André Linhares tornou-se o único advogado de nacionalidade brasileira a ser convidado a atuar como palestrante na conferência anual da AILA (Associação Americana de Advogados de Imigração), uma das mais importantes organizações jurídicas especializadas em imigração dos Estados Unidos.\u00a0",
     image: aila,
   },
 ];
