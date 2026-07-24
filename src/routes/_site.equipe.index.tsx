@@ -30,7 +30,9 @@ function MemberCard({ m, cardBg }: { m: TeamMember; cardBg: string }) {
             src={m.portrait}
             alt={m.name}
             loading="lazy"
-            className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
+            decoding="async"
+            className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02] transform-gpu [backface-visibility:hidden] [image-rendering:auto]"
+            style={{ willChange: "transform" }}
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-surface text-[10px] uppercase tracking-[0.32em] text-muted-foreground">
