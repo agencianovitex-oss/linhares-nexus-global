@@ -78,16 +78,20 @@ function Contato() {
             </ul>
 
             <div className="mt-auto pt-10">
-              <InstitutionalButton
-                variant="gold"
-                {...({
-                  href: ZOHO_BOOKINGS_URL,
-                  target: "_blank",
-                  rel: "noopener noreferrer",
-                } as unknown as { to: string })}
+              <a
+                href={ZOHO_BOOKINGS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/btn relative inline-flex items-center justify-center gap-3 px-8 py-4 text-[11px] font-semibold tracking-[0.26em] uppercase transition-[background-color,color,border-color,transform] duration-300 ease-out will-change-transform bg-gold text-gold-foreground hover:bg-[rgb(153_108_40)] hover:-translate-y-[1px] shadow-[0_10px_30px_-18px_rgba(179,134,66,0.65)]"
               >
-                Agendar Consulta
-              </InstitutionalButton>
+                <span>Agendar Consulta</span>
+                <span
+                  aria-hidden="true"
+                  className="inline-block translate-x-0 transition-transform duration-300 ease-out group-hover/btn:translate-x-[5px]"
+                >
+                  →
+                </span>
+              </a>
               <p className="mt-4 text-xs text-muted-foreground">
                 Abre em uma nova aba, ambiente seguro do Zoho Bookings.
               </p>
