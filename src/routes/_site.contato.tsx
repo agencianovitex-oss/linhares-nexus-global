@@ -36,7 +36,7 @@ function Contato() {
       <SectionBlock>
         <SectionTitle eyebrow="Agendamento" title="Escolha o Caminho Adequado." />
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-2">
+        <div className="mt-12 grid gap-10 lg:grid-cols-2 items-start">
           {/* Card 1 — Consulta Gratuita EB-2 NIW */}
           <div className="border border-border bg-surface p-8 md:p-10 flex flex-col">
             <span className="eyebrow">Consulta Gratuita</span>
@@ -77,17 +77,17 @@ function Contato() {
               <li>· Pagamento e confirmação em ambiente seguro</li>
             </ul>
 
-            <div className="mt-auto pt-10">
+            <div className="mt-8">
               <a
                 href={ZOHO_BOOKINGS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/btn relative inline-flex items-center justify-center gap-3 px-8 py-4 text-[11px] font-semibold tracking-[0.26em] uppercase transition-[background-color,color,border-color,transform] duration-300 ease-out will-change-transform bg-gold text-gold-foreground hover:bg-[rgb(153_108_40)] hover:-translate-y-[1px] shadow-[0_10px_30px_-18px_rgba(179,134,66,0.65)]"
+                className="group/btn relative inline-flex w-full items-center justify-center gap-4 px-10 py-6 text-[13px] font-semibold tracking-[0.28em] uppercase transition-[background-color,color,border-color,transform] duration-300 ease-out will-change-transform bg-gold text-gold-foreground hover:bg-[rgb(153_108_40)] hover:-translate-y-[1px] shadow-[0_14px_38px_-18px_rgba(179,134,66,0.7)]"
               >
                 <span>Agendar Consulta</span>
                 <span
                   aria-hidden="true"
-                  className="inline-block translate-x-0 transition-transform duration-300 ease-out group-hover/btn:translate-x-[5px]"
+                  className="inline-block translate-x-0 text-base transition-transform duration-300 ease-out group-hover/btn:translate-x-[5px]"
                 >
                   →
                 </span>
