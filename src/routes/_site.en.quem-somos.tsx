@@ -1,21 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Placeholder } from "@/components/layout/Placeholder";
+import { QuemSomosPage } from "./_site.quem-somos";
 import { buildLocaleHead } from "@/lib/seo";
-import { dict } from "@/i18n/locales";
-
-const L = "en" as const;
-const t = dict[L].pages.about;
 
 export const Route = createFileRoute("/_site/en/quem-somos")({
-  head: ({ params }: { params: Record<string, never> }) =>
+  head: () =>
     buildLocaleHead({
       path: "/quem-somos",
-      locale: L,
-      title: `${t.title}, Linhares Law`,
-      description: t.intro,
+      locale: "en",
+      title: "About the Firm, Linhares Law",
+      description:
+        "Discover the history and values of Linhares Law — a boutique law firm dedicated exclusively to U.S. immigration, with over 14 years of practice and four offices across the United States.",
     }),
-  component: function Page() {
-    
-    return <Placeholder title={t.title} intro={t.intro} eyebrow={dict[L].brand} />;
-  },
+  component: QuemSomosPage,
 });

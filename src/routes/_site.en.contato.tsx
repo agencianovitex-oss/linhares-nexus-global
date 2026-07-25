@@ -1,21 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Placeholder } from "@/components/layout/Placeholder";
+import { ContatoPage } from "./_site.contato";
 import { buildLocaleHead } from "@/lib/seo";
-import { dict } from "@/i18n/locales";
-
-const L = "en" as const;
-const t = dict[L].pages.contact;
 
 export const Route = createFileRoute("/_site/en/contato")({
-  head: ({ params }: { params: Record<string, never> }) =>
+  head: () =>
     buildLocaleHead({
       path: "/contato",
-      locale: L,
-      title: `${t.title}, Linhares Law`,
-      description: t.intro,
+      locale: "en",
+      title: "Contact, Linhares Law",
+      description:
+        "Begin an institutional conversation with Linhares Law. Complimentary consultation for EB-2 NIW and paid strategic consultation for all other visa categories, with offices in Orlando, Miami, New York and Salt Lake City.",
     }),
-  component: function Page() {
-    
-    return <Placeholder title={t.title} intro={t.intro} eyebrow={dict[L].brand} />;
-  },
+  component: ContatoPage,
 });

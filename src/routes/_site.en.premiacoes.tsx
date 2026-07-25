@@ -1,21 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Placeholder } from "@/components/layout/Placeholder";
+import { PremiacoesPage } from "./_site.premiacoes";
 import { buildLocaleHead } from "@/lib/seo";
-import { dict } from "@/i18n/locales";
-
-const L = "en" as const;
-const t = dict[L].pages.awards;
 
 export const Route = createFileRoute("/_site/en/premiacoes")({
-  head: ({ params }: { params: Record<string, never> }) =>
+  head: () =>
     buildLocaleHead({
       path: "/premiacoes",
-      locale: L,
-      title: `${t.title}, Linhares Law`,
-      description: t.intro,
+      locale: "en",
+      title: "Recognition, Linhares Law",
+      description:
+        "Awards and institutional recognition received by Linhares Law, including the IBI Award, 10 Best Law Firms, The Law Awards, Great Place To Work and the Quality Justiça Award.",
     }),
-  component: function Page() {
-    
-    return <Placeholder title={t.title} intro={t.intro} eyebrow={dict[L].brand} />;
-  },
+  component: PremiacoesPage,
 });
