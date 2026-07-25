@@ -1,21 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Placeholder } from "@/components/layout/Placeholder";
+import { ContatoPage } from "./_site.contato";
 import { buildLocaleHead } from "@/lib/seo";
-import { dict } from "@/i18n/locales";
-
-const L = "es" as const;
-const t = dict[L].pages.contact;
 
 export const Route = createFileRoute("/_site/es/contato")({
-  head: ({ params }: { params: Record<string, never> }) =>
+  head: () =>
     buildLocaleHead({
       path: "/contato",
-      locale: L,
-      title: `${t.title}, Linhares Law`,
-      description: t.intro,
+      locale: "es",
+      title: "Contacto, Linhares Law",
+      description:
+        "Inicie una conversación institucional con Linhares Law. Consulta gratuita para EB-2 NIW y consulta estratégica pagada para las demás categorías de visa, con oficinas en Orlando, Miami, New York y Salt Lake City.",
     }),
-  component: function Page() {
-    
-    return <Placeholder title={t.title} intro={t.intro} eyebrow={dict[L].brand} />;
-  },
+  component: ContatoPage,
 });

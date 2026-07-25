@@ -1,19 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Placeholder } from "@/components/layout/Placeholder";
+import { Home } from "@/components/home/Home";
 import { buildLocaleHead } from "@/lib/seo";
-import { dict } from "@/i18n/locales";
-
-const L = "es" as const;
 
 export const Route = createFileRoute("/_site/es/")({
   head: () =>
     buildLocaleHead({
       path: "/",
-      locale: L,
-      title: `${dict[L].pages.home.title}, U.S. Immigration · Boutique Practice`,
-      description: dict[L].pages.home.intro,
+      locale: "es",
+      title: "Linhares Law, Despacho Boutique de Inmigración a EE. UU.",
+      description:
+        "Linhares Law es un despacho boutique de inmigración a EE. UU. que representa a profesionales, ejecutivos, inversionistas y familias internacionales, con presencia institucional en Orlando, Miami, New York y Salt Lake City.",
     }),
-  component: () => (
-    <Placeholder title={dict[L].pages.home.title} intro={dict[L].pages.home.intro} eyebrow={dict[L].slogan} />
-  ),
+  component: Home,
 });

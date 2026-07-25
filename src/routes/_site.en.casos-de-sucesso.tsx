@@ -1,21 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Placeholder } from "@/components/layout/Placeholder";
+import { DepoimentosPage } from "./_site.casos-de-sucesso";
 import { buildLocaleHead } from "@/lib/seo";
-import { dict } from "@/i18n/locales";
-
-const L = "en" as const;
-const t = dict[L].pages.success;
 
 export const Route = createFileRoute("/_site/en/casos-de-sucesso")({
-  head: ({ params }: { params: Record<string, never> }) =>
+  head: () =>
     buildLocaleHead({
       path: "/casos-de-sucesso",
-      locale: L,
-      title: `${t.title}, Linhares Law`,
-      description: t.intro,
+      locale: "en",
+      title: "Testimonials, Linhares Law",
+      description:
+        "Real stories from Linhares Law clients about their U.S. immigration journeys and the approvals they secured with our representation.",
     }),
-  component: function Page() {
-    
-    return <Placeholder title={t.title} intro={t.intro} eyebrow={dict[L].brand} />;
-  },
+  component: DepoimentosPage,
 });

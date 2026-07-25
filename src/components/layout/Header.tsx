@@ -119,15 +119,14 @@ export function Header({ transparentOverHero = false }: Props) {
                   <div className="min-w-[240px] bg-background border border-border shadow-[0_30px_80px_-30px_rgb(6_36_67/0.25)]">
                     <div className="px-6 py-4 border-b border-border">
                       <span className="text-[10px] font-semibold uppercase tracking-[0.32em] text-gold">
-                        Vistos Imigratórios
+                        {t.nav.visasSubmenu}
                       </span>
                     </div>
                     <ul className="py-2">
                       {VISA_SUBMENU.map((v) => (
                         <li key={v.slug}>
                           <Link
-                            to={`${visasBase}/$slug`}
-                            params={{ slug: v.slug }}
+                            to={`${withLocale(locale, visasBase)}/${v.slug}`}
                             className="flex items-center justify-between gap-4 px-6 py-3 text-[12.5px] font-medium tracking-[0.08em] text-primary hover:bg-surface hover:text-gold transition-colors"
                           >
                             <span className="font-display text-[15px] font-semibold tracking-tight">{v.code}</span>
@@ -138,10 +137,10 @@ export function Header({ transparentOverHero = false }: Props) {
                     </ul>
                     <div className="border-t border-border">
                       <Link
-                        to={visasBase}
+                        to={withLocale(locale, visasBase)}
                         className="block px-6 py-3 text-[10.5px] font-semibold uppercase tracking-[0.28em] text-primary hover:text-gold transition-colors"
                       >
-                        Ver todos os vistos →
+                        {t.nav.seeAllVisas} →
                       </Link>
                     </div>
                   </div>
@@ -216,14 +215,13 @@ export function Header({ transparentOverHero = false }: Props) {
 
           <div className="mt-6 pt-6 border-t border-border">
             <div className="text-[10px] font-semibold uppercase tracking-[0.32em] text-gold mb-3">
-              Vistos Imigratórios
+              {t.nav.visasSubmenu}
             </div>
             <ul className="grid grid-cols-2 gap-2">
               {VISA_SUBMENU.map((v) => (
                 <li key={v.slug}>
                   <Link
-                    to={`${visasBase}/$slug`}
-                    params={{ slug: v.slug }}
+                    to={`${withLocale(locale, visasBase)}/${v.slug}`}
                     className="block px-3 py-2 text-[13px] font-semibold text-primary border border-border hover:border-gold hover:text-gold transition-colors"
                     onClick={() => setMobileOpen(false)}
                   >

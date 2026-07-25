@@ -1,21 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Placeholder } from "@/components/layout/Placeholder";
+import { NaMidiaPage } from "./_site.na-midia";
 import { buildLocaleHead } from "@/lib/seo";
-import { dict } from "@/i18n/locales";
-
-const L = "en" as const;
-const t = dict[L].pages.media;
 
 export const Route = createFileRoute("/_site/en/na-midia")({
-  head: ({ params }: { params: Record<string, never> }) =>
+  head: () =>
     buildLocaleHead({
       path: "/na-midia",
-      locale: L,
-      title: `${t.title}, Linhares Law`,
-      description: t.intro,
+      locale: "en",
+      title: "In the Press, Linhares Law",
+      description:
+        "Interviews, features and editorial contributions from Linhares Law and André Linhares across leading outlets, including RedeTV News, Record Americas, SBT Brasil, Band News, Jovem Pan News and CNBC.",
     }),
-  component: function Page() {
-    
-    return <Placeholder title={t.title} intro={t.intro} eyebrow={dict[L].brand} />;
-  },
+  component: NaMidiaPage,
 });

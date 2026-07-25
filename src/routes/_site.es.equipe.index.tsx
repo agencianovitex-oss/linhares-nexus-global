@@ -1,21 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Placeholder } from "@/components/layout/Placeholder";
+import { EquipePage } from "./_site.equipe.index";
 import { buildLocaleHead } from "@/lib/seo";
-import { dict } from "@/i18n/locales";
-
-const L = "es" as const;
-const t = dict[L].pages.team;
 
 export const Route = createFileRoute("/_site/es/equipe/")({
-  head: ({ params }: { params: Record<string, never> }) =>
+  head: () =>
     buildLocaleHead({
       path: "/equipe",
-      locale: L,
-      title: `${t.title}, Linhares Law`,
-      description: t.intro,
+      locale: "es",
+      title: "Equipo, Linhares Law",
+      description:
+        "Conozca al equipo especializado de Linhares Law: abogados habilitados en Estados Unidos, gestores jurídicos, especialistas y profesionales dedicados exclusivamente a la inmigración a EE. UU.",
     }),
-  component: function Page() {
-    
-    return <Placeholder title={t.title} intro={t.intro} eyebrow={dict[L].brand} />;
-  },
+  component: EquipePage,
 });
