@@ -699,11 +699,282 @@ function mirror(data: VisaContent): VisaContent {
   return data;
 }
 
+/* ------------------------------------------------------------------ */
+/* English translations. Vistos ainda não traduzidos caem no PT via   */
+/* mirror() como fallback temporário durante a Fase 2.                */
+/* ------------------------------------------------------------------ */
+const EN_OVERRIDES: Partial<Record<VisaSlug, VisaContent>> = {
+  "eb2-niw": {
+    slug: "eb2-niw",
+    acronym: "EB-2 NIW",
+    title: "EB-2 NIW",
+    heroSubhead: "Green Card through the National Interest Waiver",
+    tagline:
+      "For highly qualified professionals whose work advances the interests of the United States. The EB-2 NIW allows the applicant to petition for a Green Card without an employer sponsor or a job offer, offering a strategic path for researchers, physicians, engineers, entrepreneurs, executives and other specialists with a distinguished record.",
+    intro:
+      "The EB-2 National Interest Waiver is an employment-based immigrant category for advanced-degree professionals whose work is positioned to deliver meaningful benefits to the United States.",
+    meta: ["Permanent residence", "Self-petition", "No job offer required", "Family included"],
+    what: {
+      title: "What the EB-2 NIW is",
+      body:
+        "Unlike other employment-based paths, the EB-2 NIW allows the professional to file the petition directly, without an employer sponsor. The category recognizes individuals whose work can contribute to the economic, scientific, technological, educational or social development of the country.",
+    },
+    qualify: {
+      title: "Who typically qualifies",
+      items: [
+        "Physicians with clinical, academic or public health practice.",
+        "Dentists with a consolidated technical record and qualified production.",
+        "Psychologists with advanced training and clinical or academic practice.",
+        "Engineers working in infrastructure, energy, manufacturing and technology.",
+        "Executives with strategic responsibility in international organizations.",
+        "Entrepreneurs and founders with a demonstrable-impact venture.",
+        "Researchers with peer-recognized scientific production.",
+        "Scientists in fields of strategic priority for the United States.",
+        "Specialists in technology, cybersecurity, data and artificial intelligence.",
+        "Professionals with exceptional ability evidenced by record and merit.",
+      ],
+    },
+    benefits: {
+      title: "Key benefits",
+      items: [
+        "Green Card, permanent residence in the United States.",
+        "Spouse and unmarried children under 21 are included.",
+        "No job offer and no PERM labor certification required.",
+        "Professional freedom to work as self-employed, founder or employee.",
+        "Ability to keep international engagements throughout the process.",
+        "Natural path to U.S. citizenship once statutory requirements are met.",
+      ],
+    },
+    process: {
+      title: "How we build an EB-2 NIW case",
+      items: [
+        "Strategic assessment of the professional, academic and family profile.",
+        "Legal design of the proposed endeavor and of the merits to be demonstrated.",
+        "Curation of documentary evidence, expert letters and technical dossier.",
+        "Preparation and filing of the I-140 petition with USCIS.",
+        "Case management through adjustment of status (I-485) or consular processing.",
+      ],
+    },
+    profiles: [
+      {
+        title: "Dentists",
+        intro:
+          "Linhares Law maintains an institutional partnership with ABO-US, offering a complementary framework for technical preparation and U.S. licensing for Brazilian dentists.",
+        bullets: [
+          "Construction of the professional merit dossier and qualified production.",
+          "Strategic support for U.S. licensing (NBDE / INBDE).",
+          "ABO-US partnership for technical preparation and language.",
+        ],
+      },
+      {
+        title: "Physicians",
+        intro:
+          "Medicine is closely aligned with the national interest standard, particularly in clinical research, public health and practice in areas of meaningful medical need.",
+        bullets: [
+          "Practitioners with scientific production and academic activity.",
+          "Physicians in U.S. residency or fellowship programs.",
+          "Specialists in fields identified as national priorities.",
+        ],
+      },
+      {
+        title: "Engineers",
+        intro:
+          "Engineers with experience in infrastructure, energy, advanced manufacturing and technology find strong ground to qualify on professional merit.",
+        bullets: [
+          "Track record in projects of strategic relevance.",
+          "Activity in international companies and research centers.",
+          "Patents, publications and participation in technical standards work.",
+        ],
+      },
+      {
+        title: "Technology Professionals",
+        intro:
+          "Recognition of contributions in cybersecurity, artificial intelligence, digital infrastructure and software engineering.",
+        bullets: [
+          "Technical leadership in digital products and scalable architectures.",
+          "Work in security, data, cloud, AI and applied research.",
+          "Peer recognition, conference presence and open-source contributions.",
+        ],
+      },
+      {
+        title: "Entrepreneurs",
+        intro:
+          "Founders and entrepreneurs meet the national interest standard through the strategic nature of the venture, job creation and economic impact.",
+        bullets: [
+          "Consolidated business track record and mature governance.",
+          "Business plan with demonstrable merit and feasibility.",
+          "Internationalization strategy and U.S. footprint.",
+        ],
+      },
+      {
+        title: "Executives",
+        intro:
+          "Senior executives from multinational organizations qualify through strategic leadership, corporate governance and sector-level contribution.",
+        bullets: [
+          "C-Level and directors with global responsibility.",
+          "Leadership in transformation, international expansion or ESG.",
+          "Sector recognition, board seats and publications.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: "Do I need a U.S. job offer for the EB-2 NIW?", a: "No. The national interest waiver allows the professional to self-petition, with no employer sponsor and no PERM labor certification required." },
+      { q: "Can I include my family in the process?", a: "Yes. Your spouse and unmarried children under 21 may be included as dependents and receive Green Cards together with the principal applicant." },
+      { q: "How long does an EB-2 NIW case typically take?", a: "Timelines vary with USCIS processing, consular workload and the applicant's immigration situation. An individual estimate is provided during the initial strategic assessment." },
+      { q: "Is there any guarantee of approval?", a: "No serious immigration firm guarantees approval. Our commitment is to build the strongest possible legal strategy on the true merits of the case." },
+      { q: "Can I keep living and working in my home country during the process?", a: "Yes. Most of the petition phase can be conducted without changing tax residence or the applicant's professional activity abroad." },
+      { q: "What is the difference between EB-2 NIW and the traditional EB-2?", a: "The traditional EB-2 requires a U.S. job offer and PERM labor certification. The EB-2 NIW waives both when the professional shows that the work is in the national interest." },
+      { q: "Which documents are essential to support the petition?", a: "Diplomas, professional registrations, publications, awards, expert letters, a detailed plan of the proposed endeavor and evidence of the impact of the applicant's work." },
+      { q: "Can professionals without a master's or doctorate qualify?", a: "Yes. A bachelor's degree combined with at least five years of progressively responsible experience can satisfy the advanced degree requirement." },
+      { q: "Do I need a formally established company or project in the U.S.?", a: "Not necessarily. What matters is a concrete demonstration of the proposed activity in the United States and the national benefit it represents." },
+      { q: "After receiving the Green Card, when can I apply for citizenship?", a: "As a rule, after five years of permanent residence, provided the statutory eligibility conditions are maintained. The exact timeline depends on the resident's history." },
+    ],
+    seoTitle: "EB-2 NIW, National Interest Green Card | Linhares Law",
+    seoDescription:
+      "EB-2 NIW strategy for qualified professionals to obtain U.S. permanent residence without a job offer. Institutional representation by Linhares Law.",
+  },
+};
+
+/* ------------------------------------------------------------------ */
+/* Spanish translations. Same fallback rule.                          */
+/* ------------------------------------------------------------------ */
+const ES_OVERRIDES: Partial<Record<VisaSlug, VisaContent>> = {
+  "eb2-niw": {
+    slug: "eb2-niw",
+    acronym: "EB-2 NIW",
+    title: "EB-2 NIW",
+    heroSubhead: "Green Card por Interés Nacional",
+    tagline:
+      "Para profesionales altamente calificados cuyo trabajo representa un interés nacional para Estados Unidos. La EB-2 NIW permite solicitar la Green Card sin depender de una oferta de empleo ni del patrocinio de un empleador, ofreciendo una vía estratégica para investigadores, médicos, ingenieros, empresarios, ejecutivos y otros especialistas con trayectoria destacada.",
+    intro:
+      "La EB-2 National Interest Waiver es una categoría migratoria destinada a profesionales altamente calificados cuya labor puede generar beneficios relevantes para Estados Unidos.",
+    meta: ["Residencia permanente", "Autopetición", "Sin oferta de empleo", "Inclusión familiar"],
+    what: {
+      title: "Qué es la EB-2 NIW",
+      body:
+        "A diferencia de otras vías migratorias basadas en empleo, la EB-2 NIW permite que el propio profesional presente su petición, sin necesidad de un empleador patrocinador. La categoría reconoce a quienes pueden contribuir al desarrollo económico, científico, tecnológico, educativo o social del país.",
+    },
+    qualify: {
+      title: "Quiénes suelen calificar",
+      items: [
+        "Médicos con práctica clínica, académica o de salud pública.",
+        "Odontólogos con trayectoria técnica consolidada y producción calificada.",
+        "Psicólogos con formación avanzada y práctica clínica o académica.",
+        "Ingenieros en infraestructura, energía, manufactura y tecnología.",
+        "Ejecutivos con responsabilidad estratégica en organizaciones internacionales.",
+        "Empresarios y fundadores con emprendimientos de impacto demostrable.",
+        "Investigadores con producción científica reconocida por pares.",
+        "Científicos en áreas de prioridad estratégica para Estados Unidos.",
+        "Especialistas en tecnología, ciberseguridad, datos e inteligencia artificial.",
+        "Profesionales con habilidades excepcionales acreditadas por trayectoria y mérito.",
+      ],
+    },
+    benefits: {
+      title: "Principales beneficios",
+      items: [
+        "Green Card, residencia permanente en Estados Unidos.",
+        "Inclusión del cónyuge y de los hijos solteros menores de 21 años.",
+        "No exige oferta de empleo ni certificación PERM.",
+        "Libertad profesional para actuar como independiente, emprendedor o empleado.",
+        "Posibilidad de mantener actividad internacional durante el proceso.",
+        "Vía natural hacia la ciudadanía estadounidense una vez cumplidos los requisitos legales.",
+      ],
+    },
+    process: {
+      title: "Cómo construimos un caso EB-2 NIW",
+      items: [
+        "Evaluación estratégica del perfil profesional, académico y familiar.",
+        "Planificación jurídica del emprendimiento propuesto y del mérito a demostrar.",
+        "Curaduría de evidencias documentales, cartas de expertos y expediente técnico.",
+        "Preparación y presentación de la petición I-140 ante USCIS.",
+        "Acompañamiento hasta el ajuste de estatus (I-485) o el proceso consular.",
+      ],
+    },
+    profiles: [
+      {
+        title: "Odontólogos",
+        intro:
+          "Linhares Law mantiene una alianza institucional con ABO-US, que ofrece una estructura complementaria de preparación técnica y de licenciamiento estadounidense para odontólogos brasileños.",
+        bullets: [
+          "Construcción del expediente de mérito profesional y producción calificada.",
+          "Apoyo estratégico para el licenciamiento en EE. UU. (NBDE / INBDE).",
+          "Alianza con ABO-US para preparación técnica y de idioma.",
+        ],
+      },
+      {
+        title: "Médicos",
+        intro:
+          "La medicina se alinea con los criterios de interés nacional, en especial en investigación clínica, salud pública y práctica en áreas de demanda médica relevante.",
+        bullets: [
+          "Profesionales con producción científica y actividad académica.",
+          "Médicos en programas de residencia o fellowship en EE. UU.",
+          "Especialistas en áreas de prioridad nacional declarada.",
+        ],
+      },
+      {
+        title: "Ingenieros",
+        intro:
+          "Ingenieros con experiencia en infraestructura, energía, manufactura avanzada y tecnología encuentran terreno fértil para calificar por mérito profesional.",
+        bullets: [
+          "Trayectoria en proyectos de relevancia estratégica.",
+          "Actividad en empresas internacionales y centros de investigación.",
+          "Patentes, publicaciones y participación en normalización técnica.",
+        ],
+      },
+      {
+        title: "Profesionales de Tecnología",
+        intro:
+          "Reconocimiento del aporte de profesionales en ciberseguridad, inteligencia artificial, infraestructura digital y desarrollo de software.",
+        bullets: [
+          "Liderazgo técnico en productos digitales y arquitecturas escalables.",
+          "Actividad en seguridad, datos, cloud, IA e investigación aplicada.",
+          "Reconocimiento por pares, conferencias y contribuciones open-source.",
+        ],
+      },
+      {
+        title: "Empresarios",
+        intro:
+          "Empresarios y fundadores demuestran interés nacional por la naturaleza estratégica del emprendimiento, la generación de empleos y el impacto económico.",
+        bullets: [
+          "Trayectoria empresarial consolidada y gobernanza madura.",
+          "Plan de negocios con mérito y viabilidad demostrada.",
+          "Estrategia de internacionalización y presencia en EE. UU.",
+        ],
+      },
+      {
+        title: "Ejecutivos",
+        intro:
+          "Ejecutivos sénior con trayectoria en multinacionales califican por liderazgo estratégico, gobierno corporativo y aporte sectorial.",
+        bullets: [
+          "Nivel C y directores con responsabilidad global.",
+          "Liderazgo en transformación, expansión internacional o ESG.",
+          "Reconocimiento sectorial, consejos y publicaciones.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: "¿Necesito una oferta de empleo en EE. UU. para la EB-2 NIW?", a: "No. La dispensa por interés nacional permite que el propio profesional presente la petición, sin patrocinio empresarial ni certificación laboral (PERM)." },
+      { q: "¿Puedo incluir a mi familia en el proceso?", a: "Sí. El cónyuge y los hijos solteros menores de 21 años pueden incluirse como dependientes y recibir la Green Card junto con el peticionario principal." },
+      { q: "¿Cuánto tarda, en promedio, un proceso EB-2 NIW?", a: "Los plazos varían según USCIS, la carga del consulado responsable y la situación migratoria del peticionario. La estimación individual se realiza en la evaluación estratégica inicial." },
+      { q: "¿Existe garantía de aprobación?", a: "Ningún despacho serio garantiza aprobación en un proceso migratorio. El compromiso es construir la estrategia jurídica más sólida posible a partir del mérito real del caso." },
+      { q: "¿Puedo seguir viviendo y trabajando en mi país durante el proceso?", a: "Sí. La mayor parte de la fase peticionaria puede conducirse sin alterar la residencia fiscal ni la actividad profesional del peticionario en el exterior." },
+      { q: "¿Cuál es la diferencia entre la EB-2 NIW y la EB-2 tradicional?", a: "La EB-2 tradicional exige oferta de empleo y certificación PERM. La EB-2 NIW dispensa ambas cuando el profesional demuestra que su actividad representa interés nacional." },
+      { q: "¿Qué documentos son esenciales para sustentar la petición?", a: "Diplomas, registros profesionales, publicaciones, premios, cartas de expertos, plan detallado de la actividad propuesta y evidencias del impacto del trabajo del peticionario." },
+      { q: "¿Pueden calificar profesionales sin maestría o doctorado?", a: "Sí. El título de grado, combinado con al menos cinco años de experiencia progresivamente relevante, puede satisfacer el requisito de formación avanzada." },
+      { q: "¿Es necesario tener empresa o proyecto formalmente constituido en EE. UU.?", a: "No necesariamente. Lo esencial es demostrar de forma concreta la actividad propuesta en Estados Unidos y el beneficio nacional que representa." },
+      { q: "Tras recibir la Green Card, ¿cuándo puedo solicitar la ciudadanía?", a: "En regla general, tras cinco años de residencia permanente, siempre que se mantengan las condiciones legales de elegibilidad. El plazo puede variar según el historial del residente." },
+    ],
+    seoTitle: "EB-2 NIW, Green Card por Interés Nacional | Linhares Law",
+    seoDescription:
+      "Estrategia EB-2 NIW para profesionales calificados que buscan la residencia permanente en EE. UU. sin oferta de empleo. Representación institucional de Linhares Law.",
+  },
+};
+
 const EN: Record<VisaSlug, VisaContent> = Object.fromEntries(
-  (Object.keys(PT) as VisaSlug[]).map((k) => [k, mirror(PT[k])]),
+  (Object.keys(PT) as VisaSlug[]).map((k) => [k, EN_OVERRIDES[k] ?? mirror(PT[k])]),
 ) as Record<VisaSlug, VisaContent>;
 const ES: Record<VisaSlug, VisaContent> = Object.fromEntries(
-  (Object.keys(PT) as VisaSlug[]).map((k) => [k, mirror(PT[k])]),
+  (Object.keys(PT) as VisaSlug[]).map((k) => [k, ES_OVERRIDES[k] ?? mirror(PT[k])]),
 ) as Record<VisaSlug, VisaContent>;
 
 export const VISAS: Record<Locale, Record<VisaSlug, VisaContent>> = { pt: PT, en: EN, es: ES };
