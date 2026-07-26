@@ -833,6 +833,545 @@ const EN_OVERRIDES: Partial<Record<VisaSlug, VisaContent>> = {
     seoDescription:
       "EB-2 NIW strategy for qualified professionals to obtain U.S. permanent residence without a job offer. Institutional representation by Linhares Law.",
   },
+
+  eb1: {
+    slug: "eb1",
+    acronym: "EB-1",
+    title: "EB-1",
+    heroSubhead: "Green Card for professionals of international standing",
+    tagline:
+      "One of the most distinguished employment-based immigrant categories, reserved for individuals who have achieved meaningful recognition in their fields.",
+    intro:
+      "The EB-1 recognizes professionals at the top of their careers. It comprises three tracks, EB-1A, EB-1B and EB-1C, each aimed at a specific profile of recognition and practice.",
+    meta: ["First preference", "Extraordinary ability", "No PERM required"],
+    what: {
+      title: "What the EB-1 is",
+      body:
+        "A first-preference immigrant category for individuals of international acclaim, outstanding researchers and professors, and multinational executives transferred within related companies.",
+    },
+    qualify: {
+      title: "Tracks and typical profiles",
+      items: [
+        "EB-1A, Extraordinary Ability: professionals recognized nationally or internationally through awards, publications, leadership and market standing.",
+        "EB-1B, Outstanding Professors and Researchers: academics and researchers with international recognition and a qualifying U.S. institutional appointment.",
+        "EB-1C, Multinational Executives: senior executives transferred within internationally related companies in strategic or managerial roles.",
+        "History of awards, publications and original contributions to the field.",
+        "Sustained recognition by peers, market and reference institutions.",
+      ],
+    },
+    benefits: {
+      title: "Key benefits",
+      items: [
+        "Green Card with priority in the U.S. visa bulletin.",
+        "Robust filing grounded in consolidated professional merit.",
+        "Spouse and unmarried children under 21 are included.",
+        "Direct path to permanent residence without PERM certification.",
+        "Professional freedom once residency is granted.",
+      ],
+    },
+    process: {
+      title: "How we build an EB-1 case",
+      items: [
+        "Selection of the appropriate track (EB-1A, EB-1B or EB-1C).",
+        "Mapping of acclaim and peer recognition evidence.",
+        "International expert letters and institutional dossier.",
+        "Filing of the I-140 petition with USCIS.",
+        "Adjustment of status (I-485) or consular processing through Green Card delivery.",
+      ],
+    },
+    profiles: [
+      { title: "Researchers and Professors (EB-1B)", intro: "Academic trajectories consolidated at international level.", bullets: ["At least three years of teaching or research experience", "International recognition for scientific contribution", "Qualifying appointment with a U.S. institution"] },
+      { title: "Multinational Executives (EB-1C)", intro: "Transfer of senior executives and managers within internationally related companies.", bullets: ["Executive activity abroad for at least one of the last three years", "Qualifying relationship with a U.S. entity", "Bona fide executive or managerial role"] },
+      { title: "Extraordinary Professionals (EB-1A)", intro: "Sustained national or international recognition.", bullets: ["Practice at the top of the field", "Meeting at least three of the ten regulatory criteria", "Ongoing impact and originality"] },
+    ],
+    faqs: [
+      { q: "What is the main difference between EB-1A and EB-2 NIW?", a: "The EB-1A requires proven national or international acclaim and offers priority in the visa bulletin. The EB-2 NIW requires professional merit and national interest, with more accessible criteria for a broader pool of professionals." },
+      { q: "Do I need international awards for the EB-1A?", a: "Not necessarily. The category evaluates a set of criteria, including publications, originality, market value, committee work, peer review and institutional visibility." },
+      { q: "How long does an EB-1 case usually take?", a: "As a first-preference category, the EB-1 typically advances with priority on the visa bulletin, though timelines vary by USCIS and consulate." },
+      { q: "Can I file EB-1A without an employer sponsor?", a: "Yes. The EB-1A is one of the few categories that allows self-petition, with no U.S. employer required." },
+      { q: "Who can apply for the EB-1B?", a: "Professors and researchers with international recognition and an offer of a tenured or tenure-track position, or comparable permanent role, at a qualifying U.S. institution." },
+      { q: "Does the EB-1C require setting up a U.S. company?", a: "Not necessarily. It requires a U.S. company related to the foreign company through qualifying ownership, with real operations and a qualifying executive or managerial role." },
+      { q: "Can I move from O-1 to EB-1A?", a: "Yes, and it is a frequent path. Both categories share close criteria for extraordinary ability, enabling a planned transition." },
+      { q: "Do spouse and children obtain residence?", a: "Yes. Spouse and unmarried children under 21 receive permanent residence together with the principal applicant." },
+      { q: "Is there an annual approval cap on EB-1?", a: "There are annual caps per category and per country of birth set by U.S. law. Strategic planning takes the current processing window into account." },
+      { q: "Can I keep working professionally during the process?", a: "Yes. As a rule, the petition phase allows the applicant to continue professional activity abroad until the appropriate transition point." },
+    ],
+    seoTitle: "EB-1, Extraordinary Ability and Executives | Linhares Law",
+    seoDescription:
+      "EB-1 strategy (EB-1A, EB-1B and EB-1C) for outstanding professionals, researchers and multinational executives, led by Linhares Law.",
+  },
+
+  e2: {
+    slug: "e2",
+    acronym: "E-2",
+    title: "E-2",
+    heroSubhead: "Investment and business operation in the United States",
+    tagline:
+      "The E-2 visa is available to investors from treaty countries, allowing them to direct and develop a U.S. business through a substantial investment.",
+    intro:
+      "The E-2 enables entrepreneurial activity in the United States through a substantial investment in a real, operating, non-marginal U.S. business. It is a renewable visa with no statutory maximum term.",
+    meta: ["Non-immigrant visa", "Renewable", "Spouse work authorization"],
+    what: {
+      title: "What the E-2 visa is",
+      body:
+        "A visa grounded in a bilateral treaty between the United States and the investor's country. It requires eligible nationality, a substantial investment, a real operating business and the investor's active role in its direction.",
+    },
+    qualify: {
+      title: "Core criteria",
+      items: [
+        "Nationality of a country with an in-force commercial treaty with the United States.",
+        "Substantial investment in proportion to the nature of the business.",
+        "Real, operating, non-marginal enterprise capable of generating more than minimal livelihood.",
+        "Investor's active role in directing and developing the enterprise.",
+        "Funds of lawful origin, fully traceable.",
+      ],
+    },
+    benefits: {
+      title: "Key benefits",
+      items: [
+        "Ability to reside legally in the United States.",
+        "Freedom to operate one's own U.S. business.",
+        "Spouse may apply for work authorization.",
+        "Children may study in the United States.",
+        "Renewable indefinitely while the business remains operational.",
+      ],
+    },
+    process: {
+      title: "How we build an E-2 case",
+      items: [
+        "Structuring of the U.S. entity, governance and ownership.",
+        "Documentation of the investment and full traceability of funds.",
+        "Technical business plan showing feasibility and job creation.",
+        "Consular processing or change of status, as applicable.",
+      ],
+    },
+    faqs: [
+      { q: "Is there a minimum investment for the E-2?", a: "There is no fixed amount in law. The investment must be substantial in proportion to the business and sufficient to support sustainable operations." },
+      { q: "Does Brazil have an E-2 treaty with the United States?", a: "No. Brazilian nationals typically need to acquire an eligible nationality first, for example through European or another qualifying country citizenship, before applying for the E-2." },
+      { q: "Can the E-2 be converted into a Green Card?", a: "The E-2 is non-immigrant. Moving to permanent residence requires qualifying under an immigrant category such as EB-2 NIW, EB-1 or EB-5." },
+      { q: "Can I invest in a U.S. franchise?", a: "Yes. Franchises are widely accepted, provided the investment is substantial, the business is operational and the investor takes an active role in management." },
+      { q: "For how long is the E-2 granted?", a: "The visa is typically issued for up to five years and may be renewed indefinitely while the business remains operational." },
+      { q: "Am I required to live in the United States?", a: "No. The E-2 allows residence but does not impose it. Many investors spend part of the year in the U.S. and keep activity in their home country." },
+      { q: "Can I hire employees abroad?", a: "Yes. The corporate structure may include international operations, provided the U.S. company maintains real and meaningful activity." },
+      { q: "Can children stay on the E-2 after turning 21?", a: "No. Once dependents turn 21 they no longer qualify and must obtain their own immigration status." },
+      { q: "Can I operate more than one company with the same E-2?", a: "Yes, provided the entities are related and the investor keeps an active role in the businesses tied to the visa." },
+      { q: "What happens to the visa if the business closes?", a: "The E-2 loses its basis if the business ceases operations. Strategic planning contemplates contingencies and alternative immigration paths." },
+    ],
+    seoTitle: "E-2, Treaty Investor Visa | Linhares Law",
+    seoDescription:
+      "E-2 visa for investors and entrepreneurs establishing and operating businesses in the United States. Institutional strategy by Linhares Law.",
+  },
+
+  l1: {
+    slug: "l1",
+    acronym: "L-1",
+    title: "L-1",
+    heroSubhead: "Corporate expansion into the United States",
+    tagline:
+      "The L-1 facilitates the transfer of executives, managers and specialized-knowledge professionals to the U.S. operations of international companies.",
+    intro:
+      "The L-1 supports the strategic expansion of multinational companies in the United States through the transfer of key personnel between parent, branch, subsidiary or affiliate.",
+    meta: ["L-1A · Executives", "L-1B · Specialized knowledge", "Path to EB-1C"],
+    what: {
+      title: "What the L-1 visa is",
+      body:
+        "A non-immigrant visa for international corporate mobility. It is divided into L-1A (executives and managers) and L-1B (professionals with specialized knowledge of proprietary products, processes or know-how).",
+    },
+    qualify: {
+      title: "Requirements",
+      items: [
+        "Qualifying relationship between the foreign and U.S. entities (parent, branch, subsidiary or affiliate).",
+        "At least one year of prior employment with the foreign company within the last three years.",
+        "Executive, managerial or specialized-knowledge role.",
+        "Active U.S. company or a formally structured new office.",
+      ],
+    },
+    benefits: {
+      title: "Key benefits",
+      items: [
+        "Legal framework fit for international expansion of the corporate group.",
+        "Spouse and unmarried children under 21 are included.",
+        "Spouse may apply for work authorization in the United States.",
+        "Ability to open a U.S. new office (new office L-1).",
+        "Natural path to EB-1C (executive Green Card).",
+      ],
+    },
+    process: {
+      title: "How we build an L-1 case",
+      items: [
+        "Analysis of the corporate structure and relationship between entities.",
+        "Business, functional and governance dossier.",
+        "Documentation of the role abroad and the projected role in the U.S.",
+        "Filing of the L petition with USCIS.",
+        "Consular processing or change of status.",
+      ],
+    },
+    faqs: [
+      { q: "Can I open a U.S. branch and transfer as L-1?", a: "Yes. The new office L-1 supports formal opening of the U.S. operation with an initial one-year term, extendable upon consolidation of the business." },
+      { q: "What is the difference between L-1A and L-1B?", a: "L-1A is for executives and managers; L-1B is for professionals with specialized knowledge of proprietary products, processes or know-how." },
+      { q: "How long is the L-1 granted for?", a: "L-1A may reach up to seven years total; L-1B up to five. Both begin with shorter initial terms subject to renewals." },
+      { q: "Does the L-1 lead to a Green Card?", a: "Yes. The L-1A naturally aligns with EB-1C, the permanent residence category for multinational executives." },
+      { q: "What is the minimum corporate relationship required?", a: "Parent, branch, subsidiary or affiliate relationship, with qualifying ownership and common governance." },
+      { q: "Can the spouse work in the U.S.?", a: "Yes. The L-1 spouse may apply for independent work authorization, without an employer sponsor of their own." },
+      { q: "Do I need U.S. clients or revenue before opening?", a: "Not for the new office model, but the business plan must show concrete commercial feasibility within the first twelve months." },
+      { q: "Can foreign employees be transferred alongside the executive?", a: "Yes, through new individual petitions. Each professional is assessed on their role abroad and projected role in the U.S." },
+      { q: "Can newly formed companies sponsor an L-1?", a: "Yes, provided they are duly incorporated, operating abroad and have a valid corporate relationship with the U.S. entity." },
+      { q: "What happens if the U.S. company does not consolidate in the first year?", a: "The L-1 renewal may be denied. Institutional planning contemplates operational milestones and metrics that support continuity of the visa." },
+    ],
+    seoTitle: "L-1, Intra-Company Transfer | Linhares Law",
+    seoDescription:
+      "L-1 strategy for the transfer of executives, managers and specialized-knowledge professionals to U.S. operations of international companies.",
+  },
+
+  o1: {
+    slug: "o1",
+    acronym: "O-1",
+    title: "O-1",
+    heroSubhead: "Individuals with extraordinary ability",
+    tagline:
+      "The O-1 visa is for individuals who demonstrate meaningful recognition and exceptional achievements in their field.",
+    intro:
+      "The O-1 recognizes professionals with sustained acclaim from peers and industry in the sciences, arts, education, business, athletics or the motion picture and television industry.",
+    meta: ["O-1A · Sciences, Business, Education, Athletics", "O-1B · Arts and Entertainment"],
+    what: {
+      title: "What the O-1 visa is",
+      body:
+        "A temporary visa for professionals whose extraordinary ability is documented through awards, peer recognition and a career at the top of the field.",
+    },
+    qualify: {
+      title: "Who typically qualifies",
+      items: [
+        "Entrepreneurs with a recognized track record in their markets.",
+        "Researchers with relevant scientific production and international recognition.",
+        "Scientists with proven contribution in strategic fields.",
+        "Executives with recognized leadership in international organizations.",
+        "Professional athletes with national or international records.",
+        "Artists, directors, musicians and creators with consolidated acclaim.",
+        "Leading professionals in the entertainment industry.",
+      ],
+    },
+    benefits: {
+      title: "Key benefits",
+      items: [
+        "Specific, structured and renewable work authorization.",
+        "Spouse and unmarried children under 21 are included.",
+        "Multiple projects and employers possible through an agent.",
+        "Strategic path to a later EB-1A transition.",
+        "Legal activity across the entire U.S. territory.",
+      ],
+    },
+    process: {
+      title: "How we build an O-1 case",
+      items: [
+        "Mapping evidence of acclaim, awards and publications.",
+        "Expert letters and, where applicable, peer/labor advisory opinion.",
+        "Individualized professional merit dossier.",
+        "Filing of the I-129 petition with USCIS.",
+        "Consular processing or change of status.",
+      ],
+    },
+    faqs: [
+      { q: "Do I need a U.S. sponsor for the O-1?", a: "Yes. The O-1 requires a U.S. petitioner, employer or agent. Athletes and artists may operate through an agent, enabling multiple engagements." },
+      { q: "Is the O-1 a path to a Green Card?", a: "Transition from O-1 to EB-1A is common, as both categories share close extraordinary-ability criteria." },
+      { q: "How long is the O-1 granted for?", a: "Up to three years initially, with successive renewals in periods of up to one year, tied to the continuity of the activity." },
+      { q: "What evidence typically supports the petition?", a: "Awards, publications, citations, committee work, peer review, meaningful contracts, salary consistent with the top of the field and media coverage." },
+      { q: "Can entrepreneurs qualify for the O-1?", a: "Yes, provided they show sustained acclaim in their field, with a record of leadership, awards and market recognition." },
+      { q: "Is there a lottery for the O-1?", a: "No. Unlike the H-1B, the O-1 has no lottery system and can be filed throughout the year." },
+      { q: "What is the difference between O-1A and O-1B?", a: "O-1A covers sciences, business, education and athletics. O-1B covers arts and the entertainment industry, with its own evaluation criteria." },
+      { q: "Can the spouse work in the U.S. on the O-1?", a: "The O-3 dependent does not receive automatic work authorization. The spouse's professional activity requires a visa of their own." },
+      { q: "Can the O-1 employer of record be changed?", a: "Yes, through a new petition filed by the new sponsor. Continuity of activity in the same field is central to the analysis." },
+      { q: "Do I need to leave my home country to start the process?", a: "No. The petition can be built and filed while the professional remains abroad, with the visa issued consularly afterwards." },
+    ],
+    seoTitle: "O-1, Extraordinary Ability Visa | Linhares Law",
+    seoDescription:
+      "O-1 strategy for professionals with extraordinary recognition in sciences, business, arts, athletics and entertainment.",
+  },
+
+  h1b: {
+    slug: "h1b",
+    acronym: "H-1B",
+    title: "H-1B",
+    heroSubhead: "Specialized professionals",
+    tagline:
+      "The H-1B is designed for qualified professionals hired by U.S. companies to perform roles requiring specialized technical knowledge.",
+    intro:
+      "The H-1B is one of the main gateways for qualified professionals into the U.S. market, particularly in technology, engineering, healthcare, finance and applied sciences.",
+    meta: ["Annual lottery", "Employer sponsorship", "Path to Green Card"],
+    what: {
+      title: "What the H-1B visa is",
+      body:
+        "A temporary visa for professionals with a bachelor's degree hired for a role that requires specialized technical knowledge, formally sponsored by a U.S. employer.",
+    },
+    qualify: {
+      title: "Core criteria",
+      items: [
+        "Formal job offer from a U.S. company.",
+        "Compatible academic credentials (bachelor's degree or recognized equivalent).",
+        "Role classified as a specialty occupation.",
+        "Salary consistent with the prevailing wage for the role and region.",
+      ],
+    },
+    benefits: {
+      title: "Key benefits",
+      items: [
+        "Formal professional experience in the U.S. market.",
+        "Initial three-year visa, renewable up to six.",
+        "Spouse and unmarried children under 21 are included.",
+        "H-4 spouse may qualify for work authorization under specific conditions.",
+        "Compatible with a later transition to permanent residence.",
+      ],
+    },
+    process: {
+      title: "How we build an H-1B case",
+      items: [
+        "Assessment of the role, credentials and sponsoring employer.",
+        "Electronic registration and annual lottery.",
+        "Preparation and filing of the I-129 petition after selection.",
+        "Consular processing or change of status, as applicable.",
+      ],
+    },
+    faqs: [
+      { q: "Does the H-1B always go through the lottery?", a: "In most cases yes, given demand. Universities, research institutions and certain non-profits are exempt from the cap." },
+      { q: "Can I change employer during the H-1B?", a: "Yes, through a new transfer petition filed by the new employer." },
+      { q: "Can the spouse work on an H-4?", a: "Yes, under specific conditions, generally where the H-1B holder has an approved I-140 and is waiting for their priority date." },
+      { q: "Is there a limit on renewals?", a: "The H-1B may be renewed up to a total of six years. Specific extensions are available in connection with pending immigrant petitions." },
+      { q: "Can I file for a Green Card while on H-1B?", a: "Yes. The H-1B is compatible with a parallel immigrant filing, EB-2 NIW, EB-2 PERM, EB-3 or EB-1, as appropriate." },
+      { q: "What is the role of the prevailing wage?", a: "It sets the legally acceptable minimum salary for the role and region, following the Department of Labor methodology." },
+      { q: "Can small companies sponsor H-1B?", a: "Yes, provided they demonstrate financial ability, a qualifying technical role and market-consistent salary." },
+      { q: "Do I need to be in the U.S. to participate in the lottery?", a: "No. The lottery is electronic and runs through the U.S. employer's registration, regardless of the professional's current location." },
+      { q: "How long between the lottery and the start of work?", a: "Employment typically begins on October 1 of the corresponding fiscal year, with the petition filed in the months following selection." },
+      { q: "Can I work as an independent contractor on H-1B?", a: "The H-1B requires an employment relationship with a qualifying employer. Independent activity requires a different immigration category." },
+    ],
+    seoTitle: "H-1B, Specialty Occupations | Linhares Law",
+    seoDescription:
+      "H-1B strategy for qualified professionals hired by U.S. companies in specialty occupations.",
+  },
+
+  eb5: {
+    slug: "eb5",
+    acronym: "EB-5",
+    title: "EB-5",
+    heroSubhead: "Green Card through investment",
+    tagline:
+      "The EB-5 is an immigrant category for investors seeking permanent residence through a qualified investment in the U.S. economy.",
+    intro:
+      "The EB-5 grants Green Cards to the investor, spouse and unmarried children under 21 through a qualifying investment in a U.S. enterprise and the creation of jobs for U.S. workers.",
+    meta: ["Permanent residence", "Qualifying investment", "Family included"],
+    what: {
+      title: "What the EB-5 is",
+      body:
+        "A program created by the U.S. Congress to stimulate foreign investment and job creation, updated by the EB-5 Reform and Integrity Act of 2022.",
+    },
+    qualify: {
+      title: "Core requirements",
+      items: [
+        "Qualifying investment in an eligible U.S. project.",
+        "Rigorous demonstration of the lawful source of funds.",
+        "Creation or preservation of at least ten full-time jobs.",
+        "Direct investment or investment through a USCIS-approved Regional Center.",
+      ],
+    },
+    benefits: {
+      title: "Key benefits",
+      items: [
+        "Green Cards for the investor, spouse and unmarried children under 21.",
+        "No employer sponsorship required.",
+        "Permanent residence with geographic and professional freedom.",
+        "Potential path to U.S. citizenship after statutory requirements are met.",
+      ],
+    },
+    process: {
+      title: "How we build an EB-5 case",
+      items: [
+        "Documentary audit of the source of funds and the investor's wealth.",
+        "Selection and technical diligence of the investment project.",
+        "Filing of the I-526E petition with USCIS.",
+        "Consular processing or adjustment of status (I-485).",
+        "Removal of conditions via I-829 within the statutory window.",
+      ],
+    },
+    faqs: [
+      { q: "What is the minimum investment?", a: "The minimum is set by statute and varies by project type (targeted employment area or standard). Linhares Law confirms the current threshold during the institutional assessment." },
+      { q: "Do I need to manage the business?", a: "No. The EB-5 allows passive participation, particularly through Regional Centers, provided the job-creation requirements are met." },
+      { q: "Can I use proceeds from the sale of real estate or businesses?", a: "Yes, provided the source is documented as required by USCIS." },
+      { q: "How long does the EB-5 process take?", a: "Timelines vary with the visa bulletin, USCIS workload and the investor's nationality. The institutional analysis considers the current processing window." },
+      { q: "Can family be included?", a: "Yes. Spouse and unmarried children under 21 receive permanent residence together with the principal investor." },
+      { q: "What happens after I-526E approval?", a: "The investor receives a conditional Green Card valid for two years. Before it expires, an I-829 must be filed to remove conditions and obtain full permanent residence." },
+      { q: "What is the difference between direct investment and Regional Center?", a: "Direct investment requires active management and demonstrated direct job creation. The Regional Center allows passive participation and counts direct, indirect and induced jobs." },
+      { q: "Can I keep living outside the U.S. after approval?", a: "The Green Card requires the U.S. as the primary residence. Extended absences require specific planning to preserve status." },
+      { q: "Can family businesses be the investment vehicle?", a: "Yes, provided they are structured as a qualifying enterprise, with compatible job creation and governance that meets USCIS requirements." },
+      { q: "What legal risks should be considered?", a: "Project approval risk, financial return risk and regulatory risk. Institutional diligence is a central part of the EB-5 strategy." },
+    ],
+    seoTitle: "EB-5, Immigrant Investor | Linhares Law",
+    seoDescription:
+      "EB-5 strategy for investors seeking a Green Card through a qualifying investment and job creation in the United States.",
+  },
+
+  eb3: {
+    slug: "eb3",
+    acronym: "EB-3",
+    title: "EB-3",
+    heroSubhead: "Green Card through a permanent job offer",
+    tagline:
+      "Employment-based immigrant category for skilled professionals, skilled workers and other workers with a permanent U.S. job offer.",
+    intro:
+      "The EB-3 is an employment-based immigrant category for skilled professionals, skilled workers and other workers. A permanent U.S. job offer and labor certification (PERM) are generally required. Once approved, the beneficiary and eligible family members obtain the Green Card and permanent U.S. residence.",
+    meta: ["Permanent residence", "Job offer", "PERM certification", "Family included"],
+    what: {
+      title: "What the EB-3 is",
+      body:
+        "A third-preference employment-based category for skilled professionals, skilled workers and other workers with a permanent offer from a U.S. employer, following labor certification.",
+    },
+    qualify: {
+      title: "Who can qualify",
+      items: [
+        "Skilled professionals with a bachelor's degree.",
+        "Skilled workers with at least two years of experience or training.",
+        "Other workers in roles that do not require specialized qualification.",
+        "Permanent full-time job offer from a U.S. employer.",
+        "Prior labor certification (PERM) approval by the Department of Labor.",
+      ],
+    },
+    benefits: {
+      title: "Key benefits",
+      items: [
+        "Green Card, permanent residence in the United States.",
+        "Spouse and unmarried children under 21 are included.",
+        "Structured path for professionals with a U.S. job offer.",
+        "Possibility of changing employers once legal requirements are met.",
+        "Natural path to U.S. citizenship.",
+      ],
+    },
+    process: {
+      title: "How we build an EB-3 case",
+      items: [
+        "Analysis of the job offer, role and category fit.",
+        "Coordination of the labor certification process (PERM).",
+        "Filing of the I-140 petition with USCIS.",
+        "Adjustment of status (I-485) or consular processing.",
+      ],
+    },
+    faqs: [
+      { q: "Do I need a job offer for the EB-3?", a: "Yes. The EB-3 requires a formal offer of permanent employment from a sponsoring U.S. employer." },
+      { q: "What is PERM certification?", a: "It is the Department of Labor process that confirms there is no qualified U.S. worker for the offered role." },
+      { q: "Can I include my family?", a: "Yes. Spouse and unmarried children under 21 receive Green Cards together with the principal beneficiary." },
+      { q: "How long does the EB-3 take?", a: "Timelines vary with USCIS, country of birth and sub-category. The institutional analysis is performed case by case." },
+      { q: "Can I change employers after the Green Card?", a: "Yes, subject to the legal requirements on good-faith intent in the original offer and the required period in the role." },
+    ],
+    seoTitle: "EB-3, Green Card through Permanent Employment | Linhares Law",
+    seoDescription:
+      "EB-3 strategy for skilled professionals, skilled workers and other workers seeking permanent residence in the United States.",
+  },
+
+  i130: {
+    slug: "i130",
+    acronym: "I-130",
+    title: "I-130",
+    heroSubhead: "Family-based immigrant petition",
+    tagline:
+      "Petition used by U.S. citizens and lawful permanent residents to sponsor certain family members for immigration to the United States.",
+    intro:
+      "Form I-130 is used by U.S. citizens and lawful permanent residents to sponsor certain family members for immigration to the United States. The petition establishes a valid family relationship and is the first step for the beneficiary to apply for a family-based Green Card.",
+    meta: ["Family immigration", "Citizens and residents", "First step to Green Card"],
+    what: {
+      title: "What the I-130 petition is",
+      body:
+        "The petition formally establishes a valid family relationship before USCIS. Its approval enables the beneficiary to seek permanent residence, either through adjustment of status in the U.S. or consular processing.",
+    },
+    qualify: {
+      title: "Who can petition",
+      items: [
+        "U.S. citizens petitioning spouses, children, parents or siblings.",
+        "Lawful permanent residents petitioning spouses and unmarried children.",
+        "Documentary evidence of the valid family relationship.",
+        "Financial capacity of the petitioner (Affidavit of Support).",
+      ],
+    },
+    benefits: {
+      title: "Key benefits",
+      items: [
+        "Legal path to family reunification in the United States.",
+        "Enables the beneficiary to seek permanent residence.",
+        "Priority categories for immediate relatives of U.S. citizens.",
+        "Well-recognized formal legal framework.",
+      ],
+    },
+    process: {
+      title: "How we handle the I-130 petition",
+      items: [
+        "Analysis of the family relationship and applicable category.",
+        "Documentary curation to prove a valid relationship.",
+        "Filing of the I-130 petition with USCIS.",
+        "Case management through adjustment of status or consular processing.",
+      ],
+    },
+    faqs: [
+      { q: "Which family members can be sponsored through I-130?", a: "Spouses, children, parents and siblings of U.S. citizens; spouses and unmarried children of lawful permanent residents." },
+      { q: "Does the I-130 grant the Green Card?", a: "Not directly. It establishes the valid family relationship; permanent residence is applied for afterwards, through adjustment of status or consular processing." },
+      { q: "How long does the process take?", a: "Timelines vary with the family category and the beneficiary's nationality, following the monthly Visa Bulletin." },
+      { q: "Can I petition more than one family member?", a: "Yes. Each beneficiary requires an individual I-130 petition." },
+      { q: "Is financial support required?", a: "Yes. The petitioner signs the Affidavit of Support, committing to support the beneficiary under official parameters." },
+    ],
+    seoTitle: "I-130, Family Immigrant Petition | Linhares Law",
+    seoDescription:
+      "I-130 petition for family reunification in the United States. Legal strategy from Linhares Law for U.S. citizens and lawful permanent residents.",
+  },
+
+  vawa: {
+    slug: "vawa",
+    acronym: "VAWA",
+    title: "VAWA",
+    heroSubhead: "Protection and immigration independence for abuse survivors",
+    tagline:
+      "VAWA allows victims of abuse by a U.S. citizen or lawful permanent resident to seek immigration benefits without depending on the abuser.",
+    intro:
+      "VAWA (Violence Against Women Act) allows victims of abuse by a U.S. citizen or lawful permanent resident to seek immigration benefits without depending on the abuser. Protection is available to spouses, children and, in certain situations, parents of U.S. citizens. The process is confidential and can lead to a Green Card, providing safety and independence to the survivor.",
+    meta: ["Confidential", "Self-petition", "Path to Green Card"],
+    what: {
+      title: "What VAWA is",
+      body:
+        "A legal mechanism that allows self-petition by the abuse survivor, with no involvement or knowledge required from the abuser. USCIS handles the process with institutional confidentiality.",
+    },
+    qualify: {
+      title: "Who can apply",
+      items: [
+        "Spouses abused by a U.S. citizen or lawful permanent resident.",
+        "Unmarried children under 21 abused by a qualifying parent or stepparent.",
+        "Parents of U.S. citizens over 21 who are victims of abuse.",
+        "Documentary evidence of the qualifying relationship and its good faith.",
+        "Evidence of the abuse or extreme cruelty suffered.",
+      ],
+    },
+    benefits: {
+      title: "Key benefits",
+      items: [
+        "Confidential petition without involvement of the abuser.",
+        "Path to permanent residence (Green Card).",
+        "Possibility of work authorization during the process.",
+        "Inclusion of eligible children in the petition.",
+        "Immigration independence from the abuser.",
+      ],
+    },
+    process: {
+      title: "How we handle a VAWA case",
+      items: [
+        "Confidential assessment of circumstances and qualifying relationship.",
+        "Curation of documentary, testimonial and technical evidence.",
+        "Filing of the I-360 petition with USCIS under institutional confidentiality.",
+        "Case management through adjustment of status (I-485) and Green Card issuance.",
+      ],
+    },
+    faqs: [
+      { q: "Is the abuser notified of the VAWA petition?", a: "No. The process is confidential and USCIS follows specific protocols to protect the survivor." },
+      { q: "Can men apply for VAWA?", a: "Yes. Despite the name, protection is available to survivors of any gender." },
+      { q: "What evidence is considered?", a: "Police records, medical reports, statements from healthcare professionals, photographs, messages, third-party declarations and other relevant evidence." },
+      { q: "Do I still need to be married to the abuser?", a: "Not necessarily. The petition can be filed in certain circumstances even after divorce, within the statutory windows." },
+      { q: "Does VAWA lead to a Green Card?", a: "Yes. After the I-360 is approved, the survivor may apply for adjustment of status to permanent residence." },
+    ],
+    seoTitle: "VAWA, Immigration Protection for Abuse Survivors | Linhares Law",
+    seoDescription:
+      "Confidential VAWA strategy for survivors of abuse by a U.S. citizen or lawful permanent resident to obtain immigration independence and a Green Card.",
+  },
 };
 
 /* ------------------------------------------------------------------ */
