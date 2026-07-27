@@ -40,11 +40,14 @@ const manuela = manuelaAsset.url;
 export interface TeamMember {
   name: string;
   role: string;
+  roleI18n?: { en?: string; es?: string };
   credentials?: string[];
   slug?: string;
   portrait?: string;
   bio?: string;
+  bioI18n?: { en?: string; es?: string };
 }
+
 
 export interface TeamGroup {
   eyebrow: string;
@@ -63,27 +66,43 @@ export const teamGroups: TeamGroup[] = [
       {
         name: "André Linhares, Esq.",
         role: "Advogado Fundador e CEO",
+        roleI18n: { en: "Founding Attorney and CEO", es: "Abogado Fundador y CEO" },
         credentials: ["D.C. Bar", "New York Bar"],
         slug: "andre-linhares",
         portrait: andre,
         bio: "Fundador da Linhares Law, o Dr. André Linhares atua há mais de 14 anos no direito imigratório, sendo referência em vistos para profissionais qualificados e empresários que desejam viver ou investir nos Estados Unidos.",
+        bioI18n: {
+          en: "Founder of Linhares Law, André Linhares has practiced immigration law for more than 14 years and is a recognized reference on visa strategies for highly qualified professionals and entrepreneurs seeking to live or invest in the United States.",
+          es: "Fundador de Linhares Law, André Linhares ejerce el derecho migratorio desde hace más de 14 años y es una referencia en estrategias de visa para profesionales altamente calificados y empresarios que desean vivir o invertir en Estados Unidos.",
+        },
       },
       {
         name: "Nicholas Perry, Esq.",
         role: "ADVOGADO",
+        roleI18n: { en: "ATTORNEY", es: "ABOGADO" },
         credentials: ["Nebraska Bar", "North Carolina Bar", "U.S. Supreme Court"],
         slug: "nicholas-perry",
         portrait: nicholas,
         bio: "Trajetória nas principais agências federais americanas dedicadas à imigração, USCIS, DHS, ICE, CBP e Department of Justice.",
+        bioI18n: {
+          en: "A career across the principal U.S. federal agencies devoted to immigration: USCIS, DHS, ICE, CBP and the Department of Justice.",
+          es: "Trayectoria en las principales agencias federales estadounidenses dedicadas a la inmigración: USCIS, DHS, ICE, CBP y el Department of Justice.",
+        },
       },
       {
         name: "Juliana Mosquera Soler, Esq.",
         role: "ADVOGADA",
+        roleI18n: { en: "ATTORNEY", es: "ABOGADA" },
         credentials: ["Florida Bar", "Puerto Rico Bar"],
         slug: "juliana-mosquera-soler",
         portrait: juliana,
         bio: "Advogada especializada em imigração corporativa, com mais de 18 anos de experiência em casos baseados em emprego, como EB-1, EB-2 (NIW) e O-1.",
+        bioI18n: {
+          en: "An attorney focused on corporate immigration, with more than 18 years of experience in employment-based matters such as EB-1, EB-2 (NIW) and O-1.",
+          es: "Abogada especializada en inmigración corporativa, con más de 18 años de experiencia en casos basados en empleo como EB-1, EB-2 (NIW) y O-1.",
+        },
       },
+
     ],
   },
   {

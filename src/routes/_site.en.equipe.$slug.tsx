@@ -1,21 +1,28 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Placeholder } from "@/components/layout/Placeholder";
+import { createFileRoute, notFound } from "@tanstack/react-router";
 import { buildLocaleHead } from "@/lib/seo";
-import { dict } from "@/i18n/locales";
+import { AttorneyProfilePage } from "@/components/team/AttorneyProfilePage";
+import { attorneyProfiles, profileLabels } from "@/i18n/content/team-profiles";
 
 const L = "en" as const;
-const t = dict[L].pages.team;
 
 export const Route = createFileRoute("/_site/en/equipe/$slug")({
-  head: ({ params }: { params: { slug: string } }) =>
-    buildLocaleHead({
+  loader: ({ params }) => {
+    if (!attorneyProfiles[L][params.slug]) throw notFound();
+    return null;
+  },
+  head: ({ params }) => {
+    const p = attorneyProfiles[L][params.slug];
+    return buildLocaleHead({
       path: `/equipe/${params.slug}`,
       locale: L,
-      title: `${params.slug}, Linhares Law`,
-      description: t.intro,
-    }),
+      title: `${p?.name ?? params.slug}, Linhares Law`,
+      description: p?.shortBio ?? profileLabels[L].metaFallback,
+      type: "profile",
+    });
+  },
   component: function Page() {
     const { slug } = Route.useParams();
-    return <Placeholder title={`${t.title} · ${slug}`} intro={t.intro} eyebrow={dict[L].brand} />;
+    return <AttorneyProfilePage slug={slug} />;
   },
+  notFoundComponent: () => <h1 className="p-20 text-primary">{profileLabels[L].notFound}</h1>,
 });
