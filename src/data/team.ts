@@ -40,11 +40,14 @@ const manuela = manuelaAsset.url;
 export interface TeamMember {
   name: string;
   role: string;
+  roleI18n?: { en?: string; es?: string };
   credentials?: string[];
   slug?: string;
   portrait?: string;
   bio?: string;
+  bioI18n?: { en?: string; es?: string };
 }
+
 
 export interface TeamGroup {
   eyebrow: string;
