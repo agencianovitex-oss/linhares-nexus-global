@@ -100,8 +100,13 @@ function MemberCard({ m, cardBg, seeProfile, fallbackLabel, locale }: { m: TeamM
       </div>
       <div className="flex flex-1 flex-col p-7">
         <h3 className="font-display text-xl text-primary group-hover:text-gold transition-colors">{m.name}</h3>
-        <p className="mt-2 text-[11px] uppercase tracking-[0.24em] text-muted-foreground">{m.role}</p>
-        {m.bio && <p className="mt-5 text-[13.5px] leading-[1.7] text-ink-soft flex-1">{m.bio}</p>}
+        <p className="mt-2 text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
+          {(locale !== "pt" && m.roleI18n?.[locale]) || m.role}
+        </p>
+        {(() => {
+          const bio = (locale !== "pt" && m.bioI18n?.[locale]) || m.bio;
+          return bio ? <p className="mt-5 text-[13.5px] leading-[1.7] text-ink-soft flex-1">{bio}</p> : null;
+        })()}
         {m.credentials && (
           <ul className="mt-6 space-y-1.5 text-[12.5px] text-ink-soft">
             {m.credentials.map((c) => (
