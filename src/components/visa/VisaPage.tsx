@@ -5,6 +5,7 @@ import { SectionTitle } from "@/components/layout/SectionTitle";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { VISAS, VISA_ORDER, type VisaSlug } from "@/data/visas";
 import type { Locale } from "@/i18n/locales";
+import { servicesStrings } from "@/i18n/content/services";
 
 
 interface Props {
@@ -17,26 +18,27 @@ interface Props {
 
 export function VisaPage({ locale, slug, servicesHref, contactHref, visaHref }: Props) {
   const v = VISAS[locale][slug];
+  const t = servicesStrings[locale].visa;
   const related = VISA_ORDER.filter((s) => s !== slug).slice(0, 3);
 
   return (
     <>
       <InstitutionalHero
-        eyebrow={`Áreas de Atuação · ${v.acronym}`}
+        eyebrow={`${t.heroEyebrow} · ${v.acronym}`}
         title={<>{v.title}<span className="block mt-4 font-display text-[clamp(1.5rem,2.6vw,2.5rem)] text-gold">{v.heroSubhead}</span></>}
         intro={v.tagline}
         meta={v.meta.map((m) => <span key={m}>{m}</span>)}
       >
         <div className="mt-12 flex flex-wrap gap-4">
-          <InstitutionalButton to={contactHref}>Agendar Consulta</InstitutionalButton>
-          <InstitutionalButton to={servicesHref} variant="onDark">Ver todas as áreas</InstitutionalButton>
+          <InstitutionalButton to={contactHref}>{t.ctaSchedule}</InstitutionalButton>
+          <InstitutionalButton to={servicesHref} variant="onDark">{t.ctaAllAreas}</InstitutionalButton>
         </div>
       </InstitutionalHero>
 
       <SectionBlock>
         <div className="grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <SectionTitle eyebrow="Visão Geral" title={v.what.title} />
+            <SectionTitle eyebrow={t.overview} title={v.what.title} />
           </div>
           <div className="lg:col-span-6 lg:col-start-7">
             <p className="lead">{v.intro}</p>
@@ -48,7 +50,7 @@ export function VisaPage({ locale, slug, servicesHref, contactHref, visaHref }: 
       <SectionBlock tone="surface">
         <div className="grid gap-16 lg:grid-cols-2">
           <div>
-            <SectionTitle eyebrow="Elegibilidade" title={v.qualify.title} />
+            <SectionTitle eyebrow={t.eligibility} title={v.qualify.title} />
             <ul className="mt-10 space-y-5">
               {v.qualify.items?.map((i) => (
                 <li key={i} className="flex gap-4 lead">
@@ -59,7 +61,7 @@ export function VisaPage({ locale, slug, servicesHref, contactHref, visaHref }: 
             </ul>
           </div>
           <div>
-            <SectionTitle eyebrow="Benefícios" title={v.benefits.title} />
+            <SectionTitle eyebrow={t.benefits} title={v.benefits.title} />
             <ul className="mt-10 space-y-5">
               {v.benefits.items?.map((i) => (
                 <li key={i} className="flex gap-4 lead">
@@ -78,20 +80,20 @@ export function VisaPage({ locale, slug, servicesHref, contactHref, visaHref }: 
           <div className="lg:col-span-8">
             <span className="rule-gold" />
             <h3 className="mt-6 text-primary-foreground font-display text-3xl lg:text-4xl max-w-[24ch]">
-              Fale com nossa equipe sobre {v.acronym}.
+              {t.midCtaTitle(v.acronym)}
             </h3>
             <p className="mt-5 text-primary-foreground/75 lead max-w-2xl">
-              Avalie com nossos advogados se {v.acronym} é a estratégia mais adequada à sua trajetória profissional e familiar.
+              {t.midCtaBody(v.acronym)}
             </p>
           </div>
           <div className="lg:col-span-4 lg:text-right">
-            <InstitutionalButton to={contactHref} variant="gold">Fale com nossa equipe</InstitutionalButton>
+            <InstitutionalButton to={contactHref} variant="gold">{t.midCtaButton}</InstitutionalButton>
           </div>
         </div>
       </SectionBlock>
 
       <SectionBlock>
-        <SectionTitle eyebrow="Processo" title={v.process.title} />
+        <SectionTitle eyebrow={t.process} title={v.process.title} />
         <ol className="mt-16 grid gap-px bg-border md:grid-cols-2 lg:grid-cols-3 border border-border">
           {v.process.items?.map((step, idx) => (
             <li
@@ -107,7 +109,7 @@ export function VisaPage({ locale, slug, servicesHref, contactHref, visaHref }: 
 
       {v.profiles && v.profiles.length > 0 && (
         <SectionBlock tone="surface">
-          <SectionTitle eyebrow="Perfis Profissionais" title="Trajetórias representativas." />
+          <SectionTitle eyebrow={t.profilesEyebrow} title={t.profilesTitle} />
           <div className="mt-16 grid gap-8 md:grid-cols-2">
             {v.profiles.map((p) => (
               <div
@@ -137,11 +139,11 @@ export function VisaPage({ locale, slug, servicesHref, contactHref, visaHref }: 
         <div className="mx-auto max-w-3xl text-center py-6 lg:py-10">
           <span className="rule-gold mx-auto" />
           <p className="mt-8 font-display text-2xl lg:text-3xl leading-[1.4] text-primary">
-            “A imigração é uma decisão estratégica. Cada trajetória exige uma análise individualizada e uma estrutura jurídica construída de acordo com os objetivos do cliente.”
+            {t.quote}
           </p>
           <div className="mt-8 flex flex-col items-center gap-1.5">
-            <span className="text-base font-light text-primary tracking-tight">Dr. André Linhares</span>
-            <span className="text-[10.5px] uppercase tracking-[0.28em] text-muted-foreground">Advogado Fundador · Linhares Law</span>
+            <span className="text-base font-light text-primary tracking-tight">{t.quoteName}</span>
+            <span className="text-[10.5px] uppercase tracking-[0.28em] text-muted-foreground">{t.quoteRole}</span>
           </div>
         </div>
       </SectionBlock>
@@ -149,7 +151,7 @@ export function VisaPage({ locale, slug, servicesHref, contactHref, visaHref }: 
       <SectionBlock tone="surface">
         <div className="grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <SectionTitle eyebrow="Perguntas Frequentes" title={`Esclarecimentos sobre ${v.acronym}.`} />
+            <SectionTitle eyebrow={t.faqEyebrow} title={t.faqTitle(v.acronym)} />
           </div>
           <div className="lg:col-span-7 lg:col-start-6">
             <Accordion type="single" collapsible className="w-full">
@@ -167,7 +169,7 @@ export function VisaPage({ locale, slug, servicesHref, contactHref, visaHref }: 
       </SectionBlock>
 
       <SectionBlock>
-        <SectionTitle eyebrow="Áreas Relacionadas" title="Outras estratégias migratórias." />
+        <SectionTitle eyebrow={t.relatedEyebrow} title={t.relatedTitle} />
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {related.map((r) => {
             const rv = VISAS[locale][r];
@@ -187,13 +189,13 @@ export function VisaPage({ locale, slug, servicesHref, contactHref, visaHref }: 
       <SectionBlock tone="dark">
         <div className="max-w-3xl">
           <span className="rule-gold" />
-          <h2 className="mt-8 text-primary-foreground">Agende uma consulta estratégica.</h2>
+          <h2 className="mt-8 text-primary-foreground">{t.finalTitle}</h2>
           <p className="mt-6 lead text-primary-foreground/80">
-            Inicie uma conversa institucional com nossos advogados e avalie se {v.acronym} é a estratégia adequada aos seus objetivos.
+            {t.finalBody(v.acronym)}
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <InstitutionalButton to={contactHref}>Agendar Consulta</InstitutionalButton>
-            <InstitutionalButton to={servicesHref} variant="onDark">Comparar áreas</InstitutionalButton>
+            <InstitutionalButton to={contactHref}>{t.ctaSchedule}</InstitutionalButton>
+            <InstitutionalButton to={servicesHref} variant="onDark">{t.ctaCompare}</InstitutionalButton>
           </div>
         </div>
       </SectionBlock>

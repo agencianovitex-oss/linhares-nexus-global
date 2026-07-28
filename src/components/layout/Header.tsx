@@ -27,6 +27,11 @@ const VISA_SUBMENU = [
 
 export function Header({ transparentOverHero = false }: Props) {
   const { locale, t } = useI18n();
+  const menuLabels = {
+    pt: { open: "Abrir menu", close: "Fechar menu" },
+    en: { open: "Open menu", close: "Close menu" },
+    es: { open: "Abrir menú", close: "Cerrar menú" },
+  } as const;
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
@@ -175,7 +180,7 @@ export function Header({ transparentOverHero = false }: Props) {
           <LanguageSwitcher onDark={onDark} />
           <button
             type="button"
-            aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
+            aria-label={mobileOpen ? menuLabels[locale].close : menuLabels[locale].open}
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((v) => !v)}
             className={cn(

@@ -1,63 +1,43 @@
-# Plano — Internacionalização Fase 1 (EN + ES)
+## Resposta curta
 
-## Escopo
-Elevar as versões `/en/*` e `/es/*` ao mesmo nível editorial da versão PT (Master). Somente camada de conteúdo + tradução — sem mexer em layout, componentes, cores, CMS, blog engine, ou SEO técnico já implementado. Estrutura de rotas multilíngue já existe (rotas `_site.en.*` e `_site.es.*` estão presentes, hoje renderizando `Placeholder`), então não há criação de arquitetura nova — só troca de conteúdo dessas rotas.
+Quase tudo está traduzido, mas **não está 100%**. Faltam duas áreas reais (páginas de vistos e o blog), e há partes do backend que nunca foram ligadas ao site.
 
-## Estado atual (verificado)
-- Rotas EN/ES existem para: home, quem-somos, servicos, equipe (index + $slug), premiacoes, na-midia, casos-de-sucesso, contato, blog (index, $slug, taxonomias, busca).
-- Todas as rotas EN/ES não-blog renderizam `<Placeholder>` com strings genéricas de `dict[locale].pages.*`.
-- Dicionário base já existe em `src/i18n/locales.ts` (chrome: nav, footer, slogan, CTAs) mas com cobertura mínima.
-- Blog admin/CMS já tem colunas i18n implementadas (fase anterior). Interface pública do blog em EN/ES precisa apenas de strings de UI — já parcialmente em `src/lib/blog/i18n-strings.ts`.
-- Header/Footer/LanguageSwitcher já reagem ao locale corrente.
+## 1. O que já está traduzido (verificado)
 
-## Blocos de entrega
+Home, Quem Somos, Equipe (índice e perfis), Premiações, Na Mídia, Depoimentos e Contato têm conteúdo por idioma (PT/EN/ES), com rotas `/en/...` e `/es/...`, títulos e descrições próprios e hreflang no sitemap. O conteúdo dos vistos (textos de cada visto em `src/data/visas.ts`) também está nos 3 idiomas.
 
-### 1. Home (`/en`, `/es`)
-Portar o `Home.tsx` completo para renderizar todos os blocos (Hero + AuthorityPanel, sub-hero, Liderança Jurídica, Nossa Prática, Vistos em destaque, mosaico, CTA final) com conteúdo adaptado por idioma. Textos vêm de um novo módulo de conteúdo por locale (`src/i18n/content/home.ts`), consumido pelo mesmo componente. Nenhuma mudança visual.
+## 2. O que ainda está em português nas versões EN/ES
 
-### 2. Páginas institucionais dedicadas
-Para cada página abaixo: substituir `Placeholder` pelo mesmo componente da versão PT, alimentado por conteúdo localizado:
-- Quem Somos
-- Serviços/Áreas de Atuação (hub + páginas por visto — traduzir também `src/data/visas.ts` incluindo nomes de visto quando aplicável, deixando siglas oficiais em inglês: EB-2 NIW, O-1, EB-3, I-130, VAWA, etc.)
-- Equipe (index + perfis individuais — bios adaptadas, cargos traduzidos, credenciais preservadas)
-- Reconhecimentos / Recognition / Reconocimientos
-- Na Mídia / In the Press / En los Medios (mesmos vídeos e logos)
-- Depoimentos / Testimonials / Testimonios
-- Contato / Contact / Contacto (Zoho Forms iframe idem; labels do card e do botão traduzidos; iframe do Zoho Forms permanece — Zoho Forms tem locale próprio, não intervimos nele)
+**Páginas de Áreas de Atuação / Services (o maior gap).**
+Em `/en/servicos` e `/es/servicos`, o corpo do visto está traduzido, mas toda a moldura da página continua em português:
+- Hub: título e introdução do topo, "Categorias Migratórias", "Conhecer Estratégia", bloco "Planejamento Migratório" inteiro (4 pilares), CTA final "Agende uma consulta estratégica" / "Agendar Consulta".
+- Página de cada visto: "Visão Geral", "Elegibilidade", "Benefícios", "Processo", "Perfis Profissionais", "Perguntas Frequentes", "Áreas Relacionadas", botões "Agendar Consulta", "Ver todas as áreas", "Fale com nossa equipe", "Comparar áreas", assinatura "Advogado Fundador".
+- SEO do hub (`hubHead`): título e descrição em português nos 3 idiomas.
+- FAQ estruturado (JSON-LD) do hub e legenda dos pilares: só em português.
 
-### 3. Chrome + microcopy
-- Expandir `src/i18n/locales.ts` (ou dividir em módulos por seção) para cobrir: nav completa, footer, CTAs, mensagens "coming soon", labels do LanguageSwitcher, aria-labels, e strings compartilhadas.
-- Header/Footer já lêem do dict — só ampliar cobertura, sem alterar markup.
+**Detalhes menores.** Rótulo do menu mobile ("Abrir menu"/"Fechar menu") fixo em PT.
 
-### 4. Blog (interface pública)
-- Completar `src/lib/blog/i18n-strings.ts` onde faltar.
-- Rotas EN/ES do blog já existem; garantir que todas as strings de UI (breadcrumbs, "Sobre o autor", CTAs, paginação, busca, vazio, share) usem `tBlog(locale)`.
-- Artigos: usar campos i18n já existentes no CMS (title_en, excerpt_en, body_en, etc.). Não traduzir artigos automaticamente — deixar cair no idioma padrão quando a versão localizada não existir (fallback já é padrão do backend).
+## 3. Backend x Front: o que não foi finalizado
 
-### 5. SEO por idioma
-Para cada rota EN/ES: `head()` com title, description, `og:title`, `og:description`, `og:locale` (`en_US` / `es_ES`), e `<link rel="alternate" hreflang>` cruzando PT/EN/ES + `x-default` apontando para PT. `canonical` self-referencial na URL localizada. Sitemap (`src/routes/sitemap[.]xml.tsx`): adicionar entradas EN/ES para todas as rotas públicas + `<xhtml:link rel="alternate" hreflang>` por URL.
+- **Blog sem conteúdo:** existe 1 post, **nenhum publicado**, e **zero traduções EN/ES**. Ou seja, `/blog`, `/en/blog` e `/es/blog` estão vazios em produção. O CMS está pronto (editor com abas PT/EN/ES, autores, categorias, tags, profissões, mídia).
+- **Tabelas criadas e nunca usadas pelo site:** `awards`, `offices`, `media_appearances`, `success_cases`, `expertise_pages`, `pages`, `settings`, `team_members`/`team_member_translations`. Hoje essas seções são conteúdo fixo no código (premiações, escritórios, mídia, depoimentos, equipe). Não é um erro, mas significa que essas páginas não são editáveis pelo painel.
+- **`seo_metadata` vazia:** há tela de SEO no admin, mas o site não lê essa tabela; o SEO vem do código.
+- **Admin em português apenas** (não precisa tradução, é uso interno).
 
-### 6. Tom e qualidade editorial
-- **EN**: registro de escritório boutique de imigração dos EUA — direto, credível, sem regionalismos brasileiros. Siglas oficiais USCIS preservadas. "Dr." vira "Mr." só quando não for advogado; advogados usam "Esq." ou apenas o nome + credencial (ex.: "André Linhares, Esq."). Datas em formato americano (Month DD, YYYY).
-- **ES**: español neutro (LatAm profissional). Evitar "vosotros", evitar vocabulário rioplatense ou peninsular. Termos de imigração em inglês onde são oficiais (EB-2 NIW, Green Card), com glosa em ES na primeira menção.
-- Nunca tradução literal. Reescrever para soar nativo. Preservar autoridade e sofisticação do PT Master.
+## 4. Plano proposto
 
-## Fora de escopo (explicitamente)
-- Nenhuma mudança em cores, tipografia, grid, animações, componentes, CMS backend, blog engine, políticas RLS.
-- Não traduzir automaticamente artigos existentes do blog (só a interface).
-- Não alterar Zoho Forms/Bookings (locale gerenciado no painel do Zoho pelo cliente).
-- Vídeos e imagens permanecem os mesmos.
+**Etapa A, fechar a tradução (necessária para dizer que o site está pronto)**
+1. Criar um dicionário localizado para o hub de serviços e para a página de visto (PT/EN/ES) com todos os rótulos, eyebrows, botões, bloco de planejamento e FAQ do hub.
+2. Passar `locale` para esses textos em `ServicesHub` e `VisaPage`, sem alterar o conteúdo jurídico já traduzido.
+3. Localizar `hubHead` (título/descrição/SEO) por idioma.
+4. Traduzir os 4 pilares de planejamento e o FAQ do hub.
+5. Localizar os rótulos de acessibilidade do menu mobile.
 
-## Ordem de execução sugerida
-1. Expandir dicionários (`src/i18n/locales.ts` + novo `src/i18n/content/*.ts` por página).
-2. Home EN + ES.
-3. Institucionais (quem-somos, equipe, premiações, na-mídia, depoimentos, contato).
-4. Serviços/Áreas de atuação (hub + $slug) — o maior bloco de conteúdo jurídico.
-5. Blog UI strings + head/SEO.
-6. Sitemap + hreflang.
+**Etapa B, decisões suas (não faço sem sua confirmação)**
+- Blog: publicar o primeiro post e definir se as versões EN/ES saem no lançamento ou depois.
+- Migrar premiações, escritórios, mídia, depoimentos e equipe para o backend (editáveis pelo painel) ou manter fixo no código por enquanto.
 
-## Como confirmar
-Ao final, `/`, `/en`, `/es` e cada rota localizada devem exibir conteúdo 100% no idioma correto, com paridade estrutural ao PT, sem nenhuma alteração visual detectável em relação ao estado atual da versão PT.
+**Conclusão:** com a Etapa A concluída, o site institucional pode ser considerado pronto para publicação. O blog só ficará "pronto" quando houver ao menos um post publicado.
 
-## Pergunta antes de executar
-Este é um volume grande de copy jurídico. Posso seguir gerando o conteúdo EN/ES diretamente (adaptado, não literal, seguindo o tom acima), ou você prefere revisar o texto EN e ES **página a página** antes de eu aplicar? Se quiser revisar, começo entregando Home + Quem Somos primeiro para aprovação e sigo a partir daí.
+### Detalhes técnicos
+Arquivos afetados na Etapa A: `src/components/visa/ServicesHub.tsx`, `src/components/visa/VisaPage.tsx`, `src/lib/servicos.ts`, `src/data/visas.ts` (PLANNING_PILLARS por locale), `src/components/layout/Header.tsx`. Nenhuma mudança de rota, schema ou banco.
