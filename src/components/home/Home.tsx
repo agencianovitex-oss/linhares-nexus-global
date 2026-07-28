@@ -371,26 +371,33 @@ function LeadershipSection({ c, localeHref }: { c: HomeContent; localeHref: (p: 
           <InstitutionalButton to={localeHref("/equipe")} variant="outline">{c.leadership.ctaAll}</InstitutionalButton>
         </div>
 
-        <div className="mt-16 grid gap-10 lg:grid-cols-12 items-stretch">
+        <div className="mt-14 grid gap-10 lg:gap-12 lg:grid-cols-12 items-stretch">
           {/* Founder */}
-          <Link to={`${localeHref("/equipe")}/andre-linhares`} className="group editorial-card relative bg-background p-8 lg:p-10 lg:col-span-5 flex flex-col overflow-hidden">
-            <span className="absolute top-0 left-0 h-[2px] w-24 bg-gold" />
+          <Link to={`${localeHref("/equipe")}/andre-linhares`} className="group flex flex-col reveal-up lg:col-span-5">
             <div className="relative">
-              <div className="editorial-frame aspect-[4/5] w-full">
-                <img src={andreLinharesPortrait} alt={founder.name} className="h-full w-full object-cover" style={{ objectPosition: "center 20%" }} />
+              <span className="absolute -top-3 -left-3 h-px w-20 bg-gold z-10" />
+              <div className="editorial-frame photo-vignette aspect-[4/5] w-full">
+                <img src={andreLinharesPortrait} alt={founder.name} className="h-full w-full object-cover object-[50%_15%]" />
               </div>
             </div>
-            <div className="mt-6 text-[10px] font-semibold uppercase tracking-[0.28em] text-gold">{founder.cred}</div>
-            <div className="mt-3 text-2xl lg:text-[1.65rem] font-semibold text-primary tracking-tight leading-[1.15] group-hover:text-gold transition-colors">{founder.name}</div>
-            <div className="mt-1 text-[10.5px] font-semibold uppercase tracking-[0.24em] text-primary/75">{founder.role}</div>
-            <p className="mt-4 text-[14px] leading-[1.7] text-ink-soft flex-1">{founder.bio}</p>
+            <div className="mt-6 flex-1 flex flex-col">
+              <div className="text-[10.5px] font-semibold uppercase tracking-[0.3em] text-gold">{founder.cred}</div>
+              <div className="mt-3 text-3xl lg:text-[2rem] font-semibold text-primary tracking-tight leading-[1.1] group-hover:text-gold transition-colors">
+                {founder.name}
+              </div>
+              <div className="mt-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-primary/75">{founder.role}</div>
+              <p className="mt-5 text-[15px] leading-[1.75] text-ink-soft">{founder.bio}</p>
+              <div className="mt-auto pt-5 text-[10.5px] uppercase tracking-[0.28em] text-primary group-hover:text-gold transition-colors border-t border-border">
+                {c.leadership.viewProfile} →
+              </div>
+            </div>
           </Link>
 
-          {/* Others */}
-          <div className="lg:col-span-7 grid gap-10 sm:grid-cols-2">
+          {/* Other leaders */}
+          <div className="lg:col-span-7 flex flex-col gap-8 h-full">
             {others.map((a) => (
-              <Link key={a.slug} to={`${localeHref("/equipe")}/${a.slug}`} className="group editorial-card relative bg-background p-6 lg:p-7 flex flex-col overflow-hidden">
-                <div className="grid grid-cols-12 gap-4 flex-1 items-stretch">
+              <Link key={a.slug} to={`${localeHref("/equipe")}/${a.slug}`} className="group block reveal-up flex-1">
+                <div className="grid grid-cols-12 gap-5 items-stretch border-t border-border pt-6 h-full">
                   <div className="col-span-5 relative">
                     <span className="absolute -top-2 -left-2 h-px w-10 bg-gold z-10" />
                     <div className="editorial-frame aspect-[4/5] w-full h-full">
@@ -399,7 +406,9 @@ function LeadershipSection({ c, localeHref }: { c: HomeContent; localeHref: (p: 
                   </div>
                   <div className="col-span-7 flex flex-col">
                     <div className="text-[10px] font-semibold uppercase tracking-[0.28em] text-gold">{a.cred}</div>
-                    <div className="mt-2 text-xl lg:text-[1.4rem] font-semibold text-primary tracking-tight leading-[1.15] group-hover:text-gold transition-colors">{a.name}</div>
+                    <div className="mt-2 text-xl lg:text-[1.4rem] font-semibold text-primary tracking-tight leading-[1.15] group-hover:text-gold transition-colors">
+                      {a.name}
+                    </div>
                     <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-primary/75">{a.role}</div>
                     <p className="mt-3 text-[13.5px] leading-[1.65] text-ink-soft">{a.bio}</p>
                   </div>
