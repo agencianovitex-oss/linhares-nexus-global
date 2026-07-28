@@ -50,6 +50,7 @@ export type HomeContent = {
     title: string;
     description: string;
     ctaAll: string;
+    viewProfile: string;
     founder: { name: string; role: string; cred: string; bio: string };
     others: Array<{ slug: string; name: string; role: string; cred: string; bio: string }>;
   };
@@ -167,6 +168,7 @@ export const homeContent: Record<Locale, HomeContent> = {
       title: "Advogados dedicados à sua trajetória migratória.",
       description: "Uma equipe jurídica com atuação exclusiva em imigração americana, licenciada perante as autoridades federais dos Estados Unidos.",
       ctaAll: "Conhecer a equipe",
+      viewProfile: "Ver perfil completo",
       founder: {
         name: "André Linhares, Esq.",
         role: "Advogado Fundador",
@@ -304,6 +306,7 @@ export const homeContent: Record<Locale, HomeContent> = {
       title: "Attorneys dedicated to your immigration trajectory.",
       description: "A legal team focused exclusively on U.S. immigration, licensed before the federal authorities of the United States.",
       ctaAll: "Meet the team",
+      viewProfile: "View full profile",
       founder: {
         name: "André Linhares, Esq.",
         role: "Founding Attorney",
@@ -441,6 +444,7 @@ export const homeContent: Record<Locale, HomeContent> = {
       title: "Abogados dedicados a su trayectoria migratoria.",
       description: "Un equipo jurídico enfocado exclusivamente en inmigración a EE. UU., habilitado ante las autoridades federales de Estados Unidos.",
       ctaAll: "Conocer al equipo",
+      viewProfile: "Ver perfil completo",
       founder: {
         name: "André Linhares, Esq.",
         role: "Abogado Fundador",
