@@ -5,6 +5,7 @@ import type { Locale } from "@/i18n/locales";
 import { withLocale } from "@/i18n/useI18n";
 import { buildHubFaqSchema } from "@/components/visa/ServicesHub";
 import { buildVisaFaqSchema } from "@/components/visa/VisaPage";
+import { servicesStrings } from "@/i18n/content/services";
 
 /** Base path for the services hub per locale. PT uses /areas-de-atuacao; EN/ES keep /servicos. */
 export function servicesBase(locale: Locale): string {
@@ -28,13 +29,13 @@ export function notFoundIfInvalid(slug: string): asserts slug is VisaSlug {
 }
 
 export function hubHead(locale: Locale) {
-  const title = "Áreas de Atuação, Linhares Law";
-  const description =
-    "Estratégias migratórias para profissionais, empresários, investidores e famílias. EB-2 NIW, EB-1, E-2, L-1, O-1, H-1B e EB-5.";
+  const t = servicesStrings[locale].hub;
+  const title = t.seoTitle;
+  const description = t.seoDescription;
   const head = buildLocaleHead({ path: servicesBase(locale), locale, title, description });
   return {
     ...head,
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(buildHubFaqSchema()) }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(buildHubFaqSchema(locale)) }],
   };
 }
 
@@ -43,8 +44,8 @@ export function visaHead(locale: Locale, rawSlug: string) {
     return buildLocaleHead({
       path: `${servicesBase(locale)}/${rawSlug}`,
       locale,
-      title: "Áreas de Atuação, Linhares Law",
-      description: "Estratégias jurídicas de imigração americana.",
+      title: servicesStrings[locale].hub.seoTitle,
+      description: servicesStrings[locale].hub.seoFallbackDescription,
       noindex: true,
     });
   }

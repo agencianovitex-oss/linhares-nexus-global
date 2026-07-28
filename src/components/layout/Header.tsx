@@ -175,7 +175,7 @@ export function Header({ transparentOverHero = false }: Props) {
           <LanguageSwitcher onDark={onDark} />
           <button
             type="button"
-            aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
+            aria-label={mobileOpen ? menuLabels[locale].close : menuLabels[locale].open}
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((v) => !v)}
             className={cn(
