@@ -18,7 +18,8 @@ import { ImageUploader } from "@/components/admin/ImageUploader";
 import { slugify } from "@/lib/admin/slugify";
 import { readingTimeMinutes } from "@/lib/admin/reading-time";
 import { toast } from "sonner";
-import { Save, Send, CalendarClock, Archive, Plus, Trash2, RefreshCw } from "lucide-react";
+import { Save, Send, CalendarClock, Archive, Plus, Trash2, RefreshCw, Languages, Loader2 } from "lucide-react";
+import { translatePost } from "@/lib/admin/translate.functions";
 
 type Locale = "pt" | "en" | "es";
 type Status = "draft" | "scheduled" | "published" | "archived";
