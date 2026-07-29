@@ -12,7 +12,7 @@ export interface TranslateInput {
   meta_title: string;
   meta_description: string;
   faq: FaqItem[];
-  body: unknown;
+  body: any;
 }
 
 const LANG: Record<"en" | "es", string> = {
@@ -53,7 +53,7 @@ export async function translatePostPayload(apiKey: string, input: TranslateInput
     meta_title,
     meta_description,
     faq,
-    body: applyDocStrings(input.body, rest),
+    body: applyDocStrings(input.body, rest) as any,
   };
 }
 

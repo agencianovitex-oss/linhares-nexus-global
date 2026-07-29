@@ -21,5 +21,5 @@ export const translatePost = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     const key = process.env.LOVABLE_API_KEY;
     if (!key) throw new Error("IA indisponível: chave não configurada.");
-    return translatePostPayload(key, data);
+    return translatePostPayload(key, data as Parameters<typeof translatePostPayload>[1]);
   });
