@@ -171,6 +171,55 @@ export function PostEditorContent({ postId }: { postId?: string }) {
 
   const readingTime = useMemo(() => readingTimeMinutes(form.translations.pt.body), [form.translations.pt.body]);
 
+  const translate = useServerFn(translatePost);
+  const [translating, setTranslating] = useState<Locale | "all" | null>(null);
+
+  const hasContent = (t: Translation) =>
+    t.title.trim().length > 0 || readingTimeMinutes(t.body) > 0 || t.excerpt.trim().length > 0;
+
+  const runTranslation = async (targets: Array<"en" | "es">, scope: Locale | "all") => {
+    const pt = form.translations.pt;
+    if (!pt.title.trim()) { toast.error("Escreva o conteúdo em português antes de traduzir."); return; }
+    const dirty = targets.filter((l) => hasContent(form.translations[l]));
+    if (dirty.length > 0) {
+      const ok = window.confirm(
+        `Já existe conteúdo em ${dirty.map((l) => l.toUpperCase()).join(" e ")}. Deseja sobrescrever com a tradução automática?`,
+      );
+      if (!ok) return;
+    }
+    setTranslating(scope);
+    try {
+      for (const target of targets) {
+        const res: any = await translate({
+          data: {
+            target,
+            title: pt.title,
+            excerpt: pt.excerpt,
+            meta_title: pt.meta_title,
+            meta_description: pt.meta_description,
+            faq: pt.faq,
+            body: pt.body,
+          },
+        });
+        updateTr(target, {
+          title: res.title,
+          excerpt: res.excerpt,
+          meta_title: res.meta_title,
+          meta_description: res.meta_description,
+          faq: res.faq ?? [],
+          body: res.body,
+        });
+      }
+      toast.success("Tradução gerada. Revise antes de salvar.");
+    } catch (e: any) {
+      toast.error(e?.message ?? "Falha ao traduzir.");
+    } finally {
+      setTranslating(null);
+    }
+  };
+
+
+
   const validateBeforePublish = (target: Status): boolean => {
     if (!form.translations.pt.title) { toast.error("Título PT é obrigatório."); return false; }
     if ((target === "published" || target === "scheduled") && !form.cover_image_url) {
