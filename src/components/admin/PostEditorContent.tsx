@@ -281,6 +281,19 @@ export function PostEditorContent({ postId }: { postId?: string }) {
               </TabsList>
               {(["pt","en","es"] as Locale[]).map((l) => (
                 <TabsContent key={l} value={l} className="space-y-4 pt-4">
+                  {l !== "pt" && (
+                    <div className="flex items-center justify-between gap-3 border border-dashed border-input bg-muted/40 px-3 py-2">
+                      <p className="text-xs text-muted-foreground">
+                        Gere esta versão automaticamente a partir do conteúdo em português.
+                      </p>
+                      <Button size="sm" variant="outline" onClick={() => runTranslation([l as "en" | "es"], l)} disabled={!!translating}>
+                        {translating === l || translating === "all"
+                          ? <Loader2 size={14} className="mr-2 animate-spin" />
+                          : <Languages size={14} className="mr-2" />}
+                        Traduzir do português com IA
+                      </Button>
+                    </div>
+                  )}
                   <div>
                     <Label>Título</Label>
                     <Input
