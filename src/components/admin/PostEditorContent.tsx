@@ -258,6 +258,10 @@ export function PostEditorContent({ postId }: { postId?: string }) {
           </p>
         </div>
         <div className="flex gap-2 flex-wrap">
+          <Button variant="outline" onClick={() => runTranslation(["en", "es"], "all")} disabled={!!translating || save.isPending}>
+            {translating === "all" ? <Loader2 size={14} className="mr-2 animate-spin" /> : <Languages size={14} className="mr-2" />}
+            Traduzir para EN e ES
+          </Button>
           <Button variant="outline" onClick={doSave} disabled={save.isPending}><Save size={14} className="mr-2" />Salvar rascunho</Button>
           <Button variant="outline" onClick={doSchedule} disabled={save.isPending}><CalendarClock size={14} className="mr-2" />Agendar</Button>
           <Button onClick={doPublish} disabled={save.isPending} className="bg-[rgb(6,36,67)] text-white"><Send size={14} className="mr-2" />Publicar</Button>
