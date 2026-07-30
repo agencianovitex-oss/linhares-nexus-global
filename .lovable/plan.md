@@ -1,36 +1,28 @@
-## Objetivo
+# Correções do Blog: imagens, destaques na home e abertura dos posts
 
-Sim, dá para fazer. No editor de posts, dentro das abas EN e ES, entra um botão **"Traduzir do português com IA"** que preenche automaticamente todos os campos daquele idioma a partir do conteúdo em PT.
+Investiguei os três problemas e confirmei a causa de cada um.
 
-## O que o botão traduz
+## 1. Imagens dos posts não aparecem
 
-Para o idioma da aba ativa (EN ou ES):
-- Título
-- Resumo (excerpt)
-- Corpo do artigo, preservando toda a formatação (títulos, listas, links, citações, imagens e legendas)
-- Meta title e meta description (SEO)
-- Perguntas e respostas do FAQ
+O bucket de mídia do blog está configurado como privado, mas o editor gera links públicos ao subir a imagem. O link salvo no post existe, porém o arquivo não pode ser lido por visitantes, então a imagem fica em branco.
 
-O que **não** é traduzido: slug, categorias, tags, profissões, autor, imagem de capa e CTA (continuam como estão hoje).
+Correção: tornar o bucket de mídia do blog público (leitura pública, upload continua restrito a administradores autenticados). Os posts já publicados voltam a exibir as capas sem precisar subir nada de novo.
 
-## Como vai funcionar na prática
+## 2. Post marcado como destaque não aparece na home
 
-1. Você escreve o post completo em PT.
-2. Abre a aba EN (ou ES) e clica em "Traduzir do português com IA".
-3. Os campos são preenchidos em alguns segundos, com aviso de carregamento.
-4. Se a aba já tiver conteúdo, aparece uma confirmação antes de sobrescrever.
-5. Você revisa, ajusta o que quiser e salva normalmente. Nada é gravado no banco antes de você salvar.
+O bloco "Publicações" da home hoje é conteúdo fixo de exemplo (três cartões escritos no código, com imagens estáticas). Ele nunca consultou o banco, por isso os posts reais em destaque nunca apareciam.
 
-Também incluo um botão "Traduzir para EN e ES" no topo, para gerar os dois idiomas de uma vez.
+Correção: passar esse bloco a buscar os posts reais publicados e marcados como destaque, no idioma da página (PT/EN/ES), mostrando capa, categoria, título e tempo de leitura, com link direto para cada publicação. Se não houver destaques suficientes, completa com os mais recentes. O visual do bloco (fundo dourado, cartões, tipografia) permanece igual.
 
-## Qualidade da tradução
+## 3. Clicar em uma publicação não abre o artigo
 
-A IA recebe instrução de atuar como tradutora jurídica institucional: manter o tom formal do escritório, preservar termos técnicos de imigração americana em inglês (EB-2 NIW, Green Card, USCIS, RFE), não inventar conteúdo e não alterar números, datas nem nomes próprios.
+Os cartões de artigo montam o link como um texto pronto (ex.: `/blog/meu-slug`). O roteador do site espera a rota com o parâmetro (`/blog/$slug`) mais o valor do slug; recebendo só o texto, ele troca a URL mas não carrega a página do artigo, deixando o usuário na listagem.
+
+Correção: criar um componente de link de artigo que usa a rota correta com parâmetro para cada idioma e usá-lo em todos os lugares que apontam para um artigo, categoria, tag, autor ou profissão (cartões, destaques, relacionados, busca). Isso corrige a navegação em PT, EN e ES.
 
 ## Detalhes técnicos
 
-- Nova server function `translatePost` em `src/lib/admin/translate.functions.ts`, protegida por autenticação de admin/editor.
-- Usa Lovable AI (`openai/gpt-5.6-sol`) com saída estruturada (schema Zod) para devolver título, excerpt, meta, FAQ e o documento TipTap traduzido com a mesma árvore de nós.
-- O corpo é traduzido preservando a estrutura JSON do TipTap: só os nós de texto mudam; marcas, atributos e URLs permanecem.
-- Alterações de UI em `src/components/admin/PostEditorContent.tsx` (botões, estado de carregamento, confirmação de sobrescrita, tratamento de erro 429/402 com mensagem clara).
-- Sem mudanças de schema, rotas ou banco de dados.
+- Storage: `supabase--storage_update_bucket(name: "blog-media", public: true)`; manter policies de escrita restritas a autenticados.
+- Novo helper `src/components/blog/BlogLink.tsx` mapeando locale → `to`/`params` (`/_site/blog/$slug`, `/_site/en/blog/$slug`, `/_site/es/blog/$slug` e equivalentes de taxonomia), substituindo `to={blogArticlePath(...)}` em `ArticleCard.tsx`, `RelatedArticles.tsx`, `CategoryNav.tsx`, `ArticleGrid.tsx`, `Breadcrumb.tsx` e páginas de busca/taxonomia. `blogArticlePath` continua sendo usado apenas para URLs absolutas (canonical, share, sitemap).
+- Home: `PublicationsSection` em `src/components/home/Home.tsx` passa a receber dados de `getFeaturedPosts` (server fn pública já existente) via loader/`useSuspenseQuery` nas rotas `_site.index`, `_site.en.index`, `_site.es.index`, com fallback para o conteúdo estático atual caso não haja posts publicados.
+- Verificação: abrir /blog no preview, clicar num card e confirmar que o artigo abre com a capa carregada, e conferir a home exibindo os posts em destaque.
