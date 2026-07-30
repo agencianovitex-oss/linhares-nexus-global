@@ -1,6 +1,7 @@
 import { LOCALES, LOCALE_HREFLANG, type Locale } from "@/i18n/locales";
 import { withLocale } from "@/i18n/useI18n";
 import { blogArticlePath, siteOrigin, tBlog } from "@/lib/blog/i18n-strings";
+import { mediaUrl } from "@/lib/blog/media-url";
 import type { PublicPostDetail } from "@/lib/blog/public.functions";
 
 interface MetaItem extends Record<string, string> {}
@@ -8,9 +9,10 @@ interface MetaItem extends Record<string, string> {}
 export function buildArticleHead(post: PublicPostDetail, locale: Locale, localizedPath: string) {
   const origin = siteOrigin();
   const url = `${origin}${localizedPath}`;
-  const title = `${post.meta_title ?? post.title}, Linhares Law`;
-  const description = post.meta_description ?? post.excerpt ?? "";
-  const img = post.cover_image_url ?? undefined;
+  const title = `${post.meta_title || post.title}, Linhares Law`;
+  const description = post.meta_description || post.excerpt || "";
+  const rawImg = mediaUrl(post.cover_image_url);
+  const img = rawImg ? (rawImg.startsWith("http") ? rawImg : `${origin}${rawImg}`) : undefined;
   const t = tBlog(locale);
 
   const meta: MetaItem[] = [

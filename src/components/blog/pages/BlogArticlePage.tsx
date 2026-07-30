@@ -12,6 +12,7 @@ import { ShareButtons } from "@/components/blog/ShareButtons";
 import { TableOfContents } from "@/components/blog/TableOfContents";
 import { getPostBySlug, getRelatedPosts } from "@/lib/blog/public.functions";
 import { countWords } from "@/lib/blog/tiptap-render";
+import { mediaUrl } from "@/lib/blog/media-url";
 import { tBlog, blogBasePath, blogArticlePath, siteOrigin } from "@/lib/blog/i18n-strings";
 import type { Locale } from "@/i18n/locales";
 
@@ -55,7 +56,7 @@ export function BlogArticlePage({ locale, slug }: { locale: Locale; slug: string
 
       {post.cover_image_url && (
         <div className="relative -mt-2 aspect-[21/9] w-full overflow-hidden bg-[rgb(6_36_67)]">
-          <img src={post.cover_image_url} alt={post.title}
+          <img src={mediaUrl(post.cover_image_url)} alt={post.title}
             className="h-full w-full object-cover" decoding="async" loading="eager"
             {...({ fetchPriority: "high" } as any)} />
         </div>

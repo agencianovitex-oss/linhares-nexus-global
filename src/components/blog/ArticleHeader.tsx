@@ -1,5 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { blogTaxonomyPath, tBlog } from "@/lib/blog/i18n-strings";
+import { tBlog } from "@/lib/blog/i18n-strings";
+import { taxonomyLink } from "@/lib/blog/links";
+import { mediaUrl } from "@/lib/blog/media-url";
 import type { PublicPostDetail } from "@/lib/blog/public.functions";
 import type { Locale } from "@/i18n/locales";
 
@@ -15,7 +17,7 @@ export function ArticleHeader({ post, locale }: Props) {
   return (
     <header className="space-y-6">
       {post.category && (
-        <Link to={blogTaxonomyPath(locale, "category", post.category.slug)}
+        <Link {...taxonomyLink(locale, "category", post.category.slug)}
           className="inline-block text-xs uppercase tracking-[0.25em] text-[rgb(179_134_66)] hover:opacity-80">
           {post.category.name}
         </Link>
@@ -26,10 +28,10 @@ export function ArticleHeader({ post, locale }: Props) {
         {post.author_full && (
           <div className="flex items-center gap-3">
             {post.author_full.photo_url ? (
-              <img src={post.author_full.photo_url} alt="" className="h-10 w-10 rounded-full object-cover" />
+              <img src={mediaUrl(post.author_full.photo_url)} alt="" className="h-10 w-10 rounded-full object-cover" />
             ) : <div className="h-10 w-10 rounded-full bg-[rgb(6_36_67)]/10" />}
             <div className="leading-tight">
-              <Link to={blogTaxonomyPath(locale, "author", post.author_full.slug)} className="font-medium text-ink hover:text-[rgb(6_36_67)]">
+              <Link {...taxonomyLink(locale, "author", post.author_full.slug)} className="font-medium text-ink hover:text-[rgb(6_36_67)]">
                 {post.author_full.name}
               </Link>
               {post.author_full.role_title && <div className="text-xs text-ink/60">{post.author_full.role_title}</div>}

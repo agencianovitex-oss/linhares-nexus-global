@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { blogTaxonomyPath } from "@/lib/blog/i18n-strings";
+import { taxonomyLink } from "@/lib/blog/links";
 import type { PublicCategory } from "@/lib/blog/public.functions";
 import type { Locale } from "@/i18n/locales";
 
@@ -18,7 +18,7 @@ export function CategoryNav({ roots, locale, activeSlug }: Props) {
         return (
           <Link
             key={c.id}
-            to={blogTaxonomyPath(locale, "category", c.slug)}
+            {...taxonomyLink(locale, "category", c.slug)}
             className={`rounded-full border px-4 py-1.5 text-sm transition ${
               active
                 ? "border-[rgb(179_134_66)] bg-[rgb(179_134_66)] text-white"

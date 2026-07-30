@@ -2,6 +2,7 @@
  * Pure TipTap JSON → React renderer (no @tiptap/react in the public bundle).
  * Supports the StarterKit + Image + Link + Placeholder schema used by the CMS.
  */
+import { mediaUrl } from "@/lib/blog/media-url";
 import type { JSX, ReactNode } from "react";
 
 type Node = {
@@ -64,7 +65,7 @@ function renderNode(node: Node, key: string): ReactNode {
       if (!src) return null;
       return (
         <figure key={key}>
-          <img src={src} alt={alt} loading="lazy" decoding="async" />
+          <img src={mediaUrl(src)} alt={alt} loading="lazy" decoding="async" />
           {title ? <figcaption>{title}</figcaption> : null}
         </figure>
       );
