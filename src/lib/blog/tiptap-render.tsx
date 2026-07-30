@@ -1,8 +1,8 @@
 /**
-import { mediaUrl } from "@/lib/blog/media-url";
  * Pure TipTap JSON → React renderer (no @tiptap/react in the public bundle).
  * Supports the StarterKit + Image + Link + Placeholder schema used by the CMS.
  */
+import { mediaUrl } from "@/lib/blog/media-url";
 import type { JSX, ReactNode } from "react";
 
 type Node = {
