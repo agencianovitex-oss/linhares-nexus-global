@@ -99,19 +99,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Linhares Law, U.S. Immigration · Boutique Practice" },
+      { title: "Linhares Law | Advogado de Imigração para os EUA" },
       {
         name: "description",
         content:
-          "Linhares Law is a boutique U.S. immigration firm with offices in Orlando, Miami, New York and Salt Lake City, representing international professionals, executives, investors and families.",
+          "Representando profissionais qualificados, executivos, investidores e famílias em processos de imigração para os Estados Unidos. Assessoria em EB-2 NIW .",
       },
       { property: "og:site_name", content: "Linhares Law" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "format-detection", content: "telephone=no" },
-      { property: "og:title", content: "Linhares Law, U.S. Immigration · Boutique Practice" },
-      { name: "twitter:title", content: "Linhares Law, U.S. Immigration · Boutique Practice" },
+      { property: "og:title", content: "Linhares Law | Advogado de Imigração para os EUA" },
+      { name: "twitter:title", content: "Linhares Law | Advogado de Imigração para os EUA" },
 
+      { property: "og:description", content: "Representando profissionais qualificados, executivos, investidores e famílias em processos de imigração para os Estados Unidos. Assessoria em EB-2 NIW ." },
+      { name: "twitter:description", content: "Representando profissionais qualificados, executivos, investidores e famílias em processos de imigração para os Estados Unidos. Assessoria em EB-2 NIW ." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/974a7f05-156a-4e2a-b826-54af04852de8/id-preview-c16f7f4a--5d07c35f-ca6c-48e6-9b46-689d39426690.lovable.app-1785426219959.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/974a7f05-156a-4e2a-b826-54af04852de8/id-preview-c16f7f4a--5d07c35f-ca6c-48e6-9b46-689d39426690.lovable.app-1785426219959.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
