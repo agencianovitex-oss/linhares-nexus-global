@@ -23,8 +23,7 @@ export function ImageUploader({ bucket, value, onChange }: Props) {
       const { error } = await supabase.storage.from(bucket).upload(path, file, { upsert: false });
       if (error) throw error;
       if (bucket === "blog-media") {
-        const { data } = supabase.storage.from(bucket).getPublicUrl(path);
-        onChange(data.publicUrl);
+        onChange(`/api/public/blog-media/${path}`);
       } else {
         const { data, error: signErr } = await supabase.storage.from(bucket).createSignedUrl(path, 60 * 60 * 24 * 365);
         if (signErr) throw signErr;
