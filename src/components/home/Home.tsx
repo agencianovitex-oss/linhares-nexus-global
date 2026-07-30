@@ -550,8 +550,17 @@ function OfficesSection({ c }: { c: HomeContent }) {
 /* 9 — Publications                                                     */
 /* ------------------------------------------------------------------ */
 
-function PublicationsSection({ c, localeHref }: { c: HomeContent; localeHref: (p: string) => string }) {
-  const items = c.publications.items.map((p, i) => ({ ...p, img: PUB_IMAGES[i] }));
+function PublicationsSection({ c, localeHref, locale }: { c: HomeContent; localeHref: (p: string) => string; locale: Locale }) {
+  const featured = useQuery(homeFeaturedPostsQuery(locale)).data ?? [];
+  const items = featured.length
+    ? featured.slice(0, 3).map((p) => ({
+        cat: p.category?.name ?? c.publications.eyebrowLead,
+        title: p.title,
+        meta: p.reading_time_minutes ? `${p.reading_time_minutes} min` : c.publications.readCta,
+        img: mediaUrl(p.cover_image_url) ?? PUB_IMAGES[0],
+        slug: p.slug,
+      }))
+    : c.publications.items.map((p, i) => ({ ...p, img: PUB_IMAGES[i], slug: null as string | null }));
   return (
     <section className="section-y relative overflow-hidden" style={{ backgroundColor: "rgb(179 134 66)" }}>
       <span className="section-seam absolute top-0 left-0 right-0" aria-hidden />
