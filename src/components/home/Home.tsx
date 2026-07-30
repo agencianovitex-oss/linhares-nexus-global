@@ -5,6 +5,11 @@ import { Container } from "@/components/layout/Container";
 import { SectionTitle } from "@/components/layout/SectionTitle";
 import { InstitutionalButton } from "@/components/institutional/Button";
 import { useI18n, withLocale } from "@/i18n/useI18n";
+import type { Locale } from "@/i18n/locales";
+import { useQuery } from "@tanstack/react-query";
+import { homeFeaturedPostsQuery } from "@/lib/blog/home-posts";
+import { mediaUrl } from "@/lib/blog/media-url";
+import { articleLink } from "@/lib/blog/links";
 import { homeContent, type HomeContent } from "./home.content";
 import andre6 from "@/assets/andre-6.jpg";
 import andreLinharesPortraitAsset from "@/assets/andre-linhares-portrait.jpg.asset.json";
@@ -582,7 +587,7 @@ function PublicationsSection({ c, localeHref, locale }: { c: HomeContent; locale
 
         <div className="relative mt-14 grid gap-px bg-[rgb(6_36_67)]/15 border border-[rgb(6_36_67)]/15 lg:grid-cols-3">
           {items.map((p, i) => (
-            <Link key={i} to={localeHref("/blog")} className="group editorial-card bg-background flex flex-col overflow-hidden hover:bg-background">
+            <Link key={i} {...(p.slug ? articleLink(locale, p.slug) : { to: localeHref("/blog") })} className="group editorial-card bg-background flex flex-col overflow-hidden hover:bg-background">
               <div className="editorial-frame aspect-[16/10] w-full overflow-hidden">
                 <img src={p.img} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
@@ -652,7 +657,7 @@ export function Home() {
       <ThoughtLeadershipSection c={c} />
       <CultureSection c={c} />
       <OfficesSection c={c} />
-      <PublicationsSection c={c} localeHref={localeHref} />
+      <PublicationsSection c={c} localeHref={localeHref} locale={locale} />
       <FinalCTA c={c} localeHref={localeHref} />
     </>
   );
