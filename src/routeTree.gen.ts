@@ -55,6 +55,7 @@ import { Route as SiteEsEquipeIndexRouteImport } from './routes/_site.es.equipe.
 import { Route as SiteEnServicosIndexRouteImport } from './routes/_site.en.servicos.index'
 import { Route as SiteEnEquipeIndexRouteImport } from './routes/_site.en.equipe.index'
 import { Route as AuthenticatedAdminPostsIndexRouteImport } from './routes/_authenticated/admin/posts/index'
+import { Route as ApiPublicBlogMediaSplatRouteImport } from './routes/api/public/blog-media.$'
 import { Route as SiteEsServicosSlugRouteImport } from './routes/_site.es.servicos.$slug'
 import { Route as SiteEsEquipeSlugRouteImport } from './routes/_site.es.equipe.$slug'
 import { Route as SiteEsBlogBusquedaRouteImport } from './routes/_site.es.blog.busqueda'
@@ -312,6 +313,11 @@ const AuthenticatedAdminPostsIndexRoute =
     path: '/posts/',
     getParentRoute: () => AuthenticatedAdminRouteRoute,
   } as any)
+const ApiPublicBlogMediaSplatRoute = ApiPublicBlogMediaSplatRouteImport.update({
+  id: '/api/public/blog-media/$',
+  path: '/api/public/blog-media/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SiteEsServicosSlugRoute = SiteEsServicosSlugRouteImport.update({
   id: '/es/servicos/$slug',
   path: '/es/servicos/$slug',
@@ -487,6 +493,7 @@ export interface FileRoutesByFullPath {
   '/es/blog/busqueda': typeof SiteEsBlogBusquedaRoute
   '/es/equipe/$slug': typeof SiteEsEquipeSlugRoute
   '/es/servicos/$slug': typeof SiteEsServicosSlugRoute
+  '/api/public/blog-media/$': typeof ApiPublicBlogMediaSplatRoute
   '/admin/posts/': typeof AuthenticatedAdminPostsIndexRoute
   '/en/equipe/': typeof SiteEnEquipeIndexRoute
   '/en/servicos/': typeof SiteEnServicosIndexRoute
@@ -555,6 +562,7 @@ export interface FileRoutesByTo {
   '/es/blog/busqueda': typeof SiteEsBlogBusquedaRoute
   '/es/equipe/$slug': typeof SiteEsEquipeSlugRoute
   '/es/servicos/$slug': typeof SiteEsServicosSlugRoute
+  '/api/public/blog-media/$': typeof ApiPublicBlogMediaSplatRoute
   '/admin/posts': typeof AuthenticatedAdminPostsIndexRoute
   '/en/equipe': typeof SiteEnEquipeIndexRoute
   '/en/servicos': typeof SiteEnServicosIndexRoute
@@ -627,6 +635,7 @@ export interface FileRoutesById {
   '/_site/es/blog/busqueda': typeof SiteEsBlogBusquedaRoute
   '/_site/es/equipe/$slug': typeof SiteEsEquipeSlugRoute
   '/_site/es/servicos/$slug': typeof SiteEsServicosSlugRoute
+  '/api/public/blog-media/$': typeof ApiPublicBlogMediaSplatRoute
   '/_authenticated/admin/posts/': typeof AuthenticatedAdminPostsIndexRoute
   '/_site/en/equipe/': typeof SiteEnEquipeIndexRoute
   '/_site/en/servicos/': typeof SiteEnServicosIndexRoute
@@ -698,6 +707,7 @@ export interface FileRouteTypes {
     | '/es/blog/busqueda'
     | '/es/equipe/$slug'
     | '/es/servicos/$slug'
+    | '/api/public/blog-media/$'
     | '/admin/posts/'
     | '/en/equipe/'
     | '/en/servicos/'
@@ -766,6 +776,7 @@ export interface FileRouteTypes {
     | '/es/blog/busqueda'
     | '/es/equipe/$slug'
     | '/es/servicos/$slug'
+    | '/api/public/blog-media/$'
     | '/admin/posts'
     | '/en/equipe'
     | '/en/servicos'
@@ -837,6 +848,7 @@ export interface FileRouteTypes {
     | '/_site/es/blog/busqueda'
     | '/_site/es/equipe/$slug'
     | '/_site/es/servicos/$slug'
+    | '/api/public/blog-media/$'
     | '/_authenticated/admin/posts/'
     | '/_site/en/equipe/'
     | '/_site/en/servicos/'
@@ -858,6 +870,7 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   ResetPasswordRoute: typeof ResetPasswordRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ApiPublicBlogMediaSplatRoute: typeof ApiPublicBlogMediaSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -1183,6 +1196,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/admin/posts/'
       preLoaderRoute: typeof AuthenticatedAdminPostsIndexRouteImport
       parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/api/public/blog-media/$': {
+      id: '/api/public/blog-media/$'
+      path: '/api/public/blog-media/$'
+      fullPath: '/api/public/blog-media/$'
+      preLoaderRoute: typeof ApiPublicBlogMediaSplatRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/_site/es/servicos/$slug': {
       id: '/_site/es/servicos/$slug'
@@ -1542,17 +1562,8 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRoute,
   ResetPasswordRoute: ResetPasswordRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ApiPublicBlogMediaSplatRoute: ApiPublicBlogMediaSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
