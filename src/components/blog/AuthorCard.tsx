@@ -1,5 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { blogTaxonomyPath, tBlog } from "@/lib/blog/i18n-strings";
+import { tBlog } from "@/lib/blog/i18n-strings";
+import { taxonomyLink } from "@/lib/blog/links";
+import { mediaUrl } from "@/lib/blog/media-url";
 import type { PublicAuthor } from "@/lib/blog/public.functions";
 import type { Locale } from "@/i18n/locales";
 

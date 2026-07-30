@@ -18,7 +18,7 @@ export function CategoryNav({ roots, locale, activeSlug }: Props) {
         return (
           <Link
             key={c.id}
-            to={blogTaxonomyPath(locale, "category", c.slug)}
+            {...taxonomyLink(locale, "category", c.slug)}
             className={`rounded-full border px-4 py-1.5 text-sm transition ${
               active
                 ? "border-[rgb(179_134_66)] bg-[rgb(179_134_66)] text-white"
