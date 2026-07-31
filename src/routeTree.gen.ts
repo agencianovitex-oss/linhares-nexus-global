@@ -22,12 +22,16 @@ import { Route as SiteContatoRouteImport } from './routes/_site.contato'
 import { Route as SiteCasosDeSucessoRouteImport } from './routes/_site.casos-de-sucesso'
 import { Route as SiteBlogRouteImport } from './routes/_site.blog'
 import { Route as AuthenticatedAdminRouteRouteImport } from './routes/_authenticated/admin/route'
+import { Route as EsAreasDeAtuacaoIndexRouteImport } from './routes/es.areas-de-atuacao.index'
+import { Route as EnAreasDeAtuacaoIndexRouteImport } from './routes/en.areas-de-atuacao.index'
 import { Route as SiteEsIndexRouteImport } from './routes/_site.es.index'
 import { Route as SiteEquipeIndexRouteImport } from './routes/_site.equipe.index'
 import { Route as SiteEnIndexRouteImport } from './routes/_site.en.index'
 import { Route as SiteBlogIndexRouteImport } from './routes/_site.blog.index'
 import { Route as SiteAreasDeAtuacaoIndexRouteImport } from './routes/_site.areas-de-atuacao.index'
 import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin/index'
+import { Route as EsAreasDeAtuacaoSplatRouteImport } from './routes/es.areas-de-atuacao.$'
+import { Route as EnAreasDeAtuacaoSplatRouteImport } from './routes/en.areas-de-atuacao.$'
 import { Route as SiteEsQuemSomosRouteImport } from './routes/_site.es.quem-somos'
 import { Route as SiteEsPremiacoesRouteImport } from './routes/_site.es.premiacoes'
 import { Route as SiteEsNaMidiaRouteImport } from './routes/_site.es.na-midia'
@@ -146,6 +150,16 @@ const AuthenticatedAdminRouteRoute = AuthenticatedAdminRouteRouteImport.update({
   path: '/admin',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const EsAreasDeAtuacaoIndexRoute = EsAreasDeAtuacaoIndexRouteImport.update({
+  id: '/es/areas-de-atuacao/',
+  path: '/es/areas-de-atuacao/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnAreasDeAtuacaoIndexRoute = EnAreasDeAtuacaoIndexRouteImport.update({
+  id: '/en/areas-de-atuacao/',
+  path: '/en/areas-de-atuacao/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SiteEsIndexRoute = SiteEsIndexRouteImport.update({
   id: '/es/',
   path: '/es/',
@@ -175,6 +189,16 @@ const AuthenticatedAdminIndexRoute = AuthenticatedAdminIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => AuthenticatedAdminRouteRoute,
+} as any)
+const EsAreasDeAtuacaoSplatRoute = EsAreasDeAtuacaoSplatRouteImport.update({
+  id: '/es/areas-de-atuacao/$',
+  path: '/es/areas-de-atuacao/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnAreasDeAtuacaoSplatRoute = EnAreasDeAtuacaoSplatRouteImport.update({
+  id: '/en/areas-de-atuacao/$',
+  path: '/en/areas-de-atuacao/$',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const SiteEsQuemSomosRoute = SiteEsQuemSomosRouteImport.update({
   id: '/es/quem-somos',
@@ -491,12 +515,16 @@ export interface FileRoutesByFullPath {
   '/es/na-midia': typeof SiteEsNaMidiaRoute
   '/es/premiacoes': typeof SiteEsPremiacoesRoute
   '/es/quem-somos': typeof SiteEsQuemSomosRoute
+  '/en/areas-de-atuacao/$': typeof EnAreasDeAtuacaoSplatRoute
+  '/es/areas-de-atuacao/$': typeof EsAreasDeAtuacaoSplatRoute
   '/admin/': typeof AuthenticatedAdminIndexRoute
   '/areas-de-atuacao/': typeof SiteAreasDeAtuacaoIndexRoute
   '/blog/': typeof SiteBlogIndexRoute
   '/en/': typeof SiteEnIndexRoute
   '/equipe/': typeof SiteEquipeIndexRoute
   '/es/': typeof SiteEsIndexRoute
+  '/en/areas-de-atuacao/': typeof EnAreasDeAtuacaoIndexRoute
+  '/es/areas-de-atuacao/': typeof EsAreasDeAtuacaoIndexRoute
   '/admin/posts/$id': typeof AuthenticatedAdminPostsIdRoute
   '/admin/posts/destaques': typeof AuthenticatedAdminPostsDestaquesRoute
   '/admin/posts/novo': typeof AuthenticatedAdminPostsNovoRoute
@@ -560,12 +588,16 @@ export interface FileRoutesByTo {
   '/es/na-midia': typeof SiteEsNaMidiaRoute
   '/es/premiacoes': typeof SiteEsPremiacoesRoute
   '/es/quem-somos': typeof SiteEsQuemSomosRoute
+  '/en/areas-de-atuacao/$': typeof EnAreasDeAtuacaoSplatRoute
+  '/es/areas-de-atuacao/$': typeof EsAreasDeAtuacaoSplatRoute
   '/admin': typeof AuthenticatedAdminIndexRoute
   '/areas-de-atuacao': typeof SiteAreasDeAtuacaoIndexRoute
   '/blog': typeof SiteBlogIndexRoute
   '/en': typeof SiteEnIndexRoute
   '/equipe': typeof SiteEquipeIndexRoute
   '/es': typeof SiteEsIndexRoute
+  '/en/areas-de-atuacao': typeof EnAreasDeAtuacaoIndexRoute
+  '/es/areas-de-atuacao': typeof EsAreasDeAtuacaoIndexRoute
   '/admin/posts/$id': typeof AuthenticatedAdminPostsIdRoute
   '/admin/posts/destaques': typeof AuthenticatedAdminPostsDestaquesRoute
   '/admin/posts/novo': typeof AuthenticatedAdminPostsNovoRoute
@@ -636,12 +668,16 @@ export interface FileRoutesById {
   '/_site/es/na-midia': typeof SiteEsNaMidiaRoute
   '/_site/es/premiacoes': typeof SiteEsPremiacoesRoute
   '/_site/es/quem-somos': typeof SiteEsQuemSomosRoute
+  '/en/areas-de-atuacao/$': typeof EnAreasDeAtuacaoSplatRoute
+  '/es/areas-de-atuacao/$': typeof EsAreasDeAtuacaoSplatRoute
   '/_authenticated/admin/': typeof AuthenticatedAdminIndexRoute
   '/_site/areas-de-atuacao/': typeof SiteAreasDeAtuacaoIndexRoute
   '/_site/blog/': typeof SiteBlogIndexRoute
   '/_site/en/': typeof SiteEnIndexRoute
   '/_site/equipe/': typeof SiteEquipeIndexRoute
   '/_site/es/': typeof SiteEsIndexRoute
+  '/en/areas-de-atuacao/': typeof EnAreasDeAtuacaoIndexRoute
+  '/es/areas-de-atuacao/': typeof EsAreasDeAtuacaoIndexRoute
   '/_authenticated/admin/posts/$id': typeof AuthenticatedAdminPostsIdRoute
   '/_authenticated/admin/posts/destaques': typeof AuthenticatedAdminPostsDestaquesRoute
   '/_authenticated/admin/posts/novo': typeof AuthenticatedAdminPostsNovoRoute
@@ -711,12 +747,16 @@ export interface FileRouteTypes {
     | '/es/na-midia'
     | '/es/premiacoes'
     | '/es/quem-somos'
+    | '/en/areas-de-atuacao/$'
+    | '/es/areas-de-atuacao/$'
     | '/admin/'
     | '/areas-de-atuacao/'
     | '/blog/'
     | '/en/'
     | '/equipe/'
     | '/es/'
+    | '/en/areas-de-atuacao/'
+    | '/es/areas-de-atuacao/'
     | '/admin/posts/$id'
     | '/admin/posts/destaques'
     | '/admin/posts/novo'
@@ -780,12 +820,16 @@ export interface FileRouteTypes {
     | '/es/na-midia'
     | '/es/premiacoes'
     | '/es/quem-somos'
+    | '/en/areas-de-atuacao/$'
+    | '/es/areas-de-atuacao/$'
     | '/admin'
     | '/areas-de-atuacao'
     | '/blog'
     | '/en'
     | '/equipe'
     | '/es'
+    | '/en/areas-de-atuacao'
+    | '/es/areas-de-atuacao'
     | '/admin/posts/$id'
     | '/admin/posts/destaques'
     | '/admin/posts/novo'
@@ -855,12 +899,16 @@ export interface FileRouteTypes {
     | '/_site/es/na-midia'
     | '/_site/es/premiacoes'
     | '/_site/es/quem-somos'
+    | '/en/areas-de-atuacao/$'
+    | '/es/areas-de-atuacao/$'
     | '/_authenticated/admin/'
     | '/_site/areas-de-atuacao/'
     | '/_site/blog/'
     | '/_site/en/'
     | '/_site/equipe/'
     | '/_site/es/'
+    | '/en/areas-de-atuacao/'
+    | '/es/areas-de-atuacao/'
     | '/_authenticated/admin/posts/$id'
     | '/_authenticated/admin/posts/destaques'
     | '/_authenticated/admin/posts/novo'
@@ -900,6 +948,10 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   ResetPasswordRoute: typeof ResetPasswordRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  EnAreasDeAtuacaoSplatRoute: typeof EnAreasDeAtuacaoSplatRoute
+  EsAreasDeAtuacaoSplatRoute: typeof EsAreasDeAtuacaoSplatRoute
+  EnAreasDeAtuacaoIndexRoute: typeof EnAreasDeAtuacaoIndexRoute
+  EsAreasDeAtuacaoIndexRoute: typeof EsAreasDeAtuacaoIndexRoute
   ApiPublicBlogMediaSplatRoute: typeof ApiPublicBlogMediaSplatRoute
 }
 
@@ -996,6 +1048,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminRouteRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/es/areas-de-atuacao/': {
+      id: '/es/areas-de-atuacao/'
+      path: '/es/areas-de-atuacao'
+      fullPath: '/es/areas-de-atuacao/'
+      preLoaderRoute: typeof EsAreasDeAtuacaoIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/areas-de-atuacao/': {
+      id: '/en/areas-de-atuacao/'
+      path: '/en/areas-de-atuacao'
+      fullPath: '/en/areas-de-atuacao/'
+      preLoaderRoute: typeof EnAreasDeAtuacaoIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_site/es/': {
       id: '/_site/es/'
       path: '/es'
@@ -1037,6 +1103,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/admin/'
       preLoaderRoute: typeof AuthenticatedAdminIndexRouteImport
       parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/es/areas-de-atuacao/$': {
+      id: '/es/areas-de-atuacao/$'
+      path: '/es/areas-de-atuacao/$'
+      fullPath: '/es/areas-de-atuacao/$'
+      preLoaderRoute: typeof EsAreasDeAtuacaoSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/areas-de-atuacao/$': {
+      id: '/en/areas-de-atuacao/$'
+      path: '/en/areas-de-atuacao/$'
+      fullPath: '/en/areas-de-atuacao/$'
+      preLoaderRoute: typeof EnAreasDeAtuacaoSplatRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/_site/es/quem-somos': {
       id: '/_site/es/quem-somos'
@@ -1619,18 +1699,12 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRoute,
   ResetPasswordRoute: ResetPasswordRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  EnAreasDeAtuacaoSplatRoute: EnAreasDeAtuacaoSplatRoute,
+  EsAreasDeAtuacaoSplatRoute: EsAreasDeAtuacaoSplatRoute,
+  EnAreasDeAtuacaoIndexRoute: EnAreasDeAtuacaoIndexRoute,
+  EsAreasDeAtuacaoIndexRoute: EsAreasDeAtuacaoIndexRoute,
   ApiPublicBlogMediaSplatRoute: ApiPublicBlogMediaSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

@@ -24,7 +24,7 @@ function applyMarks(text: ReactNode, marks: Node["marks"]): ReactNode {
       case "code": return <code>{acc}</code>;
       case "link": {
         const href: string = m.attrs?.href ?? "#";
-        const isExternal = /^https?:\/\//i.test(href) && !href.includes("linhares-nexus-global.lovable.app");
+        const isExternal = /^https?:\/\//i.test(href) && !href.includes("linhareslaw.com");
         return (
           <a href={href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener noreferrer" : undefined}>
             {acc}

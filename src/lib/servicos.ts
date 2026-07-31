@@ -6,6 +6,7 @@ import { withLocale } from "@/i18n/useI18n";
 import { buildHubFaqSchema } from "@/components/visa/ServicesHub";
 import { buildVisaFaqSchema } from "@/components/visa/VisaPage";
 import { servicesStrings } from "@/i18n/content/services";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 
 /** Base path for the services hub per locale. PT uses /areas-de-atuacao; EN/ES keep /servicos. */
 export function servicesBase(locale: Locale): string {
@@ -32,11 +33,22 @@ export function hubHead(locale: Locale) {
   const t = servicesStrings[locale].hub;
   const title = t.seoTitle;
   const description = t.seoDescription;
-  const head = buildLocaleHead({ path: servicesBase(locale), locale, title, description });
-  return {
-    ...head,
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(buildHubFaqSchema(locale)) }],
-  };
+  return buildLocaleHead({
+    path: servicesBase(locale),
+    locale,
+    title,
+    description,
+    jsonLd: [
+      buildHubFaqSchema(locale),
+      breadcrumbSchema(
+        [
+          { name: "Home", path: "/" },
+          { name: t.seoTitle.split(",")[0], path: servicesBase(locale) },
+        ],
+        locale,
+      ),
+    ],
+  });
 }
 
 export function visaHead(locale: Locale, rawSlug: string) {
@@ -50,15 +62,29 @@ export function visaHead(locale: Locale, rawSlug: string) {
     });
   }
   const v = VISAS[locale][rawSlug];
-  const head = buildLocaleHead({
-    path: `${servicesBase(locale)}/${rawSlug}`,
+  const path = `${servicesBase(locale)}/${rawSlug}`;
+  return buildLocaleHead({
+    path,
     locale,
     title: v.seoTitle,
     description: v.seoDescription,
     type: "article",
+    jsonLd: [
+      buildVisaFaqSchema(locale, rawSlug),
+      serviceSchema({
+        name: v.seoTitle.split(",")[0],
+        description: v.seoDescription,
+        url: withLocale(locale, path),
+        locale,
+      }),
+      breadcrumbSchema(
+        [
+          { name: "Home", path: "/" },
+          { name: servicesStrings[locale].hub.seoTitle.split(",")[0], path: servicesBase(locale) },
+          { name: v.seoTitle.split(",")[0], path },
+        ],
+        locale,
+      ),
+    ],
   });
-  return {
-    ...head,
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(buildVisaFaqSchema(locale, rawSlug)) }],
-  };
 }

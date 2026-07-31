@@ -26,7 +26,7 @@ export function ArticleCard({ post, locale, variant = "default", priority = fals
       <Link {...link} className="group block overflow-hidden rounded-xl bg-card ring-1 ring-border/40 transition hover:ring-[rgb(179_134_66)]/40">
         <div className="relative aspect-[16/10] overflow-hidden bg-muted">
           {cover ? (
-            <img src={cover} alt="" className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.02]"
+            <img src={cover} alt={post.title} className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.02]"
               loading={priority ? "eager" : "lazy"} decoding="async"
               {...(priority ? { fetchPriority: "high" as any } : {})} />
           ) : <div className="h-full w-full bg-gradient-to-br from-[rgb(6_36_67)] to-[rgb(6_36_67)]/70" />}
@@ -52,7 +52,7 @@ export function ArticleCard({ post, locale, variant = "default", priority = fals
       <Link {...link} className="group flex gap-4">
         <div className="relative h-20 w-28 flex-shrink-0 overflow-hidden rounded-md bg-muted">
           {cover ? (
-            <img src={cover} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover" />
+            <img src={cover} alt={post.title} loading="lazy" decoding="async" className="h-full w-full object-cover" />
           ) : <div className="h-full w-full bg-[rgb(6_36_67)]/30" />}
         </div>
         <div className="min-w-0 flex-1">
@@ -68,7 +68,7 @@ export function ArticleCard({ post, locale, variant = "default", priority = fals
       <Link {...link} className="block overflow-hidden">
         <div className="relative aspect-[16/10] bg-muted">
           {cover ? (
-            <img src={cover} alt="" className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.02]" loading="lazy" decoding="async" />
+            <img src={cover} alt={post.title} className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.02]" loading="lazy" decoding="async" />
           ) : <div className="h-full w-full bg-gradient-to-br from-[rgb(6_36_67)] to-[rgb(6_36_67)]/70" />}
         </div>
       </Link>

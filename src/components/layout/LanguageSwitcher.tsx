@@ -1,6 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { LOCALES, type Locale } from "@/i18n/locales";
-import { localeFromPath, stripLocale, withLocale } from "@/i18n/useI18n";
+import { localeFromPath } from "@/i18n/useI18n";
+import { translatePath } from "@/i18n/paths";
 import { cn } from "@/lib/utils";
 import flagBr from "@/assets/flag-br.png.asset.json";
 import flagUs from "@/assets/flag-us.png.asset.json";
@@ -26,7 +27,6 @@ const LABEL: Record<Locale, string> = {
 export function LanguageSwitcher({ className, onDark = false }: Props) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const current = localeFromPath(pathname);
-  const basePath = stripLocale(pathname);
 
   return (
     <div
@@ -38,7 +38,7 @@ export function LanguageSwitcher({ className, onDark = false }: Props) {
         return (
           <Link
             key={l}
-            to={withLocale(l, basePath)}
+            to={translatePath(pathname, l)}
             aria-label={LABEL[l]}
             title={LABEL[l]}
             className={cn(

@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Award, Scale, Landmark, Flag, Trophy, Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { servicesHref } from "@/lib/servicos";
 import { Container } from "@/components/layout/Container";
 import { SectionTitle } from "@/components/layout/SectionTitle";
 import { InstitutionalButton } from "@/components/institutional/Button";
@@ -113,7 +114,7 @@ function AuthorityPanel({ c }: { c: HomeContent }) {
                 className={`${isFeatured ? "h-[128px] w-[128px] ring-gold/70" : "h-[88px] w-[88px] ring-gold/45"} rounded-full overflow-hidden ring-1`}
                 style={{ boxShadow: isFeatured ? "0 0 0 6px oklch(1 0 0 / 0.05), 0 0 0 1px rgb(179 134 66 / 0.35), 0 32px 70px -22px rgb(0 0 0 / 0.7)" : "0 0 0 5px oklch(1 0 0 / 0.04), 0 24px 50px -22px rgb(0 0 0 / 0.55)" }}
               >
-                <img src={portrait.src} alt="" className="h-full w-full object-cover" style={{ objectPosition: portrait.position }} />
+                <img src={portrait.src} alt={slide.title ?? ""} className="h-full w-full object-cover" style={{ objectPosition: portrait.position }} />
               </div>
             ) : (
               <div
@@ -172,7 +173,7 @@ function AuthorityPanel({ c }: { c: HomeContent }) {
   );
 }
 
-function HeroSection({ c, localeHref }: { c: HomeContent; localeHref: (p: string) => string }) {
+function HeroSection({ c, localeHref, locale }: { c: HomeContent; localeHref: (p: string) => string; locale: Locale }) {
   return (
     <section className="relative surface-premium-dark pt-32 pb-24 lg:pt-40 lg:pb-28 overflow-hidden">
       <video aria-hidden className="pointer-events-none absolute inset-0 h-full w-full object-cover" src={heroVideo} poster={heroFlagDesktop} autoPlay muted loop playsInline preload="metadata" />
@@ -194,7 +195,7 @@ function HeroSection({ c, localeHref }: { c: HomeContent; localeHref: (p: string
               <InstitutionalButton to={localeHref("/contato")} variant="primary" className="bg-gold text-white border-gold hover:bg-[rgb(200,145,70)] hover:text-white">
                 {c.hero.ctaContact}
               </InstitutionalButton>
-              <InstitutionalButton to={localeHref("/areas-de-atuacao")} variant="onDark">
+              <InstitutionalButton to={servicesHref(locale)} variant="onDark">
                 {c.hero.ctaStrategies}
               </InstitutionalButton>
             </div>
@@ -589,7 +590,7 @@ function PublicationsSection({ c, localeHref, locale }: { c: HomeContent; locale
           {items.map((p, i) => (
             <Link key={i} {...(p.slug ? articleLink(locale, p.slug) : { to: localeHref("/blog") })} className="group editorial-card bg-background flex flex-col overflow-hidden hover:bg-background">
               <div className="editorial-frame aspect-[16/10] w-full overflow-hidden">
-                <img src={p.img} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <img src={p.img} alt={p.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
               <div className="flex flex-col justify-between flex-1 p-8 lg:p-10 min-h-[220px]">
                 <div>
@@ -648,7 +649,7 @@ export function Home() {
   const visasBase = locale === "pt" ? "/areas-de-atuacao" : "/servicos";
   return (
     <>
-      <HeroSection c={c} localeHref={localeHref} />
+      <HeroSection c={c} localeHref={localeHref} locale={locale} />
       <PhotoMosaic photos={mosaicPhotos} compact />
       <AuthoritySection c={c} />
       <AwardsSection c={c} localeHref={localeHref} />
