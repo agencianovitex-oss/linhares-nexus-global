@@ -114,7 +114,7 @@ function AuthorityPanel({ c }: { c: HomeContent }) {
                 className={`${isFeatured ? "h-[128px] w-[128px] ring-gold/70" : "h-[88px] w-[88px] ring-gold/45"} rounded-full overflow-hidden ring-1`}
                 style={{ boxShadow: isFeatured ? "0 0 0 6px oklch(1 0 0 / 0.05), 0 0 0 1px rgb(179 134 66 / 0.35), 0 32px 70px -22px rgb(0 0 0 / 0.7)" : "0 0 0 5px oklch(1 0 0 / 0.04), 0 24px 50px -22px rgb(0 0 0 / 0.55)" }}
               >
-                <img src={portrait.src} alt="" className="h-full w-full object-cover" style={{ objectPosition: portrait.position }} />
+                <img src={portrait.src} alt={slide.title ?? ""} className="h-full w-full object-cover" style={{ objectPosition: portrait.position }} />
               </div>
             ) : (
               <div
@@ -590,7 +590,7 @@ function PublicationsSection({ c, localeHref, locale }: { c: HomeContent; locale
           {items.map((p, i) => (
             <Link key={i} {...(p.slug ? articleLink(locale, p.slug) : { to: localeHref("/blog") })} className="group editorial-card bg-background flex flex-col overflow-hidden hover:bg-background">
               <div className="editorial-frame aspect-[16/10] w-full overflow-hidden">
-                <img src={p.img} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <img src={p.img} alt={p.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
               <div className="flex flex-col justify-between flex-1 p-8 lg:p-10 min-h-[220px]">
                 <div>
