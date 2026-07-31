@@ -1,3 +1,4 @@
+import { SITE_ORIGIN } from "@/lib/site";
 import type { Locale } from "@/i18n/locales";
 
 export const blogStrings = {
@@ -141,5 +142,5 @@ export function blogArticlePath(locale: Locale, slug: string): string {
 }
 
 export function siteOrigin(): string {
-  return "https://linhares-nexus-global.lovable.app";
+  return SITE_ORIGIN;
 }
