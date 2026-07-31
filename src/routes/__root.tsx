@@ -73,52 +73,45 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-const ORGANIZATION_JSONLD = {
-  "@context": "https://schema.org",
-  "@type": "LegalService",
-  name: "Linhares Law",
-  slogan: "U.S. Immigration · Boutique Practice",
-  url: "/",
-  areaServed: "United States",
-  knowsAbout: [
-    "U.S. Immigration Law",
-    "Employment-Based Immigration",
-    "Investor Visas",
-    "Family-Based Immigration",
-  ],
-  location: [
-    { "@type": "Place", name: "Orlando Office", address: { "@type": "PostalAddress", addressLocality: "Orlando", addressRegion: "FL", addressCountry: "US" } },
-    { "@type": "Place", name: "Miami Office", address: { "@type": "PostalAddress", addressLocality: "Miami", addressRegion: "FL", addressCountry: "US" } },
-    { "@type": "Place", name: "New York Office", address: { "@type": "PostalAddress", addressLocality: "New York", addressRegion: "NY", addressCountry: "US" } },
-    { "@type": "Place", name: "Salt Lake City Office", address: { "@type": "PostalAddress", addressLocality: "Salt Lake City", addressRegion: "UT", addressCountry: "US" } },
-  ],
-};
+const OG_DEFAULT = absUrl("/og-default.jpg");
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Linhares Law | Advogado de Imigração para os EUA" },
+      { title: "Linhares Law | Advogados de Imigração Americana" },
       {
         name: "description",
         content:
-          "Representando profissionais qualificados, executivos, investidores e famílias em processos de imigração para os Estados Unidos. Assessoria em EB-2 NIW .",
+          "Escritório boutique de imigração americana. Representamos profissionais qualificados, executivos, investidores e famílias em processos como EB-2 NIW, EB-1, L-1 e EB-5.",
       },
       { property: "og:site_name", content: "Linhares Law" },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "format-detection", content: "telephone=no" },
-      { property: "og:title", content: "Linhares Law | Advogado de Imigração para os EUA" },
-      { name: "twitter:title", content: "Linhares Law | Advogado de Imigração para os EUA" },
-
-      { property: "og:description", content: "Representando profissionais qualificados, executivos, investidores e famílias em processos de imigração para os Estados Unidos. Assessoria em EB-2 NIW ." },
-      { name: "twitter:description", content: "Representando profissionais qualificados, executivos, investidores e famílias em processos de imigração para os Estados Unidos. Assessoria em EB-2 NIW ." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/974a7f05-156a-4e2a-b826-54af04852de8/id-preview-c16f7f4a--5d07c35f-ca6c-48e6-9b46-689d39426690.lovable.app-1785426219959.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/974a7f05-156a-4e2a-b826-54af04852de8/id-preview-c16f7f4a--5d07c35f-ca6c-48e6-9b46-689d39426690.lovable.app-1785426219959.png" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
+      { name: "author", content: "Linhares Law" },
+      { property: "og:title", content: "Linhares Law | Advogados de Imigração Americana" },
+      { name: "twitter:title", content: "Linhares Law | Advogados de Imigração Americana" },
+      {
+        property: "og:description",
+        content:
+          "Escritório boutique de imigração americana. Representamos profissionais qualificados, executivos, investidores e famílias em processos como EB-2 NIW, EB-1, L-1 e EB-5.",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Escritório boutique de imigração americana. Representamos profissionais qualificados, executivos, investidores e famílias em processos como EB-2 NIW, EB-1, L-1 e EB-5.",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon.png" },
+      { rel: "icon", type: "image/png", sizes: "192x192", href: "/favicon-192.png" },
+      { rel: "icon", type: "image/png", sizes: "512x512", href: "/favicon-512.png" },
+      { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+      { rel: "manifest", href: "/site.webmanifest" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -132,7 +125,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify(ORGANIZATION_JSONLD),
+        children: JSON.stringify(organizationSchema("/favicon-512.png")),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(websiteSchema()),
       },
     ],
   }),
@@ -141,6 +138,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
+
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
