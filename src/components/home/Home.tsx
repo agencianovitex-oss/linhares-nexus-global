@@ -173,7 +173,7 @@ function AuthorityPanel({ c }: { c: HomeContent }) {
   );
 }
 
-function HeroSection({ c, localeHref }: { c: HomeContent; localeHref: (p: string) => string }) {
+function HeroSection({ c, localeHref, locale }: { c: HomeContent; localeHref: (p: string) => string; locale: Locale }) {
   return (
     <section className="relative surface-premium-dark pt-32 pb-24 lg:pt-40 lg:pb-28 overflow-hidden">
       <video aria-hidden className="pointer-events-none absolute inset-0 h-full w-full object-cover" src={heroVideo} poster={heroFlagDesktop} autoPlay muted loop playsInline preload="metadata" />
@@ -649,7 +649,7 @@ export function Home() {
   const visasBase = locale === "pt" ? "/areas-de-atuacao" : "/servicos";
   return (
     <>
-      <HeroSection c={c} localeHref={localeHref} />
+      <HeroSection c={c} localeHref={localeHref} locale={locale} />
       <PhotoMosaic photos={mosaicPhotos} compact />
       <AuthoritySection c={c} />
       <AwardsSection c={c} localeHref={localeHref} />
