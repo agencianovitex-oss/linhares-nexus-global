@@ -98,7 +98,7 @@ export const homeContent: Record<Locale, HomeContent> = {
   pt: {
     hero: {
       eyebrow: "Linhares Law · Escritório de Advocacia de Imigração Americana",
-      h1: "Estratégias migratórias conduzidas por advogados premiados internacionalmente.",
+      h1: "Advogados de imigração americana premiados internacionalmente.",
       sub: "Garantimos representação jurídica de excelência para que profissionais qualificados, investidores e famílias alcancem seus objetivos nos Estados Unidos com segurança e confiança.",
       ctaContact: "Agendar Consulta",
       ctaStrategies: "Conhecer nossas estratégias",
@@ -236,7 +236,7 @@ export const homeContent: Record<Locale, HomeContent> = {
   en: {
     hero: {
       eyebrow: "Linhares Law · U.S. Immigration Law Firm",
-      h1: "U.S. immigration strategies led by internationally recognized attorneys.",
+      h1: "U.S. immigration lawyers recognized internationally.",
       sub: "We provide the highest standard of legal representation so that qualified professionals, investors and families reach their goals in the United States with confidence and security.",
       ctaContact: "Schedule a Consultation",
       ctaStrategies: "Explore our strategies",
@@ -374,7 +374,7 @@ export const homeContent: Record<Locale, HomeContent> = {
   es: {
     hero: {
       eyebrow: "Linhares Law · Despacho de Inmigración a EE. UU.",
-      h1: "Estrategias migratorias conducidas por abogados reconocidos internacionalmente.",
+      h1: "Abogados de inmigración estadounidense reconocidos internacionalmente.",
       sub: "Garantizamos representación jurídica del más alto nivel para que profesionales calificados, inversionistas y familias alcancen sus objetivos en Estados Unidos con seguridad y confianza.",
       ctaContact: "Agendar Consulta",
       ctaStrategies: "Conocer nuestras estrategias",
