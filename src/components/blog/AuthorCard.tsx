@@ -12,7 +12,7 @@ export function AuthorCard({ author, locale }: Props) {
   return (
     <section className="my-12 flex flex-col gap-5 rounded-xl border border-border/50 bg-card p-6 sm:flex-row sm:items-start sm:p-8">
       {author.photo_url ? (
-        <img src={mediaUrl(author.photo_url)} alt="" className="h-20 w-20 flex-shrink-0 rounded-full object-cover" />
+        <img src={mediaUrl(author.photo_url)} alt={author.name} className="h-20 w-20 flex-shrink-0 rounded-full object-cover" />
       ) : <div className="h-20 w-20 flex-shrink-0 rounded-full bg-[rgb(6_36_67)]/10" />}
       <div className="space-y-2">
         <div className="text-[10px] uppercase tracking-[0.25em] text-[rgb(179_134_66)]">{t.aboutAuthor}</div>
