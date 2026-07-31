@@ -33,7 +33,7 @@ export function buildLocaleHead({
   jsonLd,
 }: BuildHeadInput) {
   const canonical = absUrl(withLocale(locale, path));
-  const image = ogImage ? absUrl(ogImage) : undefined;
+  const image = absUrl(ogImage ?? "/og-default.jpg");
 
   const meta: Array<Record<string, string>> = [
     { title },
@@ -44,15 +44,13 @@ export function buildLocaleHead({
     { property: "og:url", content: canonical },
     { property: "og:locale", content: LOCALE_HREFLANG[locale].replace("-", "_") },
     { property: "og:site_name", content: "Linhares Law" },
-    { name: "twitter:card", content: image ? "summary_large_image" : "summary" },
+    { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: title },
     { name: "twitter:description", content: description },
   ];
 
-  if (image) {
-    meta.push({ property: "og:image", content: image });
-    meta.push({ name: "twitter:image", content: image });
-  }
+  meta.push({ property: "og:image", content: image });
+  meta.push({ name: "twitter:image", content: image });
   if (noindex) meta.push({ name: "robots", content: "noindex, nofollow" });
 
   const links: Array<{ rel: string; href: string; hrefLang?: string }> = [
