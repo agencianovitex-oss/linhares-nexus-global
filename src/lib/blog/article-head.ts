@@ -12,7 +12,7 @@ export function buildArticleHead(post: PublicPostDetail, locale: Locale, localiz
   const title = `${post.meta_title || post.title}, Linhares Law`;
   const description = post.meta_description || post.excerpt || "";
   const rawImg = mediaUrl(post.cover_image_url);
-  const img = rawImg ? (rawImg.startsWith("http") ? rawImg : `${origin}${rawImg}`) : undefined;
+  const img = rawImg ? (rawImg.startsWith("http") ? rawImg : `${origin}${rawImg}`) : `${origin}/og-default.jpg`;
   const t = tBlog(locale);
 
   const meta: MetaItem[] = [
@@ -23,14 +23,12 @@ export function buildArticleHead(post: PublicPostDetail, locale: Locale, localiz
     { property: "og:description", content: description },
     { property: "og:url", content: url },
     { property: "og:site_name", content: "Linhares Law" },
-    { name: "twitter:card", content: img ? "summary_large_image" : "summary" },
+    { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: title },
     { name: "twitter:description", content: description },
   ];
-  if (img) {
-    meta.push({ property: "og:image", content: img });
-    meta.push({ name: "twitter:image", content: img });
-  }
+  meta.push({ property: "og:image", content: img });
+  meta.push({ name: "twitter:image", content: img });
   if (post.published_at) meta.push({ property: "article:published_time", content: post.published_at });
   if (post.updated_at) meta.push({ property: "article:modified_time", content: post.updated_at });
   if (post.author_full?.name) meta.push({ property: "article:author", content: post.author_full.name });
@@ -51,6 +49,7 @@ export function buildArticleHead(post: PublicPostDetail, locale: Locale, localiz
     "@type": "Article",
     headline: post.title,
     description,
+    inLanguage: locale === "pt" ? "pt-BR" : locale,
     image: img ? [img] : undefined,
     datePublished: post.published_at ?? undefined,
     dateModified: post.updated_at,
@@ -58,7 +57,7 @@ export function buildArticleHead(post: PublicPostDetail, locale: Locale, localiz
     publisher: {
       "@type": "Organization",
       name: "Linhares Law",
-      logo: { "@type": "ImageObject", url: `${origin}/favicon.ico` },
+      logo: { "@type": "ImageObject", url: `${origin}/favicon-512.png` },
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     timeRequired: post.reading_time_minutes ? `PT${post.reading_time_minutes}M` : undefined,
