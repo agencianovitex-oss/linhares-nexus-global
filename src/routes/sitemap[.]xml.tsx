@@ -42,7 +42,8 @@ export const Route = createFileRoute("/sitemap.xml")({
         const blocks: string[] = [];
 
         // Institutional pages: each path emitted per locale with hreflang alternates
-        for (const path of STATIC_PATHS) {
+        const visaPaths = VISA_ORDER.map((slug) => `/servicos/${slug}`);
+        for (const path of [...STATIC_PATHS, ...visaPaths]) {
           for (const l of LOCALES) {
             const loc = `${BASE_URL}${localizedPath(l, path)}`;
             const alts = LOCALES.map(other => ({
@@ -53,6 +54,7 @@ export const Route = createFileRoute("/sitemap.xml")({
             blocks.push(urlBlock(loc, undefined, alts, path === "/" ? "1.0" : "0.7"));
           }
         }
+
 
         // Blog articles
         for (const post of posts) {
