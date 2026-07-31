@@ -5,6 +5,7 @@ import { LOCALES, LOCALE_HREFLANG, type Locale } from "@/i18n/locales";
 import { blogArticlePath } from "@/lib/blog/i18n-strings";
 
 import { SITE_ORIGIN } from "@/lib/site";
+import { VISA_ORDER } from "@/data/visas";
 
 const BASE_URL = SITE_ORIGIN;
 
@@ -15,7 +16,7 @@ const STATIC_PATHS = [
 
 // pt uses /areas-de-atuacao; en/es use /servicos
 function localizedPath(locale: Locale, path: string): string {
-  const mapped = locale === "pt" && path === "/servicos" ? "/areas-de-atuacao" : path;
+  const mapped = locale === "pt" ? path.replace(/^\/servicos/, "/areas-de-atuacao") : path;
   if (locale === "pt") return mapped;
   return mapped === "/" ? `/${locale}` : `/${locale}${mapped}`;
 }
