@@ -4,7 +4,9 @@ import { listAllPublishedSlugs } from "@/lib/blog/public.functions";
 import { LOCALES, LOCALE_HREFLANG, type Locale } from "@/i18n/locales";
 import { blogArticlePath } from "@/lib/blog/i18n-strings";
 
-const BASE_URL = "https://linhares-nexus-global.lovable.app";
+import { SITE_ORIGIN } from "@/lib/site";
+
+const BASE_URL = SITE_ORIGIN;
 
 const STATIC_PATHS = [
   "/", "/quem-somos", "/servicos", "/equipe", "/premiacoes", "/na-midia",

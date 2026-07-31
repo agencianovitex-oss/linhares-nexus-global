@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { absUrl } from "@/lib/site";
 import { tBlog } from "@/lib/blog/i18n-strings";
 import type { Locale } from "@/i18n/locales";
 
@@ -7,7 +8,7 @@ interface Props { url: string; title: string; locale: Locale }
 export function ShareButtons({ url, title, locale }: Props) {
   const t = tBlog(locale);
   const [copied, setCopied] = useState(false);
-  const full = url.startsWith("http") ? url : `https://linhares-nexus-global.lovable.app${url}`;
+  const full = absUrl(url);
   const enc = encodeURIComponent;
 
   return (
