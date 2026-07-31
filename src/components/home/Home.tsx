@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Award, Scale, Landmark, Flag, Trophy, Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { servicesHref } from "@/lib/servicos";
 import { Container } from "@/components/layout/Container";
 import { SectionTitle } from "@/components/layout/SectionTitle";
 import { InstitutionalButton } from "@/components/institutional/Button";
@@ -194,7 +195,7 @@ function HeroSection({ c, localeHref }: { c: HomeContent; localeHref: (p: string
               <InstitutionalButton to={localeHref("/contato")} variant="primary" className="bg-gold text-white border-gold hover:bg-[rgb(200,145,70)] hover:text-white">
                 {c.hero.ctaContact}
               </InstitutionalButton>
-              <InstitutionalButton to={localeHref("/areas-de-atuacao")} variant="onDark">
+              <InstitutionalButton to={servicesHref(locale)} variant="onDark">
                 {c.hero.ctaStrategies}
               </InstitutionalButton>
             </div>
