@@ -85,8 +85,22 @@ export function Footer() {
         <div className="lg:col-span-2">
           <h4 className="eyebrow eyebrow-on-dark">{t.footer.contact}</h4>
           <ul className="mt-7 space-y-3 text-[13.5px] text-primary-foreground/85">
-            <li>info@linhareslaw.com</li>
-            <li>+1 (407) 725-4988</li>
+            <li>
+              <a href={mailHref} className="transition-colors hover:text-gold">{EMAIL}</a>
+            </li>
+            <li>
+              <a href={telHref} className="transition-colors hover:text-gold">{PHONE_DISPLAY}</a>
+            </li>
+            <li>
+              <a
+                href={whatsappHref(locale)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-gold"
+              >
+                WhatsApp: {PHONE_DISPLAY}
+              </a>
+            </li>
           </ul>
           <div className="mt-10">
             <LanguageSwitcher onDark />
