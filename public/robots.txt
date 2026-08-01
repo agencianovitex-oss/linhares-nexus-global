@@ -4,4 +4,4 @@ Disallow: /admin/
 Disallow: /auth
 Disallow: /reset-password
 
-Sitemap: https://linhareslaw.com/sitemap.xml
+Sitemap: https://www.linhareslaw.com/sitemap.xml
