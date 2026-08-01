@@ -26,6 +26,8 @@ export function EditorialImage({
       <div className={cn("w-full overflow-hidden bg-surface-2", ratioMap[ratio])}>
         {src ? (
           <img
+            loading="lazy"
+            decoding="async"
             {...img}
             src={src}
             alt={alt}

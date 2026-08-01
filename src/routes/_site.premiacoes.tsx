@@ -130,7 +130,7 @@ export function PremiacoesPage() {
             <article key={a.title} className="group flex flex-col overflow-hidden border transition-colors duration-300" style={{ backgroundColor: cardBg, borderColor: cardBorder }}>
               {a.image && (
                 <div className="aspect-[4/5] overflow-hidden bg-[rgb(6,36,67)]">
-                  <img src={a.image} alt={a.title} className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]" />
+                  <img loading="lazy" decoding="async" src={a.image} alt={a.title} className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]" />
                 </div>
               )}
               <div className="p-10">

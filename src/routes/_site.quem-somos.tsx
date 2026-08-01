@@ -275,7 +275,7 @@ export function QuemSomosPage() {
           <div className="lg:col-span-6 lg:col-start-7">
             <InstitutionalCard variant="light" className="p-0 overflow-hidden">
               <div className="w-full aspect-[16/10] bg-surface flex items-center justify-center p-8">
-                <img src={gptw} alt="Great Place To Work 2024" className="max-h-full max-w-full object-contain" />
+                <img loading="lazy" decoding="async" src={gptw} alt="Great Place To Work 2024" className="max-h-full max-w-full object-contain" />
               </div>
               <div className="p-10">
                 <span className="eyebrow">{c.gptwEyebrow}</span>

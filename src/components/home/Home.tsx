@@ -114,7 +114,7 @@ function AuthorityPanel({ c }: { c: HomeContent }) {
                 className={`${isFeatured ? "h-[128px] w-[128px] ring-gold/70" : "h-[88px] w-[88px] ring-gold/45"} rounded-full overflow-hidden ring-1`}
                 style={{ boxShadow: isFeatured ? "0 0 0 6px oklch(1 0 0 / 0.05), 0 0 0 1px rgb(179 134 66 / 0.35), 0 32px 70px -22px rgb(0 0 0 / 0.7)" : "0 0 0 5px oklch(1 0 0 / 0.04), 0 24px 50px -22px rgb(0 0 0 / 0.55)" }}
               >
-                <img src={portrait.src} alt={slide.title ?? ""} className="h-full w-full object-cover" style={{ objectPosition: portrait.position }} />
+                <img loading="lazy" decoding="async" src={portrait.src} alt={slide.title ?? ""} className="h-full w-full object-cover" style={{ objectPosition: portrait.position }} />
               </div>
             ) : (
               <div
@@ -271,7 +271,7 @@ function AwardsSection({ c, localeHref }: { c: HomeContent; localeHref: (p: stri
             <div className="relative">
               <span className="absolute -top-3 -left-3 h-px w-16 bg-gold z-10" />
               <div className="editorial-frame photo-vignette aspect-[4/5] w-full">
-                <img src={ibiCeremony} alt="Dr. André Linhares · International Business Institute Awards" className="h-full w-full object-cover object-center" />
+                <img loading="lazy" decoding="async" src={ibiCeremony} alt="Dr. André Linhares · International Business Institute Awards" className="h-full w-full object-cover object-center" />
               </div>
               <div className="mt-6">
                 <div className="text-[13px] uppercase tracking-[0.32em] text-gold">{c.awards.ibiTag}</div>
@@ -407,7 +407,7 @@ function LeadershipSection({ c, localeHref }: { c: HomeContent; localeHref: (p: 
                   <div className="col-span-5 relative">
                     <span className="absolute -top-2 -left-2 h-px w-10 bg-gold z-10" />
                     <div className="editorial-frame aspect-[4/5] w-full h-full">
-                      <img src={a.img} alt={a.name} className="h-full w-full object-cover object-top" />
+                      <img loading="lazy" decoding="async" src={a.img} alt={a.name} className="h-full w-full object-cover object-top" />
                     </div>
                   </div>
                   <div className="col-span-7 flex flex-col">
@@ -443,7 +443,7 @@ function ThoughtLeadershipSection({ c }: { c: HomeContent }) {
             <div className="relative">
               <span className="absolute -top-3 -left-3 h-px w-20 bg-gold z-10" />
               <div className="editorial-frame photo-vignette aspect-[4/5] w-full">
-                <img src={andreSpeaking} alt="André Linhares" className="h-full w-full object-cover" />
+                <img loading="lazy" decoding="async" src={andreSpeaking} alt="André Linhares" className="h-full w-full object-cover" />
               </div>
               <div className="mt-5 flex items-center gap-4">
                 <span className="rule-gold" />
@@ -498,7 +498,7 @@ function CultureSection({ c }: { c: HomeContent }) {
           </div>
           <div className="order-3 lg:order-1 lg:col-span-3">
             <div className="h-full bg-surface border border-border p-6 lg:p-8 flex items-center justify-center">
-              <img src={gptwBadge} alt={c.culture.badgeAlt} className="w-full max-w-[200px] h-auto object-contain" style={{ objectFit: "contain" }} />
+              <img loading="lazy" decoding="async" src={gptwBadge} alt={c.culture.badgeAlt} className="w-full max-w-[200px] h-auto object-contain" style={{ objectFit: "contain" }} />
             </div>
           </div>
         </div>
