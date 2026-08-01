@@ -6,6 +6,7 @@ import { buildLocaleHead } from "@/lib/seo";
 import { useI18n, withLocale } from "@/i18n/useI18n";
 import type { Locale } from "@/i18n/locales";
 import { offices } from "@/data/offices";
+import { EMAIL, PHONE_DISPLAY, mailHref, telHref, whatsappHref } from "@/lib/contact";
 
 const L = "pt" as const;
 
@@ -32,7 +33,7 @@ type PageContent = {
   freeEyebrow: string; freeTitle: string; freeBody: string; freeFormAria: string; freeNote?: string;
   paidEyebrow: string; paidTitle: string; paidBody: string;
   paidBullets: string[]; paidCta: string; paidCtaNote: string;
-  emailLabel: string; whatsappLabel: string; whatsappBody: string; hoursLabel: string; hoursBody: string;
+  emailLabel: string; phoneLabel: string; whatsappLabel: string; whatsappBody: string; hoursLabel: string; hoursBody: string;
   officesEyebrow: string; officesTitle: string;
   ctaTitle: string; ctaSub: string; ctaTeam: string;
 };
@@ -60,6 +61,7 @@ const content: Record<Locale, PageContent> = {
     paidCta: "Agendar Consulta",
     paidCtaNote: "Abre em uma nova aba, ambiente seguro do Zoho Bookings.",
     emailLabel: "E-mail",
+    phoneLabel: "Telefone",
     whatsappLabel: "WhatsApp",
     whatsappBody: "Atendimento institucional",
     hoursLabel: "Atendimento",
@@ -93,6 +95,7 @@ const content: Record<Locale, PageContent> = {
     paidCta: "Schedule a Consultation",
     paidCtaNote: "Opens in a new tab — secure Zoho Bookings environment.",
     emailLabel: "Email",
+    phoneLabel: "Phone",
     whatsappLabel: "WhatsApp",
     whatsappBody: "Institutional line",
     hoursLabel: "Hours",
@@ -126,6 +129,7 @@ const content: Record<Locale, PageContent> = {
     paidCta: "Agendar Consulta",
     paidCtaNote: "Se abre en una nueva pestaña, entorno seguro de Zoho Bookings.",
     emailLabel: "Correo electrónico",
+    phoneLabel: "Teléfono",
     whatsappLabel: "WhatsApp",
     whatsappBody: "Línea institucional",
     hoursLabel: "Horario",
@@ -197,20 +201,33 @@ export function ContatoPage() {
           </div>
         </div>
 
-        <div className="mt-16 border border-border bg-background p-8 md:p-10 grid gap-8 md:grid-cols-3">
+        <div className="mt-16 border border-border bg-background p-8 md:p-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <p className="text-[11px] uppercase tracking-[0.28em] text-muted-foreground">{c.emailLabel}</p>
-            <a href="mailto:info@linhareslaw.com" className="mt-2 block text-ink hover:text-gold">info@linhareslaw.com</a>
+            <a href={mailHref} className="mt-2 block text-ink hover:text-gold">{EMAIL}</a>
           </div>
           <div>
             <p className="text-[11px] uppercase tracking-[0.28em] text-muted-foreground">{c.whatsappLabel}</p>
-            <p className="mt-2 text-ink">{c.whatsappBody}</p>
+            <a
+              href={whatsappHref(locale)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 block text-ink hover:text-gold"
+            >
+              {PHONE_DISPLAY}
+            </a>
+            <p className="mt-1 text-xs text-muted-foreground">{c.whatsappBody}</p>
+          </div>
+          <div>
+            <p className="text-[11px] uppercase tracking-[0.28em] text-muted-foreground">{c.phoneLabel}</p>
+            <a href={telHref} className="mt-2 block text-ink hover:text-gold">{PHONE_DISPLAY}</a>
           </div>
           <div>
             <p className="text-[11px] uppercase tracking-[0.28em] text-muted-foreground">{c.hoursLabel}</p>
             <p className="mt-2 text-ink">{c.hoursBody}</p>
           </div>
         </div>
+
       </SectionBlock>
 
       <SectionBlock tone="surface">

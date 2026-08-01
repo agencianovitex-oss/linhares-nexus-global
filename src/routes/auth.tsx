@@ -10,7 +10,7 @@ import { toast } from "sonner";
 
 const searchSchema = z.object({
   redirect: z.string().optional().catch(undefined),
-  mode: z.enum(["login", "signup", "forgot"]).optional().catch(undefined),
+  mode: z.enum(["login", "forgot"]).optional().catch(undefined),
 });
 
 export const Route = createFileRoute("/auth")({
@@ -28,10 +28,9 @@ export const Route = createFileRoute("/auth")({
 function AuthPage() {
   const navigate = useNavigate();
   const search = useSearch({ from: "/auth" });
-  const [mode, setMode] = useState<"login" | "signup" | "forgot">(search.mode ?? "login");
+  const [mode, setMode] = useState<"login" | "forgot">(search.mode ?? "login");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
   const [loading, setLoading] = useState(false);
 
   const redirectTo = search.redirect ?? "/admin";
@@ -40,19 +39,7 @@ function AuthPage() {
     e.preventDefault();
     setLoading(true);
     try {
-      if (mode === "signup") {
-        const { error } = await supabase.auth.signUp({
-          email,
-          password,
-          options: {
-            emailRedirectTo: window.location.origin + "/admin",
-            data: { full_name: name },
-          },
-        });
-        if (error) throw error;
-        toast.success("Conta criada. Verifique seu e-mail se a confirmação estiver ativa.");
-        navigate({ to: "/admin" });
-      } else if (mode === "login") {
+      if (mode === "login") {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
         toast.success("Bem-vindo de volta.");
@@ -97,12 +84,6 @@ function AuthPage() {
         </div>
 
         <form onSubmit={handleEmailAuth} className="space-y-4">
-          {mode === "signup" && (
-            <div>
-              <Label htmlFor="name">Nome</Label>
-              <Input id="name" value={name} onChange={(e) => setName(e.target.value)} required />
-            </div>
-          )}
           <div>
             <Label htmlFor="email">E-mail</Label>
             <Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
@@ -114,7 +95,7 @@ function AuthPage() {
             </div>
           )}
           <Button type="submit" disabled={loading} className="w-full bg-[rgb(6,36,67)] hover:bg-[rgb(16,52,92)] text-white">
-            {loading ? "Aguarde…" : mode === "signup" ? "Criar conta" : mode === "forgot" ? "Enviar link de recuperação" : "Entrar"}
+            {loading ? "Aguarde…" : mode === "forgot" ? "Enviar link de recuperação" : "Entrar"}
           </Button>
         </form>
 
@@ -130,24 +111,11 @@ function AuthPage() {
         )}
 
         <div className="mt-6 text-center text-sm space-y-1">
-          {mode === "login" && (
-            <>
-              <button type="button" className="text-[rgb(179,134,66)] underline" onClick={() => setMode("signup")}>
-                Criar nova conta
-              </button>
-              <div>
-                <button type="button" className="text-muted-foreground hover:underline" onClick={() => setMode("forgot")}>
-                  Esqueci minha senha
-                </button>
-              </div>
-            </>
-          )}
-          {mode === "signup" && (
-            <button type="button" className="text-[rgb(179,134,66)] underline" onClick={() => setMode("login")}>
-              Já tenho conta
+          {mode === "login" ? (
+            <button type="button" className="text-muted-foreground hover:underline" onClick={() => setMode("forgot")}>
+              Esqueci minha senha
             </button>
-          )}
-          {mode === "forgot" && (
+          ) : (
             <button type="button" className="text-[rgb(179,134,66)] underline" onClick={() => setMode("login")}>
               Voltar para entrar
             </button>

@@ -50,7 +50,11 @@ export function buildLocaleHead({
   ];
 
   meta.push({ property: "og:image", content: image });
+  meta.push({ property: "og:image:width", content: "1200" });
+  meta.push({ property: "og:image:height", content: "630" });
+  meta.push({ property: "og:image:alt", content: title });
   meta.push({ name: "twitter:image", content: image });
+
   if (noindex) meta.push({ name: "robots", content: "noindex, nofollow" });
 
   const links: Array<{ rel: string; href: string; hrefLang?: string }> = [

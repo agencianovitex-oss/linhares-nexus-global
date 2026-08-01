@@ -14,6 +14,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Toaster } from "@/components/ui/sonner";
 import { organizationSchema, websiteSchema } from "@/lib/schema";
+import { BRAND_LOGO_PATH } from "@/lib/brand";
 import { localeFromPath } from "@/i18n/useI18n";
 import { LOCALE_HREFLANG } from "@/i18n/locales";
 
@@ -127,7 +128,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify(organizationSchema("/favicon-512.png")),
+        children: JSON.stringify(organizationSchema(BRAND_LOGO_PATH)),
       },
       {
         type: "application/ld+json",

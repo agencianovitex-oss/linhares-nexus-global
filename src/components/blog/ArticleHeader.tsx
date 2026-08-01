@@ -28,7 +28,7 @@ export function ArticleHeader({ post, locale }: Props) {
         {post.author_full && (
           <div className="flex items-center gap-3">
             {post.author_full.photo_url ? (
-              <img src={mediaUrl(post.author_full.photo_url)} alt={post.author_full.name} className="h-10 w-10 rounded-full object-cover" />
+              <img loading="lazy" decoding="async" src={mediaUrl(post.author_full.photo_url)} alt={post.author_full.name} className="h-10 w-10 rounded-full object-cover" />
             ) : <div className="h-10 w-10 rounded-full bg-[rgb(6_36_67)]/10" />}
             <div className="leading-tight">
               <Link {...taxonomyLink(locale, "author", post.author_full.slug)} className="font-medium text-ink hover:text-[rgb(6_36_67)]">
