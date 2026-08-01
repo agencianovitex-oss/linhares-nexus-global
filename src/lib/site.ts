@@ -1,5 +1,5 @@
 /** Canonical production origin. Never use the .lovable.app staging domain here. */
-export const SITE_ORIGIN = "https://linhareslaw.com";
+export const SITE_ORIGIN = "https://www.linhareslaw.com";
 
 /** Turns a site-relative path (or an already absolute URL) into an absolute URL. */
 export function absUrl(path: string): string {

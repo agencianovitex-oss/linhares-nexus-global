@@ -18,7 +18,9 @@ import julyanaAsset from "@/assets/team-julyana-fama.jpg.asset.json";
 import brunaAAsset from "@/assets/team-bruna-alves.jpg.asset.json";
 import samaraAsset from "@/assets/team-samara-silvestre.jpg.asset.json";
 import vyvianAsset from "@/assets/team-vyvian-bastos.jpg.asset.json";
-import renataAsset from "@/assets/renata-liberman.jpg.asset.json";
+import renataAsset from "@/assets/renata-liberman-v2.webp.asset.json";
+import heitorAsset from "@/assets/team-heitor.webp.asset.json";
+import andressaAsset from "@/assets/team-andressa-hughes.webp.asset.json";
 import edsonAsset from "@/assets/edson-matunaga.jpg.asset.json";
 import paolaAsset from "@/assets/paola-irvin.jpg.asset.json";
 import manuelaAsset from "@/assets/manuela-truschelli.jpg.asset.json";
@@ -33,6 +35,8 @@ const brunaA = brunaAAsset.url;
 const samara = samaraAsset.url;
 const vyvian = vyvianAsset.url;
 const renata = renataAsset.url;
+const heitor = heitorAsset.url;
+const andressa = andressaAsset.url;
 const edson = edsonAsset.url;
 const paola = paolaAsset.url;
 const manuela = manuelaAsset.url;
@@ -127,7 +131,7 @@ export const teamGroups: TeamGroup[] = [
       { name: "Fernanda Ruiz", role: "Paralegal", portrait: fernanda },
       { name: "Rafaela Barbosa", role: "Paralegal", portrait: rafaela },
       { name: "Samara Silvestre", role: "Paralegal", portrait: samara },
-      { name: "Heitor", role: "Paralegal" },
+      { name: "Heitor", role: "Paralegal", portrait: heitor },
     ],
   },
   {
@@ -140,6 +144,7 @@ export const teamGroups: TeamGroup[] = [
       { name: "Bruna Mayara Alves", role: "Legal Assistant", portrait: brunaA },
       { name: "Rafael Frinhani", role: "Legal Assistant", portrait: rafael },
       { name: "Nadyne Santos", role: "Legal Assistant", portrait: nadyne },
+      { name: "Andressa Hughes", role: "Legal Assistant", portrait: andressa },
     ],
   },
   {
