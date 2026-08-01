@@ -2,6 +2,7 @@ import { LOCALES, LOCALE_HREFLANG, type Locale } from "@/i18n/locales";
 import { withLocale } from "@/i18n/useI18n";
 import { blogArticlePath, siteOrigin, tBlog } from "@/lib/blog/i18n-strings";
 import { mediaUrl } from "@/lib/blog/media-url";
+import { BRAND_LOGO_PATH } from "@/lib/brand";
 import type { PublicPostDetail } from "@/lib/blog/public.functions";
 
 interface MetaItem extends Record<string, string> {}
@@ -28,7 +29,11 @@ export function buildArticleHead(post: PublicPostDetail, locale: Locale, localiz
     { name: "twitter:description", content: description },
   ];
   meta.push({ property: "og:image", content: img });
+  meta.push({ property: "og:image:width", content: "1200" });
+  meta.push({ property: "og:image:height", content: "630" });
+  meta.push({ property: "og:image:alt", content: post.title });
   meta.push({ name: "twitter:image", content: img });
+  meta.push({ property: "og:locale", content: LOCALE_HREFLANG[locale].replace("-", "_") });
   if (post.published_at) meta.push({ property: "article:published_time", content: post.published_at });
   if (post.updated_at) meta.push({ property: "article:modified_time", content: post.updated_at });
   if (post.author_full?.name) meta.push({ property: "article:author", content: post.author_full.name });
@@ -43,6 +48,8 @@ export function buildArticleHead(post: PublicPostDetail, locale: Locale, localiz
   for (const l of LOCALES) {
     links.push({ rel: "alternate", hrefLang: LOCALE_HREFLANG[l], href: `${origin}${blogArticlePath(l, post.slug)}` });
   }
+  // x-default always resolves to the Portuguese version (authoring locale).
+  links.push({ rel: "alternate", hrefLang: "x-default", href: `${origin}${blogArticlePath("pt", post.slug)}` });
 
   const article = {
     "@context": "https://schema.org",
@@ -57,7 +64,7 @@ export function buildArticleHead(post: PublicPostDetail, locale: Locale, localiz
     publisher: {
       "@type": "Organization",
       name: "Linhares Law",
-      logo: { "@type": "ImageObject", url: `${origin}/favicon-512.png` },
+      logo: { "@type": "ImageObject", url: `${origin}${BRAND_LOGO_PATH}` },
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     timeRequired: post.reading_time_minutes ? `PT${post.reading_time_minutes}M` : undefined,
