@@ -3,6 +3,8 @@ import { useI18n, withLocale } from "@/i18n/useI18n";
 import { Container } from "./Container";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import logoWhite from "@/assets/logo-horizontal-white.png.asset.json";
+import { EMAIL, PHONE_DISPLAY, mailHref, telHref, whatsappHref } from "@/lib/contact";
+
 
 const OFFICES = [
   { city: "Orlando", state: "Florida" },
