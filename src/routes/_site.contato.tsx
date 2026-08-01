@@ -197,20 +197,33 @@ export function ContatoPage() {
           </div>
         </div>
 
-        <div className="mt-16 border border-border bg-background p-8 md:p-10 grid gap-8 md:grid-cols-3">
+        <div className="mt-16 border border-border bg-background p-8 md:p-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <p className="text-[11px] uppercase tracking-[0.28em] text-muted-foreground">{c.emailLabel}</p>
-            <a href="mailto:info@linhareslaw.com" className="mt-2 block text-ink hover:text-gold">info@linhareslaw.com</a>
+            <a href={mailHref} className="mt-2 block text-ink hover:text-gold">{EMAIL}</a>
           </div>
           <div>
             <p className="text-[11px] uppercase tracking-[0.28em] text-muted-foreground">{c.whatsappLabel}</p>
-            <p className="mt-2 text-ink">{c.whatsappBody}</p>
+            <a
+              href={whatsappHref(locale)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 block text-ink hover:text-gold"
+            >
+              {PHONE_DISPLAY}
+            </a>
+            <p className="mt-1 text-xs text-muted-foreground">{c.whatsappBody}</p>
+          </div>
+          <div>
+            <p className="text-[11px] uppercase tracking-[0.28em] text-muted-foreground">{c.phoneLabel}</p>
+            <a href={telHref} className="mt-2 block text-ink hover:text-gold">{PHONE_DISPLAY}</a>
           </div>
           <div>
             <p className="text-[11px] uppercase tracking-[0.28em] text-muted-foreground">{c.hoursLabel}</p>
             <p className="mt-2 text-ink">{c.hoursBody}</p>
           </div>
         </div>
+
       </SectionBlock>
 
       <SectionBlock tone="surface">
