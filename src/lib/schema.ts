@@ -11,6 +11,8 @@ const STATE_CODE: Record<string, string> = {
 };
 
 export const ORG_ID = `${SITE_ORIGIN}/#organization`;
+/** Stable @id for the founder Person entity, referenced from the LegalService. */
+export const FOUNDER_ID = `${SITE_ORIGIN}/#andre-linhares`;
 const PHONE = "+1-407-725-4988";
 
 export const SAME_AS = [
@@ -47,6 +49,15 @@ export function organizationSchema(logoUrl: string) {
     availableLanguage: ["pt-BR", "en", "es"],
     sameAs: SAME_AS,
     address: postalAddress("Orlando"),
+    founder: { "@id": FOUNDER_ID },
+    employee: { "@id": FOUNDER_ID },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: 90,
+      bestRating: "5",
+      worstRating: "1",
+    },
     location: offices.map((o) => ({
       "@type": "Place",
       name: `${o.city} Office`,
@@ -73,6 +84,40 @@ export function organizationSchema(logoUrl: string) {
         availableLanguage: ["Portuguese", "English", "Spanish"],
       },
     ],
+  };
+}
+
+/**
+ * Person entity for the founding attorney, populated strictly from the
+ * front-end profile content (src/i18n/content/team-profiles.ts) and linked to
+ * the firm's LegalService entity.
+ */
+export function founderSchema(input: {
+  name: string;
+  jobTitle: string;
+  description: string;
+  image?: string;
+  url: string;
+  bars?: string[];
+  knowsAbout?: string[];
+  awards?: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": ["Person", "Attorney"],
+    "@id": FOUNDER_ID,
+    name: input.name,
+    jobTitle: input.jobTitle,
+    description: input.description,
+    image: input.image ? absUrl(input.image) : undefined,
+    url: absUrl(input.url),
+    knowsLanguage: ["pt-BR", "en", "es"],
+    knowsAbout: input.knowsAbout,
+    award: input.awards,
+    memberOf: input.bars?.map((b) => ({ "@type": "Organization", name: b })),
+    worksFor: { "@id": ORG_ID },
+    founderOf: { "@id": ORG_ID },
+    sameAs: SAME_AS,
   };
 }
 
@@ -130,6 +175,7 @@ export function serviceSchema(input: {
 }
 
 export function attorneySchema(input: {
+  id?: string;
   name: string;
   jobTitle: string;
   description: string;
@@ -140,6 +186,7 @@ export function attorneySchema(input: {
   return {
     "@context": "https://schema.org",
     "@type": "Attorney",
+    "@id": input.id,
     name: input.name,
     jobTitle: input.jobTitle,
     description: input.description,

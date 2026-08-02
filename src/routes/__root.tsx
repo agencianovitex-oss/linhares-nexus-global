@@ -13,7 +13,8 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Toaster } from "@/components/ui/sonner";
-import { organizationSchema, websiteSchema } from "@/lib/schema";
+import { organizationSchema, websiteSchema, founderSchema } from "@/lib/schema";
+import { attorneyProfiles } from "@/i18n/content/team-profiles";
 import { BRAND_LOGO_PATH } from "@/lib/brand";
 import { localeFromPath } from "@/i18n/useI18n";
 import { LOCALE_HREFLANG } from "@/i18n/locales";
@@ -137,6 +138,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         type: "application/ld+json",
         children: JSON.stringify(websiteSchema()),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          (() => {
+            const p = attorneyProfiles.pt["andre-linhares"];
+            return founderSchema({
+              name: p.name,
+              jobTitle: p.title,
+              description: p.shortBio,
+              image: p.hero,
+              url: "/equipe/andre-linhares",
+              bars: p.bars,
+              knowsAbout: p.practice,
+              awards: p.recognition,
+            });
+          })(),
+        ),
       },
     ],
   }),
