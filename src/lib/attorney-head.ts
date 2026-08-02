@@ -1,6 +1,6 @@
 import { buildLocaleHead } from "@/lib/seo";
 import { attorneyProfiles, profileLabels } from "@/i18n/content/team-profiles";
-import { attorneySchema, breadcrumbSchema } from "@/lib/schema";
+import { attorneySchema, breadcrumbSchema, FOUNDER_ID } from "@/lib/schema";
 import { withLocale } from "@/i18n/useI18n";
 import type { Locale } from "@/i18n/locales";
 
@@ -29,6 +29,7 @@ export function attorneyHead(locale: Locale, slug: string) {
     ogImage: p.hero,
     jsonLd: [
       attorneySchema({
+        id: slug === "andre-linhares" ? FOUNDER_ID : undefined,
         name: p.name,
         jobTitle: p.title,
         description: p.shortBio,
