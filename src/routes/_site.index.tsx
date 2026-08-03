@@ -9,9 +9,9 @@ export const Route = createFileRoute("/_site/")({
     buildLocaleHead({
       path: "/",
       locale: "pt",
-      title: "Linhares Law, Advogados de Imigração Americana",
+      title: "Linhares Law: Advogados Especialistas em Imigração Americana e Green Card",
       description:
-        "Escritório boutique de imigração americana. Há mais de 14 anos representamos profissionais, investidores e famílias, com escritórios em Orlando, Miami, New York e Salt Lake City.",
+        "Escritório de advocacia dedicado exclusivamente à imigração para os EUA. Assessoramos profissionais qualificados (Vistos EB-2 NIW, EB-1), executivos (L-1), investidores (EB-5) e famílias em suas jornadas para viver legalmente na América.",
     }),
   loader: ({ context }) => {
     void context.queryClient.ensureQueryData(homeFeaturedPostsQuery("pt"));
