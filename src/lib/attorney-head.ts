@@ -14,7 +14,7 @@ export function attorneyHead(locale: Locale, slug: string) {
     return buildLocaleHead({
       path,
       locale,
-      title: `${labels.notFound}, Linhares Law`,
+      title: `${labels.notFound} | Linhares Law`,
       description: labels.metaFallback,
       noindex: true,
     });

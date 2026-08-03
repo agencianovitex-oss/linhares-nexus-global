@@ -7,7 +7,7 @@ export const Route = createFileRoute("/_site/en/casos-de-sucesso")({
     buildLocaleHead({
       path: "/casos-de-sucesso",
       locale: "en",
-      title: "Testimonials, Linhares Law",
+      title: "Testimonials | Linhares Law",
       description:
         "Real stories from Linhares Law clients about their U.S. immigration journeys and the approvals they secured with our representation.",
     }),
