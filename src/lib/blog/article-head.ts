@@ -10,7 +10,7 @@ interface MetaItem extends Record<string, string> {}
 export function buildArticleHead(post: PublicPostDetail, locale: Locale, localizedPath: string) {
   const origin = siteOrigin();
   const url = `${origin}${localizedPath}`;
-  const title = `${post.meta_title || post.title}, Linhares Law`;
+  const title = `${post.meta_title || post.title} | Linhares Law`;
   const description = post.meta_description || post.excerpt || "";
   const rawImg = mediaUrl(post.cover_image_url);
   const img = rawImg ? (rawImg.startsWith("http") ? rawImg : `${origin}${rawImg}`) : `${origin}/og-default.jpg`;

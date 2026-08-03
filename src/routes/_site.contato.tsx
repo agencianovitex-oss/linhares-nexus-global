@@ -20,7 +20,7 @@ export const Route = createFileRoute("/_site/contato")({
     buildLocaleHead({
       path: "/contato",
       locale: L,
-      title: "Contato, Linhares Law",
+      title: "Contato | Linhares Law",
       description:
         "Inicie uma conversa institucional com a Linhares Law. Consulta gratuita para EB-2 NIW e agendamento de consulta paga para os demais vistos, com atendimento nos quatro escritórios nos Estados Unidos.",
     }),

@@ -142,7 +142,7 @@ export const homeContent: Record<Locale, HomeContent> = {
       footerLine: "Distinções institucionais · 2026, PRESENTE",
       ctaAll: "Ver todas as premiações",
       items: [
-        { title: "10 Best Law Firms", org: "American Institute of Legal Professionals", year: "2026", desc: "Immigration Law, Linhares Law, Florida." },
+        { title: "10 Best Law Firms", org: "American Institute of Legal Professionals", year: "2026", desc: "Immigration Law | Linhares Law, Florida." },
         { title: "The Law Awards", org: "Winner, Immigration Practice", year: "2024", desc: "Distinção internacional pela excelência na prática de imigração americana." },
         { title: "Great Place To Work®", org: "Certified, Estados Unidos", year: "2024, 2026", desc: "Reconhecimento institucional pela cultura organizacional do escritório." },
       ],

@@ -20,7 +20,7 @@ export const Route = createFileRoute("/_site/premiacoes")({
     buildLocaleHead({
       path: "/premiacoes",
       locale: L,
-      title: "Reconhecimentos, Linhares Law",
+      title: "Reconhecimentos | Linhares Law",
       description:
         "Premiações e reconhecimentos institucionais recebidos pela Linhares Law, incluindo IBI Award, 10 Best Law Firms, The Law Awards, Great Place To Work e Prêmio Quality Justiça.",
     }),

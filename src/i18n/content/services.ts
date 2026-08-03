@@ -74,7 +74,7 @@ export const servicesStrings: Record<Locale, ServicesStrings> = {
         { q: "É possível combinar diferentes estratégias migratórias?", a: "Sim. É comum que profissionais transitem entre vistos não-imigrantes (como L-1, O-1 ou E-2) e categorias de Green Card (EB-1, EB-2 NIW, EB-5) ao longo de sua trajetória." },
         { q: "A Linhares Law oferece consultoria migratória?", a: "Não. A Linhares Law é um escritório de advocacia americano com atuação exclusiva em imigração, atuando como conselho jurídico permanente." },
       ],
-      seoTitle: "Áreas de Atuação, Linhares Law",
+      seoTitle: "Áreas de Atuação | Linhares Law",
       seoDescription:
         "Estratégias migratórias para profissionais, empresários, investidores e famílias. EB-2 NIW, EB-1, E-2, L-1, O-1, H-1B e EB-5.",
       seoFallbackDescription: "Estratégias jurídicas de imigração americana.",
@@ -133,7 +133,7 @@ export const servicesStrings: Record<Locale, ServicesStrings> = {
         { q: "Is it possible to combine different immigration strategies?", a: "Yes. Professionals frequently move between nonimmigrant visas (such as L-1, O-1 or E-2) and Green Card categories (EB-1, EB-2 NIW, EB-5) over the course of their journey." },
         { q: "Does Linhares Law provide immigration consulting?", a: "No. Linhares Law is a U.S. law firm practicing exclusively in immigration law, acting as permanent legal counsel." },
       ],
-      seoTitle: "Practice Areas, Linhares Law",
+      seoTitle: "Practice Areas | Linhares Law",
       seoDescription:
         "U.S. immigration strategies for professionals, entrepreneurs, investors and families. EB-2 NIW, EB-1, E-2, L-1, O-1, H-1B and EB-5.",
       seoFallbackDescription: "U.S. immigration legal strategies.",
@@ -192,7 +192,7 @@ export const servicesStrings: Record<Locale, ServicesStrings> = {
         { q: "¿Es posible combinar diferentes estrategias migratorias?", a: "Sí. Es común que los profesionales transiten entre visas de no inmigrante (como L-1, O-1 o E-2) y categorías de Green Card (EB-1, EB-2 NIW, EB-5) a lo largo de su trayectoria." },
         { q: "¿Linhares Law ofrece consultoría migratoria?", a: "No. Linhares Law es un despacho de abogados estadounidense con actuación exclusiva en inmigración, actuando como consejo jurídico permanente." },
       ],
-      seoTitle: "Áreas de Práctica, Linhares Law",
+      seoTitle: "Áreas de Práctica | Linhares Law",
       seoDescription:
         "Estrategias migratorias para profesionales, empresarios, inversionistas y familias. EB-2 NIW, EB-1, E-2, L-1, O-1, H-1B y EB-5.",
       seoFallbackDescription: "Estrategias jurídicas de inmigración estadounidense.",
