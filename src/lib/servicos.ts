@@ -43,7 +43,7 @@ export function hubHead(locale: Locale) {
       breadcrumbSchema(
         [
           { name: "Home", path: "/" },
-          { name: t.seoTitle.split(",")[0], path: servicesBase(locale) },
+          { name: t.seoTitle.split("|")[0].trim(), path: servicesBase(locale) },
         ],
         locale,
       ),
