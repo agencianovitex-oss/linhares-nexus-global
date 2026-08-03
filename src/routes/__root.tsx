@@ -84,11 +84,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Linhares Law | Advogados de Imigração Americana" },
+      { title: "Linhares Law: Advogados Especialistas em Imigração Americana e Green Card" },
       {
         name: "description",
         content:
-          "Escritório boutique de imigração americana. Representamos profissionais qualificados, executivos, investidores e famílias em processos como EB-2 NIW, EB-1, L-1 e EB-5.",
+          "Escritório de advocacia dedicado exclusivamente à imigração para os EUA. Assessoramos profissionais qualificados (Vistos EB-2 NIW, EB-1), executivos (L-1), investidores (EB-5) e famílias em suas jornadas para viver legalmente na América.",
       },
       { property: "og:site_name", content: "Linhares Law" },
       { property: "og:type", content: "website" },
@@ -96,17 +96,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "format-detection", content: "telephone=no" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
       { name: "author", content: "Linhares Law" },
-      { property: "og:title", content: "Linhares Law | Advogados de Imigração Americana" },
-      { name: "twitter:title", content: "Linhares Law | Advogados de Imigração Americana" },
+      {
+        property: "og:title",
+        content: "Linhares Law: Advogados Especialistas em Imigração Americana e Green Card",
+      },
+      {
+        name: "twitter:title",
+        content: "Linhares Law: Advogados Especialistas em Imigração Americana e Green Card",
+      },
       {
         property: "og:description",
         content:
-          "Escritório boutique de imigração americana. Representamos profissionais qualificados, executivos, investidores e famílias em processos como EB-2 NIW, EB-1, L-1 e EB-5.",
+          "Escritório de advocacia dedicado exclusivamente à imigração para os EUA. Assessoramos profissionais qualificados (Vistos EB-2 NIW, EB-1), executivos (L-1), investidores (EB-5) e famílias em suas jornadas para viver legalmente na América.",
       },
       {
         name: "twitter:description",
         content:
-          "Escritório boutique de imigração americana. Representamos profissionais qualificados, executivos, investidores e famílias em processos como EB-2 NIW, EB-1, L-1 e EB-5.",
+          "Escritório de advocacia dedicado exclusivamente à imigração para os EUA. Assessoramos profissionais qualificados (Vistos EB-2 NIW, EB-1), executivos (L-1), investidores (EB-5) e famílias em suas jornadas para viver legalmente na América.",
       },
     ],
     links: [
