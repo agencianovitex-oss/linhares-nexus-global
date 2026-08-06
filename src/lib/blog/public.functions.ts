@@ -41,6 +41,7 @@ export type PublicProfession = { id: string; slug: string; name: string };
 export type PublicPostListItem = {
   id: string;
   slug: string;
+  slugs: Record<"pt" | "en" | "es", string>;
   cover_image_url: string | null;
   published_at: string | null;
   reading_time_minutes: number | null;
@@ -93,6 +94,7 @@ type PostRow = {
   cta_url: string | null;
   translations: Array<{
     locale: "pt" | "en" | "es";
+    slug: string | null;
     title: string;
     excerpt: string | null;
     body: unknown;
@@ -109,6 +111,14 @@ function pickTr(arr: any[] | null | undefined, loc: string): any {
   return arr.find((t: any) => t.locale === loc) ?? arr.find((t: any) => t.locale === "pt") ?? arr[0];
 }
 
+function slugMap(row: PostRow): Record<"pt" | "en" | "es", string> {
+  const out = { pt: row.slug, en: row.slug, es: row.slug };
+  for (const t of row.translations ?? []) {
+    if (t.slug) out[t.locale] = t.slug;
+  }
+  return out;
+}
+
 function rowToListItem(row: PostRow, loc: string): PublicPostListItem | null {
   const tr = pickTr(row.translations, loc);
   if (!tr) return null;
@@ -116,7 +126,8 @@ function rowToListItem(row: PostRow, loc: string): PublicPostListItem | null {
   const authorTr = row.author ? pickTr(row.author.translations, loc) : null;
   return {
     id: row.id,
-    slug: row.slug,
+    slug: tr.slug || row.slug,
+    slugs: slugMap(row),
     cover_image_url: row.cover_image_url,
     published_at: row.published_at,
     reading_time_minutes: row.reading_time_minutes,
@@ -134,7 +145,7 @@ const baseSelect = `
   id, slug, cover_image_url, published_at, reading_time_minutes,
   is_featured, featured_order, is_pillar_content, category_id, author_id, updated_at,
   cta_type, cta_title, cta_description, cta_button_text, cta_url,
-  translations:post_translations(locale, title, excerpt, body, meta_title, meta_description, faq),
+  translations:post_translations(locale, slug, title, excerpt, body, meta_title, meta_description, faq),
   category:categories(id, slug, parent_id, position, translations:category_translations(locale, name, description)),
   author:authors(id, slug, name, photo_url, linkedin_url, translations:author_translations(locale, role_title, short_bio))
 `;
@@ -261,9 +272,15 @@ export const getPostBySlug = createServerFn({ method: "GET" })
     z.object({ slug: z.string().min(1), locale: Locale }).parse(d))
   .handler(async ({ data }) => {
     const sb = client();
-    const { data: row, error } = await sb.from("posts").select(baseSelect)
-      .eq("slug", data.slug).eq("status", "published").lte("published_at", NOW())
-      .maybeSingle();
+    // Localized slug first (per-locale slug lives on post_translations), then legacy post slug.
+    const { data: trHit } = await sb.from("post_translations")
+      .select("post_id").eq("locale", data.locale).eq("slug", data.slug).maybeSingle();
+
+    let query = sb.from("posts").select(baseSelect)
+      .eq("status", "published").lte("published_at", NOW());
+    query = trHit?.post_id ? query.eq("id", trHit.post_id) : query.eq("slug", data.slug);
+
+    const { data: row, error } = await query.maybeSingle();
     if (error) throw new Error(error.message);
     if (!row) return null;
 
@@ -295,7 +312,7 @@ export const getPostBySlug = createServerFn({ method: "GET" })
       .map((f) => ({ question: f.question as string, answer: f.answer as string }));
 
     const detail: PublicPostDetail = {
-      id: r.id, slug: r.slug,
+      id: r.id, slug: tr.slug || r.slug, slugs: slugMap(r),
       cover_image_url: r.cover_image_url, published_at: r.published_at,
       reading_time_minutes: r.reading_time_minutes,
       is_featured: !!r.is_featured, featured_order: r.featured_order,
@@ -450,17 +467,42 @@ export const searchPosts = createServerFn({ method: "GET" })
     ).slice(0, data.limit);
   });
 
+/* ---------------- Latest (sidebar) ---------------- */
+
+export const getLatestPosts = createServerFn({ method: "GET" })
+  .inputValidator((d: { locale: "pt" | "en" | "es"; limit?: number; excludeId?: string }) =>
+    z.object({ locale: Locale, limit: z.number().int().min(1).max(10).default(4), excludeId: z.string().optional() }).parse(d))
+  .handler(async ({ data }) => {
+    const sb = client();
+    let q = sb.from("posts").select(baseSelect)
+      .eq("status", "published").lte("published_at", NOW())
+      .order("published_at", { ascending: false, nullsFirst: false })
+      .limit(data.limit + 1);
+    if (data.excludeId) q = q.not("id", "eq", data.excludeId);
+    const { data: rows } = await q;
+    return ((rows as unknown as PostRow[]) ?? [])
+      .map((r) => rowToListItem(r, data.locale))
+      .filter((x): x is PublicPostListItem => x !== null)
+      .slice(0, data.limit);
+  });
+
 /* ---------------- Sitemap ---------------- */
 
 export const listAllPublishedSlugs = createServerFn({ method: "GET" })
   .handler(async () => {
     const sb = client();
     const { data: rows } = await sb.from("posts")
-      .select("slug, updated_at, published_at, translations:post_translations(locale)")
+      .select("slug, updated_at, published_at, translations:post_translations(locale, slug)")
       .eq("status", "published").lte("published_at", NOW());
-    return (rows ?? []).map((r: any) => ({
-      slug: r.slug as string,
-      updated_at: (r.updated_at as string) ?? (r.published_at as string),
-      locales: ((r.translations ?? []) as Array<{ locale: string }>).map((t) => t.locale),
-    }));
+    return (rows ?? []).map((r: any) => {
+      const trs = (r.translations ?? []) as Array<{ locale: string; slug: string | null }>;
+      const slugs: Record<string, string> = {};
+      for (const t of trs) slugs[t.locale] = t.slug || (r.slug as string);
+      return {
+        slug: r.slug as string,
+        updated_at: (r.updated_at as string) ?? (r.published_at as string),
+        locales: trs.map((t) => t.locale),
+        slugs,
+      };
+    });
   });
