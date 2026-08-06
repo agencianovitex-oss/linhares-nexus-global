@@ -6,13 +6,16 @@ import Link from "@tiptap/extension-link";
 import Placeholder from "@tiptap/extension-placeholder";
 import Underline from "@tiptap/extension-underline";
 import TextAlign from "@tiptap/extension-text-align";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   Bold, Italic, Underline as UnderlineIcon, List, ListOrdered,
   Heading1, Heading2, Heading3, Quote, Link2, Image as ImageIcon, Minus, Code,
   AlignLeft, AlignCenter, AlignRight,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
+import { ImageCropDialog } from "@/components/admin/ImageCropDialog";
 
 interface Props {
   value: JSONContent | null;
@@ -39,6 +42,9 @@ export function TipTapEditor({ value, onChange, placeholder }: Props) {
     },
   });
 
+  const [pendingImage, setPendingImage] = useState<File | null>(null);
+  const [uploading, setUploading] = useState(false);
+
   useEffect(() => {
     if (!editor) return;
     const current = editor.getJSON();
@@ -49,6 +55,21 @@ export function TipTapEditor({ value, onChange, placeholder }: Props) {
   }, [editor]);
 
   if (!editor) return null;
+
+  const uploadCropped = async (file: File) => {
+    setUploading(true);
+    try {
+      const path = `${crypto.randomUUID()}.webp`;
+      const { error } = await supabase.storage.from("blog-media").upload(path, file, { contentType: "image/webp" });
+      if (error) throw error;
+      editor.chain().focus().setImage({ src: `/api/public/blog-media/${path}` }).run();
+      toast.success("Imagem inserida.");
+    } catch (e: any) {
+      toast.error(e?.message ?? "Erro no upload");
+    } finally {
+      setUploading(false);
+    }
+  };
 
   const Btn = ({ active, onClick, children, title }: any) => (
     <button
@@ -94,11 +115,27 @@ export function TipTapEditor({ value, onChange, placeholder }: Props) {
         <Btn title="Alinhar à direita" active={editor.isActive({ textAlign: "right" })} onClick={() => editor.chain().focus().setTextAlign("right").run()}><AlignRight size={14} /></Btn>
         <span className="mx-1 h-5 w-px bg-border" />
         <Btn title="Link" active={editor.isActive("link")} onClick={promptLink}><Link2 size={14} /></Btn>
+        <label title="Imagem (upload com recorte)"
+          className="cursor-pointer rounded p-2 transition-colors hover:bg-muted">
+          <ImageIcon size={14} className={uploading ? "animate-pulse" : undefined} />
+          <input type="file" accept="image/*" className="hidden" onChange={(e) => {
+            const f = e.target.files?.[0];
+            e.target.value = "";
+            if (f) setPendingImage(f);
+          }} />
+        </label>
         <Btn title="Imagem (URL)" onClick={() => {
           const url = window.prompt("URL da imagem");
           if (url) editor.chain().focus().setImage({ src: url }).run();
         }}><ImageIcon size={14} /></Btn>
       </div>
+
+      <ImageCropDialog
+        file={pendingImage}
+        ratios={["16:9", "4:3", "1:1"]}
+        onCancel={() => setPendingImage(null)}
+        onCropped={(f) => { setPendingImage(null); uploadCropped(f); }}
+      />
 
       {/* Contextual bubble menu (Notion/Medium style) */}
       <BubbleMenu
