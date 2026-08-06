@@ -12,6 +12,7 @@ const faqItemSchema = z.object({
 
 const translationSchema = z.object({
   locale: localeSchema,
+  slug: z.string().min(1),
   title: z.string().min(1),
   excerpt: z.string().nullable().optional(),
   body: z.any(),

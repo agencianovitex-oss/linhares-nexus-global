@@ -27,6 +27,7 @@ type Status = "draft" | "scheduled" | "published" | "archived";
 interface FaqItem { question: string; answer: string }
 interface Translation {
   locale: Locale;
+  slug: string;
   title: string;
   excerpt: string;
   body: any;
@@ -58,7 +59,7 @@ interface FormState {
 }
 
 const emptyTranslation = (locale: Locale): Translation => ({
-  locale, title: "", excerpt: "", body: { type: "doc", content: [{ type: "paragraph" }] },
+  locale, slug: "", title: "", excerpt: "", body: { type: "doc", content: [{ type: "paragraph" }] },
   meta_title: "", meta_description: "", faq: [],
 });
 
@@ -105,7 +106,7 @@ export function PostEditorContent({ postId }: { postId?: string }) {
       };
       for (const t of p.translations) {
         trMap[t.locale as Locale] = {
-          locale: t.locale, title: t.title ?? "", excerpt: t.excerpt ?? "",
+          locale: t.locale, slug: t.slug ?? "", title: t.title ?? "", excerpt: t.excerpt ?? "",
           body: t.body ?? { type: "doc", content: [{ type: "paragraph" }] },
           meta_title: t.meta_title ?? "", meta_description: t.meta_description ?? "",
           faq: Array.isArray(t.faq) ? t.faq : [],
@@ -148,7 +149,8 @@ export function PostEditorContent({ postId }: { postId?: string }) {
         cta_url: merged.cta_url || null,
         translations: (["pt","en","es"] as Locale[])
           .map((l) => merged.translations[l])
-          .filter((t) => t.title.trim().length > 0),
+          .filter((t) => t.title.trim().length > 0)
+          .map((t) => ({ ...t, slug: t.slug || slugify(t.title) })),
         tag_ids: merged.tag_ids,
         profession_ids: merged.profession_ids,
       };
@@ -202,6 +204,7 @@ export function PostEditorContent({ postId }: { postId?: string }) {
           },
         });
         updateTr(target, {
+          slug: slugify(res.title || ""),
           title: res.title,
           excerpt: res.excerpt,
           meta_title: res.meta_title,
@@ -299,12 +302,27 @@ export function PostEditorContent({ postId }: { postId?: string }) {
                     <Input
                       value={form.translations[l].title}
                       onChange={(e) => {
-                        updateTr(l, { title: e.target.value });
+                        const tr = form.translations[l];
+                        const patch: Partial<Translation> = { title: e.target.value };
+                        // keep the slug in sync while it was auto-derived from the title
+                        if (!tr.slug || tr.slug === slugify(tr.title)) patch.slug = slugify(e.target.value);
+                        updateTr(l, patch);
                         if (l === "pt" && (!form.slug || form.slug === slugify(form.translations.pt.title))) {
                           setForm((f) => ({ ...f, slug: slugify(e.target.value) }));
                         }
                       }}
                     />
+                  </div>
+                  <div>
+                    <Label>Slug ({l.toUpperCase()})</Label>
+                    <Input
+                      value={form.translations[l].slug}
+                      onChange={(e) => updateTr(l, { slug: slugify(e.target.value) })}
+                      placeholder={slugify(form.translations[l].title || "")}
+                    />
+                    <p className="mt-1 text-[11px] text-muted-foreground">
+                      URL: {l === "pt" ? "/blog/" : `/${l}/blog/`}{form.translations[l].slug || slugify(form.translations[l].title || "")}
+                    </p>
                   </div>
                   <div>
                     <Label>Resumo</Label>
