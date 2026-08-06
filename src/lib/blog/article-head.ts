@@ -43,13 +43,12 @@ export function buildArticleHead(post: PublicPostDetail, locale: Locale, localiz
   const links: Array<{ rel: string; href: string; hrefLang?: string }> = [
     { rel: "canonical", href: url },
   ];
-  // hreflang only for locales that the article actually has (we don't know without an extra query;
-  // emit all 3 — fallback strategy keeps URLs valid).
+  // hreflang per locale, using each locale's own slug.
   for (const l of LOCALES) {
-    links.push({ rel: "alternate", hrefLang: LOCALE_HREFLANG[l], href: `${origin}${blogArticlePath(l, post.slug)}` });
+    links.push({ rel: "alternate", hrefLang: LOCALE_HREFLANG[l], href: `${origin}${blogArticlePath(l, post.slugs?.[l] ?? post.slug)}` });
   }
   // x-default always resolves to the Portuguese version (authoring locale).
-  links.push({ rel: "alternate", hrefLang: "x-default", href: `${origin}${blogArticlePath("pt", post.slug)}` });
+  links.push({ rel: "alternate", hrefLang: "x-default", href: `${origin}${blogArticlePath("pt", post.slugs?.pt ?? post.slug)}` });
 
   const article = {
     "@context": "https://schema.org",

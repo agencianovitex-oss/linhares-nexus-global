@@ -61,12 +61,13 @@ export const Route = createFileRoute("/sitemap.xml")({
         for (const post of posts) {
           for (const l of LOCALES) {
             if (!post.locales.includes(l)) continue;
-            const loc = `${BASE_URL}${blogArticlePath(l, post.slug)}`;
+            const slugFor = (loc2: Locale) => (post.slugs as Record<string, string>)[loc2] ?? post.slug;
+            const loc = `${BASE_URL}${blogArticlePath(l, slugFor(l))}`;
             const alts = post.locales.map(other => ({
               hreflang: LOCALE_HREFLANG[other as Locale],
-              href: `${BASE_URL}${blogArticlePath(other as Locale, post.slug)}`,
+              href: `${BASE_URL}${blogArticlePath(other as Locale, slugFor(other as Locale))}`,
             }));
-            if (post.locales.includes("pt")) alts.push({ hreflang: "x-default", href: `${BASE_URL}${blogArticlePath("pt", post.slug)}` });
+            if (post.locales.includes("pt")) alts.push({ hreflang: "x-default", href: `${BASE_URL}${blogArticlePath("pt", slugFor("pt"))}` });
             blocks.push(urlBlock(loc, post.updated_at, alts, "0.8"));
           }
         }
