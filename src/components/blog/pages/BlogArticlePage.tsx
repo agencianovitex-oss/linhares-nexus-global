@@ -10,9 +10,8 @@ import { AuthorCard } from "@/components/blog/AuthorCard";
 import { RelatedArticles } from "@/components/blog/RelatedArticles";
 import { ShareButtons } from "@/components/blog/ShareButtons";
 import { TableOfContents } from "@/components/blog/TableOfContents";
-import { getPostBySlug, getRelatedPosts } from "@/lib/blog/public.functions";
-import { countWords } from "@/lib/blog/tiptap-render";
-import { mediaUrl } from "@/lib/blog/media-url";
+import { SidebarLatestPosts } from "@/components/blog/SidebarLatestPosts";
+import { getPostBySlug, getRelatedPosts, getLatestPosts } from "@/lib/blog/public.functions";
 import { tBlog, blogBasePath, blogArticlePath, siteOrigin } from "@/lib/blog/i18n-strings";
 import type { Locale } from "@/i18n/locales";
 
@@ -30,6 +29,14 @@ export function articleQueries(locale: Locale, slug: string) {
   };
 }
 
+export function latestPostsQuery(locale: Locale) {
+  return queryOptions({
+    queryKey: ["blog", "latest", locale],
+    queryFn: () => getLatestPosts({ data: { locale, limit: 4 } }),
+    staleTime: 60_000,
+  });
+}
+
 export function BlogArticlePage({ locale, slug }: { locale: Locale; slug: string }) {
   const t = tBlog(locale);
   const post = useSuspenseQuery(articleQueries(locale, slug).post).data;
@@ -38,38 +45,61 @@ export function BlogArticlePage({ locale, slug }: { locale: Locale; slug: string
     queryFn: () => getRelatedPosts({ data: { postId: post.id, locale, categoryId: post.category_id, limit: 3 } }),
     staleTime: 60_000,
   })).data;
+  const latest = useSuspenseQuery(latestPostsQuery(locale)).data.filter((p) => p.id !== post.id).slice(0, 4);
 
-  const words = countWords(post.body);
   const articleUrl = `${siteOrigin()}${blogArticlePath(locale, post.slug)}`;
+
+  const sidebar = (
+    <div className="space-y-6">
+      <SidebarLatestPosts posts={latest} locale={locale} />
+      <TableOfContents doc={post.body} locale={locale} />
+      <ArticleCTA
+        variant="sidebar"
+        locale={locale}
+        categorySlug={post.category?.slug}
+        cta_title={post.cta.cta_title}
+        cta_description={post.cta.cta_description}
+        cta_button_text={post.cta.cta_button_text}
+        cta_url={post.cta.cta_url}
+      />
+    </div>
+  );
 
   return (
     <>
-      <section className="bg-[rgb(6_36_67)] pb-10 pt-32 text-white sm:pt-36">
-        <Container width="narrow">
-          <Breadcrumb items={[
-            { label: t.breadcrumbHome, href: locale === "pt" ? "/" : `/${locale}` },
-            { label: t.breadcrumbBlog, href: blogBasePath(locale) },
-            { label: post.title },
-          ]} />
+      {/* Cabeçalho claro: título à esquerda, capa em proporção fixa à direita */}
+      <section className="border-b border-border/50 bg-background pb-12 pt-28 sm:pt-32">
+        <Container>
+          <div className="mb-8">
+            <Breadcrumb items={[
+              { label: t.breadcrumbHome, href: locale === "pt" ? "/" : `/${locale}` },
+              { label: t.breadcrumbBlog, href: blogBasePath(locale) },
+              { label: post.title },
+            ]} />
+          </div>
+          <ArticleHeader post={post} locale={locale} />
         </Container>
       </section>
 
-      {post.cover_image_url && (
-        <div className="relative -mt-2 aspect-[21/9] w-full overflow-hidden bg-[rgb(6_36_67)]">
-          <img src={mediaUrl(post.cover_image_url)} alt={post.title}
-            className="h-full w-full object-cover" decoding="async" loading="eager"
-            {...({ fetchPriority: "high" } as any)} />
-        </div>
-      )}
+      <section className="bg-[rgb(6_36_67)]/[0.03] py-12 sm:py-16">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-12">
+            <aside className="order-2 lg:order-1">
+              <div className="lg:sticky lg:top-24">{sidebar}</div>
+            </aside>
 
-      <section className="bg-background py-12 sm:py-16">
-        <Container width="narrow">
-          <div className="grid gap-12 lg:grid-cols-[1fr_240px]">
-            <div className="min-w-0">
-              <ArticleHeader post={post} locale={locale} />
-              <ShareButtons url={articleUrl} title={post.title} locale={locale} />
-              <ArticleBody doc={post.body} />
-              <ArticleFAQ faq={post.faq} locale={locale} />
+            <div className="order-1 min-w-0 lg:order-2">
+              <div className="bg-card p-6 shadow-[0_1px_3px_rgba(6,36,67,0.06)] sm:p-10">
+                {post.excerpt && (
+                  <p className="mb-8 border-l-2 border-[rgb(179_134_66)] pl-5 font-display text-lg leading-relaxed text-[rgb(6_36_67)]">
+                    {post.excerpt}
+                  </p>
+                )}
+                <ArticleBody doc={post.body} />
+                <ArticleFAQ faq={post.faq} locale={locale} />
+                <ShareButtons url={articleUrl} title={post.title} locale={locale} />
+              </div>
+
               <ArticleCTA
                 locale={locale}
                 categorySlug={post.category?.slug}
@@ -81,9 +111,6 @@ export function BlogArticlePage({ locale, slug }: { locale: Locale; slug: string
               {post.author_full && <AuthorCard author={post.author_full} locale={locale} />}
               <RelatedArticles posts={related} locale={locale} />
             </div>
-            <aside className="hidden lg:block">
-              <TableOfContents doc={post.body} wordCount={words} locale={locale} />
-            </aside>
           </div>
         </Container>
       </section>
