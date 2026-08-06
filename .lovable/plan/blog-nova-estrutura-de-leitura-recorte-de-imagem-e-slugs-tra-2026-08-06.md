@@ -18,6 +18,7 @@ Modelo inspirado no exemplo enviado:
 ```
 
 Mudanças:
+
 - Cabeçalho em duas colunas: à esquerda categoria, título, autor/data/leitura; à direita a capa dentro de um contêiner com proporção fixa (16:9) e altura máxima, nunca mais ocupando a tela inteira. No mobile a capa vem acima do título, também com proporção fixa.
 - Fundo do cabeçalho claro (como no exemplo), mantendo a paleta institucional (azul #062443 nos títulos, dourado rgb(179,134,66) nos rótulos).
 - Sidebar à esquerda, fixa (sticky) durante a rolagem, com: "Últimas Publicações" (3 a 4 posts com miniatura e data), índice "Neste artigo" e o card de CTA. Ou seja, CTA e últimas publicações passam a acompanhar a leitura, não só no fim.
