@@ -46,6 +46,13 @@ const upsertPostSchema = z.object({
 export const listPosts = createServerFn({ method: "GET" })
   .middleware([requireSupabaseAuth])
   .handler(async ({ context }) => {
+    // Publica posts agendados vencidos sob demanda (sem tarefa periódica).
+    try {
+      const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+      await supabaseAdmin.rpc("publish_due_posts");
+    } catch {
+      /* ignore */
+    }
     const { data, error } = await context.supabase
       .from("posts")
       .select(`
