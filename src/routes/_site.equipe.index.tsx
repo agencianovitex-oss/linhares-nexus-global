@@ -119,7 +119,7 @@ function MemberCard({ m, cardBg, seeProfile, fallbackLabel, locale }: { m: TeamM
     </article>
   );
   return m.slug ? (
-    <Link to={`${withLocale(locale, "/equipe")}/${m.slug}`} className="block h-full">{card}</Link>
+    <Link to={`${withLocale(locale, "/equipe")}/${m.slug}` as "/"} className="block h-full">{card}</Link>
   ) : (
     <div className="h-full">{card}</div>
   );
