@@ -1119,6 +1119,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      publish_due_posts: { Args: never; Returns: undefined }
       publish_scheduled_posts: { Args: never; Returns: undefined }
     }
     Enums: {
