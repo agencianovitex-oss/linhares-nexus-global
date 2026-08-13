@@ -16,6 +16,21 @@ function client() {
 
 const NOW = () => new Date().toISOString();
 
+/**
+ * Publica posts agendados cujo horário já passou.
+ * Roda sob demanda (nas leituras do blog) em vez de por tarefa periódica,
+ * para não manter o backend ativo 24h e consumir compute desnecessário.
+ * Falha silenciosamente: nunca deve quebrar a renderização da página.
+ */
+async function publishDuePosts() {
+  try {
+    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    await supabaseAdmin.rpc("publish_due_posts");
+  } catch {
+    /* ignore */
+  }
+}
+
 export type PublicAuthor = {
   id: string;
   slug: string;
