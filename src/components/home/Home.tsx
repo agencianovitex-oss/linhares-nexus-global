@@ -327,7 +327,7 @@ function ServicesSection({ c, localeHref, visasBase }: { c: HomeContent; localeH
         </div>
 
         <div className="mt-16 grid gap-px bg-border lg:grid-cols-3 border border-border">
-          <Link to={`${localeHref(visasBase)}/${featured.slug}`} className="group editorial-card relative bg-primary text-primary-foreground p-10 lg:p-14 lg:col-span-2 lg:row-span-2 flex flex-col justify-between min-h-[460px] overflow-hidden">
+          <Link to={`${localeHref(visasBase)}/${featured.slug}` as "/"} className="group editorial-card relative bg-primary text-primary-foreground p-10 lg:p-14 lg:col-span-2 lg:row-span-2 flex flex-col justify-between min-h-[460px] overflow-hidden">
             <span className="absolute top-0 left-0 h-[2px] w-32 bg-gold" />
             <div>
               <div className="flex items-center gap-4"><span className="rule-gold" /><span className="eyebrow eyebrow-on-dark">{c.services.featuredLabel}</span></div>
@@ -342,7 +342,7 @@ function ServicesSection({ c, localeHref, visasBase }: { c: HomeContent; localeH
           </Link>
 
           {rest.map((v) => (
-            <Link key={v.slug} to={`${localeHref(visasBase)}/${v.slug}`} className="group editorial-card relative bg-gold text-white p-8 lg:p-10 flex flex-col justify-between min-h-[260px] hover:bg-[rgb(200,145,70)] overflow-hidden">
+            <Link key={v.slug} to={`${localeHref(visasBase)}/${v.slug}` as "/"} className="group editorial-card relative bg-gold text-white p-8 lg:p-10 flex flex-col justify-between min-h-[260px] hover:bg-[rgb(200,145,70)] overflow-hidden">
               <span className="absolute top-0 left-0 h-px w-16 bg-white opacity-0 group-hover:opacity-100 transition-opacity" />
               <div>
                 <div className="font-display font-semibold text-white tracking-[-0.03em] leading-[0.95] text-[clamp(2.5rem,4.2vw,3.75rem)]">{v.code}</div>
@@ -379,7 +379,7 @@ function LeadershipSection({ c, localeHref }: { c: HomeContent; localeHref: (p: 
 
         <div className="mt-14 grid gap-10 lg:gap-12 lg:grid-cols-12 items-stretch">
           {/* Founder */}
-          <Link to={`${localeHref("/equipe")}/andre-linhares`} className="group flex flex-col reveal-up lg:col-span-5">
+          <Link to={`${localeHref("/equipe")}/andre-linhares` as "/"} className="group flex flex-col reveal-up lg:col-span-5">
             <div className="relative">
               <span className="absolute -top-3 -left-3 h-px w-20 bg-gold z-10" />
               <div className="editorial-frame photo-vignette aspect-[4/5] w-full">
@@ -402,7 +402,7 @@ function LeadershipSection({ c, localeHref }: { c: HomeContent; localeHref: (p: 
           {/* Other leaders */}
           <div className="lg:col-span-7 flex flex-col gap-8 h-full">
             {others.map((a) => (
-              <Link key={a.slug} to={`${localeHref("/equipe")}/${a.slug}`} className="group block reveal-up flex-1">
+              <Link key={a.slug} to={`${localeHref("/equipe")}/${a.slug}` as "/"} className="group block reveal-up flex-1">
                 <div className="grid grid-cols-12 gap-5 items-stretch border-t border-border pt-6 h-full">
                   <div className="col-span-5 relative">
                     <span className="absolute -top-2 -left-2 h-px w-10 bg-gold z-10" />

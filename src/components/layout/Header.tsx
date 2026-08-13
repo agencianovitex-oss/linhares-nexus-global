@@ -131,7 +131,7 @@ export function Header({ transparentOverHero = false }: Props) {
                       {VISA_SUBMENU.map((v) => (
                         <li key={v.slug}>
                           <Link
-                            to={`${withLocale(locale, visasBase)}/${v.slug}`}
+                            to={`${withLocale(locale, visasBase)}/${v.slug}` as "/"}
                             className="flex items-center justify-between gap-4 px-6 py-3 text-[12.5px] font-medium tracking-[0.08em] text-primary hover:bg-surface hover:text-gold transition-colors"
                           >
                             <span className="font-display text-[15px] font-semibold tracking-tight">{v.code}</span>
@@ -226,7 +226,7 @@ export function Header({ transparentOverHero = false }: Props) {
               {VISA_SUBMENU.map((v) => (
                 <li key={v.slug}>
                   <Link
-                    to={`${withLocale(locale, visasBase)}/${v.slug}`}
+                    to={`${withLocale(locale, visasBase)}/${v.slug}` as "/"}
                     className="block px-3 py-2 text-[13px] font-semibold text-primary border border-border hover:border-gold hover:text-gold transition-colors"
                     onClick={() => setMobileOpen(false)}
                   >
