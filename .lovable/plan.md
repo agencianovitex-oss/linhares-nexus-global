@@ -1,35 +1,40 @@
-# Por que o "Database" consome créditos de run e como reduzir
+# Reduzir o consumo de créditos de run (compute do banco)
 
-## O que os dados mostram
+## Diagnóstico
 
-No período de 13/jul a 13/ago, o consumo de run (Cloud) deste workspace foi:
+No período de 13/jul a 13/ago, o gasto de run do workspace foi praticamente todo em compute:
 
-- Cloud compute pico: 18,81 créditos (praticamente todo o gasto de run)
+- Cloud compute pico: 18,81 créditos
 - Cloud Worker Days: 1,83
-- AI Gateway (traduções do blog com IA): ~2,0
-- Egress, storage, functions, requests: menos de 0,03 no total
+- AI Gateway (traduções do blog): ~2,0
+- Egress, storage, functions e requisições: menos de 0,03 somados
 
-Ou seja: o que aparece como "Database"/"Compute" no gráfico é **compute do backend ligado**, não volume de consultas. A cobrança é por tempo em que a instância fica ativa (≈0,6 crédito/dia), não por query executada.
-
-## Por que a instância quase nunca hiberna
-
-O projeto tem um job agendado no banco:
+Compute é cobrado pelo tempo em que o backend fica ativo, não por consulta. E o projeto tem um job agendado no banco rodando a cada 15 minutos, 24h por dia:
 
 ```text
-publish-scheduled-posts  ->  */15 * * * *  (a cada 15 minutos, 24h por dia)
+publish-scheduled-posts  ->  */15 * * * *
 ```
 
-Ele roda `public.publish_scheduled_posts()`, que só faz publicar posts com data agendada. Rodando a cada 15 minutos, ele gera atividade contínua e impede que o backend entre em pausa por inatividade, mantendo o compute faturando o dia inteiro, mesmo de madrugada e em dias sem nenhum post agendado.
+Ele só publica posts com data agendada, mas gera atividade contínua e impede a pausa por inatividade, mantendo o compute faturando o dia inteiro mesmo sem nenhum post agendado.
 
-## Plano de redução
+## Solução escolhida: remover o job periódico
 
-1. Reduzir a frequência do job de publicação agendada de 15 minutos para 1x por hora (ou 2x ao dia, nos horários em que o escritório publica). Um post agendado é publicado com no máximo essa margem de atraso.
-2. Alternativa mais econômica (e recomendável se publicações agendadas forem raras): desativar o job e fazer a publicação agendada ser resolvida na leitura/no salvamento do post, sem tarefa periódica.
-3. Manter o resto como está: egress, storage, functions e requisições são residuais e não valem otimização agora.
-4. Observação sobre o AI Gateway: cada tradução automática de post (PT -> EN/ES) custa créditos de token. É pequeno hoje, mas cresce com o volume de publicações; vale traduzir uma vez e salvar, evitando reprocessar o mesmo post.
+Como publicações agendadas são raras, a publicação agendada passa a ser resolvida sob demanda, sem tarefa periódica.
+
+1. Desativar o job `publish-scheduled-posts` (a cada 15 min).
+2. A função `publish_scheduled_posts()` continua existindo e passa a ser chamada nos momentos em que o conteúdo é realmente lido ou gerenciado:
+   - ao carregar as listagens públicas do blog (índice, categoria, autor, tag, busca) e a home;
+   - ao abrir a lista de posts no painel administrativo.
+3. Efeito prático: um post agendado é publicado assim que houver a primeira visita ao blog após o horário marcado. Sem visitas, ninguém está vendo o site de qualquer forma.
+4. Nada muda no painel: o autor continua agendando com data e hora normalmente.
 
 ## Detalhes técnicos
 
-- O ajuste ou a desativação do agendamento é feito na área de Cloud > Jobs do projeto (não por SQL genérico), alterando o cron `publish-scheduled-posts`.
-- Caso se opte pela alternativa 2, `publish_scheduled_posts()` continua existindo e passa a ser chamada apenas quando o admin salva/lista posts, ou por uma rota pública de cron chamada com frequência baixa.
-- Nenhuma mudança de schema é necessária; nada muda no site público.
+- Remover o agendamento: `SELECT cron.unschedule('publish-scheduled-posts');` (também gerenciável em Cloud > Jobs).
+- Permitir a execução sob demanda: conceder `EXECUTE` em `public.publish_scheduled_posts()` a `anon`/`authenticated`, ou (preferível) manter a função restrita e chamá-la por uma função `SECURITY DEFINER` dedicada acionada nas leituras do blog. A função já é `SECURITY DEFINER` e apenas muda `status` de `scheduled` para `published` quando `published_at <= now()`, sem risco de escrita arbitrária.
+- Ponto de chamada no código: em `src/lib/blog/public.functions.ts`, executar a chamada (via RPC no cliente servidor) antes das consultas de listagem, com falha silenciosa para nunca quebrar a página; e em `src/lib/admin/posts.functions.ts` na listagem do admin.
+- Nenhuma mudança de schema, nenhuma alteração visual no site.
+
+## Observação adicional
+
+Cada tradução automática de post (PT -> EN/ES) consome créditos de AI Gateway. Hoje é pouco, mas convém traduzir uma vez e salvar, evitando reprocessar o mesmo post.
