@@ -191,6 +191,7 @@ export const listPublishedPosts = createServerFn({ method: "GET" })
       excludeIds: z.array(z.string()).optional(),
     }).parse(d))
   .handler(async ({ data }) => {
+    await publishDuePosts();
     const sb = client();
     let q = sb.from("posts").select(baseSelect, { count: "exact" })
       .eq("status", "published")
@@ -252,6 +253,7 @@ export const getFeaturedPosts = createServerFn({ method: "GET" })
   .inputValidator((d: { locale: "pt" | "en" | "es"; limit?: number }) =>
     z.object({ locale: Locale, limit: z.number().int().min(1).max(10).default(3) }).parse(d))
   .handler(async ({ data }) => {
+    await publishDuePosts();
     const sb = client();
     const { data: feat } = await sb.from("posts").select(baseSelect)
       .eq("status", "published").lte("published_at", NOW())
@@ -467,6 +469,7 @@ export const searchPosts = createServerFn({ method: "GET" })
   .inputValidator((d: { q: string; locale: "pt" | "en" | "es"; limit?: number }) =>
     z.object({ q: z.string().min(1), locale: Locale, limit: z.number().int().min(1).max(30).default(20) }).parse(d))
   .handler(async ({ data }) => {
+    await publishDuePosts();
     const sb = client();
     const { data: rows } = await sb.from("posts").select(baseSelect)
       .eq("status", "published").lte("published_at", NOW())
@@ -488,6 +491,7 @@ export const getLatestPosts = createServerFn({ method: "GET" })
   .inputValidator((d: { locale: "pt" | "en" | "es"; limit?: number; excludeId?: string }) =>
     z.object({ locale: Locale, limit: z.number().int().min(1).max(10).default(4), excludeId: z.string().optional() }).parse(d))
   .handler(async ({ data }) => {
+    await publishDuePosts();
     const sb = client();
     let q = sb.from("posts").select(baseSelect)
       .eq("status", "published").lte("published_at", NOW())
