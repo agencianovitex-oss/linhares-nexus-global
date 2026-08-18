@@ -131,7 +131,7 @@ export const teamGroups: TeamGroup[] = [
       { name: "Fernanda Ruiz", role: "Paralegal", portrait: fernanda },
       { name: "Rafaela Barbosa", role: "Paralegal", portrait: rafaela },
       { name: "Samara Silvestre", role: "Paralegal", portrait: samara },
-      { name: "Heitor", role: "Paralegal", portrait: heitor },
+      { name: "Heitor Silva", role: "Paralegal", portrait: heitor },
     ],
   },
   {
