@@ -147,7 +147,7 @@ const PT: Record<string, AttorneyProfile> = {
       "Advogado com trajetória nas principais instituições do governo federal americano dedicadas à imigração e à aplicação da lei.",
     hero: nicholas,
     portrait: nicholas,
-    bars: ["Nebraska Bar", "North Carolina Bar", "U.S. Supreme Court"],
+    bars: ["Nebraska Bar", "U.S. Supreme Court"],
     education: [
       { school: "North Carolina Central School of Law", detail: "Valedictorian" },
       { school: "University of Notre Dame" },
@@ -163,7 +163,7 @@ const PT: Record<string, AttorneyProfile> = {
     longBio: [
       "Nicholas Perry traz para a Linhares Law uma trajetória rara: passagem pelas principais agências federais americanas responsáveis pela imigração, USCIS, DHS, ICE, CBP e o Department of Justice.",
       "Essa vivência institucional confere à sua atuação um entendimento técnico aprofundado dos critérios adotados pelos analistas e oficiais federais que avaliam petições migratórias.",
-      "Formado como Valedictorian pela North Carolina Central School of Law, é graduado pela University of Notre Dame e licenciado em Nebraska, North Carolina e perante a Suprema Corte dos Estados Unidos.",
+      "Formado como Valedictorian pela North Carolina Central School of Law, é graduado pela University of Notre Dame e licenciado em Nebraska e perante a Suprema Corte dos Estados Unidos.",
     ],
   },
   "juliana-mosquera-soler": {
@@ -230,7 +230,7 @@ const EN: Record<string, AttorneyProfile> = {
     longBio: [
       "Nicholas Perry brings to Linhares Law an uncommon background: service across the principal U.S. federal agencies responsible for immigration, including USCIS, DHS, ICE, CBP and the Department of Justice.",
       "That institutional experience gives his practice a detailed technical understanding of the standards applied by the adjudicators and federal officers who review immigration petitions.",
-      "He graduated as Valedictorian from North Carolina Central School of Law, holds a degree from the University of Notre Dame, and is admitted in Nebraska, North Carolina and before the Supreme Court of the United States.",
+      "He graduated as Valedictorian from North Carolina Central School of Law, holds a degree from the University of Notre Dame, and is admitted in Nebraska and before the Supreme Court of the United States.",
     ],
   },
   "juliana-mosquera-soler": {
@@ -294,7 +294,7 @@ const ES: Record<string, AttorneyProfile> = {
     longBio: [
       "Nicholas Perry aporta a Linhares Law una trayectoria poco común: servicio en las principales agencias federales estadounidenses responsables de la inmigración, entre ellas USCIS, DHS, ICE, CBP y el Department of Justice.",
       "Esa experiencia institucional otorga a su práctica una comprensión técnica profunda de los criterios que aplican los analistas y oficiales federales que evalúan las peticiones migratorias.",
-      "Se graduó como Valedictorian de North Carolina Central School of Law, es egresado de la University of Notre Dame y está habilitado en Nebraska, North Carolina y ante la Corte Suprema de Estados Unidos.",
+      "Se graduó como Valedictorian de North Carolina Central School of Law, es egresado de la University of Notre Dame y está habilitado en Nebraska y ante la Corte Suprema de Estados Unidos.",
     ],
   },
   "juliana-mosquera-soler": {

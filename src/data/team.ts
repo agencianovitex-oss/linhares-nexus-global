@@ -21,6 +21,7 @@ import vyvianAsset from "@/assets/team-vyvian-bastos.jpg.asset.json";
 import renataAsset from "@/assets/renata-liberman-v2.webp.asset.json";
 import heitorAsset from "@/assets/team-heitor.webp.asset.json";
 import andressaAsset from "@/assets/team-andressa-hughes.webp.asset.json";
+import renataPimentaAsset from "@/assets/team-renata-pimenta.jpg.asset.json";
 import edsonAsset from "@/assets/edson-matunaga.jpg.asset.json";
 import paolaAsset from "@/assets/paola-irvin.jpg.asset.json";
 import manuelaAsset from "@/assets/manuela-truschelli.jpg.asset.json";
@@ -37,6 +38,7 @@ const vyvian = vyvianAsset.url;
 const renata = renataAsset.url;
 const heitor = heitorAsset.url;
 const andressa = andressaAsset.url;
+const renataPimenta = renataPimentaAsset.url;
 const edson = edsonAsset.url;
 const paola = paolaAsset.url;
 const manuela = manuelaAsset.url;
@@ -84,7 +86,7 @@ export const teamGroups: TeamGroup[] = [
         name: "Nicholas Perry, Esq.",
         role: "ADVOGADO",
         roleI18n: { en: "ATTORNEY", es: "ABOGADO" },
-        credentials: ["Nebraska Bar", "North Carolina Bar", "U.S. Supreme Court"],
+        credentials: ["Nebraska Bar", "U.S. Supreme Court"],
         slug: "nicholas-perry",
         portrait: nicholas,
         bio: "Trajetória nas principais agências federais americanas dedicadas à imigração, USCIS, DHS, ICE, CBP e Department of Justice.",
@@ -145,6 +147,7 @@ export const teamGroups: TeamGroup[] = [
       { name: "Rafael Frinhani", role: "Legal Assistant", portrait: rafael },
       { name: "Nadyne Santos", role: "Legal Assistant", portrait: nadyne },
       { name: "Andressa Hughes", role: "Legal Assistant", portrait: andressa },
+      { name: "Renata Pimenta", role: "Legal Assistant", portrait: renataPimenta },
     ],
   },
   {
