@@ -177,7 +177,7 @@ function HeroSection({ c, localeHref, locale }: { c: HomeContent; localeHref: (p
   return (
     <section className="relative surface-premium-dark pt-32 pb-24 lg:pt-40 lg:pb-28 overflow-hidden">
       <video aria-hidden className="pointer-events-none absolute inset-0 h-full w-full object-cover" src={heroVideo} poster={heroFlagDesktop} autoPlay muted loop playsInline preload="metadata" />
-      <div aria-hidden className="hero-bg-fade pointer-events-none absolute inset-0 md:hidden" style={{ backgroundImage: `url("${heroFlagMobile}")`, backgroundSize: "cover", backgroundPosition: "center" }} />
+      
       <div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: "linear-gradient(120deg, oklch(0.17 0.06 258 / 0.88) 0%, oklch(0.22 0.07 258 / 0.76) 50%, oklch(0.17 0.06 258 / 0.9) 100%)" }} />
       <div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: "radial-gradient(ellipse 70% 55% at 80% 20%, oklch(1 0 0 / 0.06), transparent 60%)" }} />
       <span className="fade-edge-bottom" aria-hidden />
