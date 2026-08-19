@@ -8,10 +8,12 @@ import type { Locale } from "@/i18n/locales";
 import tenBestAsset from "@/assets/10-best-law-firms-2.png.asset.json";
 import ibiAsset from "@/assets/ibi-awards-2.jpg.asset.json";
 import ailaAsset from "@/assets/aila-2025-andre-linhares.jpg.asset.json";
+import topBusinessAsset from "@/assets/top-of-business-roma-2026.jpg.asset.json";
 
 const tenBest = tenBestAsset.url;
 const ibi = ibiAsset.url;
 const aila = ailaAsset.url;
+const topBusiness = topBusinessAsset.url;
 
 const L = "pt" as const;
 
@@ -53,6 +55,9 @@ const content: Record<Locale, PageContent> = {
       { title: "International Business Institute · IBI Award", year: "2025", institution: "International Business Institute", description: "Distinção concedida pela contribuição da Linhares Law ao ecossistema empresarial internacional, reconhecendo a relevância da prática institucional do escritório no cenário global.", image: ibi },
       { title: "10 Best Law Firms", year: "2026", institution: "American Institute of Legal Counsel", description: "Inclusão entre os dez melhores escritórios de imigração nos Estados Unidos, com base em critérios independentes de excelência e satisfação do cliente. Mostrando o comprometimento constante do escritório com os resultados dos seus clientes.", image: tenBest },
       { title: "Palestrante na AILA 2025", year: "2025", institution: "American Immigration Lawyers Association", description: "Em 2025, o Dr. André Linhares tornou-se o único advogado de nacionalidade brasileira a ser convidado a atuar como palestrante na conferência anual da AILA (Associação Americana de Advogados de Imigração), uma das mais importantes organizações jurídicas especializadas em imigração dos Estados Unidos.\u00a0", image: aila },
+      { title: "Top of Business 2026 · Homenaje en Roma", year: "2026", institution: "International Business Institute", description: "Realizada en Roma, Italia, la premiación internacional Top of Business 2026 reunió a empresarios, ejecutivos y liderazgos globales. Entre los homenajeados de la edición, André Linhares recibió un destaque por su trayectoria de excelencia y su impacto en los ámbitos corporativo y jurídico. Esta distinción se suma al premio Top Empreendedor, también otorgado por el IBI, y celebra un momento de fuerte expansión institucional y de liderazgo en el debate público sobre políticas migratorias e inversiones internacionales.", image: topBusiness },
+      { title: "Top of Business 2026 · Honoree in Rome", year: "2026", institution: "International Business Institute", description: "Held in Rome, Italy, the international Top of Business 2026 awards brought together entrepreneurs, executives and global leaders. Among the honorees of the edition, André Linhares was recognized for his trajectory of excellence and his impact on the corporate and legal environments. The distinction adds to the Top Entrepreneur award, also granted by the IBI, and marks a moment of strong institutional expansion and leadership in the public debate on immigration policy and international investment.", image: topBusiness },
+      { title: "Top of Business 2026 · Homenagem em Roma", year: "2026", institution: "International Business Institute", description: "Realizada em Roma, na Itália, a premiação internacional Top of Business 2026 reuniu empresários, executivos e lideranças globais. Entre os homenageados da edição, o Dr. André Linhares recebeu destaque por sua trajetória de excelência e impacto nos ambientes corporativo e jurídico. A honraria se soma ao prêmio Top Empreendedor, também concedido pelo IBI, e celebra um momento de forte expansão institucional e de liderança no debate público sobre políticas migratórias e investimentos internacionais.", image: topBusiness },
     ],
     textual: [
       { title: "Great Place To Work", year: "2025", institution: "Great Place To Work Institute", description: "Certificação concedida com 100% de aprovação da equipe interna, refletindo o ambiente institucional construído pela Linhares Law." },
