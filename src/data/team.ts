@@ -1,7 +1,6 @@
 import andre from "@/assets/team-andre.jpg";
 import nicholas from "@/assets/team-nicholas.jpg";
 import juliana from "@/assets/team-juliana.avif";
-import fernanda from "@/assets/team-fernanda-ruiz.png";
 import andrea from "@/assets/team-andrea-almeida.jpg";
 import sheron from "@/assets/team-sheron-carvalho.jpg";
 import gabrieleAsset from "@/assets/team-gabriele-souza.jpg.asset.json";
